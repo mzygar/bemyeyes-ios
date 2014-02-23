@@ -19,6 +19,7 @@
 #import "BMERequest.h"
 #import "BMEToken.h"
 #import "BMEUser.h"
+#import "BMEFacebookInfo.h"
 #import "BMERoleConverter.h"
 
 #define BMEClientTokenKey @"BMEClientToken"
@@ -161,20 +162,11 @@
     
     [self configureFacebookLogin];
     
-    [[HPAccountManager sharedManager] authenticateAccountOfType:HPAccountTypeFacebook withHandler:^(HPAccount *authenticatedAccount, NSDictionary *profileInfo, NSError *error) {
-        if (!error) {
-            NSNumber *userId = [profileInfo objectForKey:@"id"];
-            NSString *email = [profileInfo objectForKey:@"email"];
-            
-            if (!userId || !email) {
-                [[HPAccountManager sharedManager] resetCachedTokens];
-            } else {
-                [self loginWithEmail:email userId:[userId integerValue] success:success failure:loginFailure];
-            }
-        } else {
-            if (accountFailure) {
-                accountFailure(error);
-            }
+    [self authenticateWithFacebook:^(BMEFacebookInfo *fbInfo) {
+        [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] success:success failure:loginFailure];
+    } failure:^(NSError *error) {
+        if (accountFailure) {
+            accountFailure(error);
         }
     }];
 }
@@ -305,6 +297,42 @@
         if (completion)
         {
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
+#pragma mark -
+#pragma mark Facebook
+
+- (void)authenticateWithFacebook:(void (^)(BMEFacebookInfo *))success failure:(void (^)(NSError *))failure {
+    [[HPAccountManager sharedManager] authenticateAccountOfType:HPAccountTypeFacebook withHandler:^(HPAccount *authenticatedAccount, NSDictionary *profileInfo, NSError *error) {
+        if (!error) {
+            NSNumber *userId = [profileInfo objectForKey:@"id"];
+            NSString *email = [profileInfo objectForKey:@"email"];
+            NSString *firstName = [profileInfo objectForKey:@"first_name"];
+            NSString *lastName = [profileInfo objectForKey:@"last_name"];
+            
+            if (userId && email) {
+                BMEFacebookInfo *fbInfo = [BMEFacebookInfo new];
+                [fbInfo setValue:userId forKeyPath:@"userId"];
+                [fbInfo setValue:email forKeyPath:@"email"];
+                [fbInfo setValue:firstName forKeyPath:@"firstName"];
+                [fbInfo setValue:lastName forKeyPath:@"lastName"];
+                
+                success(fbInfo);
+            } else {
+                [[HPAccountManager sharedManager] resetCachedTokens];
+                
+                if (failure) {
+                    failure(error);
+                }
+            }
+        } else {
+            [[HPAccountManager sharedManager] resetCachedTokens];
+            
+            if (failure) {
+                failure(error);
+            }
         }
     }];
 }

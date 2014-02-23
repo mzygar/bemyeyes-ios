@@ -8,7 +8,7 @@
 
 #import "AFHTTPClient.h"
 
-@class BMERequest, BMEToken, BMEUser;
+@class BMERequest, BMEToken, BMEUser, BMEFacebookInfo;
 
 enum {
     BMEClientErrorInvalidBody = 1000,
@@ -56,6 +56,8 @@ enum {
 
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction;
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+
+- (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo))success failure:(void(^)(NSError *error))failure;
 
 - (NSString *)token;
 - (NSDate *)tokenExpiryDate;

@@ -9,7 +9,7 @@
 #import "BMELoginViewController.h"
 #import "BMEClient.h"
 
-#define BMELoginControllerLoggedInSegue @"LoggedIn"
+#define BMELoginLoggedInSegue @"LoggedIn"
 
 @interface BMELoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -66,7 +66,7 @@
     [[BMEClient sharedClient] loginWithEmail:email password:password success:^(BMEToken *token) {
         [self didLogin];
     } failure:^(NSError *error) {
-        if (error.code == BMEClientErrorUserFacebookUserNotFound) {
+        if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
             NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
             NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when Facebook user not found during log in.");
@@ -86,7 +86,7 @@
     [[BMEClient sharedClient] loginUsingFacebookWithSuccesss:^(BMEToken *token) {
         [self didLogin];
     } loginFailure:^(NSError *error) {
-        if (error.code == BMEClientErrorUserFacebookUserNotFound) {
+        if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
             NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
             NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when Facebook user not found during log in.");
@@ -109,7 +109,7 @@
 }
 
 - (void)didLogin {
-    [self performSegueWithIdentifier:BMELoginControllerLoggedInSegue sender:self];
+    [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
 }
 
 @end

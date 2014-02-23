@@ -10,4 +10,6 @@
 
 @interface BMESignUpViewController : BMEBaseViewController
 
+@property (assign, nonatomic) BMERole role;
+
 @end

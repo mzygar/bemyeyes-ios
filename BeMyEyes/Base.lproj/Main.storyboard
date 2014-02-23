@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Front Page View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="BMEFrontPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LUz-nx-Suh"/>
                         <viewControllerLayoutGuide type="bottom" id="Uzk-Yk-OlI"/>
@@ -45,7 +45,8 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="du8-BL-rDz" kind="push" id="1zS-zg-Y9Q"/>
+                                    <action selector="blindButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jU9-8c-gdj"/>
+                                    <segue destination="du8-BL-rDz" kind="push" identifier="Intro" id="1zS-zg-Y9Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeQ-6j-q8m">
@@ -61,7 +62,8 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hG3-jw-vqP" kind="push" id="dd5-cq-BYe"/>
+                                    <action selector="helperButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="F3n-L6-BIm"/>
+                                    <segue destination="hG3-jw-vqP" kind="push" identifier="Intro" id="dd5-cq-BYe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hvad er din rolle?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-NR-WpR">
@@ -173,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="-298" y="111"/>
         </scene>
-        <!--Base View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="zB6-mI-jFV">
             <objects>
-                <viewController id="hG3-jw-vqP" customClass="BMEBaseViewController" sceneMemberID="viewController">
+                <viewController id="hG3-jw-vqP" customClass="BMEIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XQC-4S-8pI"/>
                         <viewControllerLayoutGuide type="bottom" id="Hrt-37-M7c"/>
@@ -255,7 +257,7 @@
                                     <color key="titleColor" red="0.23921568630000001" green="0.40784313729999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rmT-tx-lgV" kind="push" id="kdn-ps-MZv"/>
+                                    <segue destination="rmT-tx-lgV" kind="push" identifier="SignUpMethod" id="kdn-ps-MZv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -471,10 +473,10 @@
             </objects>
             <point key="canvasLocation" x="735" y="1775"/>
         </scene>
-        <!--Base View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="0Jd-Fy-FjZ">
             <objects>
-                <viewController id="du8-BL-rDz" customClass="BMEBaseViewController" sceneMemberID="viewController">
+                <viewController id="du8-BL-rDz" customClass="BMEIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sh6-5W-mZP"/>
                         <viewControllerLayoutGuide type="bottom" id="xFS-Mo-f8B"/>
@@ -553,7 +555,7 @@
                                     <color key="titleColor" red="0.23921568627450979" green="0.40784313725490196" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rmT-tx-lgV" kind="push" id="46J-Mt-BiQ"/>
+                                    <segue destination="rmT-tx-lgV" kind="push" identifier="SignUpMethod" id="46J-Mt-BiQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -693,7 +695,7 @@
                                     <action selector="signUpButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpInside" id="VEr-T6-JKw"/>
                                     <action selector="signUpButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpOutside" id="uZ7-fq-1di"/>
                                     <action selector="signUpButtonTouched:" destination="rmT-tx-lgV" eventType="touchDown" id="pls-9W-tIV"/>
-                                    <segue destination="IOT-Cv-qKg" kind="push" id="68m-nw-Xeu"/>
+                                    <segue destination="IOT-Cv-qKg" kind="push" identifier="SignUp" id="68m-nw-Xeu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqR-1b-cWs" userLabel="Terms Button">
@@ -749,6 +751,7 @@
                         <outlet property="signUpTopLabel" destination="oqz-Jo-m0H" id="5T6-zP-eHP"/>
                         <outlet property="termsBottomLabel" destination="i0m-2e-mzC" id="p09-xj-Kwd"/>
                         <outlet property="termsTopLabel" destination="lF4-WI-FKM" id="UBL-YO-kbW"/>
+                        <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="Ce4-tx-KmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6C-aM-2p2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -797,12 +800,28 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Navn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-6l-1vq">
-                                                <rect key="frame" x="68" y="0.0" width="232" height="60"/>
+                                                <rect key="frame" x="68" y="0.0" width="111" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="111" id="62H-PJ-GW4"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="IOT-Cv-qKg" id="2ce-wq-5DK"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Efternavn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-e2-g2G">
+                                                <rect key="frame" x="189" y="0.0" width="111" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="8Yb-vE-kjH"/>
+                                                    <constraint firstAttribute="width" constant="111" id="OWd-ne-iYw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="IOT-Cv-qKg" id="l2q-kH-p3v"/>
                                                 </connections>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUpName" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-cI-U8N">
@@ -816,10 +835,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2KI-e2-g2G" secondAttribute="trailing" constant="20" id="A7l-Uz-XRP"/>
                                             <constraint firstAttribute="centerY" secondItem="i9n-6l-1vq" secondAttribute="centerY" id="BFJ-Y7-OqP"/>
                                             <constraint firstItem="5ci-cI-U8N" firstAttribute="leading" secondItem="iJh-xD-Sg7" secondAttribute="leading" constant="20" id="C7A-BS-0yM"/>
                                             <constraint firstAttribute="centerY" secondItem="5ci-cI-U8N" secondAttribute="centerY" id="CAV-QB-AfU"/>
-                                            <constraint firstAttribute="trailing" secondItem="i9n-6l-1vq" secondAttribute="trailing" constant="20" id="TLd-jP-dWL"/>
+                                            <constraint firstItem="2KI-e2-g2G" firstAttribute="baseline" secondItem="i9n-6l-1vq" secondAttribute="baseline" id="DP1-7W-2Zj"/>
                                             <constraint firstItem="i9n-6l-1vq" firstAttribute="leading" secondItem="5ci-cI-U8N" secondAttribute="trailing" constant="8" id="U8Q-x9-3iN"/>
                                             <constraint firstAttribute="height" constant="60" id="VZG-lv-1sN"/>
                                             <constraint firstItem="i9n-6l-1vq" firstAttribute="top" secondItem="iJh-xD-Sg7" secondAttribute="top" id="ekE-cl-mxY"/>
@@ -939,14 +959,16 @@
                     <navigationItem key="navigationItem" id="a1e-JV-YXZ"/>
                     <connections>
                         <outlet property="emailTextField" destination="opU-Be-2Hu" id="NO5-e6-koH"/>
-                        <outlet property="nameTextField" destination="i9n-6l-1vq" id="MRA-wi-eRD"/>
+                        <outlet property="firstNameTextField" destination="i9n-6l-1vq" id="6cB-xB-iUX"/>
+                        <outlet property="lastNameTextField" destination="2KI-e2-g2G" id="wSw-om-tCj"/>
                         <outlet property="passwordTextField" destination="3Vw-hZ-d1W" id="ryh-yc-g8i"/>
                         <outlet property="scrollView" destination="guG-wR-qIH" id="tQp-VZ-U80"/>
+                        <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="jzc-Nc-kCA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAb-yu-tHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="-232"/>
+            <point key="canvasLocation" x="2129" y="-232"/>
         </scene>
         <!--Base View Controller-->
         <scene sceneID="cO8-SD-QcU">
@@ -991,7 +1013,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmt-7Z-itp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="453"/>
+            <point key="canvasLocation" x="2129" y="453"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="28i-Ah-CML">
@@ -1010,7 +1032,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="1183"/>
+            <point key="canvasLocation" x="2680" y="1183"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xFF-Ds-18S">
@@ -1030,7 +1052,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfT-12-yrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="1775"/>
+            <point key="canvasLocation" x="2680" y="1775"/>
         </scene>
     </scenes>
     <resources>
@@ -1048,5 +1070,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kdn-ps-MZv"/>
+        <segue reference="Ce4-tx-KmL"/>
     </inferredMetricsTieBreakers>
 </document>
