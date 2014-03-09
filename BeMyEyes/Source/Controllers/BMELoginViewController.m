@@ -7,6 +7,7 @@
 //
 
 #import "BMELoginViewController.h"
+#import <MRProgress/MRProgress.h>
 #import "BMEClient.h"
 
 #define BMELoginLoggedInSegue @"LoggedIn"
@@ -22,7 +23,7 @@
 #pragma mark Private Methods
 
 - (IBAction)facebookButtonPressed:(id)sender {
-    [self loginWithFacebookSuccess];
+    [self loginWithFacebook];
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
@@ -50,6 +51,13 @@
     
 }
 
+- (MRProgressOverlayView *)addLoggingInOverlay {
+    MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
+    progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
+    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMELoginViewController", @"Title in overlay displayed when logging in");
+    return progressOverlayView;
+}
+
 #pragma mark -
 #pragma mark Text Field Delegate
 
@@ -63,9 +71,15 @@
 #pragma mark Private Methods
 
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password {
+    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
+    
     [[BMEClient sharedClient] loginWithEmail:email password:password success:^(BMEToken *token) {
+        [progressOverlayView hide:YES];
+        
         [self didLogin];
     } failure:^(NSError *error) {
+        [progressOverlayView hide:YES];
+        
         if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
             NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
@@ -82,10 +96,16 @@
     }];
 }
 
-- (void)loginWithFacebookSuccess {
+- (void)loginWithFacebook {
+    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
+    
     [[BMEClient sharedClient] loginUsingFacebookWithSuccesss:^(BMEToken *token) {
+        [progressOverlayView hide:YES];
+        
         [self didLogin];
     } loginFailure:^(NSError *error) {
+        [progressOverlayView hide:YES];
+        
         if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
             NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
@@ -100,6 +120,8 @@
             [alert show];
         }
     } accountFailure:^(NSError *error) {
+        [progressOverlayView hide:YES];
+        
         NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE", @"BMELoginViewController", @"Title in alert view shown when log in to Facebook failed");
         NSString *cancelButtonTitle = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when log in to Facebook failed");
         NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when logging into Facebook but it failed because authentication failed");

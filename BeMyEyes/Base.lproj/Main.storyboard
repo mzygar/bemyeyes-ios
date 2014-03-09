@@ -279,10 +279,10 @@
             </objects>
             <point key="canvasLocation" x="735" y="-236"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Login View Controller - Test-->
         <scene sceneID="Olh-l6-fc2">
             <objects>
-                <viewController id="ihY-sp-kva" customClass="BMELoginViewController" sceneMemberID="viewController">
+                <viewController title="Test" id="ihY-sp-kva" customClass="BMELoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C8u-Cq-BTi"/>
                         <viewControllerLayoutGuide type="bottom" id="fkq-c6-sC8"/>
