@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -467,6 +467,7 @@
                         <outlet property="emailTextField" destination="bty-AZ-yfq" id="aoU-yt-91g"/>
                         <outlet property="passwordTextField" destination="ITa-1Y-MSv" id="0ao-5k-ndG"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="0nh-WJ-G11"/>
+                        <segue destination="tRy-Ev-R6e" kind="push" identifier="Registered" id="h1h-es-Gdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAG-ss-trN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -752,11 +753,82 @@
                         <outlet property="termsBottomLabel" destination="i0m-2e-mzC" id="p09-xj-Kwd"/>
                         <outlet property="termsTopLabel" destination="lF4-WI-FKM" id="UBL-YO-kbW"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="Ce4-tx-KmL"/>
+                        <segue destination="4fN-kL-DOK" kind="push" identifier="Registered" id="aMJ-13-MXV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6C-aM-2p2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1285" y="155"/>
+        </scene>
+        <!--Registered View Controller-->
+        <scene sceneID="7YK-U2-v1c">
+            <objects>
+                <viewController id="4fN-kL-DOK" customClass="BMERegisteredViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rkb-OG-som"/>
+                        <viewControllerLayoutGuide type="bottom" id="iXm-gO-YDc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zbs-1A-SFl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-fe-WGF">
+                                <rect key="frame" x="20" y="161" width="280" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sådan!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="EnW-DA-GD2">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="29"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Du er nu registreret." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="fsI-0Y-m1f">
+                                        <rect key="frame" x="0.0" y="81" width="280" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Gij-9g-oWe"/>
+                                    <constraint firstAttribute="height" constant="158" id="LPe-AE-tXb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EV-zp-tEr">
+                                <rect key="frame" x="190" y="400" width="120" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="UYr-4R-ry3"/>
+                                    <constraint firstAttribute="width" constant="120" id="eav-VG-NeD"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="85" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Log ind" image="NextButton">
+                                    <color key="titleColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.23921568630000001" green="0.40784313729999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="4fN-kL-DOK" eventType="touchUpInside" id="eSG-sQ-FHA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="8vi-fe-WGF" secondAttribute="centerX" id="2FF-f6-MQB"/>
+                            <constraint firstAttribute="centerY" secondItem="8vi-fe-WGF" secondAttribute="centerY" id="ALH-u6-LDa"/>
+                            <constraint firstAttribute="trailing" secondItem="0EV-zp-tEr" secondAttribute="trailing" constant="10" id="MtL-9d-x7v"/>
+                            <constraint firstItem="iXm-gO-YDc" firstAttribute="top" secondItem="0EV-zp-tEr" secondAttribute="bottom" constant="20" id="ue3-XL-FV7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Thf-M1-wIg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ho5-nl-OHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2680" y="2371"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gq3-SN-wDx">
@@ -1045,6 +1117,14 @@
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wie-Tk-LaC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn2-b7-aYh">
+                                <rect key="frame" x="122" y="229" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
@@ -1069,7 +1149,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kdn-ps-MZv"/>
-        <segue reference="Ce4-tx-KmL"/>
+        <segue reference="46J-Mt-BiQ"/>
+        <segue reference="h1h-es-Gdp"/>
     </inferredMetricsTieBreakers>
 </document>

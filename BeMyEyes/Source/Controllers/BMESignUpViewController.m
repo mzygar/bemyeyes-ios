@@ -7,10 +7,12 @@
 //
 
 #import "BMESignUpViewController.h"
+#import <MRProgress/MRProgress.h>
 #import "BMEClient.h"
 
 #define BMESignUpMinimumPasswordLength 6
 #define BMESignUpLoggedInSegue @"LoggedIn"
+#define BMERegisteredSegue @"Registered"
 
 @interface BMESignUpViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -48,28 +50,40 @@
 
 - (IBAction)signUpButtonPressed:(id)sender {
     if ([self isInformationValid]) {
+        MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
+        progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
+        progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REGISTERING_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when registering");
+        
         NSString *email = [self.emailTextField text];
         NSString *password = [self.passwordTextField text];
         NSString *firstName = [self.firstNameTextField text];
         NSString *lastName = [self.lastNameTextField text];
         [[BMEClient sharedClient] createUserWithEmail:email password:password firstName:firstName lastName:lastName role:self.role completion:^(BOOL success, NSError *error) {
             if (success && !error) {
+                progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when logging in");
+                
                 [[BMEClient sharedClient] loginWithEmail:email password:password success:^(BMEToken *token) {
+                    [progressOverlayView hide:YES];
+                    
                     [self didLogin];
                 } failure:^(NSError *error) {
+                    [progressOverlayView hide:YES];
                     
+                    [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
                 }];
             } else {
+                [progressOverlayView hide:YES];
+                
                 if ([error code] == BMEClientErrorUserEmailAlreadyRegistered) {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_TITLE", @"SignUpViewController", @"Title in alert view shown when e-mail is already registered.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE", @"SignUpViewController", @"Message in alert view shown when e-mail is already registered.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_CANCEL", @"SignUpViewController", @"Title of cancel button in alert view shown when e-mail is already registered.");
+                    NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_TITLE", @"BMESignUpViewController", @"Title in alert view shown when e-mail is already registered.");
+                    NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when e-mail is already registered.");
+                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when e-mail is already registered.");
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                     [alert show];
                 } else {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_TITLE", @"SignUpViewController", @"Title in alert view shown when a network error occurred.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_MESSAGE", @"SignUpViewController", @"Message in alert view shown when a network error occurred.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_CANCEL", @"SignUpViewController", @"Title of cancel button in alert view shown when a network error occurred.");
+                    NSString *title = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_TITLE", @"BMESignUpViewController", @"Title in alert view shown when a network error occurred.");
+                    NSString *message = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when a network error occurred.");
+                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when a network error occurred.");
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                     [alert show];
                 }
@@ -107,17 +121,17 @@
         
         return NO;
     } else if (![self isEmailValid:[self.emailTextField text]]) {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_TITLE", @"SignUpViewController", @"Title in alert view shown when the e-mail is not valid.");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_MESSAGE", @"SignUpViewController", @"Message in alert view shown when the e-mail is not valid.");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_CANCEL", @"SignUpViewController", @"Title of cancel button in alert view shown when the e-mail is not valid.");
+        NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_TITLE", @"BMESignUpViewController", @"Title in alert view shown when the e-mail is not valid.");
+        NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when the e-mail is not valid.");
+        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when the e-mail is not valid.");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
         
         return NO;
     } else if ([[self.passwordTextField text] length] < BMESignUpMinimumPasswordLength) {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_TITLE", @"SignUpViewController", @"Title in alert view shown when the password is too short.");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_MESSAGE", @"SignUpViewController", @"Message in alert view shown when the password is too short.");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_CANCEL", @"SignUpViewController", @"Title of cancel button in alert view shown when the password is too short.");
+        NSString *title = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_TITLE", @"BMESignUpViewController", @"Title in alert view shown when the password is too short.");
+        NSString *message = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when the password is too short.");
+        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when the password is too short.");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
         

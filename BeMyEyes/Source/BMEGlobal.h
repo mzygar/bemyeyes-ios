@@ -9,7 +9,7 @@
 #ifndef BMEGlobal_h
 #define BMEGlobal_h
 
-#define BMEAPIBaseUrl @"http://api.bemyeyes.org/"
+#define BMEAPIBaseUrl @"http://devapi.bemyeyes.org/"
 #define BMEAPIUsername @"bemyeyes"
 #define BMEAPIPassword @"detersmart"
 

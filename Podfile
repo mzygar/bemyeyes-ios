@@ -5,4 +5,4 @@ pod 'AFNetworking', '~> 1.3.2'
 pod 'DCKeyValueObjectMapping'
 pod 'ISO8601DateFormatter', '~> 0.7'
 pod 'HPSocialNetworkManager', :git => 'https://github.com/bemyeyes/HPSocialNetworkManager.git'
-
+pod 'MRProgress', '~> 0.4.1'

@@ -24,3 +24,10 @@
 
 /* Title in alert view shown when log in to Facebook failed */
 "ALERT_NOT_LOGGED_IN_TITLE" = "Authentication failed";
+
+/* Title in overlay displayed when logging in */
+"OVERLAY_LOGGING_IN_TITLE" = "Logging in...";
+
+/* Title in overlay displayed when registering */
+"OVERLAY_REGISTERING_TITLE" = "Registering...";
+
