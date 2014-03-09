@@ -160,10 +160,11 @@
             </objects>
             <point key="canvasLocation" x="195" y="111"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Top Navigation Controller-->
         <scene sceneID="eg8-GG-mp5">
             <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="NHr-Jb-n4i" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBd-Zc-0Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="NHr-Jb-n4i" customClass="BMETopNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pvb-fY-Etg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -171,7 +172,6 @@
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="i30-QA-rB5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tBd-Zc-0Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-298" y="111"/>
         </scene>
@@ -1087,10 +1087,10 @@
             </objects>
             <point key="canvasLocation" x="2129" y="453"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="28i-Ah-CML">
             <objects>
-                <viewController storyboardIdentifier="Menu" automaticallyAdjustsScrollViewInsets="NO" id="MrC-au-WgT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" automaticallyAdjustsScrollViewInsets="NO" id="MrC-au-WgT" customClass="BMESettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i9w-7H-kvL"/>
                         <viewControllerLayoutGuide type="bottom" id="ThA-Ho-cH9"/>
@@ -1098,18 +1098,41 @@
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oA8-ms-JHo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvF-nc-9Hj">
+                                <rect key="frame" x="263" y="100" width="57" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="8Rh-XE-b87"/>
+                                    <constraint firstAttribute="height" constant="50" id="RDT-Uu-SPU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="SettingsBackButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="N0m-gc-YxM" kind="unwind" identifier="UnwindSettings" unwindAction="popController:" id="gf6-ZP-BoH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.54901960780000003" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tvF-nc-9Hj" secondAttribute="trailing" id="eRh-wk-NcB"/>
+                            <constraint firstItem="tvF-nc-9Hj" firstAttribute="top" secondItem="i9w-7H-kvL" secondAttribute="bottom" constant="80" id="hxn-Mi-4tX"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="N0m-gc-YxM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="1183"/>
+            <point key="canvasLocation" x="3107" y="1775"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="xFF-Ds-18S">
             <objects>
-                <viewController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="tRy-Ev-R6e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="tRy-Ev-R6e" customClass="BMEMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jAU-qz-HWi"/>
                         <viewControllerLayoutGuide type="bottom" id="Raa-Fe-OjV"/>
@@ -1118,14 +1141,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn2-b7-aYh">
-                                <rect key="frame" x="122" y="229" width="77" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKH-X4-RrH">
+                                <rect key="frame" x="0.0" y="100" width="57" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="Y2k-g9-MKp"/>
+                                    <constraint firstAttribute="height" constant="50" id="qE1-KE-0WZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="SettingsButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MrC-au-WgT" kind="custom" identifier="" customClass="BMERightToLeftSegue" id="Zkk-7c-PpU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SKH-X4-RrH" firstAttribute="leading" secondItem="Wie-Tk-LaC" secondAttribute="leading" id="gmc-jR-vYj"/>
+                            <constraint firstItem="SKH-X4-RrH" firstAttribute="top" secondItem="jAU-qz-HWi" secondAttribute="bottom" constant="80" id="tUO-7O-GCD"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="J3P-1Q-bWx"/>
@@ -1139,6 +1175,8 @@
         <image name="BackButton" width="18" height="31"/>
         <image name="LogoNoText" width="183" height="116"/>
         <image name="NextButton" width="32" height="59"/>
+        <image name="SettingsBackButton" width="57" height="50"/>
+        <image name="SettingsButton" width="57" height="50"/>
         <image name="SignUpEmail" width="28" height="18"/>
         <image name="SignUpName" width="28" height="24"/>
         <image name="SignUpPassword" width="28" height="28"/>

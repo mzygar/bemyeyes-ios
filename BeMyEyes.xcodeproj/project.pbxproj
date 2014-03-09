@@ -36,6 +36,10 @@
 		7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301518BA39DF006F388C /* QuartzCore.framework */; };
 		7262301818BA39E3006F388C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301718BA39E3006F388C /* Security.framework */; };
 		7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569518CC874500E1A9EE /* BMERegisteredViewController.m */; };
+		7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */; };
+		7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */; };
+		7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */; };
+		729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729656A418CC933F00E1A9EE /* BMETopNavigationController.m */; };
 		72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71018B907CB0048FA90 /* BMEClient.m */; };
 		72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71218B907CB0048FA90 /* BMERoleConverter.m */; };
 		72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71718B907D10048FA90 /* BMEOpenTokSession.m */; };
@@ -100,6 +104,14 @@
 		7262301718BA39E3006F388C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7296569418CC874500E1A9EE /* BMERegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERegisteredViewController.h; sourceTree = "<group>"; };
 		7296569518CC874500E1A9EE /* BMERegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERegisteredViewController.m; sourceTree = "<group>"; };
+		7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEMainViewController.h; sourceTree = "<group>"; };
+		7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEMainViewController.m; sourceTree = "<group>"; };
+		7296569A18CC8C4B00E1A9EE /* BMESettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESettingsViewController.h; sourceTree = "<group>"; };
+		7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESettingsViewController.m; sourceTree = "<group>"; };
+		7296569D18CC8D3200E1A9EE /* BMERightToLeftSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERightToLeftSegue.h; sourceTree = "<group>"; };
+		7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERightToLeftSegue.m; sourceTree = "<group>"; };
+		729656A318CC933E00E1A9EE /* BMETopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETopNavigationController.h; sourceTree = "<group>"; };
+		729656A418CC933F00E1A9EE /* BMETopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETopNavigationController.m; sourceTree = "<group>"; };
 		72DEF70F18B907CB0048FA90 /* BMEClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEClient.h; sourceTree = "<group>"; };
 		72DEF71018B907CB0048FA90 /* BMEClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEClient.m; sourceTree = "<group>"; };
 		72DEF71118B907CB0048FA90 /* BMERoleConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERoleConverter.h; sourceTree = "<group>"; };
@@ -301,6 +313,10 @@
 				7296569518CC874500E1A9EE /* BMERegisteredViewController.m */,
 				72DEF73918B90E930048FA90 /* BMELoginViewController.h */,
 				72DEF73A18B90E930048FA90 /* BMELoginViewController.m */,
+				7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */,
+				7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */,
+				7296569A18CC8C4B00E1A9EE /* BMESettingsViewController.h */,
+				7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +328,10 @@
 				72DEF71018B907CB0048FA90 /* BMEClient.m */,
 				72DEF71118B907CB0048FA90 /* BMERoleConverter.h */,
 				72DEF71218B907CB0048FA90 /* BMERoleConverter.m */,
+				7296569D18CC8D3200E1A9EE /* BMERightToLeftSegue.h */,
+				7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */,
+				729656A318CC933E00E1A9EE /* BMETopNavigationController.h */,
+				729656A418CC933F00E1A9EE /* BMETopNavigationController.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -489,8 +509,11 @@
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
+				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
+				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
+				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
@@ -501,6 +524,7 @@
 				72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */,
 				72E65FA418BA7C12002FB2E0 /* BMEIntroViewController.m in Sources */,
 				72DEF73B18B90E930048FA90 /* BMELoginViewController.m in Sources */,
+				729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
