@@ -40,6 +40,7 @@
 		7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */; };
 		7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */; };
 		729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729656A418CC933F00E1A9EE /* BMETopNavigationController.m */; };
+		729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */; };
 		72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71018B907CB0048FA90 /* BMEClient.m */; };
 		72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71218B907CB0048FA90 /* BMERoleConverter.m */; };
 		72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71718B907D10048FA90 /* BMEOpenTokSession.m */; };
@@ -112,6 +113,7 @@
 		7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERightToLeftSegue.m; sourceTree = "<group>"; };
 		729656A318CC933E00E1A9EE /* BMETopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETopNavigationController.h; sourceTree = "<group>"; };
 		729656A418CC933F00E1A9EE /* BMETopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETopNavigationController.m; sourceTree = "<group>"; };
+		729656A718CC9D5F00E1A9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESettingsViewController.strings; sourceTree = "<group>"; };
 		72DEF70F18B907CB0048FA90 /* BMEClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEClient.h; sourceTree = "<group>"; };
 		72DEF71018B907CB0048FA90 /* BMEClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEClient.m; sourceTree = "<group>"; };
 		72DEF71118B907CB0048FA90 /* BMERoleConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERoleConverter.h; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				72E65F9C18BA7A35002FB2E0 /* BMESignUpViewController.strings */,
 				72E65F9F18BA7A4E002FB2E0 /* BMELoginViewController.strings */,
 				72E65FA818BA81BB002FB2E0 /* BMESignUpMethodViewController.strings */,
+				729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
+				729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */,
 				7236E01118B8A87B00F622AA /* Main.storyboard in Resources */,
 				72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodViewController.strings in Resources */,
 			);
@@ -545,6 +549,14 @@
 				7236E01018B8A87B00F622AA /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				729656A718CC9D5F00E1A9EE /* en */,
+			);
+			name = BMESettingsViewController.strings;
 			sourceTree = "<group>";
 		};
 		72E65F9C18BA7A35002FB2E0 /* BMESignUpViewController.strings */ = {

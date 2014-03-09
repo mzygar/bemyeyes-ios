@@ -51,3 +51,7 @@
 
 /* Title in alert view shown when a network error occurred during e-mail log in. */
 "ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE" = "An error occurred";
+
+/* Title in overlay displayed when logging in */
+"OVERLAY_LOGGING_IN_TITLE" = "Logging in...";
+

@@ -174,6 +174,13 @@
 - (void)logoutWithCompletion:(void (^)(BOOL, NSError *))completion {
     NSDictionary *parameters = @{ @"token" : [self token] };
     [self putPath:@"users/logout" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[HPAccountManager sharedManager] resetCachedTokens];
+        
+        [self storeToken:nil];
+        [self storeTokenExpiryDate:nil];
+        
+        _loggedIn = NO;
+        
         if (completion) {
             completion(YES, nil);
         }
@@ -182,11 +189,6 @@
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];
-    
-    [self storeToken:nil];
-    [self storeTokenExpiryDate:nil];
-    
-    _loggedIn = NO;
 }
 
 #pragma mark -

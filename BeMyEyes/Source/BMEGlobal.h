@@ -22,6 +22,8 @@
 #define BMEMainControllerIdentifier @"Main"
 #define BMEMenuControllerIdentifier @"Menu"
 
+#define BMEDidLogOutNotification @"BMEDidLogOutNotification"
+
 typedef NS_ENUM(NSInteger, BMERole) {
     BMERoleBlind = 0,
     BMERoleHelper,

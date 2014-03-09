@@ -97,14 +97,14 @@
 }
 
 - (void)loginWithFacebook {
-    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
+//    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
     
     [[BMEClient sharedClient] loginUsingFacebookWithSuccesss:^(BMEToken *token) {
-        [progressOverlayView hide:YES];
+//        [progressOverlayView hide:YES];
         
         [self didLogin];
     } loginFailure:^(NSError *error) {
-        [progressOverlayView hide:YES];
+//        [progressOverlayView hide:YES];
         
         if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
@@ -120,7 +120,7 @@
             [alert show];
         }
     } accountFailure:^(NSError *error) {
-        [progressOverlayView hide:YES];
+//        [progressOverlayView hide:YES];
         
         NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE", @"BMELoginViewController", @"Title in alert view shown when log in to Facebook failed");
         NSString *cancelButtonTitle = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when log in to Facebook failed");

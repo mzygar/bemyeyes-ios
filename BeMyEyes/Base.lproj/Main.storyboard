@@ -1114,11 +1114,30 @@
                                     <segue destination="N0m-gc-YxM" kind="unwind" identifier="UnwindSettings" unwindAction="popController:" id="gf6-ZP-BoH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af5-uQ-5WX">
+                                <rect key="frame" x="0.0" y="420" width="90" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IsS-Qh-oVk"/>
+                                    <constraint firstAttribute="width" constant="90" id="jHk-cj-J5R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="20"/>
+                                <state key="normal" title="Log ud">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="MrC-au-WgT" eventType="touchUpInside" id="2tY-dR-jpX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.54901960780000003" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tvF-nc-9Hj" secondAttribute="trailing" id="eRh-wk-NcB"/>
                             <constraint firstItem="tvF-nc-9Hj" firstAttribute="top" secondItem="i9w-7H-kvL" secondAttribute="bottom" constant="80" id="hxn-Mi-4tX"/>
+                            <constraint firstItem="ThA-Ho-cH9" firstAttribute="top" secondItem="af5-uQ-5WX" secondAttribute="bottom" id="pHg-Tv-bbv"/>
+                            <constraint firstItem="af5-uQ-5WX" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" id="rzC-Zk-EHQ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
