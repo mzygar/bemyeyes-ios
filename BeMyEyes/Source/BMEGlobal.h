@@ -20,6 +20,8 @@
 #define BMEFacebookAppId @"771890076161460"
 
 #define BMEMainControllerIdentifier @"Main"
+#define BMEMainBlindControllerIdentifier @"MainBlind"
+#define BMEMainHelperControllerIdentifier @"MainHelper"
 #define BMEMenuControllerIdentifier @"Menu"
 
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"

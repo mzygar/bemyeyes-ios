@@ -7,8 +7,11 @@
 //
 
 #import "BMEMainViewController.h"
+#import "BMEClient.h"
+#import "BMEUser.h"
 
 @interface BMEMainViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (assign, nonatomic, getter = isLoggedOut) BOOL loggedOut;
 @end
 
@@ -21,6 +24,21 @@
     [super awakeFromNib];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogOut:) name:BMEDidLogOutNotification object:nil];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    switch ([BMEClient sharedClient].currentUser.role) {
+        case BMERoleHelper:
+            [self displayHelperView];
+            break;
+        case BMERoleBlind:
+            [self displayBlindView];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -41,6 +59,23 @@
 #pragma mark Private Methods
 
 - (IBAction)popController:(UIStoryboardSegue *)segue { }
+
+- (void)displayHelperView {
+    [self displayMainControllerWithIdentifier:BMEMainHelperControllerIdentifier];
+}
+
+- (void)displayBlindView {
+    [self displayMainControllerWithIdentifier:BMEMainBlindControllerIdentifier];
+}
+
+- (void)displayMainControllerWithIdentifier:(NSString *)identifier {
+    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+    [self addChildViewController:controller];
+    [self.view insertSubview:controller.view belowSubview:self.settingsButton];
+    [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
 
 #pragma mark -
 #pragma mark Notifications

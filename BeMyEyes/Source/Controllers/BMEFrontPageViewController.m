@@ -9,7 +9,8 @@
 #import "BMEFrontPageViewController.h"
 #import "BMEIntroViewController.h"
 
-#define BMEFrontPageIntroSegue @"Intro"
+#define BMEFrontPageIntroHelperSegue @"IntroHelper"
+#define BMEFrontPageIntroBlindSegue @"IntroBlind"
 
 @interface BMEFrontPageViewController ()
 @property (assign, nonatomic) BMERole role;
@@ -18,22 +19,13 @@
 @implementation BMEFrontPageViewController
 
 #pragma mark -
-#pragma mark Private Methods
-
-- (IBAction)helperButtonPressed:(id)sender {
-    self.role = BMERoleHelper;
-}
-
-- (IBAction)blindButtonPressed:(id)sender {
-    self.role = BMERoleBlind;
-}
-
-#pragma mark -
 #pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:BMEFrontPageIntroSegue]) {
-        ((BMEIntroViewController *)segue.destinationViewController).role = self.role;
+    if ([segue.identifier isEqualToString:BMEFrontPageIntroHelperSegue]) {
+        ((BMEIntroViewController *)segue.destinationViewController).role = BMERoleHelper;
+    } else if ([segue.identifier isEqualToString:BMEFrontPageIntroBlindSegue]) {
+        ((BMEIntroViewController *)segue.destinationViewController).role = BMERoleBlind;
     }
 }
 

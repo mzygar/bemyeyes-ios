@@ -23,7 +23,8 @@
 #import "BMERoleConverter.h"
 
 #define BMEClientTokenKey @"BMEClientToken"
-#define BMEClientTokenExpiryDate @"BMEClientTokenExpiryDate"
+#define BMEClientCurrentUserKey @"BMEClientCurrentUser"
+#define BMEClientTokenExpiryDateKey @"BMEClientTokenExpiryDate"
 
 @interface BMEClient ()
 @property (assign, nonatomic, getter = hasConfiguredFacebookLogin) BOOL configuredFacebookLogin;
@@ -140,7 +141,8 @@
     [self putPath:@"users/login/token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         _loggedIn = YES;
         
-        _currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
+        BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
+        [self storeCurrentUser:currentUser];
 
         if (completion)
         {
@@ -148,7 +150,8 @@
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         _loggedIn = NO;
-        _currentUser = nil;
+        
+        [self storeCurrentUser:nil];
         
         if (completion)
         {
@@ -342,12 +345,17 @@
 #pragma mark -
 #pragma mark Public Accessors
 
+- (BMEUser *)currentUser {
+    NSData *userData = [[NSUserDefaults standardUserDefaults] objectForKey:BMEClientCurrentUserKey];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+}
+
 - (NSString *)token {
     return [[NSUserDefaults standardUserDefaults] objectForKey:BMEClientTokenKey];
 }
 
 - (NSDate *)tokenExpiryDate {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:BMEClientTokenExpiryDate];
+    return [[NSUserDefaults standardUserDefaults] objectForKey:BMEClientTokenExpiryDateKey];
 }
 
 - (BOOL)isTokenValid {
@@ -376,7 +384,9 @@
         [self storeTokenExpiryDate:token.expiryDate];
         
         _loggedIn = YES;
-        _currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
+        
+        BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
+        [self storeCurrentUser:currentUser];
         
         if (success) {
             success(token);
@@ -431,13 +441,34 @@
     return [NSError errorWithDomain:BMEErrorDomain code:code userInfo:@{ NSLocalizedDescriptionKey : message }];
 }
 
+- (void)storeCurrentUser:(BMEUser *)user {
+    if (user) {
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:user];
+        [[NSUserDefaults standardUserDefaults] setObject:userData forKey:BMEClientCurrentUserKey];
+    } else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:BMEClientCurrentUserKey];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)storeToken:(NSString *)token {
-    [[NSUserDefaults standardUserDefaults] setObject:token forKey:BMEClientTokenKey];
+    if (token) {
+        [[NSUserDefaults standardUserDefaults] setObject:token forKey:BMEClientTokenKey];
+    } else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:BMEClientTokenKey];
+    }
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)storeTokenExpiryDate:(NSDate *)date {
-    [[NSUserDefaults standardUserDefaults] setObject:date forKey:BMEClientTokenExpiryDate];
+    if (date) {
+        [[NSUserDefaults standardUserDefaults] setObject:date forKey:BMEClientTokenExpiryDateKey];
+    } else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:BMEClientTokenExpiryDateKey];
+    }
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

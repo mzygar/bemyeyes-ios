@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BMEUser : NSObject
+@interface BMEUser : NSObject <NSCoding>
 
 @property (readonly, nonatomic) NSUInteger identifier;
 @property (readonly, nonatomic) NSString *userId;

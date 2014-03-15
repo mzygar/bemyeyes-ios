@@ -41,6 +41,8 @@
 		7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */; };
 		729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729656A418CC933F00E1A9EE /* BMETopNavigationController.m */; };
 		729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */; };
+		72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */; };
+		72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */; };
 		72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71018B907CB0048FA90 /* BMEClient.m */; };
 		72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71218B907CB0048FA90 /* BMERoleConverter.m */; };
 		72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71718B907D10048FA90 /* BMEOpenTokSession.m */; };
@@ -114,6 +116,10 @@
 		729656A318CC933E00E1A9EE /* BMETopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETopNavigationController.h; sourceTree = "<group>"; };
 		729656A418CC933F00E1A9EE /* BMETopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETopNavigationController.m; sourceTree = "<group>"; };
 		729656A718CC9D5F00E1A9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESettingsViewController.strings; sourceTree = "<group>"; };
+		72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEHelperMainViewController.h; sourceTree = "<group>"; };
+		72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEHelperMainViewController.m; sourceTree = "<group>"; };
+		72DA826918D45B61001F3312 /* BMEBlindMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEBlindMainViewController.h; sourceTree = "<group>"; };
+		72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEBlindMainViewController.m; sourceTree = "<group>"; };
 		72DEF70F18B907CB0048FA90 /* BMEClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEClient.h; sourceTree = "<group>"; };
 		72DEF71018B907CB0048FA90 /* BMEClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEClient.m; sourceTree = "<group>"; };
 		72DEF71118B907CB0048FA90 /* BMERoleConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERoleConverter.h; sourceTree = "<group>"; };
@@ -317,6 +323,10 @@
 				72DEF73A18B90E930048FA90 /* BMELoginViewController.m */,
 				7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */,
 				7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */,
+				72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */,
+				72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */,
+				72DA826918D45B61001F3312 /* BMEBlindMainViewController.h */,
+				72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */,
 				7296569A18CC8C4B00E1A9EE /* BMESettingsViewController.h */,
 				7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */,
 			);
@@ -427,7 +437,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BME;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Be My Eyes";
 			};
 			buildConfigurationList = 7236DFF518B8A87B00F622AA /* Build configuration list for PBXProject "BeMyEyes" */;
@@ -514,12 +524,14 @@
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
+				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
+				72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */,
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
 				72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */,
 				72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */,
@@ -590,7 +602,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -629,7 +640,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -662,7 +672,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -679,7 +688,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
