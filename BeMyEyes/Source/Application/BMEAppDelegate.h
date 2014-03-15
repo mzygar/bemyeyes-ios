@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#define TheAppDelegate ((BMEAppDelegate *)[UIApplication sharedApplication].delegate)
+
 @interface BMEAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (void)registerForRemoteNotifications;
+- (void)requirePushNotificationsEnabled:(void(^)(BOOL isEnabled))handler;
 
 @end

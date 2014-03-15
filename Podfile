@@ -7,3 +7,5 @@ pod 'ISO8601DateFormatter', '~> 0.7'
 pod 'HPSocialNetworkManager', :git => 'https://github.com/bemyeyes/HPSocialNetworkManager.git'
 pod 'MRProgress', '~> 0.4.1'
 pod 'Masonry', '~> 0.4.0'
+pod 'PSAlertView', '~> 1.1'
+

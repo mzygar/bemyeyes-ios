@@ -8,6 +8,7 @@
 
 #import "BMESignUpViewController.h"
 #import <MRProgress/MRProgress.h>
+#import "BMEAppDelegate.h"
 #import "BMEClient.h"
 
 #define BMESignUpMinimumPasswordLength 6
@@ -49,6 +50,18 @@
 #pragma mark Private Methods
 
 - (IBAction)signUpButtonPressed:(id)sender {
+    if (self.role == BMERoleHelper) {
+        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
+            if (isEnabled) {
+                [self performRegistration];
+            }
+        }];
+    } else {
+        [self performRegistration];
+    }
+}
+
+- (void)performRegistration {
     if ([self isInformationValid]) {
         MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
         progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
@@ -93,6 +106,8 @@
 }
 
 - (void)didLogin {
+    [TheAppDelegate registerForRemoteNotifications];
+    
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }
 

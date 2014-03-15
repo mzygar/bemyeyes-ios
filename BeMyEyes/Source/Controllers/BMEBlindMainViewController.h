@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Be My Eyes. All rights reserved.
 //
 
-#import "BMEBaseViewController.h"
+#import "BMEBaseMainViewController.h"
 
-@interface BMEBlindMainViewController : BMEBaseViewController
+@interface BMEBlindMainViewController : BMEBaseMainViewController
 
 @end

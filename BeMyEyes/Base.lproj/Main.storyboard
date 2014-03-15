@@ -839,8 +839,30 @@
                     <view key="view" contentMode="scaleToFill" id="l5O-Mo-SKL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DQB-vd-Nyq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                                <state key="normal" title="Forbind til fællesskab">
+                                    <color key="titleColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectToCommunityButtonPressed:" destination="tm6-3P-dXI" eventType="touchUpInside" id="xYw-VK-RwG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Srd-lE-AKK" firstAttribute="top" secondItem="DQB-vd-Nyq" secondAttribute="bottom" id="2qB-8s-zGM"/>
+                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="top" secondItem="zhv-3s-ib2" secondAttribute="bottom" constant="-20" id="Esd-Dq-peb"/>
+                            <constraint firstAttribute="trailing" secondItem="DQB-vd-Nyq" secondAttribute="trailing" id="TFQ-KC-ekf"/>
+                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" id="wWq-aA-fyy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectToCommunityButton" destination="DQB-vd-Nyq" id="swz-Ee-N2b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt2-1B-bf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -857,7 +879,25 @@
                     <view key="view" contentMode="scaleToFill" id="AHJ-ED-lfq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.60392156860000001" green="0.36078431370000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="azd-oO-tKd">
+                                <rect key="frame" x="20" y="189" width="280" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="cdN-Lv-pcY"/>
+                                </constraints>
+                                <string key="text">Pt. kan du kun modtage opkald fra blinde.
+
+Vi vil snart have noget lækkert at vise dig her.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="azd-oO-tKd" secondAttribute="trailing" constant="20" id="6SQ-uz-kEM"/>
+                            <constraint firstItem="azd-oO-tKd" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" constant="20" id="J4k-0c-5AZ"/>
+                            <constraint firstAttribute="centerY" secondItem="azd-oO-tKd" secondAttribute="centerY" id="nPZ-Yq-V1s"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1243,7 +1283,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="h1h-es-Gdp"/>
         <segue reference="kdn-ps-MZv"/>
+        <segue reference="jzc-Nc-kCA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 #import "BMESignUpMethodViewController.h"
 #import <MRProgress/MRProgress.h>
+#import "BMEAppDelegate.h"
 #import "BMESignUpViewController.h"
 #import "BMEClient.h"
 #import "BMEFacebookInfo.h"
@@ -29,6 +30,18 @@
 #pragma mark Private Methods
 
 - (IBAction)facebookButtonPressed:(id)sender {
+    if (self.role == BMERoleHelper) {
+        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
+            if (isEnabled) {
+                [self performFacebookRegistration];
+            }
+        }];
+    } else {
+        [self performFacebookRegistration];
+    }
+}
+
+- (void)performFacebookRegistration {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
     progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REGISTERING_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when registering");
@@ -98,6 +111,8 @@
 }
 
 - (void)didLogin {
+    [TheAppDelegate registerForRemoteNotifications];
+    
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }
 

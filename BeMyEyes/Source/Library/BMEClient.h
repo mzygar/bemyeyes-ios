@@ -48,7 +48,7 @@ enum {
 - (void)loginUsingFacebookWithSuccesss:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
 - (void)logoutWithCompletion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void)createRequestWithSuccess:(void (^)(BMERequest *))success failure:(void (^)(NSError *))failure;
+- (void)createRequestWithSuccess:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)loadRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)answerRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)cancelAnswerForRequestWithShortId:(NSString *)shortId completion:(void (^)(BOOL success, NSError *error))completion;
