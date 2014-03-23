@@ -13,6 +13,8 @@
 #define BMEAPIUsername @"bemyeyes"
 #define BMEAPIPassword @"detersmart"
 
+#define BMEOpenTokAPIKey @"37356882"
+
 #define BMESecuritySalt @"friepRlu7luziuwroagoustOatlebrIuspoa5luriahoeno0"
 
 #define BMEErrorDomain @"org.bemyeyes.BeMyEyes"
@@ -23,6 +25,7 @@
 #define BMEMainBlindControllerIdentifier @"MainBlind"
 #define BMEMainHelperControllerIdentifier @"MainHelper"
 #define BMEMenuControllerIdentifier @"Menu"
+#define BMECallControllerIdentifier @"Call"
 
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"
 

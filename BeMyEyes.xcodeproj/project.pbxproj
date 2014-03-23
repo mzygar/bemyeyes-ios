@@ -41,11 +41,14 @@
 		7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */; };
 		729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729656A418CC933F00E1A9EE /* BMETopNavigationController.m */; };
 		729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */; };
+		72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */; };
+		72B1493718DF65F900E9A8A9 /* FakeiOS7.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */; };
+		72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B1493818DF686600E9A8A9 /* BMECallViewController.strings */; };
+		72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */; };
 		72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */; };
 		72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */; };
 		72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */; };
 		72DA827118D46C6A001F3312 /* BMEAppDelegate.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826F18D46C6A001F3312 /* BMEAppDelegate.strings */; };
-		72DA827418D46DED001F3312 /* BMEBaseMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA827318D46DED001F3312 /* BMEBaseMainViewController.m */; };
 		72DA827718D4716A001F3312 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA827518D4716A001F3312 /* Localizable.strings */; };
 		72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71018B907CB0048FA90 /* BMEClient.m */; };
 		72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71218B907CB0048FA90 /* BMERoleConverter.m */; };
@@ -120,14 +123,18 @@
 		729656A318CC933E00E1A9EE /* BMETopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETopNavigationController.h; sourceTree = "<group>"; };
 		729656A418CC933F00E1A9EE /* BMETopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETopNavigationController.m; sourceTree = "<group>"; };
 		729656A718CC9D5F00E1A9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESettingsViewController.strings; sourceTree = "<group>"; };
+		72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallViewController.h; sourceTree = "<group>"; };
+		72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallViewController.m; sourceTree = "<group>"; };
+		72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeiOS7.mm; sourceTree = "<group>"; };
+		72B1493918DF686600E9A8A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMECallViewController.strings; sourceTree = "<group>"; };
+		72B1493B18DF6AE100E9A8A9 /* BMESpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESpeaker.h; sourceTree = "<group>"; };
+		72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESpeaker.m; sourceTree = "<group>"; };
 		72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEHelperMainViewController.h; sourceTree = "<group>"; };
 		72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEHelperMainViewController.m; sourceTree = "<group>"; };
 		72DA826918D45B61001F3312 /* BMEBlindMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEBlindMainViewController.h; sourceTree = "<group>"; };
 		72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEBlindMainViewController.m; sourceTree = "<group>"; };
 		72DA826D18D4699F001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEBlindMainViewController.strings; sourceTree = "<group>"; };
 		72DA827018D46C6A001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEAppDelegate.strings; sourceTree = "<group>"; };
-		72DA827218D46DED001F3312 /* BMEBaseMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEBaseMainViewController.h; sourceTree = "<group>"; };
-		72DA827318D46DED001F3312 /* BMEBaseMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEBaseMainViewController.m; sourceTree = "<group>"; };
 		72DA827618D4716A001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		72DEF70F18B907CB0048FA90 /* BMEClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEClient.h; sourceTree = "<group>"; };
 		72DEF71018B907CB0048FA90 /* BMEClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEClient.m; sourceTree = "<group>"; };
@@ -285,6 +292,7 @@
 		7236E03318B8A9EA00F622AA /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */,
 				72DEF72218B908140048FA90 /* BMEGlobal.h */,
 				7236E03418B8A9EA00F622AA /* Application */,
 				7236E03718B8A9EA00F622AA /* Categories */,
@@ -332,14 +340,14 @@
 				72DEF73A18B90E930048FA90 /* BMELoginViewController.m */,
 				7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */,
 				7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */,
-				72DA827218D46DED001F3312 /* BMEBaseMainViewController.h */,
-				72DA827318D46DED001F3312 /* BMEBaseMainViewController.m */,
 				72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */,
 				72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */,
 				72DA826918D45B61001F3312 /* BMEBlindMainViewController.h */,
 				72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */,
 				7296569A18CC8C4B00E1A9EE /* BMESettingsViewController.h */,
 				7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */,
+				72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */,
+				72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +363,8 @@
 				7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */,
 				729656A318CC933E00E1A9EE /* BMETopNavigationController.h */,
 				729656A418CC933F00E1A9EE /* BMETopNavigationController.m */,
+				72B1493B18DF6AE100E9A8A9 /* BMESpeaker.h */,
+				72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -375,6 +385,7 @@
 				729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */,
 				72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */,
 				72DA826F18D46C6A001F3312 /* BMEAppDelegate.strings */,
+				72B1493818DF686600E9A8A9 /* BMECallViewController.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 			);
 			name = Localizable;
@@ -453,6 +464,11 @@
 				CLASSPREFIX = BME;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Be My Eyes";
+				TargetAttributes = {
+					7236DFF918B8A87B00F622AA = {
+						DevelopmentTeam = VS2JRRGV67;
+					};
+				};
 			};
 			buildConfigurationList = 7236DFF518B8A87B00F622AA /* Build configuration list for PBXProject "BeMyEyes" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -484,6 +500,7 @@
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
+				72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
 				729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */,
 				72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */,
@@ -536,6 +553,7 @@
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
+				72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
@@ -545,8 +563,10 @@
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
+				72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */,
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
+				72B1493718DF65F900E9A8A9 /* FakeiOS7.mm in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
 				72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */,
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
@@ -554,7 +574,6 @@
 				72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */,
 				72DEF71F18B907D10048FA90 /* BMERequest.m in Sources */,
 				72DEF73118B90A6D0048FA90 /* NSData+Base64.m in Sources */,
-				72DA827418D46DED001F3312 /* BMEBaseMainViewController.m in Sources */,
 				72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */,
 				72E65FA418BA7C12002FB2E0 /* BMEIntroViewController.m in Sources */,
 				72DEF73B18B90E930048FA90 /* BMELoginViewController.m in Sources */,
@@ -587,6 +606,14 @@
 				729656A718CC9D5F00E1A9EE /* en */,
 			);
 			name = BMESettingsViewController.strings;
+			sourceTree = "<group>";
+		};
+		72B1493818DF686600E9A8A9 /* BMECallViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72B1493918DF686600E9A8A9 /* en */,
+			);
+			name = BMECallViewController.strings;
 			sourceTree = "<group>";
 		};
 		72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */ = {
@@ -644,8 +671,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -675,7 +703,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1B2C7AE1-FF05-46B6-AD1B-B783779B9466";
+				PROVISIONING_PROFILE = "5627AC47-5357-4945-A8AD-6B66E6553254";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -684,8 +712,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -708,7 +737,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "1B2C7AE1-FF05-46B6-AD1B-B783779B9466";
+				PROVISIONING_PROFILE = "5627AC47-5357-4945-A8AD-6B66E6553254";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -720,12 +749,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5627AC47-5357-4945-A8AD-6B66E6553254";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -736,12 +767,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5627AC47-5357-4945-A8AD-6B66E6553254";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

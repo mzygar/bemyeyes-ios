@@ -7,9 +7,15 @@
 //
 
 #import "BMEAppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 #import <HPSocialNetworkManager/HPAccountManager.h>
 #import <PSAlertView/PSPDFAlertView.h>
 #import "BMEClient.h"
+#import "BMECallViewController.h"
+
+@interface BMEAppDelegate ()
+@property (strong, nonatomic) PSPDFAlertView *callAlertView;
+@end
 
 @implementation BMEAppDelegate
 
@@ -19,6 +25,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureRESTClient];
     [self checkIfLoggedIn];
+    [self checkIfAppOpenedByAnsweringWithLaunchOptions:launchOptions];
     
     return YES;
 }
@@ -62,6 +69,10 @@
     
     if (application.applicationState == UIApplicationStateActive) {
         if (shortId) {
+            if (self.callAlertView) {
+                [self.callAlertView dismissWithClickedButtonIndex:[self.callAlertView cancelButtonIndex] animated:NO];
+            }
+            
             NSString *actionLocKey = [alertInfo objectForKey:@"action-loc-key"];
             NSString *locKey = [alertInfo objectForKey:@"loc-key"];
             NSArray *locArgs = [alertInfo objectForKey:@"loc-args"];
@@ -74,17 +85,19 @@
             NSString *message = [NSString stringWithFormat:NSLocalizedString(locKey, nil), name];
             NSString *actionButton = NSLocalizedString(actionLocKey, nil);
             NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when a call is received while the app was active");
-            PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
-            [alertView addButtonWithTitle:actionButton block:^{
-//                [self handleAnswerActionForShortId:shortId];
+            
+            __weak typeof(self) weakSelf = self;
+            self.callAlertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+            [self.callAlertView addButtonWithTitle:actionButton block:^{
+                [weakSelf didAnswerCallWithShortId:shortId];
             }];
-            [alertView setCancelButtonWithTitle:cancelButton block:nil];
-            [alertView show];
+            [self.callAlertView setCancelButtonWithTitle:cancelButton block:nil];
+            [self.callAlertView show];
         }
     } else if (application.applicationState == UIApplicationStateInactive) {
         // If the application state was inactive, this means the user pressed an action button from a notification
         if (shortId) {
-//            [self handleAnswerActionForShortId:shortId];
+            [self didAnswerCallWithShortId:shortId];
         }
     }
 }
@@ -108,7 +121,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 }
 
-- (void)requirePushNotificationsEnabled:(void (^)(BOOL))handler {
+- (void)requirePushNotificationsEnabled:(void (^)(BOOL isEnabled))handler {
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     BOOL isEnabled = types & UIRemoteNotificationTypeAlert;
     if (!isEnabled) {
@@ -122,6 +135,22 @@
     if (handler) {
         handler(isEnabled);
     }
+}
+
+- (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion {
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        if (!granted) {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown when the microphone is disabled");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_MESSAGE", @"BMEAppDelegate", @"Message in alert view shown when the microphone is disabled");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_CANCEL_BUTTON", @"BMEAppDelegate", @"Title of cancel button in alert view shown when the microphone is disabled");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+        if (completion) {
+            completion(granted);
+        }
+    }];
 }
 
 #pragma mark -
@@ -154,6 +183,29 @@
 - (void)replaceTopController:(UIViewController *)topController {
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     navigationController.viewControllers = @[ topController ];
+}
+
+- (void)checkIfAppOpenedByAnsweringWithLaunchOptions:(NSDictionary *)launchOptions {
+    NSDictionary *userInfo = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    NSDictionary *alertInfo = [apsInfo objectForKey:@"alert"];
+    if ([alertInfo objectForKey:@"short_id"]) {
+        NSString *shortId = [alertInfo objectForKey:@"short_id"];
+        [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortId afterDelay:0.0f];
+    }
+}
+
+- (void)didAnswerCallWithShortId:(NSString *)shortId {
+    [self requireMicrophoneEnabled:^(BOOL isEnabled) {
+        if (isEnabled) {
+            BMECallViewController *callController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMECallControllerIdentifier];
+            callController.callMode = BMECallModeAnswer;
+            callController.shortId = shortId;
+            
+            UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+            [navigationController presentViewController:callController animated:YES completion:nil];
+        }
+    }];
 }
 
 @end

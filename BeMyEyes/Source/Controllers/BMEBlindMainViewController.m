@@ -7,8 +7,10 @@
 //
 
 #import "BMEBlindMainViewController.h"
-#import <MRProgress/MRProgressOverlayView.h>
-#import "BMEClient.h"
+#import "BMEAppDelegate.h"
+#import "BMECallViewController.h"
+
+#define BMEBlindMainCallSegue @"Call"
 
 @interface BMEBlindMainViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *connectToCommunityButton;
@@ -29,31 +31,21 @@
 #pragma mark Private Methods
 
 - (IBAction)connectToCommunityButtonPressed:(id)sender {
-    [self requireMicrophoneEnabled:^(BOOL isEnabled) {
+    [TheAppDelegate requireMicrophoneEnabled:^(BOOL isEnabled) {
         if (isEnabled) {
-            [self createRequest];
+            [self performSegueWithIdentifier:BMEBlindMainCallSegue sender:self];
         }
     }];
 }
 
-- (void)createRequest {
-    MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
-    progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"HUD_CREATING_REQUEST_TITLE", @"BMEBlindMainViewController", @"Title in hud shown when creating request");
-    
-    [[BMEClient sharedClient] createRequestWithSuccess:^(BMERequest *request) {
-        [progressOverlayView hide:YES];
-    } failure:^(NSError *error) {
-        [progressOverlayView hide:YES];
-        
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_TITLE", @"BMEBlindMainViewController", @"Title in alert showed when failed creating request");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_MESSAGE", @"BMEBlindMainViewController", @"Message in alert showed when failed creating request");
-        NSString *cancel = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_CANCEL", @"BMEBlindMainViewController", @"Cancel in alert showed when failed creating request");
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
-        [alertView show];
-        
-        NSLog(@"Request could not be created: %@", error);
-    }];
+#pragma mark -
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:BMEBlindMainCallSegue]) {
+        BMECallViewController *callController = (BMECallViewController *)segue.destinationViewController;
+        callController.callMode = BMECallModeCreate;
+    }
 }
 
 @end

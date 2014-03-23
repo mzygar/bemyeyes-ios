@@ -16,5 +16,6 @@
 
 - (void)registerForRemoteNotifications;
 - (void)requirePushNotificationsEnabled:(void(^)(BOOL isEnabled))handler;
+- (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion;
 
 @end

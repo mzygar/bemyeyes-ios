@@ -8,4 +8,4 @@ pod 'HPSocialNetworkManager', :git => 'https://github.com/bemyeyes/HPSocialNetwo
 pod 'MRProgress', '~> 0.4.1'
 pod 'Masonry', '~> 0.4.0'
 pod 'PSAlertView', '~> 1.1'
-
+pod 'OpenTokSDK-WebRTC', '~> 2.1.7'

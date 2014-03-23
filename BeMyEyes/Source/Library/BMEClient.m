@@ -347,7 +347,11 @@
 
 - (BMEUser *)currentUser {
     NSData *userData = [[NSUserDefaults standardUserDefaults] objectForKey:BMEClientCurrentUserKey];
-    return [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    if (userData) {
+        return [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    }
+    
+    return nil;
 }
 
 - (NSString *)token {
