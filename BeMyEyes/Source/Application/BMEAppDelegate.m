@@ -106,7 +106,7 @@
     // We cannot register the device of the user without knowing who he is.
     // That is, he needs to be logged in and thus have a token.
     if ([BMEClient sharedClient].token) {
-        [[BMEClient sharedClient] registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:NO completion:^(BOOL success, NSError *error) {
+        [[BMEClient sharedClient] registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
             if (error) {
                 NSLog(@"Failed registering device: %@", error);
             }

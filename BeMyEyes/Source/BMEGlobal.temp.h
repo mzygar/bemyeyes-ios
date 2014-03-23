@@ -19,6 +19,8 @@
 
 #define BMEFacebookAppId @""
 
+#define BMEIsProductionOrAdHoc true
+
 #define BMEErrorDomain @"org.bemyeyes.BeMyEyes"
 
 #define BMEMainControllerIdentifier @"Main"
