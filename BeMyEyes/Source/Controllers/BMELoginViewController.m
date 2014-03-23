@@ -44,6 +44,12 @@
         [alert show];
     } else {
         [self loginWithEmail:self.emailTextField.text password:self.passwordTextField.text];
+        
+        if ([self.emailTextField isFirstResponder]) {
+            [self.emailTextField resignFirstResponder];
+        } else if ([self.passwordTextField isFirstResponder]) {
+            [self.passwordTextField resignFirstResponder];
+        }
     }
 }
 
