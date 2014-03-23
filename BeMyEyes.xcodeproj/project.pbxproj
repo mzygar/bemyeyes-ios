@@ -112,6 +112,7 @@
 		7262301318BA39DB006F388C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7262301518BA39DF006F388C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7262301718BA39E3006F388C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		72858FA918DF81CE0002D6E1 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
 		7296569418CC874500E1A9EE /* BMERegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERegisteredViewController.h; sourceTree = "<group>"; };
 		7296569518CC874500E1A9EE /* BMERegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERegisteredViewController.m; sourceTree = "<group>"; };
 		7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEMainViewController.h; sourceTree = "<group>"; };
@@ -148,7 +149,7 @@
 		72DEF71B18B907D10048FA90 /* BMEToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEToken.m; sourceTree = "<group>"; };
 		72DEF71C18B907D10048FA90 /* BMEUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUser.h; sourceTree = "<group>"; };
 		72DEF71D18B907D10048FA90 /* BMEUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUser.m; sourceTree = "<group>"; };
-		72DEF72218B908140048FA90 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
+		72DEF72218B908140048FA90 /* BMEGlobal.temp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.temp.h; sourceTree = "<group>"; };
 		72DEF72518B90A6D0048FA90 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		72DEF72618B90A6D0048FA90 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
 		72DEF72718B90A6D0048FA90 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -293,7 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */,
-				72DEF72218B908140048FA90 /* BMEGlobal.h */,
+				72858FA918DF81CE0002D6E1 /* BMEGlobal.h */,
+				72DEF72218B908140048FA90 /* BMEGlobal.temp.h */,
 				7236E03418B8A9EA00F622AA /* Application */,
 				7236E03718B8A9EA00F622AA /* Categories */,
 				7236E03818B8A9EA00F622AA /* Controllers */,
@@ -671,7 +673,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -712,7 +713,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;

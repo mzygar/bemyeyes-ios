@@ -13,6 +13,10 @@
 #   files that we want to exclude
 #
 #########################
+
+####
+# Be My Eyes specific files
+BeMyEyes/Source/BMEGlobal.h
  
 #####
 # OS X temporary files that should never be committed
