@@ -171,6 +171,7 @@
 
 - (void)publish {
     self.publisher = [[OTPublisher alloc] initWithDelegate:self name:[BMEClient sharedClient].currentUser.firstName];
+    self.publisher.cameraPosition = AVCaptureDevicePositionBack;
     self.publisher.publishAudio = YES;
     self.publisher.publishVideo = [self isUserBlind];
     [self.session publish:self.publisher];
