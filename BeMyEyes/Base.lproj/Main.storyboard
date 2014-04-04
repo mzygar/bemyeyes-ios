@@ -880,22 +880,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At the moment you can only receive calls." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="azd-oO-tKd">
-                                <rect key="frame" x="20" y="189" width="280" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrP-pI-YAP" userLabel="Point Graph View" customClass="BMEPointGraphView">
+                                <rect key="frame" x="0.0" y="280" width="320" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="102" id="cdN-Lv-pcY"/>
+                                    <constraint firstAttribute="height" constant="200" id="WMT-ke-ljt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" red="0.10980392156862745" green="0.22352941176470587" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" red="0.74117647058823533" green="0.8901960784313725" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="azd-oO-tKd" secondAttribute="trailing" constant="20" id="6SQ-uz-kEM"/>
-                            <constraint firstItem="azd-oO-tKd" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" constant="20" id="J4k-0c-5AZ"/>
-                            <constraint firstAttribute="centerY" secondItem="azd-oO-tKd" secondAttribute="centerY" id="nPZ-Yq-V1s"/>
+                            <constraint firstItem="0cc-vG-sTm" firstAttribute="top" secondItem="zrP-pI-YAP" secondAttribute="bottom" id="Cwy-1m-a72"/>
+                            <constraint firstItem="zrP-pI-YAP" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="dOC-zI-dxB"/>
+                            <constraint firstAttribute="trailing" secondItem="zrP-pI-YAP" secondAttribute="trailing" id="xTk-L9-Onz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pointGraphView" destination="zrP-pI-YAP" id="2D7-Pz-Lrd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
