@@ -167,10 +167,18 @@
         [self replaceTopController:mainController];
         
         [[BMEClient sharedClient] loginUsingTokenWithCompletion:^(BOOL success, NSError *error) {
-            if (!success || error) {
-                self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
-            } else {
-                [self didLogin];
+            switch ([error code]) {
+                case BMEClientErrorUserNotFound:
+                case BMEClientErrorUserFacebookUserNotFound:
+                case BMEClientErrorUserTokenNotFound:
+                case BMEClientErrorUserTokenExpired:
+                    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
+                    [[BMEClient sharedClient] logoutWithCompletion:nil];
+                    NSLog(@"Could not automatically log in: %@", error);
+                    break;
+                default:
+                    [self didLogin];
+                    break;
             }
         }];
     }

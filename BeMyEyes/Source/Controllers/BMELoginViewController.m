@@ -86,16 +86,16 @@
     } failure:^(NSError *error) {
         [progressOverlayView hide:YES];
         
-        if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when Facebook user not found during log in.");
+        if ([error code] == BMEClientErrorUserIncorrectCredentials) {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_TITLE", @"BMELoginViewController", @"Title in alert view shown when credentials are incorrect.");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when credentials are incorrect.");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when credentials are incorrect.");
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during Facebook log in.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred during Facebook log in.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during Facebook log in.");
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during e-mail log in.");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred.");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during e-mail log in.");
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -127,6 +127,8 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         }
+        
+        NSLog(@"Could not log in with Facebook: %@", error);
     } accountFailure:^(NSError *error) {
         [progressOverlayView hide:YES];
         
@@ -136,7 +138,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
         [alert show];
         
-        NSLog(@"Could not log in: %@", error);
+        NSLog(@"Could not log in with Facebook due to account error: %@", error);
     }];
 }
 
