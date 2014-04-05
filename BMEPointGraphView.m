@@ -9,17 +9,24 @@
 #import "BMEPointGraphView.h"
 #import "BMEPointGraphEntry.h"
 
-#define BMEPointGraphDefaultStrokeWidth 5.0f
+#define BMEPointGraphDefaultStrokeWidth 4.0f
 #define BMEPointGraphDefaultStrokeColor [UIColor blackColor]
 #define BMEPointGraphDefaultGradientStartColor [UIColor whiteColor]
 #define BMEPointGraphDefaultGradientEndColor [UIColor blueColor]
-#define BMEPointGraphDefaultGraphInsets UIEdgeInsetsMake(5.0f, -2.0f, 5.0f, -2.0f);
+#define BMEPointGraphDefaultGraphInsets UIEdgeInsetsMake(30.0f, -2.0f, 30.0f, 30.0f);
 
 @interface BMEPointGraphView ()
+@property (weak, nonatomic) IBOutlet UIImageView *starImageView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *starCenterXMarginConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *starCenterYMarginConstraint;
+
 @property (strong, nonatomic) NSMutableArray *entries;
 @property (assign, nonatomic) CGFloat pixelsPerSecond;
 @property (assign, nonatomic) CGFloat pixelsPerPoint;
 @property (assign, nonatomic) CGSize adjustedSize;
+
+@property (strong, nonatomic) CAEmitterLayer *emitterLayer;
 @end
 
 @implementation BMEPointGraphView
@@ -52,6 +59,8 @@
 }
 
 - (void)initialize {
+    self.starImageView.hidden = YES;
+    
     self.strokeWidth = BMEPointGraphDefaultStrokeWidth;
     self.strokeColor = BMEPointGraphDefaultStrokeColor;
     self.gradientStartColor = BMEPointGraphDefaultGradientStartColor;
@@ -63,15 +72,21 @@
 
 - (void)drawRect:(CGRect)rect {
     [self clearDrawing];
-    [self drawGradient];
+
+    if (self.emitterLayer) {
+        [self.emitterLayer removeFromSuperlayer];
+    }
     
     if ([self.entries count] > 0) {
         [self drawGraph];
+        [self placeStar];
+        [self placeParticleEmitter];
     }
 }
 
 - (void)dealloc {
     self.entries = nil;
+    self.emitterLayer = nil;
 }
 
 #pragma mark -
@@ -109,31 +124,94 @@
 #pragma mark -
 #pragma mark Private Methods
 
+- (void)placeStar {
+    CGPoint lastPoint = CGPointMake([self xForDate:[self lastEntry].date], [self yForPoints:[self lastEntry].points]);
+    CGPoint starCenter = CGPointZero;
+    starCenter.x = CGRectGetMidX(self.bounds) - lastPoint.x;
+    starCenter.y = CGRectGetMidY(self.bounds) - lastPoint.y;
+    
+    self.starCenterXMarginConstraint.constant = starCenter.x;
+    self.starCenterYMarginConstraint.constant = starCenter.y;
+    [self layoutIfNeeded];
+    
+    self.starImageView.hidden = NO;
+}
+
+- (void)placeParticleEmitter {
+    CAEmitterCell *emitterCell = [CAEmitterCell emitterCell];
+    emitterCell.contents = (id)[[UIImage imageNamed:@"PointGraphStar"] CGImage];
+    emitterCell.birthRate = 0.0f;
+    emitterCell.lifetime = 1.0f;
+    emitterCell.lifetimeRange = 0.15f;
+    emitterCell.velocity = 80.0f;
+    emitterCell.emissionRange = 2.0f * M_PI;
+    emitterCell.spin = 0.20f;
+    emitterCell.spinRange = 2.0f;
+    emitterCell.scale = 0.30f;
+    emitterCell.scaleRange = 0.10f;
+    emitterCell.alphaRange = 0.0f;
+    emitterCell.alphaSpeed = -1.0f;
+    emitterCell.birthRate = 3.0f;
+    
+    self.emitterLayer = [CAEmitterLayer layer];
+    self.emitterLayer.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
+    self.emitterLayer.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    self.emitterLayer.backgroundColor = [[UIColor clearColor] CGColor];
+    self.emitterLayer.emitterPosition = self.starImageView.center;
+    self.emitterLayer.emitterSize = self.starImageView.frame.size;
+    self.emitterLayer.emitterCells = @[ emitterCell ];
+    [self.layer addSublayer:self.emitterLayer];
+}
+
 - (void)drawGraph {
     CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), [self.strokeColor CGColor]);
     
-    CGMutablePathRef path = CGPathCreateMutable();
+    CGMutablePathRef linePath = CGPathCreateMutable();
+    CGMutablePathRef fillPath = CGPathCreateMutable();
+    
+    CGPoint firstFillPoint = CGPointMake([self xForDate:[self firstEntry].date] - self.strokeWidth * 0.50f, [self yForPoints:self.minimum] + self.graphInsets.bottom);
+    CGPathMoveToPoint(fillPath, NULL, firstFillPoint.x, firstFillPoint.y);
+    
+    CGPoint firstEntryFillPoint = CGPointMake([self xForDate:[self firstEntry].date] - self.strokeWidth * 0.50f, [self yForPoints:[self firstEntry].points]);
+    CGPathAddLineToPoint(fillPath, NULL, firstEntryFillPoint.x, firstEntryFillPoint.y);
     
     CGPoint firstPoint = CGPointMake([self xForDate:[self firstEntry].date], [self yForPoints:[self firstEntry].points]);
-    CGPathMoveToPoint(path, NULL, firstPoint.x, firstPoint.y);
+    CGPathMoveToPoint(linePath, NULL, firstPoint.x, firstPoint.y);
+    CGPathAddLineToPoint(fillPath, NULL, firstPoint.x, firstPoint.y);
     
     NSInteger entriesCount = [self.entries count];
     
     for (NSInteger i = 1; i < entriesCount; i++) {
         BMEPointGraphEntry *entry = self.entries[i];
         CGPoint point = CGPointMake([self xForDate:entry.date], [self yForPoints:entry.points]);
-        CGPathAddLineToPoint(path, NULL, point.x, point.y);
+        CGPathAddLineToPoint(linePath, NULL, point.x, point.y);
+        CGPathAddLineToPoint(fillPath, NULL, point.x, point.y);
     }
     
-    UIBezierPath *bezier = [UIBezierPath bezierPathWithCGPath:path];
-    bezier.lineJoinStyle = kCGLineJoinRound;
-    bezier.lineWidth = self.strokeWidth;
-    [bezier stroke];
+    CGPoint lastEntryFillPoint = CGPointMake([self xForDate:[self lastEntry].date] + self.strokeWidth * 0.50f, [self yForPoints:[self lastEntry].points]);
+    CGPathAddLineToPoint(fillPath, NULL, lastEntryFillPoint.x, lastEntryFillPoint.y);
     
-    CGPathRelease(path);
+    CGPoint lastFillPoint = CGPointMake([self xForDate:[self lastEntry].date] + self.strokeWidth * 0.50f, [self yForPoints:self.minimum] + self.graphInsets.bottom);
+    CGPathAddLineToPoint(fillPath, NULL, lastFillPoint.x, lastFillPoint.y);
+    
+    [self drawGradientInPath:fillPath];
+    
+    UIBezierPath *lineBezier = [UIBezierPath bezierPathWithCGPath:linePath];
+    lineBezier.lineJoinStyle = kCGLineJoinRound;
+    lineBezier.lineWidth = self.strokeWidth;
+    [lineBezier stroke];
+    
+    CGPathRelease(linePath);
+    CGPathRelease(fillPath);
 }
 
-- (void)drawGradient {
+- (void)drawGradientInPath:(CGPathRef)path {
+    if (path) {
+        CGContextSaveGState(UIGraphicsGetCurrentContext());
+        CGContextAddPath(UIGraphicsGetCurrentContext(), path);
+        CGContextClip(UIGraphicsGetCurrentContext());
+    }
+    
     NSArray *gradientColors = @[ (id)[self.gradientStartColor CGColor], (id)[self.gradientEndColor CGColor] ];
     CGFloat gradientLocations[2];
     gradientLocations[0] = 0.0f;
@@ -144,8 +222,12 @@
     CGColorSpaceRelease(rgbSpace);
     
     CGPoint gradientStart = CGPointZero;
-    CGPoint gradientEnd = CGPointMake(0.0f, CGRectGetHeight(self.bounds));
+    CGPoint gradientEnd = CGPointMake(0.0f, self.adjustedSize.height - [self yForPoints:self.maximum]);
     CGContextDrawLinearGradient(UIGraphicsGetCurrentContext(), gradient, gradientStart, gradientEnd, kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
+    
+    if (path) {
+        CGContextRestoreGState(UIGraphicsGetCurrentContext());
+    }
 }
 
 - (void)clearDrawing {
