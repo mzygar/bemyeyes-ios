@@ -13,11 +13,13 @@
 #define BMEPointGraphDefaultStrokeColor [UIColor blackColor]
 #define BMEPointGraphDefaultGradientStartColor [UIColor whiteColor]
 #define BMEPointGraphDefaultGradientEndColor [UIColor blueColor]
+#define BMEPointGraphDefaultGraphInsets UIEdgeInsetsMake(5.0f, -2.0f, 5.0f, -2.0f);
 
 @interface BMEPointGraphView ()
 @property (strong, nonatomic) NSMutableArray *entries;
 @property (assign, nonatomic) CGFloat pixelsPerSecond;
 @property (assign, nonatomic) CGFloat pixelsPerPoint;
+@property (assign, nonatomic) CGSize adjustedSize;
 @end
 
 @implementation BMEPointGraphView
@@ -56,6 +58,7 @@
     self.gradientEndColor = BMEPointGraphDefaultGradientEndColor;
     self.calculatesMinimum = YES;
     self.calculatesMaximum = YES;
+    self.graphInsets = BMEPointGraphDefaultGraphInsets;
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -92,9 +95,12 @@
             self.maximum = [[self.entries valueForKeyPath:@"@max.points"] unsignedIntegerValue];
         }
         
+        self.adjustedSize = CGSizeMake(CGRectGetWidth(self.bounds) - self.graphInsets.left - self.graphInsets.right,
+                                       CGRectGetHeight(self.bounds) - self.graphInsets.top - self.graphInsets.bottom);
+        
         NSTimeInterval timeDifference = [[self lastEntry].date timeIntervalSinceDate:[self firstEntry].date];
-        self.pixelsPerSecond = CGRectGetWidth(self.bounds) / timeDifference;
-        self.pixelsPerPoint = CGRectGetHeight(self.bounds) / (self.maximum - self.minimum);
+        self.pixelsPerSecond = self.adjustedSize.width / timeDifference;
+        self.pixelsPerPoint = self.adjustedSize.height / (self.maximum - self.minimum);
     }
     
     [self setNeedsDisplay];
@@ -149,11 +155,11 @@
 }
 
 - (CGFloat)xForDate:(NSDate *)date {
-    return [date timeIntervalSinceDate:[self firstEntry].date] * self.pixelsPerSecond;
+    return [date timeIntervalSinceDate:[self firstEntry].date] * self.pixelsPerSecond + self.graphInsets.left;
 }
 
 - (CGFloat)yForPoints:(NSUInteger)points {
-	return CGRectGetHeight(self.bounds) - ((points - self.minimum) * self.pixelsPerPoint);
+	return self.adjustedSize.height - ((points - self.minimum) * self.pixelsPerPoint) + self.graphInsets.top;
 }
 
 - (BMEPointGraphEntry *)firstEntry {

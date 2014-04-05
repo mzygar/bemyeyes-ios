@@ -18,6 +18,7 @@
 @property (assign, nonatomic) NSUInteger maximum;
 @property (assign, nonatomic) BOOL calculatesMinimum;
 @property (assign, nonatomic) BOOL calculatesMaximum;
+@property (assign, nonatomic) UIEdgeInsets graphInsets;
 
 - (void)addPoints:(NSUInteger)points atDate:(NSDate *)date;
 - (void)draw;
