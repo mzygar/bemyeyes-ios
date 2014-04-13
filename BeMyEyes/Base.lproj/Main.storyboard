@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -916,15 +916,29 @@
                                     <outlet property="starImageView" destination="YJ4-3W-Bya" id="J7A-XH-lct"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tL-Td-vhS" customClass="BMEPointLabel">
+                                <rect key="frame" x="20" y="200" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gXh-xD-Tml"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0cc-vG-sTm" firstAttribute="top" secondItem="zrP-pI-YAP" secondAttribute="bottom" id="Cwy-1m-a72"/>
+                            <constraint firstAttribute="trailing" secondItem="3tL-Td-vhS" secondAttribute="trailing" constant="20" id="Z7V-a4-Hk5"/>
                             <constraint firstItem="zrP-pI-YAP" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="dOC-zI-dxB"/>
+                            <constraint firstItem="3tL-Td-vhS" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" constant="20" id="g4l-Iw-j2H"/>
+                            <constraint firstItem="zrP-pI-YAP" firstAttribute="top" secondItem="3tL-Td-vhS" secondAttribute="bottom" constant="20" id="ocL-H4-UEY"/>
                             <constraint firstAttribute="trailing" secondItem="zrP-pI-YAP" secondAttribute="trailing" id="xTk-L9-Onz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pointGraphView" destination="zrP-pI-YAP" id="2D7-Pz-Lrd"/>
+                        <outlet property="pointLabel" destination="3tL-Td-vhS" id="5ls-bM-KJV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
