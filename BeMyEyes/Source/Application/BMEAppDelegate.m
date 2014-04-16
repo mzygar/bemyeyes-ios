@@ -122,6 +122,10 @@
 }
 
 - (void)requirePushNotificationsEnabled:(void (^)(BOOL isEnabled))handler {
+    // Before checking if the user has enabled notifications,
+    // we must be sure that we have given them the chance to do so
+    [TheAppDelegate registerForRemoteNotifications];
+    
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     BOOL isEnabled = types & UIRemoteNotificationTypeAlert;
     if (!isEnabled) {
