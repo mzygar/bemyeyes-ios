@@ -29,6 +29,16 @@
 #pragma mark -
 #pragma mark Private Methods
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Before checking if the user has enabled notifications,
+    // we must be sure that we have given them the chance to do so
+    if (self.role == BMERoleHelper) {
+        [TheAppDelegate registerForRemoteNotifications];
+    }
+}
+
 - (IBAction)facebookButtonPressed:(id)sender {
     if (self.role == BMERoleHelper) {
         [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
@@ -39,6 +49,34 @@
     } else {
         [self performFacebookRegistration];
     }
+}
+
+- (IBAction)signUpButtonPressed:(id)sender {
+    [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
+        if (isEnabled) {
+            [self performSegueWithIdentifier:BMESignUpMethodSignUpSegue sender:self];
+        }
+    }];
+}
+
+- (IBAction)signUpButtonTouched:(id)sender {
+    self.signUpTopLabel.alpha = 0.50f;
+    self.signUpBottomLabel.alpha = 0.50f;
+}
+
+- (IBAction)signUpButtonReleased:(id)sender {
+    self.signUpTopLabel.alpha = 1.0f;
+    self.signUpBottomLabel.alpha = 1.0f;
+}
+
+- (IBAction)termsButtonTouched:(id)sender {
+    self.termsTopLabel.alpha = 0.50f;
+    self.termsBottomLabel.alpha = 0.50f;
+}
+
+- (IBAction)termsButtonReleased:(id)sender {
+    self.termsTopLabel.alpha = 1.0f;
+    self.termsBottomLabel.alpha = 1.0f;
 }
 
 - (void)performFacebookRegistration {
@@ -88,26 +126,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
         [alert show];
     }];
-}
-
-- (IBAction)signUpButtonTouched:(id)sender {
-    self.signUpTopLabel.alpha = 0.50f;
-    self.signUpBottomLabel.alpha = 0.50f;
-}
-
-- (IBAction)signUpButtonReleased:(id)sender {
-    self.signUpTopLabel.alpha = 1.0f;
-    self.signUpBottomLabel.alpha = 1.0f;
-}
-
-- (IBAction)termsButtonTouched:(id)sender {
-    self.termsTopLabel.alpha = 0.50f;
-    self.termsBottomLabel.alpha = 0.50f;
-}
-
-- (IBAction)termsButtonReleased:(id)sender {
-    self.termsTopLabel.alpha = 1.0f;
-    self.termsBottomLabel.alpha = 1.0f;
 }
 
 - (void)didLogin {

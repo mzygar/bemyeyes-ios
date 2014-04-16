@@ -690,10 +690,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="signUpButtonPressed:" destination="rmT-tx-lgV" eventType="touchUpInside" id="1uF-Jc-uqd"/>
                                     <action selector="signUpButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpInside" id="VEr-T6-JKw"/>
                                     <action selector="signUpButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpOutside" id="uZ7-fq-1di"/>
                                     <action selector="signUpButtonTouched:" destination="rmT-tx-lgV" eventType="touchDown" id="pls-9W-tIV"/>
-                                    <segue destination="IOT-Cv-qKg" kind="push" identifier="SignUp" id="68m-nw-Xeu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqR-1b-cWs" userLabel="Terms Button">
@@ -751,6 +751,7 @@
                         <outlet property="termsTopLabel" destination="lF4-WI-FKM" id="UBL-YO-kbW"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="Ce4-tx-KmL"/>
                         <segue destination="4fN-kL-DOK" kind="push" identifier="Registered" id="aMJ-13-MXV"/>
+                        <segue destination="IOT-Cv-qKg" kind="push" identifier="SignUp" id="NCE-4i-JV4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6C-aM-2p2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1438,6 +1439,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kdn-ps-MZv"/>
-        <segue reference="jzc-Nc-kCA"/>
+        <segue reference="Ce4-tx-KmL"/>
     </inferredMetricsTieBreakers>
 </document>
