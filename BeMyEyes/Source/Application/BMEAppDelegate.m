@@ -8,7 +8,7 @@
 
 #import "BMEAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
-#import <HPSocialNetworkManager/HPAccountManager.h>
+#import <HIPSocialAuth/HIPSocialAuthManager.h>
 #import <PSAlertView/PSPDFAlertView.h>
 #import "BMEClient.h"
 #import "BMECallViewController.h"
@@ -51,7 +51,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [[HPAccountManager sharedManager] handleOpenURL:url];
+    return [[HIPSocialAuthManager sharedManager] handleOpenURL:url];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

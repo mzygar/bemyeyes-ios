@@ -14,7 +14,7 @@
 #import <DCKeyValueObjectMapping/DCPropertyAggregator.h>
 #import <DCKeyValueObjectMapping/DCObjectMapping.h>
 #import <ISO8601DateFormatter/ISO8601DateFormatter.h>
-#import <HPSocialNetworkManager/HPAccountManager.h>
+#import <HIPSocialAuth/HIPSocialAuthManager.h>
 #import "AESCrypt.h"
 #import "BMERequest.h"
 #import "BMEToken.h"
@@ -51,8 +51,6 @@
             baseUrlStr = BMEAPIPublicBaseUrl;
             break;
     }
-    
-    NSLog(@"%@", baseUrlStr);
     
     NSURL *baseUrl = [NSURL URLWithString:baseUrlStr];
     if (self = [super initWithBaseURL:baseUrl]) {
@@ -95,11 +93,11 @@
     if (!self.hasConfiguredFacebookLogin) {
         self.configuredFacebookLogin = YES;
 
-        [[HPAccountManager sharedManager] setupWithFacebookAppID:self.facebookAppId
-                                          facebookAppPermissions:@[ @"email" ]
-                                            facebookSchemeSuffix:nil
-                                              twitterConsumerKey:nil
-                                           twitterConsumerSecret:nil];
+        [[HIPSocialAuthManager sharedManager] setupWithFacebookAppID:self.facebookAppId
+                                              facebookAppPermissions:@[ @"email" ]
+                                                facebookSchemeSuffix:nil
+                                                  twitterConsumerKey:nil
+                                               twitterConsumerSecret:nil];
     }
 }
 
@@ -195,7 +193,7 @@
 - (void)logoutWithCompletion:(void (^)(BOOL, NSError *))completion {
     NSDictionary *parameters = @{ @"token" : [self token] };
     [self putPath:@"users/logout" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [[HPAccountManager sharedManager] resetCachedTokens];
+        [[HIPSocialAuthManager sharedManager] resetCachedTokens];
         
         [self storeToken:nil];
         [self storeTokenExpiryDate:nil];
@@ -326,7 +324,7 @@
 #pragma mark Facebook
 
 - (void)authenticateWithFacebook:(void (^)(BMEFacebookInfo *))success failure:(void (^)(NSError *))failure {
-    [[HPAccountManager sharedManager] authenticateAccountOfType:HPAccountTypeFacebook withHandler:^(HPAccount *authenticatedAccount, NSDictionary *profileInfo, NSError *error) {
+    [[HIPSocialAuthManager sharedManager] authenticateAccountOfType:HIPSocialAccountTypeFacebook withHandler:^(HIPSocialAccount *account, NSDictionary *profileInfo, NSError *error) {
         if (!error) {
             NSNumber *userId = [profileInfo objectForKey:@"id"];
             NSString *email = [profileInfo objectForKey:@"email"];
@@ -342,14 +340,14 @@
                 
                 success(fbInfo);
             } else {
-                [[HPAccountManager sharedManager] resetCachedTokens];
+                [[HIPSocialAuthManager sharedManager] resetCachedTokens];
                 
                 if (failure) {
                     failure(error);
                 }
             }
         } else {
-            [[HPAccountManager sharedManager] resetCachedTokens];
+            [[HIPSocialAuthManager sharedManager] resetCachedTokens];
             
             if (failure) {
                 failure(error);
