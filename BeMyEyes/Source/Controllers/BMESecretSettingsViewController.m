@@ -17,6 +17,8 @@ enum {
 @interface BMESecretSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *apiSegmentedControl;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentTopMarginConstraint;
+
+@property (assign, nonatomic) UIStatusBarStyle statusBarStyleWhenPresented;
 @end
 
 @implementation BMESecretSettingsViewController
@@ -32,8 +34,25 @@ enum {
     self.apiSegmentedControl.selectedSegmentIndex = [GVUserDefaults standardUserDefaults].api;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.statusBarStyleWhenPresented = [UIApplication sharedApplication].statusBarStyle;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:self.statusBarStyleWhenPresented animated:YES];
+}
+
 #pragma mark -
 #pragma mark Private Methods
+
+- (IBAction)dismissButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (IBAction)apiSegmentedControlValueChanged:(id)sender {
     [GVUserDefaults standardUserDefaults].api = self.apiSegmentedControl.selectedSegmentIndex;

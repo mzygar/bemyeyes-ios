@@ -1296,9 +1296,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
-                    <connections>
-                        <segue destination="epM-hd-k7W" kind="modal" identifier="SecretSettings" id="BTL-7t-rHg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N0m-gc-YxM" userLabel="Exit" sceneMemberID="exit"/>
@@ -1309,7 +1306,7 @@
         <scene sceneID="pDe-fZ-Ytj">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiq-kh-QYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="epM-hd-k7W" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SecretSettings" definesPresentationContext="YES" id="epM-hd-k7W" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2bZ-fg-0xm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdz-5b-N2i">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1324,7 +1321,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="3617" y="1775"/>
+            <point key="canvasLocation" x="735" y="2371"/>
         </scene>
         <!--Secret Settings View Controller - Secret Settings-->
         <scene sceneID="XYP-Az-MCV">
@@ -1426,9 +1423,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Secret Settings" id="UIb-xq-qBp">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="ySf-cP-gBc">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="ySf-cP-gBc">
                             <connections>
-                                <segue destination="5Ow-bl-IXt" kind="unwind" unwindAction="popController:" id="AMM-Im-OCO"/>
+                                <action selector="dismissButtonPressed:" destination="GRa-DQ-eex" id="mxU-Rf-E7Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1438,9 +1435,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMk-MS-iKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="5Ow-bl-IXt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4114" y="1775"/>
+            <point key="canvasLocation" x="1232" y="2371"/>
         </scene>
         <!--Call View Controller-->
         <scene sceneID="rVa-b5-rid">

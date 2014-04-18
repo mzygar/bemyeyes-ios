@@ -11,27 +11,11 @@
 #import "BMEClient.h"
 
 #define BMEUnwindSettingsSegue @"UnwindSettings"
-#define BMESettingsSecretSettingsSegue @"SecretSettings"
-#define BMESettingsTwoFingerDoubleTapInvalidateDelay 3.0f
-
-@interface BMESettingsViewController ()
-@property (strong, nonatomic) NSTimer *invalidateTwoFignerDoubleTapTimer;
-@property (assign, nonatomic, getter = isTwoFingerDoubleTapTriggered) BOOL twoFingerDoubleTapTriggered;
-@end
 
 @implementation BMESettingsViewController
 
 #pragma mark -
 #pragma mark Lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    UITapGestureRecognizer *twoFingerDoubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTwoFingerDoubleTap:)];
-    twoFingerDoubleTapGesture.numberOfTouchesRequired = 2;
-    twoFingerDoubleTapGesture.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:twoFingerDoubleTapGesture];
-}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -39,20 +23,8 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
-- (BOOL)canBecomeFirstResponder {
-    return YES;
-}
-
-- (void)dealloc {
-    [self.invalidateTwoFignerDoubleTapTimer invalidate];
-    
-    self.invalidateTwoFignerDoubleTapTimer = nil;
-}
-
 #pragma mark -
 #pragma mark Private Methods
-
-- (IBAction)popController:(UIStoryboardSegue *)segue { }
 
 - (IBAction)logOutButtonPressed:(id)sender {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
@@ -74,35 +46,6 @@
             [alertView show];
         }
     }];
-}
-
-- (void)presentSecretSettings {
-    [self performSegueWithIdentifier:BMESettingsSecretSettingsSegue sender:self];
-}
-
-- (void)handleTwoFingerDoubleTap:(UITapGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        [self presentSecretSettings];
-//        [self becomeFirstResponder];
-//        self.twoFingerDoubleTapTriggered = YES;
-//        [self.invalidateTwoFignerDoubleTapTimer invalidate];
-//        self.invalidateTwoFignerDoubleTapTimer = [NSTimer scheduledTimerWithTimeInterval:BMESettingsTwoFingerDoubleTapInvalidateDelay target:self selector:@selector(invalidateTwoFingerDoubleTapTimerTriggered:) userInfo:nil repeats:NO];
-    }
-}
-
-- (void)invalidateTwoFingerDoubleTapTimerTriggered:(NSTimer *)timer {
-    [self resignFirstResponder];
-    self.invalidateTwoFignerDoubleTapTimer = nil;
-    self.twoFingerDoubleTapTriggered = NO;
-}
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    if (motion == UIEventSubtypeMotionShake && self.twoFingerDoubleTapTriggered) {
-        [self resignFirstResponder];
-        [self.invalidateTwoFignerDoubleTapTimer invalidate];
-        self.invalidateTwoFignerDoubleTapTimer = nil;
-        self.twoFingerDoubleTapTriggered = NO;
-    }
 }
 
 @end

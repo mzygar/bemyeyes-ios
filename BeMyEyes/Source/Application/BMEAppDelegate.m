@@ -27,6 +27,11 @@
     [self checkIfLoggedIn];
     [self checkIfAppOpenedByAnsweringWithLaunchOptions:launchOptions];
     
+    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
+    secretTapGesture.numberOfTouchesRequired = 4;
+    secretTapGesture.numberOfTapsRequired = 3;
+    [self.window addGestureRecognizer:secretTapGesture];
+    
     return YES;
 }
 							
@@ -214,6 +219,23 @@
             [navigationController presentViewController:callController animated:YES completion:nil];
         }
     }];
+}
+
+- (void)presentSecretSettings {
+    UIViewController *secretSettingsController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMESecretSettingsControllerIdentifier];
+    
+    UIViewController *presentFromController = self.window.rootViewController;
+    if (presentFromController.presentedViewController) {
+        presentFromController = presentFromController.presentedViewController;
+    }
+    
+    [presentFromController presentViewController:secretSettingsController animated:YES completion:nil];
+}
+
+- (void)handleSecretTapGesture:(UITapGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        [self presentSecretSettings];
+    }
 }
 
 @end
