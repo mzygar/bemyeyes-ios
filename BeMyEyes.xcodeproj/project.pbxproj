@@ -44,6 +44,7 @@
 		7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */; };
 		729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729656A418CC933F00E1A9EE /* BMETopNavigationController.m */; };
 		729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */; };
+		729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */; };
 		729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729C6DC218E9C9B60043D48F /* BMETermsViewController.m */; };
 		72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */; };
 		72B1493718DF65F900E9A8A9 /* FakeiOS7.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */; };
@@ -134,6 +135,8 @@
 		729656A318CC933E00E1A9EE /* BMETopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETopNavigationController.h; sourceTree = "<group>"; };
 		729656A418CC933F00E1A9EE /* BMETopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETopNavigationController.m; sourceTree = "<group>"; };
 		729656A718CC9D5F00E1A9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESettingsViewController.strings; sourceTree = "<group>"; };
+		729B1CCE19015F0700B5ABEA /* BMESecretSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESecretSettingsViewController.h; sourceTree = "<group>"; };
+		729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESecretSettingsViewController.m; sourceTree = "<group>"; };
 		729C6DC118E9C9B60043D48F /* BMETermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETermsViewController.h; sourceTree = "<group>"; };
 		729C6DC218E9C9B60043D48F /* BMETermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETermsViewController.m; sourceTree = "<group>"; };
 		72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallViewController.h; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 				7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */,
 				72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */,
 				72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */,
+				729B1CCE19015F0700B5ABEA /* BMESecretSettingsViewController.h */,
+				729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
+				729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,

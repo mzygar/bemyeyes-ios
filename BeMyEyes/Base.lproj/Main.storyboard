@@ -1296,11 +1296,102 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
+                    <connections>
+                        <segue destination="epM-hd-k7W" kind="modal" identifier="SecretSettings" id="BTL-7t-rHg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N0m-gc-YxM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3107" y="1775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pDe-fZ-Ytj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiq-kh-QYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="epM-hd-k7W" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2bZ-fg-0xm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdz-5b-N2i">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GRa-DQ-eex" kind="relationship" relationship="rootViewController" id="Tca-Fw-zr2"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="3617" y="1775"/>
+        </scene>
+        <!--View Controller - Secret Settings-->
+        <scene sceneID="XYP-Az-MCV">
+            <objects>
+                <viewController id="GRa-DQ-eex" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yrx-6o-paR"/>
+                        <viewControllerLayoutGuide type="bottom" id="8wf-zs-VXj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AVp-f4-SoG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="mwC-2P-lmG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8w-6J-1MM" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-Lh-aj1">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="CTX-Vr-Jb0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="3md-SL-3j3"/>
+                                            <constraint firstAttribute="trailing" secondItem="oJX-Lh-aj1" secondAttribute="trailing" id="6me-EA-B3n"/>
+                                            <constraint firstItem="oJX-Lh-aj1" firstAttribute="top" secondItem="C8w-6J-1MM" secondAttribute="top" id="FlO-7V-VMG"/>
+                                            <constraint firstItem="oJX-Lh-aj1" firstAttribute="leading" secondItem="C8w-6J-1MM" secondAttribute="leading" id="SvE-gm-Nfm"/>
+                                            <constraint firstAttribute="bottom" secondItem="oJX-Lh-aj1" secondAttribute="bottom" constant="1" id="VCg-UT-ri4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="C8w-6J-1MM" firstAttribute="leading" secondItem="mwC-2P-lmG" secondAttribute="leading" id="XFt-6D-op5"/>
+                                    <constraint firstItem="C8w-6J-1MM" firstAttribute="top" secondItem="mwC-2P-lmG" secondAttribute="top" constant="66" id="bkh-6z-buf"/>
+                                    <constraint firstAttribute="trailing" secondItem="C8w-6J-1MM" secondAttribute="trailing" id="mr2-uM-kjz"/>
+                                    <constraint firstAttribute="bottom" secondItem="C8w-6J-1MM" secondAttribute="bottom" id="xTe-lw-waw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mwC-2P-lmG" secondAttribute="trailing" id="DCh-q1-3Ss"/>
+                            <constraint firstItem="mwC-2P-lmG" firstAttribute="leading" secondItem="AVp-f4-SoG" secondAttribute="leading" id="J86-1k-e3c"/>
+                            <constraint firstItem="mwC-2P-lmG" firstAttribute="top" secondItem="yrx-6o-paR" secondAttribute="bottom" constant="-64" id="NVs-Xu-2dW"/>
+                            <constraint firstItem="8wf-zs-VXj" firstAttribute="top" secondItem="mwC-2P-lmG" secondAttribute="bottom" id="mnq-Ko-zHi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Secret Settings" id="UIb-xq-qBp">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="ySf-cP-gBc">
+                            <connections>
+                                <segue destination="5Ow-bl-IXt" kind="unwind" unwindAction="popController:" id="AMM-Im-OCO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMk-MS-iKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5Ow-bl-IXt" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4114" y="1775"/>
         </scene>
         <!--Call View Controller-->
         <scene sceneID="rVa-b5-rid">
