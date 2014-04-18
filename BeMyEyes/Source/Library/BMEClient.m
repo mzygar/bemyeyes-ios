@@ -36,7 +36,25 @@
 #pragma mark Lifecycle
 
 - (id)init {
-    NSURL *baseUrl = [NSURL URLWithString:BMEAPIBaseUrl];
+    NSString *baseUrlStr = nil;
+    switch ([GVUserDefaults standardUserDefaults].api) {
+        case BMESettingsAPIDevelopment:
+            baseUrlStr = BMEAPIDevelopmentBaseUrl;
+            break;
+        case BMESettingsAPIInternal:
+            baseUrlStr = BMEAPIInternalBaseUrl;
+            break;
+        case BMESettingsAPIPublic:
+            baseUrlStr = BMEAPIPublicBaseUrl;
+            break;
+        default:
+            baseUrlStr = BMEAPIPublicBaseUrl;
+            break;
+    }
+    
+    NSLog(@"%@", baseUrlStr);
+    
+    NSURL *baseUrl = [NSURL URLWithString:baseUrlStr];
     if (self = [super initWithBaseURL:baseUrl]) {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];

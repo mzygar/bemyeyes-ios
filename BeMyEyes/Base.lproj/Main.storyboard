@@ -1326,10 +1326,10 @@
             </objects>
             <point key="canvasLocation" x="3617" y="1775"/>
         </scene>
-        <!--View Controller - Secret Settings-->
+        <!--Secret Settings View Controller - Secret Settings-->
         <scene sceneID="XYP-Az-MCV">
             <objects>
-                <viewController id="GRa-DQ-eex" sceneMemberID="viewController">
+                <viewController id="GRa-DQ-eex" customClass="BMESecretSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yrx-6o-paR"/>
                         <viewControllerLayoutGuide type="bottom" id="8wf-zs-VXj"/>
@@ -1343,15 +1343,59 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8w-6J-1MM" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="101"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="151"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-Lh-aj1">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-Lh-aj1" userLabel="API View">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9n-IP-ODt">
+                                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="vbk-7M-Vb1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Changing the API requires the app to be restarted." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-8B-1Vo">
+                                                        <rect key="frame" x="20" y="49" width="286" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="cR8-aN-SMD"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Xk5-RI-0BI">
+                                                        <rect key="frame" x="20" y="103" width="286" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <segments>
+                                                            <segment title="Development"/>
+                                                            <segment title="Internal"/>
+                                                            <segment title="Public"/>
+                                                        </segments>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <connections>
+                                                            <action selector="apiSegmentedControlValueChanged:" destination="GRa-DQ-eex" eventType="valueChanged" id="WVu-3U-6q5"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="CTX-Vr-Jb0"/>
+                                                    <constraint firstItem="Xk5-RI-0BI" firstAttribute="top" secondItem="CTr-8B-1Vo" secondAttribute="bottom" constant="10" id="AJb-30-0jd"/>
+                                                    <constraint firstItem="Xk5-RI-0BI" firstAttribute="leading" secondItem="oJX-Lh-aj1" secondAttribute="leading" constant="20" id="AqI-b1-jnO"/>
+                                                    <constraint firstAttribute="height" constant="150" id="CTX-Vr-Jb0"/>
+                                                    <constraint firstItem="CTr-8B-1Vo" firstAttribute="top" secondItem="U9n-IP-ODt" secondAttribute="bottom" constant="8" id="Jr9-4a-rhp"/>
+                                                    <constraint firstItem="CTr-8B-1Vo" firstAttribute="leading" secondItem="oJX-Lh-aj1" secondAttribute="leading" constant="20" id="XKD-FB-HLq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CTr-8B-1Vo" secondAttribute="trailing" constant="14" id="c1g-Bl-heb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="U9n-IP-ODt" secondAttribute="trailing" constant="20" id="c4K-KW-wVN"/>
+                                                    <constraint firstItem="U9n-IP-ODt" firstAttribute="leading" secondItem="oJX-Lh-aj1" secondAttribute="leading" constant="20" id="cIu-0l-haO"/>
+                                                    <constraint firstItem="U9n-IP-ODt" firstAttribute="top" secondItem="oJX-Lh-aj1" secondAttribute="top" constant="20" id="mpA-mC-YR6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Xk5-RI-0BI" secondAttribute="trailing" constant="14" id="nlM-id-cyH"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1388,6 +1432,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="apiSegmentedControl" destination="Xk5-RI-0BI" id="c5I-HG-9iy"/>
+                        <outlet property="contentTopMarginConstraint" destination="bkh-6z-buf" id="n7b-xK-9xT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMk-MS-iKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5Ow-bl-IXt" userLabel="Exit" sceneMemberID="exit"/>

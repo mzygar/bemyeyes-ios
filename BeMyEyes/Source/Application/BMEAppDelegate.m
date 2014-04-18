@@ -35,7 +35,7 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
