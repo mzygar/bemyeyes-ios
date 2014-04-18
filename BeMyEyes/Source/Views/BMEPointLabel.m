@@ -11,9 +11,10 @@
 #define BMEPointLabelTickAnimationDuration 3.0f
 
 @interface BMEPointLabel ()
-@property (assign, nonatomic) CGFloat currentPoint;
 @property (strong, nonatomic) CADisplayLink *displayLink;
+@property (assign, nonatomic) CGFloat currentPoint;
 @property (assign, nonatomic) CGFloat step;
+@property (strong, nonatomic) UIColor *defaultTextColor;
 @end
 
 @implementation BMEPointLabel
@@ -23,6 +24,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    self.defaultTextColor = self.textColor;
     
     self.tickAnimationDuration = BMEPointLabelTickAnimationDuration;
     self.colors = @{ @(0.0f) : [UIColor redColor],
@@ -38,6 +41,7 @@
     [self removeDisplayLink];
     
     self.displayLink = nil;
+    self.defaultTextColor = nil;
 }
 
 #pragma mark -
@@ -77,14 +81,15 @@
     
     [self displayPoint];
     
+    self.textColor = [self colorForPercentage:self.currentPoint / self.point];
+    
     if (isDone) {
-        [self performZoom];
+        [self finishedTickAnimation];
     }
 }
 
 - (void)displayPoint {
     self.text = [NSString stringWithFormat:@"%.0f", self.currentPoint];
-    self.textColor = [self colorForPercentage:self.currentPoint / self.point];
 }
 
 - (void)animatePoint {
@@ -108,7 +113,23 @@
     }
 }
 
-- (void)performZoom {
+- (void)finishedTickAnimation {
+    [self performZoom:^{
+        UIImage *colorImage = [self imageFromRect:self.bounds];
+        UIImageView *colorImageView = [[UIImageView alloc] initWithImage:colorImage];
+        [self addSubview:colorImageView];
+        
+        self.textColor = self.defaultTextColor;
+        
+        [UIView animateWithDuration:2.0f animations:^{
+            colorImageView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [colorImageView removeFromSuperview];
+        }];
+    }];
+}
+
+- (void)performZoom:(void(^)(void))completion {
     NSMutableArray *imageViews = [NSMutableArray new];
     for (NSInteger i = 0; i < [self.text length]; i++) {
         NSRange range = NSMakeRange(i, 1);
@@ -147,6 +168,10 @@
         }
         
         self.text = originalString;
+        
+        if (completion) {
+            completion();
+        }
     });
 }
 
