@@ -918,23 +918,23 @@
                                 </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score is" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-XQ-wKl">
-                                <rect key="frame" x="54" y="230" width="132" height="42"/>
+                                <rect key="frame" x="40" y="230" width="142" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="2pp-PI-KpX"/>
-                                    <constraint firstAttribute="width" constant="132" id="irk-1k-UZk"/>
+                                    <constraint firstAttribute="width" constant="142" id="irk-1k-UZk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="A6u-Nj-nK2" customClass="BMEPointLabel">
-                                <rect key="frame" x="190" y="229" width="106" height="42"/>
+                                <rect key="frame" x="186" y="229" width="106" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="buj-o8-aqd"/>
                                     <constraint firstAttribute="height" constant="42" id="zgD-Y2-kuV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -944,7 +944,7 @@
                             <constraint firstItem="A6u-Nj-nK2" firstAttribute="leading" secondItem="3Le-XQ-wKl" secondAttribute="trailing" constant="4" id="SjM-gt-RDp"/>
                             <constraint firstItem="zrP-pI-YAP" firstAttribute="top" secondItem="A6u-Nj-nK2" secondAttribute="bottom" constant="9" id="UGx-22-ed8"/>
                             <constraint firstItem="zrP-pI-YAP" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="dOC-zI-dxB"/>
-                            <constraint firstItem="3Le-XQ-wKl" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" constant="54" id="ici-dx-kFi"/>
+                            <constraint firstItem="3Le-XQ-wKl" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" constant="40" id="ici-dx-kFi"/>
                             <constraint firstAttribute="trailing" secondItem="zrP-pI-YAP" secondAttribute="trailing" id="xTk-L9-Onz"/>
                         </constraints>
                     </view>
