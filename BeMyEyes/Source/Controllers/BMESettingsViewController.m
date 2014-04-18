@@ -9,13 +9,29 @@
 #import "BMESettingsViewController.h"
 #import <MRProgress/MRProgress.h>
 #import "BMEClient.h"
+#import "BMEUser.h"
 
 #define BMEUnwindSettingsSegue @"UnwindSettings"
+
+@interface BMESettingsViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *boostSwitch;
+@end
 
 @implementation BMESettingsViewController
 
 #pragma mark -
 #pragma mark Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.firstNameTextField.text = [BMEClient sharedClient].currentUser.firstName;
+    self.lastNameTextField.text = [BMEClient sharedClient].currentUser.lastName;
+    self.emailTextField.text = [BMEClient sharedClient].currentUser.email;
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -46,6 +62,14 @@
             [alertView show];
         }
     }];
+}
+
+- (IBAction)changePasswordButtonPressed:(id)sender {
+    
+}
+
+- (IBAction)boostSwitchValueChanged:(id)sender {
+    
 }
 
 @end
