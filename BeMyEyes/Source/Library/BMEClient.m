@@ -294,13 +294,11 @@
                                   @"locale" : locale,
                                   @"development" : isProduction ? @(NO) : @(YES) };
     [self postPath:@"devices/register" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (completion)
-        {
+        if (completion) {
             completion(YES, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (completion)
-        {
+        if (completion) {
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];

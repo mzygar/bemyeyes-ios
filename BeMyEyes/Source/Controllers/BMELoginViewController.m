@@ -8,6 +8,7 @@
 
 #import "BMELoginViewController.h"
 #import <MRProgress/MRProgress.h>
+#import "BMEAppDelegate.h"
 #import "BMEClient.h"
 
 #define BMELoginLoggedInSegue @"LoggedIn"
@@ -143,6 +144,8 @@
 }
 
 - (void)didLogin {
+    [TheAppDelegate registerForRemoteNotifications];
+    
     [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
 }
 
