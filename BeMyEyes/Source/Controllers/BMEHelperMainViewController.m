@@ -13,6 +13,13 @@
 @interface BMEHelperMainViewController ()
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointLabel;
 @property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitleLabelLeadingMarginConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitleLabelWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pointLabelWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitlePointSpaceConstraint;
+
+@property (assign, nonatomic) NSUInteger totalPoint;
 @end
 
 @implementation BMEHelperMainViewController
@@ -28,6 +35,7 @@
                                 @(1.0f) : [UIColor colorWithRed:117.0f/255.0f green:197.0f/255.0f blue:27.0f/255.0f alpha:1.0f] };
  
     [self demoPoint];
+    [self layoutPoint];
 }
 
 #pragma mark -
@@ -48,6 +56,19 @@
     [self.pointGraphView draw];
     
     [self.pointLabel setPoint:total animated:YES];
+    
+    self.totalPoint = total;
+}
+
+- (void)layoutPoint {
+    NSString *pointText = [NSString stringWithFormat:@"%i", self.totalPoint];
+    CGRect pointRect = [pointText boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName : self.pointLabel.font } context:nil];
+    self.pointLabelWidthConstraint.constant = CGRectGetWidth(pointRect) * 1.20f; // Add extra width for zoom animation
+    [self.view layoutIfNeeded];
+    
+    CGFloat totalWidth = self.scoreTitleLabelWidthConstraint.constant + self.scoreTitlePointSpaceConstraint.constant + self.pointLabelWidthConstraint.constant;
+    self.scoreTitleLabelLeadingMarginConstraint.constant = (CGRectGetWidth(self.view.bounds) - totalWidth) * 0.50f;
+    [self.view layoutIfNeeded];
 }
 
 @end

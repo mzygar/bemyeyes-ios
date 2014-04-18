@@ -917,29 +917,44 @@
                                     <outlet property="starImageView" destination="YJ4-3W-Bya" id="J7A-XH-lct"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tL-Td-vhS" customClass="BMEPointLabel">
-                                <rect key="frame" x="20" y="200" width="280" height="60"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score is" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-XQ-wKl">
+                                <rect key="frame" x="54" y="230" width="132" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="gXh-xD-Tml"/>
+                                    <constraint firstAttribute="height" constant="42" id="2pp-PI-KpX"/>
+                                    <constraint firstAttribute="width" constant="132" id="irk-1k-UZk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="A6u-Nj-nK2" customClass="BMEPointLabel">
+                                <rect key="frame" x="190" y="230" width="106" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="buj-o8-aqd"/>
+                                    <constraint firstAttribute="height" constant="42" id="zgD-Y2-kuV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0cc-vG-sTm" firstAttribute="top" secondItem="zrP-pI-YAP" secondAttribute="bottom" id="Cwy-1m-a72"/>
-                            <constraint firstAttribute="trailing" secondItem="3tL-Td-vhS" secondAttribute="trailing" constant="20" id="Z7V-a4-Hk5"/>
+                            <constraint firstItem="zrP-pI-YAP" firstAttribute="top" secondItem="3Le-XQ-wKl" secondAttribute="bottom" constant="8" id="E2r-iA-yaT"/>
+                            <constraint firstItem="A6u-Nj-nK2" firstAttribute="leading" secondItem="3Le-XQ-wKl" secondAttribute="trailing" constant="4" id="SjM-gt-RDp"/>
+                            <constraint firstItem="zrP-pI-YAP" firstAttribute="top" secondItem="A6u-Nj-nK2" secondAttribute="bottom" constant="8" id="UGx-22-ed8"/>
                             <constraint firstItem="zrP-pI-YAP" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="dOC-zI-dxB"/>
-                            <constraint firstItem="3tL-Td-vhS" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" constant="20" id="g4l-Iw-j2H"/>
-                            <constraint firstItem="zrP-pI-YAP" firstAttribute="top" secondItem="3tL-Td-vhS" secondAttribute="bottom" constant="20" id="ocL-H4-UEY"/>
+                            <constraint firstItem="3Le-XQ-wKl" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" constant="54" id="ici-dx-kFi"/>
                             <constraint firstAttribute="trailing" secondItem="zrP-pI-YAP" secondAttribute="trailing" id="xTk-L9-Onz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pointGraphView" destination="zrP-pI-YAP" id="2D7-Pz-Lrd"/>
-                        <outlet property="pointLabel" destination="3tL-Td-vhS" id="5ls-bM-KJV"/>
+                        <outlet property="pointLabel" destination="A6u-Nj-nK2" id="Xu3-OB-amQ"/>
+                        <outlet property="pointLabelWidthConstraint" destination="buj-o8-aqd" id="iQ9-j0-4ma"/>
+                        <outlet property="scoreTitleLabelLeadingMarginConstraint" destination="ici-dx-kFi" id="sQX-2E-wQv"/>
+                        <outlet property="scoreTitleLabelWidthConstraint" destination="irk-1k-UZk" id="RT0-5j-wx8"/>
+                        <outlet property="scoreTitlePointSpaceConstraint" destination="SjM-gt-RDp" id="5Ly-2O-7P8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1305,7 +1320,6 @@
         <!--Navigation Controller-->
         <scene sceneID="pDe-fZ-Ytj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eiq-kh-QYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="SecretSettings" definesPresentationContext="YES" id="epM-hd-k7W" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2bZ-fg-0xm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdz-5b-N2i">
@@ -1320,6 +1334,7 @@
                         <segue destination="GRa-DQ-eex" kind="relationship" relationship="rootViewController" id="Tca-Fw-zr2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiq-kh-QYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="735" y="2371"/>
         </scene>
@@ -1575,6 +1590,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kdn-ps-MZv"/>
-        <segue reference="Ce4-tx-KmL"/>
+        <segue reference="jzc-Nc-kCA"/>
     </inferredMetricsTieBreakers>
 </document>

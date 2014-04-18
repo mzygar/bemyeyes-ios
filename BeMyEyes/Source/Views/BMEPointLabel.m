@@ -136,8 +136,8 @@
         CGRect rect = [self boundingRectForCharacterRange:range];
         UIImageView *imageView = [UIImageView new];
         imageView.image = [self imageFromRect:rect];
-        imageView.frame = rect;
-        [self addSubview:imageView];
+        imageView.frame = [self.superview convertRect:rect fromView:self];
+        [self.superview addSubview:imageView];
         
         [imageViews addObject:imageView];
     }
@@ -168,7 +168,7 @@
         }
         
         self.text = originalString;
-        
+
         if (completion) {
             completion();
         }
