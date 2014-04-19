@@ -882,7 +882,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Paul!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJJ-At-eCI">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Paul!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XJJ-At-eCI">
                                 <rect key="frame" x="77" y="40" width="223" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -1109,6 +1109,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="greetingLabel" destination="XJJ-At-eCI" id="bsN-FK-reJ"/>
                         <outlet property="pointGraphView" destination="zrP-pI-YAP" id="2D7-Pz-Lrd"/>
                         <outlet property="pointLabel" destination="A6u-Nj-nK2" id="Xu3-OB-amQ"/>
                         <outlet property="pointLabelWidthConstraint" destination="buj-o8-aqd" id="iQ9-j0-4ma"/>

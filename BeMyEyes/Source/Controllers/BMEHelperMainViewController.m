@@ -7,6 +7,8 @@
 //
 
 #import "BMEHelperMainViewController.h"
+#import "BMEClient.h"
+#import "BMEUser.h"
 #import "BMEPointLabel.h"
 #import "BMEPointGraphView.h"
 #import "NSDate+BMESnoozeRelativeDate.h"
@@ -26,6 +28,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 };
 
 @interface BMEHelperMainViewController () <UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
+
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointLabel;
 @property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
 
@@ -71,6 +75,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
     
+    [self displayGreeting];
+    
     [self demoPoint];
     [self layoutPoint];
     
@@ -79,6 +85,21 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 #pragma mark -
 #pragma mark Private Methods
+
+- (void)displayGreeting {
+    NSArray *greetingFormats = @[ NSLocalizedStringFromTable(@"GREETING_1", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
+                                  NSLocalizedStringFromTable(@"GREETING_2", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
+                                  NSLocalizedStringFromTable(@"GREETING_3", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
+                                  NSLocalizedStringFromTable(@"GREETING_4", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
+                                  NSLocalizedStringFromTable(@"GREETING_5", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name.") ];
+    if (greetingFormats) {
+        NSString *name = [BMEClient sharedClient].currentUser.firstName;
+        NSString *greetingFormat = greetingFormats[arc4random() % [greetingFormats count]];
+        self.greetingLabel.text = [NSString stringWithFormat:greetingFormat, name];
+    } else {
+        self.greetingLabel.text = nil;
+    }
+}
 
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
