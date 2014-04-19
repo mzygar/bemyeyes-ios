@@ -47,6 +47,9 @@
 		729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */; };
 		729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */; };
 		729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729C6DC218E9C9B60043D48F /* BMETermsViewController.m */; };
+		72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */; };
+		72A7676F1902A5C4003121C4 /* BMEHelperMainViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72A7676D1902A5C4003121C4 /* BMEHelperMainViewController.strings */; };
+		72A767721902A5F4003121C4 /* BMESnoozeRelativeDate.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */; };
 		72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */; };
 		72B1493718DF65F900E9A8A9 /* FakeiOS7.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */; };
 		72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B1493818DF686600E9A8A9 /* BMECallViewController.strings */; };
@@ -142,6 +145,10 @@
 		729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+Settings.m"; sourceTree = "<group>"; };
 		729C6DC118E9C9B60043D48F /* BMETermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETermsViewController.h; sourceTree = "<group>"; };
 		729C6DC218E9C9B60043D48F /* BMETermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETermsViewController.m; sourceTree = "<group>"; };
+		72A7676A19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BMESnoozeRelativeDate.h"; sourceTree = "<group>"; };
+		72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BMESnoozeRelativeDate.m"; sourceTree = "<group>"; wrapsLines = 0; };
+		72A7676E1902A5C4003121C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEHelperMainViewController.strings; sourceTree = "<group>"; };
+		72A767711902A5F4003121C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESnoozeRelativeDate.strings; sourceTree = "<group>"; };
 		72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallViewController.h; sourceTree = "<group>"; };
 		72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallViewController.m; sourceTree = "<group>"; };
 		72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeiOS7.mm; sourceTree = "<group>"; };
@@ -339,6 +346,8 @@
 			children = (
 				729B1CD11901699500B5ABEA /* GVUserDefaults+Settings.h */,
 				729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */,
+				72A7676A19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.h */,
+				72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -418,6 +427,8 @@
 				72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */,
 				72DA826F18D46C6A001F3312 /* BMEAppDelegate.strings */,
 				72B1493818DF686600E9A8A9 /* BMECallViewController.strings */,
+				72A7676D1902A5C4003121C4 /* BMEHelperMainViewController.strings */,
+				72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 			);
 			name = Localizable;
@@ -538,6 +549,8 @@
 				72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */,
 				7236E01118B8A87B00F622AA /* Main.storyboard in Resources */,
 				72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodViewController.strings in Resources */,
+				72A7676F1902A5C4003121C4 /* BMEHelperMainViewController.strings in Resources */,
+				72A767721902A5F4003121C4 /* BMESnoozeRelativeDate.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +609,7 @@
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
+				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
 				72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */,
@@ -644,6 +658,22 @@
 				729656A718CC9D5F00E1A9EE /* en */,
 			);
 			name = BMESettingsViewController.strings;
+			sourceTree = "<group>";
+		};
+		72A7676D1902A5C4003121C4 /* BMEHelperMainViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72A7676E1902A5C4003121C4 /* en */,
+			);
+			name = BMEHelperMainViewController.strings;
+			sourceTree = "<group>";
+		};
+		72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72A767711902A5F4003121C4 /* en */,
+			);
+			name = BMESnoozeRelativeDate.strings;
 			sourceTree = "<group>";
 		};
 		72B1493818DF686600E9A8A9 /* BMECallViewController.strings */ = {

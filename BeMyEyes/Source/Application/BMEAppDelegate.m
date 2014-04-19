@@ -167,25 +167,35 @@
 }
 
 - (void)checkIfLoggedIn {
+    NSLog(@"Check if logged in");
     if ([[BMEClient sharedClient] token] != nil && [[BMEClient sharedClient] isTokenValid]) {
         UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainControllerIdentifier];
         [self replaceTopController:mainController];
         
         [[BMEClient sharedClient] loginUsingTokenWithCompletion:^(BOOL success, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error);
+            }
+         
             switch ([error code]) {
                 case BMEClientErrorUserNotFound:
                 case BMEClientErrorUserFacebookUserNotFound:
                 case BMEClientErrorUserTokenNotFound:
                 case BMEClientErrorUserTokenExpired:
+                    NSLog(@"Log in not valid. Log out.");
                     self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
                     [[BMEClient sharedClient] logoutWithCompletion:nil];
                     NSLog(@"Could not automatically log in: %@", error);
                     break;
                 default:
+                    NSLog(@"Did log in");
                     [self didLogin];
                     break;
             }
         }];
+    } else {
+        NSLog(@"Token: %@", [BMEClient sharedClient].token);
+        NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");
     }
 }
 
