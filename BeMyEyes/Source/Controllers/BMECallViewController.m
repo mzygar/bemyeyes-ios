@@ -135,6 +135,10 @@
 }
 
 - (void)connect {
+    NSLog(@"Connect to session: %@", self.shortId);
+    NSLog(@" - sessionId: %@", self.sessionId);
+    NSLog(@" - token: %@", self.token);
+    
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_CONNECTING", @"BMECallViewController", @"Status when connecting");
     [self changeStatus:statusText];
     
@@ -149,16 +153,23 @@
     self.videoView = nil;
     
     void(^requestCompletion)(BOOL, NSError *) = ^(BOOL success, NSError *error) {
+        NSLog(@"Completion");
         if (self.publisher && self.publisher.session == self.session) {
+            NSLog(@"Unpublish");
             [self.session unpublish:self.publisher];
         }
         
         if (self.subscriber && self.subscriber.session == self.session) {
+            NSLog(@"Close");
             [self.subscriber close];
         }
         
-        if (self.session) {
+        if (self.session.connection) {
+            NSLog(@"Disconnect");
             [self.session disconnect];
+        } else {
+            NSLog(@"Dismiss right away");
+            [self dismiss];
         }
     };
     
@@ -260,6 +271,8 @@
 }
 
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
+    NSLog(@"Session failed: %@", error);
+    
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_SESSION_FAILED", @"BMECallViewController", @"Status when session failed");
     [self changeStatus:statusText];
     
