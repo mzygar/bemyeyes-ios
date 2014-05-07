@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, BMESettingsAPI) {
     BMESettingsAPIDevelopment = 0,
-    BMESettingsAPIInternal,
+    BMESettingsAPIStaging,
     BMESettingsAPIPublic
 };
 

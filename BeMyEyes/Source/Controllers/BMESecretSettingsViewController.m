@@ -10,7 +10,7 @@
 
 enum {
     BMESettingsAPISegmentedControlDevelopment = 0,
-    BMESettingsAPISegmentedControlInternal,
+    BMESettingsAPISegmentedControlStaging,
     BMESettingsAPISegmentedControlPublic
 };
 

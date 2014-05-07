@@ -7,13 +7,13 @@
 //
 
 #import "BMECallViewController.h"
-#import <Opentok/Opentok.h>
+#import <OpenTok/OpenTok.h>
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "BMERequest.h"
 #import "BMESpeaker.h"
 
-@interface BMECallViewController () <OTSessionDelegate, OTPublisherDelegate, OTSubscriberDelegate>
+@interface BMECallViewController () <OTSessionDelegate, OTPublisherDelegate, OTSubscriberKitDelegate>
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
@@ -24,7 +24,7 @@
 @property (strong, nonatomic) OTSession *session;
 @property (strong, nonatomic) OTPublisher *publisher;
 @property (strong, nonatomic) OTSubscriber *subscriber;
-@property (strong, nonatomic) OTVideoView *videoView;
+@property (strong, nonatomic) UIView *videoView;
 
 @property (assign, nonatomic, getter = isDisconnecting) BOOL disconnecting;
 @end
@@ -142,8 +142,13 @@
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_CONNECTING", @"BMECallViewController", @"Status when connecting");
     [self changeStatus:statusText];
     
-    self.session = [[OTSession alloc] initWithSessionId:self.sessionId delegate:self];
-    [self.session connectWithApiKey:BMEOpenTokAPIKey token:self.token];
+    self.session = [[OTSession alloc] initWithApiKey:BMEOpenTokAPIKey sessionId:self.sessionId delegate:self];
+    
+    OTError *error = nil;
+    [self.session connectWithToken:self.token error:&error];
+    if (error) {
+        NSLog(@"Could not connect to session: %@", error);
+    }
 }
 
 - (void)disconnect {
@@ -152,31 +157,35 @@
     [self.videoView removeFromSuperview];
     self.videoView = nil;
     
-    void(^requestCompletion)(BOOL, NSError *) = ^(BOOL success, NSError *error) {
-        NSLog(@"Completion");
-        if (self.publisher && self.publisher.session == self.session) {
-            NSLog(@"Unpublish");
-            [self.session unpublish:self.publisher];
+    void(^completion)(BOOL, NSError*) = ^(BOOL success, NSError *error) {
+        OTError *otError = nil;
+        
+        if (self.subscriber) {
+            [self.session unsubscribe:self.subscriber error:&otError];
+            if (error) {
+                NSLog(@"Could not unsubscribe: %@", error);
+            }
+        
+            self.subscriber = nil;
         }
         
-        if (self.subscriber && self.subscriber.session == self.session) {
-            NSLog(@"Close");
-            [self.subscriber close];
-        }
+        if (self.publisher) {
+            otError = nil;
+            [self.session unpublish:self.publisher error:&otError];
+            if (error) {
+                NSLog(@"Could not unpublish: %@", error);
+            }
         
-        if (self.session.connection) {
-            NSLog(@"Disconnect");
-            [self.session disconnect];
-        } else {
-            NSLog(@"Dismiss right away");
-            [self dismiss];
+            self.publisher = nil;
         }
+    
+        [self dismiss];
     };
     
     if (!self.subscriber && [self isUserHelper]) {
-        [[BMEClient sharedClient] cancelAnswerForRequestWithShortId:self.shortId completion:requestCompletion];
+        [[BMEClient sharedClient] cancelAnswerForRequestWithShortId:self.shortId completion:completion];
     } else {
-        [[BMEClient sharedClient] disconnectFromRequestWithShortId:self.shortId completion:requestCompletion];
+        [[BMEClient sharedClient] disconnectFromRequestWithShortId:self.shortId completion:completion];
     }
 }
 
@@ -185,7 +194,12 @@
     self.publisher.cameraPosition = AVCaptureDevicePositionBack;
     self.publisher.publishAudio = YES;
     self.publisher.publishVideo = [self isUserBlind];
-    [self.session publish:self.publisher];
+    
+    OTError *error = nil;
+    [self.session publish:self.publisher error:&error];
+    if (error) {
+        NSLog(@"Failed publishing: %@", error);
+    }
 }
 
 - (void)subscribeToStream:(OTStream *)stream {
@@ -202,14 +216,13 @@
     [self displayVideoView:subscriber.view];
 }
 
-- (void)displayVideoView:(OTVideoView *)videoView {
+- (void)displayVideoView:(UIView *)videoView {
     [self.videoContainerView addSubview:videoView];
     [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.videoContainerView);
     }];
     
     self.videoView = videoView;
-    self.videoView.toolbarView.hidden = YES;
 }
 
 - (void)changeStatus:(NSString *)string {
@@ -283,7 +296,7 @@
     }
 }
 
-- (void)session:(OTSession *)session didReceiveStream:(OTStream *)stream {
+- (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
     if (!self.isDisconnecting) {
         // Make sure we don't subscribe to our own stream
         if (![stream.connection.connectionId isEqualToString:session.connection.connectionId]) {
@@ -292,14 +305,9 @@
     }
 }
 
-- (void)session:(OTSession *)session didDropStream:(OTStream *)stream {
-    if ([self.subscriber.stream.streamId isEqualToString:stream.streamId]) {
-        [self.subscriber close];
-    }
-    
+- (void)session:(OTSession *)session streamDestroyed:(OTStream *)stream {
     if (!self.isDisconnecting) {
-        // If we are not disconnecting ourselves,
-        // then the other part has disconnected
+        // If we are not disconnecting ourselves, then the other part has disconnected
         NSString *title = NSLocalizedStringFromTable(@"ALERT_OTHER_PART_DISCONNECTED_TITLE", @"BMECallViewController", @"Title in alert shown when other part has disconnected");
         NSString *message = NSLocalizedStringFromTable(@"ALERT_OTHER_PART_DISCONNECTED_MESSAGE", @"BMECallViewController", @"Message in alert shown when other part has disconnected");
         NSString *cancel = NSLocalizedStringFromTable(@"ALERT_OTHER_PART_DISCONNECTED_CANCEL", @"BMECallViewController", @"Title of cancel button in alert shown when other part has disconnected");
@@ -310,18 +318,20 @@
     }
 }
 
-- (void)session:(OTSession *)session didCreateConnection:(OTConnection *)connection {
-    
-}
-
-- (void)session:(OTSession *)session didDropConnection:(OTConnection *)connection {
-    
-}
-
 #pragma mark -
 #pragma mark Publisher Delegate
 
-- (void)publisher:(OTPublisher *)publisher didFailWithError:(OTError *)error {
+- (void)publisher:(OTPublisherKit *)publisher streamCreated:(OTStream *)stream {
+    
+}
+
+- (void)publisher:(OTPublisherKit *)publisher streamDestroyed:(OTStream *)stream {
+    if ([self.subscriber.stream.streamId isEqualToString:stream.streamId]) {
+        
+    }
+}
+
+- (void)publisher:(OTPublisherKit *)publisher didFailWithError:(OTError *)error {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_PUBLISHING", @"BMECallViewController", @"Status when failed publishing");
         [self changeStatus:statusText];
@@ -337,7 +347,7 @@
 #pragma mark -
 #pragma mark Subscriber Delegate
 
-- (void)subscriberDidConnectToStream:(OTSubscriber *)subscriber {
+- (void)subscriberDidConnectToStream:(OTSubscriberKit *)subscriber {
     [self hideStatus];
     
     if (!self.isDisconnecting) {
@@ -354,7 +364,7 @@
     }
 }
 
-- (void)subscriber:(OTSubscriber *)subscriber didFailWithError:(OTError *)error {
+- (void)subscriber:(OTSubscriberKit *)subscriber didFailWithError:(OTError *)error {
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_SUBSCRIBING", @"BMECallViewController", @"Status when failed subscribing");
     [self changeStatus:statusText];
     

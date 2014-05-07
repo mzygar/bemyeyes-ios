@@ -9,6 +9,7 @@
 #import "BMEHelperMainViewController.h"
 #import "BMEClient.h"
 #import "BMEUser.h"
+#import "BMEPointEntry.h"
 #import "BMEPointLabel.h"
 #import "BMEPointGraphView.h"
 #import "NSDate+BMESnoozeRelativeDate.h"
@@ -30,8 +31,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @interface BMEHelperMainViewController () <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *pointTitleLabel;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointLabel;
 @property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
+@property (weak, nonatomic) IBOutlet UILabel *failedLoadingPointLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *snoozeSliderView;
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeStepImageView0;
@@ -56,7 +59,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *snoozeThumbWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *snoozeSliderLineWidthConstraint;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *pointActivityIndicator;
+
 @property (assign, nonatomic) NSUInteger totalPoint;
+@property (strong, nonatomic) NSArray *pointEntries;
 @end
 
 @implementation BMEHelperMainViewController
@@ -77,10 +83,13 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     [self displayGreeting];
     
-    [self demoPoint];
-    [self layoutPoint];
-    
     [self snapSnoozeSliderToStep:BMESnoozeStep0 animated:NO];
+    
+    [self reloadPoints];
+}
+
+- (void)dealloc {
+    self.pointEntries = nil;
 }
 
 #pragma mark -
@@ -176,23 +185,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     }
 }
 
-- (void)demoPoint {
-    NSDate *now = [NSDate date];
-    NSUInteger dateAmount = 10;
-    
-    NSUInteger total = 0;
-    for (NSUInteger i = 0; i < dateAmount; i++) {
-        NSDate *date = [now dateByAddingTimeInterval:-(24 * 3600 * (CGFloat)i)];
-        NSUInteger points = arc4random_uniform(50);
-        total += points;
-        [self.pointGraphView addPoints:points atDate:date];
-    }
-    
-    [self.pointGraphView draw];
-    [self.pointLabel setPoint:total animated:YES];
-    self.totalPoint = total;
-}
-
 - (void)layoutPoint {
     NSString *pointText = [NSString stringWithFormat:@"%i", self.totalPoint];
     CGRect pointRect = [pointText boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName : self.pointLabel.font } context:nil];
@@ -202,6 +194,100 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     CGFloat totalWidth = self.scoreTitleLabelWidthConstraint.constant + self.scoreTitlePointSpaceConstraint.constant + self.pointLabelWidthConstraint.constant;
     self.scoreTitleLabelLeadingMarginConstraint.constant = (CGRectGetWidth(self.view.bounds) - totalWidth) * 0.50f;
     [self.view layoutIfNeeded];
+}
+
+- (void)reloadPoints {
+    [self.pointActivityIndicator startAnimating];
+    [UIView animateWithDuration:0.30f animations:^{
+        self.failedLoadingPointLabel.alpha = 0.0f;
+        self.pointTitleLabel.alpha = 0.0f;
+        self.pointLabel.alpha = 0.0f;
+        self.pointGraphView.alpha = 0.0f;
+    }];
+    
+    __block BOOL failedLoadingPoints = NO;
+    __block BOOL totalLoaded = NO;
+    __block BOOL daysLoaded = NO;
+    
+    void(^completion)(void) = ^{
+        [self.pointActivityIndicator stopAnimating];
+            
+        if (failedLoadingPoints) {
+            [self showFailedLoadingPoint];
+        } else if (totalLoaded && daysLoaded) {
+            [self showPoint];
+        }
+    };
+    
+    [[BMEClient sharedClient] loadTotalPoint:^(NSUInteger points, NSError *error) {
+        if (error) {
+            NSLog(@"Could not load total point: %@", error);
+            
+            failedLoadingPoints = YES;
+        } else {
+            totalLoaded = YES;
+            self.totalPoint = points;
+        }
+        
+        completion();
+    }];
+    
+    [[BMEClient sharedClient] loadPointForDays:30 completion:^(NSArray *entries, NSError *error) {
+        if (error) {
+            NSLog(@"Could not load point for days: %@", error);
+            
+            failedLoadingPoints = YES;
+        } else {
+            daysLoaded = YES;
+            self.pointEntries = entries;
+        }
+        
+        completion();
+    }];
+}
+
+- (void)showPoint {
+    for (BMEPointEntry *pointEntry in self.pointEntries) {
+        [self.pointGraphView addPoint:pointEntry.point atDate:pointEntry.date];
+    }
+    
+    [self.pointGraphView draw];
+    self.totalPoint = 1000;
+    [self.pointLabel setPoint:self.totalPoint animated:YES];
+    [self layoutPoint];
+
+    self.pointTitleLabel.alpha = 0.0f;
+    self.pointLabel.alpha = 0.0f;
+    self.pointGraphView.alpha = 0.0f;
+    
+    self.pointTitleLabel.hidden = NO;
+    self.pointLabel.hidden = NO;
+    self.pointGraphView.hidden = NO;
+    
+    [UIView animateWithDuration:0.30f animations:^{
+        self.pointTitleLabel.alpha = 1.0f;
+        self.pointLabel.alpha = 1.0f;
+        self.pointGraphView.alpha = 1.0f;
+        self.failedLoadingPointLabel.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        self.failedLoadingPointLabel.hidden = YES;
+    }];
+}
+
+- (void)showFailedLoadingPoint {
+    self.failedLoadingPointLabel.alpha = 0.0f;
+    self.failedLoadingPointLabel.hidden = NO;
+    
+    [UILabel animateWithDuration:0.30f animations:^{
+        self.pointTitleLabel.alpha = 0.0f;
+        self.pointLabel.alpha = 0.0f;
+        self.pointGraphView.alpha = 0.0f;
+        self.failedLoadingPointLabel.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+        self.pointTitleLabel.hidden = YES;
+        self.pointLabel.hidden = YES;
+        self.pointGraphView.hidden = YES;
+    }];
 }
 
 #pragma mark -

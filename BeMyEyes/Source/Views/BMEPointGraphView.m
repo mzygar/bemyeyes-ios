@@ -92,7 +92,7 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)addPoints:(NSUInteger)points atDate:(NSDate *)date {
+- (void)addPoint:(NSUInteger)points atDate:(NSDate *)date {
     BMEPointGraphEntry *entry = [BMEPointGraphEntry entryWithPoints:points date:date];
     [self.entries addObject:entry];
 }
@@ -115,7 +115,9 @@
         
         NSTimeInterval timeDifference = [[self lastEntry].date timeIntervalSinceDate:[self firstEntry].date];
         self.pixelsPerSecond = self.adjustedSize.width / timeDifference;
-        self.pixelsPerPoint = self.adjustedSize.height / (self.maximum - self.minimum);
+        
+        CGFloat pointInterval = self.maximum - self.minimum;
+        self.pixelsPerPoint = (pointInterval == 0) ? 0 : self.adjustedSize.height / pointInterval;
     }
     
     [self setNeedsDisplay];

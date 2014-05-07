@@ -65,42 +65,48 @@
         return;
     }
     
-    NSDictionary *alertInfo = [apsInfo objectForKey:@"alert"];
-    if (!alertInfo) {
+    id alert = [apsInfo objectForKey:@"alert"];
+    if (!alert) {
         return;
     }
     
-    NSString *shortId = [alertInfo objectForKey:@"short_id"];
-    
     if (application.applicationState == UIApplicationStateActive) {
-        if (shortId) {
-            if (self.callAlertView) {
-                [self.callAlertView dismissWithClickedButtonIndex:[self.callAlertView cancelButtonIndex] animated:NO];
+        if ([alert isKindOfClass:[NSDictionary class]]) {
+            NSString *shortId = [alert objectForKey:@"short_id"];;
+            if (shortId) {
+                if (self.callAlertView) {
+                    [self.callAlertView dismissWithClickedButtonIndex:[self.callAlertView cancelButtonIndex] animated:NO];
+                }
+                
+                NSString *actionLocKey = [alert objectForKey:@"action-loc-key"];
+                NSString *locKey = [alert objectForKey:@"loc-key"];
+                NSArray *locArgs = [alert objectForKey:@"loc-args"];
+                NSString *name = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_DEFAULT_NAME", @"BMEAppDelegate", @"Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments.");
+                if ([locArgs count] > 0) {
+                    name = locArgs[0];
+                }
+                
+                NSString *title = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_TITLE", @"BMEAppDelegate", @"Title in alert view shown when a call is received while the app was active");
+                NSString *message = [NSString stringWithFormat:NSLocalizedString(locKey, nil), name];
+                NSString *actionButton = NSLocalizedString(actionLocKey, nil);
+                NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when a call is received while the app was active");
+                
+                __weak typeof(self) weakSelf = self;
+                self.callAlertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+                [self.callAlertView addButtonWithTitle:actionButton block:^{
+                    [weakSelf didAnswerCallWithShortId:shortId];
+                }];
+                [self.callAlertView setCancelButtonWithTitle:cancelButton block:nil];
+                [self.callAlertView show];
             }
-            
-            NSString *actionLocKey = [alertInfo objectForKey:@"action-loc-key"];
-            NSString *locKey = [alertInfo objectForKey:@"loc-key"];
-            NSArray *locArgs = [alertInfo objectForKey:@"loc-args"];
-            NSString *name = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_DEFAULT_NAME", @"BMEAppDelegate", @"Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments.");
-            if ([locArgs count] > 0) {
-                name = locArgs[0];
-            }
-            
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_TITLE", @"BMEAppDelegate", @"Title in alert view shown when a call is received while the app was active");
-            NSString *message = [NSString stringWithFormat:NSLocalizedString(locKey, nil), name];
-            NSString *actionButton = NSLocalizedString(actionLocKey, nil);
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when a call is received while the app was active");
-            
-            __weak typeof(self) weakSelf = self;
-            self.callAlertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
-            [self.callAlertView addButtonWithTitle:actionButton block:^{
-                [weakSelf didAnswerCallWithShortId:shortId];
-            }];
-            [self.callAlertView setCancelButtonWithTitle:cancelButton block:nil];
-            [self.callAlertView show];
+        } else if ([alert isKindOfClass:[NSString class]]) {
+            PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:nil message:alert];
+            [alertView setCancelButtonWithTitle:@"OK" block:nil];
+            [alertView show];
         }
     } else if (application.applicationState == UIApplicationStateInactive) {
         // If the application state was inactive, this means the user pressed an action button from a notification
+        NSString *shortId = [alert objectForKey:@"short_id"];;
         if (shortId) {
             [self didAnswerCallWithShortId:shortId];
         }
@@ -185,6 +191,8 @@
                     NSLog(@"Log in not valid. Log out.");
                     self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
                     [[BMEClient sharedClient] logoutWithCompletion:nil];
+                    [[BMEClient sharedClient] resetFacebookLogin];
+                    [[BMEClient sharedClient] resetLogin];
                     NSLog(@"Could not automatically log in: %@", error);
                     break;
                 default:

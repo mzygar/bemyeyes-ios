@@ -19,6 +19,7 @@
 #import "BMERequest.h"
 #import "BMEToken.h"
 #import "BMEUser.h"
+#import "BMEPointEntry.h"
 #import "BMEFacebookInfo.h"
 #import "BMERoleConverter.h"
 
@@ -41,8 +42,8 @@
         case BMESettingsAPIDevelopment:
             baseUrlStr = BMEAPIDevelopmentBaseUrl;
             break;
-        case BMESettingsAPIInternal:
-            baseUrlStr = BMEAPIInternalBaseUrl;
+        case BMESettingsAPIStaging:
+            baseUrlStr = BMEAPIStagingBaseUrl;
             break;
         case BMESettingsAPIPublic:
             baseUrlStr = BMEAPIPublicBaseUrl;
@@ -51,6 +52,8 @@
             baseUrlStr = BMEAPIPublicBaseUrl;
             break;
     }
+    
+    NSLog(@"Use API: %@", baseUrlStr);
     
     NSURL *baseUrl = [NSURL URLWithString:baseUrlStr];
     if (self = [super initWithBaseURL:baseUrl]) {
@@ -193,10 +196,8 @@
 - (void)logoutWithCompletion:(void (^)(BOOL, NSError *))completion {
     NSDictionary *parameters = @{ @"token" : [self token] };
     [self putPath:@"users/logout" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [[HIPSocialAuthManager sharedManager] resetCachedTokens];
-        
-        [self storeToken:nil];
-        [self storeTokenExpiryDate:nil];
+        [self resetFacebookLogin];
+        [self resetLogin];
         
         _loggedIn = NO;
         
@@ -208,6 +209,16 @@
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];
+}
+
+- (void)resetFacebookLogin {
+    [[HIPSocialAuthManager sharedManager] removeAccountOfType:HIPSocialAccountTypeFacebook];
+    [[HIPSocialAuthManager sharedManager] resetCachedTokens];
+}
+
+- (void)resetLogin {
+    [self storeToken:nil];
+    [self storeTokenExpiryDate:nil];
 }
 
 #pragma mark -
@@ -324,6 +335,10 @@
 #pragma mark Facebook
 
 - (void)authenticateWithFacebook:(void (^)(BMEFacebookInfo *))success failure:(void (^)(NSError *))failure {
+    if ([[HIPSocialAuthManager sharedManager] hasAuthenticatedAccountOfType:HIPSocialAccountTypeFacebook]) {
+        [self resetFacebookLogin];
+    }
+    
     [[HIPSocialAuthManager sharedManager] authenticateAccountOfType:HIPSocialAccountTypeFacebook withHandler:^(HIPSocialAccount *account, NSDictionary *profileInfo, NSError *error) {
         if (!error) {
             NSNumber *userId = [profileInfo objectForKey:@"id"];
@@ -340,18 +355,48 @@
                 
                 success(fbInfo);
             } else {
-                [[HIPSocialAuthManager sharedManager] resetCachedTokens];
+                [self resetFacebookLogin];
                 
                 if (failure) {
                     failure(error);
                 }
             }
         } else {
-            [[HIPSocialAuthManager sharedManager] resetCachedTokens];
+            [self resetFacebookLogin];
             
             if (failure) {
                 failure(error);
             }
+        }
+    }];
+}
+
+#pragma mark -
+#pragma mark Points
+
+- (void)loadTotalPoint:(void(^)(NSUInteger point, NSError *error))completion {
+    NSString *path = [NSString stringWithFormat:@"users/helper_points_sum/%i", [self currentUser].identifier];
+    NSLog(@"%@", path);
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion([responseObject unsignedIntegerValue], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(0, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
+- (void)loadPointForDays:(NSUInteger)days completion:(void (^)(NSArray *, NSError *))completion {
+    NSString *path = [NSString stringWithFormat:@"users/helper_points/%i", [self currentUser].identifier];
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion([self mapPointEntryFromRepresentation:responseObject], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, [self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];
 }
@@ -449,6 +494,17 @@
     
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEUser class] andConfiguration:config];
     return [parser parseDictionary:representation];
+}
+
+- (NSArray *)mapPointEntryFromRepresentation:(NSArray *)representation {
+    DCParserConfiguration *config = [DCParserConfiguration configuration];
+    config.datePattern = @"y-M-d'T'H:m:s'Z'";
+    
+    DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"log_time" toAttribute:@"date" onClass:[BMEPointEntry class]];
+    [config addObjectMapping:dateMapping];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEPointEntry class] andConfiguration:config];
+    return [parser parseArray:representation];
 }
 
 - (NSError *)errorFromRepresentation:(NSDictionary *)representation {

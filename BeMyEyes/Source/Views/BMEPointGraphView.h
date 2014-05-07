@@ -20,7 +20,7 @@
 @property (assign, nonatomic) BOOL calculatesMaximum;
 @property (assign, nonatomic) UIEdgeInsets graphInsets;
 
-- (void)addPoints:(NSUInteger)points atDate:(NSDate *)date;
+- (void)addPoint:(NSUInteger)points atDate:(NSDate *)date;
 - (void)draw;
 
 @end

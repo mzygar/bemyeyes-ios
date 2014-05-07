@@ -39,8 +39,6 @@ PODS:
   - MRProgress/Stopable (0.4.1):
     - MRProgress/Helper
   - MRProgress/WeakProxy (0.4.1)
-  - OpenTokSDK (1.4.3)
-  - OpenTokSDK-WebRTC (2.1.7)
   - PSAlertView (1.1)
 
 DEPENDENCIES:
@@ -51,9 +49,6 @@ DEPENDENCIES:
   - ISO8601DateFormatter (~> 0.7)
   - Masonry (~> 0.4.0)
   - MRProgress (~> 0.4.1)
-  - OpenTokSDK (~> 1.4.3)
-  - OpenTokSDK-WebRTC (~> 2.1.6)
-  - OpenTokSDK-WebRTC (~> 2.1.7)
   - PSAlertView (~> 1.1)
 
 EXTERNAL SOURCES:
@@ -69,8 +64,6 @@ SPEC CHECKSUMS:
   ISO8601DateFormatter: 00944e437ea647f4244454ce8809d313861d08de
   Masonry: d673617c9cbc24aaea90fba20b10e47fd9970a39
   MRProgress: 6530ce71278dd7ecfb5e3c3e37df03a323690936
-  OpenTokSDK: 84cc625196b4c665da7e0133ac05cab4194a5904
-  OpenTokSDK-WebRTC: 025ba5ff374682d5254a6c820843009c5779c3d2
   PSAlertView: bdccae3cbd14f6060772654ae641daec7415d9fa
 
 COCOAPODS: 0.32.1

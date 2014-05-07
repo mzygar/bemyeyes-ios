@@ -1,1 +1,0 @@
-// This file is just created to make the OpenTok framework compile under iOS 7.0
