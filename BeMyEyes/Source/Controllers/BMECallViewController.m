@@ -226,23 +226,24 @@
 }
 
 - (void)displayVideoView:(UIView *)videoView {
-    [self.videoContainerView addSubview:videoView];
-    [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.videoContainerView);
-    }];
-    
-    self.videoView = videoView;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.view addSubview:videoView];
+        videoView.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.videoContainerView.bounds), CGRectGetHeight(self.videoContainerView.bounds));
+        self.videoView = videoView;
+    });
 }
 
 - (void)changeStatus:(NSString *)string {
-    self.statusLabel.hidden = NO;
-    self.statusLabel.text = string;
-    
-    [self.activityIndicatorView startAnimating];
-    
-    if ([self isUserBlind]) {
-        [BMESpeaker speak:string];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.statusLabel.hidden = NO;
+        self.statusLabel.text = string;
+        
+        [self.activityIndicatorView startAnimating];
+        
+        if ([self isUserBlind]) {
+            [BMESpeaker speak:string];
+        }
+    });
 }
 
 - (void)hideStatus {
@@ -362,8 +363,10 @@
         }
         
         if ([self isUserBlind]) {
+            NSLog(@"Display publisher view");
             [self displayViewForPublisher:self.publisher];
         } else {
+            NSLog(@"Display subscriber view");
             [self displayViewForSubscriber:self.subscriber];
         }
     }
