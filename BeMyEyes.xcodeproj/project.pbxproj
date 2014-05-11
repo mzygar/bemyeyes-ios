@@ -10,6 +10,7 @@
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
+		721F6B10191BD94C00E7B869 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721F6B0F191BD94C00E7B869 /* OpenTok.framework */; };
 		7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
 		7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */; };
 		7236E00218B8A87B00F622AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236E00118B8A87B00F622AA /* UIKit.framework */; };
@@ -38,7 +39,6 @@
 		7262301418BA39DB006F388C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301318BA39DB006F388C /* OpenGLES.framework */; };
 		7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301518BA39DF006F388C /* QuartzCore.framework */; };
 		7262301818BA39E3006F388C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301718BA39E3006F388C /* Security.framework */; };
-		726D7B8A191A7E59005690B7 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B89191A7E59005690B7 /* OpenTok.framework */; };
 		726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8B191A8572005690B7 /* libstdc++.6.0.9.dylib */; };
 		726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8D191A8577005690B7 /* libpthread.dylib */; };
 		726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8F191A8583005690B7 /* libxml2.dylib */; };
@@ -95,6 +95,7 @@
 		7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointGraphEntry.m; sourceTree = "<group>"; };
 		7206A76418FA9C0D00251824 /* BMEPointGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphView.h; sourceTree = "<group>"; };
 		7206A76518FA9C0D00251824 /* BMEPointGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointGraphView.m; sourceTree = "<group>"; };
+		721F6B0F191BD94C00E7B869 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenTok.framework; sourceTree = "<group>"; };
 		7236DFFA18B8A87B00F622AA /* BeMyEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMyEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7236DFFD18B8A87B00F622AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,7 +132,6 @@
 		7262301318BA39DB006F388C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7262301518BA39DF006F388C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7262301718BA39E3006F388C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		726D7B89191A7E59005690B7 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenTok.framework; sourceTree = "<group>"; };
 		726D7B8B191A8572005690B7 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		726D7B8D191A8577005690B7 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = usr/lib/libpthread.dylib; sourceTree = SDKROOT; };
 		726D7B8F191A8583005690B7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -219,6 +219,7 @@
 				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
 				726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */,
 				726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */,
+				721F6B10191BD94C00E7B869 /* OpenTok.framework in Frameworks */,
 				7262301818BA39E3006F388C /* Security.framework in Frameworks */,
 				7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */,
 				7262301418BA39DB006F388C /* OpenGLES.framework in Frameworks */,
@@ -234,7 +235,6 @@
 				7262300218BA39A1006F388C /* AVFoundation.framework in Frameworks */,
 				72622FFE18BA27FE006F388C /* AdSupport.framework in Frameworks */,
 				72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */,
-				726D7B8A191A7E59005690B7 /* OpenTok.framework in Frameworks */,
 				72622FFA18BA27F2006F388C /* Social.framework in Frameworks */,
 				72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */,
 				72DEF73618B90C760048FA90 /* SystemConfiguration.framework in Frameworks */,
@@ -452,7 +452,7 @@
 		726D7B88191A7E59005690B7 /* OpenTok-v2.2beta */ = {
 			isa = PBXGroup;
 			children = (
-				726D7B89191A7E59005690B7 /* OpenTok.framework */,
+				721F6B0F191BD94C00E7B869 /* OpenTok.framework */,
 			);
 			path = "OpenTok-v2.2beta";
 			sourceTree = "<group>";
@@ -852,8 +852,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/BeMyEyes/Source/Other",
-					"sources/OpenTok-v2.2beta",
+					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
@@ -879,8 +878,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/BeMyEyes/Source/Other",
-					"sources/OpenTok-v2.2beta",
+					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";

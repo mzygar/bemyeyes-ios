@@ -252,7 +252,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     }
     
     [self.pointGraphView draw];
-    self.totalPoint = 1000;
     [self.pointLabel setPoint:self.totalPoint animated:YES];
     [self layoutPoint];
 

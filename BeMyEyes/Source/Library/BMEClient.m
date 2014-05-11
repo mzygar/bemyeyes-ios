@@ -163,8 +163,7 @@
         BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
         [self storeCurrentUser:currentUser];
 
-        if (completion)
-        {
+        if (completion) {
             completion(YES, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -172,8 +171,7 @@
         
         [self storeCurrentUser:nil];
         
-        if (completion)
-        {
+        if (completion) {
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];
@@ -376,10 +374,10 @@
 
 - (void)loadTotalPoint:(void(^)(NSUInteger point, NSError *error))completion {
     NSString *path = [NSString stringWithFormat:@"users/helper_points_sum/%i", [self currentUser].identifier];
-    NSLog(@"%@", path);
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSInteger sum = [[responseObject objectForKey:@"sum"] integerValue];
         if (completion) {
-            completion([responseObject unsignedIntegerValue], nil);
+            completion(sum, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
@@ -478,7 +476,6 @@
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEToken class]];
     BMEToken *token = [parser parseDictionary:representation];
     [token setValue:expiryDate forKey:@"expiryDate"];
-    
     return token;
 }
 
@@ -555,8 +552,7 @@
         id parsed = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parseError];
         if (parseError) {
             return error;
-        }
-        else if ([parsed isKindOfClass:[NSDictionary class]] && [parsed objectForKey:@"error"]) {
+        } else if ([parsed isKindOfClass:[NSDictionary class]] && [parsed objectForKey:@"error"]) {
             return [self errorFromRepresentation:parsed];
         }
     }
