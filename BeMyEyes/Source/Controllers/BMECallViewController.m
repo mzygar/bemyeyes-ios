@@ -147,7 +147,7 @@
     OTError *error = nil;
     [self.session connectWithToken:self.token error:&error];
     if (error) {
-        NSLog(@"Could not connect to session: %@", error);
+         NSLog(@"OpenTok: Failed connecting to session with error: %@", error);
     }
 }
 
@@ -163,7 +163,7 @@
         if (self.subscriber) {
             [self.session unsubscribe:self.subscriber error:&otError];
             if (error) {
-                NSLog(@"Could not unsubscribe: %@", error);
+                NSLog(@"OpenTok: Failed unsubscribing with error: %@", error);
             }
         
             self.subscriber = nil;
@@ -173,7 +173,7 @@
             otError = nil;
             [self.session unpublish:self.publisher error:&otError];
             if (error) {
-                NSLog(@"Could not unpublish: %@", error);
+                 NSLog(@"OpenTok: Failed unpublishing with error: %@", error);
             }
         
             self.publisher = nil;
@@ -198,7 +198,7 @@
     OTError *error = nil;
     [self.session publish:self.publisher error:&error];
     if (error) {
-        NSLog(@"Failed publishing: %@", error);
+        NSLog(@"OpenTok: Failed publishing with error: %@", error);
     }
 }
 
@@ -206,6 +206,12 @@
     self.subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
     self.subscriber.subscribeToAudio = YES;
     self.subscriber.subscribeToVideo = ![self isUserBlind];
+    
+    OTError *error = nil;
+    [self.session subscribe:self.subscriber error:&error];
+    if (error) {
+        NSLog(@"OpenTok: Failed subscribing to stream with error: %@", error);
+    }
 }
 
 - (void)displayViewForPublisher:(OTPublisher *)publisher {
@@ -271,6 +277,7 @@
 #pragma mark Session Delegate
 
 - (void)sessionDidConnect:(OTSession *)session {
+    NSLog(@"OpenTok: [Session] Did connect");
     if (!self.isDisconnecting) {
         NSString *statusText = NSLocalizedStringFromTable(@"STATUS_CONNECTION_ESTABLISHED", @"BMECallViewController", @"Status when connection is established");
         [self changeStatus:statusText];
@@ -279,6 +286,7 @@
 }
 
 - (void)sessionDidDisconnect:(OTSession *)session {
+    NSLog(@"OpenTok: [Session] Did disconnect");
     [self dismiss];
     [self changeAudioCategoryToDefault];
 }
@@ -297,15 +305,18 @@
 }
 
 - (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
+    NSLog(@"OpenTok: [Session] Stream created");
     if (!self.isDisconnecting) {
         // Make sure we don't subscribe to our own stream
         if (![stream.connection.connectionId isEqualToString:session.connection.connectionId]) {
+            NSLog(@"OpenTok: [Session] Subscribe to stream");
             [self subscribeToStream:stream];
         }
     }
 }
 
 - (void)session:(OTSession *)session streamDestroyed:(OTStream *)stream {
+    NSLog(@"OpenTok: [Session] Stream destroyed");
     if (!self.isDisconnecting) {
         // If we are not disconnecting ourselves, then the other part has disconnected
         NSString *title = NSLocalizedStringFromTable(@"ALERT_OTHER_PART_DISCONNECTED_TITLE", @"BMECallViewController", @"Title in alert shown when other part has disconnected");
@@ -322,16 +333,15 @@
 #pragma mark Publisher Delegate
 
 - (void)publisher:(OTPublisherKit *)publisher streamCreated:(OTStream *)stream {
-    
+    NSLog(@"OpenTok: [Publisher] Stream created");
 }
 
 - (void)publisher:(OTPublisherKit *)publisher streamDestroyed:(OTStream *)stream {
-    if ([self.subscriber.stream.streamId isEqualToString:stream.streamId]) {
-        
-    }
+    NSLog(@"OpenTok: [Publisher] Stream destroyed");
 }
 
 - (void)publisher:(OTPublisherKit *)publisher didFailWithError:(OTError *)error {
+    NSLog(@"OpenTok: [Publisher] Did fail with error: %@", error);
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_PUBLISHING", @"BMECallViewController", @"Status when failed publishing");
         [self changeStatus:statusText];
@@ -348,6 +358,7 @@
 #pragma mark Subscriber Delegate
 
 - (void)subscriberDidConnectToStream:(OTSubscriberKit *)subscriber {
+    NSLog(@"OpenTok: [Subscriber] Did connect to stream");
     [self hideStatus];
     
     if (!self.isDisconnecting) {
@@ -365,6 +376,7 @@
 }
 
 - (void)subscriber:(OTSubscriberKit *)subscriber didFailWithError:(OTError *)error {
+    NSLog(@"OpenTok: [Subscriber] Did fail with error: %@", error);
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_SUBSCRIBING", @"BMECallViewController", @"Status when failed subscribing");
     [self changeStatus:statusText];
     
