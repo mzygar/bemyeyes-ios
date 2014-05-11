@@ -147,7 +147,8 @@
     OTError *error = nil;
     [self.session connectWithToken:self.token error:&error];
     if (error) {
-         NSLog(@"OpenTok: Failed connecting to session with error: %@", error);
+        NSLog(@"OpenTok: Failed connecting to session with error: %@", error);
+        [self disconnect];
     }
 }
 
@@ -199,6 +200,7 @@
     [self.session publish:self.publisher error:&error];
     if (error) {
         NSLog(@"OpenTok: Failed publishing with error: %@", error);
+        [self disconnect];
     }
 }
 
@@ -211,6 +213,7 @@
     [self.session subscribe:self.subscriber error:&error];
     if (error) {
         NSLog(@"OpenTok: Failed subscribing to stream with error: %@", error);
+        [self disconnect];
     }
 }
 
@@ -296,12 +299,7 @@
     
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_SESSION_FAILED", @"BMECallViewController", @"Status when session failed");
     [self changeStatus:statusText];
-    
-    if (self.session) {
-        [self disconnect];
-    } else {
-        [self dismiss];
-    }
+    [self disconnect];
 }
 
 - (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
@@ -347,11 +345,7 @@
         [self changeStatus:statusText];
     });
     
-    if (self.session.connection) {
-        [self disconnect];
-    } else {
-        [self dismiss];
-    }
+    [self disconnect];
 }
 
 #pragma mark -
@@ -379,12 +373,7 @@
     NSLog(@"OpenTok: [Subscriber] Did fail with error: %@", error);
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_SUBSCRIBING", @"BMECallViewController", @"Status when failed subscribing");
     [self changeStatus:statusText];
-    
-    if (self.session) {
-        [self disconnect];
-    } else {
-        [self dismiss];
-    }
+    [self disconnect];
 }
 
 @end
