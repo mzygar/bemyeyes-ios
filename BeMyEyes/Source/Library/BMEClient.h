@@ -47,7 +47,6 @@ enum {
 - (void)loginUsingTokenWithCompletion:(void (^)(BOOL success, NSError *error))completion;
 - (void)loginUsingFacebookWithSuccesss:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
 - (void)logoutWithCompletion:(void (^)(BOOL success, NSError *error))completion;
-- (void)resetFacebookLogin;
 - (void)resetLogin;
 
 - (void)createRequestWithSuccess:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
@@ -59,7 +58,7 @@ enum {
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction;
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo))success failure:(void(^)(NSError *error))failure;
+- (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo, NSError *error))completion;
 
 - (void)loadTotalPoint:(void(^)(NSUInteger point, NSError *error))completion;
 - (void)loadPointForDays:(NSUInteger)days completion:(void(^)(NSArray *entries, NSError *error))completion;

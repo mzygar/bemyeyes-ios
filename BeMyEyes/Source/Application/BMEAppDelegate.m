@@ -8,7 +8,6 @@
 
 #import "BMEAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
-#import <HIPSocialAuth/HIPSocialAuthManager.h>
 #import <PSAlertView/PSPDFAlertView.h>
 #import "BMEClient.h"
 #import "BMECallViewController.h"
@@ -53,10 +52,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [[HIPSocialAuthManager sharedManager] handleOpenURL:url];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -191,7 +186,6 @@
                     NSLog(@"Log in not valid. Log out.");
                     self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
                     [[BMEClient sharedClient] logoutWithCompletion:nil];
-                    [[BMEClient sharedClient] resetFacebookLogin];
                     [[BMEClient sharedClient] resetLogin];
                     NSLog(@"Could not automatically log in: %@", error);
                     break;

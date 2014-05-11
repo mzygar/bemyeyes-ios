@@ -215,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */,
 				726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */,
 				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
 				726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */,
@@ -234,7 +235,6 @@
 				7262300418BA39A6006F388C /* CFNetwork.framework in Frameworks */,
 				7262300218BA39A1006F388C /* AVFoundation.framework in Frameworks */,
 				72622FFE18BA27FE006F388C /* AdSupport.framework in Frameworks */,
-				72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */,
 				72622FFA18BA27F2006F388C /* Social.framework in Frameworks */,
 				72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */,
 				72DEF73618B90C760048FA90 /* SystemConfiguration.framework in Frameworks */,

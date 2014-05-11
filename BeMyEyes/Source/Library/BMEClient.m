@@ -14,7 +14,8 @@
 #import <DCKeyValueObjectMapping/DCPropertyAggregator.h>
 #import <DCKeyValueObjectMapping/DCObjectMapping.h>
 #import <ISO8601DateFormatter/ISO8601DateFormatter.h>
-#import <HIPSocialAuth/HIPSocialAuthManager.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 #import "AESCrypt.h"
 #import "BMERequest.h"
 #import "BMEToken.h"
@@ -29,6 +30,8 @@
 
 @interface BMEClient ()
 @property (assign, nonatomic, getter = hasConfiguredFacebookLogin) BOOL configuredFacebookLogin;
+@property (copy, nonatomic) void(^fbAuthCompletion)(BMEFacebookInfo *, NSError *);
+@property (strong, nonatomic) ACAccountStore *accountStore;
 @end
 
 @implementation BMEClient
@@ -87,21 +90,6 @@
 {
     [self clearAuthorizationHeader];
     [self setAuthorizationHeaderWithUsername:username password:password];
-}
-
-#pragma mark -
-#pragma mark Configurations
-
-- (void)configureFacebookLogin {
-    if (!self.hasConfiguredFacebookLogin) {
-        self.configuredFacebookLogin = YES;
-
-        [[HIPSocialAuthManager sharedManager] setupWithFacebookAppID:self.facebookAppId
-                                              facebookAppPermissions:@[ @"email" ]
-                                                facebookSchemeSuffix:nil
-                                                  twitterConsumerKey:nil
-                                               twitterConsumerSecret:nil];
-    }
 }
 
 #pragma mark -
@@ -180,13 +168,13 @@
 - (void)loginUsingFacebookWithSuccesss:(void (^)(BMEToken *))success loginFailure:(void (^)(NSError *))loginFailure accountFailure:(void (^)(NSError *))accountFailure {
     NSAssert([self.facebookAppId length] > 0, @"Facebook app ID must be set in order to login with Facebook.");
     
-    [self configureFacebookLogin];
-    
-    [self authenticateWithFacebook:^(BMEFacebookInfo *fbInfo) {
-        [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] success:success failure:loginFailure];
-    } failure:^(NSError *error) {
-        if (accountFailure) {
-            accountFailure(error);
+    [self authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
+        if (!error) {
+            [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] success:success failure:loginFailure];
+        } else {
+            if (accountFailure) {
+                accountFailure(error);
+            }
         }
     }];
 }
@@ -194,7 +182,6 @@
 - (void)logoutWithCompletion:(void (^)(BOOL, NSError *))completion {
     NSDictionary *parameters = @{ @"token" : [self token] };
     [self putPath:@"users/logout" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self resetFacebookLogin];
         [self resetLogin];
         
         _loggedIn = NO;
@@ -207,11 +194,6 @@
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];
-}
-
-- (void)resetFacebookLogin {
-    [[HIPSocialAuthManager sharedManager] removeAccountOfType:HIPSocialAccountTypeFacebook];
-    [[HIPSocialAuthManager sharedManager] resetCachedTokens];
 }
 
 - (void)resetLogin {
@@ -332,41 +314,9 @@
 #pragma mark -
 #pragma mark Facebook
 
-- (void)authenticateWithFacebook:(void (^)(BMEFacebookInfo *))success failure:(void (^)(NSError *))failure {
-    if ([[HIPSocialAuthManager sharedManager] hasAuthenticatedAccountOfType:HIPSocialAccountTypeFacebook]) {
-        [self resetFacebookLogin];
-    }
-    
-    [[HIPSocialAuthManager sharedManager] authenticateAccountOfType:HIPSocialAccountTypeFacebook withHandler:^(HIPSocialAccount *account, NSDictionary *profileInfo, NSError *error) {
-        if (!error) {
-            NSNumber *userId = [profileInfo objectForKey:@"id"];
-            NSString *email = [profileInfo objectForKey:@"email"];
-            NSString *firstName = [profileInfo objectForKey:@"first_name"];
-            NSString *lastName = [profileInfo objectForKey:@"last_name"];
-            
-            if (userId && email) {
-                BMEFacebookInfo *fbInfo = [BMEFacebookInfo new];
-                [fbInfo setValue:userId forKeyPath:@"userId"];
-                [fbInfo setValue:email forKeyPath:@"email"];
-                [fbInfo setValue:firstName forKeyPath:@"firstName"];
-                [fbInfo setValue:lastName forKeyPath:@"lastName"];
-                
-                success(fbInfo);
-            } else {
-                [self resetFacebookLogin];
-                
-                if (failure) {
-                    failure(error);
-                }
-            }
-        } else {
-            [self resetFacebookLogin];
-            
-            if (failure) {
-                failure(error);
-            }
-        }
-    }];
+- (void)authenticateWithFacebook:(void (^)(BMEFacebookInfo *, NSError *))completion {
+    self.fbAuthCompletion = completion;
+    [self facebookRequestAccess];
 }
 
 #pragma mark -
@@ -457,6 +407,91 @@
             failure([self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];
+}
+
+- (void)facebookRequestAccess {
+    NSDictionary *options = @{ ACFacebookAppIdKey: self.facebookAppId, ACFacebookPermissionsKey: @[ @"email" ] };
+    ACAccountType *accountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
+    [self.accountStore requestAccessToAccountsWithType:accountType options:options completion:^(BOOL granted, NSError *error) {
+        if (granted) {
+            NSLog(@"Facebook: Did get access to account");
+            ACAccount *account = [[self.accountStore accountsWithAccountType:accountType] firstObject];
+            [self facebookRenewAccount:account];
+        } else {
+            NSLog(@"Facebook: Could not get access to account: %@", error);
+            [self facebookAuthFailed:error];
+        }
+    }];
+}
+
+- (void)facebookRenewAccount:(ACAccount *)account {
+    [self.accountStore renewCredentialsForAccount:account completion:^(ACAccountCredentialRenewResult renewResult, NSError *error) {
+        if (!error) {
+            NSLog(@"Facebook: Did renew credentials");
+            [self.accountStore saveAccount:account withCompletionHandler:^(BOOL success, NSError *error) {
+                if (success) {
+                    NSLog(@"Facebook: Did save account");
+                    [self facebookGetInfoFromAccount:account];
+                } else {
+                    NSLog(@"Facebook: Could not save account: %@", error);
+                    [self facebookAuthFailed:error];
+                }
+            }];
+        } else {
+            NSLog(@"Facebook: Could not renew credentials: %@", error);
+            [self facebookAuthFailed:error];
+        }
+    }];
+}
+
+- (void)facebookGetInfoFromAccount:(ACAccount *)account {
+    NSURL *url = [NSURL URLWithString:@"https://graph.facebook.com/me"];
+    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeFacebook requestMethod:SLRequestMethodGET URL:url parameters:nil];
+    request.account = account;
+    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+        if (error == nil && [urlResponse statusCode] == 200) {
+            NSError *deserializationError;
+            NSDictionary *userData = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&deserializationError];
+            if (userData != nil && deserializationError == nil) {
+                [self facebookAuthSuccessWithUserData:userData];
+            } else {
+                NSLog(@"Facebook: Could not deserialize response from request to get info: %@", error);
+                [self facebookAuthFailed:deserializationError];
+            }
+        } else {
+            NSLog(@"Facebook: Could not perform request to get info: %@", error);
+            [self facebookAuthFailed:error];
+        }
+    }];
+}
+
+- (void)facebookAuthFailed:(NSError *)error {
+    if (self.fbAuthCompletion) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.fbAuthCompletion(nil, error);
+            self.fbAuthCompletion = nil;
+        });
+    }
+}
+
+- (void)facebookAuthSuccessWithUserData:(NSDictionary *)userData {
+    if (self.fbAuthCompletion) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSNumber *userId = userData[@"id"];
+            NSString *firstName = userData[@"first_name"];
+            NSString *lastName = userData[@"last_name"];
+            NSString *email = userData[@"email"];
+            
+            BMEFacebookInfo *fbInfo = [BMEFacebookInfo new];
+            [fbInfo setValue:userId forKeyPath:@"userId"];
+            [fbInfo setValue:email forKeyPath:@"email"];
+            [fbInfo setValue:firstName forKeyPath:@"firstName"];
+            [fbInfo setValue:lastName forKeyPath:@"lastName"];
+            
+            self.fbAuthCompletion(fbInfo, nil);
+            self.fbAuthCompletion = nil;
+        });
+    }
 }
 
 - (BMERequest *)mapRequestFromRepresentation:(NSDictionary *)representation {
@@ -558,6 +593,14 @@
     }
     
     return error;
+}
+
+- (ACAccountStore *)accountStore {
+    if (!_accountStore) {
+        _accountStore = [ACAccountStore new];
+    }
+    
+    return _accountStore;
 }
 
 /**
