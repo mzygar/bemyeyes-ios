@@ -9,7 +9,10 @@
 #ifndef BMEGlobal_h
 #define BMEGlobal_h
 
-#define BMEAPIBaseUrl @"http://devapi.bemyeyes.org/"
+#define BMEAPIDevelopmentBaseUrl @"https://devapi.bemyeyes.org"
+#define BMEAPIStagingBaseUrl @"https://stagingapi.bemyeyes.org"
+#define BMEAPIPublicBaseUrl @"https://api.bemyeyes.org"
+
 #define BMEAPIUsername @""
 #define BMEAPIPassword @""
 
@@ -28,6 +31,7 @@
 #define BMEMainHelperControllerIdentifier @"MainHelper"
 #define BMEMenuControllerIdentifier @"Menu"
 #define BMECallControllerIdentifier @"Call"
+#define BMESecretSettingsControllerIdentifier @"SecretSettings"
 
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"
 
