@@ -10,6 +10,7 @@
 #import <MRProgress/MRProgress.h>
 #import "BMEAppDelegate.h"
 #import "BMEClient.h"
+#import "BMEUser.h"
 
 #define BMELoginLoggedInSegue @"LoggedIn"
 
@@ -144,7 +145,9 @@
 }
 
 - (void)didLogin {
-    [TheAppDelegate registerForRemoteNotifications];
+    if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
+        [TheAppDelegate registerForRemoteNotifications];
+    }
     
     [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
 }
