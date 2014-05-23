@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *signUpBottomLabel;
 @property (weak, nonatomic) IBOutlet UILabel *termsTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *termsBottomLabel;
+@property (weak, nonatomic) IBOutlet UILabel *privacyTopLabel;
+@property (weak, nonatomic) IBOutlet UILabel *privacyBottomLabel;
 @end
 
 @implementation BMESignUpMethodViewController
@@ -79,6 +81,16 @@
 - (IBAction)termsButtonReleased:(id)sender {
     self.termsTopLabel.alpha = 1.0f;
     self.termsBottomLabel.alpha = 1.0f;
+}
+
+- (IBAction)privacyButtonTouched:(id)sender {
+    self.privacyTopLabel.alpha = 0.50f;
+    self.privacyBottomLabel.alpha = 0.50f;
+}
+
+- (IBAction)privacyButtonReleased:(id)sender {
+    self.privacyTopLabel.alpha = 1.0f;
+    self.privacyBottomLabel.alpha = 1.0f;
 }
 
 - (void)performFacebookRegistration {

@@ -10,6 +10,10 @@
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
+		720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */; };
+		720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */; };
+		721CAF21192D2EAA00B5B4E4 /* march.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF20192D2EAA00B5B4E4 /* march.aiff */; };
+		721CAF23192D30D900B5B4E4 /* silence.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF22192D30D900B5B4E4 /* silence.aiff */; };
 		721F6B10191BD94C00E7B869 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721F6B0F191BD94C00E7B869 /* OpenTok.framework */; };
 		7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
 		7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */; };
@@ -95,6 +99,12 @@
 		7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointGraphEntry.m; sourceTree = "<group>"; };
 		7206A76418FA9C0D00251824 /* BMEPointGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphView.h; sourceTree = "<group>"; };
 		7206A76518FA9C0D00251824 /* BMEPointGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointGraphView.m; sourceTree = "<group>"; };
+		720A68DA192FD9030036CB1E /* BMEPrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPrivacyPolicyViewController.h; sourceTree = "<group>"; };
+		720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEWebViewViewController.h; sourceTree = "<group>"; };
+		720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEWebViewViewController.m; sourceTree = "<group>"; };
+		721CAF20192D2EAA00B5B4E4 /* march.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = march.aiff; sourceTree = "<group>"; };
+		721CAF22192D30D900B5B4E4 /* silence.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = silence.aiff; sourceTree = "<group>"; };
 		721F6B0F191BD94C00E7B869 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenTok.framework; sourceTree = "<group>"; };
 		7236DFFA18B8A87B00F622AA /* BeMyEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMyEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7236DFFD18B8A87B00F622AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -248,6 +258,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721CAF1F192D2EAA00B5B4E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				721CAF22192D30D900B5B4E4 /* silence.aiff */,
+				721CAF20192D2EAA00B5B4E4 /* march.aiff */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7236DFF118B8A87B00F622AA = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				7236E01518B8A87B00F622AA /* Images.xcassets */,
+				721CAF1F192D2EAA00B5B4E4 /* Resources */,
 				7236E03218B8A99500F622AA /* Storyboards */,
 				7236E03318B8A9EA00F622AA /* Source */,
 				7236E00418B8A87B00F622AA /* Supporting Files */,
@@ -376,8 +396,12 @@
 				72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */,
 				72E65FA218BA7C12002FB2E0 /* BMEIntroViewController.h */,
 				72E65FA318BA7C12002FB2E0 /* BMEIntroViewController.m */,
+				720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */,
+				720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */,
 				729C6DC118E9C9B60043D48F /* BMETermsViewController.h */,
 				729C6DC218E9C9B60043D48F /* BMETermsViewController.m */,
+				720A68DA192FD9030036CB1E /* BMEPrivacyPolicyViewController.h */,
+				720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */,
 				7236E04518B8DBDF00F622AA /* BMESignUpMethodViewController.h */,
 				7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */,
 				7236E04818B8DD8E00F622AA /* BMESignUpViewController.h */,
@@ -570,7 +594,9 @@
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
 				72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */,
+				721CAF23192D30D900B5B4E4 /* silence.aiff in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
+				721CAF21192D2EAA00B5B4E4 /* march.aiff in Resources */,
 				729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */,
 				72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */,
 				7236E01118B8A87B00F622AA /* Main.storyboard in Resources */,
@@ -626,6 +652,7 @@
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
 				72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
+				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
@@ -638,6 +665,7 @@
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
+				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
 				72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */,
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,
