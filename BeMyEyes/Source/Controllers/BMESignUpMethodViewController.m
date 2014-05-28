@@ -26,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *termsBottomLabel;
 @property (weak, nonatomic) IBOutlet UILabel *privacyTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *privacyBottomLabel;
+@property (weak, nonatomic) IBOutlet UIButton *emailSignUpButton;
+@property (weak, nonatomic) IBOutlet UIButton *termsButton;
+@property (weak, nonatomic) IBOutlet UIButton *privacyButton;
 @end
 
 @implementation BMESignUpMethodViewController
@@ -35,6 +38,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.signUpTopLabel.isAccessibilityElement = NO;
+    self.signUpBottomLabel.isAccessibilityElement = NO;
+    self.termsTopLabel.isAccessibilityElement = NO;
+    self.termsBottomLabel.isAccessibilityElement = NO;
+    self.privacyTopLabel.isAccessibilityElement = NO;
+    self.privacyBottomLabel.isAccessibilityElement = NO;
+
+    self.emailSignUpButton.accessibilityLabel = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL", @"BMESignUpMethodViewController", @"Accessibility label for email sign up button");
+    self.emailSignUpButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for email sign up button");
+    
+    self.termsButton.accessibilityLabel = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL", @"BMESignUpMethodViewController", @"Accessibility label for terms and agreements button");
+    self.termsButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for terms and agreements button");
+    
+    self.privacyButton.accessibilityLabel = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL", @"BMESignUpMethodViewController", @"Accessibility label for privacy policy button");
+    self.privacyButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for privacy policy button");
     
     // Before checking if the user has enabled notifications,
     // we must be sure that we have given them the chance to do so

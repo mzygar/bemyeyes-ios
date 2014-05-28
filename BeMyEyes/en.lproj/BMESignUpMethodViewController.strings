@@ -40,3 +40,21 @@
 /* Title in alert view shown when no Facebook account was found. */
 "ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "No account found";
 
+/* Accessibility hint for email sign up button */
+"SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT" = "Sign up with e-mail";
+
+/* Accessibility label for email sign up button */
+"SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL" = " ";
+
+/* Accessibility hint for privacy policy button */
+"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "Privacy Policy";
+
+/* Accessibility label for privacy policy button */
+"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL" = " ";
+
+/* Accessibility hint for terms and agreements button */
+"SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT" = "Terms and agreements";
+
+/* Accessibility label for terms and agreements button */
+"SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL" = " ";
+

@@ -807,11 +807,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="hKS-qr-nIO"/>
                     <connections>
+                        <outlet property="emailSignUpButton" destination="gLG-Sj-ggw" id="1Um-Jp-jKA"/>
                         <outlet property="privacyBottomLabel" destination="cud-rC-Tmf" id="r3K-3l-PKy"/>
+                        <outlet property="privacyButton" destination="W9k-mY-n6b" id="NF1-Gb-knW"/>
                         <outlet property="privacyTopLabel" destination="XFF-B2-BZA" id="H6a-EG-OAp"/>
                         <outlet property="signUpBottomLabel" destination="RNw-7I-Wvf" id="SPf-XL-NHK"/>
                         <outlet property="signUpTopLabel" destination="oqz-Jo-m0H" id="5T6-zP-eHP"/>
                         <outlet property="termsBottomLabel" destination="Gvx-U1-YpW" id="Trp-ed-GMa"/>
+                        <outlet property="termsButton" destination="fkb-Ab-ezV" id="3Te-s5-ymP"/>
                         <outlet property="termsTopLabel" destination="3wM-z3-EP5" id="IaZ-m4-uok"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="Ce4-tx-KmL"/>
                         <segue destination="4fN-kL-DOK" kind="push" identifier="Registered" id="aMJ-13-MXV"/>
