@@ -1694,6 +1694,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0 (2)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-Qn-2Ma">
+                                <rect key="frame" x="175" y="438" width="125" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="kVb-Hc-vE0"/>
+                                    <constraint firstAttribute="height" constant="24" id="spA-xo-tTX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.54901960780000003" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1710,6 +1721,7 @@
                             <constraint firstItem="mvj-Dw-BPc" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="CYy-Xd-tGa"/>
                             <constraint firstItem="fEL-aF-32C" firstAttribute="leading" secondItem="mvj-Dw-BPc" secondAttribute="trailing" constant="8" id="D2A-50-YKA"/>
                             <constraint firstItem="nom-F8-SPu" firstAttribute="bottom" secondItem="tvF-nc-9Hj" secondAttribute="bottom" id="D5E-3h-N73"/>
+                            <constraint firstItem="af5-uQ-5WX" firstAttribute="centerY" secondItem="ub2-Qn-2Ma" secondAttribute="centerY" id="DnX-j5-8nM"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="width" secondItem="XJV-uE-7uS" secondAttribute="width" id="IMy-UE-jFx"/>
                             <constraint firstItem="24Y-Oq-jej" firstAttribute="centerY" secondItem="b3d-mk-uwU" secondAttribute="centerY" constant="0.5" id="L3z-hc-r6f"/>
                             <constraint firstItem="Gr7-P6-KE6" firstAttribute="centerY" secondItem="DTF-Vw-osB" secondAttribute="centerY" id="NGb-LV-iP4"/>
@@ -1720,6 +1732,7 @@
                             <constraint firstItem="DTF-Vw-osB" firstAttribute="leading" secondItem="Gr7-P6-KE6" secondAttribute="trailing" constant="8" id="Vdt-sG-Z4l"/>
                             <constraint firstItem="IH7-YW-7ZL" firstAttribute="centerY" secondItem="XJV-uE-7uS" secondAttribute="centerY" constant="0.5" id="XW8-eq-WSZ"/>
                             <constraint firstItem="E48-y6-NLX" firstAttribute="top" secondItem="Gr7-P6-KE6" secondAttribute="bottom" constant="3" id="ZKZ-Oz-PYL"/>
+                            <constraint firstAttribute="trailing" secondItem="ub2-Qn-2Ma" secondAttribute="trailing" constant="20" id="ZUF-dC-Uj6"/>
                             <constraint firstAttribute="trailing" secondItem="fEL-aF-32C" secondAttribute="trailing" constant="20" id="ZkS-lT-JhJ"/>
                             <constraint firstItem="nxv-u4-3l1" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="ZvT-Bi-lhr"/>
                             <constraint firstAttribute="trailing" secondItem="IH7-YW-7ZL" secondAttribute="trailing" constant="20" id="aQH-Sw-WV4"/>
@@ -1747,6 +1760,7 @@
                         <outlet property="emailTextField" destination="fEL-aF-32C" id="ViY-LK-yX9"/>
                         <outlet property="firstNameTextField" destination="IH7-YW-7ZL" id="2sa-Nn-ZMW"/>
                         <outlet property="lastNameTextField" destination="24Y-Oq-jej" id="T81-vr-GjG"/>
+                        <outlet property="versionLabel" destination="ub2-Qn-2Ma" id="eIk-44-IZo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>

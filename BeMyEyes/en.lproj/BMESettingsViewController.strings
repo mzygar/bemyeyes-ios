@@ -16,3 +16,5 @@
 /* Title in overlay shown when logging out */
 "OVERLAY_LOGGING_OUT_TITLE" = "Logging out...";
 
+/* Version title */
+"VERSION_TITLE" = "Version %@";

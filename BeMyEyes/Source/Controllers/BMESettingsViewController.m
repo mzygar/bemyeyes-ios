@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *boostSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @end
 
 @implementation BMESettingsViewController
@@ -31,6 +32,11 @@
     self.firstNameTextField.text = [BMEClient sharedClient].currentUser.firstName;
     self.lastNameTextField.text = [BMEClient sharedClient].currentUser.lastName;
     self.emailTextField.text = [BMEClient sharedClient].currentUser.email;
+    
+    NSString *majorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *minorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *strVersion = [NSString stringWithFormat:@"%@ (%@)", majorVersion, minorVersion];
+    self.versionLabel.text = [NSString stringWithFormat:NSLocalizedStringFromTable(@"VERSION_TITLE", @"BMESettingsViewController", @"Version title"), strVersion];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
