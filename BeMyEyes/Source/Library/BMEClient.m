@@ -338,7 +338,6 @@
 
 - (void)loadPointForDays:(NSUInteger)days completion:(void (^)(NSArray *, NSError *))completion {
     NSString *path = [NSString stringWithFormat:@"users/helper_points/%@", [self currentUser].identifier];
-    NSLog(@"%@", path);
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
             completion([self mapPointEntryFromRepresentation:responseObject], nil);
