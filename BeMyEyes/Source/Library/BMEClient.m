@@ -323,7 +323,7 @@
 #pragma mark Points
 
 - (void)loadTotalPoint:(void(^)(NSUInteger point, NSError *error))completion {
-    NSString *path = [NSString stringWithFormat:@"users/helper_points_sum/%i", [self currentUser].identifier];
+    NSString *path = [NSString stringWithFormat:@"users/helper_points_sum/%@", [self currentUser].identifier];
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSInteger sum = [[responseObject objectForKey:@"sum"] integerValue];
         if (completion) {
@@ -337,7 +337,8 @@
 }
 
 - (void)loadPointForDays:(NSUInteger)days completion:(void (^)(NSArray *, NSError *))completion {
-    NSString *path = [NSString stringWithFormat:@"users/helper_points/%i", [self currentUser].identifier];
+    NSString *path = [NSString stringWithFormat:@"users/helper_points/%@", [self currentUser].identifier];
+    NSLog(@"%@", path);
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
             completion([self mapPointEntryFromRepresentation:responseObject], nil);
@@ -515,6 +516,8 @@
 }
 
 - (BMEUser *)mapUserFromRepresentation:(NSDictionary *)representation {
+    NSLog(@"%@", representation);
+    
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     
     DCObjectMapping *identifierMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"identifier" onClass:[BMEUser class]];

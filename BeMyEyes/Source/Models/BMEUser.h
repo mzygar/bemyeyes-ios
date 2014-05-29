@@ -10,7 +10,7 @@
 
 @interface BMEUser : NSObject <NSCoding>
 
-@property (readonly, nonatomic) NSUInteger identifier;
+@property (readonly, nonatomic) NSString *identifier;
 @property (readonly, nonatomic) NSString *userId;
 @property (readonly, nonatomic) NSString *username;
 @property (readonly, nonatomic) NSString *email;

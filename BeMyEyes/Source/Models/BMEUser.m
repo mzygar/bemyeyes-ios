@@ -15,7 +15,7 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
-        _identifier = [[aDecoder decodeObjectForKey:NSStringFromSelector(@selector(identifier))] unsignedIntegerValue];
+        _identifier = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(identifier))];
         _userId = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(userId))];
         _username = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(username))];
         _email = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(email))];
@@ -29,7 +29,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:@(self.identifier) forKey:NSStringFromSelector(@selector(identifier))];
+    [aCoder encodeObject:self.identifier forKey:NSStringFromSelector(@selector(identifier))];
     [aCoder encodeObject:self.userId forKey:NSStringFromSelector(@selector(userId))];
     [aCoder encodeObject:self.username forKey:NSStringFromSelector(@selector(username))];
     [aCoder encodeObject:self.email forKey:NSStringFromSelector(@selector(email))];
