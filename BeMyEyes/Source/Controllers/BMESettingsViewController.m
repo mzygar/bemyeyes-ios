@@ -112,7 +112,9 @@
     [[BMEClient sharedClient] updateCurrentUserWithFirstName:[self.firstNameTextField text] lastName:[self.lastNameTextField text] email:[self.emailTextField text] completion:^(BOOL success, NSError *error) {
         [self populateFields];
         
-        if (error) {
+        if (!error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidUpdateProfileNotification object:nil];
+        } else {
             NSLog(@"Could not save user information: %@", error);
         }
     }];

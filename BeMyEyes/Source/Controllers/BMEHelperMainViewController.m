@@ -63,12 +63,20 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 @property (assign, nonatomic) NSUInteger totalPoint;
 @property (strong, nonatomic) NSArray *pointEntries;
+
+@property (strong, nonatomic) NSString *greetingFormat;
 @end
 
 @implementation BMEHelperMainViewController
 
 #pragma mark -
 #pragma mark Lifecycle
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdateProfile:) name:BMEDidUpdateProfileNotification object:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -89,25 +97,40 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     self.pointEntries = nil;
+    self.greetingFormat = nil;
 }
 
 #pragma mark -
 #pragma mark Private Methods
 
 - (void)displayGreeting {
+    if (!self.greetingFormat) {
+        self.greetingFormat = [self randomGreetingFormat];
+    }
+    
+    if (self.greetingFormat) {
+        NSString *name = [BMEClient sharedClient].currentUser.firstName;
+        self.greetingLabel.text = [NSString stringWithFormat:self.greetingFormat, name];
+    } else {
+        self.greetingLabel.text = nil;
+    }
+}
+
+- (NSString *)randomGreetingFormat {
     NSArray *greetingFormats = @[ NSLocalizedStringFromTable(@"GREETING_1", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
                                   NSLocalizedStringFromTable(@"GREETING_2", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
                                   NSLocalizedStringFromTable(@"GREETING_3", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
                                   NSLocalizedStringFromTable(@"GREETING_4", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
                                   NSLocalizedStringFromTable(@"GREETING_5", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name.") ];
     if (greetingFormats) {
-        NSString *name = [BMEClient sharedClient].currentUser.firstName;
         NSString *greetingFormat = greetingFormats[arc4random() % [greetingFormats count]];
-        self.greetingLabel.text = [NSString stringWithFormat:greetingFormat, name];
-    } else {
-        self.greetingLabel.text = nil;
+        return greetingFormat;
     }
+    
+    return nil;
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
@@ -295,6 +318,13 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     CGPoint pos = [gestureRecognizer locationInView:self.snoozeSliderView];
     return CGRectContainsPoint(self.snoozeThumbImageView.frame, pos);
+}
+
+#pragma mark -
+#pragma mark Notifications
+
+- (void)didUpdateProfile:(NSNotification *)notification {
+    [self displayGreeting];
 }
 
 @end
