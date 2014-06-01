@@ -124,6 +124,42 @@
     [self createUserWithParameters:parameters completion:completion];
 }
 
+- (void)updateCurrentUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion {
+    [self updateUserWithIdentifier:[self currentUser].identifier firstName:firstName lastName:lastName email:email completion:completion];
+}
+
+- (void)updateUserWithIdentifier:(NSString *)identifier firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion {
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    if (firstName) {
+        [params setValue:firstName forKey:@"first_name"];
+    }
+    
+    if (lastName) {
+        [params setValue:lastName forKey:@"last_name"];
+    }
+    
+    if (email) {
+        [params setValue:email forKey:@"email"];
+    }
+    
+    NSString *path = [NSString stringWithFormat:@"users/%@", identifier];
+    [self putPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        BMEUser *currentUser = [self currentUser];
+        [currentUser setValue:firstName forKeyPath:@"firstName"];
+        [currentUser setValue:lastName forKeyPath:@"lastName"];
+        [currentUser setValue:email forKeyPath:@"email"];
+        [self storeCurrentUser:currentUser];
+        
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(NO, error);
+        }
+    }];
+}
+
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password success:(void (^)(BMEToken *))success failure:(void (^)(NSError *error))failure {
     NSAssert([email length] > 0, @"E-mail cannot be empty.");
     NSAssert([password length] > 0, @"Password cannot be empty.");

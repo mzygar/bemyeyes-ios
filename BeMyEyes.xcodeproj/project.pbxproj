@@ -12,6 +12,7 @@
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
 		720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */; };
 		720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */; };
+		721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C3957193BA03400637F88 /* BMEEmailValidator.m */; };
 		721CAF21192D2EAA00B5B4E4 /* march.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF20192D2EAA00B5B4E4 /* march.aiff */; };
 		721CAF23192D30D900B5B4E4 /* silence.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF22192D30D900B5B4E4 /* silence.aiff */; };
 		721F6B10191BD94C00E7B869 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721F6B0F191BD94C00E7B869 /* OpenTok.framework */; };
@@ -103,6 +104,8 @@
 		720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEWebViewViewController.h; sourceTree = "<group>"; };
 		720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEWebViewViewController.m; sourceTree = "<group>"; };
+		721C3956193BA03400637F88 /* BMEEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEEmailValidator.h; sourceTree = "<group>"; };
+		721C3957193BA03400637F88 /* BMEEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEEmailValidator.m; sourceTree = "<group>"; };
 		721CAF20192D2EAA00B5B4E4 /* march.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = march.aiff; sourceTree = "<group>"; };
 		721CAF22192D30D900B5B4E4 /* silence.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = silence.aiff; sourceTree = "<group>"; };
 		721F6B0F191BD94C00E7B869 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenTok.framework; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 				729656A418CC933F00E1A9EE /* BMETopNavigationController.m */,
 				72B1493B18DF6AE100E9A8A9 /* BMESpeaker.h */,
 				72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */,
+				721C3956193BA03400637F88 /* BMEEmailValidator.h */,
+				721C3957193BA03400637F88 /* BMEEmailValidator.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -666,6 +671,7 @@
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
 				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
+				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
 				72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */,
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,

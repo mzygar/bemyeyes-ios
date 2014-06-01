@@ -10,15 +10,17 @@
 #import <MRProgress/MRProgress.h>
 #import "BMEClient.h"
 #import "BMEUser.h"
+#import "BMEEmailValidator.h"
 
 #define BMEUnwindSettingsSegue @"UnwindSettings"
 
-@interface BMESettingsViewController ()
+@interface BMESettingsViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *boostSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (assign, nonatomic) BOOL shouldSave;
 @end
 
 @implementation BMESettingsViewController
@@ -29,9 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.firstNameTextField.text = [BMEClient sharedClient].currentUser.firstName;
-    self.lastNameTextField.text = [BMEClient sharedClient].currentUser.lastName;
-    self.emailTextField.text = [BMEClient sharedClient].currentUser.email;
+    [self populateFields];
     
     NSString *majorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *minorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
@@ -43,6 +43,12 @@
     [super viewDidAppear:animated];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self saveIfSettingChanged];
 }
 
 #pragma mark -
@@ -78,11 +84,47 @@
     
 }
 
+- (IBAction)settingValueChanged:(id)sender {
+    self.shouldSave = YES;
+}
+
+- (void)validateEmail {
+    if (![BMEEmailValidator isEmailValid:[self.emailTextField text]]) {
+        self.emailTextField.text = [BMEClient sharedClient].currentUser.email;
+    }
+}
+
+- (void)populateFields {
+    BMEUser *user = [BMEClient sharedClient].currentUser;
+    self.firstNameTextField.text = user.firstName;
+    self.lastNameTextField.text = user.lastName;
+    self.emailTextField.text = user.email;
+}
+
+- (void)saveIfSettingChanged {
+    if (self.shouldSave) {
+        [self save];
+        self.shouldSave = NO;
+    }
+}
+
+- (void)save {
+    [[BMEClient sharedClient] updateCurrentUserWithFirstName:[self.firstNameTextField text] lastName:[self.lastNameTextField text] email:[self.emailTextField text] completion:^(BOOL success, NSError *error) {
+        [self populateFields];
+        
+        if (error) {
+            NSLog(@"Could not save user information: %@", error);
+        }
+    }];
+}
+
 #pragma mark -
 #pragma mark Text Field Delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    [self validateEmail];
+    [self saveIfSettingChanged];
     
     return NO;
 }
