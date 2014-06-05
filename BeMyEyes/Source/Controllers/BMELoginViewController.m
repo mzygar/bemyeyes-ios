@@ -38,21 +38,13 @@
 }
 
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
-    __weak typeof(self) weakSelf = self;
-    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
+    [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
         if (isRegistered) {
             if (useFacebook) {
-                [weakSelf performLoginWithFacebook];
+                [self performLoginWithFacebook];
             } else {
-                [weakSelf performLoginWithEmail];
+                [self performLoginWithEmail];
             }
-        } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE", @"BMELoginViewController", @"Title in alert shown when the user is not registered for remote notifications");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE", @"BMELoginViewController", @"Message in alert shown when the user is not registered for remote notifications");
-            NSString *cancel = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert shown when the user is not registered for remote notifications");
-            
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
-            [alertView show];
         }
     }];
 }
@@ -168,7 +160,12 @@
 - (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken))handler {
     [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
         if (!isRegistered) {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE", @"BMELoginViewController", @"Title in alert shown when the user is not registered for remote notifications");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE", @"BMELoginViewController", @"Message in alert shown when the user is not registered for remote notifications");
+            NSString *cancel = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert shown when the user is not registered for remote notifications");
             
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
+            [alertView show];
         }
         
         if (handler) {
