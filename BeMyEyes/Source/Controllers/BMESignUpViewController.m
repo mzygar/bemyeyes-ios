@@ -76,7 +76,7 @@
             if (success && !error) {
                 progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when logging in");
                 
-                [[BMEClient sharedClient] loginWithEmail:email password:password success:^(BMEToken *token) {
+                [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
                     [progressOverlayView hide:YES];
                     
                     [self didLogin];

@@ -17,5 +17,6 @@ typedef NS_ENUM(NSInteger, BMESettingsAPI) {
 @interface GVUserDefaults (Settings)
 
 @property (assign, nonatomic) BMESettingsAPI api;
+@property (strong, nonatomic) NSString *deviceToken;
 
 @end

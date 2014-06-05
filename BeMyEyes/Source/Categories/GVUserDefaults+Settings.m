@@ -10,7 +10,7 @@
 
 @implementation GVUserDefaults (Settings)
 
-@dynamic api;
+@dynamic api, deviceToken;
 
 #pragma mark -
 #pragma mark Settings

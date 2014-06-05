@@ -12,8 +12,9 @@
 #import "BMEClient.h"
 #import "BMECallViewController.h"
 
-@interface BMEAppDelegate ()
+@interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
+@property (copy, nonatomic) void(^requireRemoteNotificationsHandler)(BOOL, NSString*);
 @end
 
 @implementation BMEAppDelegate
@@ -109,6 +110,21 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
+    if (normalizedDeviceToken) {
+        [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
+        
+        if (self.requireRemoteNotificationsHandler) {
+            self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken);
+            self.requireRemoteNotificationsHandler = nil;
+        }
+    } else {
+        if (self.requireRemoteNotificationsHandler) {
+            self.requireRemoteNotificationsHandler(NO, nil);
+            self.requireRemoteNotificationsHandler = nil;
+        }
+    }
+    
     // We cannot register the device of the user without knowing who he is.
     // That is, he needs to be logged in and thus have a token.
     if ([BMEClient sharedClient].token) {
@@ -120,10 +136,23 @@
     }
 }
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Failed registering for remote notifications: %@", error);
+    
+    if (self.requireRemoteNotificationsHandler) {
+        self.requireRemoteNotificationsHandler(NO, nil);
+        self.requireRemoteNotificationsHandler = nil;
+    }
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)registerForRemoteNotifications {
+    [self registerForRemoteNotifications:NO];
+}
+
+- (void)registerForRemoteNotifications:(BOOL)showAlert {
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 }
 
@@ -159,6 +188,18 @@
     }];
 }
 
+- (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken))handler {
+    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+    if (deviceToken) {
+        if (handler) {
+            handler(YES, deviceToken);
+        }
+    } else {
+        self.requireRemoteNotificationsHandler = handler;
+        [self registerForRemoteNotifications:YES];
+    }
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -173,7 +214,7 @@
         UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainControllerIdentifier];
         [self replaceTopController:mainController];
         
-        [[BMEClient sharedClient] loginUsingTokenWithCompletion:^(BOOL success, NSError *error) {
+        [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
             if (error) {
                 NSLog(@"Error: %@", error);
             }

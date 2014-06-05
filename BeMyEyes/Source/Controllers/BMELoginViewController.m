@@ -26,10 +26,38 @@
 #pragma mark Private Methods
 
 - (IBAction)facebookButtonPressed:(id)sender {
-    [self loginWithFacebook];
+    [self performLoginUsingFacebook:YES];
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
+    [self performLoginUsingFacebook:NO];
+}
+
+- (IBAction)forgotPasswordButtonPressed:(id)sender {
+    
+}
+
+- (void)performLoginUsingFacebook:(BOOL)useFacebook {
+    __weak typeof(self) weakSelf = self;
+    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
+        if (isRegistered) {
+            if (useFacebook) {
+                [weakSelf performLoginWithFacebook];
+            } else {
+                [weakSelf performLoginWithEmail];
+            }
+        } else {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE", @"BMELoginViewController", @"Title in alert shown when the user is not registered for remote notifications");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE", @"BMELoginViewController", @"Message in alert shown when the user is not registered for remote notifications");
+            NSString *cancel = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert shown when the user is not registered for remote notifications");
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }];
+}
+
+- (void)performLoginWithEmail {
     BOOL isEmailEmpty = [self.emailTextField.text length] == 0;
     BOOL isPasswordEmpty = [self.passwordTextField.text length] == 0;
     
@@ -56,61 +84,10 @@
     }
 }
 
-- (IBAction)forgotPasswordButtonPressed:(id)sender {
-    
-}
-
-- (MRProgressOverlayView *)addLoggingInOverlay {
-    MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
-    progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMELoginViewController", @"Title in overlay displayed when logging in");
-    return progressOverlayView;
-}
-
-#pragma mark -
-#pragma mark Text Field Delegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    
-    return YES;
-}
-
-#pragma mark -
-#pragma mark Private Methods
-
-- (void)loginWithEmail:(NSString *)email password:(NSString *)password {
+- (void)performLoginWithFacebook {
     MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
     
-    [[BMEClient sharedClient] loginWithEmail:email password:password success:^(BMEToken *token) {
-        [progressOverlayView hide:YES];
-        
-        [self didLogin];
-    } failure:^(NSError *error) {
-        [progressOverlayView hide:YES];
-        
-        if ([error code] == BMEClientErrorUserIncorrectCredentials) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_TITLE", @"BMELoginViewController", @"Title in alert view shown when credentials are incorrect.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when credentials are incorrect.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when credentials are incorrect.");
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-            [alert show];
-        } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during e-mail log in.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during e-mail log in.");
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-            [alert show];
-        }
-        
-        NSLog(@"Could not log in: %@", error);
-    }];
-}
-
-- (void)loginWithFacebook {
-    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
-    
-    [[BMEClient sharedClient] loginUsingFacebookWithSuccesss:^(BMEToken *token) {
+    [[BMEClient sharedClient] loginUsingFacebookWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
         [progressOverlayView hide:YES];
         
         [self didLogin];
@@ -153,12 +130,68 @@
     }];
 }
 
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password {
+    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
+    
+    [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
+        [progressOverlayView hide:YES];
+        
+        [self didLogin];
+    } failure:^(NSError *error) {
+        [progressOverlayView hide:YES];
+        
+        if ([error code] == BMEClientErrorUserIncorrectCredentials) {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_TITLE", @"BMELoginViewController", @"Title in alert view shown when credentials are incorrect.");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when credentials are incorrect.");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when credentials are incorrect.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alert show];
+        } else {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during e-mail log in.");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred.");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during e-mail log in.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+        NSLog(@"Could not log in: %@", error);
+    }];
+}
+
+- (MRProgressOverlayView *)addLoggingInOverlay {
+    MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
+    progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
+    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMELoginViewController", @"Title in overlay displayed when logging in");
+    return progressOverlayView;
+}
+
+- (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken))handler {
+    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
+        if (!isRegistered) {
+            
+        }
+        
+        if (handler) {
+            handler(isRegistered, nil);
+        }
+    }];
+}
+
 - (void)didLogin {
     if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
         [TheAppDelegate registerForRemoteNotifications];
     }
     
     [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
+}
+
+#pragma mark -
+#pragma mark Text Field Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 @end

@@ -31,6 +31,8 @@ enum {
     BMEClientErrorUserFacebookUserNotFound = 3006,
 };
 
+extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
+
 @interface BMEClient : AFHTTPClient
 
 @property (readonly, nonatomic, getter = isLoggedIn) BOOL loggedIn;
@@ -44,10 +46,10 @@ enum {
 - (void)createFacebookUserId:(NSInteger)userId email:(NSString *)email firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateCurrentUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateUserWithIdentifier:(NSString *)identifier firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)loginWithEmail:(NSString *)email password:(NSString *)password success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
-- (void)loginWithEmail:(NSString *)email userId:(NSInteger)userId success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
-- (void)loginUsingTokenWithCompletion:(void (^)(BOOL success, NSError *error))completion;
-- (void)loginUsingFacebookWithSuccesss:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
+- (void)loginWithEmail:(NSString *)email userId:(NSInteger)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
+- (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)loginUsingFacebookWithDeviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
 - (void)logoutWithCompletion:(void (^)(BOOL success, NSError *error))completion;
 - (void)resetLogin;
 

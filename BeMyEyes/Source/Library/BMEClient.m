@@ -28,6 +28,14 @@
 #define BMEClientCurrentUserKey @"BMEClientCurrentUser"
 #define BMEClientTokenExpiryDateKey @"BMEClientTokenExpiryDate"
 
+/**
+ *  This is taken from Mattt Thompsons AFUrbanAirshipClient
+ *  https://github.com/AFNetworking/AFUrbanAirshipClient
+ */
+NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
+    return [[[[deviceToken description] uppercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
 @interface BMEClient ()
 @property (assign, nonatomic, getter = hasConfiguredFacebookLogin) BOOL configuredFacebookLogin;
 @property (copy, nonatomic) void(^fbAuthCompletion)(BMEFacebookInfo *, NSError *);
@@ -160,27 +168,32 @@
     }];
 }
 
-- (void)loginWithEmail:(NSString *)email password:(NSString *)password success:(void (^)(BMEToken *))success failure:(void (^)(NSError *error))failure {
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *))success failure:(void (^)(NSError *))failure {
     NSAssert([email length] > 0, @"E-mail cannot be empty.");
     NSAssert([password length] > 0, @"Password cannot be empty.");
     
     NSString *securePassword = [AESCrypt encrypt:password password:BMESecuritySalt];
-    NSDictionary *parameters = @{ @"email" : email, @"password" : securePassword };
+    NSDictionary *parameters = @{ @"email" : email,
+                                  @"password" : securePassword,
+                                  @"device_token" : deviceToken };
     
     [self loginWithParameters:parameters success:success failure:failure];
 }
 
-- (void)loginWithEmail:(NSString *)email userId:(NSInteger)userId success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure {
+- (void)loginWithEmail:(NSString *)email userId:(NSInteger)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *))success failure:(void (^)(NSError *))failure {
     NSAssert([email length] > 0, @"E-mail cannot be empty.");
     NSAssert(userId > 0, @"User ID cannot be empty.");
 
-    NSDictionary *parameters = @{ @"email" : email, @"user_id" : @(userId) };
+    NSDictionary *parameters = @{ @"email" : email,
+                                  @"user_id" : @(userId),
+                                  @"device_token" : deviceToken };
     
     [self loginWithParameters:parameters success:success failure:failure];
 }
 
-- (void)loginUsingTokenWithCompletion:(void (^)(BOOL, NSError *))completion {
-    NSDictionary *parameters = @{ @"token" : [self token]  };
+- (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL, NSError *))completion {
+    NSDictionary *parameters = @{ @"token" : [self token],
+                                  @"device_token" : deviceToken };
     [self putPath:@"users/login/token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         _loggedIn = YES;
         
@@ -201,12 +214,12 @@
     }];
 }
 
-- (void)loginUsingFacebookWithSuccesss:(void (^)(BMEToken *))success loginFailure:(void (^)(NSError *))loginFailure accountFailure:(void (^)(NSError *))accountFailure {
+- (void)loginUsingFacebookWithDeviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *))success loginFailure:(void (^)(NSError *))loginFailure accountFailure:(void (^)(NSError *))accountFailure {
     NSAssert([self.facebookAppId length] > 0, @"Facebook app ID must be set in order to login with Facebook.");
     
     [self authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
-            [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] success:success failure:loginFailure];
+            [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:success failure:loginFailure];
         } else {
             if (accountFailure) {
                 accountFailure(error);
@@ -325,7 +338,7 @@
     NSString *systemName = [[UIDevice currentDevice] systemName];
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
-    NSString *normalizedDeviceToken = AFNormalizedDeviceTokenStringWithDeviceToken(deviceToken);
+    NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
     
     NSDictionary *parameters = @{ @"token" : [self token],
                                   @"device_token" : normalizedDeviceToken,
@@ -639,14 +652,6 @@
     }
     
     return _accountStore;
-}
-
-/**
- *  This is taken from Mattt Thompsons AFUrbanAirshipClient
- *  https://github.com/AFNetworking/AFUrbanAirshipClient
- */
-static NSString *AFNormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
-    return [[[[deviceToken description] uppercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
 @end

@@ -64,3 +64,12 @@
 /* Title in alert view shown when no Facebook account was found. */
 "ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "No account found";
 
+/* Title of cancel button in alert shown when the user is not registered for remote notifications */
+"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL" = "OK";
+
+/* Message in alert shown when the user is not registered for remote notifications */
+"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Could not register for remote notifications. This is required for the Be My Eyes application. Please ensure that you have remote notifications enabled in your system settings and try again.";
+
+/* Title in alert shown when the user is not registered for remote notifications */
+"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Log in failed";
+
