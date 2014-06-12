@@ -63,6 +63,7 @@
 		72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */; };
 		72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B1493818DF686600E9A8A9 /* BMECallViewController.strings */; };
 		72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */; };
+		72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */; };
 		72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */; };
 		72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */; };
 		72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */; };
@@ -177,6 +178,8 @@
 		72B1493918DF686600E9A8A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMECallViewController.strings; sourceTree = "<group>"; };
 		72B1493B18DF6AE100E9A8A9 /* BMESpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESpeaker.h; sourceTree = "<group>"; };
 		72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESpeaker.m; sourceTree = "<group>"; };
+		72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEReportAbuseViewController.h; sourceTree = "<group>"; };
+		72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEReportAbuseViewController.m; sourceTree = "<group>"; };
 		72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEHelperMainViewController.h; sourceTree = "<group>"; };
 		72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEHelperMainViewController.m; sourceTree = "<group>"; };
 		72DA826918D45B61001F3312 /* BMEBlindMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEBlindMainViewController.h; sourceTree = "<group>"; };
@@ -425,6 +428,8 @@
 				729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */,
 				72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */,
 				72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */,
+				72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */,
+				72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */,
 				7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */,
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,

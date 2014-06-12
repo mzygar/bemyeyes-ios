@@ -268,8 +268,11 @@
             callController.callMode = BMECallModeAnswer;
             callController.shortId = shortId;
             
-            UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-            [navigationController presentViewController:callController animated:YES completion:nil];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
+            navigationController.navigationBarHidden = YES;
+            
+            UINavigationController *rootNavigationController = (UINavigationController *)self.window.rootViewController;
+            [rootNavigationController presentViewController:navigationController animated:YES completion:nil];
         }
     }];
 }

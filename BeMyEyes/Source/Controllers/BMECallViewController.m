@@ -13,6 +13,8 @@
 #import "BMERequest.h"
 #import "BMESpeaker.h"
 
+#define BMECallReportAbuseSegue @"ReportAbuse"
+
 @interface BMECallViewController () <OTSessionDelegate, OTPublisherDelegate, OTSubscriberKitDelegate>
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -254,11 +256,13 @@
 }
 
 - (void)dismiss {
-    if (self.presentingViewController) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    
+    
+//    if (self.presentingViewController) {
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    } else {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
 }
 
 - (void)changeAudioCategoryToDefault {
