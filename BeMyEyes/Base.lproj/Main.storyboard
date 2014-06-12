@@ -1985,10 +1985,10 @@
             </objects>
             <point key="canvasLocation" x="3617" y="1175"/>
         </scene>
-        <!--Report Abuser View Controller-->
+        <!--Report Abuse View Controller-->
         <scene sceneID="WUV-od-PF3">
             <objects>
-                <viewController id="sPf-cG-W7c" customClass="BMEReportAbuserViewController" sceneMemberID="viewController">
+                <viewController id="sPf-cG-W7c" customClass="BMEReportAbuseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IeV-Nb-mxQ"/>
                         <viewControllerLayoutGuide type="bottom" id="htr-Ml-rtX"/>
@@ -2009,11 +2009,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="Rla-8I-NAN"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhE-ej-zTI">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhE-ej-zTI">
                                 <rect key="frame" x="0.0" y="360" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.37647058823529411" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.63" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="tK3-Sb-exd"/>
                                 </constraints>
@@ -2022,6 +2025,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="reportButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="rtH-wS-Dtx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report abuse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="v2L-Xn-kQ1">
                                 <rect key="frame" x="20" y="40" width="280" height="50"/>
@@ -2063,21 +2069,25 @@
                                 <rect key="frame" x="20" y="168" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="fR4-ce-twY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="fR4-ce-twY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8N-zz-XU6">
-                                <rect key="frame" x="260" y="164" width="40" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8N-zz-XU6">
+                                <rect key="frame" x="260" y="159" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6bk-GF-gPS"/>
+                                    <constraint firstAttribute="height" constant="40" id="6bk-GF-gPS"/>
                                     <constraint firstAttribute="width" constant="40" id="UYP-VT-4ye"/>
                                 </constraints>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" image="RadioButtonEmpty">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="RadioButtonFilled"/>
+                                <connections>
+                                    <action selector="reason1ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="4ii-oX-sCN"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-w9-ptJ" userLabel="Separator">
                                 <rect key="frame" x="20" y="209" width="280" height="1"/>
@@ -2091,21 +2101,25 @@
                                 <rect key="frame" x="20" y="230" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qhL-X2-msu"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qhL-X2-msu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-k6-RM2">
-                                <rect key="frame" x="260" y="228" width="40" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-k6-RM2">
+                                <rect key="frame" x="260" y="223" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="CwY-Bf-miE"/>
-                                    <constraint firstAttribute="height" constant="30" id="Hm8-3O-E3y"/>
+                                    <constraint firstAttribute="height" constant="40" id="Hm8-3O-E3y"/>
                                 </constraints>
-                                <state key="normal" title="Button 2">
+                                <state key="normal" image="RadioButtonEmpty">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="RadioButtonFilled"/>
+                                <connections>
+                                    <action selector="reason2ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="1Ie-rP-wd0"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xq-OI-ekn" userLabel="Separator">
                                 <rect key="frame" x="20" y="271" width="280" height="1"/>
@@ -2119,21 +2133,25 @@
                                 <rect key="frame" x="20" y="292" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ncd-U0-UWX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="ncd-U0-UWX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXc-RJ-sSU">
-                                <rect key="frame" x="260" y="288" width="40" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXc-RJ-sSU">
+                                <rect key="frame" x="260" y="283" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="V4N-04-zRM"/>
+                                    <constraint firstAttribute="height" constant="40" id="V4N-04-zRM"/>
                                     <constraint firstAttribute="width" constant="40" id="xSk-QQ-wey"/>
                                 </constraints>
-                                <state key="normal" title="Button 3">
+                                <state key="normal" image="RadioButtonEmpty">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="RadioButtonFilled"/>
+                                <connections>
+                                    <action selector="reason3ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="BFY-JJ-iUs"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="685-xm-B2U" userLabel="Bottom Separator">
                                 <rect key="frame" x="20" y="333" width="280" height="1"/>
@@ -2196,6 +2214,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VBk-3j-fT6"/>
+                    <connections>
+                        <outlet property="reason1Button" destination="h8N-zz-XU6" id="uHd-Ea-lFs"/>
+                        <outlet property="reason1Label" destination="AbN-ll-cDD" id="Y97-qv-mjt"/>
+                        <outlet property="reason2Button" destination="Beo-k6-RM2" id="0wn-fq-lze"/>
+                        <outlet property="reason2Label" destination="bTg-24-Pn6" id="C0d-yP-WdR"/>
+                        <outlet property="reason3Button" destination="HXc-RJ-sSU" id="c3f-aR-E0v"/>
+                        <outlet property="reason3Label" destination="Cab-uR-m17" id="7Vy-FB-Zjg"/>
+                        <outlet property="reportButton" destination="jhE-ej-zTI" id="bfn-0j-Eat"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emM-fF-hv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2334,6 +2361,8 @@
         <image name="LogoNoText" width="183" height="116"/>
         <image name="NextButton" width="32" height="59"/>
         <image name="PointGraphStar" width="28" height="26"/>
+        <image name="RadioButtonEmpty" width="40" height="40"/>
+        <image name="RadioButtonFilled" width="40" height="40"/>
         <image name="SettingsBackButton" width="57" height="50"/>
         <image name="SettingsButton" width="57" height="50"/>
         <image name="SignUpEmail" width="28" height="18"/>

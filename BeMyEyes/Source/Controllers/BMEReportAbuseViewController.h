@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Be My Eyes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface BMEReportAbuseViewController : NSObject
+@interface BMEReportAbuseViewController : UIViewController
+
+@property (copy, nonatomic) NSString *requestIdentifier;
 
 @end

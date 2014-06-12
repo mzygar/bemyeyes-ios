@@ -1,0 +1,36 @@
+/* BMEReportAbuseViewController.strings
+  BeMyEyes
+
+  Created by Simon Støvring on 12/06/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved. */
+
+/* Text 1 for reporting abuse as a blind person. */
+"REPORT_TEXT_1_BLIND" = "The person did not want to help.";
+
+/* Text 1 for reporting abuse as a helper. */
+"REPORT_TEXT_1_HELPER" = "The person was not blind.";
+
+/* Text 2 for reporting abuse as a blind person. */
+"REPORT_TEXT_2_BLIND" = "The helper acted inappropriate.";
+
+/* Text 2 for reporting abuse as a helper. */
+"REPORT_TEXT_2_HELPER" = "The blind person acted inappropriate.";
+
+/* Text 3 for reporting abuse as a blind person. */
+"REPORT_TEXT_3_BLIND" = "The reason is not listed.";
+
+/* Text 3 for reporting abuse as a helper. */
+"REPORT_TEXT_3_HELPER" = "The reason is not listed.";
+
+/* Title of cancel button in alert view show when reporting failed */
+"ALERT_REPORTING_FAILED_CANCEL" = "OK";
+
+/* Message in alert view shown when reporting failed */
+"ALERT_REPORTING_FAILED_MESSAGE" = "The report could not be sent. Please ensure that you have an active internet connection and try again.";
+
+/* Title in alert view shown when reporting failed */
+"ALERT_REPORTING_FAILED_TITLE" = "Could not report abuse";
+
+/* Title in overlay displayed when reporting abuse */
+"OVERLAY_REPORTING_TITLE" = "Reporting...";
+

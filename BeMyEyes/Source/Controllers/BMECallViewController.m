@@ -8,6 +8,9 @@
 
 #import "BMECallViewController.h"
 #import <OpenTok/OpenTok.h>
+#import "UINavigationController+BMEPopToClass.h"
+#import "BMEMainViewController.h"
+#import "BMEReportAbuseViewController.h"
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "BMERequest.h"
@@ -20,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
+@property (strong, nonatomic) NSString *requestIdentifier;
 @property (strong, nonatomic) NSString *sessionId;
 @property (strong, nonatomic) NSString *token;
 
@@ -29,6 +33,8 @@
 @property (strong, nonatomic) UIView *videoView;
 
 @property (assign, nonatomic, getter = isDisconnecting) BOOL disconnecting;
+
+@property (assign, nonatomic, getter = shouldPresentReportAbuseWhenDismissing) BOOL presentReportAbuseWhenDismissing;
 @end
 
 @implementation BMECallViewController
@@ -61,12 +67,13 @@
 }
 
 - (void)dealloc {
-    self.shortId = nil;
-    self.sessionId = nil;
-    self.token = nil;
-    self.session = nil;
-    self.publisher = nil;
-    self.videoView = nil;
+    _requestIdentifier = nil;
+    _shortId = nil;
+    _sessionId = nil;
+    _token = nil;
+    _session = nil;
+    _publisher = nil;
+    _videoView = nil;
 }
 
 #pragma mark -
@@ -83,6 +90,7 @@
     [self changeStatus:statusText];
     
     [[BMEClient sharedClient] createRequestWithSuccess:^(BMERequest *request) {
+        self.requestIdentifier = request.identifier;
         self.shortId = request.shortId;
         self.sessionId = request.openTok.sessionId;
         self.token = request.openTok.token;
@@ -105,6 +113,7 @@
     [self changeStatus:statusText];
     
     [[BMEClient sharedClient] answerRequestWithShortId:shortId success:^(BMERequest *request) {
+        self.requestIdentifier = request.identifier;
         self.shortId = request.shortId;
         self.sessionId = request.openTok.sessionId;
         self.token = request.openTok.token;
@@ -256,13 +265,18 @@
 }
 
 - (void)dismiss {
+    [self performSegueWithIdentifier:BMECallReportAbuseSegue sender:self];
+    return;
     
-    
-//    if (self.presentingViewController) {
-//        [self dismissViewControllerAnimated:YES completion:nil];
-//    } else {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }
+    if (self.shouldPresentReportAbuseWhenDismissing) {
+        [self performSegueWithIdentifier:BMECallReportAbuseSegue sender:self];
+    } else {
+        if (self.presentingViewController) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self.navigationController BMEPopToViewControllerOfClass:[BMEMainViewController class] animated:YES];
+        }
+    }
 }
 
 - (void)changeAudioCategoryToDefault {
@@ -373,6 +387,8 @@
             NSLog(@"Display subscriber view");
             [self displayViewForSubscriber:self.subscriber];
         }
+        
+        self.presentReportAbuseWhenDismissing = YES;
     }
 }
 
@@ -381,6 +397,16 @@
     NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_SUBSCRIBING", @"BMECallViewController", @"Status when failed subscribing");
     [self changeStatus:statusText];
     [self disconnect];
+}
+
+#pragma mark -
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:BMECallReportAbuseSegue]) {
+        BMEReportAbuseViewController *reportAbuseController = segue.destinationViewController;
+        reportAbuseController.requestIdentifier = self.requestIdentifier;
+    }
 }
 
 @end

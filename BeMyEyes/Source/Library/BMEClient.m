@@ -256,6 +256,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)createRequestWithSuccess:(void (^)(BMERequest *))success failure:(void (^)(NSError *))failure {
     NSDictionary *parameters = @{ @"token" : [self token] };
     [self postPath:@"requests" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@", responseObject);
         if (success) {
             success([self mapRequestFromRepresentation:responseObject]);
         }
@@ -317,6 +318,31 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
+#pragma mark -
+#pragma mark Abuse
+
+- (void)reportAbuseForRequestWithId:(NSString *)identifier message:(NSString *)message completion:(void (^)(BOOL success, NSError *error))completion {
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    if (identifier) {
+        [params setObject:identifier forKey:@"request_id"];
+    }
+    
+    if (message) {
+        [params setObject:message forKey:@"message"];
+    }
+    
+    [self postPath:@"abuse/report" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(NO, error);
         }
     }];
 }

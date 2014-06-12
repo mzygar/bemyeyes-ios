@@ -12,6 +12,7 @@
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
 		720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */; };
 		720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */; };
+		720D4D13194A1FAC00060D7F /* BMEReportAbuseViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 720D4D11194A1FAC00060D7F /* BMEReportAbuseViewController.strings */; };
 		721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C3957193BA03400637F88 /* BMEEmailValidator.m */; };
 		721CAF21192D2EAA00B5B4E4 /* march.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF20192D2EAA00B5B4E4 /* march.aiff */; };
 		721CAF23192D30D900B5B4E4 /* silence.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF22192D30D900B5B4E4 /* silence.aiff */; };
@@ -90,6 +91,7 @@
 		72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */; };
 		72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65FA818BA81BB002FB2E0 /* BMESignUpMethodViewController.strings */; };
 		72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */; };
+		72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */; };
 		8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A222A28C44403D94B34BA1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,7 @@
 		720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEWebViewViewController.h; sourceTree = "<group>"; };
 		720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEWebViewViewController.m; sourceTree = "<group>"; };
+		720D4D12194A1FAC00060D7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEReportAbuseViewController.strings; sourceTree = "<group>"; };
 		721C3956193BA03400637F88 /* BMEEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEEmailValidator.h; sourceTree = "<group>"; };
 		721C3957193BA03400637F88 /* BMEEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEEmailValidator.m; sourceTree = "<group>"; };
 		721CAF20192D2EAA00B5B4E4 /* march.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = march.aiff; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		72E65FA918BA81BB002FB2E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESignUpMethodViewController.strings; sourceTree = "<group>"; };
 		72E65FAE18BA8214002FB2E0 /* BMEFacebookInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEFacebookInfo.h; sourceTree = "<group>"; };
 		72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFacebookInfo.m; sourceTree = "<group>"; };
+		72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+BMEPopToClass.h"; sourceTree = "<group>"; };
+		72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+BMEPopToClas.m"; sourceTree = "<group>"; };
 		AD111FA7EA9E4832890E7258 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -389,6 +394,8 @@
 				729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */,
 				72A7676A19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.h */,
 				72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */,
+				72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */,
+				72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -479,6 +486,7 @@
 				72A7676D1902A5C4003121C4 /* BMEHelperMainViewController.strings */,
 				72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
+				720D4D11194A1FAC00060D7F /* BMEReportAbuseViewController.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -603,6 +611,7 @@
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
+				720D4D13194A1FAC00060D7F /* BMEReportAbuseViewController.strings in Resources */,
 				72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */,
 				721CAF23192D30D900B5B4E4 /* silence.aiff in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
@@ -680,6 +689,7 @@
 				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
 				72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */,
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
+				72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
 				7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */,
@@ -702,6 +712,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		720D4D11194A1FAC00060D7F /* BMEReportAbuseViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				720D4D12194A1FAC00060D7F /* en */,
+			);
+			name = BMEReportAbuseViewController.strings;
+			sourceTree = "<group>";
+		};
 		7236E00618B8A87B00F622AA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
