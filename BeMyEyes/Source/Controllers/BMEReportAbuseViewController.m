@@ -18,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *reason2Label;
 @property (weak, nonatomic) IBOutlet UILabel *reason3Label;
 
-@property (weak, nonatomic) IBOutlet UIButton *reason1Button;
-@property (weak, nonatomic) IBOutlet UIButton *reason2Button;
-@property (weak, nonatomic) IBOutlet UIButton *reason3Button;
+@property (weak, nonatomic) IBOutlet UIImageView *reason1StateImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *reason2StateImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *reason3StateImageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *reportButton;
 @end
@@ -95,9 +95,9 @@
 }
 
 - (void)selectReasonNumber:(NSUInteger)number {
-    self.reason1Button.selected = (number == 1);
-    self.reason2Button.selected = (number == 2);
-    self.reason3Button.selected = (number == 3);
+    self.reason1StateImageView.highlighted = (number == 1);
+    self.reason2StateImageView.highlighted = (number == 2);
+    self.reason3StateImageView.highlighted = (number == 3);
     
     if (![self.reportButton isEnabled]) {
         self.reportButton.enabled = YES;
@@ -107,11 +107,11 @@
 
 - (NSString *)selectedReason {
     NSString *reason = nil;
-    if ([self.reason1Button isSelected]) {
+    if ([self.reason1StateImageView isHighlighted]) {
         reason = self.reason1Label.text;
-    } else if ([self.reason2Button isSelected]) {
+    } else if ([self.reason2StateImageView isHighlighted]) {
         reason = self.reason2Label.text;
-    } else if ([self.reason3Button isSelected]) {
+    } else if ([self.reason3StateImageView isHighlighted]) {
         reason = self.reason3Label.text;
     }
     

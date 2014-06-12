@@ -2074,19 +2074,22 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8N-zz-XU6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioButtonEmpty" highlightedImage="RadioButtonFilled" translatesAutoresizingMaskIntoConstraints="NO" id="Y7g-8Z-mhb">
                                 <rect key="frame" x="260" y="159" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6bk-GF-gPS"/>
-                                    <constraint firstAttribute="width" constant="40" id="UYP-VT-4ye"/>
+                                    <constraint firstAttribute="width" constant="40" id="SHH-iU-e23"/>
+                                    <constraint firstAttribute="height" constant="40" id="p3S-WX-MUw"/>
                                 </constraints>
-                                <state key="normal" image="RadioButtonEmpty">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pw-OI-8hm">
+                                <rect key="frame" x="20" y="147" width="280" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" image="RadioButtonFilled"/>
                                 <connections>
-                                    <action selector="reason1ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="4ii-oX-sCN"/>
+                                    <action selector="reason1ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="b8c-Pj-e8w"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-w9-ptJ" userLabel="Separator">
@@ -2106,19 +2109,22 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-k6-RM2">
-                                <rect key="frame" x="260" y="223" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioButtonEmpty" highlightedImage="RadioButtonFilled" translatesAutoresizingMaskIntoConstraints="NO" id="xtQ-zT-Bql">
+                                <rect key="frame" x="260" y="220" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="CwY-Bf-miE"/>
-                                    <constraint firstAttribute="height" constant="40" id="Hm8-3O-E3y"/>
+                                    <constraint firstAttribute="height" constant="40" id="1yT-CA-Lpm"/>
+                                    <constraint firstAttribute="width" constant="40" id="ENk-Kc-DOd"/>
                                 </constraints>
-                                <state key="normal" image="RadioButtonEmpty">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni7-bf-m1Y">
+                                <rect key="frame" x="20" y="209" width="280" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" image="RadioButtonFilled"/>
                                 <connections>
-                                    <action selector="reason2ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="1Ie-rP-wd0"/>
+                                    <action selector="reason2ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="5EP-vR-dsG"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xq-OI-ekn" userLabel="Separator">
@@ -2138,19 +2144,22 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXc-RJ-sSU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioButtonEmpty" highlightedImage="RadioButtonFilled" translatesAutoresizingMaskIntoConstraints="NO" id="AV2-K9-UXi">
                                 <rect key="frame" x="260" y="283" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="V4N-04-zRM"/>
-                                    <constraint firstAttribute="width" constant="40" id="xSk-QQ-wey"/>
+                                    <constraint firstAttribute="height" constant="40" id="0a3-iQ-l2j"/>
+                                    <constraint firstAttribute="width" constant="40" id="Aku-AI-YZU"/>
                                 </constraints>
-                                <state key="normal" image="RadioButtonEmpty">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yza-pt-yXm">
+                                <rect key="frame" x="20" y="271" width="280" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" image="RadioButtonFilled"/>
                                 <connections>
-                                    <action selector="reason3ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="BFY-JJ-iUs"/>
+                                    <action selector="reason3ButtonPressed:" destination="sPf-cG-W7c" eventType="touchUpInside" id="Gda-ki-aM1"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="685-xm-B2U" userLabel="Bottom Separator">
@@ -2165,62 +2174,74 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vWv-Gx-ahh" firstAttribute="leading" secondItem="19s-Lx-UkH" secondAttribute="leading" id="0hL-xr-wNg"/>
+                            <constraint firstItem="ni7-bf-m1Y" firstAttribute="trailing" secondItem="vWv-Gx-ahh" secondAttribute="trailing" id="1uO-Ds-CQd"/>
+                            <constraint firstItem="AV2-K9-UXi" firstAttribute="trailing" secondItem="vWv-Gx-ahh" secondAttribute="trailing" id="2mK-e0-u3g"/>
+                            <constraint firstItem="xtQ-zT-Bql" firstAttribute="trailing" secondItem="vWv-Gx-ahh" secondAttribute="trailing" id="3HY-H9-OIB"/>
                             <constraint firstItem="vWv-Gx-ahh" firstAttribute="trailing" secondItem="19s-Lx-UkH" secondAttribute="trailing" id="3bo-ez-Ubh"/>
                             <constraint firstItem="AbN-ll-cDD" firstAttribute="top" secondItem="19s-Lx-UkH" secondAttribute="bottom" constant="20" id="58a-xA-auR"/>
-                            <constraint firstItem="bTg-24-Pn6" firstAttribute="centerY" secondItem="Beo-k6-RM2" secondAttribute="centerY" constant="-2.5" id="6Nm-cX-AoF"/>
                             <constraint firstAttribute="trailing" secondItem="TUb-xs-fbK" secondAttribute="trailing" constant="20" id="6hV-d0-ivA"/>
                             <constraint firstItem="jhE-ej-zTI" firstAttribute="top" secondItem="TUb-xs-fbK" secondAttribute="bottom" constant="15" id="7Bq-aA-DhH"/>
+                            <constraint firstItem="6Pw-OI-8hm" firstAttribute="trailing" secondItem="vWv-Gx-ahh" secondAttribute="trailing" id="8p7-CV-vvF"/>
                             <constraint firstItem="Cab-uR-m17" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="9Ot-nt-aPe"/>
                             <constraint firstItem="v2L-Xn-kQ1" firstAttribute="leading" secondItem="TrR-ld-kvJ" secondAttribute="leading" constant="20" id="9To-il-iMY"/>
-                            <constraint firstItem="HXc-RJ-sSU" firstAttribute="leading" secondItem="Cab-uR-m17" secondAttribute="trailing" constant="10" id="A07-rk-Do5"/>
                             <constraint firstItem="TUb-xs-fbK" firstAttribute="trailing" secondItem="vWv-Gx-ahh" secondAttribute="trailing" id="BHp-8Z-Sp0"/>
                             <constraint firstItem="TUb-xs-fbK" firstAttribute="leading" secondItem="TrR-ld-kvJ" secondAttribute="leading" constant="20" id="BI5-RD-6D2"/>
+                            <constraint firstItem="xtQ-zT-Bql" firstAttribute="leading" secondItem="bTg-24-Pn6" secondAttribute="trailing" constant="10" id="CuY-Yv-h2J"/>
                             <constraint firstItem="bTg-24-Pn6" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="DEm-Nb-oCY"/>
+                            <constraint firstItem="Yza-pt-yXm" firstAttribute="top" secondItem="8Xq-OI-ekn" secondAttribute="top" id="DHo-Zz-YEO"/>
                             <constraint firstItem="vWv-Gx-ahh" firstAttribute="bottom" secondItem="685-xm-B2U" secondAttribute="bottom" id="Dyq-Pq-VFX"/>
                             <constraint firstItem="AbN-ll-cDD" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="E1u-Hu-P64"/>
+                            <constraint firstItem="Yza-pt-yXm" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="E68-KQ-h9d"/>
                             <constraint firstItem="vWv-Gx-ahh" firstAttribute="trailing" secondItem="qSL-w9-ptJ" secondAttribute="trailing" id="ETh-TX-hgv"/>
                             <constraint firstItem="TUb-xs-fbK" firstAttribute="centerY" secondItem="vWv-Gx-ahh" secondAttribute="centerY" constant="-2" id="EyV-RK-9Sa"/>
+                            <constraint firstItem="ni7-bf-m1Y" firstAttribute="top" secondItem="qSL-w9-ptJ" secondAttribute="top" id="FDC-fh-P40"/>
                             <constraint firstItem="jhE-ej-zTI" firstAttribute="leading" secondItem="TrR-ld-kvJ" secondAttribute="leading" id="GRA-Mk-IHu"/>
                             <constraint firstItem="vWv-Gx-ahh" firstAttribute="trailing" secondItem="685-xm-B2U" secondAttribute="trailing" id="Gf4-AM-XuS"/>
                             <constraint firstAttribute="trailing" secondItem="jhE-ej-zTI" secondAttribute="trailing" id="GsH-DB-MIG"/>
                             <constraint firstItem="bsE-VQ-xZI" firstAttribute="leading" secondItem="TrR-ld-kvJ" secondAttribute="leading" id="IdM-eb-DLK"/>
                             <constraint firstItem="bTg-24-Pn6" firstAttribute="top" secondItem="qSL-w9-ptJ" secondAttribute="bottom" constant="20" id="KSX-I9-dqg"/>
+                            <constraint firstItem="ni7-bf-m1Y" firstAttribute="bottom" secondItem="8Xq-OI-ekn" secondAttribute="bottom" id="M7n-kb-rE5"/>
+                            <constraint firstItem="6Pw-OI-8hm" firstAttribute="top" secondItem="19s-Lx-UkH" secondAttribute="top" id="M9K-m5-gON"/>
                             <constraint firstItem="8Xq-OI-ekn" firstAttribute="top" secondItem="bTg-24-Pn6" secondAttribute="bottom" constant="20" id="MXy-df-rsM"/>
-                            <constraint firstItem="vWv-Gx-ahh" firstAttribute="trailing" secondItem="HXc-RJ-sSU" secondAttribute="trailing" id="NLl-R2-kcl"/>
+                            <constraint firstItem="ni7-bf-m1Y" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="MfQ-c0-Xbj"/>
                             <constraint firstItem="685-xm-B2U" firstAttribute="top" secondItem="Cab-uR-m17" secondAttribute="bottom" constant="20" id="PnU-rD-dr5"/>
-                            <constraint firstItem="vWv-Gx-ahh" firstAttribute="trailing" secondItem="Beo-k6-RM2" secondAttribute="trailing" id="QWB-kg-dzZ"/>
+                            <constraint firstItem="vWv-Gx-ahh" firstAttribute="trailing" secondItem="Y7g-8Z-mhb" secondAttribute="trailing" id="Qxt-Cw-WvG"/>
                             <constraint firstAttribute="trailing" secondItem="j0k-QX-J5o" secondAttribute="trailing" constant="20" id="RDi-hj-NYk"/>
+                            <constraint firstItem="AV2-K9-UXi" firstAttribute="leading" secondItem="Cab-uR-m17" secondAttribute="trailing" constant="10" id="SNi-L0-0cF"/>
+                            <constraint firstItem="AbN-ll-cDD" firstAttribute="centerY" secondItem="Y7g-8Z-mhb" secondAttribute="centerY" constant="-0.5" id="VEz-rF-YkD"/>
                             <constraint firstItem="htr-Ml-rtX" firstAttribute="top" secondItem="bsE-VQ-xZI" secondAttribute="bottom" id="X9C-A1-Yj6"/>
-                            <constraint firstItem="h8N-zz-XU6" firstAttribute="leading" secondItem="AbN-ll-cDD" secondAttribute="trailing" constant="10" id="Z1l-gs-2f6"/>
+                            <constraint firstItem="6Pw-OI-8hm" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="Y22-wU-ogu"/>
                             <constraint firstAttribute="trailing" secondItem="bsE-VQ-xZI" secondAttribute="trailing" id="ZUK-jk-TKe"/>
                             <constraint firstItem="vWv-Gx-ahh" firstAttribute="leading" secondItem="qSL-w9-ptJ" secondAttribute="leading" id="aYy-rI-qo8"/>
                             <constraint firstItem="v2L-Xn-kQ1" firstAttribute="top" secondItem="IeV-Nb-mxQ" secondAttribute="bottom" constant="20" id="auI-jg-Pie"/>
                             <constraint firstItem="TUb-xs-fbK" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="bJe-bJ-I4h"/>
-                            <constraint firstItem="Beo-k6-RM2" firstAttribute="leading" secondItem="bTg-24-Pn6" secondAttribute="trailing" constant="10" id="dEb-He-feE"/>
-                            <constraint firstItem="vWv-Gx-ahh" firstAttribute="trailing" secondItem="h8N-zz-XU6" secondAttribute="trailing" id="fOH-5g-i7d"/>
+                            <constraint firstItem="Yza-pt-yXm" firstAttribute="bottom" secondItem="685-xm-B2U" secondAttribute="bottom" id="dBe-nI-f7Z"/>
+                            <constraint firstItem="xtQ-zT-Bql" firstAttribute="centerY" secondItem="bTg-24-Pn6" secondAttribute="centerY" constant="-0.5" id="fvT-J2-zjg"/>
                             <constraint firstItem="TUb-xs-fbK" firstAttribute="top" secondItem="j0k-QX-J5o" secondAttribute="bottom" constant="15" id="i0e-3i-4VM"/>
                             <constraint firstItem="vWv-Gx-ahh" firstAttribute="leading" secondItem="685-xm-B2U" secondAttribute="leading" id="jDr-cY-VoX"/>
                             <constraint firstItem="j0k-QX-J5o" firstAttribute="top" secondItem="v2L-Xn-kQ1" secondAttribute="bottom" id="jql-DY-1Ih"/>
                             <constraint firstItem="bsE-VQ-xZI" firstAttribute="top" secondItem="jhE-ej-zTI" secondAttribute="bottom" id="kec-tK-oEM"/>
                             <constraint firstAttribute="trailing" secondItem="v2L-Xn-kQ1" secondAttribute="trailing" constant="20" id="m0C-ne-du7"/>
                             <constraint firstItem="19s-Lx-UkH" firstAttribute="top" secondItem="vWv-Gx-ahh" secondAttribute="top" id="mKl-Jz-w4P"/>
+                            <constraint firstItem="Y7g-8Z-mhb" firstAttribute="leading" secondItem="AbN-ll-cDD" secondAttribute="trailing" constant="10" id="nOp-LN-oiN"/>
                             <constraint firstItem="qSL-w9-ptJ" firstAttribute="top" secondItem="AbN-ll-cDD" secondAttribute="bottom" constant="20" id="nXC-AG-b3K"/>
                             <constraint firstItem="8Xq-OI-ekn" firstAttribute="leading" secondItem="vWv-Gx-ahh" secondAttribute="leading" id="ooe-aW-5NQ"/>
                             <constraint firstItem="8Xq-OI-ekn" firstAttribute="trailing" secondItem="vWv-Gx-ahh" secondAttribute="trailing" id="pYi-HZ-Q7y"/>
+                            <constraint firstItem="Yza-pt-yXm" firstAttribute="trailing" secondItem="vWv-Gx-ahh" secondAttribute="trailing" id="pdj-nR-mIh"/>
                             <constraint firstItem="j0k-QX-J5o" firstAttribute="leading" secondItem="TrR-ld-kvJ" secondAttribute="leading" constant="20" id="rEn-It-59t"/>
-                            <constraint firstItem="HXc-RJ-sSU" firstAttribute="centerY" secondItem="Cab-uR-m17" secondAttribute="centerY" constant="0.5" id="taS-Ol-mDQ"/>
-                            <constraint firstItem="h8N-zz-XU6" firstAttribute="centerY" secondItem="AbN-ll-cDD" secondAttribute="centerY" constant="0.5" id="xMp-Ij-vR7"/>
+                            <constraint firstItem="6Pw-OI-8hm" firstAttribute="bottom" secondItem="qSL-w9-ptJ" secondAttribute="bottom" id="sbd-nH-ow6"/>
+                            <constraint firstItem="AV2-K9-UXi" firstAttribute="centerY" secondItem="Cab-uR-m17" secondAttribute="centerY" constant="0.5" id="w9z-2g-zQh"/>
                             <constraint firstItem="Cab-uR-m17" firstAttribute="top" secondItem="8Xq-OI-ekn" secondAttribute="bottom" constant="20" id="zrU-Pm-yKH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VBk-3j-fT6"/>
                     <connections>
-                        <outlet property="reason1Button" destination="h8N-zz-XU6" id="uHd-Ea-lFs"/>
                         <outlet property="reason1Label" destination="AbN-ll-cDD" id="Y97-qv-mjt"/>
-                        <outlet property="reason2Button" destination="Beo-k6-RM2" id="0wn-fq-lze"/>
+                        <outlet property="reason1StateImageView" destination="Y7g-8Z-mhb" id="XKv-1R-fBC"/>
                         <outlet property="reason2Label" destination="bTg-24-Pn6" id="C0d-yP-WdR"/>
-                        <outlet property="reason3Button" destination="HXc-RJ-sSU" id="c3f-aR-E0v"/>
+                        <outlet property="reason2StateImageView" destination="xtQ-zT-Bql" id="NiW-o1-XCB"/>
                         <outlet property="reason3Label" destination="Cab-uR-m17" id="7Vy-FB-Zjg"/>
+                        <outlet property="reason3StateImageView" destination="AV2-K9-UXi" id="iL0-DE-hO6"/>
                         <outlet property="reportButton" destination="jhE-ej-zTI" id="bfn-0j-Eat"/>
                     </connections>
                 </viewController>
