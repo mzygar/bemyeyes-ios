@@ -572,6 +572,9 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (BMERequest *)mapRequestFromRepresentation:(NSDictionary *)representation {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     
+    DCObjectMapping *identifierMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"identifier" onClass:[BMERequest class]];
+    [config addObjectMapping:identifierMapping];
+    
     DCObjectMapping *openTokMapping = [DCObjectMapping mapKeyPath:@"opentok" toAttribute:@"openTok" onClass:[BMERequest class]];
     [config addObjectMapping:openTokMapping];
     
@@ -590,8 +593,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (BMEUser *)mapUserFromRepresentation:(NSDictionary *)representation {
-    NSLog(@"%@", representation);
-    
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     
     DCObjectMapping *identifierMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"identifier" onClass:[BMEUser class]];
