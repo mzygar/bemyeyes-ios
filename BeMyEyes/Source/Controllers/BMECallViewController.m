@@ -265,6 +265,9 @@
 }
 
 - (void)dismiss {
+    [self performSegueWithIdentifier:BMECallReportAbuseSegue sender:self];
+    return;
+    
     if (self.shouldPresentReportAbuseWhenDismissing) {
         [self performSegueWithIdentifier:BMECallReportAbuseSegue sender:self];
     } else {

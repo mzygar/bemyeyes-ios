@@ -33,10 +33,6 @@
     [self performLoginUsingFacebook:NO];
 }
 
-- (IBAction)forgotPasswordButtonPressed:(id)sender {
-    
-}
-
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
     [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
         if (isRegistered) {
@@ -175,10 +171,6 @@
 }
 
 - (void)didLogin {
-    if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
-        [TheAppDelegate registerForRemoteNotifications];
-    }
-    
     [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
 }
 

@@ -52,7 +52,7 @@
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
     progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REPORTING_TITLE", @"BMEReportAbuseViewController", @"Title in overlay displayed when reporting abuse");
     
-    [[BMEClient sharedClient] reportAbuseForRequestWithId:self.requestIdentifier message:[self selectedReason] completion:^(BOOL success, NSError *error) {
+    [[BMEClient sharedClient] reportAbuseForRequestWithId:self.requestIdentifier reason:[self selectedReason] completion:^(BOOL success, NSError *error) {
         [progressOverlayView hide:YES];
         
         if (!error) {

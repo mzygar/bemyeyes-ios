@@ -163,7 +163,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
-            completion(NO, error);
+            completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
         }
     }];
 }
@@ -199,6 +199,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
         
         BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
         [self storeCurrentUser:currentUser];
+        
+        NSLog(@"Did log in using endpoint /users/login/token with parameters: %@", parameters);
 
         if (completion) {
             completion(YES, nil);
@@ -248,6 +250,19 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)resetLogin {
     [self storeToken:nil];
     [self storeTokenExpiryDate:nil];
+}
+
+- (void)sendNewPasswordToEmail:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion {
+    NSDictionary *params = @{ @"email" : email };
+    [self postPath:@"auth/request-reset-password" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
 }
 
 #pragma mark -
@@ -325,15 +340,16 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark -
 #pragma mark Abuse
 
-- (void)reportAbuseForRequestWithId:(NSString *)identifier message:(NSString *)message completion:(void (^)(BOOL success, NSError *error))completion {
+- (void)reportAbuseForRequestWithId:(NSString *)identifier reason:(NSString *)reason completion:(void (^)(BOOL success, NSError *error))completion {
     NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setObject:[self token] forKey:@"token"];
     
     if (identifier) {
         [params setObject:identifier forKey:@"request_id"];
     }
     
-    if (message) {
-        [params setObject:message forKey:@"message"];
+    if (reason) {
+        [params setObject:reason forKey:@"reason"];
     }
     
     [self postPath:@"abuse/report" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -355,8 +371,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    NSAssert([[self token] length] > 0, @"Cannot register device without an authentication token.");
-    
     NSString *alias = [UIDevice currentDevice].name;
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
@@ -366,8 +380,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
     NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
     
-    NSDictionary *parameters = @{ @"token" : [self token],
-                                  @"device_token" : normalizedDeviceToken,
+    NSDictionary *parameters = @{ @"device_token" : normalizedDeviceToken,
                                   @"device_name" : alias,
                                   @"model" : model,
                                   @"system_version" : [NSString stringWithFormat:@"%@ %@", systemName, systemVersion],
@@ -376,6 +389,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
                                   @"locale" : locale,
                                   @"development" : isProduction ? @(NO) : @(YES) };
     [self postPath:@"devices/register" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Device registered with parameters: %@", parameters);
+        
         if (completion) {
             completion(YES, nil);
         }
@@ -473,6 +488,9 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
         
         BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
         [self storeCurrentUser:currentUser];
+        
+        NSLog(@"Did log in using endpoints users/login with parameters: %@", params);
+        NSLog(@"Received token after log in: %@", token.token);
         
         if (success) {
             success(token);

@@ -49,6 +49,8 @@
 		726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8D191A8577005690B7 /* libpthread.dylib */; };
 		726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8F191A8583005690B7 /* libxml2.dylib */; };
 		726D7B93191AA21A005690B7 /* BMEPointEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 726D7B92191AA21A005690B7 /* BMEPointEntry.m */; };
+		727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */; };
+		727E13EC194B3189002EDA7E /* BMEForgotPasswordViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727E13EA194B3189002EDA7E /* BMEForgotPasswordViewController.strings */; };
 		7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569518CC874500E1A9EE /* BMERegisteredViewController.m */; };
 		7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */; };
 		7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */; };
@@ -154,6 +156,9 @@
 		726D7B8F191A8583005690B7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		726D7B91191AA21A005690B7 /* BMEPointEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointEntry.h; sourceTree = "<group>"; };
 		726D7B92191AA21A005690B7 /* BMEPointEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointEntry.m; sourceTree = "<group>"; };
+		727E13E7194B2AF8002EDA7E /* BMEForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEForgotPasswordViewController.h; sourceTree = "<group>"; };
+		727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEForgotPasswordViewController.m; sourceTree = "<group>"; };
+		727E13EB194B3189002EDA7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEForgotPasswordViewController.strings; sourceTree = "<group>"; };
 		72858FA918DF81CE0002D6E1 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
 		7296569418CC874500E1A9EE /* BMERegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERegisteredViewController.h; sourceTree = "<group>"; };
 		7296569518CC874500E1A9EE /* BMERegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERegisteredViewController.m; sourceTree = "<group>"; };
@@ -437,6 +442,8 @@
 				72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */,
 				72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */,
 				72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */,
+				727E13E7194B2AF8002EDA7E /* BMEForgotPasswordViewController.h */,
+				727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -487,6 +494,7 @@
 				72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 				720D4D11194A1FAC00060D7F /* BMEReportAbuseViewController.strings */,
+				727E13EA194B3189002EDA7E /* BMEForgotPasswordViewController.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -610,6 +618,7 @@
 				72E65F9E18BA7A35002FB2E0 /* BMESignUpViewController.strings in Resources */,
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
+				727E13EC194B3189002EDA7E /* BMEForgotPasswordViewController.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
 				720D4D13194A1FAC00060D7F /* BMEReportAbuseViewController.strings in Resources */,
 				72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */,
@@ -684,6 +693,7 @@
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
+				727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
 				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
 				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
@@ -734,6 +744,14 @@
 				7236E01018B8A87B00F622AA /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		727E13EA194B3189002EDA7E /* BMEForgotPasswordViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				727E13EB194B3189002EDA7E /* en */,
+			);
+			name = BMEForgotPasswordViewController.strings;
 			sourceTree = "<group>";
 		};
 		729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */ = {

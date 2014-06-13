@@ -112,30 +112,26 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
-    if (normalizedDeviceToken) {
-        [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
-        
-        if (self.requireRemoteNotificationsHandler) {
-            self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken);
-            self.requireRemoteNotificationsHandler = nil;
-        }
-    } else {
-        if (self.requireRemoteNotificationsHandler) {
-            self.requireRemoteNotificationsHandler(NO, nil);
-            self.requireRemoteNotificationsHandler = nil;
-        }
-    }
-    
-    // We cannot register the device of the user without knowing who he is.
-    // That is, he needs to be logged in and thus have a token.
-    if ([BMEClient sharedClient].token) {
-        [[BMEClient sharedClient] registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
-            if (error) {
-                NSLog(@"Failed registering device: %@", error);
+    [[BMEClient sharedClient] registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+        NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
+        if (!error && normalizedDeviceToken) {
+            [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
+            
+            if (self.requireRemoteNotificationsHandler) {
+                self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken);
+                self.requireRemoteNotificationsHandler = nil;
             }
-        }];
-    }
+        } else {
+            if (self.requireRemoteNotificationsHandler) {
+                self.requireRemoteNotificationsHandler(NO, nil);
+                self.requireRemoteNotificationsHandler = nil;
+            }
+        }
+        
+        if (error) {
+            NSLog(@"Failed registering device: %@", error);
+        }
+    }];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -151,10 +147,6 @@
 #pragma mark Public Methods
 
 - (void)registerForRemoteNotifications {
-    [self registerForRemoteNotifications:NO];
-}
-
-- (void)registerForRemoteNotifications:(BOOL)showAlert {
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 }
 
@@ -193,12 +185,14 @@
 - (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken))handler {
     NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
     if (deviceToken) {
+        NSLog(@"Device already registered with device token: %@", deviceToken);
+        
         if (handler) {
             handler(YES, deviceToken);
         }
     } else {
         self.requireRemoteNotificationsHandler = handler;
-        [self registerForRemoteNotifications:YES];
+        [self registerForRemoteNotifications];
     }
 }
 
