@@ -102,9 +102,11 @@
         }
     } else if (application.applicationState == UIApplicationStateInactive) {
         // If the application state was inactive, this means the user pressed an action button from a notification
-        NSString *shortId = [alert objectForKey:@"short_id"];;
-        if (shortId) {
-            [self didAnswerCallWithShortId:shortId];
+        if ([alert isKindOfClass:[NSDictionary class]]) {
+            NSString *shortId = [alert objectForKey:@"short_id"];;
+            if (shortId) {
+                [self didAnswerCallWithShortId:shortId];
+            }
         }
     }
 }
