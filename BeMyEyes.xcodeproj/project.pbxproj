@@ -27,6 +27,8 @@
 		7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */; };
 		725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B0EF51959836700BB4AE0 /* OpenTok.framework */; };
 		725B0EF81959875500BB4AE0 /* call.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EF71959875500BB4AE0 /* call.aiff */; };
+		725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */; };
+		725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */; };
 		72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FF718BA27EE006F388C /* Twitter.framework */; };
 		72622FFA18BA27F2006F388C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FF918BA27F2006F388C /* Social.framework */; };
 		72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FFB18BA27F8006F388C /* Accounts.framework */; };
@@ -132,6 +134,9 @@
 		7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESignUpViewController.m; sourceTree = "<group>"; };
 		725B0EF51959836700BB4AE0 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.2.0/OpenTok.framework"; sourceTree = "<group>"; };
 		725B0EF71959875500BB4AE0 /* call.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = call.aiff; sourceTree = "<group>"; };
+		725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallAudioPlayer.h; sourceTree = "<group>"; };
+		725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallAudioPlayer.m; sourceTree = "<group>"; };
+		725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "call-repeat.aiff"; sourceTree = "<group>"; };
 		72622FF718BA27EE006F388C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		72622FF918BA27F2006F388C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		72622FFB18BA27F8006F388C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -275,6 +280,7 @@
 		721CAF1F192D2EAA00B5B4E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */,
 				725B0EF71959875500BB4AE0 /* call.aiff */,
 			);
 			path = Resources;
@@ -460,6 +466,8 @@
 				72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */,
 				721C3956193BA03400637F88 /* BMEEmailValidator.h */,
 				721C3957193BA03400637F88 /* BMEEmailValidator.m */,
+				725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */,
+				725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -614,6 +622,7 @@
 				72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
 				729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */,
+				725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */,
 				72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */,
 				7236E01118B8A87B00F622AA /* Main.storyboard in Resources */,
 				72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodViewController.strings in Resources */,
@@ -667,6 +676,7 @@
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
+				725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */,
 				72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,

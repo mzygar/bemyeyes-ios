@@ -11,9 +11,11 @@
 #import <PSAlertView/PSPDFAlertView.h>
 #import "BMEClient.h"
 #import "BMECallViewController.h"
+#import "BMECallAudioPlayer.h"
 
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
+@property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
 @property (copy, nonatomic) void(^requireRemoteNotificationsHandler)(BOOL, NSString*);
 @end
 
@@ -87,12 +89,17 @@
                 NSString *actionButton = NSLocalizedString(actionLocKey, nil);
                 NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when a call is received while the app was active");
                 
+                [self playCallTone];
+                
                 __weak typeof(self) weakSelf = self;
                 self.callAlertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
                 [self.callAlertView addButtonWithTitle:actionButton block:^{
                     [weakSelf didAnswerCallWithShortId:shortId];
+                    [weakSelf stopCallTone];
                 }];
-                [self.callAlertView setCancelButtonWithTitle:cancelButton block:nil];
+                [self.callAlertView setCancelButtonWithTitle:cancelButton block:^{
+                    [weakSelf stopCallTone];
+                }];
                 [self.callAlertView show];
             }
         } else if ([alert isKindOfClass:[NSString class]]) {
@@ -287,6 +294,25 @@
 - (void)handleSecretTapGesture:(UITapGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         [self presentSecretSettings];
+    }
+}
+
+- (void)playCallTone {
+    if (!self.callAudioPlayer) {
+        NSError *error = nil;
+        self.callAudioPlayer = [BMECallAudioPlayer playerWithError:&error];
+        if (!error) {
+            if ([self.callAudioPlayer prepareToPlay]) {
+                [self.callAudioPlayer play];
+            }
+        }
+    }
+}
+
+- (void)stopCallTone {
+    if (self.callAudioPlayer) {
+        [self.callAudioPlayer stop];
+        self.callAudioPlayer = nil;
     }
 }
 

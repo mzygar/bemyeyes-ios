@@ -15,6 +15,7 @@
 #import "BMEUser.h"
 #import "BMERequest.h"
 #import "BMESpeaker.h"
+#import "BMECallAudioPlayer.h"
 
 #define BMECallReportAbuseSegue @"ReportAbuse"
 
@@ -31,6 +32,8 @@
 @property (strong, nonatomic) OTPublisher *publisher;
 @property (strong, nonatomic) OTSubscriber *subscriber;
 @property (strong, nonatomic) UIView *videoView;
+
+@property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
 
 @property (assign, nonatomic, getter = isDisconnecting) BOOL disconnecting;
 
@@ -67,6 +70,8 @@
 }
 
 - (void)dealloc {
+    [self stopCallTone];
+    
     _requestIdentifier = nil;
     _shortId = nil;
     _sessionId = nil;
@@ -74,6 +79,7 @@
     _session = nil;
     _publisher = nil;
     _videoView = nil;
+    _callAudioPlayer = nil;
 }
 
 #pragma mark -
@@ -95,6 +101,7 @@
         self.sessionId = request.openTok.sessionId;
         self.token = request.openTok.token;
         [self connect];
+        [self playCallTone];
     } failure:^(NSError *error) {
         NSString *title = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_TITLE", @"BMECallViewController", @"Title in alert showed when failed creating request");
         NSString *message = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_MESSAGE", @"BMECallViewController", @"Message in alert showed when failed creating request");
@@ -292,6 +299,25 @@
     return [BMEClient sharedClient].currentUser.role == BMERoleHelper;
 }
 
+- (void)playCallTone {
+    if (!self.callAudioPlayer) {
+        NSError *error = nil;
+        self.callAudioPlayer = [BMECallAudioPlayer playerWithError:&error];
+        if (!error) {
+            if ([self.callAudioPlayer prepareToPlay]) {
+                [self.callAudioPlayer play];
+            }
+        }
+    }
+}
+
+- (void)stopCallTone {
+    if (self.callAudioPlayer) {
+        [self.callAudioPlayer stop];
+        self.callAudioPlayer = nil;
+    }
+}
+
 #pragma mark -
 #pragma mark Session Delegate
 
@@ -380,6 +406,7 @@
         if ([self isUserBlind]) {
             NSLog(@"Display publisher view");
             [self displayViewForPublisher:self.publisher];
+            [self stopCallTone];
         } else {
             NSLog(@"Display subscriber view");
             [self displayViewForSubscriber:self.subscriber];
