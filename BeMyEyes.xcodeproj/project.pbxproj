@@ -16,7 +16,6 @@
 		721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C3957193BA03400637F88 /* BMEEmailValidator.m */; };
 		721CAF21192D2EAA00B5B4E4 /* march.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF20192D2EAA00B5B4E4 /* march.aiff */; };
 		721CAF23192D30D900B5B4E4 /* silence.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 721CAF22192D30D900B5B4E4 /* silence.aiff */; };
-		721F6B10191BD94C00E7B869 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721F6B0F191BD94C00E7B869 /* OpenTok.framework */; };
 		7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
 		7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */; };
 		7236E00218B8A87B00F622AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236E00118B8A87B00F622AA /* UIKit.framework */; };
@@ -28,6 +27,7 @@
 		7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04018B8CCF400F622AA /* BMEBaseViewController.m */; };
 		7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */; };
 		7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */; };
+		725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B0EF51959836700BB4AE0 /* OpenTok.framework */; };
 		72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FF718BA27EE006F388C /* Twitter.framework */; };
 		72622FFA18BA27F2006F388C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FF918BA27F2006F388C /* Social.framework */; };
 		72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FFB18BA27F8006F388C /* Accounts.framework */; };
@@ -114,7 +114,6 @@
 		721C3957193BA03400637F88 /* BMEEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEEmailValidator.m; sourceTree = "<group>"; };
 		721CAF20192D2EAA00B5B4E4 /* march.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = march.aiff; sourceTree = "<group>"; };
 		721CAF22192D30D900B5B4E4 /* silence.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = silence.aiff; sourceTree = "<group>"; };
-		721F6B0F191BD94C00E7B869 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenTok.framework; sourceTree = "<group>"; };
 		7236DFFA18B8A87B00F622AA /* BeMyEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMyEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7236DFFD18B8A87B00F622AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +133,7 @@
 		7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESignUpMethodViewController.m; sourceTree = "<group>"; };
 		7236E04818B8DD8E00F622AA /* BMESignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESignUpViewController.h; sourceTree = "<group>"; };
 		7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESignUpViewController.m; sourceTree = "<group>"; };
+		725B0EF51959836700BB4AE0 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.2.0/OpenTok.framework"; sourceTree = "<group>"; };
 		72622FF718BA27EE006F388C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		72622FF918BA27F2006F388C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		72622FFB18BA27F8006F388C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -245,8 +245,8 @@
 				726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */,
 				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
 				726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */,
+				725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */,
 				726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */,
-				721F6B10191BD94C00E7B869 /* OpenTok.framework in Frameworks */,
 				7262301818BA39E3006F388C /* Security.framework in Frameworks */,
 				7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */,
 				7262301418BA39DB006F388C /* OpenGLES.framework in Frameworks */,
@@ -499,14 +499,6 @@
 			name = Localizable;
 			sourceTree = "<group>";
 		};
-		726D7B88191A7E59005690B7 /* OpenTok-v2.2beta */ = {
-			isa = PBXGroup;
-			children = (
-				721F6B0F191BD94C00E7B869 /* OpenTok.framework */,
-			);
-			path = "OpenTok-v2.2beta";
-			sourceTree = "<group>";
-		};
 		72DEF71518B907D10048FA90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,7 +521,7 @@
 		72DEF72318B90A6D0048FA90 /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
-				726D7B88191A7E59005690B7 /* OpenTok-v2.2beta */,
+				725B0EF51959836700BB4AE0 /* OpenTok.framework */,
 				72DEF72418B90A6D0048FA90 /* AESCrypt */,
 			);
 			path = "Other sources";
