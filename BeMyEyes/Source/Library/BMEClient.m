@@ -626,7 +626,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 
 - (NSArray *)mapPointEntryFromRepresentation:(NSArray *)representation {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
-    config.datePattern = @"y-M-d'T'H:m:s'Z'";
+    config.datePattern = @"y-M-d'T'H:m:s.SSS'Z'";
     
     DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"log_time" toAttribute:@"date" onClass:[BMEPointEntry class]];
     [config addObjectMapping:dateMapping];
