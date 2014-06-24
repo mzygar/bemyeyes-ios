@@ -34,6 +34,7 @@
 #define BMESecretSettingsControllerIdentifier @"SecretSettings"
 
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"
+#define BMEDidUpdateProfileNotification @"BMEDidUpdateProfileNotification"
 
 typedef NS_ENUM(NSInteger, BMERole) {
     BMERoleBlind = 0,
