@@ -62,7 +62,7 @@
     [[BMEClient sharedClient] logoutWithCompletion:^(BOOL success, NSError *error) {
         [progressOverlayView hide:YES];
         
-        if (!error) {
+        if (!error || [error code] == BMEClientErrorUserTokenNotFound) {
             [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogOutNotification object:nil];
             
             [self performSegueWithIdentifier:BMEUnwindSettingsSegue sender:self];

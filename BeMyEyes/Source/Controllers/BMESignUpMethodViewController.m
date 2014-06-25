@@ -172,10 +172,6 @@
 }
 
 - (void)didLogin {
-    if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
-        [TheAppDelegate registerForRemoteNotifications];
-    }
-    
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }
 

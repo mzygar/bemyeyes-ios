@@ -107,8 +107,6 @@
 }
 
 - (void)didLogin {
-    [TheAppDelegate registerForRemoteNotifications];
-    
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }
 

@@ -16,7 +16,7 @@
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
 @property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
-@property (copy, nonatomic) void(^requireRemoteNotificationsHandler)(BOOL, NSString*);
+@property (copy, nonatomic) void(^requireRemoteNotificationsHandler)(BOOL, NSString*, NSError*);
 @end
 
 @implementation BMEAppDelegate
@@ -125,12 +125,12 @@
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
             
             if (self.requireRemoteNotificationsHandler) {
-                self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken);
+                self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken, error);
                 self.requireRemoteNotificationsHandler = nil;
             }
         } else {
             if (self.requireRemoteNotificationsHandler) {
-                self.requireRemoteNotificationsHandler(NO, nil);
+                self.requireRemoteNotificationsHandler(NO, nil, error);
                 self.requireRemoteNotificationsHandler = nil;
             }
         }
@@ -145,7 +145,7 @@
     NSLog(@"Failed registering for remote notifications: %@", error);
     
     if (self.requireRemoteNotificationsHandler) {
-        self.requireRemoteNotificationsHandler(NO, nil);
+        self.requireRemoteNotificationsHandler(NO, nil, error);
         self.requireRemoteNotificationsHandler = nil;
     }
 }
@@ -189,18 +189,23 @@
     }];
 }
 
-- (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken))handler {
+- (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler {
     NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
     if (deviceToken) {
         NSLog(@"Device already registered with device token: %@", deviceToken);
         
         if (handler) {
-            handler(YES, deviceToken);
+            handler(YES, deviceToken, nil);
         }
     } else {
         self.requireRemoteNotificationsHandler = handler;
         [self registerForRemoteNotifications];
     }
+}
+
+- (void)forceRegisterDeviceForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler {
+    self.requireRemoteNotificationsHandler = handler;
+    [self registerForRemoteNotifications];
 }
 
 #pragma mark -
@@ -217,36 +222,47 @@
         UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainControllerIdentifier];
         [self replaceTopController:mainController];
         
-        [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@", error);
-            }
-         
-            switch ([error code]) {
-                case BMEClientErrorUserNotFound:
-                case BMEClientErrorUserFacebookUserNotFound:
-                case BMEClientErrorUserTokenNotFound:
-                case BMEClientErrorUserTokenExpired:
-                    NSLog(@"Log in not valid. Log out.");
-                    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
-                    [[BMEClient sharedClient] logoutWithCompletion:nil];
-                    [[BMEClient sharedClient] resetLogin];
-                    NSLog(@"Could not automatically log in: %@", error);
-                    break;
-                default:
-                    NSLog(@"Did log in");
-                    [self didLogin];
-                    break;
-            }
-        }];
+//        [self forceRegisterDeviceForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
+//            if (isRegistered) {
+                [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
+                    if (error) {
+                        NSLog(@"Error: %@", error);
+                    }
+                    
+                    switch ([error code]) {
+                        case BMEClientErrorUserNotFound:
+                        case BMEClientErrorUserFacebookUserNotFound:
+                        case BMEClientErrorUserTokenNotFound:
+                        case BMEClientErrorUserTokenExpired:
+                            NSLog(@"Log in not valid. Log out.");
+                            [self loginFailed];
+                            NSLog(@"Could not automatically log in: %@", error);
+                            break;
+                        default:
+                            NSLog(@"Did log in");
+                            break;
+                    }
+                }];
+//            } else {
+//                if ([error code] != NSURLErrorTimedOut &&
+//                    [error code] != NSURLErrorNotConnectedToInternet &&
+//                    [error code] == NSURLErrorNetworkConnectionLost) {
+//                    [self loginFailed];
+//                    NSLog(@"Could not automatically log in because device could not be registered.");
+//                }
+//            }
+//        }];
     } else {
         NSLog(@"Token: %@", [BMEClient sharedClient].token);
         NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");
     }
 }
 
-- (void)didLogin {
-    [self registerForRemoteNotifications];
+- (void)loginFailed {
+    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
+    
+    [[BMEClient sharedClient] logoutWithCompletion:nil];
+    [[BMEClient sharedClient] resetLogin];
 }
 
 - (void)replaceTopController:(UIViewController *)topController {

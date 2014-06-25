@@ -154,7 +154,7 @@
 }
 
 - (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken))handler {
-    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
+    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
         if (!isRegistered) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE", @"BMELoginViewController", @"Title in alert shown when the user is not registered for remote notifications");
             NSString *message = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE", @"BMELoginViewController", @"Message in alert shown when the user is not registered for remote notifications");
