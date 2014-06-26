@@ -18,6 +18,5 @@
 - (void)requirePushNotificationsEnabled:(void(^)(BOOL isEnabled))handler;
 - (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion;
 - (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler;
-- (void)forceRegisterDeviceForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler;
 
 @end
