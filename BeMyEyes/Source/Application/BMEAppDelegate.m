@@ -190,20 +190,6 @@
 }
 
 - (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler {
-    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
-    if (deviceToken) {
-        NSLog(@"Device already registered with device token: %@", deviceToken);
-        
-        if (handler) {
-            handler(YES, deviceToken, nil);
-        }
-    } else {
-        self.requireRemoteNotificationsHandler = handler;
-        [self registerForRemoteNotifications];
-    }
-}
-
-- (void)forceRegisterDeviceForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler {
     self.requireRemoteNotificationsHandler = handler;
     [self registerForRemoteNotifications];
 }
