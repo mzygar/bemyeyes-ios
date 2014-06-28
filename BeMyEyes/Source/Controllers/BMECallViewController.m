@@ -273,6 +273,8 @@
 }
 
 - (void)dismiss {
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidUpdatePointNotification object:nil];
+    
     if (self.shouldPresentReportAbuseWhenDismissing) {
         [self performSegueWithIdentifier:BMECallReportAbuseSegue sender:self];
     } else {

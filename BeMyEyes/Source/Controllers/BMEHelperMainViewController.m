@@ -76,6 +76,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [super awakeFromNib];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdateProfile:) name:BMEDidUpdateProfileNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdatePoint:) name:BMEDidUpdatePointNotification object:nil];
 }
 
 - (void)viewDidLoad {
@@ -325,6 +326,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 - (void)didUpdateProfile:(NSNotification *)notification {
     [self displayGreeting];
+}
+
+- (void)didUpdatePoint:(NSNotification *)notification {
+    [self reloadPoints];
 }
 
 @end

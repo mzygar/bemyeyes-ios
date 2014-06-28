@@ -35,6 +35,7 @@
 
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"
 #define BMEDidUpdateProfileNotification @"BMEDidUpdateProfileNotification"
+#define BMEDidUpdatePointNotification @"BMEDidUpdatePointNotification"
 
 typedef NS_ENUM(NSInteger, BMERole) {
     BMERoleBlind = 0,
