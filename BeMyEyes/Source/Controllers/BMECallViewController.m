@@ -53,6 +53,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
  
     if (self.callMode == BMECallModeCreate) {
         [self createNewRequest];
@@ -63,6 +65,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     
