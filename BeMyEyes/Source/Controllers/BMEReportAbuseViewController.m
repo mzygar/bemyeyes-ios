@@ -22,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *reason2StateImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *reason3StateImageView;
 
+@property (weak, nonatomic) IBOutlet UIButton *reason1Button;
+@property (weak, nonatomic) IBOutlet UIButton *reason2Button;
+@property (weak, nonatomic) IBOutlet UIButton *reason3Button;
+
 @property (weak, nonatomic) IBOutlet UIButton *reportButton;
 @end
 
@@ -82,16 +86,30 @@
 }
 
 - (void)writeReasons {
+    NSString *reason1, *reason2, *reason3;
+    
     BOOL isBlind = ([BMEClient sharedClient].currentUser.role == BMERoleBlind);
     if (isBlind) {
-        self.reason1Label.text = NSLocalizedStringFromTable(@"REPORT_TEXT_1_BLIND", @"BMEReportAbuseViewController", @"Text 1 for reporting abuse as a blind person.");
-        self.reason2Label.text = NSLocalizedStringFromTable(@"REPORT_TEXT_2_BLIND", @"BMEReportAbuseViewController", @"Text 2 for reporting abuse as a blind person.");
-        self.reason3Label.text = NSLocalizedStringFromTable(@"REPORT_TEXT_3_BLIND", @"BMEReportAbuseViewController", @"Text 3 for reporting abuse as a blind person.");
+        reason1 = NSLocalizedStringFromTable(@"REPORT_TEXT_1_BLIND", @"BMEReportAbuseViewController", @"Text 1 for reporting abuse as a blind person.");
+        reason2 = NSLocalizedStringFromTable(@"REPORT_TEXT_2_BLIND", @"BMEReportAbuseViewController", @"Text 2 for reporting abuse as a blind person.");
+        reason3 = NSLocalizedStringFromTable(@"REPORT_TEXT_3_BLIND", @"BMEReportAbuseViewController", @"Text 3 for reporting abuse as a blind person.");
     } else {
-        self.reason1Label.text = NSLocalizedStringFromTable(@"REPORT_TEXT_1_HELPER", @"BMEReportAbuseViewController", @"Text 1 for reporting abuse as a helper.");
-        self.reason2Label.text = NSLocalizedStringFromTable(@"REPORT_TEXT_2_HELPER", @"BMEReportAbuseViewController", @"Text 2 for reporting abuse as a helper.");
-        self.reason3Label.text = NSLocalizedStringFromTable(@"REPORT_TEXT_3_HELPER", @"BMEReportAbuseViewController", @"Text 3 for reporting abuse as a helper.");
+        reason1 = NSLocalizedStringFromTable(@"REPORT_TEXT_1_HELPER", @"BMEReportAbuseViewController", @"Text 1 for reporting abuse as a helper.");
+        reason2 = NSLocalizedStringFromTable(@"REPORT_TEXT_2_HELPER", @"BMEReportAbuseViewController", @"Text 2 for reporting abuse as a helper.");
+        reason3 = NSLocalizedStringFromTable(@"REPORT_TEXT_3_HELPER", @"BMEReportAbuseViewController", @"Text 3 for reporting abuse as a helper.");
     }
+    
+    self.reason1Label.accessibilityElementsHidden = YES;
+    self.reason2Label.accessibilityElementsHidden = YES;
+    self.reason3Label.accessibilityElementsHidden = YES;
+    
+    self.reason1Label.text = reason1;
+    self.reason2Label.text = reason2;
+    self.reason3Label.text = reason3;
+    
+    self.reason1Button.accessibilityLabel = reason1;
+    self.reason2Button.accessibilityLabel = reason2;
+    self.reason3Button.accessibilityLabel = reason3;
 }
 
 - (void)selectReasonNumber:(NSUInteger)number {

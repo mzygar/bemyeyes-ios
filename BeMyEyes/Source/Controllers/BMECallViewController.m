@@ -67,6 +67,7 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     
     [self changeAudioCategoryToDefault];
+    [self stopCallTone];
 }
 
 - (void)dealloc {

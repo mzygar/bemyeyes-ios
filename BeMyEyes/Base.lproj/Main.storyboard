@@ -2351,10 +2351,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="VBk-3j-fT6"/>
                     <connections>
+                        <outlet property="reason1Button" destination="6Pw-OI-8hm" id="ux3-lS-jrK"/>
                         <outlet property="reason1Label" destination="AbN-ll-cDD" id="Y97-qv-mjt"/>
                         <outlet property="reason1StateImageView" destination="Y7g-8Z-mhb" id="XKv-1R-fBC"/>
+                        <outlet property="reason2Button" destination="ni7-bf-m1Y" id="oMB-2c-VJz"/>
                         <outlet property="reason2Label" destination="bTg-24-Pn6" id="C0d-yP-WdR"/>
                         <outlet property="reason2StateImageView" destination="xtQ-zT-Bql" id="NiW-o1-XCB"/>
+                        <outlet property="reason3Button" destination="Yza-pt-yXm" id="tzA-hv-NOP"/>
                         <outlet property="reason3Label" destination="Cab-uR-m17" id="7Vy-FB-Zjg"/>
                         <outlet property="reason3StateImageView" destination="AV2-K9-UXi" id="iL0-DE-hO6"/>
                         <outlet property="reportButton" destination="jhE-ej-zTI" id="bfn-0j-Eat"/>
