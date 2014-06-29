@@ -172,6 +172,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     NSAssert([email length] > 0, @"E-mail cannot be empty.");
     NSAssert([password length] > 0, @"Password cannot be empty.");
     
+    NSLog(@"Login with e-mail: %@, password: %@, deviceToken: %@", email, password, deviceToken);
+    
     NSString *securePassword = [AESCrypt encrypt:password password:BMESecuritySalt];
     NSDictionary *parameters = @{ @"email" : email,
                                   @"password" : securePassword,
@@ -221,7 +223,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     
     [self authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
-            [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:success failure:loginFailure];
+            [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] deviceToken:deviceToken success:success failure:loginFailure];
         } else {
             if (accountFailure) {
                 accountFailure(error);
@@ -479,6 +481,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)loginWithParameters:(NSDictionary *)params success:(void (^)(BMEToken *))success failure:(void (^)(NSError *error))failure {
+    NSLog(@"Login with parameters: %@", params);
     [self postPath:@"users/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         BMEToken *token = [self mapTokenFromRepresentation:[responseObject objectForKey:@"token"]];
         [self storeToken:token.token];

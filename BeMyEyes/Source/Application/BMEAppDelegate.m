@@ -208,36 +208,25 @@
         UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainControllerIdentifier];
         [self replaceTopController:mainController];
         
-//        [self forceRegisterDeviceForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
-//            if (isRegistered) {
-                [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
-                    if (error) {
-                        NSLog(@"Error: %@", error);
-                    }
-                    
-                    switch ([error code]) {
-                        case BMEClientErrorUserNotFound:
-                        case BMEClientErrorUserFacebookUserNotFound:
-                        case BMEClientErrorUserTokenNotFound:
-                        case BMEClientErrorUserTokenExpired:
-                            NSLog(@"Log in not valid. Log out.");
-                            [self loginFailed];
-                            NSLog(@"Could not automatically log in: %@", error);
-                            break;
-                        default:
-                            NSLog(@"Did log in");
-                            break;
-                    }
-                }];
-//            } else {
-//                if ([error code] != NSURLErrorTimedOut &&
-//                    [error code] != NSURLErrorNotConnectedToInternet &&
-//                    [error code] == NSURLErrorNetworkConnectionLost) {
-//                    [self loginFailed];
-//                    NSLog(@"Could not automatically log in because device could not be registered.");
-//                }
-//            }
-//        }];
+        [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error);
+            }
+            
+            switch ([error code]) {
+                case BMEClientErrorUserNotFound:
+                case BMEClientErrorUserFacebookUserNotFound:
+                case BMEClientErrorUserTokenNotFound:
+                case BMEClientErrorUserTokenExpired:
+                    NSLog(@"Log in not valid. Log out.");
+                    [self loginFailed];
+                    NSLog(@"Could not automatically log in: %@", error);
+                    break;
+                default:
+                    NSLog(@"Did log in");
+                    break;
+            }
+        }];
     } else {
         NSLog(@"Token: %@", [BMEClient sharedClient].token);
         NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");

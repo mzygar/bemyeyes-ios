@@ -76,14 +76,20 @@
             if (success && !error) {
                 progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when logging in");
                 
-                [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
-                    [progressOverlayView hide:YES];
-                    
-                    [self didLogin];
-                } failure:^(NSError *error) {
-                    [progressOverlayView hide:YES];
-                    
-                    [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
+                    if (!error) {
+                        [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:deviceToken success:^(BMEToken *token) {
+                            [progressOverlayView hide:YES];
+                        
+                            [self didLogin];
+                        } failure:^(NSError *error) {
+                            [progressOverlayView hide:YES];
+                        
+                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                        }];
+                    } else {
+                        [progressOverlayView hide:YES];
+                    }
                 }];
             } else {
                 [progressOverlayView hide:YES];
