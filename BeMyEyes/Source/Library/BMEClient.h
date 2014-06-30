@@ -43,11 +43,11 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 - (void)setUsername:(NSString *)username password:(NSString *)password;
 
 - (void)createUserWithEmail:(NSString *)email password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)createFacebookUserId:(NSInteger)userId email:(NSString *)email firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)createFacebookUserId:(long long)userId email:(NSString *)email firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateCurrentUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateUserWithIdentifier:(NSString *)identifier firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
-- (void)loginWithEmail:(NSString *)email userId:(NSInteger)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
+- (void)loginWithEmail:(NSString *)email userId:(long long)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
 - (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)loginUsingFacebookWithDeviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
 - (void)logoutWithCompletion:(void (^)(BOOL success, NSError *error))completion;

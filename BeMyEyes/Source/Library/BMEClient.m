@@ -119,7 +119,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     [self createUserWithParameters:parameters completion:completion];
 }
 
-- (void)createFacebookUserId:(NSInteger)userId email:(NSString *)email firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion {
+- (void)createFacebookUserId:(long long)userId email:(NSString *)email firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion {
     NSAssert([firstName length] > 0, @"First name cannot be empty.");
     NSAssert([lastName length] > 0, @"Last name cannot be empty.");
 
@@ -182,7 +182,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     [self loginWithParameters:parameters success:success failure:failure];
 }
 
-- (void)loginWithEmail:(NSString *)email userId:(NSInteger)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *))success failure:(void (^)(NSError *))failure {
+- (void)loginWithEmail:(NSString *)email userId:(long long)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *))success failure:(void (^)(NSError *))failure {
+    MA
     NSAssert([email length] > 0, @"E-mail cannot be empty.");
     NSAssert(userId > 0, @"User ID cannot be empty.");
 
@@ -223,7 +224,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     
     [self authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
-            [self loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] deviceToken:deviceToken success:success failure:loginFailure];
+            [self loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:deviceToken success:success failure:loginFailure];
         } else {
             if (accountFailure) {
                 accountFailure(error);
