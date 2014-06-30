@@ -119,13 +119,13 @@
     
     [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
-            [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId integerValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
+            [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId longLongValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
                 if (success && !error) {
                     progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when logging in");
                     
                     [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
                         if (!error) {
-                            [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] deviceToken:deviceToken success:^(BMEToken *token) {
+                            [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:deviceToken success:^(BMEToken *token) {
                                 [progressOverlayView hide:YES];
                                 
                                 [self didLogin];
