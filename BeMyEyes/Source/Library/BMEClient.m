@@ -549,6 +549,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             NSError *deserializationError;
             NSDictionary *userData = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&deserializationError];
             if (userData != nil && deserializationError == nil) {
+                NSLog(@"Facebook user data: %@", userData);
                 [self facebookAuthSuccessWithUserData:userData];
             } else {
                 NSLog(@"Facebook: Could not deserialize response from request to get info: %@", error);
