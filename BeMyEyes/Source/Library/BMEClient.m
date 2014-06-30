@@ -183,7 +183,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)loginWithEmail:(NSString *)email userId:(long long)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *))success failure:(void (^)(NSError *))failure {
-    MA
     NSAssert([email length] > 0, @"E-mail cannot be empty.");
     NSAssert(userId > 0, @"User ID cannot be empty.");
 
