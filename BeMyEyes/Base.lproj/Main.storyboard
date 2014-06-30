@@ -618,17 +618,35 @@
                                 <rect key="frame" x="20" y="111" width="280" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Always help near at hand" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="aTB-Dh-KKN">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always help near at hand" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="aTB-Dh-KKN">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="73"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="73" id="yP1-aM-WNe"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="29"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive help when you need it" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="VDb-Rr-jA7">
+                                        <rect key="frame" x="0.0" y="81" width="280" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="77" id="9SK-Hf-1mC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aTB-Dh-KKN" secondAttribute="trailing" id="0j1-ua-m0O"/>
+                                    <constraint firstItem="aTB-Dh-KKN" firstAttribute="top" secondItem="6uI-Uy-pVa" secondAttribute="top" id="2BB-de-tMp"/>
                                     <constraint firstAttribute="width" constant="280" id="2vG-pQ-wqB"/>
+                                    <constraint firstAttribute="bottom" secondItem="VDb-Rr-jA7" secondAttribute="bottom" id="Enp-jl-WcB"/>
+                                    <constraint firstItem="aTB-Dh-KKN" firstAttribute="leading" secondItem="6uI-Uy-pVa" secondAttribute="leading" id="bBg-Jp-yBV"/>
                                     <constraint firstAttribute="height" constant="158" id="don-oV-kld"/>
+                                    <constraint firstAttribute="trailing" secondItem="VDb-Rr-jA7" secondAttribute="trailing" id="fsz-CG-3qc"/>
+                                    <constraint firstItem="VDb-Rr-jA7" firstAttribute="leading" secondItem="6uI-Uy-pVa" secondAttribute="leading" id="jAO-Ts-gUP"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can receive help from the entire Be My Eyes community when you are logged in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="dQk-aX-ziC">
@@ -682,12 +700,6 @@
                                     <segue destination="rmT-tx-lgV" kind="push" identifier="SignUpMethod" id="46J-Mt-BiQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Receive help when you need it" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="VDb-Rr-jA7">
-                                <rect key="frame" x="20" y="192" width="280" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -2517,8 +2529,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kdn-ps-MZv"/>
         <segue reference="jzc-Nc-kCA"/>
+        <segue reference="46J-Mt-BiQ"/>
         <segue reference="eRS-8r-KQ5"/>
     </inferredMetricsTieBreakers>
 </document>

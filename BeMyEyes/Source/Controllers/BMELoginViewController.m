@@ -75,52 +75,46 @@
 - (void)performLoginWithFacebook {
     MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
     
-    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
-        if (!error) {
-            [[BMEClient sharedClient] loginUsingFacebookWithDeviceToken:deviceToken success:^(BMEToken *token) {
-                [progressOverlayView hide:YES];
-                
-                [self didLogin];
-            } loginFailure:^(NSError *error) {
-                [progressOverlayView hide:YES];
-                
-                if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when Facebook user not found during log in.");
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-                    [alert show];
-                } else {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during Facebook log in.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred during Facebook log in.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during Facebook log in.");
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-                    [alert show];
-                }
-                
-                NSLog(@"Could not log in with Facebook: %@", error);
-            } accountFailure:^(NSError *error) {
-                [progressOverlayView hide:YES];
-                
-                if ([error code] == ACErrorAccountNotFound) {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE", @"BMELoginViewController", @"Title in alert view shown when no Facebook account was found.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when no Facebook account was found.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when no Facebook account was found.");
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-                    [alert show];
-                } else {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE", @"BMELoginViewController", @"Title in alert view shown when log in to Facebook failed");
-                    NSString *cancelButtonTitle = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when log in to Facebook failed");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when logging into Facebook but it failed because authentication failed");
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
-                    [alert show];
-                }
-                
-                NSLog(@"Could not log in with Facebook due to account error: %@", error);
-            }];
+    [[BMEClient sharedClient] loginUsingFacebookWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
+        [progressOverlayView hide:YES];
+        
+        [self didLogin];
+    } loginFailure:^(NSError *error) {
+        [progressOverlayView hide:YES];
+        
+        if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when Facebook user not found during log in.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alert show];
         } else {
-            [progressOverlayView hide:YES];
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during Facebook log in.");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred during Facebook log in.");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during Facebook log in.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alert show];
         }
+        
+        NSLog(@"Could not log in with Facebook: %@", error);
+    } accountFailure:^(NSError *error) {
+        [progressOverlayView hide:YES];
+        
+        if ([error code] == ACErrorAccountNotFound) {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE", @"BMELoginViewController", @"Title in alert view shown when no Facebook account was found.");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when no Facebook account was found.");
+            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when no Facebook account was found.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alert show];
+        } else {
+            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE", @"BMELoginViewController", @"Title in alert view shown when log in to Facebook failed");
+            NSString *cancelButtonTitle = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when log in to Facebook failed");
+            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when logging into Facebook but it failed because authentication failed");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+        NSLog(@"Could not log in with Facebook due to account error: %@", error);
     }];
 }
 

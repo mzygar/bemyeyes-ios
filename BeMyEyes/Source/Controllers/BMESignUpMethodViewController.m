@@ -148,7 +148,7 @@
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                         [alert show];
                     } else {
-                        NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when a TITLEnetwork error occurred during Facebook log in.");
+                        NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when a network error occurred during Facebook log in.");
                         NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when a network error occurred during Facebook log in.");
                         NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when a network error occurred during Facebook log in.");
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
