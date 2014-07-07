@@ -1,5 +1,5 @@
 /* Message in push notification when a request has been received */
-"PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE" = "%@ needs your help!";
+"PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE" = "%@ needs your help! Swipe to answer.";
 
 /* Title of button in push notification when a request has been received */
 "PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION" = "Answer";

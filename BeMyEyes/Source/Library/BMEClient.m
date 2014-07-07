@@ -172,8 +172,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     NSAssert([email length] > 0, @"E-mail cannot be empty.");
     NSAssert([password length] > 0, @"Password cannot be empty.");
     
-    NSLog(@"Login with e-mail: %@, password: %@, deviceToken: %@", email, password, deviceToken);
-    
     NSString *securePassword = [AESCrypt encrypt:password password:BMESecuritySalt];
     NSDictionary *parameters = @{ @"email" : email,
                                   @"password" : securePassword,
