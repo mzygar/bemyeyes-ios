@@ -25,6 +25,10 @@
 		7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04018B8CCF400F622AA /* BMEBaseViewController.m */; };
 		7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */; };
 		7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */; };
+		72414AF2196A982D00A2C5F4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72414AF1196A982D00A2C5F4 /* MessageUI.framework */; };
+		72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */; };
+		72414AFA196AAD5C00A2C5F4 /* BMELanguagesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AF8196AAD5C00A2C5F4 /* BMELanguagesViewController.strings */; };
+		72414AFD196AB16A00A2C5F4 /* BMEMainViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AFB196AB16A00A2C5F4 /* BMEMainViewController.strings */; };
 		725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B0EF51959836700BB4AE0 /* OpenTok.framework */; };
 		725B0EF81959875500BB4AE0 /* call.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EF71959875500BB4AE0 /* call.aiff */; };
 		725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */; };
@@ -132,6 +136,11 @@
 		7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESignUpMethodViewController.m; sourceTree = "<group>"; };
 		7236E04818B8DD8E00F622AA /* BMESignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESignUpViewController.h; sourceTree = "<group>"; };
 		7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESignUpViewController.m; sourceTree = "<group>"; };
+		72414AF1196A982D00A2C5F4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		72414AF5196AA33200A2C5F4 /* BMELanguagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMELanguagesViewController.h; sourceTree = "<group>"; };
+		72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMELanguagesViewController.m; sourceTree = "<group>"; };
+		72414AF9196AAD5C00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMELanguagesViewController.strings; sourceTree = "<group>"; };
+		72414AFC196AB16A00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEMainViewController.strings; sourceTree = "<group>"; };
 		725B0EF51959836700BB4AE0 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.2.0/OpenTok.framework"; sourceTree = "<group>"; };
 		725B0EF71959875500BB4AE0 /* call.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = call.aiff; sourceTree = "<group>"; };
 		725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallAudioPlayer.h; sourceTree = "<group>"; };
@@ -244,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72414AF2196A982D00A2C5F4 /* MessageUI.framework in Frameworks */,
 				72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */,
 				726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */,
 				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
@@ -307,6 +317,7 @@
 		7236DFFC18B8A87B00F622AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72414AF1196A982D00A2C5F4 /* MessageUI.framework */,
 				726D7B8F191A8583005690B7 /* libxml2.dylib */,
 				726D7B8D191A8577005690B7 /* libpthread.dylib */,
 				726D7B8B191A8572005690B7 /* libstdc++.6.0.9.dylib */,
@@ -447,6 +458,8 @@
 				72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */,
 				727E13E7194B2AF8002EDA7E /* BMEForgotPasswordViewController.h */,
 				727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */,
+				72414AF5196AA33200A2C5F4 /* BMELanguagesViewController.h */,
+				72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -500,6 +513,8 @@
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 				720D4D11194A1FAC00060D7F /* BMEReportAbuseViewController.strings */,
 				727E13EA194B3189002EDA7E /* BMEForgotPasswordViewController.strings */,
+				72414AF8196AAD5C00A2C5F4 /* BMELanguagesViewController.strings */,
+				72414AFB196AB16A00A2C5F4 /* BMEMainViewController.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -612,6 +627,7 @@
 				72E65FA118BA7A4E002FB2E0 /* BMELoginViewController.strings in Resources */,
 				72DA827718D4716A001F3312 /* Localizable.strings in Resources */,
 				72DA827118D46C6A001F3312 /* BMEAppDelegate.strings in Resources */,
+				72414AFD196AB16A00A2C5F4 /* BMEMainViewController.strings in Resources */,
 				72E65F9E18BA7A35002FB2E0 /* BMESignUpViewController.strings in Resources */,
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
@@ -621,6 +637,7 @@
 				720D4D13194A1FAC00060D7F /* BMEReportAbuseViewController.strings in Resources */,
 				72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
+				72414AFA196AAD5C00A2C5F4 /* BMELanguagesViewController.strings in Resources */,
 				729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */,
 				725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */,
 				72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */,
@@ -680,6 +697,7 @@
 				72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
+				72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
@@ -742,6 +760,22 @@
 				7236E01018B8A87B00F622AA /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		72414AF8196AAD5C00A2C5F4 /* BMELanguagesViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72414AF9196AAD5C00A2C5F4 /* en */,
+			);
+			name = BMELanguagesViewController.strings;
+			sourceTree = "<group>";
+		};
+		72414AFB196AB16A00A2C5F4 /* BMEMainViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72414AFC196AB16A00A2C5F4 /* en */,
+			);
+			name = BMEMainViewController.strings;
 			sourceTree = "<group>";
 		};
 		727E13EA194B3189002EDA7E /* BMEForgotPasswordViewController.strings */ = {
@@ -852,8 +886,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -871,7 +905,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "97ACA273-5D72-4C49-81D7-E2CDAF5A76D1";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -894,8 +928,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -907,7 +941,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "97ACA273-5D72-4C49-81D7-E2CDAF5A76D1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
@@ -923,7 +957,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -934,7 +968,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "97ACA273-5D72-4C49-81D7-E2CDAF5A76D1";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -949,7 +983,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -959,7 +993,7 @@
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "97ACA273-5D72-4C49-81D7-E2CDAF5A76D1";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

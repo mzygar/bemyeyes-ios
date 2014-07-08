@@ -8,13 +8,14 @@
 
 #import "BMESettingsViewController.h"
 #import <MRProgress/MRProgress.h>
+#import <MessageUI/MessageUI.h>
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "BMEEmailValidator.h"
 
 #define BMEUnwindSettingsSegue @"UnwindSettings"
 
-@interface BMESettingsViewController () <UITextFieldDelegate>
+@interface BMESettingsViewController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -33,14 +34,11 @@
     
     [self populateFields];
     
-    NSString *majorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *minorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    NSString *strVersion = [NSString stringWithFormat:@"%@ (%@)", majorVersion, minorVersion];
-    self.versionLabel.text = [NSString stringWithFormat:NSLocalizedStringFromTable(@"VERSION_TITLE", @"BMESettingsViewController", @"Version title"), strVersion];
+    self.versionLabel.text = [NSString stringWithFormat:NSLocalizedStringFromTable(@"VERSION_TITLE", @"BMESettingsViewController", @"Version title"), [self versionString]];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
@@ -88,6 +86,17 @@
     self.shouldSave = YES;
 }
 
+- (IBAction)feedbackButtonPressed:(id)sender {
+    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    NSString *initialBody = [NSString stringWithFormat:@"\n\n%@ %@", appName, [self versionString]];
+    MFMailComposeViewController *mailComposeController = [MFMailComposeViewController new];
+    mailComposeController.mailComposeDelegate = self;
+    [mailComposeController setToRecipients:@[ BMEFeedbackRecipientEmail ]];
+    [mailComposeController setSubject:BMEFeedbackEmailSubject];
+    [mailComposeController setMessageBody:initialBody isHTML:NO];
+    [self presentViewController:mailComposeController animated:YES completion:nil];
+}
+
 - (void)validateEmail {
     if (![BMEEmailValidator isEmailValid:[self.emailTextField text]]) {
         self.emailTextField.text = [BMEClient sharedClient].currentUser.email;
@@ -120,6 +129,12 @@
     }];
 }
 
+- (NSString *)versionString {
+    NSString *majorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *minorVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    return [NSString stringWithFormat:@"%@ (%@)", majorVersion, minorVersion];
+}
+
 #pragma mark -
 #pragma mark Text Field Delegate
 
@@ -129,6 +144,13 @@
     [self saveIfSettingChanged];
     
     return NO;
+}
+
+#pragma mark -
+#pragma mark Mail Compose View Controller Delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

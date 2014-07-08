@@ -171,6 +171,8 @@
 }
 
 - (void)didLogin {
+    [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
 }
 

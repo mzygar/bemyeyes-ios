@@ -48,4 +48,15 @@
     _languages = nil;
 }
 
+#pragma mark -
+#pragma mark Public Methods
+
+- (BOOL)isHelper {
+    return self.role == BMERoleHelper;
+}
+
+- (BOOL)isBlind {
+    return self.role == BMERoleBlind;
+}
+
 @end

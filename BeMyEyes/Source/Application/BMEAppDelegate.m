@@ -9,6 +9,7 @@
 #import "BMEAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import <PSAlertView/PSPDFAlertView.h>
+#import <Appirater/Appirater.h>
 #import "BMEClient.h"
 #import "BMECallViewController.h"
 #import "BMECallAudioPlayer.h"
@@ -28,6 +29,15 @@
     [self configureRESTClient];
     [self checkIfLoggedIn];
     [self checkIfAppOpenedByAnsweringWithLaunchOptions:launchOptions];
+    
+    if ([BMEAppStoreId length] > 0) {
+        [Appirater setAppId:BMEAppStoreId];
+        [Appirater setDaysUntilPrompt:5];
+        [Appirater setUsesUntilPrompt:2];
+        [Appirater setSignificantEventsUntilPrompt:2];
+        [Appirater setTimeBeforeReminding:2];
+        [Appirater appLaunched:NO];
+    }
     
     UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
     secretTapGesture.numberOfTouchesRequired = 4;
@@ -223,6 +233,7 @@
                     NSLog(@"Could not automatically log in: %@", error);
                     break;
                 default:
+                    [self didLogin];
                     NSLog(@"Did log in");
                     break;
             }
@@ -238,6 +249,11 @@
     
     [[BMEClient sharedClient] logoutWithCompletion:nil];
     [[BMEClient sharedClient] resetLogin];
+}
+
+- (void)didLogin {
+    [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
 }
 
 - (void)replaceTopController:(UIViewController *)topController {

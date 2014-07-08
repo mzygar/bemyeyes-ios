@@ -19,4 +19,7 @@
 @property (readonly, nonatomic) NSArray *languages;
 @property (readonly, nonatomic) BMERole role;
 
+- (BOOL)isHelper;
+- (BOOL)isBlind;
+
 @end

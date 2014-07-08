@@ -22,6 +22,13 @@
 
 #define BMEFacebookAppId @""
 
+#define BMEAppStoreId @""
+
+#define BMEFeedbackRecipientEmail @"info@bemyeyes.org"
+#define BMEFeedbackEmailSubject @"Feedback on Be My Eyes"
+
+#define BMEPeopleHelpedBeforeAskingForMoreLanguages 3
+
 #define BMEIsProductionOrAdHoc true
 
 #define BMEErrorDomain @"org.bemyeyes.BeMyEyes"

@@ -7,6 +7,7 @@
 //
 
 #import "BMEReportAbuseViewController.h"
+#import <Appirater/Appirater.h>
 #import <MRProgress/MRProgress.h>
 #import "UINavigationController+BMEPopToClass.h"
 #import "BMEMainViewController.h"
@@ -37,6 +38,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([[BMEClient sharedClient].currentUser isHelper]) {
+        NSUInteger peopleHelped = [GVUserDefaults standardUserDefaults].peopleHelped;
+        [GVUserDefaults standardUserDefaults].peopleHelped = peopleHelped + 1;
+    }
+    
     [self writeReasons];
 }
 
@@ -48,6 +54,10 @@
 #pragma mark Private Methods
 
 - (IBAction)skipButtonPressed:(id)sender {
+    if ([BMEAppStoreId length] > 0) {
+        [Appirater userDidSignificantEvent:YES];
+    }
+    
     [self dismiss];
 }
 

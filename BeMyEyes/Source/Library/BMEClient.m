@@ -94,8 +94,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)setUsername:(NSString *)username password:(NSString *)password
-{
+- (void)setUsername:(NSString *)username password:(NSString *)password {
     [self clearAuthorizationHeader];
     [self setAuthorizationHeaderWithUsername:username password:password];
 }
@@ -114,7 +113,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
                                   @"password" : securePassword,
                                   @"first_name" : firstName,
                                   @"last_name" : lastName,
-                                  @"role" : (role == BMERoleBlind) ? @"blind" : @"helper" };
+                                  @"role" : (role == BMERoleBlind) ? @"blind" : @"helper",
+                                  @"languages" : @[ [[NSLocale currentLocale] localeIdentifier] ] };
     
     [self createUserWithParameters:parameters completion:completion];
 }
@@ -127,7 +127,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
                                   @"email" : email,
                                   @"first_name" : firstName,
                                   @"last_name" : lastName,
-                                  @"role" : (role == BMERoleBlind) ? @"blind" : @"helper" };
+                                  @"role" : (role == BMERoleBlind) ? @"blind" : @"helper",
+                                  @"languages" : @[ [[NSLocale currentLocale] localeIdentifier] ] };
     
     [self createUserWithParameters:parameters completion:completion];
 }
@@ -265,6 +266,47 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }];
 }
 
+- (void)updateUserInfoWithUTCOffset:(void (^)(BOOL success, NSError *error))completion {
+    NSAssert([self isLoggedIn], @"User must be logged in before the info can be updated.");
+    
+    CGFloat seconds = (CGFloat)[[NSTimeZone systemTimeZone] secondsFromGMT];
+    CGFloat utcOffset = seconds / 3600.0f;
+    
+    NSDictionary *params = @{ @"utc_offset" : [NSString stringWithFormat:@"%.0f", utcOffset] };
+    
+    NSString *path = [NSString stringWithFormat:@"info/%@", [self token]];
+    [self putPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(NO, error);
+        }
+    }];
+}
+
+- (void)updateUserWithKnownLanguages:(NSArray *)languages completion:(void (^)(BOOL success, NSError *error))completion {
+    NSAssert([self isLoggedIn], @"User must be logged in.");
+    
+    NSString *path = [NSString stringWithFormat:@"users/%@", [BMEClient sharedClient].currentUser.identifier];
+    NSDictionary *params = @{ @"languages" : languages };
+    
+    [self putPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        BMEUser *currentUser = [self currentUser];
+        [currentUser setValue:languages forKeyPath:@"languages"];
+        [self storeCurrentUser:currentUser];
+        
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(NO, error);
+        }
+    }];
+}
+
 #pragma mark -
 #pragma mark Requests
 
@@ -371,34 +413,16 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    NSString *alias = [UIDevice currentDevice].name;
-    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
-    NSString *model = [[UIDevice currentDevice] model];
-    NSString *systemName = [[UIDevice currentDevice] systemName];
-    NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
-    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
     NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
-    
-    NSDictionary *parameters = @{ @"device_token" : normalizedDeviceToken,
-                                  @"device_name" : alias,
-                                  @"model" : model,
-                                  @"system_version" : [NSString stringWithFormat:@"%@ %@", systemName, systemVersion],
-                                  @"app_version" : appVersion,
-                                  @"app_bundle_version" : appBundleVersion,
-                                  @"locale" : locale,
-                                  @"development" : isProduction ? @(NO) : @(YES) };
-    [self postPath:@"devices/register" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Device registered with parameters: %@", parameters);
-        
-        if (completion) {
-            completion(YES, nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (completion) {
-            completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
-        }
-    }];
+    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:normalizedDeviceToken productionOrAdHoc:isProduction completion:completion];
+}
+
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction {
+    [self updateDeviceWithDeviceToken:deviceToken productionOrAdHoc:isProduction completion:nil];
+}
+
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
+    [self sendDeviceInfoToPath:@"devices/update" withDeviceToken:deviceToken productionOrAdHoc:isProduction completion:completion];
 }
 
 #pragma mark -
@@ -465,6 +489,37 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 
 #pragma mark -
 #pragma mark Private Methods
+
+- (void)sendDeviceInfoToPath:(NSString *)path withDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+    NSString *alias = [UIDevice currentDevice].name;
+    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+    NSString *model = [[UIDevice currentDevice] model];
+    NSString *systemName = [[UIDevice currentDevice] systemName];
+    NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
+    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
+    
+    NSDictionary *parameters = @{ @"device_token" : deviceToken,
+                                  @"device_name" : alias,
+                                  @"model" : model,
+                                  @"system_version" : [NSString stringWithFormat:@"%@ %@", systemName, systemVersion],
+                                  @"app_version" : appVersion,
+                                  @"app_bundle_version" : appBundleVersion,
+                                  @"locale" : locale,
+                                  @"development" : isProduction ? @(NO) : @(YES) };
+    
+    [self postPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Device info send to path %@ with parameters: %@", path, parameters);
+        
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
 
 - (void)createUserWithParameters:(NSDictionary *)params completion:(void (^)(BOOL success, NSError *error))completion {
     [self postPath:@"users" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
