@@ -26,6 +26,7 @@
 #pragma mark Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
     [self checkIfLoggedIn];
     [self checkIfAppOpenedByAnsweringWithLaunchOptions:launchOptions];
