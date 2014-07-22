@@ -114,7 +114,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
                                   @"first_name" : firstName,
                                   @"last_name" : lastName,
                                   @"role" : (role == BMERoleBlind) ? @"blind" : @"helper",
-                                  @"languages" : @[ [[NSLocale currentLocale] localeIdentifier] ] };
+                                  @"languages" : @[ [[NSLocale preferredLanguages] objectAtIndex:0] ] };
     
     [self createUserWithParameters:parameters completion:completion];
 }
@@ -128,7 +128,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
                                   @"first_name" : firstName,
                                   @"last_name" : lastName,
                                   @"role" : (role == BMERoleBlind) ? @"blind" : @"helper",
-                                  @"languages" : @[ [[NSLocale currentLocale] localeIdentifier] ] };
+                                  @"languages" : @[ [[NSLocale preferredLanguages] objectAtIndex:0] ] };
     
     [self createUserWithParameters:parameters completion:completion];
 }
