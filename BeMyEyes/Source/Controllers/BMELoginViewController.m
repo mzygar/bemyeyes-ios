@@ -34,13 +34,18 @@
 }
 
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
-    [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
-        if (isRegistered) {
-            if (useFacebook) {
-                [self performLoginWithFacebook];
-            } else {
-                [self performLoginWithEmail];
-            }
+    [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
+        if (isEnabled) {
+            [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
+                if (isRegistered) {
+                    if (useFacebook) {
+                        NSLog(@"Perform Facebook login");
+                        [self performLoginWithFacebook];
+                    } else {
+                        [self performLoginWithEmail];
+                    }
+                }
+            }];
         }
     }];
 }
