@@ -12,6 +12,8 @@
 
 @property (assign, nonatomic) CGFloat strokeWidth;
 @property (copy, nonatomic) UIColor *strokeColor;
+@property (assign, nonatomic) CGFloat dashedDayStrokeWidth;
+@property (copy, nonatomic) UIColor *dashedDayColor;
 @property (copy, nonatomic) UIColor *gradientStartColor;
 @property (copy, nonatomic) UIColor *gradientEndColor;
 @property (assign, nonatomic) NSUInteger minimum;
