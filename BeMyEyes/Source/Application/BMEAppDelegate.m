@@ -229,11 +229,15 @@
                 case BMEClientErrorUserNotFound:
                 case BMEClientErrorUserFacebookUserNotFound:
                 case BMEClientErrorUserTokenNotFound:
-                case BMEClientErrorUserTokenExpired:
+                case BMEClientErrorUserTokenExpired: {
                     NSLog(@"Log in not valid. Log out.");
                     [self loginFailed];
                     NSLog(@"Could not automatically log in: %@", error);
+                    NSString *message = [NSString stringWithFormat:@"Log in failed and you have automatically been logged out. (Error code %i)", [error code]];
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DEMO ONLY" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [alertView show];
                     break;
+                }
                 default:
                     [self didLogin];
                     NSLog(@"Did log in");

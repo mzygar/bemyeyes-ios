@@ -207,12 +207,24 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             completion(YES, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        _loggedIn = NO;
-        
-        [self storeCurrentUser:nil];
-        
-        if (completion) {
-            completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
+        if ([error code] == NSURLErrorNotConnectedToInternet ||
+            [error code] == NSURLErrorTimedOut ||
+            [error code] == NSURLErrorNetworkConnectionLost) {
+            // The log in with token failed due to a network error (meaning that the user may be offline),
+            // so we reuse the users stored user and assume that he has the rights to log in.
+            _loggedIn = YES;
+            
+            if (completion) {
+                completion(YES, nil);
+            }
+        } else {
+            _loggedIn = NO;
+            
+            [self storeCurrentUser:nil];
+            
+            if (completion) {
+                completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
+            }
         }
     }];
 }
