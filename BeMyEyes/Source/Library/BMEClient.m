@@ -207,24 +207,30 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             completion(YES, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if ([error code] == NSURLErrorNotConnectedToInternet ||
-            [error code] == NSURLErrorTimedOut ||
-            [error code] == NSURLErrorNetworkConnectionLost) {
-            // The log in with token failed due to a network error (meaning that the user may be offline),
-            // so we reuse the users stored user and assume that he has the rights to log in.
-            _loggedIn = YES;
-            
-            if (completion) {
-                completion(YES, nil);
+        NSError *bmeError = [self errorWithRecoverySuggestionInvestigated:error];
+        switch ([bmeError code]) {
+            case BMEClientErrorUserNotFound:
+            case BMEClientErrorUserFacebookUserNotFound:
+            case BMEClientErrorUserTokenNotFound:
+            case BMEClientErrorUserTokenExpired: {
+                _loggedIn = NO;
+                
+                [self storeCurrentUser:nil];
+                
+                if (completion) {
+                    completion(NO, bmeError);
+                }
+                break;
             }
-        } else {
-            _loggedIn = NO;
-            
-            [self storeCurrentUser:nil];
-            
-            if (completion) {
-                completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
-            }
+            default:
+                // The log in with token failed due to a network error (meaning that the user may be offline),
+                // so we reuse the users stored user and assume that he has the rights to log in.
+                _loggedIn = YES;
+                
+                if (completion) {
+                    completion(YES, nil);
+                }
+                break;
         }
     }];
 }
