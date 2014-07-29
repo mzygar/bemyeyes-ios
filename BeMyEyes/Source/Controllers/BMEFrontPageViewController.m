@@ -8,6 +8,7 @@
 
 #import "BMEFrontPageViewController.h"
 #import "BMEIntroViewController.h"
+#import "BMEVideoViewController.h"
 
 #define BMEFrontPageIntroHelperSegue @"IntroHelper"
 #define BMEFrontPageIntroBlindSegue @"IntroBlind"
@@ -17,6 +18,31 @@
 @end
 
 @implementation BMEFrontPageViewController
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (IBAction)helperButtonPressed:(id)sender {
+    if (![GVUserDefaults standardUserDefaults].introPresentedToHelper) {
+        [self presentHelperIntroVideo];
+        [GVUserDefaults standardUserDefaults].introPresentedToHelper = YES;
+    } else {
+        [self presentHelperIntro];
+    }
+}
+
+- (void)presentHelperIntro {
+    [self performSegueWithIdentifier:BMEFrontPageIntroHelperSegue sender:self];
+}
+
+- (void)presentHelperIntroVideo {
+    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"intro" ofType:@"mp4"];
+    NSURL *videoUrl = [NSURL fileURLWithPath:videoPath];
+    BMEVideoViewController *videoController = [[BMEVideoViewController alloc] initWithContentURL:videoUrl];
+    [self presentViewController:videoController animated:YES completion:^{
+        [self presentHelperIntro];
+    }];
+}
 
 #pragma mark -
 #pragma mark Segue

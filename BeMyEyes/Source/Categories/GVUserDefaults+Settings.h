@@ -20,5 +20,6 @@ typedef NS_ENUM(NSInteger, BMESettingsAPI) {
 @property (strong, nonatomic) NSString *deviceToken;
 @property (assign, nonatomic) NSUInteger peopleHelped;
 @property (assign, nonatomic) BOOL hasAskedForMoreLanguages;
+@property (assign, nonatomic) BOOL introPresentedToHelper;
 
 @end
