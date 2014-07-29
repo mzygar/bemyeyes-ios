@@ -8,8 +8,9 @@
 
 #import "BMEAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
-#import <PSAlertView/PSPDFAlertView.h>
 #import <Appirater/Appirater.h>
+#import <PSAlertView/PSPDFAlertView.h>
+#import <MRProgress/MRProgress.h>
 #import "BMEClient.h"
 #import "BMECallViewController.h"
 #import "BMECallAudioPlayer.h"
@@ -341,7 +342,13 @@
 - (void)checkForPendingRequestIfIconHasBadge {
     NSUInteger badgeCount = [UIApplication sharedApplication].applicationIconBadgeNumber;
     if (badgeCount > 0) {
+        MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.window animated:YES];
+        progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
+        progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOADING_PENDING_REQUEST_TITLE", @"BMELoginViewController", @"Title in overlay displayed while loading pending request");
+    
         [[BMEClient sharedClient] checkForPendingRequest:^(NSString *shortId, BOOL success, NSError *error) {
+            [progressOverlayView hide:YES];
+            
             if (success) {
                 if (shortId) {
                     [self didAnswerCallWithShortId:shortId];

@@ -73,3 +73,6 @@
 /* Title in alert shown when the user is not registered for remote notifications */
 "ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Log in failed";
 
+/* Title in overlay displayed while loading pending request */
+"OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "OVERLAY_LOADING_PENDING_REQUEST_TITLE";
+

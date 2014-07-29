@@ -49,3 +49,6 @@
 /* Title in alert view shown when the app icon shows a badge but the pending request could not be loaded */
 "ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Request not loaded";
 
+/* Title in overlay displayed while loading pending request */
+"OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Loading...";
+
