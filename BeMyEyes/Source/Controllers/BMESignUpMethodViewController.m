@@ -29,6 +29,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *emailSignUpButton;
 @property (weak, nonatomic) IBOutlet UIButton *termsButton;
 @property (weak, nonatomic) IBOutlet UIButton *privacyButton;
+@property (weak, nonatomic) IBOutlet UILabel *facebookFooterLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterTopMarginConstraint;
 @end
 
 @implementation BMESignUpMethodViewController
@@ -54,11 +57,15 @@
     
     self.privacyButton.accessibilityLabel = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL", @"BMESignUpMethodViewController", @"Accessibility label for privacy policy button");
     self.privacyButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for privacy policy button");
-    
-    // Before checking if the user has enabled notifications,
-    // we must be sure that we have given them the chance to do so
+
     if (self.role == BMERoleHelper) {
+        // Before checking if the user has enabled notifications,
+        // we must be sure that we have given them the chance to do so
         [TheAppDelegate registerForRemoteNotifications];
+        
+        self.facebookFooterLabel.text = nil;
+        self.facebookFooterHeightConstraint.constant = 0.0f;
+        self.facebookFooterTopMarginConstraint.constant = 0.0f;
     }
 }
 

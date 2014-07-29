@@ -22,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameFooterLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterTopMarginConstraint;
 
 @property (strong, nonatomic) UITextField *activeTextField;
 @property (assign, nonatomic) CGSize keyboardSize;
@@ -39,6 +42,17 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    if (self.role == BMERoleHelper) {
+        self.nameFooterLabel.text = nil;
+        self.nameFooterLabel.hidden = YES;
+        self.nameFooterHeightConstraint.constant = 0.0f;
+        self.nameFooterTopMarginConstraint.constant = 0.0f;
+    }
 }
 
 - (void)dealloc {
