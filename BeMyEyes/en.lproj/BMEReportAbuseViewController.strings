@@ -34,3 +34,15 @@
 /* Title in overlay displayed when reporting abuse */
 "OVERLAY_REPORTING_TITLE" = "Reporting...";
 
+/* Title of cancel button in alert view shown when asking the user to confirm that he wants to report abuse */
+"ALERT_CONFIRM_REPORT_ABUSE_CANCEL" = "Cancel";
+
+/* Title of confirm in alert view shown when asking the user to confirm that he wants to report abuse */
+"ALERT_CONFIRM_REPORT_ABUSE_CONFIRM" = "Confirm";
+
+/* Message in alert view shown when asking the user to confirm that he wants to report abuse */
+"ALERT_CONFIRM_REPORT_ABUSE_MESSAGE" = "All abuse cases are taken serious and looked into. Are you sure that you want to report the other part for abuse?";
+
+/* Title in alert view shown when asking the user to confirm that he wants to report abuse */
+"ALERT_CONFIRM_REPORT_ABUSE_TITLE" = "Report Abuse";
+

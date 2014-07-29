@@ -9,6 +9,7 @@
 #import "BMEReportAbuseViewController.h"
 #import <Appirater/Appirater.h>
 #import <MRProgress/MRProgress.h>
+#import <PSAlertView/PSPDFAlertView.h>
 #import "UINavigationController+BMEPopToClass.h"
 #import "BMEMainViewController.h"
 #import "BMEClient.h"
@@ -62,6 +63,36 @@
 }
 
 - (IBAction)reportButtonPressed:(id)sender {
+    [self confirmReportAbuse];
+}
+
+- (IBAction)reason1ButtonPressed:(id)sender {
+    [self selectReasonNumber:1];
+}
+
+- (IBAction)reason2ButtonPressed:(id)sender {
+    [self selectReasonNumber:2];
+}
+
+- (IBAction)reason3ButtonPressed:(id)sender {
+    [self selectReasonNumber:3];
+}
+
+- (void)confirmReportAbuse {
+    NSString *title = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_TITLE", @"BMEReportAbuseViewController", @"Title in alert view shown when asking the user to confirm that he wants to report abuse");
+    NSString *message = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_MESSAGE", @"BMEReportAbuseViewController", @"Message in alert view shown when asking the user to confirm that he wants to report abuse");
+    NSString *confirm = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_CONFIRM", @"BMEReportAbuseViewController", @"Title of confirm in alert view shown when asking the user to confirm that he wants to report abuse");
+    NSString *cancel = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_CANCEL", @"BMEReportAbuseViewController", @"Title of cancel button in alert view shown when asking the user to confirm that he wants to report abuse");
+    
+    PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+    [alertView setCancelButtonWithTitle:cancel block:nil];
+    [alertView addButtonWithTitle:confirm block:^{
+        [self reportAbuse];
+    }];
+    [alertView show];
+}
+
+- (void)reportAbuse {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
     progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REPORTING_TITLE", @"BMEReportAbuseViewController", @"Title in overlay displayed when reporting abuse");
@@ -81,18 +112,6 @@
             NSLog(@"Could not report abuse for request with ID '%@': %@", self.requestIdentifier, error);
         }
     }];
-}
-
-- (IBAction)reason1ButtonPressed:(id)sender {
-    [self selectReasonNumber:1];
-}
-
-- (IBAction)reason2ButtonPressed:(id)sender {
-    [self selectReasonNumber:2];
-}
-
-- (IBAction)reason3ButtonPressed:(id)sender {
-    [self selectReasonNumber:3];
 }
 
 - (void)writeReasons {
