@@ -23,12 +23,7 @@
 #pragma mark Private Methods
 
 - (IBAction)helperButtonPressed:(id)sender {
-    if (![GVUserDefaults standardUserDefaults].introPresentedToHelper) {
-        [self presentHelperIntroVideo];
-        [GVUserDefaults standardUserDefaults].introPresentedToHelper = YES;
-    } else {
-        [self presentHelperIntro];
-    }
+    [self presentHelperIntroVideo];
 }
 
 - (void)presentHelperIntro {
