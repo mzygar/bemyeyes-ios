@@ -18,6 +18,7 @@
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
 @property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
 @property (copy, nonatomic) void(^requireRemoteNotificationsHandler)(BOOL, NSString*, NSError*);
+@property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
 @end
 
 @implementation BMEAppDelegate
@@ -26,10 +27,17 @@
 #pragma mark Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString *shortIdInLaunchOptions = [self shortIdInLaunchOptions:launchOptions];
+    self.launchedWithShortID = (shortIdInLaunchOptions != nil);
+    
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
     [self checkIfLoggedIn];
-    [self checkIfAppOpenedByAnsweringWithLaunchOptions:launchOptions];
+    
+    if (self.isLaunchedWithShortID) {
+        [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortIdInLaunchOptions afterDelay:0.0f];
+        [self resetBadgeIcon];
+    }
     
     if ([BMEAppStoreId length] > 0) {
         [Appirater setAppId:BMEAppStoreId];
@@ -54,6 +62,9 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // We enter the background, reset the launched with short ID state to prepare for next launch
+    self.launchedWithShortID = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -61,7 +72,9 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
+    if ([[BMEClient sharedClient] isLoggedIn] && !self.launchedWithShortID) {
+        [self checkForPendingRequestIfIconHasBadge];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -123,6 +136,8 @@
         if ([alert isKindOfClass:[NSDictionary class]]) {
             NSString *shortId = [alert objectForKey:@"short_id"];;
             if (shortId) {
+                // The app was launched from a remote notification that contained a short ID
+                self.launchedWithShortID = YES;
                 [self didAnswerCallWithShortId:shortId];
             }
         }
@@ -216,7 +231,7 @@
 
 - (void)checkIfLoggedIn {
     NSLog(@"Check if logged in");
-    if ([[BMEClient sharedClient] token] != nil && [[BMEClient sharedClient] isTokenValid]) {
+    if ([GVUserDefaults standardUserDefaults].deviceToken != nil && [[BMEClient sharedClient] isTokenValid]) {
         UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainControllerIdentifier];
         [self replaceTopController:mainController];
         
@@ -233,7 +248,7 @@
             }
         }];
     } else {
-        NSLog(@"Token: %@", [BMEClient sharedClient].token);
+        NSLog(@"Device token: %@", [GVUserDefaults standardUserDefaults].deviceToken);
         NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");
     }
 }
@@ -243,11 +258,16 @@
     
     [[BMEClient sharedClient] logoutWithCompletion:nil];
     [[BMEClient sharedClient] resetLogin];
+    [self resetBadgeIcon];
 }
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
     [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
+    
+    if (!self.isLaunchedWithShortID) {
+        [self checkForPendingRequestIfIconHasBadge];
+    }
 }
 
 - (void)replaceTopController:(UIViewController *)topController {
@@ -255,14 +275,11 @@
     navigationController.viewControllers = @[ topController ];
 }
 
-- (void)checkIfAppOpenedByAnsweringWithLaunchOptions:(NSDictionary *)launchOptions {
+- (NSString *)shortIdInLaunchOptions:(NSDictionary *)launchOptions {
     NSDictionary *userInfo = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
     NSDictionary *alertInfo = [apsInfo objectForKey:@"alert"];
-    if ([alertInfo objectForKey:@"short_id"]) {
-        NSString *shortId = [alertInfo objectForKey:@"short_id"];
-        [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortId afterDelay:0.0f];
-    }
+    return [alertInfo objectForKey:@"short_id"];
 }
 
 - (void)didAnswerCallWithShortId:(NSString *)shortId {
@@ -315,6 +332,39 @@
         [self.callAudioPlayer stop];
         self.callAudioPlayer = nil;
     }
+}
+
+- (void)resetBadgeIcon {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
+- (void)checkForPendingRequestIfIconHasBadge {
+    NSUInteger badgeCount = [UIApplication sharedApplication].applicationIconBadgeNumber;
+    if (badgeCount > 0) {
+        [[BMEClient sharedClient] checkForPendingRequest:^(NSString *shortId, BOOL success, NSError *error) {
+            if (success) {
+                if (shortId) {
+                    [self didAnswerCallWithShortId:shortId];
+                } else {
+                    NSString *title = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_HANDLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled");
+                    NSString *message = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_HANDLED_MESSAGE", @"BMEAppDelegate", @"Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled");
+                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_HANDLED_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled");
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+                    [alertView show];
+                }
+            } else {
+                NSLog(@"Could not load pending request: %@", error);
+                
+                NSString *title = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_NOT_LOADED_TITLE", @"BMEAppDelegate", @"Title in alert view shown when the app icon shows a badge but the pending request could not be loaded");
+                NSString *message = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE", @"BMEAppDelegate", @"Message in alert view shown when the app icon shows a badge but the pending request could not be loaded");
+                NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when the app icon shows a badge but the pending rcould not be loaded");
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+                [alertView show];
+            }
+        }];
+    }
+
+    [self resetBadgeIcon];
 }
 
 @end

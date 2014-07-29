@@ -61,6 +61,7 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 - (void)answerRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)cancelAnswerForRequestWithShortId:(NSString *)shortId completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)disconnectFromRequestWithShortId:(NSString *)shortId completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)checkForPendingRequest:(void (^)(NSString *shortId, BOOL success, NSError *error))completion;
 
 - (void)reportAbuseForRequestWithId:(NSString *)identifier reason:(NSString *)reason completion:(void (^)(BOOL success, NSError *error))completion;
 

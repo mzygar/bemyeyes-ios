@@ -397,6 +397,27 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }];
 }
 
+- (void)checkForPendingRequest:(void (^)(NSString *shortId, BOOL success, NSError *error))completion {
+    NSAssert([self isLoggedIn], @"User must be logged in to check for pending requests.");
+    
+    NSString *path = [NSString stringWithFormat:@"helpers/waiting_request/%@", [BMEClient sharedClient].currentUser.identifier];
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *shortId = [responseObject objectForKey:@"id"];
+        if (completion) {
+            completion(shortId, YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSError *bmeError = [self errorWithRecoverySuggestionInvestigated:error];
+        if ([bmeError code] == BMEClientErrorRequestNotFound) {
+            // The request was successful, but failed because there were no requests.
+            // We consider this a success but return no short ID
+            completion(nil, YES, nil);
+        } else {
+            completion(nil, NO, error);
+        }
+    }];
+}
+
 #pragma mark -
 #pragma mark Abuse
 
