@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @interface BMEHelperMainViewController () <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *pointDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointTitleLabel;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointLabel;
 @property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
@@ -279,6 +280,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self.pointLabel setPoint:self.totalPoint animated:YES];
     [self layoutPoint];
 
+    self.pointDescriptionLabel.alpha = 0.0f;
     self.pointTitleLabel.alpha = 0.0f;
     self.pointLabel.alpha = 0.0f;
     self.pointGraphView.alpha = 0.0f;
@@ -288,6 +290,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.pointGraphView.hidden = NO;
     
     [UIView animateWithDuration:0.30f animations:^{
+        self.pointDescriptionLabel.alpha = 1.0f;
         self.pointTitleLabel.alpha = 1.0f;
         self.pointLabel.alpha = 1.0f;
         self.pointGraphView.alpha = 1.0f;
@@ -302,6 +305,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.failedLoadingPointLabel.hidden = NO;
     
     [UILabel animateWithDuration:0.30f animations:^{
+        self.pointDescriptionLabel.alpha = 0.0f;
         self.pointTitleLabel.alpha = 0.0f;
         self.pointLabel.alpha = 0.0f;
         self.pointGraphView.alpha = 0.0f;
