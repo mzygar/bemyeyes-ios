@@ -49,10 +49,10 @@
         [Appirater appLaunched:NO];
     }
     
-//    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
-//    secretTapGesture.numberOfTouchesRequired = 4;
-//    secretTapGesture.numberOfTapsRequired = 3;
-//    [self.window addGestureRecognizer:secretTapGesture];
+    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
+    secretTapGesture.numberOfTouchesRequired = 4;
+    secretTapGesture.numberOfTapsRequired = 3;
+    [self.window addGestureRecognizer:secretTapGesture];
     
     return YES;
 }

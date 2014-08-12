@@ -82,11 +82,15 @@
 }
 
 - (IBAction)signUpButtonPressed:(id)sender {
-    [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-        if (isEnabled) {
-            [self performSegueWithIdentifier:BMESignUpMethodSignUpSegue sender:self];
-        }
-    }];
+    if (self.role == BMERoleHelper) {
+        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
+            if (isEnabled) {
+                [self presentSignUp];
+            }
+        }];
+    } else {
+        [self presentSignUp];
+    }
 }
 
 - (IBAction)signUpButtonTouched:(id)sender {
@@ -182,6 +186,10 @@
             }
         }
     }];
+}
+
+- (void)presentSignUp {
+    [self performSegueWithIdentifier:BMESignUpMethodSignUpSegue sender:self];
 }
 
 - (void)didLogin {

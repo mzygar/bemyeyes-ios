@@ -34,12 +34,11 @@
 }
 
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
-    [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-        if (isEnabled) {
-            [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
-                if (isRegistered) {
+    [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
+        if (isRegistered) {
+            [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
+                if (isEnabled) {
                     if (useFacebook) {
-                        NSLog(@"Perform Facebook login");
                         [self performLoginWithFacebook];
                     } else {
                         [self performLoginWithEmail];
