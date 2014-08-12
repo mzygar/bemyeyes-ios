@@ -292,7 +292,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     
     NSDictionary *params = @{ @"utc_offset" : [NSString stringWithFormat:@"%.0f", utcOffset] };
     
-    NSString *path = [NSString stringWithFormat:@"info/%@", [self token]];
+    NSString *path = [NSString stringWithFormat:@"users/info/%@", [self token]];
     [self putPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
             completion(YES, nil);
