@@ -103,6 +103,8 @@
                         }];
                     } else {
                         [progressOverlayView hide:YES];
+                        
+                        [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
                     }
                 }];
             } else {
