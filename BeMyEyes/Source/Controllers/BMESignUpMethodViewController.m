@@ -70,27 +70,11 @@
 }
 
 - (IBAction)facebookButtonPressed:(id)sender {
-    if (self.role == BMERoleHelper) {
-        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
-                [self performFacebookRegistration];
-            }
-        }];
-    } else {
-        [self performFacebookRegistration];
-    }
+    [self performFacebookRegistration];
 }
 
 - (IBAction)signUpButtonPressed:(id)sender {
-    if (self.role == BMERoleHelper) {
-        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
-                [self presentSignUp];
-            }
-        }];
-    } else {
-        [self presentSignUp];
-    }
+    [self presentSignUp];
 }
 
 - (IBAction)signUpButtonTouched:(id)sender {
@@ -134,21 +118,15 @@
                 if (success && !error) {
                     progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when logging in");
                     
-                    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
-                        if (!error) {
-                            [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:deviceToken success:^(BMEToken *token) {
-                                [progressOverlayView hide:YES];
-                                
-                                [self didLogin];
-                            } failure:^(NSError *error) {
-                                [progressOverlayView hide:YES];
-                                
-                                [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                            }];
-                        } else {
+                        [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:nil success:^(BMEToken *token) {
                             [progressOverlayView hide:YES];
-                        }
-                    }];
+                            
+                            [self didLogin];
+                        } failure:^(NSError *error) {
+                            [progressOverlayView hide:YES];
+                            
+                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                        }];
                 } else {
                     [progressOverlayView hide:YES];
                     

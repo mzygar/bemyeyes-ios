@@ -176,7 +176,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     NSString *securePassword = [AESCrypt encrypt:password password:BMESecuritySalt];
     NSDictionary *parameters = @{ @"email" : email,
                                   @"password" : securePassword,
-                                  @"device_token" : deviceToken };
+                                  @"device_token" : deviceToken ? deviceToken : @"" };
     
     [self loginWithParameters:parameters success:success failure:failure];
 }
@@ -187,7 +187,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 
     NSDictionary *parameters = @{ @"email" : email,
                                   @"user_id" : @(userId),
-                                  @"device_token" : deviceToken };
+                                  @"device_token" : deviceToken ? deviceToken : @"" };
     
     [self loginWithParameters:parameters success:success failure:failure];
 }

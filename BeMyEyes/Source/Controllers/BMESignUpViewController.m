@@ -65,15 +65,7 @@
 #pragma mark Private Methods
 
 - (IBAction)signUpButtonPressed:(id)sender {
-    if (self.role == BMERoleHelper) {
-        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
-                [self performRegistration];
-            }
-        }];
-    } else {
-        [self performRegistration];
-    }
+    [self performRegistration];
 }
 
 - (void)performRegistration {
@@ -90,23 +82,15 @@
             if (success && !error) {
                 progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when logging in");
                 
-                [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
-                    if (!error) {
-                        [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:deviceToken success:^(BMEToken *token) {
-                            [progressOverlayView hide:YES];
+                    [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:nil success:^(BMEToken *token) {
+                        [progressOverlayView hide:YES];
                         
-                            [self didLogin];
-                        } failure:^(NSError *error) {
-                            [progressOverlayView hide:YES];
-                        
-                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                        }];
-                    } else {
+                        [self didLogin];
+                    } failure:^(NSError *error) {
                         [progressOverlayView hide:YES];
                         
                         [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                    }
-                }];
+                    }];
             } else {
                 [progressOverlayView hide:YES];
                 

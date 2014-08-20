@@ -182,6 +182,9 @@
 #pragma mark Public Methods
 
 - (void)registerForRemoteNotifications {
+    NSLog(@"Register for remote notifications");
+    [GVUserDefaults standardUserDefaults].hadChangeToRegisterForRemoteNotifications = YES;
+    
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 }
 
@@ -218,6 +221,7 @@
 }
 
 - (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler {
+    NSLog(@"Require device registered for remote notifications");
     self.requireRemoteNotificationsHandler = handler;
     [self registerForRemoteNotifications];
 }
@@ -241,9 +245,6 @@
                 [self didLogin];
             } else {
                 NSLog(@"Could not automatically log in: %@", error);
-                NSString *message = [NSString stringWithFormat:@"Log in failed and you have automatically been logged out. (Error code %i)", [error code]];
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DEMO ONLY" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                [alertView show];
                 
                 [self loginFailed];
             }

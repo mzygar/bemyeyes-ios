@@ -49,23 +49,11 @@
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
     self.loggingInOverlayView = [self addLoggingInOverlay];
     
-    [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
-        if (isRegistered) {
-            [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-                if (isEnabled) {
-                    if (useFacebook) {
-                        [self performLoginWithFacebook];
-                    } else {
-                        [self performLoginWithEmail];
-                    }
-                } else {
-                    [self.loggingInOverlayView hide:YES];
-                }
-            }];
-        } else {
-            [self.loggingInOverlayView hide:YES];
-        }
-    }];
+    if (useFacebook) {
+        [self performLoginWithFacebook];
+    } else {
+        [self performLoginWithEmail];
+    }
 }
 
 - (void)performLoginWithEmail {
@@ -170,24 +158,6 @@
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
     progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMELoginViewController", @"Title in overlay displayed when logging in");
     return progressOverlayView;
-}
-
-- (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken))handler {
-    [TheAppDelegate requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken, NSError *error) {
-        if (!isRegistered) {
-            NSLog(@"Not registered");
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE", @"BMELoginViewController", @"Title in alert shown when the user is not registered for remote notifications");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE", @"BMELoginViewController", @"Message in alert shown when the user is not registered for remote notifications");
-            NSString *cancel = NSLocalizedStringFromTable(@"ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert shown when the user is not registered for remote notifications");
-            
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
-            [alertView show];
-        }
-        
-        if (handler) {
-            handler(isRegistered, nil);
-        }
-    }];
 }
 
 - (void)didLogin {

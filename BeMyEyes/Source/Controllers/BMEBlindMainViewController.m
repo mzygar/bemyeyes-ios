@@ -31,11 +31,7 @@
 #pragma mark Private Methods
 
 - (IBAction)connectToCommunityButtonPressed:(id)sender {
-    [TheAppDelegate requireMicrophoneEnabled:^(BOOL isEnabled) {
-        if (isEnabled) {
-            [self performSegueWithIdentifier:BMEBlindMainCallSegue sender:self];
-        }
-    }];
+    [self performSegueWithIdentifier:BMEBlindMainCallSegue sender:self];
 }
 
 #pragma mark -

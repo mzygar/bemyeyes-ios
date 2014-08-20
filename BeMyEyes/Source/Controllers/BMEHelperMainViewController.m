@@ -12,6 +12,7 @@
 #import "BMEPointEntry.h"
 #import "BMEPointLabel.h"
 #import "BMEPointGraphView.h"
+#import "BMEAppDelegate.h"
 #import "NSDate+BMESnoozeRelativeDate.h"
 
 #define BMEHelperSnoozeAmount0 0.0f
@@ -82,6 +83,12 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [TheAppDelegate registerForRemoteNotifications];
+    
+    if ([GVUserDefaults standardUserDefaults].hadChangeToRegisterForRemoteNotifications) {
+        [TheAppDelegate requirePushNotificationsEnabled:nil];
+    }
  
     self.pointLabel.colors = @{ @(0.0f) : [UIColor colorWithRed:220.0f/255.0f green:38.0f/255.0f blue:38.0f/255.0f alpha:1.0f],
                                 @(0.50f) : [UIColor colorWithRed:252.0f/255.0f green:197.0f/255.0f blue:46.0f/255.0f alpha:1.0f],
