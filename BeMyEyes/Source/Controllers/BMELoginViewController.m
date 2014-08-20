@@ -18,9 +18,22 @@
 @interface BMELoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
+@property (strong, nonatomic) MRProgressOverlayView *loggingInOverlayView;
 @end
 
 @implementation BMELoginViewController
+
+#pragma mark -
+#pragma mark Lifecycle
+
+- (void)dealloc {
+    if (_loggingInOverlayView) {
+        [_loggingInOverlayView hide:YES];
+    }
+    
+    _loggingInOverlayView = nil;
+}
 
 #pragma mark -
 #pragma mark Private Methods
@@ -34,6 +47,8 @@
 }
 
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
+    self.loggingInOverlayView = [self addLoggingInOverlay];
+    
     [self requireDeviceRegisteredForRemoteNotifications:^(BOOL isRegistered, NSString *deviceToken) {
         if (isRegistered) {
             [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
@@ -77,14 +92,12 @@
 }
 
 - (void)performLoginWithFacebook {
-    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
-    
     [[BMEClient sharedClient] loginUsingFacebookWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
-        [progressOverlayView hide:YES];
+        [self.loggingInOverlayView hide:YES];
         
         [self didLogin];
     } loginFailure:^(NSError *error) {
-        [progressOverlayView hide:YES];
+        [self.loggingInOverlayView hide:YES];
         
         if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
@@ -102,7 +115,7 @@
         
         NSLog(@"Could not log in with Facebook: %@", error);
     } accountFailure:^(NSError *error) {
-        [progressOverlayView hide:YES];
+        [self.loggingInOverlayView hide:YES];
         
         if ([error code] == ACErrorAccountNotFound) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE", @"BMELoginViewController", @"Title in alert view shown when no Facebook account was found.");
@@ -123,14 +136,12 @@
 }
 
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password {
-    MRProgressOverlayView *progressOverlayView = [self addLoggingInOverlay];
-    
     [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
-        [progressOverlayView hide:YES];
+        [self.loggingInOverlayView hide:YES];
         
         [self didLogin];
     } failure:^(NSError *error) {
-        [progressOverlayView hide:YES];
+        [self.loggingInOverlayView hide:YES];
         
         if ([error code] == BMEClientErrorUserIncorrectCredentials) {
             NSString *title = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_TITLE", @"BMELoginViewController", @"Title in alert view shown when credentials are incorrect.");
