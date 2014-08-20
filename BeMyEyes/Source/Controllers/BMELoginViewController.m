@@ -58,8 +58,12 @@
                     } else {
                         [self performLoginWithEmail];
                     }
+                } else {
+                    [self.loggingInOverlayView hide:YES];
                 }
             }];
+        } else {
+            [self.loggingInOverlayView hide:YES];
         }
     }];
 }
