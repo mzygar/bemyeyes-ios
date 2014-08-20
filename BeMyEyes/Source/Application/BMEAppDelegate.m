@@ -187,14 +187,14 @@
 
 - (void)requirePushNotificationsEnabled:(void (^)(BOOL isEnabled))handler {
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-    BOOL isEnabled = types & UIRemoteNotificationTypeAlert;
+    BOOL isEnabled = (types != UIRemoteNotificationTypeNone);
     if (!isEnabled) {
         NSString *title = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown if push notifications are not enabled");
         NSString *message = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_MESSAGE", @"BMEAppDelegate", @"MEssage in alert view shown if push notifications are not enabled");
         NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown if push notifications are not enabled");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
-    }
+    }   
  
     if (handler) {
         handler(isEnabled);

@@ -5,7 +5,7 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved. */
 
 /* MEssage in alert view shown if push notifications are not enabled */
-"ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Push notifications are a central part of the Be My Eyes app and you must have them disabled to sign up.";
+"ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Push notifications are a central part of the Be My Eyes app and you must have them enabled to sign up.";
 
 /* Title in alert view shown if push notifications are not enabled */
 "ALERT_PUSH_NOT_ENABLED_TITLE" = "Push notifications not enabled";
