@@ -67,8 +67,13 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction;
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction;
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction;
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
 
 - (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo, NSError *error))completion;
 

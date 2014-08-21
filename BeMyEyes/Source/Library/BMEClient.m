@@ -448,21 +448,38 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark Devices
 
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction {
-    [self registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:isProduction completion:nil];
+    [self registerDeviceWithDeviceToken:deviceToken active:YES productionOrAdHoc:isProduction completion:nil];
 }
 
 - (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+    [self registerDeviceWithDeviceToken:deviceToken active:YES productionOrAdHoc:isProduction completion:completion];
+}
+
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction {
+    [self registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:isProduction completion:nil];
+}
+
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
     NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
-    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:normalizedDeviceToken productionOrAdHoc:isProduction completion:completion];
+    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:normalizedDeviceToken newToken:nil active:isActive productionOrAdHoc:isProduction completion:completion];
 }
 
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction {
-    [self updateDeviceWithDeviceToken:deviceToken productionOrAdHoc:isProduction completion:nil];
+    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES productionOrAdHoc:isProduction completion:nil];
 }
 
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
-    [self sendDeviceInfoToPath:@"devices/update" withDeviceToken:deviceToken productionOrAdHoc:isProduction completion:completion];
+    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES productionOrAdHoc:isProduction completion:completion];
 }
+
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction {
+    [self updateDeviceWithDeviceToken:deviceToken productionOrAdHoc:isProduction completion:nil];
+}
+
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+    [self sendDeviceInfoToPath:@"devices/update" withDeviceToken:deviceToken newToken:newToken active:isActive productionOrAdHoc:isProduction completion:completion];
+}
+
 
 #pragma mark -
 #pragma mark Facebook
@@ -529,7 +546,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)sendDeviceInfoToPath:(NSString *)path withDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+- (void)sendDeviceInfoToPath:(NSString *)path withDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
     NSString *alias = [UIDevice currentDevice].name;
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
@@ -537,7 +554,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     NSString *systemName = [[UIDevice currentDevice] systemName];
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
-    
+
     NSDictionary *parameters = @{ @"device_token" : deviceToken,
                                   @"device_name" : alias,
                                   @"model" : model,
@@ -545,9 +562,15 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
                                   @"app_version" : appVersion,
                                   @"app_bundle_version" : appBundleVersion,
                                   @"locale" : locale,
-                                  @"development" : isProduction ? @(NO) : @(YES) };
+                                  @"development" : isProduction ? @(NO) : @(YES),
+                                  @"inactive" : @(!isActive) };
     
-    [self postPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    if (newToken) {
+        [mutableParameters setObject:newToken forKey:@"new_device_token"];
+    }
+    
+    [self postPath:path parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Device info send to path %@ with parameters: %@", path, parameters);
         
         if (completion) {
