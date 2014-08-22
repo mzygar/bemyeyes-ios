@@ -154,6 +154,8 @@
     void(^completionHandler)(NSError *) = ^(NSError *error) {
         if (!error && normalizedDeviceToken) {
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
+            [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
+            
             if (self.requireRemoteNotificationsHandler) {
                 self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken, error);
                 self.requireRemoteNotificationsHandler = nil;

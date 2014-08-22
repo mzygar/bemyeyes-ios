@@ -14,6 +14,7 @@
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "BMEFacebookInfo.h"
+#import "NSString+BMEDeviceToken.h"
 
 #define BMESignUpLoggedInSegue @"LoggedIn"
 #define BMESignUpMethodSignUpSegue @"SignUp"
@@ -115,10 +116,14 @@
     [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
             [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId longLongValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
-                if (success && !error) {
-                    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when logging in");
+                    if (success && !error) {
+                        progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when logging in");
                     
-                        [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:nil success:^(BMEToken *token) {
+                        NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
+                        [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
+                        [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
+                    
+                        [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:tempDeviceToken success:^(BMEToken *token) {
                             [progressOverlayView hide:YES];
                             
                             [self didLogin];
@@ -172,7 +177,6 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }
 

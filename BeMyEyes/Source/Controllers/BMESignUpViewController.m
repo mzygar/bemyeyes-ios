@@ -11,6 +11,7 @@
 #import "BMEAppDelegate.h"
 #import "BMEClient.h"
 #import "BMEEmailValidator.h"
+#import "NSString+BMEDeviceToken.h"
 
 #define BMESignUpMinimumPasswordLength 6
 #define BMESignUpLoggedInSegue @"LoggedIn"
@@ -82,7 +83,11 @@
             if (success && !error) {
                 progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when logging in");
                 
-                    [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:nil success:^(BMEToken *token) {
+                    NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
+                    [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
+                    [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
+                
+                    [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:tempDeviceToken success:^(BMEToken *token) {
                         [progressOverlayView hide:YES];
                         
                         [self didLogin];
@@ -114,7 +119,6 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }
 

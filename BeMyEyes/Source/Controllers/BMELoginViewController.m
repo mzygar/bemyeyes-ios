@@ -69,6 +69,7 @@
         [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:tempDeviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
             if (success) {
                 [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
+                [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
                 loginHandler();
             } else {
                 NSString *title = nil;
@@ -190,7 +191,6 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
 }
 
