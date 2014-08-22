@@ -56,6 +56,7 @@
 		726D7B93191AA21A005690B7 /* BMEPointEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 726D7B92191AA21A005690B7 /* BMEPointEntry.m */; };
 		727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */; };
 		727E13EC194B3189002EDA7E /* BMEForgotPasswordViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727E13EA194B3189002EDA7E /* BMEForgotPasswordViewController.strings */; };
+		7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */; };
 		7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569518CC874500E1A9EE /* BMERegisteredViewController.m */; };
 		7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */; };
 		7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */; };
@@ -176,6 +177,8 @@
 		727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEForgotPasswordViewController.m; sourceTree = "<group>"; };
 		727E13EB194B3189002EDA7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEForgotPasswordViewController.strings; sourceTree = "<group>"; };
 		72858FA918DF81CE0002D6E1 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
+		7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BMEDeviceToken.h"; sourceTree = "<group>"; };
+		7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BMEDeviceToken.m"; sourceTree = "<group>"; };
 		7296569418CC874500E1A9EE /* BMERegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERegisteredViewController.h; sourceTree = "<group>"; };
 		7296569518CC874500E1A9EE /* BMERegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERegisteredViewController.m; sourceTree = "<group>"; };
 		7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEMainViewController.h; sourceTree = "<group>"; };
@@ -427,6 +430,8 @@
 				72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */,
 				72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */,
 				72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */,
+				7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */,
+				7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -737,6 +742,7 @@
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
 				7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
+				7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */,
 				729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */,
 				72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */,
 				72B3C4C51987DF2A00A56D49 /* BMEVideoViewController.m in Sources */,

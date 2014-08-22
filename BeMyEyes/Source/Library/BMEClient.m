@@ -447,39 +447,54 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark -
 #pragma mark Devices
 
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction {
-    [self registerDeviceWithDeviceToken:deviceToken active:YES productionOrAdHoc:isProduction completion:nil];
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction {
+    [self registerDeviceWithDeviceToken:deviceToken active:YES production:isProduction completion:nil];
 }
 
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    [self registerDeviceWithDeviceToken:deviceToken active:YES productionOrAdHoc:isProduction completion:completion];
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+    [self registerDeviceWithDeviceToken:deviceToken active:YES production:isProduction completion:completion];
 }
 
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction {
-    [self registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:isProduction completion:nil];
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction {
+    [self registerDeviceWithDeviceToken:deviceToken production:isProduction completion:nil];
 }
 
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
     NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
     [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:normalizedDeviceToken newToken:nil active:isActive productionOrAdHoc:isProduction completion:completion];
 }
 
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction {
+    [self registerDeviceWithAbsoluteDeviceToken:deviceToken active:YES production:isProduction completion:nil];
+}
+
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
+    [self registerDeviceWithAbsoluteDeviceToken:deviceToken active:YES production:isProduction completion:completion];
+}
+
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction {
+    [self registerDeviceWithAbsoluteDeviceToken:deviceToken active:isActive production:isProduction completion:nil];
+}
+
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
+    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:deviceToken newToken:nil active:isActive productionOrAdHoc:isProduction completion:completion];
+}
+
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction {
-    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES productionOrAdHoc:isProduction completion:nil];
+    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES production:isProduction completion:nil];
 }
 
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
-    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES productionOrAdHoc:isProduction completion:completion];
+    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES production:isProduction completion:completion];
 }
 
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction {
-    [self updateDeviceWithDeviceToken:deviceToken productionOrAdHoc:isProduction completion:nil];
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction {
+    [self updateDeviceWithDeviceToken:deviceToken newToken:newToken active:isActive production:isProduction completion:nil];
 }
 
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
     [self sendDeviceInfoToPath:@"devices/update" withDeviceToken:deviceToken newToken:newToken active:isActive productionOrAdHoc:isProduction completion:completion];
 }
-
 
 #pragma mark -
 #pragma mark Facebook
@@ -571,7 +586,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }
     
     [self postPath:path parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Device info send to path %@ with parameters: %@", path, parameters);
+        NSLog(@"Device info send to path %@ with parameters: %@", path, mutableParameters);
         
         if (completion) {
             completion(YES, nil);

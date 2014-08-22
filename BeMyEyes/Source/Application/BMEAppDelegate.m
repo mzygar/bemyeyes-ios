@@ -147,11 +147,13 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"Did register for remote notifications");
-    [[BMEClient sharedClient] registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
-        NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
+    
+    NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
+    NSString *existingDeviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+    
+    void(^completionHandler)(NSError *) = ^(NSError *error) {
         if (!error && normalizedDeviceToken) {
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
-            
             if (self.requireRemoteNotificationsHandler) {
                 self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken, error);
                 self.requireRemoteNotificationsHandler = nil;
@@ -162,11 +164,31 @@
                 self.requireRemoteNotificationsHandler = nil;
             }
         }
+    };
+    
+    if (existingDeviceToken) {
+        NSLog(@"Update device token '%@' to: %@", existingDeviceToken, normalizedDeviceToken);
         
-        if (error) {
-            NSLog(@"Failed registering device: %@", error);
-        }
-    }];
+        // Update using existing device token
+        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+            completionHandler(error);
+            
+            if (error) {
+                NSLog(@"Failed updating device: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Register new device token: %@", normalizedDeviceToken);
+        
+        // Register new device token
+        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+            completionHandler(error);
+            
+            if (error) {
+                NSLog(@"Failed registering device: %@", error);
+            }
+        }];
+    }
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
