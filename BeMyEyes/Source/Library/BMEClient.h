@@ -77,6 +77,8 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction;
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction;
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
 

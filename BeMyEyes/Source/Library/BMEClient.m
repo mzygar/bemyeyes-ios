@@ -489,6 +489,14 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES production:isProduction completion:completion];
 }
 
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction {
+    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:isActive production:isProduction completion:nil];
+}
+
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
+    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:isActive production:isProduction completion:completion];
+}
+
 - (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction {
     [self updateDeviceWithDeviceToken:deviceToken newToken:newToken active:isActive production:isProduction completion:nil];
 }
