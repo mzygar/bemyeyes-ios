@@ -60,10 +60,6 @@
     self.privacyButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for privacy policy button");
 
     if (self.role == BMERoleHelper) {
-        // Before checking if the user has enabled notifications,
-        // we must be sure that we have given them the chance to do so
-        [TheAppDelegate registerForRemoteNotifications];
-        
         self.facebookFooterLabel.text = nil;
         self.facebookFooterHeightConstraint.constant = 0.0f;
         self.facebookFooterTopMarginConstraint.constant = 0.0f;
@@ -122,6 +118,7 @@
                         NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
                         [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
                         [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
+                        [GVUserDefaults synchronize];
                         
                         [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:tempDeviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
                             if (success && !error) {

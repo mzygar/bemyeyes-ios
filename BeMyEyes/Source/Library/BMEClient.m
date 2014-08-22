@@ -601,6 +601,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             completion(YES, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed sending device info to path %@ with parameters: %@", path, mutableParameters);
+        
         if (completion) {
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
         }

@@ -20,4 +20,11 @@
     return @{ @"api" : @(BMESettingsAPIPublic) };
 }
 
+#pragma mark -
+#pragma mark Public Methods
+
++ (BOOL)synchronize {
+    return [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

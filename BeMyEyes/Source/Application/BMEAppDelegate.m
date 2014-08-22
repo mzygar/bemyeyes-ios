@@ -62,7 +62,7 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [GVUserDefaults synchronize];
     
     // We enter the background, reset the launched with short ID state to prepare for next launch
     self.launchedWithShortID = NO;
@@ -155,6 +155,7 @@
         if (!error && normalizedDeviceToken) {
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
             [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
+            [GVUserDefaults synchronize];
             
             if (self.requireRemoteNotificationsHandler) {
                 self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken, error);

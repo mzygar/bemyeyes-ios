@@ -88,6 +88,7 @@
                     NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
                     [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
                     [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
+                    [GVUserDefaults synchronize];
                 
                     [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:tempDeviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
                         if (success && !error) {

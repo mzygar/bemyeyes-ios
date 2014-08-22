@@ -23,4 +23,6 @@ typedef NS_ENUM(NSInteger, BMESettingsAPI) {
 @property (assign, nonatomic) BOOL hasAskedForMoreLanguages;
 @property (assign, nonatomic) BOOL hadChangeToRegisterForRemoteNotifications;
 
++ (BOOL)synchronize;
+
 @end

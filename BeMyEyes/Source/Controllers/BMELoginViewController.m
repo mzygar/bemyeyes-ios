@@ -40,7 +40,6 @@
 #pragma mark Private Methods
 
 - (IBAction)facebookButtonPressed:(id)sender {
-    
     [self performLoginUsingFacebook:YES];
 }
 
@@ -50,8 +49,6 @@
 
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
     [self dismissKeyboard];
-    
-    self.loggingInOverlayView = [self addLoggingInOverlay];
     
     void(^loginHandler)(void) = ^{
         if (useFacebook) {
@@ -70,6 +67,8 @@
             if (success) {
                 [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
                 [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
+                [GVUserDefaults synchronize];
+                
                 loginHandler();
             } else {
                 NSString *title = nil;
@@ -105,6 +104,8 @@
 }
 
 - (void)performLoginWithFacebook {
+    self.loggingInOverlayView = [self addLoggingInOverlay];
+    
     [[BMEClient sharedClient] loginUsingFacebookWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
         [self.loggingInOverlayView hide:YES];
         
@@ -149,6 +150,8 @@
 }
 
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password {
+    self.loggingInOverlayView = [self addLoggingInOverlay];
+    
     [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
         [self.loggingInOverlayView hide:YES];
         
