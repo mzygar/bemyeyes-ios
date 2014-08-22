@@ -122,16 +122,28 @@
                         NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
                         [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
                         [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
-                    
-                        [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:tempDeviceToken success:^(BMEToken *token) {
-                            [progressOverlayView hide:YES];
-                            
-                            [self didLogin];
-                        } failure:^(NSError *error) {
-                            [progressOverlayView hide:YES];
-                            
-                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                        }];
+                        
+                        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:tempDeviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+                            if (success && !error) {
+                                [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:tempDeviceToken success:^(BMEToken *token) {
+                                    [progressOverlayView hide:YES];
+                                    
+                                    [self didLogin];
+                                } failure:^(NSError *error) {
+                                    [progressOverlayView hide:YES];
+                                    
+                                    [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                                    
+                                    NSLog(@"Failed logging in after sign up: %@", error);
+                                }];
+                            } else {
+                                [progressOverlayView hide:YES];
+                                
+                                [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                                
+                                NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
+                            }
+                        }];    
                 } else {
                     [progressOverlayView hide:YES];
                     

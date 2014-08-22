@@ -1506,7 +1506,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signUpButtonPressed:" destination="IOT-Cv-qKg" eventType="touchUpInside" id="Q1P-Zi-dhb"/>
-                                            <segue destination="4fN-kL-DOK" kind="push" identifier="Registered" id="eRS-8r-KQ5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2544,8 +2543,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kdn-ps-MZv"/>
-        <segue reference="h1h-es-Gdp"/>
+        <segue reference="jzc-Nc-kCA"/>
         <segue reference="tPL-wK-r0M"/>
-        <segue reference="aMJ-13-MXV"/>
     </inferredMetricsTieBreakers>
 </document>

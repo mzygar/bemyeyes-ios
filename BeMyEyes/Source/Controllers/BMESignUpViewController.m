@@ -71,6 +71,8 @@
 
 - (void)performRegistration {
     if ([self isInformationValid]) {
+        [self dismissKeyboard];
+        
         MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
         progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
         progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REGISTERING_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when registering");
@@ -87,14 +89,26 @@
                     [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
                     [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
                 
-                    [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:tempDeviceToken success:^(BMEToken *token) {
-                        [progressOverlayView hide:YES];
-                        
-                        [self didLogin];
-                    } failure:^(NSError *error) {
-                        [progressOverlayView hide:YES];
-                        
-                        [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                    [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:tempDeviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+                        if (success && !error) {
+                            [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:tempDeviceToken success:^(BMEToken *token) {
+                                [progressOverlayView hide:YES];
+                                
+                                [self didLogin];
+                            } failure:^(NSError *error) {
+                                [progressOverlayView hide:YES];
+                                
+                                [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                                
+                                NSLog(@"Failed logging in after sign up: %@", error);
+                            }];
+                        } else {
+                            [progressOverlayView hide:YES];
+                            
+                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                            
+                            NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
+                        }
                     }];
             } else {
                 [progressOverlayView hide:YES];
@@ -199,6 +213,18 @@
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
         
         self.scrolled = NO;
+    }
+}
+
+- (void)dismissKeyboard {
+    if ([self.firstNameTextField isFirstResponder]) {
+        [self.firstNameTextField resignFirstResponder];
+    } else if ([self.lastNameTextField isFirstResponder]) {
+        [self.lastNameTextField resignFirstResponder];
+    } else if ([self.emailTextField isFirstResponder]) {
+        [self.emailTextField resignFirstResponder];
+    } else if ([self.passwordTextField isFirstResponder]) {
+        [self.passwordTextField resignFirstResponder];
     }
 }
 
