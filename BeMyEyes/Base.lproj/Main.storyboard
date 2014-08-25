@@ -1357,7 +1357,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                     <constraint firstAttribute="width" constant="111" id="62H-PJ-GW4"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="IOT-Cv-qKg" id="2ce-wq-5DK"/>
                                                 </connections>
@@ -1369,7 +1369,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                     <constraint firstAttribute="width" constant="111" id="OWd-ne-iYw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="IOT-Cv-qKg" id="l2q-kH-p3v"/>
                                                 </connections>
@@ -1410,7 +1410,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opU-Be-2Hu">
                                                 <rect key="frame" x="68" y="0.0" width="232" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="IOT-Cv-qKg" id="UOx-x1-qre"/>
                                                 </connections>
@@ -1440,7 +1440,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-hZ-d1W">
                                                 <rect key="frame" x="68" y="0.0" width="232" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="send" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="IOT-Cv-qKg" id="P5E-4k-E7L"/>
                                                 </connections>

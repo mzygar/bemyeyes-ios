@@ -243,7 +243,16 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+    if (textField == self.firstNameTextField) {
+        [self.lastNameTextField becomeFirstResponder];
+    } else if (textField == self.lastNameTextField) {
+        [self.emailTextField becomeFirstResponder];
+    } else if (textField == self.emailTextField) {
+        [self.passwordTextField becomeFirstResponder];
+    } else if (textField == self.passwordTextField) {
+        [textField resignFirstResponder];
+        [self performRegistration];
+    }
     
     return YES;
 }
