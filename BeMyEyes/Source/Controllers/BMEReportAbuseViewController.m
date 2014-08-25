@@ -136,9 +136,35 @@
     self.reason2Label.text = reason2;
     self.reason3Label.text = reason3;
     
-    self.reason1Button.accessibilityLabel = reason1;
-    self.reason2Button.accessibilityLabel = reason2;
-    self.reason3Button.accessibilityLabel = reason3;
+    if (isBlind) {
+        [self writeAccessibilityLabels];
+    }
+}
+
+- (void)writeAccessibilityLabels {
+    NSString *label1, *label2, *label3;
+    
+    if ([self.reason1StateImageView isHighlighted]) {
+        label1 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_1", @"BMEReportAbuseViewController", @"Accesibility label for reason 1 when the reason is not selected");
+    } else {
+        label1 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_1_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 1 when the reason is selected");
+    }
+    
+    if ([self.reason2StateImageView isHighlighted]) {
+        label2 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_2", @"BMEReportAbuseViewController", @"Accesibility label for reason 2 when the reason is not selected");
+    } else {
+        label2 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_2_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 2 when the reason is selected");
+    }
+    
+    if ([self.reason3StateImageView isHighlighted]) {
+        label3 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_3", @"BMEReportAbuseViewController", @"Accesibility label for reason 3 when the reason is not selected");
+    } else {
+        label3 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_3_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 3 when the reason is selected");
+    }
+    
+    self.reason1Button.accessibilityLabel = label1;
+    self.reason2Button.accessibilityLabel = label2;
+    self.reason3Button.accessibilityLabel = label3;
 }
 
 - (void)selectReasonNumber:(NSUInteger)number {
@@ -150,7 +176,9 @@
         self.reportButton.enabled = YES;
         [self.reportButton setBackgroundColor:[UIColor colorWithRed:235.0f/255.0f green:96.0f/255.0f blue:51.0f/255.0f alpha:1.0f]];
     }
-}
+    
+    [self writeAccessibilityLabels];
+}   
 
 - (NSString *)selectedReason {
     NSString *reason = nil;

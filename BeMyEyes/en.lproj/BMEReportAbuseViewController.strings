@@ -46,3 +46,21 @@
 /* Title in alert view shown when asking the user to confirm that he wants to report abuse */
 "ALERT_CONFIRM_REPORT_ABUSE_TITLE" = "Report Abuse";
 
+/* Accesibility label for reason 1 when the reason is selected */
+"REPORT_ACCESSIBILITY_LABEL_1_SELECTED" = "The person did not want to help (Selected)";
+
+/* Accesibility label for reason 1 when the reason is not selected */
+"REPORT_ACCESSIBILITY_LABEL_1" = "The person did not want to help.";
+
+/* Accesibility label for reason 2 when the reason is selected */
+"REPORT_ACCESSIBILITY_LABEL_2_SELECTED" = "The helper acted inappropriate (Selected)";
+
+/* Accesibility label for reason 2 when the reason is not selected */
+"REPORT_ACCESSIBILITY_LABEL_2" = "The helper acted inappropriate.";
+
+/* Accesibility label for reason 3 when the reason is selected */
+"REPORT_ACCESSIBILITY_LABEL_3_SELECTED" = "The reason is not listed (Selected)";
+
+/* Accesibility label for reason 3 when the reason is not selected */
+"REPORT_ACCESSIBILITY_LABEL_3" = "The reason is not listed.";
+
