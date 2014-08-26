@@ -14,7 +14,7 @@
 #pragma mark Lifecycle
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
