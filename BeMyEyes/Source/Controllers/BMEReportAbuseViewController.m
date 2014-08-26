@@ -145,21 +145,21 @@
     NSString *label1, *label2, *label3;
     
     if ([self.reason1StateImageView isHighlighted]) {
-        label1 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_1", @"BMEReportAbuseViewController", @"Accesibility label for reason 1 when the reason is not selected");
-    } else {
         label1 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_1_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 1 when the reason is selected");
+    } else {
+        label1 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_1", @"BMEReportAbuseViewController", @"Accesibility label for reason 1 when the reason is not selected");
     }
     
     if ([self.reason2StateImageView isHighlighted]) {
-        label2 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_2", @"BMEReportAbuseViewController", @"Accesibility label for reason 2 when the reason is not selected");
-    } else {
         label2 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_2_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 2 when the reason is selected");
+    } else {
+        label2 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_2", @"BMEReportAbuseViewController", @"Accesibility label for reason 2 when the reason is not selected");
     }
     
     if ([self.reason3StateImageView isHighlighted]) {
-        label3 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_3", @"BMEReportAbuseViewController", @"Accesibility label for reason 3 when the reason is not selected");
-    } else {
         label3 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_3_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 3 when the reason is selected");
+    } else {
+        label3 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_3", @"BMEReportAbuseViewController", @"Accesibility label for reason 3 when the reason is not selected");
     }
     
     self.reason1Button.accessibilityLabel = label1;
