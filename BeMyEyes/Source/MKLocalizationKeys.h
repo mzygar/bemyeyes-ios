@@ -11,6 +11,11 @@
 static NSString * const BMEAppDelegateLocalizationTable = @"BMEAppDelegateLocalizationTable";
 
 /*!
+ * BMEBlindIntroLocalizationTable strings file 
+ */
+static NSString * const BMEBlindIntroLocalizationTable = @"BMEBlindIntroLocalizationTable";
+
+/*!
  * BMEBlindMainLocalizationTable strings file 
  */
 static NSString * const BMEBlindMainLocalizationTable = @"BMEBlindMainLocalizationTable";
@@ -29,6 +34,11 @@ static NSString * const BMEForgotPasswordLocalizationTable = @"BMEForgotPassword
  * BMEFrontPageLocalizationTable strings file 
  */
 static NSString * const BMEFrontPageLocalizationTable = @"BMEFrontPageLocalizationTable";
+
+/*!
+ * BMEHelperIntroLocalizationTable strings file 
+ */
+static NSString * const BMEHelperIntroLocalizationTable = @"BMEHelperIntroLocalizationTable";
 
 /*!
  * BMEHelperMainLocalizationTable strings file 
@@ -249,6 +259,36 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE 
 
  */
 static NSString * const BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE = @"BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE";
+
+/*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_BLIND_INTRO_BACK = @"BME_BLIND_INTRO_BACK";
+
+/*!
+ * "Continue"
+
+ * All translations:
+
+ * @b en@: "Continue"
+
+ */
+static NSString * const BME_BLIND_INTRO_CONTINUE = @"BME_BLIND_INTRO_CONTINUE";
+
+/*!
+ * "The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.\n\nThe helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.\n\nYou may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information."
+
+ * All translations:
+
+ * @b en@: "The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.\n\nThe helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.\n\nYou may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information."
+
+ */
+static NSString * const BME_BLIND_INTRO_DESCRIPTION = @"BME_BLIND_INTRO_DESCRIPTION";
 
 /*!
  * "OK"
@@ -689,6 +729,56 @@ static NSString * const BME_FRONT_PAGE_BLIND_ROLE = @"BME_FRONT_PAGE_BLIND_ROLE"
 
  */
 static NSString * const BME_FRONT_PAGE_ALREADY_REGISTERED = @"BME_FRONT_PAGE_ALREADY_REGISTERED";
+
+/*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_HELPER_INTRO_BACK = @"BME_HELPER_INTRO_BACK";
+
+/*!
+ * "Continue"
+
+ * All translations:
+
+ * @b en@: "Continue"
+
+ */
+static NSString * const BME_HELPER_INTRO_CONTINUE = @"BME_HELPER_INTRO_CONTINUE";
+
+/*!
+ * "Helping is easy!"
+
+ * All translations:
+
+ * @b en@: "Helping is easy!"
+
+ */
+static NSString * const BME_HELPER_INTRO_HEADLINE = @"BME_HELPER_INTRO_HEADLINE";
+
+/*!
+ * "Help whenever you want, wherever you want."
+
+ * All translations:
+
+ * @b en@: "Help whenever you want, wherever you want."
+
+ */
+static NSString * const BME_HELPER_INTRO_SHORT_DESCRIPTION = @"BME_HELPER_INTRO_SHORT_DESCRIPTION";
+
+/*!
+ * "Your phone is open for calls from people who need help when you are signed in."
+
+ * All translations:
+
+ * @b en@: "Your phone is open for calls from people who need help when you are signed in."
+
+ */
+static NSString * const BME_HELPER_INTRO_LONG_DESCRIPTION = @"BME_HELPER_INTRO_LONG_DESCRIPTION";
 
 /*!
  * "You are snoozing the next %@"

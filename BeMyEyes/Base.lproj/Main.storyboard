@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="-298" y="111"/>
         </scene>
-        <!--Intro View Controller-->
+        <!--Helper Intro View Controller-->
         <scene sceneID="zB6-mI-jFV">
             <objects>
-                <viewController id="hG3-jw-vqP" customClass="BMEIntroViewController" sceneMemberID="viewController">
+                <viewController id="hG3-jw-vqP" customClass="BMEHelperIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XQC-4S-8pI"/>
                         <viewControllerLayoutGuide type="bottom" id="Hrt-37-M7c"/>
@@ -279,6 +279,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Khn-pj-PxL"/>
+                    <connections>
+                        <outlet property="backButton" destination="meS-rG-ru3" id="0WG-kh-IJl"/>
+                        <outlet property="continueButton" destination="Jqf-te-yzQ" id="bsj-kG-5ZI"/>
+                        <outlet property="longDescriptionLabel" destination="pAg-cR-b9G" id="oay-4o-5nH"/>
+                        <outlet property="shortDescriptionLabel" destination="r46-QU-kdt" id="HMw-a2-CaP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yI4-gL-cCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -577,10 +583,10 @@
             </objects>
             <point key="canvasLocation" x="1276" y="1175"/>
         </scene>
-        <!--Intro View Controller-->
+        <!--Blind Intro View Controller-->
         <scene sceneID="0Jd-Fy-FjZ">
             <objects>
-                <viewController id="du8-BL-rDz" customClass="BMEIntroViewController" sceneMemberID="viewController">
+                <viewController id="du8-BL-rDz" customClass="BMEBlindIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sh6-5W-mZP"/>
                         <viewControllerLayoutGuide type="bottom" id="xFS-Mo-f8B"/>
@@ -655,6 +661,11 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ThP-v4-keq"/>
+                    <connections>
+                        <outlet property="backButton" destination="CIb-cS-zkf" id="h8t-yS-g9d"/>
+                        <outlet property="continueButton" destination="osh-d7-3mB" id="DHB-2n-517"/>
+                        <outlet property="descriptionLabel" destination="vyn-Ti-keq" id="0aD-Cp-ACV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUd-10-1IW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2521,7 +2532,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="46J-Mt-BiQ"/>
-        <segue reference="jzc-Nc-kCA"/>
+        <segue reference="Ce4-tx-KmL"/>
         <segue reference="tPL-wK-r0M"/>
     </inferredMetricsTieBreakers>
 </document>
