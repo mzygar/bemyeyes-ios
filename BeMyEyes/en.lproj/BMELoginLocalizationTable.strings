@@ -1,3 +1,21 @@
+/* Title of back button */
+"BME_LOGIN_BACK" = "Back";
+
+/* Placeholder in e-mail field */
+"BME_LOGIN_EMAIL_PLACEHOLDER" = "E-mail";
+
+/* Placeholder in password field */
+"BME_LOGIN_PASSWORD_PLACEHOLDER" = "Password";
+
+/* Title of log in button */
+"BME_LOGIN_PERFORM_LOG_IN" = "Log in";
+
+/* Title of log in with Facebook button */
+"BME_LOGIN_FACEBOOK" = "Log in with Facebook";
+
+/* Title of forgot password button */
+"BME_LOGIN_FORGOT_PASSWORD" = "Forgot password";
+
 /* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
 "BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL" = "OK";
 

@@ -881,6 +881,66 @@ static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE = @"BME_LANGU
 static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE = @"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE";
 
 /*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_LOGIN_BACK = @"BME_LOGIN_BACK";
+
+/*!
+ * "E-mail"
+
+ * All translations:
+
+ * @b en@: "E-mail"
+
+ */
+static NSString * const BME_LOGIN_EMAIL_PLACEHOLDER = @"BME_LOGIN_EMAIL_PLACEHOLDER";
+
+/*!
+ * "Password"
+
+ * All translations:
+
+ * @b en@: "Password"
+
+ */
+static NSString * const BME_LOGIN_PASSWORD_PLACEHOLDER = @"BME_LOGIN_PASSWORD_PLACEHOLDER";
+
+/*!
+ * "Log in"
+
+ * All translations:
+
+ * @b en@: "Log in"
+
+ */
+static NSString * const BME_LOGIN_PERFORM_LOG_IN = @"BME_LOGIN_PERFORM_LOG_IN";
+
+/*!
+ * "Log in with Facebook"
+
+ * All translations:
+
+ * @b en@: "Log in with Facebook"
+
+ */
+static NSString * const BME_LOGIN_FACEBOOK = @"BME_LOGIN_FACEBOOK";
+
+/*!
+ * "Forgot password"
+
+ * All translations:
+
+ * @b en@: "Forgot password"
+
+ */
+static NSString * const BME_LOGIN_FORGOT_PASSWORD = @"BME_LOGIN_FORGOT_PASSWORD";
+
+/*!
  * "OK"
 
  * All translations:

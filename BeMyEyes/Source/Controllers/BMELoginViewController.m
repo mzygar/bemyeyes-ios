@@ -17,8 +17,12 @@
 #define BMELoginLoggedInSegue @"LoggedIn"
 
 @interface BMELoginViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *forgotPasswordButton;
 
 @property (strong, nonatomic) MRProgressOverlayView *loggingInOverlayView;
 @end
@@ -28,12 +32,29 @@
 #pragma mark -
 #pragma mark Lifecycle
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
+}
+
 - (void)dealloc {
     if (_loggingInOverlayView) {
         [_loggingInOverlayView hide:YES];
     }
     
     _loggingInOverlayView = nil;
+}
+
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_LOGIN_BACK, BMELoginLocalizationTable) forState:UIControlStateNormal];
+    
+    self.emailTextField.placeholder = MKLocalizedFromTable(BME_LOGIN_EMAIL_PLACEHOLDER, BMELoginLocalizationTable);
+    self.passwordTextField.placeholder = MKLocalizedFromTable(BME_LOGIN_PASSWORD_PLACEHOLDER, BMELoginLocalizationTable);
+    
+    [self.loginButton setTitle:MKLocalizedFromTable(BME_LOGIN_PERFORM_LOG_IN, BMELoginLocalizationTable) forState:UIControlStateNormal];
+    [self.facebookButton setTitle:MKLocalizedFromTable(BME_LOGIN_FACEBOOK, BMELoginLocalizationTable) forState:UIControlStateNormal];
+    [self.forgotPasswordButton setTitle:MKLocalizedFromTable(BME_LOGIN_FORGOT_PASSWORD, BMELoginLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -

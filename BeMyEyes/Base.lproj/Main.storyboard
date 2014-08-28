@@ -334,7 +334,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Nvl-8k-ZE2"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bty-AZ-yfq">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bty-AZ-yfq">
                                                 <rect key="frame" x="68" y="0.0" width="232" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="232" id="HVc-gX-To3"/>
@@ -464,7 +464,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="fM0-4d-lSV"/>
                     <connections>
+                        <outlet property="backButton" destination="8pA-sN-peL" id="IPb-Hn-I4e"/>
                         <outlet property="emailTextField" destination="bty-AZ-yfq" id="aoU-yt-91g"/>
+                        <outlet property="facebookButton" destination="0BN-bJ-xSZ" id="6Jd-EN-tXe"/>
+                        <outlet property="forgotPasswordButton" destination="oL9-6V-10R" id="H8y-qu-o4P"/>
+                        <outlet property="loginButton" destination="q5v-lJ-cvR" id="J1s-i4-OdR"/>
                         <outlet property="passwordTextField" destination="ITa-1Y-MSv" id="0ao-5k-ndG"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="0nh-WJ-G11"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="Registered" id="h1h-es-Gdp"/>
@@ -2537,7 +2541,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="46J-Mt-BiQ"/>
-        <segue reference="jzc-Nc-kCA"/>
+        <segue reference="h1h-es-Gdp"/>
         <segue reference="tPL-wK-r0M"/>
     </inferredMetricsTieBreakers>
 </document>
