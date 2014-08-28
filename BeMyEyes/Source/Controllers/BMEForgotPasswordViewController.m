@@ -12,10 +12,32 @@
 #import "BMEClient.h"
 
 @interface BMEForgotPasswordViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIButton *sendPasswordButton;
 @end
 
 @implementation BMEForgotPasswordViewController
+
+#pragma mark -
+#pragma mark Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
+}
+
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_FORGOT_PASSWORD_BACK, BMEForgotPasswordLocalizationTable) forState:UIControlStateNormal];
+    
+    self.descriptionLabel.text = MKLocalizedFromTable(BME_FORGOT_PASSWORD_DESCRIPTION, BMEForgotPasswordLocalizationTable);
+    
+    self.emailTextField.placeholder = MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable);
+    
+    [self.sendPasswordButton setTitle:MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable) forState:UIControlStateNormal];
+}
 
 #pragma mark -
 #pragma mark Private Methods

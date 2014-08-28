@@ -580,7 +580,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="tIH-zK-dgv"/>
                     <connections>
+                        <outlet property="backButton" destination="wjp-5g-kgm" id="b4y-Fz-a4O"/>
+                        <outlet property="descriptionLabel" destination="bl7-si-Ugu" id="FIx-ra-Qws"/>
                         <outlet property="emailTextField" destination="VDl-iP-Qe2" id="Oaz-0D-qY1"/>
+                        <outlet property="sendPasswordButton" destination="vib-97-qM8" id="Rzm-tA-aUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2x1-Li-78v" userLabel="First Responder" sceneMemberID="firstResponder"/>

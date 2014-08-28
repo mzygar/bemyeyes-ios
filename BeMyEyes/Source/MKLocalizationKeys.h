@@ -571,6 +571,46 @@ static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE = @"BME_C
 static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE = @"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE";
 
 /*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_FORGOT_PASSWORD_BACK = @"BME_FORGOT_PASSWORD_BACK";
+
+/*!
+ * "Enter your e-mail and we'll send you a new password."
+
+ * All translations:
+
+ * @b en@: "Enter your e-mail and we'll send you a new password."
+
+ */
+static NSString * const BME_FORGOT_PASSWORD_DESCRIPTION = @"BME_FORGOT_PASSWORD_DESCRIPTION";
+
+/*!
+ * "E-mail"
+
+ * All translations:
+
+ * @b en@: "E-mail"
+
+ */
+static NSString * const BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER = @"BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER";
+
+/*!
+ * "Send new password"
+
+ * All translations:
+
+ * @b en@: "Send new password"
+
+ */
+static NSString * const BME_FORGOT_PASSWORD_SEND_PASSWORD = @"BME_FORGOT_PASSWORD_SEND_PASSWORD";
+
+/*!
  * "OK"
 
  * All translations:
