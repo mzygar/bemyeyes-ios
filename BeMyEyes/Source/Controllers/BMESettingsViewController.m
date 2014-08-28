@@ -16,10 +16,16 @@
 #define BMEUnwindSettingsSegue @"UnwindSettings"
 
 @interface BMESettingsViewController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UISwitch *boostSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *selectLanguagesButton;
+@property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (assign, nonatomic) BOOL shouldSave;
 @end
@@ -48,6 +54,15 @@
 }
 
 - (void)shouldLocalize {
+    self.headlineLabel.text = MKLocalizedFromTable(BME_SETTINGS_HEADLINE, BMESettingsLocalizationTable);
+    self.firstNameLabel.text = MKLocalizedFromTable(BME_SETTINGS_FIRST_NAME, BMESettingsLocalizationTable);
+    self.lastNameLabel.text = MKLocalizedFromTable(BME_SETTINGS_LAST_NAME, BMESettingsLocalizationTable);
+    self.emailLabel.text = MKLocalizedFromTable(BME_SETTINGS_EMAIL, BMESettingsLocalizationTable);
+    
+    [self.selectLanguagesButton setTitle:MKLocalizedFromTable(BME_SETTINGS_SELECT_LANGUAGES, BMESettingsLocalizationTable) forState:UIControlStateNormal];
+    [self.feedbackButton setTitle:MKLocalizedFromTable(BME_SETTINGS_FEEDBACK, BMESettingsLocalizationTable) forState:UIControlStateNormal];
+    [self.logoutButton setTitle:MKLocalizedFromTable(BME_SETTINGS_LOG_OUT, BMESettingsLocalizationTable) forState:UIControlStateNormal];
+    
     self.versionLabel.text = MKLocalizedFromTableWithFormat(BME_SETTINGS_VERSION_TITLE, BMESettingsLocalizationTable, [self versionString]);
 }
 
@@ -74,14 +89,6 @@
             [alertView show];
         }
     }];
-}
-
-- (IBAction)changePasswordButtonPressed:(id)sender {
-    
-}
-
-- (IBAction)boostSwitchValueChanged:(id)sender {
-    
 }
 
 - (IBAction)settingValueChanged:(id)sender {

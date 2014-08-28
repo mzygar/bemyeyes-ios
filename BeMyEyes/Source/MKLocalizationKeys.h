@@ -1681,6 +1681,76 @@ static NSString * const BME_SECRET_SETTINGS_API_STAGING = @"BME_SECRET_SETTINGS_
 static NSString * const BME_SECRET_SETTINGS_API_PUBLIC = @"BME_SECRET_SETTINGS_API_PUBLIC";
 
 /*!
+ * "Settings"
+
+ * All translations:
+
+ * @b en@: "Settings"
+
+ */
+static NSString * const BME_SETTINGS_HEADLINE = @"BME_SETTINGS_HEADLINE";
+
+/*!
+ * "First name"
+
+ * All translations:
+
+ * @b en@: "First name"
+
+ */
+static NSString * const BME_SETTINGS_FIRST_NAME = @"BME_SETTINGS_FIRST_NAME";
+
+/*!
+ * "Surname"
+
+ * All translations:
+
+ * @b en@: "Surname"
+
+ */
+static NSString * const BME_SETTINGS_LAST_NAME = @"BME_SETTINGS_LAST_NAME";
+
+/*!
+ * "E-mail"
+
+ * All translations:
+
+ * @b en@: "E-mail"
+
+ */
+static NSString * const BME_SETTINGS_EMAIL = @"BME_SETTINGS_EMAIL";
+
+/*!
+ * "Select languages you know"
+
+ * All translations:
+
+ * @b en@: "Select languages you know"
+
+ */
+static NSString * const BME_SETTINGS_SELECT_LANGUAGES = @"BME_SETTINGS_SELECT_LANGUAGES";
+
+/*!
+ * "Give feedback on the app"
+
+ * All translations:
+
+ * @b en@: "Give feedback on the app"
+
+ */
+static NSString * const BME_SETTINGS_FEEDBACK = @"BME_SETTINGS_FEEDBACK";
+
+/*!
+ * "Log out"
+
+ * All translations:
+
+ * @b en@: "Log out"
+
+ */
+static NSString * const BME_SETTINGS_LOG_OUT = @"BME_SETTINGS_LOG_OUT";
+
+/*!
  * "OK"
 
  * All translations:

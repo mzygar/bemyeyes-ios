@@ -1,8 +1,23 @@
-/* BMESettingsViewController.strings
-  BeMyEyes
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Settings";
 
-  Created by Simon Støvring on 09/03/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "First name";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Surname";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-mail";
+
+/* Select languages title */
+"BME_SETTINGS_SELECT_LANGUAGES" = "Select languages you know";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Give feedback on the app";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Log out";
 
 /* Title of cancel button in alert view shown when log out failed */
 "BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
