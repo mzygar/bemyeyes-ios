@@ -46,7 +46,7 @@
         [self playVideo];
     }
     
-    NSString *cancelTitle = NSLocalizedStringFromTable(@"CANCEL_TITLE", @"BMEVideoViewController", @"Title of cancel button");
+    NSString *cancelTitle = MKLocalizedFromTable(BME_VIDEO_CANCEL_TITLE, BMEVideoLocalizationTable);
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
     cancelButton.tintColor = [UIColor whiteColor];
     cancelButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0f];

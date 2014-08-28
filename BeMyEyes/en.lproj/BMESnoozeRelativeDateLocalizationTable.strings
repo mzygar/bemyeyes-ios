@@ -5,44 +5,44 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved. */
 
 /* No comment provided by engineer. */
-"DAY" = "day";
+"BME_SNOOZE_RELATIVE_DATE_DAY" = "day";
 
 /* No comment provided by engineer. */
-"DAYS" = "%.0f days";
+"BME_SNOOZE_RELATIVE_DATE_DAYS" = "%.0f days";
 
 /* No comment provided by engineer. */
-"HOUR" = "hour";
+"BME_SNOOZE_RELATIVE_DATE_HOUR" = "hour";
 
 /* No comment provided by engineer. */
-"HOURS" = "%.0f hours";
+"BME_SNOOZE_RELATIVE_DATE_HOURS" = "%.0f hours";
 
 /* No comment provided by engineer. */
-"MINUTE" = "minute";
+"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "minute";
 
 /* No comment provided by engineer. */
-"MINUTES" = "%.0f minutes";
+"BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%.0f minutes";
 
 /* No comment provided by engineer. */
-"MONTH" = "month";
+"BME_SNOOZE_RELATIVE_DATE_MONTH" = "month";
 
 /* No comment provided by engineer. */
-"MONTHS" = "%.0f months";
+"BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%.0f months";
 
 /* No comment provided by engineer. */
-"SECOND" = "second";
+"BME_SNOOZE_RELATIVE_DATE_SECOND" = "second";
 
 /* No comment provided by engineer. */
-"SECONDS" = "%.0f seconds";
+"BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f seconds";
 
 /* No comment provided by engineer. */
-"WEEK" = "week";
+"BME_SNOOZE_RELATIVE_DATE_WEEK" = "week";
 
 /* No comment provided by engineer. */
-"WEEKS" = "%.0f weeks";
+"BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%.0f weeks";
 
 /* No comment provided by engineer. */
-"YEAR" = "year";
+"BME_SNOOZE_RELATIVE_DATE_YEAR" = "year";
 
 /* No comment provided by engineer. */
-"YEARS" = "%.0f years";
+"BME_SNOOZE_RELATIVE_DATE_YEARS" = "%.0f years";
 

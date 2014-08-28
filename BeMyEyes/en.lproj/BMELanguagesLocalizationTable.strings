@@ -5,11 +5,11 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved. */
 
 /* Title of cancel button in alert view shown when the languages could not be saved */
-"ALERT_COULD_NOT_SAVE_CANCEL" = "OK";
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "OK";
 
 /* MEssage in alert view shown when the languages could not be saved */
-"ALERT_COULD_NOT_SAVE_MESSAGE" = "The languages could not be saved. Please try again later.";
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "The languages could not be saved. Please try again later.";
 
 /* Title in alert view shown when the languages could not be saved */
-"ALERT_COULD_NOT_SAVE_TITLE" = "Could not save";
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "Could not save";
 

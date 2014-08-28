@@ -125,11 +125,11 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 }
 
 - (NSString *)randomGreetingFormat {
-    NSArray *greetingFormats = @[ NSLocalizedStringFromTable(@"GREETING_1", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
-                                  NSLocalizedStringFromTable(@"GREETING_2", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
-                                  NSLocalizedStringFromTable(@"GREETING_3", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
-                                  NSLocalizedStringFromTable(@"GREETING_4", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name."),
-                                  NSLocalizedStringFromTable(@"GREETING_5", @"BMEHelperMainViewController", @"Greeting for helper. %@ is replaced with the name.") ];
+    NSArray *greetingFormats = @[ MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_1, BMEHelperMainLocalizationTable),
+                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_2, BMEHelperMainLocalizationTable),
+                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_3, BMEHelperMainLocalizationTable),
+                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_4, BMEHelperMainLocalizationTable),
+                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_5, BMEHelperMainLocalizationTable) ];
     if (greetingFormats) {
         NSString *greetingFormat = greetingFormats[arc4random() % [greetingFormats count]];
         return greetingFormat;
@@ -197,9 +197,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     if (snoozeAmount > 0) {
         NSString *snoozeAmountText = [[NSDate dateWithTimeIntervalSinceNow:snoozeAmount] BMESnoozeRelativeDate];
-        self.snoozeStatusLabel.text = [NSString stringWithFormat:NSLocalizedStringFromTable(@"SNOOZE_STATUS_TEXT", @"BMEHelperMainViewController", @"Format for snooze status text. %@ is replaced with the snooze amount."), snoozeAmountText];
+        self.snoozeStatusLabel.text = MKLocalizedFromTableWithFormat(BME_HELPER_MAIN_SNOOZE_STATUS_TEXT, BMEHelperMainLocalizationTable, snoozeAmountText);
     } else {
-        self.snoozeStatusLabel.text = NSLocalizedStringFromTable(@"SNOOZE_STATUS_NOT_SNOOZING_TEXT", @"BMEHelperMainViewController", @"Snooze status text when not snoozing");
+        self.snoozeStatusLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT, BMEHelperMainLocalizationTable);
     }
     
     self.snoozeThumbCenterMarginXConstraint.constant = snappedPos;

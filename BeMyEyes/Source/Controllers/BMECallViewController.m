@@ -91,13 +91,13 @@
 #pragma mark Private Methods
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    NSString *statusText = NSLocalizedStringFromTable(@"STATUS_DISCONNECTING", @"BMECallViewController", @"Status when disconnecting");
+    NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_DISCONNECTING, BMECallLocalizationTable);
     [self changeStatus:statusText];
     [self disconnect];
 }
 
 - (void)createNewRequest {
-    NSString *statusText = NSLocalizedStringFromTable(@"STATUS_CREATING_REQUEST", @"BMECallViewController", @"Status when creating request");
+    NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_CREATING_REQUEST, BMECallLocalizationTable);
     [self changeStatus:statusText];
     
     [[BMEClient sharedClient] createRequestWithSuccess:^(BMERequest *request) {
@@ -108,9 +108,9 @@
         [self connect];
         [self playCallTone];
     } failure:^(NSError *error) {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_TITLE", @"BMECallViewController", @"Title in alert showed when failed creating request");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_MESSAGE", @"BMECallViewController", @"Message in alert showed when failed creating request");
-        NSString *cancel = NSLocalizedStringFromTable(@"ALERT_FAILED_CREATING_REQUEST_CANCEL", @"BMECallViewController", @"Cancel in alert showed when failed creating request");
+        NSString *title = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE, BMECallLocalizationTable);
+        NSString *message = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE, BMECallLocalizationTable);
+        NSString *cancel = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL, BMECallLocalizationTable);
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
         [alertView show];
         
@@ -121,7 +121,7 @@
 }
 
 - (void)answerRequestWithShortId:(NSString *)shortId {
-    NSString *statusText = NSLocalizedStringFromTable(@"STATUS_ANSWERING_REQUEST", @"BMECallViewController", @"Status when answering request");
+    NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_ANSWERING_REQUEST, BMECallLocalizationTable);
     [self changeStatus:statusText];
     
     [[BMEClient sharedClient] answerRequestWithShortId:shortId success:^(BMERequest *request) {
@@ -132,21 +132,21 @@
         [self connect];
     } failure:^(NSError *error) {
         if ([error code] == BMEClientErrorRequestAlreadyAnswered) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE", @"BMECallViewController", @"Title in alert view shown when failed answering request because the request has already been answered");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE", @"BMECallViewController", @"Message in alert view shown when failed answering request because the request has already been answered");
-            NSString *cancel = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL", @"BMECallViewController", @"Title of cancel button in alert view shown when failed answering request because the request has already been answered");
+            NSString *title = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE, BMECallLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE, BMECallLocalizationTable);
+            NSString *cancel = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL, BMECallLocalizationTable);
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
             [alertView show];
         } else if ([error code] == BMEClientErrorRequestStopped) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE", @"BMECallViewController", @"Title in alert view shown when failed answering request because the request has been stopped");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE", @"BMECallViewController", @"Message in alert view shown when failed answering request because the request has been stopped");
-            NSString *cancel = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL", @"BMECallViewController", @"Title of cancel button in alert view shown when failed answering request because the request has been stopped");
+            NSString *title = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE, BMECallLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE, BMECallLocalizationTable);
+            NSString *cancel = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL, BMECallLocalizationTable);
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
             [alertView show];
         } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_UNKNOWN_TITLE", @"BMECallViewController", @"Title in alert view shown when failed answering request for an unknown reason");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE", @"BMECallViewController", @"Message in alert view shown when failed answering request for an unknown reason");
-            NSString *cancel = NSLocalizedStringFromTable(@"ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL", @"BMECallViewController", @"Title of cancel button in alert view shown when failed answering request for an unknown reason");
+            NSString *title = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE, BMECallLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE, BMECallLocalizationTable);
+            NSString *cancel = MKLocalizedFromTable(BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL, BMECallLocalizationTable);
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
             [alertView show];
         }
@@ -162,7 +162,7 @@
     NSLog(@" - sessionId: %@", self.sessionId);
     NSLog(@" - token: %@", self.token);
     
-    NSString *statusText = NSLocalizedStringFromTable(@"STATUS_CONNECTING", @"BMECallViewController", @"Status when connecting");
+    NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_CONNECTING, BMECallLocalizationTable);
     [self changeStatus:statusText];
     
     self.session = [[OTSession alloc] initWithApiKey:BMEOpenTokAPIKey sessionId:self.sessionId delegate:self];
@@ -331,7 +331,7 @@
 - (void)sessionDidConnect:(OTSession *)session {
     NSLog(@"OpenTok: [Session] Did connect");
     if (!self.isDisconnecting) {
-        NSString *statusText = NSLocalizedStringFromTable(@"STATUS_CONNECTION_ESTABLISHED", @"BMECallViewController", @"Status when connection is established");
+        NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_CONNECTION_ESTABLISHED, BMECallLocalizationTable);
         [self changeStatus:statusText];
         [self publish];
     }
@@ -346,7 +346,7 @@
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
     NSLog(@"Session failed: %@", error);
     
-    NSString *statusText = NSLocalizedStringFromTable(@"STATUS_SESSION_FAILED", @"BMECallViewController", @"Status when session failed");
+    NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_SESSION_FAILED, BMECallLocalizationTable);
     [self changeStatus:statusText];
     [self disconnect];
 }
@@ -366,9 +366,9 @@
     NSLog(@"OpenTok: [Session] Stream destroyed");
     if (!self.isDisconnecting) {
         // If we are not disconnecting ourselves, then the other part has disconnected
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_OTHER_PART_DISCONNECTED_TITLE", @"BMECallViewController", @"Title in alert shown when other part has disconnected");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_OTHER_PART_DISCONNECTED_MESSAGE", @"BMECallViewController", @"Message in alert shown when other part has disconnected");
-        NSString *cancel = NSLocalizedStringFromTable(@"ALERT_OTHER_PART_DISCONNECTED_CANCEL", @"BMECallViewController", @"Title of cancel button in alert shown when other part has disconnected");
+        NSString *title = MKLocalizedFromTable(BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE, BMECallLocalizationTable);;
+        NSString *message = MKLocalizedFromTable(BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE, BMECallLocalizationTable);
+        NSString *cancel = MKLocalizedFromTable(BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL, BMECallLocalizationTable);
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
         [alertView show];
         
@@ -390,7 +390,7 @@
 - (void)publisher:(OTPublisherKit *)publisher didFailWithError:(OTError *)error {
     NSLog(@"OpenTok: [Publisher] Did fail with error: %@", error);
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_PUBLISHING", @"BMECallViewController", @"Status when failed publishing");
+        NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_FAILED_PUBLISHING, BMECallLocalizationTable);
         [self changeStatus:statusText];
     });
     
@@ -406,7 +406,7 @@
     
     if (!self.isDisconnecting) {
         if ([self isUserBlind]) {
-            NSString *speech = NSLocalizedStringFromTable(@"SPEECH_DID_SUBSCRIBE", @"BMECallViewController", @"Speech when connected to other part");
+            NSString *speech = MKLocalizedFromTable(BME_CALL_SPEECH_DID_SUBSCRIBE, BMECallLocalizationTable);
             [BMESpeaker speak:speech];
         }
         
@@ -425,7 +425,7 @@
 
 - (void)subscriber:(OTSubscriberKit *)subscriber didFailWithError:(OTError *)error {
     NSLog(@"OpenTok: [Subscriber] Did fail with error: %@", error);
-    NSString *statusText = NSLocalizedStringFromTable(@"STATUS_FAILED_SUBSCRIBING", @"BMECallViewController", @"Status when failed subscribing");
+    NSString *statusText = MKLocalizedFromTable(BME_CALL_STATUS_FAILED_SUBSCRIBING, BMECallLocalizationTable);
     [self changeStatus:statusText];
     [self disconnect];
 }

@@ -91,15 +91,15 @@
         ![GVUserDefaults standardUserDefaults].hasAskedForMoreLanguages) {
         NSString *title, *message, *cancelButton, *confirmButton;
         if ([[BMEClient sharedClient].currentUser isHelper]) {
-            title = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_HELPER_TITLE", @"BMEMainViewController", @"Title in alert view shown when asking the helper if he knows more langauges");
-            message = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_HELPER_MESSAGE", @"BMEMainViewController", @"Message in alert view shown when asking the helper if he knows more langauges");
-            cancelButton = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_HELPER_CANCEL", @"BMEMainViewController", @"Title of cancel button in alert view shown when asking the helper if he knows more langauges");
-            confirmButton = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_HELPER_CONFIRM", @"BMEMainViewController", @"Title of confirm button in alert view shown when asking the helper if he knows more langauges");
+            title = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE, BMEMainLocalizationTable);
+            message = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE, BMEMainLocalizationTable);
+            cancelButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL, BMEMainLocalizationTable);
+            confirmButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM, BMEMainLocalizationTable);
         } else {
-            title = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_BLIND_TITLE", @"BMEMainViewController", @"Title in alert view shown when asking the blind if he knows more langauges");
-            message = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_BLIND_MESSAGE", @"BMEMainViewController", @"Message in alert view shown when asking the blind if he knows more langauges");
-            cancelButton = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_BLIND_CANCEL", @"BMEMainViewController", @"Title of cancel button in alert view shown when asking the blind if he knows more langauges");
-            confirmButton = NSLocalizedStringFromTable(@"ALERT_MORE_LANGAUGES_BLIND_CONFIRM", @"BMEMainViewController", @"Title of confirm button in alert view shown when asking the blind if he knows more langauges");
+            title = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE, BMEMainLocalizationTable);
+            message = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE, BMEMainLocalizationTable);
+            cancelButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL, BMEMainLocalizationTable);
+            confirmButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM, BMEMainLocalizationTable);
         }
         
         PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];

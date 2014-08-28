@@ -53,41 +53,41 @@ NSString * const kCommonCryptoErrorDomain = @"CommonCryptoErrorDomain";
 	switch ( status )
 	{
 		case kCCSuccess:
-			description = NSLocalizedString(@"Success", @"Error description");
+			description = @"Success";
 			break;
 			
 		case kCCParamError:
-			description = NSLocalizedString(@"Parameter Error", @"Error description");
-			reason = NSLocalizedString(@"Illegal parameter supplied to encryption/decryption algorithm", @"Error reason");
+			description = @"Parameter Error";
+			reason = @"Illegal parameter supplied to encryption/decryption algorithm";
 			break;
 			
 		case kCCBufferTooSmall:
-			description = NSLocalizedString(@"Buffer Too Small", @"Error description");
-			reason = NSLocalizedString(@"Insufficient buffer provided for specified operation", @"Error reason");
+			description = @"Buffer Too Small";
+			reason = @"Insufficient buffer provided for specified operation";
 			break;
 			
 		case kCCMemoryFailure:
-			description = NSLocalizedString(@"Memory Failure", @"Error description");
-			reason = NSLocalizedString(@"Failed to allocate memory", @"Error reason");
+			description = @"Memory Failure";
+			reason = @"Failed to allocate memory";
 			break;
 			
 		case kCCAlignmentError:
-			description = NSLocalizedString(@"Alignment Error", @"Error description");
-			reason = NSLocalizedString(@"Input size to encryption algorithm was not aligned correctly", @"Error reason");
+			description = @"Alignment Error";
+			reason = @"Input size to encryption algorithm was not aligned correctly";
 			break;
 			
 		case kCCDecodeError:
-			description = NSLocalizedString(@"Decode Error", @"Error description");
-			reason = NSLocalizedString(@"Input data did not decode or decrypt correctly", @"Error reason");
+			description = @"Decode Error";
+			reason = @"Input data did not decode or decrypt correctly";
 			break;
 			
 		case kCCUnimplemented:
-			description = NSLocalizedString(@"Unimplemented Function", @"Error description");
-			reason = NSLocalizedString(@"Function not implemented for the current algorithm", @"Error reason");
+			description = @"Unimplemented Function";
+			reason = @"Function not implemented for the current algorithm";
 			break;
 			
 		default:
-			description = NSLocalizedString(@"Unknown Error", @"Error description");
+			description = @"Unknown Error";
 			break;
 	}
 	

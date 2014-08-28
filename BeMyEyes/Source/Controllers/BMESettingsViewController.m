@@ -33,8 +33,6 @@
     [super viewDidLoad];
     
     [self populateFields];
-    
-    self.versionLabel.text = [NSString stringWithFormat:NSLocalizedStringFromTable(@"VERSION_TITLE", @"BMESettingsViewController", @"Version title"), [self versionString]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,13 +47,17 @@
     [self saveIfSettingChanged];
 }
 
+- (void)shouldLocalize {
+    self.versionLabel.text = MKLocalizedFromTableWithFormat(BME_SETTINGS_VERSION_TITLE, BMESettingsLocalizationTable, [self versionString]);
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
 - (IBAction)logOutButtonPressed:(id)sender {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_OUT_TITLE", @"BMESettingsViewController", @"Title in overlay shown when logging out");
+    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE, BMESettingsLocalizationTable);
     
     [[BMEClient sharedClient] logoutWithCompletion:^(BOOL success, NSError *error) {
         [progressOverlayView hide:YES];
@@ -65,9 +67,9 @@
             
             [self performSegueWithIdentifier:BMEUnwindSettingsSegue sender:self];
         } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_LOG_OUT_FAILED_TITLE", @"BMESettingsViewController", @"Title in alert view shown when log out failed");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_LOG_OUT_FAILED_MESSAGE", @"BMESettingsViewController", @"Messaage in alert view shown when log out failed");
-            NSString *cancelTitle = NSLocalizedStringFromTable(@"ALERT_LOG_OUT_FAILED_CANCEL", @"BMESettingsViewController", @"Title of cancel button in alert view shown when log out failed");
+            NSString *title = MKLocalizedFromTable(BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE, BMESettingsLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE, BMESettingsLocalizationTable);
+            NSString *cancelTitle = MKLocalizedFromTable(BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL, BMESettingsLocalizationTable);
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelTitle otherButtonTitles:nil, nil];
             [alertView show];
         }

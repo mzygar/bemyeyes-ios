@@ -38,7 +38,7 @@
 @implementation BMESignUpMethodViewController
 
 #pragma mark -
-#pragma mark Private Methods
+#pragma mark Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,22 +49,27 @@
     self.termsBottomLabel.isAccessibilityElement = NO;
     self.privacyTopLabel.isAccessibilityElement = NO;
     self.privacyBottomLabel.isAccessibilityElement = NO;
-
-    self.emailSignUpButton.accessibilityLabel = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL", @"BMESignUpMethodViewController", @"Accessibility label for email sign up button");
-    self.emailSignUpButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for email sign up button");
     
-    self.termsButton.accessibilityLabel = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL", @"BMESignUpMethodViewController", @"Accessibility label for terms and agreements button");
-    self.termsButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for terms and agreements button");
-    
-    self.privacyButton.accessibilityLabel = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL", @"BMESignUpMethodViewController", @"Accessibility label for privacy policy button");
-    self.privacyButton.accessibilityHint = NSLocalizedStringFromTable(@"SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT", @"BMESignUpMethodViewController", @"Accessibility hint for privacy policy button");
-
     if (self.role == BMERoleHelper) {
         self.facebookFooterLabel.text = nil;
         self.facebookFooterHeightConstraint.constant = 0.0f;
         self.facebookFooterTopMarginConstraint.constant = 0.0f;
     }
 }
+
+- (void)shouldLocalize {
+    self.emailSignUpButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
+    self.emailSignUpButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
+    
+    self.termsButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
+    self.termsButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
+    
+    self.privacyButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
+    self.privacyButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
+}
+
+#pragma mark -
+#pragma mark Private Methods
 
 - (IBAction)facebookButtonPressed:(id)sender {
     [self performFacebookRegistration];
@@ -107,13 +112,13 @@
 - (void)performFacebookRegistration {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REGISTERING_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when registering");
+    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE, BMESignUpMethodLocalizationTable);
     
     [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
             [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId longLongValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
                     if (success && !error) {
-                        progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when logging in");
+                        progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE, BMESignUpMethodLocalizationTable);
                     
                         NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
                         [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
@@ -145,15 +150,15 @@
                     [progressOverlayView hide:YES];
                     
                     if ([error code] == BMEClientErrorUserEmailAlreadyRegistered)  {
-                        NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when e-mail is already registered.");
-                        NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when e-mail is already registered.");
-                        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when e-mail is already registered.");
+                        NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE, BMESignUpMethodLocalizationTable);
+                        NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE, BMESignUpMethodLocalizationTable);
+                        NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL, BMESignUpMethodLocalizationTable);
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                         [alert show];
                     } else {
-                        NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when a network error occurred during Facebook log in.");
-                        NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when a network error occurred during Facebook log in.");
-                        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when a network error occurred during Facebook log in.");
+                        NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE, BMESignUpMethodLocalizationTable);
+                        NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE, BMESignUpMethodLocalizationTable);
+                        NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL, BMESignUpMethodLocalizationTable);
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                         [alert show];
                     }
@@ -163,15 +168,15 @@
             [progressOverlayView hide:YES];
             
             if ([error code] == ACErrorAccountNotFound) {
-                NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when no Facebook account was found.");
-                NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when no Facebook account was found.");
-                NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when no Facebook account was found.");
+                NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE, BMESignUpMethodLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE, BMESignUpMethodLocalizationTable);
+                NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL, BMESignUpMethodLocalizationTable);
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                 [alert show];
             } else {
-                NSString *title = NSLocalizedStringFromTable(@"ALERT_NOT_LOGGED_IN_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when log in to Facebook failed");
-                NSString *cancelButtonTitle = NSLocalizedStringFromTable(@"ALERT_NOT_LOGGED_IN_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when log in to Facebook failed");
-                NSString *message = message = NSLocalizedStringFromTable(@"ALERT_NOT_LOGGED_IN_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when logging into Facebook but it failed because authentication failed");
+                NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE, BMESignUpMethodLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE, BMESignUpMethodLocalizationTable);
+                NSString *cancelButtonTitle = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL, BMESignUpMethodLocalizationTable);
             
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
                 [alert show];

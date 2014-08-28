@@ -5,23 +5,23 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved. */
 
 /* Format for snooze status text. %@ is replaced with the snooze amount. */
-"SNOOZE_STATUS_TEXT" = "You are snoozing the next %@";
+"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "You are snoozing the next %@";
 
 /* Snooze status text when not snoozing */
-"SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "You are currently active";
+"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "You are currently active";
 
 /* Greeting for helper. %@ is replaced with the name. */
-"GREETING_1" = "Hi %@!";
+"BME_HELPER_MAIN_GREETING_1" = "Hi %@!";
 
 /* Greeting for helper. %@ is replaced with the name. */
-"GREETING_2" = "Ciao %@!";
+"BME_HELPER_MAIN_GREETING_2" = "Ciao %@!";
 
 /* Greeting for helper. %@ is replaced with the name. */
-"GREETING_3" = "Hello %@!";
+"BME_HELPER_MAIN_GREETING_3" = "Hello %@!";
 
 /* Greeting for helper. %@ is replaced with the name. */
-"GREETING_4" = "Hey %@!";
+"BME_HELPER_MAIN_GREETING_4" = "Hey %@!";
 
 /* Greeting for helper. %@ is replaced with the name. */
-"GREETING_5" = "Howdy %@!";
+"BME_HELPER_MAIN_GREETING_5" = "Howdy %@!";
 

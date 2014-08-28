@@ -28,39 +28,39 @@
     NSDate *currentDate = [NSDate date];
     CGFloat deltaSeconds = fabs([self timeIntervalSinceDate:currentDate]);
     if (deltaSeconds < 1.50f * BMERelativeTimeSecond) {
-        return NSLocalizedStringFromTable(@"SECOND", @"BMESnoozeRelativeDate", nil);
+        return MKLocalizedFromTable(BME_SNOOZE_RELATIVE_DATE_SECOND, BMESnoozeRelativeDateLocalizationTable);
     } else if (deltaSeconds < BMERelativeTimeMinute) {
-        return [NSString stringWithFormat:NSLocalizedStringFromTable(@"SECONDS", @"BMESnoozeRelativeDate", nil), deltaSeconds];
+        return MKLocalizedFromTableWithFormat(BME_SNOOZE_RELATIVE_DATE_SECONDS, BMESnoozeRelativeDateLocalizationTable, deltaSeconds);
     } else if (deltaSeconds < 1.50f * BMERelativeTimeMinute) {
-        return NSLocalizedStringFromTable(@"MINUTE", @"BMESnoozeRelativeDate", nil);
+        return MKLocalizedFromTable(BME_SNOOZE_RELATIVE_DATE_MINUTE, BMESnoozeRelativeDateLocalizationTable);
     } else if (deltaSeconds < BMERelativeTimeHour) {
         CGFloat minutes = deltaSeconds / BMERelativeTimeMinute;
-        return [NSString stringWithFormat:NSLocalizedStringFromTable(@"MINUTES", @"BMESnoozeRelativeDate", nil), minutes];
+        return MKLocalizedFromTableWithFormat(BME_SNOOZE_RELATIVE_DATE_MINUTES, BMESnoozeRelativeDateLocalizationTable, minutes);
     } else if (deltaSeconds < 1.50f * BMERelativeTimeHour) {
-        return NSLocalizedStringFromTable(@"HOUR", @"BMESnoozeRelativeDate", nil);
+        return MKLocalizedFromTable(BME_SNOOZE_RELATIVE_DATE_HOUR, BMESnoozeRelativeDateLocalizationTable);
     } else if (deltaSeconds < BMERelativeTimeDay) {
         CGFloat hours = deltaSeconds / BMERelativeTimeHour;
-        return [NSString stringWithFormat:NSLocalizedStringFromTable(@"HOURS", @"BMESnoozeRelativeDate", nil), hours];
+        return MKLocalizedFromTableWithFormat(BME_SNOOZE_RELATIVE_DATE_HOURS, BMESnoozeRelativeDateLocalizationTable, hours);
     } else if (deltaSeconds < 1.50f * BMERelativeTimeDay) {
-        return NSLocalizedStringFromTable(@"DAY", @"BMESnoozeRelativeDate", nil);
+        return MKLocalizedFromTable(BME_SNOOZE_RELATIVE_DATE_DAY, BMESnoozeRelativeDateLocalizationTable);
     } else if (deltaSeconds < BMERelativeTimeWeek) {
         CGFloat days = deltaSeconds / BMERelativeTimeDay;
-        return [NSString stringWithFormat:NSLocalizedStringFromTable(@"DAYS", @"BMESnoozeRelativeDate", nil), days];
+        return MKLocalizedFromTableWithFormat(BME_SNOOZE_RELATIVE_DATE_DAYS, BMESnoozeRelativeDateLocalizationTable, days);
     } else if (deltaSeconds < 1.50f * BMERelativeTimeWeek) {
-        return NSLocalizedStringFromTable(@"WEEK", @"BMESnoozeRelativeDate", nil);
+        return MKLocalizedFromTable(BME_SNOOZE_RELATIVE_DATE_WEEK, BMESnoozeRelativeDateLocalizationTable);
     } else if (deltaSeconds < BMERelativeTimeMonth) {
         CGFloat weeks = deltaSeconds / BMERelativeTimeWeek;
-        return [NSString stringWithFormat:NSLocalizedStringFromTable(@"WEEKS", @"BMESnoozeRelativeDate", nil), weeks];
+        return MKLocalizedFromTableWithFormat(BME_SNOOZE_RELATIVE_DATE_WEEKS, BMESnoozeRelativeDateLocalizationTable, weeks);
     } else if (deltaSeconds < 1.50f * BMERelativeTimeMonth) {
-        return NSLocalizedStringFromTable(@"MONTH", @"BMESnoozeRelativeDate", nil);
+        return MKLocalizedFromTable(BME_SNOOZE_RELATIVE_DATE_MONTH, BMESnoozeRelativeDateLocalizationTable);
     } else if (deltaSeconds < BMERelativeTimeYear) {
         CGFloat months = deltaSeconds / BMERelativeTimeMonth;
-        return [NSString stringWithFormat:NSLocalizedStringFromTable(@"MONTHS", @"BMESnoozeRelativeDate", nil), months];
+        return MKLocalizedFromTableWithFormat(BME_SNOOZE_RELATIVE_DATE_MONTHS, BMESnoozeRelativeDateLocalizationTable, months);
     } else if (deltaSeconds < 1.50f * BMERelativeTimeYear) {
-        return NSLocalizedStringFromTable(@"YEAR", @"BMESnoozeRelativeDate", nil);
+        return MKLocalizedFromTable(BME_SNOOZE_RELATIVE_DATE_YEAR, BMESnoozeRelativeDateLocalizationTable);
     } else {
         CGFloat years = deltaSeconds / BMERelativeTimeYear;
-        return [NSString stringWithFormat:NSLocalizedStringFromTable(@"YEARS", @"BMESnoozeRelativeDate", nil), years];
+        return MKLocalizedFromTableWithFormat(BME_SNOOZE_RELATIVE_DATE_YEARS, BMESnoozeRelativeDateLocalizationTable, years);
     }
 }
 

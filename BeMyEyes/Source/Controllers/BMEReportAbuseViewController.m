@@ -39,16 +39,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     if ([[BMEClient sharedClient].currentUser isHelper]) {
         NSUInteger peopleHelped = [GVUserDefaults standardUserDefaults].peopleHelped;
         [GVUserDefaults standardUserDefaults].peopleHelped = peopleHelped + 1;
     }
-    
-    [self writeReasons];
 }
 
 - (void)dealloc {
     _requestIdentifier = nil;
+}
+
+- (void)shouldLocalize {
+    [self writeReasons];
 }
 
 #pragma mark -
@@ -79,10 +83,10 @@
 }
 
 - (void)confirmReportAbuse {
-    NSString *title = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_TITLE", @"BMEReportAbuseViewController", @"Title in alert view shown when asking the user to confirm that he wants to report abuse");
-    NSString *message = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_MESSAGE", @"BMEReportAbuseViewController", @"Message in alert view shown when asking the user to confirm that he wants to report abuse");
-    NSString *confirm = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_CONFIRM", @"BMEReportAbuseViewController", @"Title of confirm in alert view shown when asking the user to confirm that he wants to report abuse");
-    NSString *cancel = NSLocalizedStringFromTable(@"ALERT_CONFIRM_REPORT_ABUSE_CANCEL", @"BMEReportAbuseViewController", @"Title of cancel button in alert view shown when asking the user to confirm that he wants to report abuse");
+    NSString *title = MKLocalizedFromTable(BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE, BMEReportAbuseLocalizationTable);
+    NSString *message = MKLocalizedFromTable(BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE, BMEReportAbuseLocalizationTable);
+    NSString *confirm = MKLocalizedFromTable(BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM, BMEReportAbuseLocalizationTable);
+    NSString *cancel = MKLocalizedFromTable(BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL, BMEReportAbuseLocalizationTable);
     
     PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
     [alertView setCancelButtonWithTitle:cancel block:nil];
@@ -95,7 +99,7 @@
 - (void)reportAbuse {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REPORTING_TITLE", @"BMEReportAbuseViewController", @"Title in overlay displayed when reporting abuse");
+    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE, BMEReportAbuseLocalizationTable);
     
     [[BMEClient sharedClient] reportAbuseForRequestWithId:self.requestIdentifier reason:[self selectedReason] completion:^(BOOL success, NSError *error) {
         [progressOverlayView hide:YES];
@@ -103,9 +107,9 @@
         if (!error) {
             [self dismiss];
         } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_REPORTING_FAILED_TITLE", @"BMEReportAbuseViewController", @"Title in alert view shown when reporting failed");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_REPORTING_FAILED_MESSAGE", @"BMEReportAbuseViewController", @"Message in alert view shown when reporting failed");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_REPORTING_FAILED_CANCEL", @"BMEReportAbuseViewController", @"Title of cancel button in alert view show when reporting failed");
+            NSString *title = MKLocalizedFromTable(BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE, BMEReportAbuseLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE, BMEReportAbuseLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_CANCEL, BMEReportAbuseLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
             
@@ -119,13 +123,13 @@
     
     BOOL isBlind = ([BMEClient sharedClient].currentUser.role == BMERoleBlind);
     if (isBlind) {
-        reason1 = NSLocalizedStringFromTable(@"REPORT_TEXT_1_BLIND", @"BMEReportAbuseViewController", @"Text 1 for reporting abuse as a blind person.");
-        reason2 = NSLocalizedStringFromTable(@"REPORT_TEXT_2_BLIND", @"BMEReportAbuseViewController", @"Text 2 for reporting abuse as a blind person.");
-        reason3 = NSLocalizedStringFromTable(@"REPORT_TEXT_3_BLIND", @"BMEReportAbuseViewController", @"Text 3 for reporting abuse as a blind person.");
+        reason1 = MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND, BMEReportAbuseLocalizationTable);
+        reason2 = MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND, BMEReportAbuseLocalizationTable);
+        reason3 = MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND, BMEReportAbuseLocalizationTable);
     } else {
-        reason1 = NSLocalizedStringFromTable(@"REPORT_TEXT_1_HELPER", @"BMEReportAbuseViewController", @"Text 1 for reporting abuse as a helper.");
-        reason2 = NSLocalizedStringFromTable(@"REPORT_TEXT_2_HELPER", @"BMEReportAbuseViewController", @"Text 2 for reporting abuse as a helper.");
-        reason3 = NSLocalizedStringFromTable(@"REPORT_TEXT_3_HELPER", @"BMEReportAbuseViewController", @"Text 3 for reporting abuse as a helper.");
+        reason1 = MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER, BMEReportAbuseLocalizationTable);
+        reason2 = MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER, BMEReportAbuseLocalizationTable);
+        reason3 = MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER, BMEReportAbuseLocalizationTable);
     }
     
     self.reason1Label.accessibilityElementsHidden = YES;
@@ -145,21 +149,21 @@
     NSString *label1, *label2, *label3;
     
     if ([self.reason1StateImageView isHighlighted]) {
-        label1 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_1_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 1 when the reason is selected");
+        label1 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED, BMEReportAbuseLocalizationTable);
     } else {
-        label1 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_1", @"BMEReportAbuseViewController", @"Accesibility label for reason 1 when the reason is not selected");
+        label1 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2, BMEReportAbuseLocalizationTable);
     }
     
     if ([self.reason2StateImageView isHighlighted]) {
-        label2 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_2_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 2 when the reason is selected");
+        label2 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED, BMEReportAbuseLocalizationTable);
     } else {
-        label2 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_2", @"BMEReportAbuseViewController", @"Accesibility label for reason 2 when the reason is not selected");
+        label2 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2, BMEReportAbuseLocalizationTable);
     }
     
     if ([self.reason3StateImageView isHighlighted]) {
-        label3 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_3_SELECTED", @"BMEReportAbuseViewController", @"Accesibility label for reason 3 when the reason is selected");
+        label3 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED, BMEReportAbuseLocalizationTable);
     } else {
-        label3 = NSLocalizedStringFromTable(@"REPORT_ACCESSIBILITY_LABEL_3", @"BMEReportAbuseViewController", @"Accesibility label for reason 3 when the reason is not selected");
+        label3 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3, BMEReportAbuseLocalizationTable);
     }
     
     self.reason1Button.accessibilityLabel = label1;

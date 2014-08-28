@@ -8,7 +8,7 @@
 
 #import "BMEBaseViewController.h"
 
-@interface BMEReportAbuseViewController : BMEBaseViewController
+@interface BMEReportAbuseViewController : BMEBaseViewController <MKLocalizable>
 
 @property (copy, nonatomic) NSString *requestIdentifier;
 
