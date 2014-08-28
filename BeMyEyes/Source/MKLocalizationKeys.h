@@ -26,6 +26,11 @@ static NSString * const BMECallLocalizationTable = @"BMECallLocalizationTable";
 static NSString * const BMEForgotPasswordLocalizationTable = @"BMEForgotPasswordLocalizationTable";
 
 /*!
+ * BMEFrontPageLocalizationTable strings file 
+ */
+static NSString * const BMEFrontPageLocalizationTable = @"BMEFrontPageLocalizationTable";
+
+/*!
  * BMEHelperMainLocalizationTable strings file 
  */
 static NSString * const BMEHelperMainLocalizationTable = @"BMEHelperMainLocalizationTable";
@@ -624,6 +629,66 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCC
 
  */
 static NSString * const BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE = @"BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE";
+
+/*!
+ * "Welcome to"
+
+ * All translations:
+
+ * @b en@: "Welcome to"
+
+ */
+static NSString * const BME_FRONT_PAGE_WELCOME_TO = @"BME_FRONT_PAGE_WELCOME_TO";
+
+/*!
+ * "Be My Eyes"
+
+ * All translations:
+
+ * @b en@: "Be My Eyes"
+
+ */
+static NSString * const BME_FRONT_PAGE_APP_NAME = @"BME_FRONT_PAGE_APP_NAME";
+
+/*!
+ * "What is your role?"
+
+ * All translations:
+
+ * @b en@: "What is your role?"
+
+ */
+static NSString * const BME_FRONT_PAGE_ASK_FOR_ROLE = @"BME_FRONT_PAGE_ASK_FOR_ROLE";
+
+/*!
+ * "I am sighted"
+
+ * All translations:
+
+ * @b en@: "I am sighted"
+
+ */
+static NSString * const BME_FRONT_PAGE_SIGHTED_ROLE = @"BME_FRONT_PAGE_SIGHTED_ROLE";
+
+/*!
+ * "I am blind"
+
+ * All translations:
+
+ * @b en@: "I am blind"
+
+ */
+static NSString * const BME_FRONT_PAGE_BLIND_ROLE = @"BME_FRONT_PAGE_BLIND_ROLE";
+
+/*!
+ * "Already registered? Log in here."
+
+ * All translations:
+
+ * @b en@: "Already registered? Log in here."
+
+ */
+static NSString * const BME_FRONT_PAGE_ALREADY_REGISTERED = @"BME_FRONT_PAGE_ALREADY_REGISTERED";
 
 /*!
  * "You are snoozing the next %@"

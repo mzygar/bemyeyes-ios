@@ -8,6 +8,6 @@
 
 #import "BMEBaseViewController.h"
 
-@interface BMEFrontPageViewController : BMEBaseViewController
+@interface BMEFrontPageViewController : BMEBaseViewController <MKLocalizable>
 
 @end

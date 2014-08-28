@@ -56,6 +56,7 @@
 		726D7B93191AA21A005690B7 /* BMEPointEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 726D7B92191AA21A005690B7 /* BMEPointEntry.m */; };
 		727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */; };
 		727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727E13EA194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings */; };
+		72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DDE19AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings */; };
 		7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */; };
 		7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569518CC874500E1A9EE /* BMERegisteredViewController.m */; };
 		7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */; };
@@ -177,6 +178,7 @@
 		727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEForgotPasswordViewController.m; sourceTree = "<group>"; };
 		727E13EB194B3189002EDA7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEForgotPasswordLocalizationTable.strings; sourceTree = "<group>"; };
 		72856DDD19AF4D490027AFF5 /* MKLocalizationKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLocalizationKeys.h; sourceTree = "<group>"; };
+		72856DDF19AF608B0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEFrontPageLocalizationTable.strings; sourceTree = "<group>"; };
 		72858FA918DF81CE0002D6E1 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
 		7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BMEDeviceToken.h"; sourceTree = "<group>"; };
 		7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BMEDeviceToken.m"; sourceTree = "<group>"; };
@@ -522,21 +524,22 @@
 		7262301918BA3B49006F388C /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
-				72E65F9C18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings */,
-				72E65F9F18BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings */,
-				72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */,
-				729656A618CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings */,
-				72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */,
 				72DA826F18D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings */,
+				72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */,
 				72B1493818DF686600E9A8A9 /* BMECallLocalizationTable.strings */,
-				72A7676D1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings */,
-				72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */,
-				72DA827518D4716A001F3312 /* Localizable.strings */,
-				720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */,
 				727E13EA194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings */,
+				72856DDE19AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings */,
+				72A7676D1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings */,
 				72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */,
+				72E65F9F18BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings */,
 				72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */,
+				720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */,
+				729656A618CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings */,
+				72E65F9C18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings */,
+				72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */,
+				72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */,
 				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
+				72DA827518D4716A001F3312 /* Localizable.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
 				727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */,
+				72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */,
 				725B0EF81959875500BB4AE0 /* call.aiff in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
 				720D4D13194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings in Resources */,
@@ -810,6 +814,14 @@
 				727E13EB194B3189002EDA7E /* en */,
 			);
 			name = BMEForgotPasswordLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DDE19AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DDF19AF608B0027AFF5 /* en */,
+			);
+			name = BMEFrontPageLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
 		729656A618CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings */ = {
