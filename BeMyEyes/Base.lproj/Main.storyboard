@@ -1002,6 +1002,11 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Thf-M1-wIg"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="fsI-0Y-m1f" id="x9y-dG-QaB"/>
+                        <outlet property="headlineLabel" destination="EnW-DA-GD2" id="srE-M4-daY"/>
+                        <outlet property="loginButton" destination="0EV-zp-tEr" id="9Ku-qE-jH3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho5-nl-OHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2550,6 +2555,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
     <inferredMetricsTieBreakers>
         <segue reference="46J-Mt-BiQ"/>
         <segue reference="h1h-es-Gdp"/>
-        <segue reference="tPL-wK-r0M"/>
+        <segue reference="6SH-Yu-aNS"/>
     </inferredMetricsTieBreakers>
 </document>

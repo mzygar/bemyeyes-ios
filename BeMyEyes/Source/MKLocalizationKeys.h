@@ -66,6 +66,11 @@ static NSString * const BMEMainLocalizationTable = @"BMEMainLocalizationTable";
 static NSString * const BMEPrivacyPolicyLocalizationTable = @"BMEPrivacyPolicyLocalizationTable";
 
 /*!
+ * BMERegisteredLocalizationTable strings file 
+ */
+static NSString * const BMERegisteredLocalizationTable = @"BMERegisteredLocalizationTable";
+
+/*!
  * BMEReportAbuseLocalizationTable strings file 
  */
 static NSString * const BMEReportAbuseLocalizationTable = @"BMEReportAbuseLocalizationTable";
@@ -1384,6 +1389,36 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE = @"BME_MAIN_
 
  */
 static NSString * const BME_PRIVACY_POLICY_BACK = @"BME_PRIVACY_POLICY_BACK";
+
+/*!
+ * "Yes!"
+
+ * All translations:
+
+ * @b en@: "Yes!"
+
+ */
+static NSString * const BME_REGISTERED_HEADLINE = @"BME_REGISTERED_HEADLINE";
+
+/*!
+ * "You are now registered."
+
+ * All translations:
+
+ * @b en@: "You are now registered."
+
+ */
+static NSString * const BME_REGISTERED_DESCRIPTION = @"BME_REGISTERED_DESCRIPTION";
+
+/*!
+ * "Log in"
+
+ * All translations:
+
+ * @b en@: "Log in"
+
+ */
+static NSString * const BME_REGISTERED_LOG_IN = @"BME_REGISTERED_LOG_IN";
 
 /*!
  * "The person did not want to help."
