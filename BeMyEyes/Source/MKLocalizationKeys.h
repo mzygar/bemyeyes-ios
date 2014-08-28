@@ -836,6 +836,16 @@ static NSString * const BME_HELPER_INTRO_SHORT_DESCRIPTION = @"BME_HELPER_INTRO_
 static NSString * const BME_HELPER_INTRO_LONG_DESCRIPTION = @"BME_HELPER_INTRO_LONG_DESCRIPTION";
 
 /*!
+ * "Snooze"
+
+ * All translations:
+
+ * @b en@: "Snooze"
+
+ */
+static NSString * const BME_HELPER_MAIN_SNOOZE_HEADLINE = @"BME_HELPER_MAIN_SNOOZE_HEADLINE";
+
+/*!
  * "You are snoozing the next %@"
 
  * All translations:
@@ -844,6 +854,36 @@ static NSString * const BME_HELPER_INTRO_LONG_DESCRIPTION = @"BME_HELPER_INTRO_L
 
  */
 static NSString * const BME_HELPER_MAIN_SNOOZE_STATUS_TEXT = @"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT";
+
+/*!
+ * "The more you help, the more points you get"
+
+ * All translations:
+
+ * @b en@: "The more you help, the more points you get"
+
+ */
+static NSString * const BME_HELPER_MAIN_POINT_DESCRIPTION = @"BME_HELPER_MAIN_POINT_DESCRIPTION";
+
+/*!
+ * "Your score is"
+
+ * All translations:
+
+ * @b en@: "Your score is"
+
+ */
+static NSString * const BME_HELPER_MAIN_POINT_TITLE = @"BME_HELPER_MAIN_POINT_TITLE";
+
+/*!
+ * "Could not load point"
+
+ * All translations:
+
+ * @b en@: "Could not load point"
+
+ */
+static NSString * const BME_HELPER_MAIN_LOADING_POINT_FAILED = @"BME_HELPER_MAIN_LOADING_POINT_FAILED";
 
 /*!
  * "You are currently active"

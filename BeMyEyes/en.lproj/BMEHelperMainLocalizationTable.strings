@@ -1,11 +1,17 @@
-/* BMEHelperMainViewController.strings
-  BeMyEyes
-
-  Created by Simon Støvring on 19/04/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
+/* Headline of snooze */
+"BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Snooze";
 
 /* Format for snooze status text. %@ is replaced with the snooze amount. */
 "BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "You are snoozing the next %@";
+
+/* Point description */
+"BME_HELPER_MAIN_POINT_DESCRIPTION" = "The more you help, the more points you get";
+
+/* Point title */
+"BME_HELPER_MAIN_POINT_TITLE" = "Your score is";
+
+/* Message shown when the point could not be loaded */
+"BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Could not load point";
 
 /* Snooze status text when not snoozing */
 "BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "You are currently active";

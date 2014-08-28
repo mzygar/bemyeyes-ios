@@ -1334,6 +1334,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="snoozeThumbCenterMarginXConstraint" destination="ml3-24-oPe" id="lZJ-bL-I8i"/>
                         <outlet property="snoozeThumbImageView" destination="5s3-1J-XzL" id="5BX-Rk-dMt"/>
                         <outlet property="snoozeThumbWidthConstraint" destination="CNE-RF-0Cg" id="rMd-ud-lmR"/>
+                        <outlet property="snoozeTitleLabel" destination="aFH-UM-7hl" id="Upd-wO-Dhc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>

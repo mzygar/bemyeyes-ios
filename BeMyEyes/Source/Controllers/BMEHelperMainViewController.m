@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
 @property (weak, nonatomic) IBOutlet UILabel *failedLoadingPointLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *snoozeTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *snoozeStatusLabel;
 @property (weak, nonatomic) IBOutlet UIView *snoozeSliderView;
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeStepImageView0;
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeStepImageView25;
@@ -45,7 +47,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeStepImageView75;
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeStepImageView100;
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeThumbImageView;
-@property (weak, nonatomic) IBOutlet UILabel *snoozeStatusLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitleLabelLeadingMarginConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitleLabelWidthConstraint;
@@ -84,6 +85,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     [TheAppDelegate registerForRemoteNotifications];
  
     self.pointLabel.colors = @{ @(0.0f) : [UIColor colorWithRed:220.0f/255.0f green:38.0f/255.0f blue:38.0f/255.0f alpha:1.0f],
@@ -106,6 +109,13 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     self.pointEntries = nil;
     self.greetingFormat = nil;
+}
+
+- (void)shouldLocalize {
+    self.snoozeTitleLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_SNOOZE_HEADLINE, BMEHelperMainLocalizationTable);
+    self.pointDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_DESCRIPTION, BMEHelperMainLocalizationTable);
+    self.pointTitleLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_TITLE, BMEHelperMainLocalizationTable);
+    self.failedLoadingPointLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_LOADING_POINT_FAILED, BMEHelperMainLocalizationTable);
 }
 
 #pragma mark -
