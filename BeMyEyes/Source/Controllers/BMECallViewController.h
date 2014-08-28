@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, BMECallMode) {
     BMECallModeAnswer,
 };
 
-@interface BMECallViewController : BMEBaseViewController
+@interface BMECallViewController : BMEBaseViewController <MKLocalizable>
 
 @property (assign, nonatomic) BMECallMode callMode;
 @property (copy, nonatomic) NSString *shortId;

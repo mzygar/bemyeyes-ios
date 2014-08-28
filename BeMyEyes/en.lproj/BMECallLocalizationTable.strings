@@ -1,8 +1,5 @@
-/* BMECallViewController.strings
-  BeMyEyes
-
-  Created by Simon Støvring on 23/03/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
+/* Title of disconnect button */
+"BME_CALL_DISCONNECT" = "Disconnect";
 
 /* Title of cancel button in alert view shown when failed answering request because the request has already been answered */
 "BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL" = "OK";
@@ -36,6 +33,9 @@
 
 /* Title of cancel button in alert view shown when failed answering request for an unknown reason */
 "BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL" = "OK";
+
+/* Status when asking the user to wait */
+"BME_CALL_STATUS_PLEASE_WAIT" = "Please wait...";
 
 /* Status when answering request */
 "BME_CALL_STATUS_ANSWERING_REQUEST" = "Answering request...";

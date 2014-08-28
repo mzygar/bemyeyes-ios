@@ -361,6 +361,16 @@ static NSString * const BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE = @"B
 static NSString * const BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE = @"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE";
 
 /*!
+ * "Disconnect"
+
+ * All translations:
+
+ * @b en@: "Disconnect"
+
+ */
+static NSString * const BME_CALL_DISCONNECT = @"BME_CALL_DISCONNECT";
+
+/*!
  * "OK"
 
  * All translations:
@@ -469,6 +479,16 @@ static NSString * const BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE = @"BME_CAL
 
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL = @"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL";
+
+/*!
+ * "Please wait..."
+
+ * All translations:
+
+ * @b en@: "Please wait..."
+
+ */
+static NSString * const BME_CALL_STATUS_PLEASE_WAIT = @"BME_CALL_STATUS_PLEASE_WAIT";
 
 /*!
  * "Answering request..."

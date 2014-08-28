@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIButton *disconnectButton;
 
 @property (strong, nonatomic) NSString *requestIdentifier;
 @property (strong, nonatomic) NSString *sessionId;
@@ -44,6 +45,14 @@
 
 #pragma mark -
 #pragma mark Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
+    
+    self.statusLabel.text = MKLocalizedFromTable(BME_CALL_STATUS_PLEASE_WAIT, BMECallLocalizationTable);
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -85,6 +94,10 @@
     _publisher = nil;
     _videoView = nil;
     _callAudioPlayer = nil;
+}
+
+- (void)shouldLocalize {
+    [self.disconnectButton setTitle:MKLocalizedFromTable(BME_CALL_DISCONNECT, BMECallLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -
