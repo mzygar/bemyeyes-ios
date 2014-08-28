@@ -24,7 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     self.connectToCommunityButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+}
+
+- (void)shouldLocalize {
+    [self.connectToCommunityButton setTitle:MKLocalizedFromTable(BME_BLIND_MAIN_CONNECT_TO_COMMUNITY, BMEBlindMainLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -

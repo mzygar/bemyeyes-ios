@@ -311,6 +311,16 @@ static NSString * const BME_BLIND_INTRO_CONTINUE = @"BME_BLIND_INTRO_CONTINUE";
 static NSString * const BME_BLIND_INTRO_DESCRIPTION = @"BME_BLIND_INTRO_DESCRIPTION";
 
 /*!
+ * "Connect to community"
+
+ * All translations:
+
+ * @b en@: "Connect to community"
+
+ */
+static NSString * const BME_BLIND_MAIN_CONNECT_TO_COMMUNITY = @"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY";
+
+/*!
  * "OK"
 
  * All translations:
