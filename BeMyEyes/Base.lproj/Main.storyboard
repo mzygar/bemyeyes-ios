@@ -2046,14 +2046,16 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Secret Settings" id="UIb-xq-qBp">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="ySf-cP-gBc">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="ySf-cP-gBc">
                             <connections>
                                 <action selector="dismissButtonPressed:" destination="GRa-DQ-eex" id="mxU-Rf-E7Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="apiDescriptionLabel" destination="CTr-8B-1Vo" id="bfN-zs-toL"/>
                         <outlet property="apiSegmentedControl" destination="Xk5-RI-0BI" id="c5I-HG-9iy"/>
+                        <outlet property="apiTitleLabel" destination="U9n-IP-ODt" id="uDG-ir-f25"/>
                         <outlet property="contentTopMarginConstraint" destination="bkh-6z-buf" id="n7b-xK-9xT"/>
                     </connections>
                 </viewController>

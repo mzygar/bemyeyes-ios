@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BMESecretSettingsViewController : UIViewController
+@interface BMESecretSettingsViewController : UIViewController <MKLocalizable>
 
 @end

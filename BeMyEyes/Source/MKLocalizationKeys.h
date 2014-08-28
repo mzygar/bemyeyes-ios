@@ -66,6 +66,11 @@ static NSString * const BMEMainLocalizationTable = @"BMEMainLocalizationTable";
 static NSString * const BMEReportAbuseLocalizationTable = @"BMEReportAbuseLocalizationTable";
 
 /*!
+ * BMESecretSettingsLocalizationTable strings file 
+ */
+static NSString * const BMESecretSettingsLocalizationTable = @"BMESecretSettingsLocalizationTable";
+
+/*!
  * BMESettingsLocalizationTable strings file 
  */
 static NSString * const BMESettingsLocalizationTable = @"BMESettingsLocalizationTable";
@@ -1519,6 +1524,56 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED = @"BME_
 
  */
 static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3 = @"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3";
+
+/*!
+ * "API"
+
+ * All translations:
+
+ * @b en@: "API"
+
+ */
+static NSString * const BME_SECRET_SETTINGS_API_TITLE = @"BME_SECRET_SETTINGS_API_TITLE";
+
+/*!
+ * "Changing the API requires the app to be restarted."
+
+ * All translations:
+
+ * @b en@: "Changing the API requires the app to be restarted."
+
+ */
+static NSString * const BME_SECRET_SETTINGS_API_DESCRIPTION = @"BME_SECRET_SETTINGS_API_DESCRIPTION";
+
+/*!
+ * "Development"
+
+ * All translations:
+
+ * @b en@: "Development"
+
+ */
+static NSString * const BME_SECRET_SETTINGS_API_DEVELOPMENT = @"BME_SECRET_SETTINGS_API_DEVELOPMENT";
+
+/*!
+ * "Staging"
+
+ * All translations:
+
+ * @b en@: "Staging"
+
+ */
+static NSString * const BME_SECRET_SETTINGS_API_STAGING = @"BME_SECRET_SETTINGS_API_STAGING";
+
+/*!
+ * "Public"
+
+ * All translations:
+
+ * @b en@: "Public"
+
+ */
+static NSString * const BME_SECRET_SETTINGS_API_PUBLIC = @"BME_SECRET_SETTINGS_API_PUBLIC";
 
 /*!
  * "OK"
