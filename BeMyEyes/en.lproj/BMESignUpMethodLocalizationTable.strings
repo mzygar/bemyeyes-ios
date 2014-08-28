@@ -1,3 +1,33 @@
+/* Title of back button */
+"BME_SIGN_UP_METHOD_BACK" = "Back";
+
+/* Headline */
+"BME_SIGN_UP_METHOD_HEADLINE" = "Become a part of the network";
+
+/* Tiel of Facebook sign up button */
+"BME_SIGN_UP_METHOD_FACEBOOK" = "Sign up via Facebook";
+
+/* Text beneath Facebook button informing blind users that their first name will be presnted to helpers */
+"BME_SIGN_UP_METHOD_FACEBOOK_FOOTER" = "Your first name will be public and presented to helpers.";
+
+/* Top part of button for signing up via e-mail */
+"BME_SIGN_UP_METHOD_EMAIL_TOP" = "You can also";
+
+/* Bottom part of button for signing up via e-mail */
+"BME_SIGN_UP_METHOD_EMAIL_BOTTOM" = "register with your e-mail";
+
+/* Top part of button for viewing terms and conditions */
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "By continuing you accept the";
+
+/* Bottom part of button for viewing terms and conditions */
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Terms and Agreements";
+
+/* Top part of button for viewing privacy policy */
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "as well as the";
+
+/* Bottom part of button for viewing privacy policy */
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "Privacy Policy";
+
 /* Title of cancel button in alert view shown when e-mail is already registered. */
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL" = "OK";
 

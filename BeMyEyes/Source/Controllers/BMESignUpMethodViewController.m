@@ -21,6 +21,10 @@
 #define BMERegisteredSegue @"Registered"
 
 @interface BMESignUpMethodViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UILabel *facebookFooterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signUpTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signUpBottomLabel;
 @property (weak, nonatomic) IBOutlet UILabel *termsTopLabel;
@@ -30,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *emailSignUpButton;
 @property (weak, nonatomic) IBOutlet UIButton *termsButton;
 @property (weak, nonatomic) IBOutlet UIButton *privacyButton;
-@property (weak, nonatomic) IBOutlet UILabel *facebookFooterLabel;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterTopMarginConstraint;
 @end
@@ -58,6 +62,22 @@
 }
 
 - (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_METHOD_BACK, BMESignUpMethodLocalizationTable) forState:UIControlStateNormal];
+    
+    self.headlineLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_HEADLINE, BMESignUpMethodLocalizationTable);
+    
+    [self.facebookButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK, BMESignUpMethodLocalizationTable) forState:UIControlStateNormal];
+    self.facebookFooterLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK_FOOTER, BMESignUpMethodLocalizationTable);
+    
+    self.signUpTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_TOP, BMESignUpMethodLocalizationTable);
+    self.signUpBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_BOTTOM, BMESignUpMethodLocalizationTable);
+    
+    self.termsTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP, BMESignUpMethodLocalizationTable);
+    self.termsBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM, BMESignUpMethodLocalizationTable);
+    
+    self.privacyTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP, BMESignUpMethodLocalizationTable);
+    self.privacyBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM, BMESignUpMethodLocalizationTable);
+    
     self.emailSignUpButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
     self.emailSignUpButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
     

@@ -1671,6 +1671,106 @@ static NSString * const BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE = @"BME_SIGN_UP_OVE
 static NSString * const BME_SIGN_UP_OVERLAY_REGISTERING_TITLE = @"BME_SIGN_UP_OVERLAY_REGISTERING_TITLE";
 
 /*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_BACK = @"BME_SIGN_UP_METHOD_BACK";
+
+/*!
+ * "Become a part of the network"
+
+ * All translations:
+
+ * @b en@: "Become a part of the network"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_HEADLINE = @"BME_SIGN_UP_METHOD_HEADLINE";
+
+/*!
+ * "Sign up via Facebook"
+
+ * All translations:
+
+ * @b en@: "Sign up via Facebook"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_FACEBOOK = @"BME_SIGN_UP_METHOD_FACEBOOK";
+
+/*!
+ * "Your first name will be public and presented to helpers."
+
+ * All translations:
+
+ * @b en@: "Your first name will be public and presented to helpers."
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_FACEBOOK_FOOTER = @"BME_SIGN_UP_METHOD_FACEBOOK_FOOTER";
+
+/*!
+ * "You can also"
+
+ * All translations:
+
+ * @b en@: "You can also"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_EMAIL_TOP = @"BME_SIGN_UP_METHOD_EMAIL_TOP";
+
+/*!
+ * "register with your e-mail"
+
+ * All translations:
+
+ * @b en@: "register with your e-mail"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_EMAIL_BOTTOM = @"BME_SIGN_UP_METHOD_EMAIL_BOTTOM";
+
+/*!
+ * "By continuing you accept the"
+
+ * All translations:
+
+ * @b en@: "By continuing you accept the"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP = @"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP";
+
+/*!
+ * "Terms and Agreements"
+
+ * All translations:
+
+ * @b en@: "Terms and Agreements"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM = @"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM";
+
+/*!
+ * "as well as the"
+
+ * All translations:
+
+ * @b en@: "as well as the"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP = @"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP";
+
+/*!
+ * "Privacy Policy"
+
+ * All translations:
+
+ * @b en@: "Privacy Policy"
+
+ */
+static NSString * const BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM = @"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM";
+
+/*!
  * "OK"
 
  * All translations:

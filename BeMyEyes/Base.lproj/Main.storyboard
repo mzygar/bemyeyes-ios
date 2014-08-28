@@ -910,10 +910,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     </view>
                     <navigationItem key="navigationItem" id="hKS-qr-nIO"/>
                     <connections>
+                        <outlet property="backButton" destination="Hdm-mf-RpA" id="Scy-WQ-eDh"/>
                         <outlet property="emailSignUpButton" destination="gLG-Sj-ggw" id="1Um-Jp-jKA"/>
+                        <outlet property="facebookButton" destination="fw2-cM-Rvi" id="Q23-4J-A3F"/>
                         <outlet property="facebookFooterHeightConstraint" destination="gjA-8l-8Pn" id="vUP-yA-52Z"/>
                         <outlet property="facebookFooterLabel" destination="hPR-12-sgI" id="10h-Pd-MPg"/>
                         <outlet property="facebookFooterTopMarginConstraint" destination="6vC-fK-QBS" id="zuM-zd-hWq"/>
+                        <outlet property="headlineLabel" destination="taG-tn-K8A" id="ZxQ-qX-T1K"/>
                         <outlet property="privacyBottomLabel" destination="cud-rC-Tmf" id="r3K-3l-PKy"/>
                         <outlet property="privacyButton" destination="W9k-mY-n6b" id="NF1-Gb-knW"/>
                         <outlet property="privacyTopLabel" destination="XFF-B2-BZA" id="H6a-EG-OAp"/>
