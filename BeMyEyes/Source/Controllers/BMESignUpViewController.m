@@ -19,11 +19,14 @@
 
 @interface BMESignUpViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *nameFooterLabel;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterTopMarginConstraint;
 
@@ -48,6 +51,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     if (self.role == BMERoleHelper) {
         self.nameFooterLabel.text = nil;
         self.nameFooterLabel.hidden = YES;
@@ -60,6 +65,19 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     self.activeTextField = nil;
+}
+
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_BACK, BMESignUpLocalizationTable) forState:UIControlStateNormal];
+    
+    self.firstNameTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_FIRST_NAME_PLACEHOLDER, BMESignUpLocalizationTable);
+    self.lastNameTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_LAST_NAME_PLACEHOLDER, BMESignUpLocalizationTable);
+    self.nameFooterLabel.text = MKLocalizedFromTable(BME_SIGN_UP_NAME_FOOTER, BMESignUpLocalizationTable);
+    
+    self.emailTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_EMAIL_PLACEHOLDER, BMESignUpLocalizationTable);
+    self.passwordTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_PASSWORD_PLACEHOLDER, BMESignUpLocalizationTable);
+    
+    [self.registerButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_REGISTER, BMESignUpLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -

@@ -1,3 +1,24 @@
+/* Title of back button */
+"BME_SIGN_UP_BACK" = "Back";
+
+/* Placeholder in first name field */
+"BME_SIGN_UP_FIRST_NAME_PLACEHOLDER" = "First name";
+
+/* Placeholder in last name field */
+"BME_SIGN_UP_LAST_NAME_PLACEHOLDER" = "Surname";
+
+/* Footer beneath name fields telling blind people that their first name will be presented to helpers */
+"BME_SIGN_UP_NAME_FOOTER" = "Your first name will be public and presented to helpers.";
+
+/* Placeholder in e-mail field */
+"BME_SIGN_UP_EMAIL_PLACEHOLDER" = "E-mail";
+
+/* Placeholder in password field */
+"BME_SIGN_UP_PASSWORD_PLACEHOLDER" = "Password";
+
+/* Title of register button */
+"BME_SIGN_UP_REGISTER" = "Register";
+
 /* Title of cancel button in alert view shown when e-mail is already registered. */
 "BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_CANCEL" = "OK";
 

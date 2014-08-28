@@ -1471,6 +1471,76 @@ static NSString * const BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE = @"BME_SETTINGS_
 static NSString * const BME_SETTINGS_VERSION_TITLE = @"BME_SETTINGS_VERSION_TITLE";
 
 /*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_SIGN_UP_BACK = @"BME_SIGN_UP_BACK";
+
+/*!
+ * "First name"
+
+ * All translations:
+
+ * @b en@: "First name"
+
+ */
+static NSString * const BME_SIGN_UP_FIRST_NAME_PLACEHOLDER = @"BME_SIGN_UP_FIRST_NAME_PLACEHOLDER";
+
+/*!
+ * "Surname"
+
+ * All translations:
+
+ * @b en@: "Surname"
+
+ */
+static NSString * const BME_SIGN_UP_LAST_NAME_PLACEHOLDER = @"BME_SIGN_UP_LAST_NAME_PLACEHOLDER";
+
+/*!
+ * "Your first name will be public and presented to helpers."
+
+ * All translations:
+
+ * @b en@: "Your first name will be public and presented to helpers."
+
+ */
+static NSString * const BME_SIGN_UP_NAME_FOOTER = @"BME_SIGN_UP_NAME_FOOTER";
+
+/*!
+ * "E-mail"
+
+ * All translations:
+
+ * @b en@: "E-mail"
+
+ */
+static NSString * const BME_SIGN_UP_EMAIL_PLACEHOLDER = @"BME_SIGN_UP_EMAIL_PLACEHOLDER";
+
+/*!
+ * "Password"
+
+ * All translations:
+
+ * @b en@: "Password"
+
+ */
+static NSString * const BME_SIGN_UP_PASSWORD_PLACEHOLDER = @"BME_SIGN_UP_PASSWORD_PLACEHOLDER";
+
+/*!
+ * "Register"
+
+ * All translations:
+
+ * @b en@: "Register"
+
+ */
+static NSString * const BME_SIGN_UP_REGISTER = @"BME_SIGN_UP_REGISTER";
+
+/*!
  * "OK"
 
  * All translations:

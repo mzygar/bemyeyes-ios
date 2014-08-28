@@ -1533,6 +1533,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     </view>
                     <navigationItem key="navigationItem" id="a1e-JV-YXZ"/>
                     <connections>
+                        <outlet property="backButton" destination="jS9-FE-y1n" id="I6c-ZE-14a"/>
                         <outlet property="emailTextField" destination="opU-Be-2Hu" id="NO5-e6-koH"/>
                         <outlet property="firstNameTextField" destination="i9n-6l-1vq" id="6cB-xB-iUX"/>
                         <outlet property="lastNameTextField" destination="2KI-e2-g2G" id="wSw-om-tCj"/>
@@ -1540,6 +1541,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="nameFooterLabel" destination="2LO-68-Sve" id="UTj-Lg-gkh"/>
                         <outlet property="nameFooterTopMarginConstraint" destination="Nlt-hE-g15" id="FYa-9o-NN0"/>
                         <outlet property="passwordTextField" destination="3Vw-hZ-d1W" id="ryh-yc-g8i"/>
+                        <outlet property="registerButton" destination="Y9X-vI-vZr" id="gd6-1O-fEx"/>
                         <outlet property="scrollView" destination="guG-wR-qIH" id="tQp-VZ-U80"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="jzc-Nc-kCA"/>
                     </connections>
@@ -2535,7 +2537,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="46J-Mt-BiQ"/>
-        <segue reference="Ce4-tx-KmL"/>
+        <segue reference="jzc-Nc-kCA"/>
         <segue reference="tPL-wK-r0M"/>
     </inferredMetricsTieBreakers>
 </document>
