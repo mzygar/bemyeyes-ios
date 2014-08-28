@@ -62,6 +62,7 @@
 		72856DE919AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DE719AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings */; };
 		72856DEC19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DEA19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings */; };
 		72856DEF19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DED19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings */; };
+		72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */; };
 		7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */; };
 		7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569518CC874500E1A9EE /* BMERegisteredViewController.m */; };
 		7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */; };
@@ -191,6 +192,7 @@
 		72856DE819AF66920027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEHelperIntroLocalizationTable.strings; sourceTree = "<group>"; };
 		72856DEB19AF66A20027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEBlindIntroLocalizationTable.strings; sourceTree = "<group>"; };
 		72856DEE19AF71CB0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESecretSettingsLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DF119AF75420027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMETermsLocalizationTable.strings; sourceTree = "<group>"; };
 		72858FA918DF81CE0002D6E1 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
 		7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BMEDeviceToken.h"; sourceTree = "<group>"; };
 		7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BMEDeviceToken.m"; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				72E65F9C18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings */,
 				72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */,
 				72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */,
+				72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */,
 				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 			);
@@ -679,6 +682,7 @@
 				72856DEF19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings in Resources */,
 				727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */,
 				72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */,
+				72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */,
 				725B0EF81959875500BB4AE0 /* call.aiff in Resources */,
 				72856DE919AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
@@ -870,6 +874,14 @@
 				72856DEE19AF71CB0027AFF5 /* en */,
 			);
 			name = BMESecretSettingsLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DF119AF75420027AFF5 /* en */,
+			);
+			name = BMETermsLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
 		729656A618CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings */ = {

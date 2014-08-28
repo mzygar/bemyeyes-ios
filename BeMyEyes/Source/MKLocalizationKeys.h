@@ -91,6 +91,11 @@ static NSString * const BMESignUpMethodLocalizationTable = @"BMESignUpMethodLoca
 static NSString * const BMESnoozeRelativeDateLocalizationTable = @"BMESnoozeRelativeDateLocalizationTable";
 
 /*!
+ * BMETermsLocalizationTable strings file 
+ */
+static NSString * const BMETermsLocalizationTable = @"BMETermsLocalizationTable";
+
+/*!
  * BMEVideoLocalizationTable strings file 
  */
 static NSString * const BMEVideoLocalizationTable = @"BMEVideoLocalizationTable";
@@ -2334,6 +2339,16 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_YEAR = @"BME_SNOOZE_RELATIVE_DA
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_YEARS = @"BME_SNOOZE_RELATIVE_DATE_YEARS";
+
+/*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_TERMS_BACK = @"BME_TERMS_BACK";
 
 /*!
  * "OK"

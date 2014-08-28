@@ -10,6 +10,10 @@
 
 #define BMETermsUrl @"http://bemyeyes.org/terms"
 
+@interface BMETermsViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@end
+
 @implementation BMETermsViewController
 
 #pragma mark -
@@ -18,7 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     [self loadURL:[NSURL URLWithString:BMETermsUrl]];
+}
+
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_TERMS_BACK, BMETermsLocalizationTable) forState:UIControlStateNormal];
 }
 
 @end
