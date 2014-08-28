@@ -61,6 +61,11 @@ static NSString * const BMELoginLocalizationTable = @"BMELoginLocalizationTable"
 static NSString * const BMEMainLocalizationTable = @"BMEMainLocalizationTable";
 
 /*!
+ * BMEPrivacyPolicyLocalizationTable strings file 
+ */
+static NSString * const BMEPrivacyPolicyLocalizationTable = @"BMEPrivacyPolicyLocalizationTable";
+
+/*!
  * BMEReportAbuseLocalizationTable strings file 
  */
 static NSString * const BMEReportAbuseLocalizationTable = @"BMEReportAbuseLocalizationTable";
@@ -1329,6 +1334,16 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE = @"BME_MAI
 
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE = @"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE";
+
+/*!
+ * "Back"
+
+ * All translations:
+
+ * @b en@: "Back"
+
+ */
+static NSString * const BME_PRIVACY_POLICY_BACK = @"BME_PRIVACY_POLICY_BACK";
 
 /*!
  * "The person did not want to help."

@@ -2498,6 +2498,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <navigationItem key="navigationItem" id="kzy-bw-stA"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="UTp-UZ-gMa" id="a7y-FG-a7y"/>
+                        <outlet property="backButton" destination="hrX-yr-C2w" id="zC1-Gj-HH5"/>
                         <outlet property="navigationBarHeightConstraint" destination="bhn-j7-07K" id="Sr2-9F-GEA"/>
                         <outlet property="webView" destination="JY6-J9-aE6" id="1fS-AK-yHg"/>
                     </connections>
