@@ -1,8 +1,5 @@
-/* BMELanguagesViewController.strings
-  BeMyEyes
-
-  Created by Simon Støvring on 07/07/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
+/* Title */
+"BME_LANGUAGES_TITLE" = "Your Languages";
 
 /* Title of cancel button in alert view shown when the languages could not be saved */
 "BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "OK";

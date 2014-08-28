@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BMELanguagesViewController : UITableViewController
+@interface BMELanguagesViewController : UITableViewController <MKLocalizable>
 
 @end

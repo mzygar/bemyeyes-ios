@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     self.languageCodes = [NSLocale preferredLanguages];
     self.knowLanguageCodes = [NSMutableArray arrayWithArray:[BMEClient sharedClient].currentUser.languages];
 }
@@ -51,6 +53,10 @@
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait;
+}
+
+- (void)shouldLocalize {
+    self.title = MKLocalizedFromTable(BME_LANGUAGES_TITLE, BMELanguagesLocalizationTable);
 }
 
 #pragma mark -

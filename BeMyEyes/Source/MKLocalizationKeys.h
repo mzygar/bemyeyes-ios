@@ -981,6 +981,16 @@ static NSString * const BME_HELPER_MAIN_GREETING_4 = @"BME_HELPER_MAIN_GREETING_
 static NSString * const BME_HELPER_MAIN_GREETING_5 = @"BME_HELPER_MAIN_GREETING_5";
 
 /*!
+ * "Your Languages"
+
+ * All translations:
+
+ * @b en@: "Your Languages"
+
+ */
+static NSString * const BME_LANGUAGES_TITLE = @"BME_LANGUAGES_TITLE";
+
+/*!
  * "OK"
 
  * All translations:
