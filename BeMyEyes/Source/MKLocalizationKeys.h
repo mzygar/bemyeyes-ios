@@ -1451,6 +1451,46 @@ static NSString * const BME_REGISTERED_DESCRIPTION = @"BME_REGISTERED_DESCRIPTIO
 static NSString * const BME_REGISTERED_LOG_IN = @"BME_REGISTERED_LOG_IN";
 
 /*!
+ * "Report abuse"
+
+ * All translations:
+
+ * @b en@: "Report abuse"
+
+ */
+static NSString * const BME_REPORT_ABUSE_HEADLINE = @"BME_REPORT_ABUSE_HEADLINE";
+
+/*!
+ * "Choose a reason"
+
+ * All translations:
+
+ * @b en@: "Choose a reason"
+
+ */
+static NSString * const BME_REPORT_ABUSE_CHOOSE_REASON = @"BME_REPORT_ABUSE_CHOOSE_REASON";
+
+/*!
+ * "Report abuse"
+
+ * All translations:
+
+ * @b en@: "Report abuse"
+
+ */
+static NSString * const BME_REPORT_ABUSE_REPORT = @"BME_REPORT_ABUSE_REPORT";
+
+/*!
+ * "Skip"
+
+ * All translations:
+
+ * @b en@: "Skip"
+
+ */
+static NSString * const BME_REPORT_ABUSE_SKIP = @"BME_REPORT_ABUSE_SKIP";
+
+/*!
  * "The person did not want to help."
 
  * All translations:

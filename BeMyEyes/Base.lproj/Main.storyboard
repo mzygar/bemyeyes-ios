@@ -2351,6 +2351,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     </view>
                     <navigationItem key="navigationItem" id="VBk-3j-fT6"/>
                     <connections>
+                        <outlet property="chooseReasonLabel" destination="j0k-QX-J5o" id="fWg-S8-ZJ1"/>
+                        <outlet property="headlineLabel" destination="v2L-Xn-kQ1" id="al2-5a-0cf"/>
                         <outlet property="reason1Button" destination="6Pw-OI-8hm" id="ux3-lS-jrK"/>
                         <outlet property="reason1Label" destination="AbN-ll-cDD" id="Y97-qv-mjt"/>
                         <outlet property="reason1StateImageView" destination="Y7g-8Z-mhb" id="XKv-1R-fBC"/>
@@ -2361,6 +2363,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="reason3Label" destination="Cab-uR-m17" id="7Vy-FB-Zjg"/>
                         <outlet property="reason3StateImageView" destination="AV2-K9-UXi" id="iL0-DE-hO6"/>
                         <outlet property="reportButton" destination="jhE-ej-zTI" id="bfn-0j-Eat"/>
+                        <outlet property="skipButton" destination="bsE-VQ-xZI" id="b1d-wo-GZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emM-fF-hv3" userLabel="First Responder" sceneMemberID="firstResponder"/>

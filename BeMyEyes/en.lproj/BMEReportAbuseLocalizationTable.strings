@@ -1,8 +1,14 @@
-/* BMEReportAbuseViewController.strings
-  BeMyEyes
+/* Headline */
+"BME_REPORT_ABUSE_HEADLINE" = "Report abuse";
 
-  Created by Simon Støvring on 12/06/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
+/* Text telling user to choose a reason */
+"BME_REPORT_ABUSE_CHOOSE_REASON" = "Choose a reason";
+
+/* Title of report button */
+"BME_REPORT_ABUSE_REPORT" = "Report abuse";
+
+/* Title of skip button */
+"BME_REPORT_ABUSE_SKIP" = "Skip";
 
 /* Text 1 for reporting abuse as a blind person. */
 "BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND" = "The person did not want to help.";

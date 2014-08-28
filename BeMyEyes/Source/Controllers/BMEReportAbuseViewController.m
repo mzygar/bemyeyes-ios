@@ -16,6 +16,9 @@
 #import "BMEUser.h"
 
 @interface BMEReportAbuseViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *chooseReasonLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *reason1Label;
 @property (weak, nonatomic) IBOutlet UILabel *reason2Label;
 @property (weak, nonatomic) IBOutlet UILabel *reason3Label;
@@ -29,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *reason3Button;
 
 @property (weak, nonatomic) IBOutlet UIButton *reportButton;
+@property (weak, nonatomic) IBOutlet UIButton *skipButton;
 @end
 
 @implementation BMEReportAbuseViewController
@@ -52,6 +56,12 @@
 }
 
 - (void)shouldLocalize {
+    self.headlineLabel.text = MKLocalizedFromTable(BME_REPORT_ABUSE_HEADLINE, BMEReportAbuseLocalizationTable);
+    self.chooseReasonLabel.text = MKLocalizedFromTable(BME_REPORT_ABUSE_CHOOSE_REASON, BMEReportAbuseLocalizationTable);
+    
+    [self.reportButton setTitle:MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT, BMEReportAbuseLocalizationTable) forState:UIControlStateNormal];
+    [self.skipButton setTitle:MKLocalizedFromTable(BME_REPORT_ABUSE_SKIP, BMEReportAbuseLocalizationTable) forState:UIControlStateNormal];
+    
     [self writeReasons];
 }
 
