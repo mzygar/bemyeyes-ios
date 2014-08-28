@@ -5,6 +5,7 @@ PODS:
   - GVUserDefaults (0.9.4)
   - ISO8601DateFormatter (0.7)
   - Masonry (0.4.0)
+  - MiawKit (1.0)
   - MRProgress (0.4.3):
     - MRProgress/ActivityIndicator
     - MRProgress/Blur
@@ -46,9 +47,14 @@ DEPENDENCIES:
   - GVUserDefaults (~> 0.9.4)
   - ISO8601DateFormatter (~> 0.7)
   - Masonry (~> 0.4.0)
+  - MiawKit (from `https://github.com/robocat/MiawKit.git`)
   - MRProgress (~> 0.4.1)
   - NewRelicAgent
   - PSAlertView (~> 1.1)
+
+EXTERNAL SOURCES:
+  MiawKit:
+    :git: https://github.com/robocat/MiawKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
@@ -57,6 +63,7 @@ SPEC CHECKSUMS:
   GVUserDefaults: b706c0a6ed681ea4693143d920dd5bf49845c3a3
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
   Masonry: 392466f4090cb28cc5349adec067453463e2ecd9
+  MiawKit: 952999049ff88dfc24df1e65274b728ad3d5e234
   MRProgress: e588fb8d0fba293715eaf0e485dd8402f4ce1de6
   NewRelicAgent: 95b45c10c8f53738fb8a65034e6d6ae72e90570f
   PSAlertView: e9c9bc8ef41d86012ca1f6839fd450a35c6f8a97
