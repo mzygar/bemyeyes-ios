@@ -2,10 +2,10 @@
 "BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Snooze";
 
 /* Format for snooze status text. %@ is replaced with the snooze amount. */
-"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Du snoozer den/de næste %@";
+"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Du snoozer i %@";
 
 /* Point description */
-"BME_HELPER_MAIN_POINT_DESCRIPTION" = "Jo mere hjælper du, jo flere point får du";
+"BME_HELPER_MAIN_POINT_DESCRIPTION" = "Jo mere du hjælper, jo flere point får du";
 
 /* Point title */
 "BME_HELPER_MAIN_POINT_TITLE" = "Dine point er";
