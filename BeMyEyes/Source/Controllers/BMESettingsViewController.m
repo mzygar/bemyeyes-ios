@@ -38,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     [self populateFields];
 }
 

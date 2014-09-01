@@ -47,6 +47,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     self.signUpTopLabel.isAccessibilityElement = NO;
     self.signUpBottomLabel.isAccessibilityElement = NO;
     self.termsTopLabel.isAccessibilityElement = NO;

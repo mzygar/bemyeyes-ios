@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -282,6 +282,7 @@
                     <connections>
                         <outlet property="backButton" destination="meS-rG-ru3" id="0WG-kh-IJl"/>
                         <outlet property="continueButton" destination="Jqf-te-yzQ" id="bsj-kG-5ZI"/>
+                        <outlet property="headlineLabel" destination="yyU-Xz-NIz" id="DH3-WF-vNl"/>
                         <outlet property="longDescriptionLabel" destination="pAg-cR-b9G" id="oay-4o-5nH"/>
                         <outlet property="shortDescriptionLabel" destination="r46-QU-kdt" id="HMw-a2-CaP"/>
                     </connections>
@@ -744,8 +745,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <action selector="facebookButtonPressed:" destination="rmT-tx-lgV" eventType="touchUpInside" id="AX5-i2-bJZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-12-sgI">
-                                <rect key="frame" x="10" y="258" width="280" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-12-sgI">
+                                <rect key="frame" x="10" y="258" width="300" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="gjA-8l-8Pn"/>
@@ -893,7 +894,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstItem="Gvx-U1-YpW" firstAttribute="leading" secondItem="fiK-vr-GKo" secondAttribute="leading" constant="20" id="GGt-8G-pWB"/>
                             <constraint firstAttribute="trailing" secondItem="Gvx-U1-YpW" secondAttribute="trailing" constant="14" id="KES-Yy-MRz"/>
                             <constraint firstItem="fkb-Ab-ezV" firstAttribute="top" secondItem="3wM-z3-EP5" secondAttribute="top" id="LSR-pc-IIy"/>
-                            <constraint firstAttribute="trailing" secondItem="hPR-12-sgI" secondAttribute="trailing" constant="30" id="MnZ-24-EGI"/>
+                            <constraint firstAttribute="trailing" secondItem="hPR-12-sgI" secondAttribute="trailing" constant="10" id="MnZ-24-EGI"/>
                             <constraint firstItem="0rf-UO-nE9" firstAttribute="top" secondItem="Hdm-mf-RpA" secondAttribute="bottom" constant="8" id="OUc-Gb-STW"/>
                             <constraint firstItem="cud-rC-Tmf" firstAttribute="bottom" secondItem="W9k-mY-n6b" secondAttribute="bottom" id="R63-aR-m0y"/>
                             <constraint firstAttribute="trailing" secondItem="0rf-UO-nE9" secondAttribute="trailing" constant="20" id="TOb-g4-KrH"/>
@@ -1025,8 +1026,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DQB-vd-Nyq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                                <rect key="frame" x="15" y="0.0" width="290" height="480"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="52"/>
                                 <state key="normal" title="Connect to community">
                                     <color key="titleColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1039,8 +1040,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <constraints>
                             <constraint firstItem="Srd-lE-AKK" firstAttribute="top" secondItem="DQB-vd-Nyq" secondAttribute="bottom" id="2qB-8s-zGM"/>
                             <constraint firstItem="DQB-vd-Nyq" firstAttribute="top" secondItem="zhv-3s-ib2" secondAttribute="bottom" constant="-20" id="Esd-Dq-peb"/>
-                            <constraint firstAttribute="trailing" secondItem="DQB-vd-Nyq" secondAttribute="trailing" id="TFQ-KC-ekf"/>
-                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" id="wWq-aA-fyy"/>
+                            <constraint firstAttribute="trailing" secondItem="DQB-vd-Nyq" secondAttribute="trailing" constant="15" id="TFQ-KC-ekf"/>
+                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" constant="15" id="wWq-aA-fyy"/>
                         </constraints>
                     </view>
                     <connections>
