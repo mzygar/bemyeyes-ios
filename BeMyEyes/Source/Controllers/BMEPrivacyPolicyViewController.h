@@ -8,6 +8,6 @@
 
 #import "BMEWebViewViewController.h"
 
-@interface BMEPrivacyPolicyViewController : BMEWebViewViewController
+@interface BMEPrivacyPolicyViewController : BMEWebViewViewController <MKLocalizable>
 
 @end

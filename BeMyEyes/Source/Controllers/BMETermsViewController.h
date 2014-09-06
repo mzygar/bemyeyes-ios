@@ -8,6 +8,6 @@
 
 #import "BMEWebViewViewController.h"
 
-@interface BMETermsViewController : BMEWebViewViewController
+@interface BMETermsViewController : BMEWebViewViewController <MKLocalizable>
 
 @end

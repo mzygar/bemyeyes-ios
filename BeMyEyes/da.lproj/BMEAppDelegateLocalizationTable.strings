@@ -1,54 +1,53 @@
 /* BMEAppDelegate.strings
   BeMyEyes
-
   Created by Simon Støvring on 15/03/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
-
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
 /* MEssage in alert view shown if push notifications are not enabled */
-"ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Push notifications are a central part of the Be My Eyes app and you must have them enabled to sign up.";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Push-meddelelser er en central del af Be My Eyes appen og du skal have dem slået til for at tilmelde dig.";
 
 /* Title in alert view shown if push notifications are not enabled */
-"ALERT_PUSH_NOT_ENABLED_TITLE" = "Push notifications not enabled";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Push-meddelelser ikke aktiveret";
 
 /* Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments. */
-"ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Someone";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Nogen";
 
 /* Title in alert view shown when a call is received while the app was active */
-"ALERT_PUSH_REQUEST_TITLE" = "Your help is needed!";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Der er brug for din hjælp!";
 
 /* Title of cancel button in alert view shown when a call is received while the app was active */
-"ALERT_PUSH_REQUEST_CANCEL" = "Cancel";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Annuller";
 
 /* Title of cancel button in alert view shown if push notifications are not enabled */
-"ALERT_PUSH_NOT_ENABLED_CANCEL" = "OK";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_CANCEL" = "OK";
 
 /* Title of cancel button in alert view shown when the microphone is disabled */
-"ALERT_MICROPHONE_DISABLED_CANCEL_BUTTON" = "OK";
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_CANCEL" = "OK";
 
 /* Message in alert view shown when the microphone is disabled */
-"ALERT_MICROPHONE_DISABLED_MESSAGE" = "You must give the application permission to use your microphone in the system settings,";
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "Du skal give programmet tilladelse til at bruge din mikrofon i systemindstillingerne,";
 
 /* Title in alert view shown when the microphone is disabled */
-"ALERT_MICROPHONE_DISABLED_TITLE" = "Microphone not enabled";
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE" = "Mikrofon ikke aktiveret";
 
 /* Title of cancel button in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "OK";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "OK";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "The pending request has been answered or was cancelled by the blind but thank you for helping out!";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "Anmodningen er blevet besvaret eller blev annulleret af blind, men tak for din hjælp!";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Request already answered or cancelled";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Anmodning allerede besvaret eller annulleret";
 
 /* Title of cancel button in alert view shown when the app icon shows a badge but the pending rcould not be loaded */
-"ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL" = "OK";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL" = "OK";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request could not be loaded */
-"ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE" = "The pending request could not be loaded. Don't worry, someone else will answer the request.";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE" = "Anmodningen kunne ikke indlæses. Bare rolig, en anden vil besvare forespørgslen.";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request could not be loaded */
-"ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Request not loaded";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Anmodning ikke indlæst";
 
 /* Title in overlay displayed while loading pending request */
-"OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Loading...";
+"BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Indlæser...";
 

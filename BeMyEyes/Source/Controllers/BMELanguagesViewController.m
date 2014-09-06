@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     self.languageCodes = [NSLocale preferredLanguages];
     self.knowLanguageCodes = [NSMutableArray arrayWithArray:[BMEClient sharedClient].currentUser.languages];
 }
@@ -39,6 +41,22 @@
 - (void)dealloc {
     _languageCodes = nil;
     _knowLanguageCodes = nil;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (void)shouldLocalize {
+    self.title = MKLocalizedFromTable(BME_LANGUAGES_TITLE, BMELanguagesLocalizationTable);
 }
 
 #pragma mark -
@@ -56,9 +74,9 @@
             if (success) {
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {
-                NSString *title = NSLocalizedStringFromTable(@"ALERT_COULD_NOT_SAVE_TITLE", @"BMELanguagesViewController", @"Title in alert view shown when the languages could not be saved");
-                NSString *message = NSLocalizedStringFromTable(@"ALERT_COULD_NOT_SAVE_MESSAGE", @"BMELanguagesViewController", @"MEssage in alert view shown when the languages could not be saved");
-                NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_COULD_NOT_SAVE_CANCEL", @"BMELanguagesViewController", @"Title of cancel button in alert view shown when the languages could not be saved");
+                NSString *title = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE, BMELanguagesLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE, BMELanguagesLocalizationTable);
+                NSString *cancelButton = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL, BMELanguagesLocalizationTable);
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                 [alert show];
             }

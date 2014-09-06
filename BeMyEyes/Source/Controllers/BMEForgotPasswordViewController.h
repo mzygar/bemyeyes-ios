@@ -8,6 +8,6 @@
 
 #import "BMEBaseViewController.h"
 
-@interface BMEForgotPasswordViewController : BMEBaseViewController
+@interface BMEForgotPasswordViewController : BMEBaseViewController <MKLocalizable>
 
 @end

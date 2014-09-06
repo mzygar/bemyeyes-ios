@@ -10,6 +10,10 @@
 
 #define BMEPrivacyPolicyUrl @"http://bemyeyes.org/privacy"
 
+@interface BMEPrivacyPolicyViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@end
+
 @implementation BMEPrivacyPolicyViewController
 
 #pragma mark -
@@ -18,7 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     [self loadURL:[NSURL URLWithString:BMEPrivacyPolicyUrl]];
+}
+
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_PRIVACY_POLICY_BACK, BMEPrivacyPolicyLocalizationTable) forState:UIControlStateNormal];
 }
 
 @end

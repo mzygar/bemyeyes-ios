@@ -49,10 +49,10 @@
         [Appirater appLaunched:NO];
     }
     
-    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
-    secretTapGesture.numberOfTouchesRequired = 4;
-    secretTapGesture.numberOfTapsRequired = 3;
-    [self.window addGestureRecognizer:secretTapGesture];
+//    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
+//    secretTapGesture.numberOfTouchesRequired = 4;
+//    secretTapGesture.numberOfTapsRequired = 3;
+//    [self.window addGestureRecognizer:secretTapGesture];
     
     return YES;
 }
@@ -104,15 +104,15 @@
                 NSString *actionLocKey = [alert objectForKey:@"action-loc-key"];
                 NSString *locKey = [alert objectForKey:@"loc-key"];
                 NSArray *locArgs = [alert objectForKey:@"loc-args"];
-                NSString *name = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_DEFAULT_NAME", @"BMEAppDelegate", @"Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments.");
+                NSString *name = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME, BMEAppDelegateLocalizationTable);
                 if ([locArgs count] > 0) {
                     name = locArgs[0];
                 }
                 
-                NSString *title = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_TITLE", @"BMEAppDelegate", @"Title in alert view shown when a call is received while the app was active");
+                NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE, BMEAppDelegateLocalizationTable);
                 NSString *message = [NSString stringWithFormat:NSLocalizedString(locKey, nil), name];
                 NSString *actionButton = NSLocalizedString(actionLocKey, nil);
-                NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when a call is received while the app was active");
+                NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL, BMEAppDelegateLocalizationTable);
                 
                 [self playCallTone];
                 
@@ -217,9 +217,9 @@
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     BOOL isEnabled = (types != UIRemoteNotificationTypeNone);
     if (!isEnabled) {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown if push notifications are not enabled");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_MESSAGE", @"BMEAppDelegate", @"MEssage in alert view shown if push notifications are not enabled");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown if push notifications are not enabled");
+        NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE, BMEAppDelegateLocalizationTable);
+        NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE, BMEAppDelegateLocalizationTable);
+        NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_CANCEL, BMEAppDelegateLocalizationTable);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
     }   
@@ -232,9 +232,9 @@
 - (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion {
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         if (!granted) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown when the microphone is disabled");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_MESSAGE", @"BMEAppDelegate", @"Message in alert view shown when the microphone is disabled");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_CANCEL_BUTTON", @"BMEAppDelegate", @"Title of cancel button in alert view shown when the microphone is disabled");
+            NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE, BMEAppDelegateLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE, BMEAppDelegateLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_CANCEL, BMEAppDelegateLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -370,7 +370,7 @@
     if (badgeCount > 0) {
         MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.window animated:YES];
         progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-        progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOADING_PENDING_REQUEST_TITLE", @"BMELoginViewController", @"Title in overlay displayed while loading pending request");
+        progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE, BMEAppDelegateLocalizationTable);
     
         [[BMEClient sharedClient] checkForPendingRequest:^(NSString *shortId, BOOL success, NSError *error) {
             [progressOverlayView hide:YES];
@@ -379,18 +379,18 @@
                 if (shortId) {
                     [self didAnswerCallWithShortId:shortId];
                 } else {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_HANDLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_HANDLED_MESSAGE", @"BMEAppDelegate", @"Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_HANDLED_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled");
+                    NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE, BMEAppDelegateLocalizationTable);
+                    NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE, BMEAppDelegateLocalizationTable);
+                    NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL, BMEAppDelegateLocalizationTable);
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                     [alertView show];
                 }
             } else {
                 NSLog(@"Could not load pending request: %@", error);
                 
-                NSString *title = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_NOT_LOADED_TITLE", @"BMEAppDelegate", @"Title in alert view shown when the app icon shows a badge but the pending request could not be loaded");
-                NSString *message = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE", @"BMEAppDelegate", @"Message in alert view shown when the app icon shows a badge but the pending request could not be loaded");
-                NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when the app icon shows a badge but the pending rcould not be loaded");
+                NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE, BMEAppDelegateLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE, BMEAppDelegateLocalizationTable);
+                NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL, BMEAppDelegateLocalizationTable);
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                 [alertView show];
             }

@@ -17,8 +17,12 @@
 #define BMELoginLoggedInSegue @"LoggedIn"
 
 @interface BMELoginViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *forgotPasswordButton;
 
 @property (strong, nonatomic) MRProgressOverlayView *loggingInOverlayView;
 @end
@@ -28,12 +32,29 @@
 #pragma mark -
 #pragma mark Lifecycle
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
+}
+
 - (void)dealloc {
     if (_loggingInOverlayView) {
         [_loggingInOverlayView hide:YES];
     }
     
     _loggingInOverlayView = nil;
+}
+
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_LOGIN_BACK, BMELoginLocalizationTable) forState:UIControlStateNormal];
+    
+    self.emailTextField.placeholder = MKLocalizedFromTable(BME_LOGIN_EMAIL_PLACEHOLDER, BMELoginLocalizationTable);
+    self.passwordTextField.placeholder = MKLocalizedFromTable(BME_LOGIN_PASSWORD_PLACEHOLDER, BMELoginLocalizationTable);
+    
+    [self.loginButton setTitle:MKLocalizedFromTable(BME_LOGIN_PERFORM_LOG_IN, BMELoginLocalizationTable) forState:UIControlStateNormal];
+    [self.facebookButton setTitle:MKLocalizedFromTable(BME_LOGIN_FACEBOOK, BMELoginLocalizationTable) forState:UIControlStateNormal];
+    [self.forgotPasswordButton setTitle:MKLocalizedFromTable(BME_LOGIN_FORGOT_PASSWORD, BMELoginLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -
@@ -92,9 +113,9 @@
             [self.passwordTextField becomeFirstResponder];
         }
         
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_EMPTY_FIELDS_TITLE", @"BMELoginViewController", @"Title in alert view shown when the e-mail or password is empty");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_EMPTY_FIELD_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when the e-mail or password is empty");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMPTY_FIELDS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view show when the e-mail or password is empty");
+        NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_EMPTY_FIELDS_TITLE, BMELoginLocalizationTable);
+        NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE, BMELoginLocalizationTable);
+        NSString *cancelButton = MKLocalizedFromTable(BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL, BMELoginLocalizationTable);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
     } else {
@@ -114,15 +135,15 @@
         [self.loggingInOverlayView hide:YES];
         
         if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE", @"BMELoginViewController", @"Title in alert view shown when Facebook user not found during log in.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when Facebook user not found during log in.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when Facebook user not found during log in.");
+            NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE, BMELoginLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE, BMELoginLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL, BMELoginLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during Facebook log in.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred during Facebook log in.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during Facebook log in.");
+            NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE, BMELoginLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE, BMELoginLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL, BMELoginLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -132,15 +153,15 @@
         [self.loggingInOverlayView hide:YES];
         
         if ([error code] == ACErrorAccountNotFound) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE", @"BMELoginViewController", @"Title in alert view shown when no Facebook account was found.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when no Facebook account was found.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when no Facebook account was found.");
+            NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE, BMELoginLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE, BMELoginLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL, BMELoginLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE", @"BMELoginViewController", @"Title in alert view shown when log in to Facebook failed");
-            NSString *cancelButtonTitle = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when log in to Facebook failed");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when logging into Facebook but it failed because authentication failed");
+            NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE, BMELoginLocalizationTable);
+            NSString *cancelButtonTitle = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE, BMELoginLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL, BMELoginLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -160,15 +181,15 @@
         [self.loggingInOverlayView hide:YES];
         
         if ([error code] == BMEClientErrorUserIncorrectCredentials) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_TITLE", @"BMELoginViewController", @"Title in alert view shown when credentials are incorrect.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when credentials are incorrect.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_INCORRECT_CREDENTIALS_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when credentials are incorrect.");
+            NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE, BMELoginLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE, BMELoginLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL, BMELoginLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         } else {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE", @"BMELoginViewController", @"Title in alert view shown when a network error occurred during e-mail log in.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE", @"BMELoginViewController", @"Message in alert view shown when a network error occurred.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL", @"BMELoginViewController", @"Title of cancel button in alert view shown when a network error occurred during e-mail log in.");
+            NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE, BMELoginLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE, BMELoginLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL, BMELoginLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -188,7 +209,7 @@
 - (MRProgressOverlayView *)addLoggingInOverlay {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMELoginViewController", @"Title in overlay displayed when logging in");
+    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_LOGIN_OVERLAY_LOGGING_IN_TITLE, BMELoginLocalizationTable);
     return progressOverlayView;
 }
 

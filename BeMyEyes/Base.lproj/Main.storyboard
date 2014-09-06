@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -146,6 +146,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Gva-8w-2WT"/>
                     <connections>
+                        <outlet property="alreadyRegisteredButton" destination="M9q-Oe-kOY" id="ziS-WG-v45"/>
+                        <outlet property="appNameLabel" destination="Vn6-bm-vhF" id="UOk-Wd-6P3"/>
+                        <outlet property="askForRoleLabel" destination="mHE-NR-WpR" id="04i-EH-Ens"/>
+                        <outlet property="blindRoleButton" destination="Tqb-HQ-rZY" id="1NI-r2-7lK"/>
+                        <outlet property="sightedRoleButton" destination="CeQ-6j-q8m" id="V9g-s1-4jB"/>
+                        <outlet property="welcomeLabel" destination="iXe-li-Co7" id="UdA-MX-knx"/>
                         <segue destination="hG3-jw-vqP" kind="push" identifier="IntroHelper" id="OvB-1I-sRy"/>
                     </connections>
                 </viewController>
@@ -168,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="-298" y="111"/>
         </scene>
-        <!--Intro View Controller-->
+        <!--Helper Intro View Controller-->
         <scene sceneID="zB6-mI-jFV">
             <objects>
-                <viewController id="hG3-jw-vqP" customClass="BMEIntroViewController" sceneMemberID="viewController">
+                <viewController id="hG3-jw-vqP" customClass="BMEHelperIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XQC-4S-8pI"/>
                         <viewControllerLayoutGuide type="bottom" id="Hrt-37-M7c"/>
@@ -273,6 +279,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Khn-pj-PxL"/>
+                    <connections>
+                        <outlet property="backButton" destination="meS-rG-ru3" id="0WG-kh-IJl"/>
+                        <outlet property="continueButton" destination="Jqf-te-yzQ" id="bsj-kG-5ZI"/>
+                        <outlet property="headlineLabel" destination="yyU-Xz-NIz" id="DH3-WF-vNl"/>
+                        <outlet property="longDescriptionLabel" destination="pAg-cR-b9G" id="oay-4o-5nH"/>
+                        <outlet property="shortDescriptionLabel" destination="r46-QU-kdt" id="HMw-a2-CaP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yI4-gL-cCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,7 +335,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Nvl-8k-ZE2"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bty-AZ-yfq">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bty-AZ-yfq">
                                                 <rect key="frame" x="68" y="0.0" width="232" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="232" id="HVc-gX-To3"/>
@@ -452,7 +465,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="fM0-4d-lSV"/>
                     <connections>
+                        <outlet property="backButton" destination="8pA-sN-peL" id="IPb-Hn-I4e"/>
                         <outlet property="emailTextField" destination="bty-AZ-yfq" id="aoU-yt-91g"/>
+                        <outlet property="facebookButton" destination="0BN-bJ-xSZ" id="6Jd-EN-tXe"/>
+                        <outlet property="forgotPasswordButton" destination="oL9-6V-10R" id="H8y-qu-o4P"/>
+                        <outlet property="loginButton" destination="q5v-lJ-cvR" id="J1s-i4-OdR"/>
                         <outlet property="passwordTextField" destination="ITa-1Y-MSv" id="0ao-5k-ndG"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="0nh-WJ-G11"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="Registered" id="h1h-es-Gdp"/>
@@ -564,17 +581,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="tIH-zK-dgv"/>
                     <connections>
+                        <outlet property="backButton" destination="wjp-5g-kgm" id="b4y-Fz-a4O"/>
+                        <outlet property="descriptionLabel" destination="bl7-si-Ugu" id="FIx-ra-Qws"/>
                         <outlet property="emailTextField" destination="VDl-iP-Qe2" id="Oaz-0D-qY1"/>
+                        <outlet property="sendPasswordButton" destination="vib-97-qM8" id="Rzm-tA-aUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2x1-Li-78v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1276" y="1175"/>
         </scene>
-        <!--Intro View Controller-->
+        <!--Blind Intro View Controller-->
         <scene sceneID="0Jd-Fy-FjZ">
             <objects>
-                <viewController id="du8-BL-rDz" customClass="BMEIntroViewController" sceneMemberID="viewController">
+                <viewController id="du8-BL-rDz" customClass="BMEBlindIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sh6-5W-mZP"/>
                         <viewControllerLayoutGuide type="bottom" id="xFS-Mo-f8B"/>
@@ -625,12 +645,12 @@
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-Ti-keq">
                                 <rect key="frame" x="20" y="88" width="280" height="304"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.
+                                <string key="text">The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.
 
 The helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.
 
 You may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information.
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -649,6 +669,11 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ThP-v4-keq"/>
+                    <connections>
+                        <outlet property="backButton" destination="CIb-cS-zkf" id="h8t-yS-g9d"/>
+                        <outlet property="continueButton" destination="osh-d7-3mB" id="DHB-2n-517"/>
+                        <outlet property="descriptionLabel" destination="vyn-Ti-keq" id="0aD-Cp-ACV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUd-10-1IW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -720,8 +745,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <action selector="facebookButtonPressed:" destination="rmT-tx-lgV" eventType="touchUpInside" id="AX5-i2-bJZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-12-sgI">
-                                <rect key="frame" x="10" y="258" width="280" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-12-sgI">
+                                <rect key="frame" x="10" y="258" width="300" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="gjA-8l-8Pn"/>
@@ -869,7 +894,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstItem="Gvx-U1-YpW" firstAttribute="leading" secondItem="fiK-vr-GKo" secondAttribute="leading" constant="20" id="GGt-8G-pWB"/>
                             <constraint firstAttribute="trailing" secondItem="Gvx-U1-YpW" secondAttribute="trailing" constant="14" id="KES-Yy-MRz"/>
                             <constraint firstItem="fkb-Ab-ezV" firstAttribute="top" secondItem="3wM-z3-EP5" secondAttribute="top" id="LSR-pc-IIy"/>
-                            <constraint firstAttribute="trailing" secondItem="hPR-12-sgI" secondAttribute="trailing" constant="30" id="MnZ-24-EGI"/>
+                            <constraint firstAttribute="trailing" secondItem="hPR-12-sgI" secondAttribute="trailing" constant="10" id="MnZ-24-EGI"/>
                             <constraint firstItem="0rf-UO-nE9" firstAttribute="top" secondItem="Hdm-mf-RpA" secondAttribute="bottom" constant="8" id="OUc-Gb-STW"/>
                             <constraint firstItem="cud-rC-Tmf" firstAttribute="bottom" secondItem="W9k-mY-n6b" secondAttribute="bottom" id="R63-aR-m0y"/>
                             <constraint firstAttribute="trailing" secondItem="0rf-UO-nE9" secondAttribute="trailing" constant="20" id="TOb-g4-KrH"/>
@@ -893,10 +918,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     </view>
                     <navigationItem key="navigationItem" id="hKS-qr-nIO"/>
                     <connections>
+                        <outlet property="backButton" destination="Hdm-mf-RpA" id="Scy-WQ-eDh"/>
                         <outlet property="emailSignUpButton" destination="gLG-Sj-ggw" id="1Um-Jp-jKA"/>
+                        <outlet property="facebookButton" destination="fw2-cM-Rvi" id="Q23-4J-A3F"/>
                         <outlet property="facebookFooterHeightConstraint" destination="gjA-8l-8Pn" id="vUP-yA-52Z"/>
                         <outlet property="facebookFooterLabel" destination="hPR-12-sgI" id="10h-Pd-MPg"/>
                         <outlet property="facebookFooterTopMarginConstraint" destination="6vC-fK-QBS" id="zuM-zd-hWq"/>
+                        <outlet property="headlineLabel" destination="taG-tn-K8A" id="ZxQ-qX-T1K"/>
                         <outlet property="privacyBottomLabel" destination="cud-rC-Tmf" id="r3K-3l-PKy"/>
                         <outlet property="privacyButton" destination="W9k-mY-n6b" id="NF1-Gb-knW"/>
                         <outlet property="privacyTopLabel" destination="XFF-B2-BZA" id="H6a-EG-OAp"/>
@@ -975,6 +1003,11 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Thf-M1-wIg"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="fsI-0Y-m1f" id="x9y-dG-QaB"/>
+                        <outlet property="headlineLabel" destination="EnW-DA-GD2" id="srE-M4-daY"/>
+                        <outlet property="loginButton" destination="0EV-zp-tEr" id="9Ku-qE-jH3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho5-nl-OHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -993,8 +1026,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DQB-vd-Nyq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="55"/>
+                                <rect key="frame" x="15" y="0.0" width="290" height="480"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="52"/>
                                 <state key="normal" title="Connect to community">
                                     <color key="titleColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1007,8 +1040,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <constraints>
                             <constraint firstItem="Srd-lE-AKK" firstAttribute="top" secondItem="DQB-vd-Nyq" secondAttribute="bottom" id="2qB-8s-zGM"/>
                             <constraint firstItem="DQB-vd-Nyq" firstAttribute="top" secondItem="zhv-3s-ib2" secondAttribute="bottom" constant="-20" id="Esd-Dq-peb"/>
-                            <constraint firstAttribute="trailing" secondItem="DQB-vd-Nyq" secondAttribute="trailing" id="TFQ-KC-ekf"/>
-                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" id="wWq-aA-fyy"/>
+                            <constraint firstAttribute="trailing" secondItem="DQB-vd-Nyq" secondAttribute="trailing" constant="15" id="TFQ-KC-ekf"/>
+                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" constant="15" id="wWq-aA-fyy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1307,6 +1340,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="snoozeThumbCenterMarginXConstraint" destination="ml3-24-oPe" id="lZJ-bL-I8i"/>
                         <outlet property="snoozeThumbImageView" destination="5s3-1J-XzL" id="5BX-Rk-dMt"/>
                         <outlet property="snoozeThumbWidthConstraint" destination="CNE-RF-0Cg" id="rMd-ud-lmR"/>
+                        <outlet property="snoozeTitleLabel" destination="aFH-UM-7hl" id="Upd-wO-Dhc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1513,6 +1547,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     </view>
                     <navigationItem key="navigationItem" id="a1e-JV-YXZ"/>
                     <connections>
+                        <outlet property="backButton" destination="jS9-FE-y1n" id="I6c-ZE-14a"/>
                         <outlet property="emailTextField" destination="opU-Be-2Hu" id="NO5-e6-koH"/>
                         <outlet property="firstNameTextField" destination="i9n-6l-1vq" id="6cB-xB-iUX"/>
                         <outlet property="lastNameTextField" destination="2KI-e2-g2G" id="wSw-om-tCj"/>
@@ -1520,6 +1555,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="nameFooterLabel" destination="2LO-68-Sve" id="UTj-Lg-gkh"/>
                         <outlet property="nameFooterTopMarginConstraint" destination="Nlt-hE-g15" id="FYa-9o-NN0"/>
                         <outlet property="passwordTextField" destination="3Vw-hZ-d1W" id="ryh-yc-g8i"/>
+                        <outlet property="registerButton" destination="Y9X-vI-vZr" id="gd6-1O-fEx"/>
                         <outlet property="scrollView" destination="guG-wR-qIH" id="tQp-VZ-U80"/>
                         <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="jzc-Nc-kCA"/>
                     </connections>
@@ -1599,6 +1635,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <navigationItem key="navigationItem" id="d1a-Ky-bmD"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="xdR-2m-bIn" id="nwK-v4-OY8"/>
+                        <outlet property="backButton" destination="10q-dZ-Qdv" id="zSd-hH-cDl"/>
                         <outlet property="navigationBarHeightConstraint" destination="oeI-Kd-Fy7" id="oVN-0y-Z6w"/>
                         <outlet property="webView" destination="CiQ-Ua-IlD" id="hcj-s0-lDz"/>
                     </connections>
@@ -1665,13 +1702,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3d-mk-uwU">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3d-mk-uwU">
                                 <rect key="frame" x="20" y="141" width="86" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvj-Dw-BPc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvj-Dw-BPc">
                                 <rect key="frame" x="20" y="177" width="86" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1741,27 +1778,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <constraint firstAttribute="height" constant="1" id="9cq-AB-QGA"/>
                                 </constraints>
                             </view>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTF-Vw-osB">
-                                <rect key="frame" x="251" y="266" width="51" height="31"/>
-                                <connections>
-                                    <action selector="boostSwitchValueChanged:" destination="MrC-au-WgT" eventType="valueChanged" id="AzS-oT-2V9"/>
-                                </connections>
-                            </switch>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boost requests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr7-P6-KE6">
-                                <rect key="frame" x="20" y="271" width="223" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximizes the number of requests you will receive" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="223" translatesAutoresizingMaskIntoConstraints="NO" id="E48-y6-NLX">
-                                <rect key="frame" x="20" y="295" width="223" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="LYp-G3-kMh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0 (2)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-Qn-2Ma">
                                 <rect key="frame" x="175" y="438" width="125" height="24"/>
                                 <constraints>
@@ -1791,12 +1807,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <color key="backgroundColor" red="0.1176470588" green="0.54901960780000003" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nom-F8-SPu" firstAttribute="top" secondItem="tvF-nc-9Hj" secondAttribute="bottom" constant="-50" id="1yY-nv-Ibn"/>
-                            <constraint firstItem="E48-y6-NLX" firstAttribute="width" secondItem="Gr7-P6-KE6" secondAttribute="width" id="3Bi-Vk-Mmm"/>
                             <constraint firstItem="XJV-uE-7uS" firstAttribute="top" secondItem="nom-F8-SPu" secondAttribute="bottom" constant="15" id="3NN-Yr-mBp"/>
                             <constraint firstItem="XJV-uE-7uS" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="3q3-ar-dDs"/>
                             <constraint firstItem="mvj-Dw-BPc" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="464-yl-ptL"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="905-El-eCA"/>
-                            <constraint firstItem="Gr7-P6-KE6" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="9ao-06-yMe"/>
                             <constraint firstItem="D0d-zV-1XX" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="AOI-tq-dz6"/>
                             <constraint firstAttribute="trailing" secondItem="24Y-Oq-jej" secondAttribute="trailing" constant="20" id="B3J-Rr-Gf4"/>
                             <constraint firstItem="kwZ-op-hZv" firstAttribute="top" secondItem="mZO-6I-4RC" secondAttribute="bottom" constant="8" id="Bro-wO-OOF"/>
@@ -1807,16 +1821,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstItem="af5-uQ-5WX" firstAttribute="centerY" secondItem="ub2-Qn-2Ma" secondAttribute="centerY" id="DnX-j5-8nM"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="width" secondItem="XJV-uE-7uS" secondAttribute="width" id="IMy-UE-jFx"/>
                             <constraint firstItem="24Y-Oq-jej" firstAttribute="centerY" secondItem="b3d-mk-uwU" secondAttribute="centerY" constant="0.5" id="L3z-hc-r6f"/>
-                            <constraint firstItem="Gr7-P6-KE6" firstAttribute="centerY" secondItem="DTF-Vw-osB" secondAttribute="centerY" id="NGb-LV-iP4"/>
                             <constraint firstItem="tvF-nc-9Hj" firstAttribute="top" secondItem="i9w-7H-kvL" secondAttribute="bottom" constant="20" id="Ngh-hx-nSL"/>
                             <constraint firstItem="mZO-6I-4RC" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="PBk-9a-ByI"/>
                             <constraint firstItem="fEL-aF-32C" firstAttribute="centerY" secondItem="mvj-Dw-BPc" secondAttribute="centerY" constant="0.5" id="RoH-xP-7Ba"/>
                             <constraint firstItem="mZO-6I-4RC" firstAttribute="top" secondItem="D0d-zV-1XX" secondAttribute="bottom" constant="14" id="RyU-8Z-vqd"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="top" secondItem="XJV-uE-7uS" secondAttribute="bottom" constant="15" id="SfV-p9-CDP"/>
-                            <constraint firstItem="DTF-Vw-osB" firstAttribute="leading" secondItem="Gr7-P6-KE6" secondAttribute="trailing" constant="8" id="Vdt-sG-Z4l"/>
                             <constraint firstItem="D0d-zV-1XX" firstAttribute="top" secondItem="mvj-Dw-BPc" secondAttribute="bottom" constant="10" id="VfF-A8-Gm7"/>
                             <constraint firstItem="IH7-YW-7ZL" firstAttribute="centerY" secondItem="XJV-uE-7uS" secondAttribute="centerY" constant="0.5" id="XW8-eq-WSZ"/>
-                            <constraint firstItem="E48-y6-NLX" firstAttribute="top" secondItem="Gr7-P6-KE6" secondAttribute="bottom" constant="3" id="ZKZ-Oz-PYL"/>
                             <constraint firstAttribute="trailing" secondItem="ub2-Qn-2Ma" secondAttribute="trailing" constant="20" id="ZUF-dC-Uj6"/>
                             <constraint firstAttribute="trailing" secondItem="fEL-aF-32C" secondAttribute="trailing" constant="20" id="ZkS-lT-JhJ"/>
                             <constraint firstAttribute="trailing" secondItem="IH7-YW-7ZL" secondAttribute="trailing" constant="20" id="aQH-Sw-WV4"/>
@@ -1825,14 +1836,11 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstAttribute="trailing" secondItem="tvF-nc-9Hj" secondAttribute="trailing" id="eRh-wk-NcB"/>
                             <constraint firstItem="nom-F8-SPu" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="hRl-6W-sXz"/>
                             <constraint firstAttribute="trailing" secondItem="D0d-zV-1XX" secondAttribute="trailing" constant="20" id="hVm-RV-Aoa"/>
-                            <constraint firstItem="DTF-Vw-osB" firstAttribute="top" secondItem="mZO-6I-4RC" secondAttribute="top" constant="14" id="jRc-sx-4Js"/>
                             <constraint firstItem="mvj-Dw-BPc" firstAttribute="top" secondItem="b3d-mk-uwU" secondAttribute="bottom" constant="15" id="jTu-Ey-LX2"/>
-                            <constraint firstAttribute="trailing" secondItem="DTF-Vw-osB" secondAttribute="trailing" constant="20" id="pMS-dH-2Ao"/>
                             <constraint firstItem="kwZ-op-hZv" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="qAb-FN-EcU"/>
                             <constraint firstItem="af5-uQ-5WX" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" id="rzC-Zk-EHQ"/>
                             <constraint firstAttribute="trailing" secondItem="kwZ-op-hZv" secondAttribute="trailing" constant="20" id="tkb-Ga-TTN"/>
                             <constraint firstAttribute="trailing" secondItem="mZO-6I-4RC" secondAttribute="trailing" id="uYj-Ud-cum"/>
-                            <constraint firstItem="E48-y6-NLX" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="use-KT-BC4"/>
                             <constraint firstItem="24Y-Oq-jej" firstAttribute="leading" secondItem="b3d-mk-uwU" secondAttribute="trailing" constant="8" id="wak-Jb-Fps"/>
                             <constraint firstItem="nom-F8-SPu" firstAttribute="top" secondItem="tvF-nc-9Hj" secondAttribute="top" id="z33-Bs-dkt"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="20" id="zO1-dM-M4t"/>
@@ -1841,10 +1849,16 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
                     <connections>
-                        <outlet property="boostSwitch" destination="DTF-Vw-osB" id="pA7-V2-Ihg"/>
+                        <outlet property="emailLabel" destination="mvj-Dw-BPc" id="p2Q-hs-s4q"/>
                         <outlet property="emailTextField" destination="fEL-aF-32C" id="ViY-LK-yX9"/>
+                        <outlet property="feedbackButton" destination="kwZ-op-hZv" id="xmW-0d-nAN"/>
+                        <outlet property="firstNameLabel" destination="XJV-uE-7uS" id="MlO-Cm-m6m"/>
                         <outlet property="firstNameTextField" destination="IH7-YW-7ZL" id="2sa-Nn-ZMW"/>
+                        <outlet property="headlineLabel" destination="nom-F8-SPu" id="0y4-UZ-xa0"/>
+                        <outlet property="lastNameLabel" destination="b3d-mk-uwU" id="2H0-Wy-E2l"/>
                         <outlet property="lastNameTextField" destination="24Y-Oq-jej" id="T81-vr-GjG"/>
+                        <outlet property="logoutButton" destination="af5-uQ-5WX" id="h0N-Cg-KIY"/>
+                        <outlet property="selectLanguagesButton" destination="D0d-zV-1XX" id="h6x-iM-V5G"/>
                         <outlet property="versionLabel" destination="ub2-Qn-2Ma" id="eIk-44-IZo"/>
                     </connections>
                 </viewController>
@@ -2017,14 +2031,16 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Secret Settings" id="UIb-xq-qBp">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="ySf-cP-gBc">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="ySf-cP-gBc">
                             <connections>
                                 <action selector="dismissButtonPressed:" destination="GRa-DQ-eex" id="mxU-Rf-E7Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="apiDescriptionLabel" destination="CTr-8B-1Vo" id="bfN-zs-toL"/>
                         <outlet property="apiSegmentedControl" destination="Xk5-RI-0BI" id="c5I-HG-9iy"/>
+                        <outlet property="apiTitleLabel" destination="U9n-IP-ODt" id="uDG-ir-f25"/>
                         <outlet property="contentTopMarginConstraint" destination="bkh-6z-buf" id="n7b-xK-9xT"/>
                     </connections>
                 </viewController>
@@ -2094,6 +2110,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <navigationItem key="navigationItem" id="Ex0-Tp-1yx"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="fIa-UM-cZL" id="6Gr-85-W2N"/>
+                        <outlet property="disconnectButton" destination="2ev-9r-iXb" id="Fw3-Va-8pG"/>
                         <outlet property="statusLabel" destination="SIz-JI-R6d" id="ujO-VG-baX"/>
                         <outlet property="videoContainerView" destination="fRK-Xo-Ag6" id="jgB-VT-BKL"/>
                         <segue destination="sPf-cG-W7c" kind="push" identifier="ReportAbuse" id="S6x-8p-bFY"/>
@@ -2335,6 +2352,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     </view>
                     <navigationItem key="navigationItem" id="VBk-3j-fT6"/>
                     <connections>
+                        <outlet property="chooseReasonLabel" destination="j0k-QX-J5o" id="fWg-S8-ZJ1"/>
+                        <outlet property="headlineLabel" destination="v2L-Xn-kQ1" id="al2-5a-0cf"/>
                         <outlet property="reason1Button" destination="6Pw-OI-8hm" id="ux3-lS-jrK"/>
                         <outlet property="reason1Label" destination="AbN-ll-cDD" id="Y97-qv-mjt"/>
                         <outlet property="reason1StateImageView" destination="Y7g-8Z-mhb" id="XKv-1R-fBC"/>
@@ -2345,6 +2364,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="reason3Label" destination="Cab-uR-m17" id="7Vy-FB-Zjg"/>
                         <outlet property="reason3StateImageView" destination="AV2-K9-UXi" id="iL0-DE-hO6"/>
                         <outlet property="reportButton" destination="jhE-ej-zTI" id="bfn-0j-Eat"/>
+                        <outlet property="skipButton" destination="bsE-VQ-xZI" id="b1d-wo-GZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emM-fF-hv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2466,6 +2486,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <navigationItem key="navigationItem" id="kzy-bw-stA"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="UTp-UZ-gMa" id="a7y-FG-a7y"/>
+                        <outlet property="backButton" destination="hrX-yr-C2w" id="zC1-Gj-HH5"/>
                         <outlet property="navigationBarHeightConstraint" destination="bhn-j7-07K" id="Sr2-9F-GEA"/>
                         <outlet property="webView" destination="JY6-J9-aE6" id="1fS-AK-yHg"/>
                     </connections>
@@ -2515,7 +2536,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="46J-Mt-BiQ"/>
-        <segue reference="jzc-Nc-kCA"/>
+        <segue reference="h1h-es-Gdp"/>
         <segue reference="tPL-wK-r0M"/>
     </inferredMetricsTieBreakers>
 </document>

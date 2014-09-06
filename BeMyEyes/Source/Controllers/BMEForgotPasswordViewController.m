@@ -12,10 +12,32 @@
 #import "BMEClient.h"
 
 @interface BMEForgotPasswordViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIButton *sendPasswordButton;
 @end
 
 @implementation BMEForgotPasswordViewController
+
+#pragma mark -
+#pragma mark Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
+}
+
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_FORGOT_PASSWORD_BACK, BMEForgotPasswordLocalizationTable) forState:UIControlStateNormal];
+    
+    self.descriptionLabel.text = MKLocalizedFromTable(BME_FORGOT_PASSWORD_DESCRIPTION, BMEForgotPasswordLocalizationTable);
+    
+    self.emailTextField.placeholder = MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable);
+    
+    [self.sendPasswordButton setTitle:MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable) forState:UIControlStateNormal];
+}
 
 #pragma mark -
 #pragma mark Private Methods
@@ -34,9 +56,9 @@
     if ([BMEEmailValidator isEmailValid:self.emailTextField.text]) {
         return YES;
     } else {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_TITLE", @"BMEForgotPasswordViewController", @"Title in alert view shown when the e-mail is not valid.");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_MESSAGE", @"BMEForgotPasswordViewController", @"Message in alert view shown when the e-mail is not valid.");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_CANCEL", @"BMEForgotPasswordViewController", @"Title of cancel button in alert view shown when the e-mail is not valid.");
+        NSString *title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_TITLE, BMEForgotPasswordLocalizationTable);
+        NSString *message = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_MESSAGE, BMEForgotPasswordLocalizationTable);
+        NSString *cancelButton = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_CANCEL, BMEForgotPasswordLocalizationTable);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
         
@@ -47,23 +69,23 @@
 - (void)sendNewPasswordToEmail:(NSString *)email {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE", @"BMEForgotPasswordViewController", @"Title in overlay displayed when sending request for new password.");
+    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE, BMEForgotPasswordLocalizationTable);
     
     [[BMEClient sharedClient] sendNewPasswordToEmail:email completion:^(BOOL success, NSError *error) {
         [progressOverlayView hide:YES];
         
         if (error && [error code] != BMEClientErrorUserNotFound && [error code] != BMEClientErrorNotPermitted) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_TITLE", @"BMEForgotPasswordViewController", @"Title in alert view shown when the failed requesting a new password.");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_MESSAGE", @"BMEForgotPasswordViewController", @"Message in alert view shown when the failed requesting a new password.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_CANCEL", @"BMEForgotPasswordViewController", @"Title of cancel button in alert view shown when failed requesting a new password.");
+            NSString *title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_TITLE, BMEForgotPasswordLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_MESSAGE, BMEForgotPasswordLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_CANCEL, BMEForgotPasswordLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         } else {
             self.emailTextField.text = nil;
             
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_TITLE", @"BMEForgotPasswordViewController", @"Title in alert view shown when request for new password sent");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_MESSAGE", @"BMEForgotPasswordViewController", @"Message in alert view shown when request for new password sent.");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_CANCEL", @"BMEForgotPasswordViewController", @"Title of cancel button in alert view shown when request for new password sent.");
+            NSString *title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_TITLE, BMEForgotPasswordLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_MESSAGE, BMEForgotPasswordLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_CANCEL, BMEForgotPasswordLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         }
