@@ -113,8 +113,23 @@
 		72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */; };
 		72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */; };
 		72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */; };
+		7B32B08F19BC75130090D310 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236E01C18B8A87B00F622AA /* XCTest.framework */; };
+		7B32B09019BC75130090D310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
+		7B32B09119BC75130090D310 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236E00118B8A87B00F622AA /* UIKit.framework */; };
+		7B32B09719BC75130090D310 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B32B09519BC75130090D310 /* InfoPlist.strings */; };
+		7B32B09919BC75130090D310 /* BeMyEyes_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B32B09819BC75130090D310 /* BeMyEyes_Tests.m */; };
 		8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A222A28C44403D94B34BA1 /* libPods.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B32B09B19BC75130090D310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7236DFF218B8A87B00F622AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7236DFF918B8A87B00F622AA;
+			remoteInfo = BeMyEyes;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +315,11 @@
 		72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFacebookInfo.m; sourceTree = "<group>"; };
 		72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+BMEPopToClass.h"; sourceTree = "<group>"; };
 		72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+BMEPopToClas.m"; sourceTree = "<group>"; };
+		7B32B08E19BC75130090D310 /* BeMyEyes Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BeMyEyes Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B32B09419BC75130090D310 /* BeMyEyes Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeMyEyes Tests-Info.plist"; sourceTree = "<group>"; };
+		7B32B09619BC75130090D310 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7B32B09819BC75130090D310 /* BeMyEyes_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeMyEyes_Tests.m; sourceTree = "<group>"; };
+		7B32B09A19BC75130090D310 /* BeMyEyes Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeMyEyes Tests-Prefix.pch"; sourceTree = "<group>"; };
 		AD111FA7EA9E4832890E7258 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -340,6 +360,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B32B08B19BC75130090D310 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B32B08F19BC75130090D310 /* XCTest.framework in Frameworks */,
+				7B32B09119BC75130090D310 /* UIKit.framework in Frameworks */,
+				7B32B09019BC75130090D310 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -357,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				7236E00318B8A87B00F622AA /* BeMyEyes */,
+				7B32B09219BC75130090D310 /* BeMyEyes Tests */,
 				7236DFFC18B8A87B00F622AA /* Frameworks */,
 				7236DFFB18B8A87B00F622AA /* Products */,
 				AD111FA7EA9E4832890E7258 /* Pods.xcconfig */,
@@ -367,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				7236DFFA18B8A87B00F622AA /* BeMyEyes.app */,
+				7B32B08E19BC75130090D310 /* BeMyEyes Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -639,6 +671,25 @@
 			path = AESCrypt;
 			sourceTree = "<group>";
 		};
+		7B32B09219BC75130090D310 /* BeMyEyes Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7B32B09819BC75130090D310 /* BeMyEyes_Tests.m */,
+				7B32B09319BC75130090D310 /* Supporting Files */,
+			);
+			path = "BeMyEyes Tests";
+			sourceTree = "<group>";
+		};
+		7B32B09319BC75130090D310 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B32B09419BC75130090D310 /* BeMyEyes Tests-Info.plist */,
+				7B32B09519BC75130090D310 /* InfoPlist.strings */,
+				7B32B09A19BC75130090D310 /* BeMyEyes Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -661,6 +712,24 @@
 			productReference = 7236DFFA18B8A87B00F622AA /* BeMyEyes.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7B32B08D19BC75130090D310 /* BeMyEyes Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B32B09F19BC75130090D310 /* Build configuration list for PBXNativeTarget "BeMyEyes Tests" */;
+			buildPhases = (
+				7B32B08A19BC75130090D310 /* Sources */,
+				7B32B08B19BC75130090D310 /* Frameworks */,
+				7B32B08C19BC75130090D310 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B32B09C19BC75130090D310 /* PBXTargetDependency */,
+			);
+			name = "BeMyEyes Tests";
+			productName = "BeMyEyes Tests";
+			productReference = 7B32B08E19BC75130090D310 /* BeMyEyes Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -673,6 +742,9 @@
 				TargetAttributes = {
 					7236DFF918B8A87B00F622AA = {
 						DevelopmentTeam = FB85FFW734;
+					};
+					7B32B08D19BC75130090D310 = {
+						TestTargetID = 7236DFF918B8A87B00F622AA;
 					};
 				};
 			};
@@ -691,6 +763,7 @@
 			projectRoot = "";
 			targets = (
 				7236DFF918B8A87B00F622AA /* BeMyEyes */,
+				7B32B08D19BC75130090D310 /* BeMyEyes Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -730,6 +803,14 @@
 				72856DF519AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings in Resources */,
 				72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */,
 				72A767721902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B32B08C19BC75130090D310 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B32B09719BC75130090D310 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,7 +905,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B32B08A19BC75130090D310 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B32B09919BC75130090D310 /* BeMyEyes_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B32B09C19BC75130090D310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7236DFF918B8A87B00F622AA /* BeMyEyes */;
+			targetProxy = 7B32B09B19BC75130090D310 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */ = {
@@ -1041,6 +1138,14 @@
 			name = BMESignUpMethodLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
+		7B32B09519BC75130090D310 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B32B09619BC75130090D310 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1132,8 +1237,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1144,7 +1249,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1159,8 +1264,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1170,9 +1275,59 @@
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7B32B09D19BC75130090D310 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/BeMyEyes Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7B32B09E19BC75130090D310 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/BeMyEyes Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -1196,6 +1351,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7B32B09F19BC75130090D310 /* Build configuration list for PBXNativeTarget "BeMyEyes Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B32B09D19BC75130090D310 /* Debug */,
+				7B32B09E19BC75130090D310 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
