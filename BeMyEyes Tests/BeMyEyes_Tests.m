@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "BMEGlobal.h"
+#import "BMEClient.h"
 
 @interface BeMyEyes_Tests : XCTestCase
 
