@@ -30,7 +30,14 @@
 
 - (void)testExample
 {
-    XCTAssert(1==1, @"trying stuff out");
+   NSString *normalizedDeviceToken = @"1234";
+    // Register new device token
+    [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+        
+        if (error) {
+            XCTFail (@"Failed registering device: %@", error);
+        }
+    }];
 }
 
 @end
