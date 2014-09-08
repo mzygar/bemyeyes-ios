@@ -86,9 +86,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [super viewDidLoad];
     
     [MKLocalization registerForLocalization:self];
-    
-    [TheAppDelegate registerForRemoteNotifications];
- 
+     
     self.pointLabel.colors = @{ @(0.0f) : [UIColor colorWithRed:220.0f/255.0f green:38.0f/255.0f blue:38.0f/255.0f alpha:1.0f],
                                 @(0.50f) : [UIColor colorWithRed:252.0f/255.0f green:197.0f/255.0f blue:46.0f/255.0f alpha:1.0f],
                                 @(1.0f) : [UIColor colorWithRed:117.0f/255.0f green:197.0f/255.0f blue:27.0f/255.0f alpha:1.0f] };

@@ -52,3 +52,11 @@
 /* Title in overlay displayed while loading pending request */
 "BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Loading...";
 
+/* Title in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Could not register";
+
+/* Message in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "The device was not registered to receive push notifications. This could mean that the application has been incorrectly signed.";
+
+/* Title of cancel button in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_CANCEL" = "OK";
