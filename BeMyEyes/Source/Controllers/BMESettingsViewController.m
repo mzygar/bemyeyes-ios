@@ -84,6 +84,8 @@
             
             [self performSegueWithIdentifier:BMEUnwindSettingsSegue sender:self];
         } else {
+            NSLog(@"Could not log out: %@", error);
+            
             NSString *title = MKLocalizedFromTable(BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE, BMESettingsLocalizationTable);
             NSString *message = MKLocalizedFromTable(BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE, BMESettingsLocalizationTable);
             NSString *cancelTitle = MKLocalizedFromTable(BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL, BMESettingsLocalizationTable);

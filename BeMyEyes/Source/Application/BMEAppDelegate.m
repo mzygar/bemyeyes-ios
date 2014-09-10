@@ -77,6 +77,8 @@
     if ([[BMEClient sharedClient] isLoggedIn] && !self.launchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];
     }
+    
+    [self resetBadgeIcon];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -365,8 +367,6 @@
             }
         }];
     }
-
-    [self resetBadgeIcon];
 }
 
 @end
