@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointLabel;
 @property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
 @property (weak, nonatomic) IBOutlet UILabel *failedLoadingPointLabel;
+@property (weak, nonatomic) IBOutlet UIButton *retryLoadingPointButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *snoozeTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *snoozeStatusLabel;
@@ -114,10 +115,15 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.pointDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_DESCRIPTION, BMEHelperMainLocalizationTable);
     self.pointTitleLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_TITLE, BMEHelperMainLocalizationTable);
     self.failedLoadingPointLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_LOADING_POINT_FAILED, BMEHelperMainLocalizationTable);
+    [self.retryLoadingPointButton setTitle:MKLocalizedFromTable(BME_HELPER_MAIN_RETRY_LOADING_POINT, BMEHelperMainLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -
 #pragma mark Private Methods
+
+- (IBAction)retryLoadingPointsButtonPressed:(id)sender {
+    [self reloadPoints];
+}
 
 - (void)displayGreeting {
     if (!self.greetingFormat) {
@@ -236,6 +242,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self.pointActivityIndicator startAnimating];
     [UIView animateWithDuration:0.30f animations:^{
         self.failedLoadingPointLabel.alpha = 0.0f;
+        self.retryLoadingPointButton.alpha = 0.0f;
         self.pointTitleLabel.alpha = 0.0f;
         self.pointLabel.alpha = 0.0f;
         self.pointGraphView.alpha = 0.0f;
@@ -251,6 +258,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (failedLoadingPoints) {
             [self showFailedLoadingPoint];
         } else if (totalLoaded && daysLoaded) {
+            [self showFailedLoadingPoint];
             [self showPoint];
         }
     };
@@ -306,8 +314,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         self.pointLabel.alpha = 1.0f;
         self.pointGraphView.alpha = 1.0f;
         self.failedLoadingPointLabel.alpha = 0.0f;
+        self.retryLoadingPointButton.alpha = 0.0f;
     } completion:^(BOOL finished) {
         self.failedLoadingPointLabel.hidden = YES;
+        self.retryLoadingPointButton.hidden = YES;
     }];
 }
 
@@ -315,12 +325,16 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.failedLoadingPointLabel.alpha = 0.0f;
     self.failedLoadingPointLabel.hidden = NO;
     
+    self.retryLoadingPointButton.alpha = 0.0f;
+    self.retryLoadingPointButton.hidden = NO;
+    
     [UILabel animateWithDuration:0.30f animations:^{
         self.pointDescriptionLabel.alpha = 0.0f;
         self.pointTitleLabel.alpha = 0.0f;
         self.pointLabel.alpha = 0.0f;
         self.pointGraphView.alpha = 0.0f;
         self.failedLoadingPointLabel.alpha = 1.0f;
+        self.retryLoadingPointButton.alpha = 1.0f;
     } completion:^(BOOL finished) {
         self.pointTitleLabel.hidden = YES;
         self.pointLabel.hidden = YES;

@@ -13,6 +13,9 @@
 /* Message shown when the point could not be loaded */
 "BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Kunne ikke indlæse point";
 
+/* Title of button for retrying loading point when failed */
+"BME_HELPER_MAIN_RETRY_LOADING_POINT" = "Prøv igen";
+
 /* Snooze status text when not snoozing */
 "BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "Du er i øjeblikket ikke aktiv";
 
