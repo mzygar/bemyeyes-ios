@@ -4,7 +4,7 @@ PODS:
   - DCKeyValueObjectMapping (1.4)
   - GVUserDefaults (0.9.4)
   - ISO8601DateFormatter (0.7)
-  - Masonry (0.4.0)
+  - Masonry (0.5.3)
   - MiawKit (1.0)
   - MRProgress (0.4.3):
     - MRProgress/ActivityIndicator
@@ -46,7 +46,7 @@ DEPENDENCIES:
   - DCKeyValueObjectMapping
   - GVUserDefaults (~> 0.9.4)
   - ISO8601DateFormatter (~> 0.7)
-  - Masonry (~> 0.4.0)
+  - Masonry (~> 0.5.3)
   - MiawKit (from `https://github.com/robocat/MiawKit.git`)
   - MRProgress (~> 0.4.1)
   - NewRelicAgent
@@ -62,7 +62,7 @@ SPEC CHECKSUMS:
   DCKeyValueObjectMapping: c3561709f296ddffba7768a9d7ccf234307fd3c9
   GVUserDefaults: b706c0a6ed681ea4693143d920dd5bf49845c3a3
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
-  Masonry: 392466f4090cb28cc5349adec067453463e2ecd9
+  Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
   MiawKit: 952999049ff88dfc24df1e65274b728ad3d5e234
   MRProgress: e588fb8d0fba293715eaf0e485dd8402f4ce1de6
   NewRelicAgent: 95b45c10c8f53738fb8a65034e6d6ae72e90570f
