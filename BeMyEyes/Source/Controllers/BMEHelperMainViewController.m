@@ -69,6 +69,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (strong, nonatomic) NSArray *pointEntries;
 
 @property (strong, nonatomic) NSString *greetingFormat;
+
+@property (assign, nonatomic) BOOL failedLoadingPoints;
 @end
 
 @implementation BMEHelperMainViewController
@@ -81,6 +83,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdateProfile:) name:BMEDidUpdateProfileNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdatePoint:) name:BMEDidUpdatePointNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)viewDidLoad {
@@ -248,17 +251,18 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         self.pointGraphView.alpha = 0.0f;
     }];
     
-    __block BOOL failedLoadingPoints = NO;
+    // Assume we didn't fail
+    self.failedLoadingPoints = NO;
+    
     __block BOOL totalLoaded = NO;
     __block BOOL daysLoaded = NO;
     
     void(^completion)(void) = ^{
         [self.pointActivityIndicator stopAnimating];
-            
-        if (failedLoadingPoints) {
+        
+        if (self.failedLoadingPoints) {
             [self showFailedLoadingPoint];
         } else if (totalLoaded && daysLoaded) {
-            [self showFailedLoadingPoint];
             [self showPoint];
         }
     };
@@ -267,7 +271,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (error) {
             NSLog(@"Could not load total point: %@", error);
             
-            failedLoadingPoints = YES;
+            self.failedLoadingPoints = YES;
         } else {
             totalLoaded = YES;
             self.totalPoint = points;
@@ -280,7 +284,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (error) {
             NSLog(@"Could not load point for days: %@", error);
             
-            failedLoadingPoints = YES;
+            self.failedLoadingPoints = YES;
         } else {
             daysLoaded = YES;
             self.pointEntries = entries;
@@ -359,6 +363,12 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 - (void)didUpdatePoint:(NSNotification *)notification {
     [self reloadPoints];
+}
+
+- (void)didBecomeActive:(NSNotification *)notification {
+    if (self.failedLoadingPoints) {
+        [self reloadPoints];
+    }
 }
 
 @end
