@@ -13,6 +13,9 @@
 /* Message shown when the point could not be loaded */
 "BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Could not load point";
 
+/* Title of button for retrying loading point when failed */
+"BME_HELPER_MAIN_RETRY_LOADING_POINT" = "Retry";
+
 /* Snooze status text when not snoozing */
 "BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "You are currently active";
 

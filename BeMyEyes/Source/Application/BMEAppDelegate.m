@@ -18,7 +18,6 @@
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
 @property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
-@property (copy, nonatomic) void(^requireRemoteNotificationsHandler)(BOOL, NSString*, NSError*);
 @property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
 @end
 
@@ -49,6 +48,8 @@
         [Appirater appLaunched:NO];
     }
     
+    [self registerForRemoteNotifications];
+    
 //    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
 //    secretTapGesture.numberOfTouchesRequired = 4;
 //    secretTapGesture.numberOfTapsRequired = 3;
@@ -76,6 +77,8 @@
     if ([[BMEClient sharedClient] isLoggedIn] && !self.launchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];
     }
+    
+    [self resetBadgeIcon];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -156,16 +159,6 @@
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
             [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
             [GVUserDefaults synchronize];
-            
-            if (self.requireRemoteNotificationsHandler) {
-                self.requireRemoteNotificationsHandler(YES, normalizedDeviceToken, error);
-                self.requireRemoteNotificationsHandler = nil;
-            }
-        } else {
-            if (self.requireRemoteNotificationsHandler) {
-                self.requireRemoteNotificationsHandler(NO, nil, error);
-                self.requireRemoteNotificationsHandler = nil;
-            }
         }
     };
     
@@ -197,10 +190,11 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"Failed registering for remote notifications: %@", error);
     
-    if (self.requireRemoteNotificationsHandler) {
-        self.requireRemoteNotificationsHandler(NO, nil, error);
-        self.requireRemoteNotificationsHandler = nil;
-    }
+    NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE, BMEAppDelegateLocalizationTable);
+    NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE, BMEAppDelegateLocalizationTable);
+    NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_CANCEL, BMEAppDelegateLocalizationTable);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 #pragma mark -
@@ -208,25 +202,8 @@
 
 - (void)registerForRemoteNotifications {
     NSLog(@"Register for remote notifications");
-    [GVUserDefaults standardUserDefaults].hadChangeToRegisterForRemoteNotifications = YES;
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-}
-
-- (void)requirePushNotificationsEnabled:(void (^)(BOOL isEnabled))handler {
-    UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-    BOOL isEnabled = (types != UIRemoteNotificationTypeNone);
-    if (!isEnabled) {
-        NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE, BMEAppDelegateLocalizationTable);
-        NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE, BMEAppDelegateLocalizationTable);
-        NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_CANCEL, BMEAppDelegateLocalizationTable);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-        [alert show];
-    }   
- 
-    if (handler) {
-        handler(isEnabled);
-    }
 }
 
 - (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion {
@@ -243,12 +220,6 @@
             completion(granted);
         }
     }];
-}
-
-- (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler {
-    NSLog(@"Require device registered for remote notifications");
-    self.requireRemoteNotificationsHandler = handler;
-    [self registerForRemoteNotifications];
 }
 
 #pragma mark -
@@ -396,8 +367,6 @@
             }
         }];
     }
-
-    [self resetBadgeIcon];
 }
 
 @end

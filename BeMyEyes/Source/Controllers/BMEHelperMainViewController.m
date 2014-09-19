@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointLabel;
 @property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
 @property (weak, nonatomic) IBOutlet UILabel *failedLoadingPointLabel;
+@property (weak, nonatomic) IBOutlet UIButton *retryLoadingPointButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *snoozeTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *snoozeStatusLabel;
@@ -68,6 +69,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (strong, nonatomic) NSArray *pointEntries;
 
 @property (strong, nonatomic) NSString *greetingFormat;
+
+@property (assign, nonatomic) BOOL failedLoadingPoints;
 @end
 
 @implementation BMEHelperMainViewController
@@ -80,15 +83,14 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdateProfile:) name:BMEDidUpdateProfileNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdatePoint:) name:BMEDidUpdatePointNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [MKLocalization registerForLocalization:self];
-    
-    [TheAppDelegate registerForRemoteNotifications];
- 
+     
     self.pointLabel.colors = @{ @(0.0f) : [UIColor colorWithRed:220.0f/255.0f green:38.0f/255.0f blue:38.0f/255.0f alpha:1.0f],
                                 @(0.50f) : [UIColor colorWithRed:252.0f/255.0f green:197.0f/255.0f blue:46.0f/255.0f alpha:1.0f],
                                 @(1.0f) : [UIColor colorWithRed:117.0f/255.0f green:197.0f/255.0f blue:27.0f/255.0f alpha:1.0f] };
@@ -116,10 +118,15 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.pointDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_DESCRIPTION, BMEHelperMainLocalizationTable);
     self.pointTitleLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_TITLE, BMEHelperMainLocalizationTable);
     self.failedLoadingPointLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_LOADING_POINT_FAILED, BMEHelperMainLocalizationTable);
+    [self.retryLoadingPointButton setTitle:MKLocalizedFromTable(BME_HELPER_MAIN_RETRY_LOADING_POINT, BMEHelperMainLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -
 #pragma mark Private Methods
+
+- (IBAction)retryLoadingPointsButtonPressed:(id)sender {
+    [self reloadPoints];
+}
 
 - (void)displayGreeting {
     if (!self.greetingFormat) {
@@ -238,19 +245,22 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self.pointActivityIndicator startAnimating];
     [UIView animateWithDuration:0.30f animations:^{
         self.failedLoadingPointLabel.alpha = 0.0f;
+        self.retryLoadingPointButton.alpha = 0.0f;
         self.pointTitleLabel.alpha = 0.0f;
         self.pointLabel.alpha = 0.0f;
         self.pointGraphView.alpha = 0.0f;
     }];
     
-    __block BOOL failedLoadingPoints = NO;
+    // Assume we didn't fail
+    self.failedLoadingPoints = NO;
+    
     __block BOOL totalLoaded = NO;
     __block BOOL daysLoaded = NO;
     
     void(^completion)(void) = ^{
         [self.pointActivityIndicator stopAnimating];
-            
-        if (failedLoadingPoints) {
+        
+        if (self.failedLoadingPoints) {
             [self showFailedLoadingPoint];
         } else if (totalLoaded && daysLoaded) {
             [self showPoint];
@@ -261,7 +271,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (error) {
             NSLog(@"Could not load total point: %@", error);
             
-            failedLoadingPoints = YES;
+            self.failedLoadingPoints = YES;
         } else {
             totalLoaded = YES;
             self.totalPoint = points;
@@ -274,7 +284,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (error) {
             NSLog(@"Could not load point for days: %@", error);
             
-            failedLoadingPoints = YES;
+            self.failedLoadingPoints = YES;
         } else {
             daysLoaded = YES;
             self.pointEntries = entries;
@@ -308,8 +318,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         self.pointLabel.alpha = 1.0f;
         self.pointGraphView.alpha = 1.0f;
         self.failedLoadingPointLabel.alpha = 0.0f;
+        self.retryLoadingPointButton.alpha = 0.0f;
     } completion:^(BOOL finished) {
         self.failedLoadingPointLabel.hidden = YES;
+        self.retryLoadingPointButton.hidden = YES;
     }];
 }
 
@@ -317,12 +329,16 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.failedLoadingPointLabel.alpha = 0.0f;
     self.failedLoadingPointLabel.hidden = NO;
     
+    self.retryLoadingPointButton.alpha = 0.0f;
+    self.retryLoadingPointButton.hidden = NO;
+    
     [UILabel animateWithDuration:0.30f animations:^{
         self.pointDescriptionLabel.alpha = 0.0f;
         self.pointTitleLabel.alpha = 0.0f;
         self.pointLabel.alpha = 0.0f;
         self.pointGraphView.alpha = 0.0f;
         self.failedLoadingPointLabel.alpha = 1.0f;
+        self.retryLoadingPointButton.alpha = 1.0f;
     } completion:^(BOOL finished) {
         self.pointTitleLabel.hidden = YES;
         self.pointLabel.hidden = YES;
@@ -347,6 +363,12 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 - (void)didUpdatePoint:(NSNotification *)notification {
     [self reloadPoints];
+}
+
+- (void)didBecomeActive:(NSNotification *)notification {
+    if (self.failedLoadingPoints) {
+        [self reloadPoints];
+    }
 }
 
 @end

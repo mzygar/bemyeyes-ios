@@ -668,7 +668,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BME;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Be My Eyes";
 				TargetAttributes = {
 					7236DFF918B8A87B00F622AA = {
@@ -1048,7 +1048,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
@@ -1061,8 +1060,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1080,7 +1079,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -1090,7 +1089,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
@@ -1103,8 +1101,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1116,7 +1114,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
@@ -1127,13 +1125,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1144,7 +1141,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1154,13 +1151,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1170,7 +1166,7 @@
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

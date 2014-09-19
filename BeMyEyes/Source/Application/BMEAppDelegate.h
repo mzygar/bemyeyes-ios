@@ -15,8 +15,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)registerForRemoteNotifications;
-- (void)requirePushNotificationsEnabled:(void(^)(BOOL isEnabled))handler;
 - (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion;
-- (void)requireDeviceRegisteredForRemoteNotifications:(void(^)(BOOL isRegistered, NSString *deviceToken, NSError *error))handler;
 
 @end

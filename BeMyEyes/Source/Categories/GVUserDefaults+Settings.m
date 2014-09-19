@@ -11,7 +11,7 @@
 @implementation GVUserDefaults (Settings)
 
 @dynamic api, deviceToken, isTemporaryDeviceToken, peopleHelped,
-         hasAskedForMoreLanguages, hadChangeToRegisterForRemoteNotifications;
+         hasAskedForMoreLanguages;
 
 #pragma mark -
 #pragma mark Settings

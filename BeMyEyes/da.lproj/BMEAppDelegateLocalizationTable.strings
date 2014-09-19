@@ -51,3 +51,11 @@
 /* Title in overlay displayed while loading pending request */
 "BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Indlæser...";
 
+/* Title in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Kunne ikke registrere";
+
+/* Message in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Enheden kunne ikke registreres til at modtage push notifikationer. Dette kan betyde, at applikationen ikke er blevet rigtigt signed.";
+
+/* Title of cancel button in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_CANCEL" = "OK";

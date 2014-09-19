@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -291,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="735" y="-236"/>
         </scene>
-        <!--Login View Controller - Test-->
+        <!--Test-->
         <scene sceneID="Olh-l6-fc2">
             <objects>
                 <viewController title="Test" id="ihY-sp-kva" customClass="BMELoginViewController" sceneMemberID="viewController">
@@ -642,9 +642,8 @@
                                     <segue destination="rmT-tx-lgV" kind="push" identifier="SignUpMethod" id="46J-Mt-BiQ"/>
                                 </connections>
                             </button>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-Ti-keq">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-Ti-keq">
                                 <rect key="frame" x="20" y="88" width="280" height="304"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.
 
 The helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.
@@ -747,7 +746,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-12-sgI">
                                 <rect key="frame" x="10" y="258" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="gjA-8l-8Pn"/>
                                 </constraints>
@@ -819,11 +817,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mp2-8S-Uh2">
                                 <rect key="frame" x="0.0" y="302" width="320" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVH-Zf-Tf9">
                                         <rect key="frame" x="20" y="-1" width="286" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can also" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqz-Jo-m0H">
                                                 <rect key="frame" x="0.0" y="0.0" width="286" height="35"/>
@@ -1201,7 +1197,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The more you help, the more points you get" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="c5e-qY-biC">
                                         <rect key="frame" x="20" y="0.0" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="hgg-kK-2mt"/>
                                         </constraints>
@@ -1274,14 +1269,28 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kz8-Wh-8Xe">
+                                        <rect key="frame" x="8" y="147" width="304" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Retry">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retryLoadingPointsButtonPressed:" destination="SGY-Uz-e4n" eventType="touchUpInside" id="3Wq-je-GRm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="c92-if-DEm" firstAttribute="leading" secondItem="xWn-9x-sc5" secondAttribute="leading" constant="40" id="037-GU-1F4"/>
                                     <constraint firstItem="A6u-Nj-nK2" firstAttribute="centerY" secondItem="c92-if-DEm" secondAttribute="centerY" id="0Ov-ML-tDF"/>
                                     <constraint firstItem="ftK-Mn-4KQ" firstAttribute="leading" secondItem="xWn-9x-sc5" secondAttribute="leading" constant="20" id="LAD-2p-MU7"/>
+                                    <constraint firstItem="kz8-Wh-8Xe" firstAttribute="top" secondItem="ftK-Mn-4KQ" secondAttribute="bottom" constant="5" id="LRc-0l-jVe"/>
+                                    <constraint firstItem="kz8-Wh-8Xe" firstAttribute="leading" secondItem="xWn-9x-sc5" secondAttribute="leading" constant="8" id="NHt-cO-oND"/>
                                     <constraint firstItem="c5e-qY-biC" firstAttribute="top" secondItem="xWn-9x-sc5" secondAttribute="top" id="Nr0-Ok-cxC"/>
                                     <constraint firstItem="zrP-pI-YAP" firstAttribute="leading" secondItem="xWn-9x-sc5" secondAttribute="leading" id="Ptm-Aa-Cbk"/>
+                                    <constraint firstAttribute="trailing" secondItem="kz8-Wh-8Xe" secondAttribute="trailing" constant="8" id="PyP-Im-OM8"/>
                                     <constraint firstAttribute="bottom" secondItem="zrP-pI-YAP" secondAttribute="bottom" id="Sg1-Nt-35c"/>
                                     <constraint firstAttribute="trailing" secondItem="ftK-Mn-4KQ" secondAttribute="trailing" constant="20" id="YWi-tu-4Oy"/>
                                     <constraint firstAttribute="centerY" secondItem="ycU-KD-XZt" secondAttribute="centerY" id="cDN-AQ-TCO"/>
@@ -1322,6 +1331,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="pointLabel" destination="A6u-Nj-nK2" id="Xu3-OB-amQ"/>
                         <outlet property="pointLabelWidthConstraint" destination="buj-o8-aqd" id="iQ9-j0-4ma"/>
                         <outlet property="pointTitleLabel" destination="c92-if-DEm" id="TD8-WY-NrX"/>
+                        <outlet property="retryLoadingPointButton" destination="kz8-Wh-8Xe" id="EUt-Fx-Ia4"/>
                         <outlet property="scoreTitleLabelLeadingMarginConstraint" destination="037-GU-1F4" id="uWq-lC-tMK"/>
                         <outlet property="scoreTitleLabelWidthConstraint" destination="SYe-Y2-efK" id="bxS-wG-LPx"/>
                         <outlet property="snoozeSliderLineWidthConstraint" destination="Db6-lS-8LR" id="lR8-jE-Fbq"/>
@@ -1430,7 +1440,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="2LO-68-Sve">
                                         <rect key="frame" x="20" y="156" width="280" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Z6y-P9-XhC"/>
                                         </constraints>
@@ -1758,7 +1767,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-zV-1XX">
                                 <rect key="frame" x="20" y="208" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ur9-BI-wWP"/>
                                 </constraints>
@@ -1790,7 +1798,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwZ-op-hZv">
                                 <rect key="frame" x="20" y="261" width="280" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Sf9-Wc-LCV"/>
                                 </constraints>
@@ -1867,7 +1874,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
             </objects>
             <point key="canvasLocation" x="3107" y="1775"/>
         </scene>
-        <!--Languages View Controller - Your Languages-->
+        <!--Your Languages-->
         <scene sceneID="SuY-BI-aAL">
             <objects>
                 <tableViewController id="cYI-ma-LRc" customClass="BMELanguagesViewController" sceneMemberID="viewController">
@@ -1937,7 +1944,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
             </objects>
             <point key="canvasLocation" x="735" y="2371"/>
         </scene>
-        <!--Secret Settings View Controller - Secret Settings-->
+        <!--Secret Settings-->
         <scene sceneID="XYP-Az-MCV">
             <objects>
                 <viewController id="GRa-DQ-eex" customClass="BMESecretSettingsViewController" sceneMemberID="viewController">
@@ -2031,7 +2038,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Secret Settings" id="UIb-xq-qBp">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="ySf-cP-gBc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ySf-cP-gBc">
                             <connections>
                                 <action selector="dismissButtonPressed:" destination="GRa-DQ-eex" id="mxU-Rf-E7Z"/>
                             </connections>
