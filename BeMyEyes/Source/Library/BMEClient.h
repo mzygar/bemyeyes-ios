@@ -55,6 +55,7 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 - (void)sendNewPasswordToEmail:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateUserInfoWithUTCOffset:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateUserWithKnownLanguages:(NSArray *)languages completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)loadAvailableLanguagesWithCompletion:(void(^)(NSArray *languages, NSError *error))completion;
 
 - (void)createRequestWithSuccess:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)loadRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
