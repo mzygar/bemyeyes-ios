@@ -197,6 +197,11 @@
     [alert show];
 }
 
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    NSLog(@"Did register user notification settings");
+    [application registerForRemoteNotifications];
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
