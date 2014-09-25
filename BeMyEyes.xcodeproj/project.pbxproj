@@ -1060,8 +1060,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1079,7 +1079,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2c0276ce-6178-4506-bd1a-2efdbebf37f4";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -1101,8 +1101,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1114,7 +1114,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2c0276ce-6178-4506-bd1a-2efdbebf37f4";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
@@ -1129,8 +1129,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1141,7 +1141,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2c0276ce-6178-4506-bd1a-2efdbebf37f4";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1155,8 +1155,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1166,7 +1166,7 @@
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2c0276ce-6178-4506-bd1a-2efdbebf37f4";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
