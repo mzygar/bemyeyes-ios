@@ -10,8 +10,11 @@
 /* E-mail title */
 "BME_SETTINGS_EMAIL" = "E-mail";
 
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Sprog";
+
 /* Select languages title */
-"BME_SETTINGS_SELECT_LANGUAGES" = "Vælg sprog du kender";
+"BME_SETTINGS_ADD_LANGUAGES" = "Tilføj sprog";
 
 /* Feedback title */
 "BME_SETTINGS_FEEDBACK" = "Giv feedback på appen";

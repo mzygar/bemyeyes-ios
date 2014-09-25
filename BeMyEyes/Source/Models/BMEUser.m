@@ -8,6 +8,8 @@
 
 #import "BMEUser.h"
 
+#import "BMEUserLevel.h"
+
 @implementation BMEUser
 
 #pragma mark -
@@ -23,6 +25,11 @@
         _lastName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(lastName))];
         _languages = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(languages))];
         _role = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(role))];
+        _peopleHelped = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(peopleHelped))];
+        _totalPoints = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(totalPoints))];
+        _currentLevel = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(currentLevel))];
+        _nextLevel = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(nextLevel))];
+        _lastPointEntries = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(lastPointEntries))];
     }
     
     return self;
@@ -37,6 +44,11 @@
     [aCoder encodeObject:self.lastName forKey:NSStringFromSelector(@selector(lastName))];
     [aCoder encodeObject:self.languages forKey:NSStringFromSelector(@selector(languages))];
     [aCoder encodeInteger:self.role forKey:NSStringFromSelector(@selector(role))];
+    [aCoder encodeObject:self.peopleHelped forKey:NSStringFromSelector(@selector(peopleHelped))];
+    [aCoder encodeObject:self.totalPoints forKey:NSStringFromSelector(@selector(totalPoints))];
+    [aCoder encodeObject:self.currentLevel forKey:NSStringFromSelector(@selector(currentLevel))];
+    [aCoder encodeObject:self.nextLevel forKey:NSStringFromSelector(@selector(nextLevel))];
+    [aCoder encodeObject:self.lastPointEntries forKey:NSStringFromSelector(@selector(lastPointEntries))];
 }
 
 - (void)dealloc {
@@ -46,6 +58,9 @@
     _firstName = nil;
     _lastName = nil;
     _languages = nil;
+    _peopleHelped = nil;
+    _totalPoints = nil;
+    _lastPointEntries = nil;
 }
 
 #pragma mark -
@@ -57,6 +72,26 @@
 
 - (BOOL)isBlind {
     return self.role == BMERoleBlind;
+}
+
+- (int)pointsToNextLevel {
+    return self.nextLevel == nil ? 0 : self.nextLevel.threshold.integerValue - self.totalPoints.integerValue;
+}
+
+- (double)levelProgress {
+    double dist = (double)[self distanceBetweenCurrentAndNextLevel];
+    if (dist > 0) {
+        return 1 - ((double)[self pointsToNextLevel]) / dist;
+    } else {
+        return 0;
+    }
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (int)distanceBetweenCurrentAndNextLevel {
+    return self.nextLevel.threshold.integerValue - self.currentLevel.threshold.integerValue;
 }
 
 @end
