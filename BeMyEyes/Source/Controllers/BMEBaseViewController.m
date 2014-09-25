@@ -11,6 +11,21 @@
 @implementation BMEBaseViewController
 
 #pragma mark -
+#pragma mark Lifecycle
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+#pragma mark -
 #pragma mark Private Methods
 
 - (IBAction)backButtonPressed:(id)sender {

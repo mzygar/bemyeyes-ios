@@ -1,0 +1,36 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Indstillinger";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Fornavn";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Efternavn";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-mail";
+
+/* Select languages title */
+"BME_SETTINGS_SELECT_LANGUAGES" = "Vælg sprog du kender";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Giv feedback på appen";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Log ud";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Du blev ikke logget ud. Sørg for at du har en aktiv internetforbindelse og prøv igen.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Kunne ikke logge ud";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Logger ud...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Version %@";
+

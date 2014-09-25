@@ -10,13 +10,21 @@
 
 @implementation GVUserDefaults (Settings)
 
-@dynamic api;
+@dynamic api, deviceToken, isTemporaryDeviceToken, peopleHelped,
+         hasAskedForMoreLanguages;
 
 #pragma mark -
 #pragma mark Settings
 
 - (NSDictionary *)setupDefaults {
     return @{ @"api" : @(BMESettingsAPIPublic) };
+}
+
+#pragma mark -
+#pragma mark Public Methods
+
++ (BOOL)synchronize {
+    return [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

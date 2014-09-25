@@ -8,7 +8,7 @@
 
 #import "BMEBaseViewController.h"
 
-@interface BMESignUpMethodViewController : BMEBaseViewController
+@interface BMESignUpMethodViewController : BMEBaseViewController <MKLocalizable>
 
 @property (assign, nonatomic) BMERole role;
 

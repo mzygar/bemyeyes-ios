@@ -10,12 +10,18 @@
 
 typedef NS_ENUM(NSInteger, BMESettingsAPI) {
     BMESettingsAPIDevelopment = 0,
-    BMESettingsAPIInternal,
+    BMESettingsAPIStaging,
     BMESettingsAPIPublic
 };
 
 @interface GVUserDefaults (Settings)
 
 @property (assign, nonatomic) BMESettingsAPI api;
+@property (strong, nonatomic) NSString *deviceToken;
+@property (assign, nonatomic) BOOL isTemporaryDeviceToken;
+@property (assign, nonatomic) NSUInteger peopleHelped;
+@property (assign, nonatomic) BOOL hasAskedForMoreLanguages;
+
++ (BOOL)synchronize;
 
 @end

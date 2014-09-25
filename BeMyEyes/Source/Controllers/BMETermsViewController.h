@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Be My Eyes. All rights reserved.
 //
 
-#import "BMEBaseViewController.h"
+#import "BMEWebViewViewController.h"
 
-@interface BMETermsViewController : BMEBaseViewController
+@interface BMETermsViewController : BMEWebViewViewController <MKLocalizable>
 
 @end

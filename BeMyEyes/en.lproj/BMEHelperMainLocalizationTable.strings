@@ -1,0 +1,36 @@
+/* Headline of snooze */
+"BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Snooze";
+
+/* Format for snooze status text. %@ is replaced with the snooze amount. */
+"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "You are snoozing the next %@";
+
+/* Point description */
+"BME_HELPER_MAIN_POINT_DESCRIPTION" = "The more you help, the more points you get";
+
+/* Point title */
+"BME_HELPER_MAIN_POINT_TITLE" = "Your score is";
+
+/* Message shown when the point could not be loaded */
+"BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Could not load point";
+
+/* Title of button for retrying loading point when failed */
+"BME_HELPER_MAIN_RETRY_LOADING_POINT" = "Retry";
+
+/* Snooze status text when not snoozing */
+"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "You are currently active";
+
+/* Greeting for helper. %@ is replaced with the name. */
+"BME_HELPER_MAIN_GREETING_1" = "Hi %@!";
+
+/* Greeting for helper. %@ is replaced with the name. */
+"BME_HELPER_MAIN_GREETING_2" = "Ciao %@!";
+
+/* Greeting for helper. %@ is replaced with the name. */
+"BME_HELPER_MAIN_GREETING_3" = "Hello %@!";
+
+/* Greeting for helper. %@ is replaced with the name. */
+"BME_HELPER_MAIN_GREETING_4" = "Hey %@!";
+
+/* Greeting for helper. %@ is replaced with the name. */
+"BME_HELPER_MAIN_GREETING_5" = "Howdy %@!";
+

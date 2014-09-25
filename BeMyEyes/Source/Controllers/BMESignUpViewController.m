@@ -10,6 +10,8 @@
 #import <MRProgress/MRProgress.h>
 #import "BMEAppDelegate.h"
 #import "BMEClient.h"
+#import "BMEEmailValidator.h"
+#import "NSString+BMEDeviceToken.h"
 
 #define BMESignUpMinimumPasswordLength 6
 #define BMESignUpLoggedInSegue @"LoggedIn"
@@ -17,10 +19,16 @@
 
 @interface BMESignUpViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameFooterLabel;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterTopMarginConstraint;
 
 @property (strong, nonatomic) UITextField *activeTextField;
 @property (assign, nonatomic) CGSize keyboardSize;
@@ -40,32 +48,52 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
+    
+    if (self.role == BMERoleHelper) {
+        self.nameFooterLabel.text = nil;
+        self.nameFooterLabel.hidden = YES;
+        self.nameFooterHeightConstraint.constant = 0.0f;
+        self.nameFooterTopMarginConstraint.constant = 0.0f;
+    }
+}
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     self.activeTextField = nil;
 }
 
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_BACK, BMESignUpLocalizationTable) forState:UIControlStateNormal];
+    
+    self.firstNameTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_FIRST_NAME_PLACEHOLDER, BMESignUpLocalizationTable);
+    self.lastNameTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_LAST_NAME_PLACEHOLDER, BMESignUpLocalizationTable);
+    self.nameFooterLabel.text = MKLocalizedFromTable(BME_SIGN_UP_NAME_FOOTER, BMESignUpLocalizationTable);
+    
+    self.emailTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_EMAIL_PLACEHOLDER, BMESignUpLocalizationTable);
+    self.passwordTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_PASSWORD_PLACEHOLDER, BMESignUpLocalizationTable);
+    
+    [self.registerButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_REGISTER, BMESignUpLocalizationTable) forState:UIControlStateNormal];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
 - (IBAction)signUpButtonPressed:(id)sender {
-    if (self.role == BMERoleHelper) {
-        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
-                [self performRegistration];
-            }
-        }];
-    } else {
-        [self performRegistration];
-    }
+    [self performRegistration];
 }
 
 - (void)performRegistration {
     if ([self isInformationValid]) {
+        [self dismissKeyboard];
+        
         MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
         progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-        progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REGISTERING_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when registering");
+        progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_OVERLAY_REGISTERING_TITLE, BMESignUpLocalizationTable);
         
         NSString *email = [self.emailTextField text];
         NSString *password = [self.passwordTextField text];
@@ -73,30 +101,50 @@
         NSString *lastName = [self.lastNameTextField text];
         [[BMEClient sharedClient] createUserWithEmail:email password:password firstName:firstName lastName:lastName role:self.role completion:^(BOOL success, NSError *error) {
             if (success && !error) {
-                progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpViewController", @"Title in overlay displayed when logging in");
+                progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE, BMESignUpLocalizationTable);
                 
-                [[BMEClient sharedClient] loginWithEmail:email password:password success:^(BMEToken *token) {
-                    [progressOverlayView hide:YES];
-                    
-                    [self didLogin];
-                } failure:^(NSError *error) {
-                    [progressOverlayView hide:YES];
-                    
-                    [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+                if (!deviceToken) {
+                    deviceToken = [NSString BMETemporaryDeviceToken];
+                    [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
+                    [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
+                    [GVUserDefaults synchronize];
+                }
+                
+                [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:deviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+                    if (success && !error) {
+                        [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:deviceToken success:^(BMEToken *token) {
+                            [progressOverlayView hide:YES];
+                            
+                            [self didLogin];
+                        } failure:^(NSError *error) {
+                            [progressOverlayView hide:YES];
+                            
+                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                            
+                            NSLog(@"Failed logging in after sign up: %@", error);
+                        }];
+                    } else {
+                        [progressOverlayView hide:YES];
+                        
+                        [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                        
+                        NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
+                    }
                 }];
             } else {
                 [progressOverlayView hide:YES];
                 
                 if ([error code] == BMEClientErrorUserEmailAlreadyRegistered) {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_TITLE", @"BMESignUpViewController", @"Title in alert view shown when e-mail is already registered.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when e-mail is already registered.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_ALREADY_REGISTERED_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when e-mail is already registered.");
+                    NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_TITLE, BMESignUpLocalizationTable);
+                    NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE, BMESignUpLocalizationTable);
+                    NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_CANCEL, BMESignUpLocalizationTable);
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                     [alert show];
                 } else {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_TITLE", @"BMESignUpViewController", @"Title in alert view shown when a network error occurred.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when a network error occurred.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_SIGN_UP_UNKNOWN_ERROR_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when a network error occurred.");
+                    NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE, BMESignUpLocalizationTable);
+                    NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE, BMESignUpLocalizationTable);
+                    NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL, BMESignUpLocalizationTable);
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
                     [alert show];
                 }
@@ -106,7 +154,8 @@
 }
 
 - (void)didLogin {
-    [TheAppDelegate registerForRemoteNotifications];
+    [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }
@@ -128,25 +177,25 @@
             [self.passwordTextField becomeFirstResponder];
         }
         
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_EMPTY_FIELDS_TITLE", @"BMESignUpViewController", @"Title in alert view shown when one or more fields are empty.");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_EMPTY_FIELDS_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when one or more fields are empty.");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMPTY_FIELDS_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when one or more fields are empty.");
+        NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMPTY_FIELDS_TITLE, BMESignUpLocalizationTable);
+        NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMPTY_FIELDS_MESSAGE, BMESignUpLocalizationTable);
+        NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMPTY_FIELDS_CANCEL, BMESignUpLocalizationTable);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
         
         return NO;
-    } else if (![self isEmailValid:[self.emailTextField text]]) {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_TITLE", @"BMESignUpViewController", @"Title in alert view shown when the e-mail is not valid.");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when the e-mail is not valid.");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_EMAIL_NOT_VALID_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when the e-mail is not valid.");
+    } else if (![BMEEmailValidator isEmailValid:[self.emailTextField text]]) {
+        NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_TITLE, BMESignUpLocalizationTable);
+        NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_MESSAGE, BMESignUpLocalizationTable);
+        NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_CANCEL, BMESignUpLocalizationTable);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
         
         return NO;
     } else if ([[self.passwordTextField text] length] < BMESignUpMinimumPasswordLength) {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_TITLE", @"BMESignUpViewController", @"Title in alert view shown when the password is too short.");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_MESSAGE", @"BMESignUpViewController", @"Message in alert view shown when the password is too short.");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PASSWORD_TOO_SHORT_CANCEL", @"BMESignUpViewController", @"Title of cancel button in alert view shown when the password is too short.");
+        NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_TITLE, BMESignUpLocalizationTable);
+        NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_MESSAGE, BMESignUpLocalizationTable);
+        NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_CANCEL, BMESignUpLocalizationTable);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
         
@@ -154,20 +203,6 @@
     }
     
     return YES;
-}
-
-- (BOOL)isEmailValid:(NSString *)candidate {
-    NSString *emailRegex =
-    @"(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
-    @"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
-    @"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
-    @"z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
-    @"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
-    @"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
-    @"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
-    
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES[c] %@", emailRegex];
-    return [emailTest evaluateWithObject:candidate];
 }
 
 - (void)scrollIfNecessary {
@@ -203,6 +238,18 @@
     }
 }
 
+- (void)dismissKeyboard {
+    if ([self.firstNameTextField isFirstResponder]) {
+        [self.firstNameTextField resignFirstResponder];
+    } else if ([self.lastNameTextField isFirstResponder]) {
+        [self.lastNameTextField resignFirstResponder];
+    } else if ([self.emailTextField isFirstResponder]) {
+        [self.emailTextField resignFirstResponder];
+    } else if ([self.passwordTextField isFirstResponder]) {
+        [self.passwordTextField resignFirstResponder];
+    }
+}
+
 #pragma mark -
 #pragma mark Text Field Delegate
 
@@ -217,7 +264,16 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+    if (textField == self.firstNameTextField) {
+        [self.lastNameTextField becomeFirstResponder];
+    } else if (textField == self.lastNameTextField) {
+        [self.emailTextField becomeFirstResponder];
+    } else if (textField == self.emailTextField) {
+        [self.passwordTextField becomeFirstResponder];
+    } else if (textField == self.passwordTextField) {
+        [textField resignFirstResponder];
+        [self performRegistration];
+    }
     
     return YES;
 }

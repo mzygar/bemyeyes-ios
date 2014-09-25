@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>OTSessionErrorCode Constants Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">OpenTok iOS SDK 2.2.0 </a></h1>
+				<a id="developerHome" href="../index.html">TokBox, Inc</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">OTSessionErrorCode Constants Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="OTSessionErrorCode Constants Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">OTSessionErrorCode Constants Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">OTError.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					
+                    
+                    
+                    <h3 class="subsubtitle method-title">OTSessionErrorCode</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>Enumerations of error code values used by
+<a href="../Protocols/OTSessionDelegate.html#//api/name/session:didFailWithError:">[OTSessionDelegate session:didFailWithError:]</a>.</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, OTSessionErrorCode ) {<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionSuccess</a> = 0,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTAuthorizationFailure</a> = 1004,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTErrorInvalidSession</a> = 1005,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTConnectionFailed</a> = 1006,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTNullOrInvalidParameter</a> = 1011,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTNotConnected</a> = 1010,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionIllegalState</a> = 1015,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTNoMessagingServer</a> = 1503,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTConnectionRefused</a> = 1023,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionStateFailed</a> = 1020,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTP2PSessionMaxParticipants</a> = 1403,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionConnectionTimeout</a> = 1021,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionInternalError</a> = 2000,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionInvalidSignalType</a> = 1461,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionSignalDataTooLong</a> = 1413,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTConnectionDropped</a> = 1022,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionSubscriberNotFound</a> = 1112,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">OTSessionPublisherNotFound</a> = 1113,<br/>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="OTSessionSuccess"></a><code>OTSessionSuccess</code></dt>
+<dd>
+
+
+<p>Ignore. Used internally.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTAuthorizationFailure"></a><code>OTAuthorizationFailure</code></dt>
+<dd>
+
+
+<p>An invalid API key or token was provided</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTErrorInvalidSession"></a><code>OTErrorInvalidSession</code></dt>
+<dd>
+
+
+<p>An invalid session ID was provided</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTConnectionFailed"></a><code>OTConnectionFailed</code></dt>
+<dd>
+
+
+<p>There was an error connecting to OpenTok services</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTNullOrInvalidParameter"></a><code>OTNullOrInvalidParameter</code></dt>
+<dd>
+
+
+<p>A parameter passed in to the request is null or invalid.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTNotConnected"></a><code>OTNotConnected</code></dt>
+<dd>
+
+
+<p>The session is not connected, and the requested action requires an
+     active session connection</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionIllegalState"></a><code>OTSessionIllegalState</code></dt>
+<dd>
+
+
+<p>A method has been invoked at an illegal or inappropriate time for this
+session. For example, attempting to connect an already connected session
+will return this error.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTNoMessagingServer"></a><code>OTNoMessagingServer</code></dt>
+<dd>
+
+
+<p>No messaging server is available for this session</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTConnectionRefused"></a><code>OTConnectionRefused</code></dt>
+<dd>
+
+
+<p>A socket could not be opened to the messaging server. Check that
+      outbound ports 443 and 8080 are accessible.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionStateFailed"></a><code>OTSessionStateFailed</code></dt>
+<dd>
+
+
+<p>The connection timed out while attempting to get the session&rsquo;s state</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTP2PSessionMaxParticipants"></a><code>OTP2PSessionMaxParticipants</code></dt>
+<dd>
+
+
+<p>A peer-to-peer enabled session can only have two participants.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionConnectionTimeout"></a><code>OTSessionConnectionTimeout</code></dt>
+<dd>
+
+
+<p>  The connection timed out while attempting to connect to the session.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionInternalError"></a><code>OTSessionInternalError</code></dt>
+<dd>
+
+
+<p>Thread dispatch failure, out of memory, parse error, etc.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionInvalidSignalType"></a><code>OTSessionInvalidSignalType</code></dt>
+<dd>
+
+
+<p>You attempted to send a signal with an invalid type.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionSignalDataTooLong"></a><code>OTSessionSignalDataTooLong</code></dt>
+<dd>
+
+
+<p>You attempted to send a signal with a data string that is greater than
+     the maximum length (8KB).</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTConnectionDropped"></a><code>OTConnectionDropped</code></dt>
+<dd>
+
+
+<p>The connection to the OpenTok messaging server was dropped..</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionSubscriberNotFound"></a><code>OTSessionSubscriberNotFound</code></dt>
+<dd>
+
+
+<p>The subscriber is unknown to this session. This is usually the result of
+attempting to unsubscribe a subscriber that is not associated with the
+session.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="OTSessionPublisherNotFound"></a><code>OTSessionPublisherNotFound</code></dt>
+<dd>
+
+
+<p>The publisher is unknown to this session. This is usually the result of
+attempting to unpublish a publisher that is not associated with the
+session.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">OTError.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <code class="declared-in-ref">OTError.h</code><br />
+                    </div>				
+                    
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 TokBox, Inc. All rights reserved. (Last updated: 2014-06-11)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

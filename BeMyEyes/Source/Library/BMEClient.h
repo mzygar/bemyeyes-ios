@@ -31,6 +31,8 @@ enum {
     BMEClientErrorUserFacebookUserNotFound = 3006,
 };
 
+extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
+
 @interface BMEClient : AFHTTPClient
 
 @property (readonly, nonatomic, getter = isLoggedIn) BOOL loggedIn;
@@ -41,23 +43,49 @@ enum {
 - (void)setUsername:(NSString *)username password:(NSString *)password;
 
 - (void)createUserWithEmail:(NSString *)email password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)createFacebookUserId:(NSInteger)userId email:(NSString *)email firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)loginWithEmail:(NSString *)email password:(NSString *)password success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
-- (void)loginWithEmail:(NSString *)email userId:(NSInteger)userId success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
-- (void)loginUsingTokenWithCompletion:(void (^)(BOOL success, NSError *error))completion;
-- (void)loginUsingFacebookWithSuccesss:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
+- (void)createFacebookUserId:(long long)userId email:(NSString *)email firstName:(NSString *)firstName lastName:(NSString *)lastName role:(BMERole)role completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateCurrentUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateUserWithIdentifier:(NSString *)identifier firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
+- (void)loginWithEmail:(NSString *)email userId:(long long)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
+- (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)loginUsingFacebookWithDeviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
 - (void)logoutWithCompletion:(void (^)(BOOL success, NSError *error))completion;
+- (void)resetLogin;
+- (void)sendNewPasswordToEmail:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateUserInfoWithUTCOffset:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateUserWithKnownLanguages:(NSArray *)languages completion:(void (^)(BOOL success, NSError *error))completion;
 
 - (void)createRequestWithSuccess:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)loadRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)answerRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)cancelAnswerForRequestWithShortId:(NSString *)shortId completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)disconnectFromRequestWithShortId:(NSString *)shortId completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)checkForPendingRequest:(void (^)(NSString *shortId, BOOL success, NSError *error))completion;
 
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction;
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)reportAbuseForRequestWithId:(NSString *)identifier reason:(NSString *)reason completion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo))success failure:(void(^)(NSError *error))failure;
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction;
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction;
+- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction;
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction;
+- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction;
+- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+
+- (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo, NSError *error))completion;
+
+- (void)loadTotalPoint:(void(^)(NSUInteger point, NSError *error))completion;
+- (void)loadPointForDays:(NSUInteger)days completion:(void(^)(NSArray *entries, NSError *error))completion;
 
 - (NSString *)token;
 - (NSDate *)tokenExpiryDate;

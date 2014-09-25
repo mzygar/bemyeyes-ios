@@ -11,6 +11,7 @@
 
 @interface BMERequest : NSObject
 
+@property (readonly, nonatomic) NSString *identifier;
 @property (readonly, nonatomic) NSString *shortId;
 @property (readonly, nonatomic) BMEOpenTokSession *openTok;
 @property (readonly, nonatomic) NSString *blindName;

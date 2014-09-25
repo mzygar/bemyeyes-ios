@@ -1,0 +1,35 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Settings";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "First name";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Surname";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-mail";
+
+/* Select languages title */
+"BME_SETTINGS_SELECT_LANGUAGES" = "Select languages you know";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Give feedback on the app";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Log out";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "You were not logged out. Please ensure that you have an active internet connection and try again.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Could not log out";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Logging out...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Version %@";

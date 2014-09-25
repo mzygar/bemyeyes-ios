@@ -8,13 +8,17 @@
 
 #import "BMEAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
-#import <HIPSocialAuth/HIPSocialAuthManager.h>
+#import <Appirater/Appirater.h>
 #import <PSAlertView/PSPDFAlertView.h>
+#import <MRProgress/MRProgress.h>
 #import "BMEClient.h"
 #import "BMECallViewController.h"
+#import "BMECallAudioPlayer.h"
 
-@interface BMEAppDelegate ()
+@interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
+@property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
+@property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
 @end
 
 @implementation BMEAppDelegate
@@ -23,14 +27,33 @@
 #pragma mark Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString *shortIdInLaunchOptions = [self shortIdInLaunchOptions:launchOptions];
+    self.launchedWithShortID = (shortIdInLaunchOptions != nil);
+    
+    [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
     [self checkIfLoggedIn];
-    [self checkIfAppOpenedByAnsweringWithLaunchOptions:launchOptions];
     
-    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
-    secretTapGesture.numberOfTouchesRequired = 4;
-    secretTapGesture.numberOfTapsRequired = 3;
-    [self.window addGestureRecognizer:secretTapGesture];
+    if (self.isLaunchedWithShortID) {
+        [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortIdInLaunchOptions afterDelay:0.0f];
+        [self resetBadgeIcon];
+    }
+    
+    if ([BMEAppStoreId length] > 0) {
+        [Appirater setAppId:BMEAppStoreId];
+        [Appirater setDaysUntilPrompt:5];
+        [Appirater setUsesUntilPrompt:2];
+        [Appirater setSignificantEventsUntilPrompt:2];
+        [Appirater setTimeBeforeReminding:2];
+        [Appirater appLaunched:NO];
+    }
+    
+    [self registerForRemoteNotifications];
+    
+//    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
+//    secretTapGesture.numberOfTouchesRequired = 4;
+//    secretTapGesture.numberOfTapsRequired = 3;
+//    [self.window addGestureRecognizer:secretTapGesture];
     
     return YES;
 }
@@ -40,7 +63,10 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [GVUserDefaults synchronize];
+    
+    // We enter the background, reset the launched with short ID state to prepare for next launch
+    self.launchedWithShortID = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -48,15 +74,15 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    if ([[BMEClient sharedClient] isLoggedIn] && !self.launchedWithShortID) {
+        [self checkForPendingRequestIfIconHasBadge];
+    }
     
+    [self resetBadgeIcon];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [[HIPSocialAuthManager sharedManager] handleOpenURL:url];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -65,53 +91,95 @@
         return;
     }
     
-    NSDictionary *alertInfo = [apsInfo objectForKey:@"alert"];
-    if (!alertInfo) {
+    id alert = [apsInfo objectForKey:@"alert"];
+    if (!alert) {
         return;
     }
     
-    NSString *shortId = [alertInfo objectForKey:@"short_id"];
-    
     if (application.applicationState == UIApplicationStateActive) {
-        if (shortId) {
-            if (self.callAlertView) {
-                [self.callAlertView dismissWithClickedButtonIndex:[self.callAlertView cancelButtonIndex] animated:NO];
+        if ([alert isKindOfClass:[NSDictionary class]]) {
+            NSString *shortId = [alert objectForKey:@"short_id"];;
+            if (shortId) {
+                if (self.callAlertView) {
+                    [self.callAlertView dismissWithClickedButtonIndex:[self.callAlertView cancelButtonIndex] animated:NO];
+                }
+                
+                NSString *actionLocKey = [alert objectForKey:@"action-loc-key"];
+                NSString *locKey = [alert objectForKey:@"loc-key"];
+                NSArray *locArgs = [alert objectForKey:@"loc-args"];
+                NSString *name = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME, BMEAppDelegateLocalizationTable);
+                if ([locArgs count] > 0) {
+                    name = locArgs[0];
+                }
+                
+                NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE, BMEAppDelegateLocalizationTable);
+                NSString *message = [NSString stringWithFormat:NSLocalizedString(locKey, nil), name];
+                NSString *actionButton = NSLocalizedString(actionLocKey, nil);
+                NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL, BMEAppDelegateLocalizationTable);
+                
+                [self playCallTone];
+                
+                __weak typeof(self) weakSelf = self;
+                self.callAlertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+                [self.callAlertView addButtonWithTitle:actionButton block:^{
+                    [weakSelf didAnswerCallWithShortId:shortId];
+                    [weakSelf stopCallTone];
+                }];
+                [self.callAlertView setCancelButtonWithTitle:cancelButton block:^{
+                    [weakSelf stopCallTone];
+                }];
+                [self.callAlertView show];
             }
-            
-            NSString *actionLocKey = [alertInfo objectForKey:@"action-loc-key"];
-            NSString *locKey = [alertInfo objectForKey:@"loc-key"];
-            NSArray *locArgs = [alertInfo objectForKey:@"loc-args"];
-            NSString *name = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_DEFAULT_NAME", @"BMEAppDelegate", @"Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments.");
-            if ([locArgs count] > 0) {
-                name = locArgs[0];
-            }
-            
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_TITLE", @"BMEAppDelegate", @"Title in alert view shown when a call is received while the app was active");
-            NSString *message = [NSString stringWithFormat:NSLocalizedString(locKey, nil), name];
-            NSString *actionButton = NSLocalizedString(actionLocKey, nil);
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_REQUEST_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown when a call is received while the app was active");
-            
-            __weak typeof(self) weakSelf = self;
-            self.callAlertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
-            [self.callAlertView addButtonWithTitle:actionButton block:^{
-                [weakSelf didAnswerCallWithShortId:shortId];
-            }];
-            [self.callAlertView setCancelButtonWithTitle:cancelButton block:nil];
-            [self.callAlertView show];
+        } else if ([alert isKindOfClass:[NSString class]]) {
+            PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:nil message:alert];
+            [alertView setCancelButtonWithTitle:@"OK" block:nil];
+            [alertView show];
         }
     } else if (application.applicationState == UIApplicationStateInactive) {
         // If the application state was inactive, this means the user pressed an action button from a notification
-        if (shortId) {
-            [self didAnswerCallWithShortId:shortId];
+        if ([alert isKindOfClass:[NSDictionary class]]) {
+            NSString *shortId = [alert objectForKey:@"short_id"];;
+            if (shortId) {
+                // The app was launched from a remote notification that contained a short ID
+                self.launchedWithShortID = YES;
+                [self didAnswerCallWithShortId:shortId];
+            }
         }
     }
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // We cannot register the device of the user without knowing who he is.
-    // That is, he needs to be logged in and thus have a token.
-    if ([BMEClient sharedClient].token) {
-        [[BMEClient sharedClient] registerDeviceWithDeviceToken:deviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+    NSLog(@"Did register for remote notifications");
+    
+    NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
+    NSString *existingDeviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+    
+    void(^completionHandler)(NSError *) = ^(NSError *error) {
+        if (!error && normalizedDeviceToken) {
+            [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
+            [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
+            [GVUserDefaults synchronize];
+        }
+    };
+    
+    if (existingDeviceToken) {
+        NSLog(@"Update device token '%@' to: %@", existingDeviceToken, normalizedDeviceToken);
+        
+        // Update using existing device token
+        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+            completionHandler(error);
+            
+            if (error) {
+                NSLog(@"Failed updating device: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"Register new device token: %@", normalizedDeviceToken);
+        
+        // Register new device token
+        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+            completionHandler(error);
+            
             if (error) {
                 NSLog(@"Failed registering device: %@", error);
             }
@@ -119,35 +187,42 @@
     }
 }
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Failed registering for remote notifications: %@", error);
+    
+    NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE, BMEAppDelegateLocalizationTable);
+    NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE, BMEAppDelegateLocalizationTable);
+    NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_CANCEL, BMEAppDelegateLocalizationTable);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    NSLog(@"Did register user notification settings");
+    [application registerForRemoteNotifications];
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)registerForRemoteNotifications {
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-}
+    NSLog(@"Register for remote notifications");
 
-- (void)requirePushNotificationsEnabled:(void (^)(BOOL isEnabled))handler {
-    UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-    BOOL isEnabled = types & UIRemoteNotificationTypeAlert;
-    if (!isEnabled) {
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown if push notifications are not enabled");
-        NSString *message = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_MESSAGE", @"BMEAppDelegate", @"MEssage in alert view shown if push notifications are not enabled");
-        NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_PUSH_NOT_ENABLED_CANCEL", @"BMEAppDelegate", @"Title of cancel button in alert view shown if push notifications are not enabled");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-        [alert show];
-    }
- 
-    if (handler) {
-        handler(isEnabled);
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    } else {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     }
 }
 
 - (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion {
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         if (!granted) {
-            NSString *title = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_TITLE", @"BMEAppDelegate", @"Title in alert view shown when the microphone is disabled");
-            NSString *message = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_MESSAGE", @"BMEAppDelegate", @"Message in alert view shown when the microphone is disabled");
-            NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_MICROPHONE_DISABLED_CANCEL_BUTTON", @"BMEAppDelegate", @"Title of cancel button in alert view shown when the microphone is disabled");
+            NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE, BMEAppDelegateLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE, BMEAppDelegateLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_CANCEL, BMEAppDelegateLocalizationTable);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -168,39 +243,40 @@
 
 - (void)checkIfLoggedIn {
     NSLog(@"Check if logged in");
-    if ([[BMEClient sharedClient] token] != nil && [[BMEClient sharedClient] isTokenValid]) {
+    if ([GVUserDefaults standardUserDefaults].deviceToken != nil && [[BMEClient sharedClient] isTokenValid]) {
         UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainControllerIdentifier];
         [self replaceTopController:mainController];
         
-        [[BMEClient sharedClient] loginUsingTokenWithCompletion:^(BOOL success, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@", error);
-            }
-         
-            switch ([error code]) {
-                case BMEClientErrorUserNotFound:
-                case BMEClientErrorUserFacebookUserNotFound:
-                case BMEClientErrorUserTokenNotFound:
-                case BMEClientErrorUserTokenExpired:
-                    NSLog(@"Log in not valid. Log out.");
-                    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
-                    [[BMEClient sharedClient] logoutWithCompletion:nil];
-                    NSLog(@"Could not automatically log in: %@", error);
-                    break;
-                default:
-                    NSLog(@"Did log in");
-                    [self didLogin];
-                    break;
+        [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
+            if (success) {
+                [self didLogin];
+            } else {
+                NSLog(@"Could not automatically log in: %@", error);
+                
+                [self loginFailed];
             }
         }];
     } else {
-        NSLog(@"Token: %@", [BMEClient sharedClient].token);
+        NSLog(@"Device token: %@", [GVUserDefaults standardUserDefaults].deviceToken);
         NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");
     }
 }
 
+- (void)loginFailed {
+    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
+    
+    [[BMEClient sharedClient] logoutWithCompletion:nil];
+    [[BMEClient sharedClient] resetLogin];
+    [self resetBadgeIcon];
+}
+
 - (void)didLogin {
-    [self registerForRemoteNotifications];
+    [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
+    
+    if (!self.isLaunchedWithShortID) {
+        [self checkForPendingRequestIfIconHasBadge];
+    }
 }
 
 - (void)replaceTopController:(UIViewController *)topController {
@@ -208,14 +284,11 @@
     navigationController.viewControllers = @[ topController ];
 }
 
-- (void)checkIfAppOpenedByAnsweringWithLaunchOptions:(NSDictionary *)launchOptions {
+- (NSString *)shortIdInLaunchOptions:(NSDictionary *)launchOptions {
     NSDictionary *userInfo = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
     NSDictionary *alertInfo = [apsInfo objectForKey:@"alert"];
-    if ([alertInfo objectForKey:@"short_id"]) {
-        NSString *shortId = [alertInfo objectForKey:@"short_id"];
-        [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortId afterDelay:0.0f];
-    }
+    return [alertInfo objectForKey:@"short_id"];
 }
 
 - (void)didAnswerCallWithShortId:(NSString *)shortId {
@@ -225,8 +298,11 @@
             callController.callMode = BMECallModeAnswer;
             callController.shortId = shortId;
             
-            UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-            [navigationController presentViewController:callController animated:YES completion:nil];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
+            navigationController.navigationBarHidden = YES;
+            
+            UINavigationController *rootNavigationController = (UINavigationController *)self.window.rootViewController;
+            [rootNavigationController presentViewController:navigationController animated:YES completion:nil];
         }
     }];
 }
@@ -245,6 +321,62 @@
 - (void)handleSecretTapGesture:(UITapGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         [self presentSecretSettings];
+    }
+}
+
+- (void)playCallTone {
+    if (!self.callAudioPlayer) {
+        NSError *error = nil;
+        self.callAudioPlayer = [BMECallAudioPlayer playerWithError:&error];
+        if (!error) {
+            if ([self.callAudioPlayer prepareToPlay]) {
+                [self.callAudioPlayer play];
+            }
+        }
+    }
+}
+
+- (void)stopCallTone {
+    if (self.callAudioPlayer) {
+        [self.callAudioPlayer stop];
+        self.callAudioPlayer = nil;
+    }
+}
+
+- (void)resetBadgeIcon {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
+- (void)checkForPendingRequestIfIconHasBadge {
+    NSUInteger badgeCount = [UIApplication sharedApplication].applicationIconBadgeNumber;
+    if (badgeCount > 0) {
+        MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.window animated:YES];
+        progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
+        progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE, BMEAppDelegateLocalizationTable);
+    
+        [[BMEClient sharedClient] checkForPendingRequest:^(NSString *shortId, BOOL success, NSError *error) {
+            [progressOverlayView hide:YES];
+            
+            if (success) {
+                if (shortId) {
+                    [self didAnswerCallWithShortId:shortId];
+                } else {
+                    NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE, BMEAppDelegateLocalizationTable);
+                    NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE, BMEAppDelegateLocalizationTable);
+                    NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL, BMEAppDelegateLocalizationTable);
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+                    [alertView show];
+                }
+            } else {
+                NSLog(@"Could not load pending request: %@", error);
+                
+                NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE, BMEAppDelegateLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE, BMEAppDelegateLocalizationTable);
+                NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL, BMEAppDelegateLocalizationTable);
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+                [alertView show];
+            }
+        }];
     }
 }
 

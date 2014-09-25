@@ -8,55 +8,97 @@
 
 #import "BMESignUpMethodViewController.h"
 #import <MRProgress/MRProgress.h>
+#import <Accounts/Accounts.h>
 #import "BMEAppDelegate.h"
 #import "BMESignUpViewController.h"
 #import "BMEClient.h"
+#import "BMEUser.h"
 #import "BMEFacebookInfo.h"
+#import "NSString+BMEDeviceToken.h"
 
 #define BMESignUpLoggedInSegue @"LoggedIn"
 #define BMESignUpMethodSignUpSegue @"SignUp"
 #define BMERegisteredSegue @"Registered"
 
 @interface BMESignUpMethodViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UILabel *facebookFooterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signUpTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signUpBottomLabel;
 @property (weak, nonatomic) IBOutlet UILabel *termsTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *termsBottomLabel;
+@property (weak, nonatomic) IBOutlet UILabel *privacyTopLabel;
+@property (weak, nonatomic) IBOutlet UILabel *privacyBottomLabel;
+@property (weak, nonatomic) IBOutlet UIButton *emailSignUpButton;
+@property (weak, nonatomic) IBOutlet UIButton *termsButton;
+@property (weak, nonatomic) IBOutlet UIButton *privacyButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterTopMarginConstraint;
 @end
 
 @implementation BMESignUpMethodViewController
 
 #pragma mark -
-#pragma mark Private Methods
+#pragma mark Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Before checking if the user has enabled notifications,
-    // we must be sure that we have given them the chance to do so
+    [MKLocalization registerForLocalization:self];
+    
+    self.signUpTopLabel.isAccessibilityElement = NO;
+    self.signUpBottomLabel.isAccessibilityElement = NO;
+    self.termsTopLabel.isAccessibilityElement = NO;
+    self.termsBottomLabel.isAccessibilityElement = NO;
+    self.privacyTopLabel.isAccessibilityElement = NO;
+    self.privacyBottomLabel.isAccessibilityElement = NO;
+    
     if (self.role == BMERoleHelper) {
-        [TheAppDelegate registerForRemoteNotifications];
+        self.facebookFooterLabel.text = nil;
+        self.facebookFooterHeightConstraint.constant = 0.0f;
+        self.facebookFooterTopMarginConstraint.constant = 0.0f;
     }
 }
 
+- (void)shouldLocalize {
+    [self.backButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_METHOD_BACK, BMESignUpMethodLocalizationTable) forState:UIControlStateNormal];
+    
+    self.headlineLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_HEADLINE, BMESignUpMethodLocalizationTable);
+    
+    [self.facebookButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK, BMESignUpMethodLocalizationTable) forState:UIControlStateNormal];
+    self.facebookFooterLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK_FOOTER, BMESignUpMethodLocalizationTable);
+    
+    self.signUpTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_TOP, BMESignUpMethodLocalizationTable);
+    self.signUpBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_BOTTOM, BMESignUpMethodLocalizationTable);
+    
+    self.termsTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP, BMESignUpMethodLocalizationTable);
+    self.termsBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM, BMESignUpMethodLocalizationTable);
+    
+    self.privacyTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP, BMESignUpMethodLocalizationTable);
+    self.privacyBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM, BMESignUpMethodLocalizationTable);
+    
+    self.emailSignUpButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
+    self.emailSignUpButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
+    
+    self.termsButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
+    self.termsButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
+    
+    self.privacyButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
+    self.privacyButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
 - (IBAction)facebookButtonPressed:(id)sender {
-    if (self.role == BMERoleHelper) {
-        [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
-                [self performFacebookRegistration];
-            }
-        }];
-    } else {
-        [self performFacebookRegistration];
-    }
+    [self performFacebookRegistration];
 }
 
 - (IBAction)signUpButtonPressed:(id)sender {
-    [TheAppDelegate requirePushNotificationsEnabled:^(BOOL isEnabled) {
-        if (isEnabled) {
-            [self performSegueWithIdentifier:BMESignUpMethodSignUpSegue sender:self];
-        }
-    }];
+    [self presentSignUp];
 }
 
 - (IBAction)signUpButtonTouched:(id)sender {
@@ -79,57 +121,102 @@
     self.termsBottomLabel.alpha = 1.0f;
 }
 
+- (IBAction)privacyButtonTouched:(id)sender {
+    self.privacyTopLabel.alpha = 0.50f;
+    self.privacyBottomLabel.alpha = 0.50f;
+}
+
+- (IBAction)privacyButtonReleased:(id)sender {
+    self.privacyTopLabel.alpha = 1.0f;
+    self.privacyBottomLabel.alpha = 1.0f;
+}
+
 - (void)performFacebookRegistration {
     MRProgressOverlayView *progressOverlayView = [MRProgressOverlayView showOverlayAddedTo:self.view.window animated:YES];
     progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
-    progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_REGISTERING_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when registering");
+    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE, BMESignUpMethodLocalizationTable);
     
-    [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo) {
-        [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId integerValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
-            if (success && !error) {
-                progressOverlayView.titleLabelText = NSLocalizedStringFromTable(@"OVERLAY_LOGGING_IN_TITLE", @"BMESignUpMethodViewController", @"Title in overlay displayed when logging in");
+    [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
+        if (!error) {
+            [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId longLongValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
+                if (success && !error) {
+                    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE, BMESignUpMethodLocalizationTable);
                 
-                [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId integerValue] success:^(BMEToken *token) {
-                    [progressOverlayView hide:YES];
+                    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+                    if (!deviceToken) {
+                        deviceToken = [NSString BMETemporaryDeviceToken];
+                        [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
+                        [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
+                        [GVUserDefaults synchronize];
+                    }
                     
-                    [self didLogin];
-                } failure:^(NSError *error) {
-                    [progressOverlayView hide:YES];
-                    
-                    [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                }];
-            } else {
-                [progressOverlayView hide:YES];
-                
-                if ([error code] == BMEClientErrorUserEmailAlreadyRegistered)  {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when e-mail is already registered.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when e-mail is already registered.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when e-mail is already registered.");
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-                    [alert show];
+                    [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:deviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+                        if (success && !error) {
+                            [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:deviceToken success:^(BMEToken *token) {
+                                [progressOverlayView hide:YES];
+                                
+                                [self didLogin];
+                            } failure:^(NSError *error) {
+                                [progressOverlayView hide:YES];
+                                
+                                [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                                
+                                NSLog(@"Failed logging in after sign up: %@", error);
+                            }];
+                        } else {
+                            [progressOverlayView hide:YES];
+                            
+                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                            
+                            NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
+                        }
+                    }];    
                 } else {
-                    NSString *title = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when a TITLEnetwork error occurred during Facebook log in.");
-                    NSString *message = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when a network error occurred during Facebook log in.");
-                    NSString *cancelButton = NSLocalizedStringFromTable(@"ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when a network error occurred during Facebook log in.");
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-                    [alert show];
+                    [progressOverlayView hide:YES];
+                    
+                    if ([error code] == BMEClientErrorUserEmailAlreadyRegistered)  {
+                        NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE, BMESignUpMethodLocalizationTable);
+                        NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE, BMESignUpMethodLocalizationTable);
+                        NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL, BMESignUpMethodLocalizationTable);
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+                        [alert show];
+                    } else {
+                        NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE, BMESignUpMethodLocalizationTable);
+                        NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE, BMESignUpMethodLocalizationTable);
+                        NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL, BMESignUpMethodLocalizationTable);
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+                        [alert show];
+                    }
                 }
+            }];
+        } else {
+            [progressOverlayView hide:YES];
+            
+            if ([error code] == ACErrorAccountNotFound) {
+                NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE, BMESignUpMethodLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE, BMESignUpMethodLocalizationTable);
+                NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL, BMESignUpMethodLocalizationTable);
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+                [alert show];
+            } else {
+                NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE, BMESignUpMethodLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE, BMESignUpMethodLocalizationTable);
+                NSString *cancelButtonTitle = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL, BMESignUpMethodLocalizationTable);
+            
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
+                [alert show];
             }
-        }];
-    } failure:^(NSError *error) {
-        [progressOverlayView hide:YES];
-        
-        NSString *title = NSLocalizedStringFromTable(@"ALERT_NOT_LOGGED_IN_TITLE", @"BMESignUpMethodViewController", @"Title in alert view shown when log in to Facebook failed");
-        NSString *cancelButtonTitle = NSLocalizedStringFromTable(@"ALERT_NOT_LOGGED_IN_CANCEL", @"BMESignUpMethodViewController", @"Title of cancel button in alert view shown when log in to Facebook failed");
-        NSString *message = message = NSLocalizedStringFromTable(@"ALERT_NOT_LOGGED_IN_MESSAGE", @"BMESignUpMethodViewController", @"Message in alert view shown when logging into Facebook but it failed because authentication failed");
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil];
-        [alert show];
+        }
     }];
 }
 
+- (void)presentSignUp {
+    [self performSegueWithIdentifier:BMESignUpMethodSignUpSegue sender:self];
+}
+
 - (void)didLogin {
-    [TheAppDelegate registerForRemoteNotifications];
+    [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     
     [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
 }

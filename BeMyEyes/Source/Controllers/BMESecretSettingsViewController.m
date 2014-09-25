@@ -10,11 +10,13 @@
 
 enum {
     BMESettingsAPISegmentedControlDevelopment = 0,
-    BMESettingsAPISegmentedControlInternal,
+    BMESettingsAPISegmentedControlStaging,
     BMESettingsAPISegmentedControlPublic
 };
 
 @interface BMESecretSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *apiTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *apiDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *apiSegmentedControl;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentTopMarginConstraint;
 
@@ -28,6 +30,8 @@ enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
     
     self.contentTopMarginConstraint.constant = 0.0f;
     
@@ -45,6 +49,15 @@ enum {
     [super viewWillDisappear:animated];
     
     [[UIApplication sharedApplication] setStatusBarStyle:self.statusBarStyleWhenPresented animated:YES];
+}
+
+- (void)shouldLocalize {
+    self.apiTitleLabel.text = MKLocalizedFromTable(BME_SECRET_SETTINGS_API_TITLE, BMESecretSettingsLocalizationTable);
+    self.apiDescriptionLabel.text = MKLocalizedFromTable(BME_SECRET_SETTINGS_API_DESCRIPTION, BMESecretSettingsLocalizationTable);
+    
+    [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_DEVELOPMENT, BMESecretSettingsLocalizationTable) forSegmentAtIndex:0];
+    [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_STAGING, BMESecretSettingsLocalizationTable) forSegmentAtIndex:0];
+    [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_PUBLIC, BMESecretSettingsLocalizationTable) forSegmentAtIndex:0];
 }
 
 #pragma mark -

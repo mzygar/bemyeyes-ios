@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Be My Eyes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BMEBaseViewController.h"
 
 typedef NS_ENUM(NSInteger, BMECallMode) {
     BMECallModeUnknown = -1,
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, BMECallMode) {
     BMECallModeAnswer,
 };
 
-@interface BMECallViewController : UIViewController
+@interface BMECallViewController : BMEBaseViewController <MKLocalizable>
 
 @property (assign, nonatomic) BMECallMode callMode;
 @property (copy, nonatomic) NSString *shortId;

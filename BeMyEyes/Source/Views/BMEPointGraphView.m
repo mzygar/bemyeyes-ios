@@ -11,6 +11,8 @@
 
 #define BMEPointGraphDefaultStrokeWidth 4.0f
 #define BMEPointGraphDefaultStrokeColor [UIColor blackColor]
+#define BMEPointGraphDefaultDashedDayStrokeWidth 2.0f
+#define BMEPointGraphDefaultDashedDayColor [UIColor lightGrayColor]
 #define BMEPointGraphDefaultGradientStartColor [UIColor whiteColor]
 #define BMEPointGraphDefaultGradientEndColor [UIColor blueColor]
 #define BMEPointGraphDefaultGraphInsets UIEdgeInsetsMake(30.0f, -2.0f, 30.0f, 30.0f);
@@ -63,6 +65,8 @@
     
     self.strokeWidth = BMEPointGraphDefaultStrokeWidth;
     self.strokeColor = BMEPointGraphDefaultStrokeColor;
+    self.dashedDayStrokeWidth = BMEPointGraphDefaultDashedDayStrokeWidth;
+    self.dashedDayColor = BMEPointGraphDefaultDashedDayColor;
     self.gradientStartColor = BMEPointGraphDefaultGradientStartColor;
     self.gradientEndColor = BMEPointGraphDefaultGradientEndColor;
     self.calculatesMinimum = YES;
@@ -92,7 +96,7 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)addPoints:(NSUInteger)points atDate:(NSDate *)date {
+- (void)addPoint:(NSUInteger)points atDate:(NSDate *)date {
     BMEPointGraphEntry *entry = [BMEPointGraphEntry entryWithPoints:points date:date];
     [self.entries addObject:entry];
 }
@@ -115,7 +119,9 @@
         
         NSTimeInterval timeDifference = [[self lastEntry].date timeIntervalSinceDate:[self firstEntry].date];
         self.pixelsPerSecond = self.adjustedSize.width / timeDifference;
-        self.pixelsPerPoint = self.adjustedSize.height / (self.maximum - self.minimum);
+        
+        CGFloat pointInterval = self.maximum - self.minimum;
+        self.pixelsPerPoint = (pointInterval == 0) ? 0 : self.adjustedSize.height / pointInterval;
     }
     
     [self setNeedsDisplay];
@@ -164,8 +170,6 @@
 }
 
 - (void)drawGraph {
-    CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), [self.strokeColor CGColor]);
-    
     CGMutablePathRef linePath = CGPathCreateMutable();
     CGMutablePathRef fillPath = CGPathCreateMutable();
     
@@ -181,11 +185,20 @@
     
     NSInteger entriesCount = [self.entries count];
     
+    NSInteger currentWeekday = [self weekdayFromDate:[NSDate date]];
+    
+    NSMutableArray *dayLineDates = [NSMutableArray new];
+    
     for (NSInteger i = 1; i < entriesCount; i++) {
         BMEPointGraphEntry *entry = self.entries[i];
         CGPoint point = CGPointMake([self xForDate:entry.date], [self yForPoints:entry.points]);
         CGPathAddLineToPoint(linePath, NULL, point.x, point.y);
         CGPathAddLineToPoint(fillPath, NULL, point.x, point.y);
+    
+        NSInteger weekday = [self weekdayFromDate:entry.date];
+        if (weekday == currentWeekday) {
+            [dayLineDates addObject:entry.date];
+        }
     }
     
     CGPoint lastEntryFillPoint = CGPointMake([self xForDate:[self lastEntry].date] + self.strokeWidth * 0.50f, [self yForPoints:[self lastEntry].points]);
@@ -196,6 +209,8 @@
     
     [self drawGradientInPath:fillPath];
     
+    CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), [self.strokeColor CGColor]);
+    
     UIBezierPath *lineBezier = [UIBezierPath bezierPathWithCGPath:linePath];
     lineBezier.lineJoinStyle = kCGLineJoinRound;
     lineBezier.lineWidth = self.strokeWidth;
@@ -203,6 +218,35 @@
     
     CGPathRelease(linePath);
     CGPathRelease(fillPath);
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    dateFormatter.dateFormat = @"dd/MM";
+    
+    for (NSDate *date in dayLineDates) {
+        CGFloat xPos = [self xForDate:date];
+        
+        UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f];
+        NSDictionary *dateAttributes = @{ NSFontAttributeName : font };
+        
+        NSString *dateString = [dateFormatter stringFromDate:date];
+        CGRect strBounds = [dateString boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dateAttributes context:NULL];
+        CGPoint strPos = CGPointMake(xPos - CGRectGetWidth(strBounds) * 0.50f, CGRectGetHeight(self.bounds) - CGRectGetHeight(strBounds));
+        [dateString drawAtPoint:strPos withAttributes:dateAttributes];
+        
+        CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), [self.dashedDayColor CGColor]);
+        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 2.0f);
+        
+        CGMutablePathRef dayLinePath = CGPathCreateMutable();
+        CGPathMoveToPoint(dayLinePath, NULL, xPos, 0.0f);
+        CGPathAddLineToPoint(dayLinePath, NULL, xPos, CGRectGetHeight(self.bounds) - CGRectGetHeight(strBounds));
+        
+        float dashPattern[] = {4, 4};
+        UIBezierPath *dashedPath = [UIBezierPath bezierPathWithCGPath:dayLinePath];
+        [dashedPath setLineDash:dashPattern count:2 phase:0];
+        [dashedPath stroke];
+        
+        CGPathRelease(dayLinePath);
+    }
 }
 
 - (void)drawGradientInPath:(CGPathRef)path {
@@ -258,6 +302,12 @@
     }
     
     return _entries;
+}
+
+- (NSInteger)weekdayFromDate:(NSDate *)date {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSWeekdayCalendarUnit fromDate:date];
+    return [components weekday];
 }
 
 @end

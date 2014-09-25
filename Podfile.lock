@@ -1,13 +1,12 @@
 PODS:
   - AFNetworking (1.3.4)
+  - Appirater (2.0.2)
   - DCKeyValueObjectMapping (1.4)
-  - Facebook-iOS-SDK (3.10.0)
   - GVUserDefaults (0.9.4)
-  - HIPSocialAuth (1.0.0):
-    - Facebook-iOS-SDK (~> 3.10.0)
   - ISO8601DateFormatter (0.7)
-  - Masonry (0.4.0)
-  - MRProgress (0.4.1):
+  - Masonry (0.5.3)
+  - MiawKit (1.0)
+  - MRProgress (0.4.3):
     - MRProgress/ActivityIndicator
     - MRProgress/Blur
     - MRProgress/Circular
@@ -18,59 +17,55 @@ PODS:
     - MRProgress/Overlay
     - MRProgress/Stopable
     - MRProgress/WeakProxy
-  - MRProgress/ActivityIndicator (0.4.1):
+  - MRProgress/ActivityIndicator (0.4.3):
     - MRProgress/Stopable
-  - MRProgress/Blur (0.4.1):
+  - MRProgress/Blur (0.4.3):
     - MRProgress/Helper
-  - MRProgress/Circular (0.4.1):
+  - MRProgress/Circular (0.4.3):
     - MRProgress/Helper
     - MRProgress/Stopable
-  - MRProgress/Helper (0.4.1)
-  - MRProgress/Icons (0.4.1)
-  - MRProgress/MessageInterceptor (0.4.1)
-  - MRProgress/NavigationBarProgress (0.4.1):
-    - MRProgress/MessageInterceptor
-  - MRProgress/Overlay (0.4.1):
+  - MRProgress/Helper (0.4.3)
+  - MRProgress/Icons (0.4.3)
+  - MRProgress/MessageInterceptor (0.4.3)
+  - MRProgress/NavigationBarProgress (0.4.3)
+  - MRProgress/Overlay (0.4.3):
     - MRProgress/ActivityIndicator
     - MRProgress/Blur
     - MRProgress/Circular
     - MRProgress/Helper
     - MRProgress/Icons
-  - MRProgress/Stopable (0.4.1):
+  - MRProgress/Stopable (0.4.3):
     - MRProgress/Helper
-  - MRProgress/WeakProxy (0.4.1)
-  - OpenTokSDK (1.4.3)
-  - OpenTokSDK-WebRTC (2.1.7)
+  - MRProgress/WeakProxy (0.4.3)
+  - NewRelicAgent (3.343)
   - PSAlertView (1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.3.2)
+  - Appirater (~> 2.0.2)
   - DCKeyValueObjectMapping
   - GVUserDefaults (~> 0.9.4)
-  - HIPSocialAuth (from `git@github.com:Hipo/HIPSocialAuth.git`)
   - ISO8601DateFormatter (~> 0.7)
-  - Masonry (~> 0.4.0)
+  - Masonry (~> 0.5.3)
+  - MiawKit (from `https://github.com/robocat/MiawKit.git`)
   - MRProgress (~> 0.4.1)
-  - OpenTokSDK (~> 1.4.3)
-  - OpenTokSDK-WebRTC (~> 2.1.6)
-  - OpenTokSDK-WebRTC (~> 2.1.7)
+  - NewRelicAgent
   - PSAlertView (~> 1.1)
 
 EXTERNAL SOURCES:
-  HIPSocialAuth:
-    :git: git@github.com:Hipo/HIPSocialAuth.git
+  MiawKit:
+    :git: https://github.com/robocat/MiawKit.git
 
 SPEC CHECKSUMS:
-  AFNetworking: e403d4333a4e1956cb3fe42364c3c879f820c9a0
-  DCKeyValueObjectMapping: 39adaf0a54ff6368a22d9221db60f0696d81ad7b
-  Facebook-iOS-SDK: cb284e5f414c8b8e260acf2d358a1c0adc5249d2
-  GVUserDefaults: 50dbc9e24ab41b0c24bda7af8b5944ad0413dd2a
-  HIPSocialAuth: 6a1ea9ebe899197a1d50ffb6ebebdd901d3496e6
-  ISO8601DateFormatter: 00944e437ea647f4244454ce8809d313861d08de
-  Masonry: d673617c9cbc24aaea90fba20b10e47fd9970a39
-  MRProgress: 6530ce71278dd7ecfb5e3c3e37df03a323690936
-  OpenTokSDK: 84cc625196b4c665da7e0133ac05cab4194a5904
-  OpenTokSDK-WebRTC: 025ba5ff374682d5254a6c820843009c5779c3d2
-  PSAlertView: bdccae3cbd14f6060772654ae641daec7415d9fa
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
+  Appirater: a5e00fb01d47a9a6acf4b2f22323b4ccf4f23fbb
+  DCKeyValueObjectMapping: c3561709f296ddffba7768a9d7ccf234307fd3c9
+  GVUserDefaults: b706c0a6ed681ea4693143d920dd5bf49845c3a3
+  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+  Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
+  MiawKit: 952999049ff88dfc24df1e65274b728ad3d5e234
+  MRProgress: e588fb8d0fba293715eaf0e485dd8402f4ce1de6
+  NewRelicAgent: 95b45c10c8f53738fb8a65034e6d6ae72e90570f
+  PSAlertView: e9c9bc8ef41d86012ca1f6839fd450a35c6f8a97
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1

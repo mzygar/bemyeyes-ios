@@ -5,6 +5,7 @@
 //
 
 #import <Availability.h>
+#import <NewRelicAgent/NewRelic.h>
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -17,5 +18,8 @@
     #import <MobileCoreServices/MobileCoreServices.h>
     #import "GVUserDefaults+Settings.h"
     #import <Masonry/Masonry.h>
+    #import <MiawKit/MKLocalization.h>
+    #import <MiawKit/MKFunctions.h>
+    #import "MKLocalizationKeys.h"
     #import "BMEGlobal.h"
 #endif

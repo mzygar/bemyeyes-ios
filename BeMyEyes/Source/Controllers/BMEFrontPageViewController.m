@@ -8,15 +8,62 @@
 
 #import "BMEFrontPageViewController.h"
 #import "BMEIntroViewController.h"
+#import "BMEVideoViewController.h"
 
 #define BMEFrontPageIntroHelperSegue @"IntroHelper"
 #define BMEFrontPageIntroBlindSegue @"IntroBlind"
 
 @interface BMEFrontPageViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *askForRoleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *sightedRoleButton;
+@property (weak, nonatomic) IBOutlet UIButton *blindRoleButton;
+@property (weak, nonatomic) IBOutlet UIButton *alreadyRegisteredButton;
+
 @property (assign, nonatomic) BMERole role;
 @end
 
 @implementation BMEFrontPageViewController
+
+#pragma mark -
+#pragma mark Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [MKLocalization registerForLocalization:self];
+}
+
+- (void)shouldLocalize {
+    self.welcomeLabel.text = MKLocalizedFromTable(BME_FRONT_PAGE_WELCOME_TO, BMEFrontPageLocalizationTable);
+    self.appNameLabel.text = MKLocalizedFromTable(BME_FRONT_PAGE_APP_NAME, BMEFrontPageLocalizationTable);
+    self.askForRoleLabel.text = MKLocalizedFromTable(BME_FRONT_PAGE_ASK_FOR_ROLE, BMEFrontPageLocalizationTable);
+    
+    [self.sightedRoleButton setTitle:MKLocalizedFromTable(BME_FRONT_PAGE_SIGHTED_ROLE, BMEFrontPageLocalizationTable) forState:UIControlStateNormal];
+    [self.blindRoleButton setTitle:MKLocalizedFromTable(BME_FRONT_PAGE_BLIND_ROLE, BMEFrontPageLocalizationTable) forState:UIControlStateNormal];
+    [self.alreadyRegisteredButton setTitle:MKLocalizedFromTable(BME_FRONT_PAGE_ALREADY_REGISTERED, BMEFrontPageLocalizationTable) forState:UIControlStateNormal];
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (IBAction)helperButtonPressed:(id)sender {
+    [self presentHelperIntroVideo];
+}
+
+- (void)presentHelperIntro {
+    [self performSegueWithIdentifier:BMEFrontPageIntroHelperSegue sender:self];
+}
+
+- (void)presentHelperIntroVideo {
+    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"intro" ofType:@"mp4"];
+    NSURL *videoUrl = [NSURL fileURLWithPath:videoPath];
+    BMEVideoViewController *videoController = [[BMEVideoViewController alloc] initWithContentURL:videoUrl];
+    [self presentViewController:videoController animated:YES completion:^{
+        [self presentHelperIntro];
+    }];
+}
 
 #pragma mark -
 #pragma mark Segue

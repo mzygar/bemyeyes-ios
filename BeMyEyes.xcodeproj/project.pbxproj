@@ -10,6 +10,10 @@
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
+		720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */; };
+		720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */; };
+		720D4D13194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */; };
+		721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C3957193BA03400637F88 /* BMEEmailValidator.m */; };
 		7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
 		7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */; };
 		7236E00218B8A87B00F622AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236E00118B8A87B00F622AA /* UIKit.framework */; };
@@ -21,6 +25,14 @@
 		7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04018B8CCF400F622AA /* BMEBaseViewController.m */; };
 		7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */; };
 		7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */; };
+		72414AF2196A982D00A2C5F4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72414AF1196A982D00A2C5F4 /* MessageUI.framework */; };
+		72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */; };
+		72414AFA196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */; };
+		72414AFD196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */; };
+		725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B0EF51959836700BB4AE0 /* OpenTok.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		725B0EF81959875500BB4AE0 /* call.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EF71959875500BB4AE0 /* call.aiff */; };
+		725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */; };
+		725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */; };
 		72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FF718BA27EE006F388C /* Twitter.framework */; };
 		72622FFA18BA27F2006F388C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FF918BA27F2006F388C /* Social.framework */; };
 		72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72622FFB18BA27F8006F388C /* Accounts.framework */; };
@@ -38,26 +50,46 @@
 		7262301418BA39DB006F388C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301318BA39DB006F388C /* OpenGLES.framework */; };
 		7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301518BA39DF006F388C /* QuartzCore.framework */; };
 		7262301818BA39E3006F388C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7262301718BA39E3006F388C /* Security.framework */; };
+		726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8B191A8572005690B7 /* libstdc++.6.0.9.dylib */; };
+		726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8D191A8577005690B7 /* libpthread.dylib */; };
+		726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 726D7B8F191A8583005690B7 /* libxml2.dylib */; };
+		726D7B93191AA21A005690B7 /* BMEPointEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 726D7B92191AA21A005690B7 /* BMEPointEntry.m */; };
+		727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */; };
+		727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727E13EA194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings */; };
+		72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DDE19AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings */; };
+		72856DE319AF65640027AFF5 /* BMEHelperIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72856DE219AF65640027AFF5 /* BMEHelperIntroViewController.m */; };
+		72856DE619AF65770027AFF5 /* BMEBlindIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72856DE519AF65770027AFF5 /* BMEBlindIntroViewController.m */; };
+		72856DE919AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DE719AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings */; };
+		72856DEC19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DEA19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings */; };
+		72856DEF19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DED19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings */; };
+		72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */; };
+		72856DF519AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DF319AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings */; };
+		72856DF819AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DF619AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings */; };
+		7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */; };
 		7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569518CC874500E1A9EE /* BMERegisteredViewController.m */; };
 		7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */; };
 		7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */; };
 		7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */; };
 		729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729656A418CC933F00E1A9EE /* BMETopNavigationController.m */; };
-		729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */; };
+		729656A818CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 729656A618CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings */; };
 		729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */; };
 		729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */; };
 		729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729C6DC218E9C9B60043D48F /* BMETermsViewController.m */; };
 		72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */; };
-		72A7676F1902A5C4003121C4 /* BMEHelperMainViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72A7676D1902A5C4003121C4 /* BMEHelperMainViewController.strings */; };
-		72A767721902A5F4003121C4 /* BMESnoozeRelativeDate.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */; };
+		72A7676F1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72A7676D1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings */; };
+		72A767721902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */; };
 		72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */; };
-		72B1493718DF65F900E9A8A9 /* FakeiOS7.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */; };
-		72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B1493818DF686600E9A8A9 /* BMECallViewController.strings */; };
+		72B1493A18DF686600E9A8A9 /* BMECallLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B1493818DF686600E9A8A9 /* BMECallLocalizationTable.strings */; };
 		72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */; };
+		72B3C4BD1987D21C00A56D49 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 72B3C4BC1987D21C00A56D49 /* intro.mp4 */; };
+		72B3C4BF1987D31D00A56D49 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */; };
+		72B3C4C51987DF2A00A56D49 /* BMEVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */; };
+		72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */; };
+		72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */; };
 		72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */; };
 		72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */; };
-		72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */; };
-		72DA827118D46C6A001F3312 /* BMEAppDelegate.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826F18D46C6A001F3312 /* BMEAppDelegate.strings */; };
+		72DA826E18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */; };
+		72DA827118D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826F18D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings */; };
 		72DA827718D4716A001F3312 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA827518D4716A001F3312 /* Localizable.strings */; };
 		72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71018B907CB0048FA90 /* BMEClient.m */; };
 		72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF71218B907CB0048FA90 /* BMERoleConverter.m */; };
@@ -74,12 +106,13 @@
 		72DEF73618B90C760048FA90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DEF73518B90C760048FA90 /* SystemConfiguration.framework */; };
 		72DEF73818B90C790048FA90 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DEF73718B90C790048FA90 /* MobileCoreServices.framework */; };
 		72DEF73B18B90E930048FA90 /* BMELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DEF73A18B90E930048FA90 /* BMELoginViewController.m */; };
-		72E65F9E18BA7A35002FB2E0 /* BMESignUpViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65F9C18BA7A35002FB2E0 /* BMESignUpViewController.strings */; };
-		72E65FA118BA7A4E002FB2E0 /* BMELoginViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65F9F18BA7A4E002FB2E0 /* BMELoginViewController.strings */; };
+		72E65F9E18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65F9C18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings */; };
+		72E65FA118BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65F9F18BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings */; };
 		72E65FA418BA7C12002FB2E0 /* BMEIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FA318BA7C12002FB2E0 /* BMEIntroViewController.m */; };
 		72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */; };
-		72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65FA818BA81BB002FB2E0 /* BMESignUpMethodViewController.strings */; };
+		72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */; };
 		72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */; };
+		72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */; };
 		8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A222A28C44403D94B34BA1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +124,13 @@
 		7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointGraphEntry.m; sourceTree = "<group>"; };
 		7206A76418FA9C0D00251824 /* BMEPointGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphView.h; sourceTree = "<group>"; };
 		7206A76518FA9C0D00251824 /* BMEPointGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointGraphView.m; sourceTree = "<group>"; };
+		720A68DA192FD9030036CB1E /* BMEPrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPrivacyPolicyViewController.h; sourceTree = "<group>"; };
+		720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEWebViewViewController.h; sourceTree = "<group>"; };
+		720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEWebViewViewController.m; sourceTree = "<group>"; };
+		720D4D12194A1FAC00060D7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEReportAbuseLocalizationTable.strings; sourceTree = "<group>"; };
+		721C3956193BA03400637F88 /* BMEEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEEmailValidator.h; sourceTree = "<group>"; };
+		721C3957193BA03400637F88 /* BMEEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEEmailValidator.m; sourceTree = "<group>"; };
 		7236DFFA18B8A87B00F622AA /* BeMyEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMyEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7236DFFD18B8A87B00F622AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,6 +150,16 @@
 		7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESignUpMethodViewController.m; sourceTree = "<group>"; };
 		7236E04818B8DD8E00F622AA /* BMESignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESignUpViewController.h; sourceTree = "<group>"; };
 		7236E04918B8DD8E00F622AA /* BMESignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESignUpViewController.m; sourceTree = "<group>"; };
+		72414AF1196A982D00A2C5F4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		72414AF5196AA33200A2C5F4 /* BMELanguagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMELanguagesViewController.h; sourceTree = "<group>"; };
+		72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMELanguagesViewController.m; sourceTree = "<group>"; };
+		72414AF9196AAD5C00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMELanguagesLocalizationTable.strings; sourceTree = "<group>"; };
+		72414AFC196AB16A00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEMainLocalizationTable.strings; sourceTree = "<group>"; };
+		725B0EF51959836700BB4AE0 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.2.0/OpenTok.framework"; sourceTree = "<group>"; };
+		725B0EF71959875500BB4AE0 /* call.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = call.aiff; sourceTree = "<group>"; };
+		725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallAudioPlayer.h; sourceTree = "<group>"; };
+		725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallAudioPlayer.m; sourceTree = "<group>"; };
+		725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "call-repeat.aiff"; sourceTree = "<group>"; };
 		72622FF718BA27EE006F388C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		72622FF918BA27F2006F388C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		72622FFB18BA27F8006F388C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -127,7 +177,29 @@
 		7262301318BA39DB006F388C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7262301518BA39DF006F388C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7262301718BA39E3006F388C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		726D7B8B191A8572005690B7 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		726D7B8D191A8577005690B7 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = usr/lib/libpthread.dylib; sourceTree = SDKROOT; };
+		726D7B8F191A8583005690B7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		726D7B91191AA21A005690B7 /* BMEPointEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointEntry.h; sourceTree = "<group>"; };
+		726D7B92191AA21A005690B7 /* BMEPointEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointEntry.m; sourceTree = "<group>"; };
+		727E13E7194B2AF8002EDA7E /* BMEForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEForgotPasswordViewController.h; sourceTree = "<group>"; };
+		727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEForgotPasswordViewController.m; sourceTree = "<group>"; };
+		727E13EB194B3189002EDA7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEForgotPasswordLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DDD19AF4D490027AFF5 /* MKLocalizationKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLocalizationKeys.h; sourceTree = "<group>"; };
+		72856DDF19AF608B0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEFrontPageLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DE119AF65640027AFF5 /* BMEHelperIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEHelperIntroViewController.h; sourceTree = "<group>"; };
+		72856DE219AF65640027AFF5 /* BMEHelperIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEHelperIntroViewController.m; sourceTree = "<group>"; };
+		72856DE419AF65770027AFF5 /* BMEBlindIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEBlindIntroViewController.h; sourceTree = "<group>"; };
+		72856DE519AF65770027AFF5 /* BMEBlindIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEBlindIntroViewController.m; sourceTree = "<group>"; };
+		72856DE819AF66920027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEHelperIntroLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DEB19AF66A20027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEBlindIntroLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DEE19AF71CB0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESecretSettingsLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DF119AF75420027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMETermsLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DF419AF761F0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEPrivacyPolicyLocalizationTable.strings; sourceTree = "<group>"; };
+		72856DF719AF789E0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMERegisteredLocalizationTable.strings; sourceTree = "<group>"; };
 		72858FA918DF81CE0002D6E1 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
+		7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BMEDeviceToken.h"; sourceTree = "<group>"; };
+		7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BMEDeviceToken.m"; sourceTree = "<group>"; };
 		7296569418CC874500E1A9EE /* BMERegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERegisteredViewController.h; sourceTree = "<group>"; };
 		7296569518CC874500E1A9EE /* BMERegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERegisteredViewController.m; sourceTree = "<group>"; };
 		7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEMainViewController.h; sourceTree = "<group>"; };
@@ -138,7 +210,7 @@
 		7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERightToLeftSegue.m; sourceTree = "<group>"; };
 		729656A318CC933E00E1A9EE /* BMETopNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETopNavigationController.h; sourceTree = "<group>"; };
 		729656A418CC933F00E1A9EE /* BMETopNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETopNavigationController.m; sourceTree = "<group>"; };
-		729656A718CC9D5F00E1A9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESettingsViewController.strings; sourceTree = "<group>"; };
+		729656A718CC9D5F00E1A9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESettingsLocalizationTable.strings; sourceTree = "<group>"; };
 		729B1CCE19015F0700B5ABEA /* BMESecretSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESecretSettingsViewController.h; sourceTree = "<group>"; };
 		729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESecretSettingsViewController.m; sourceTree = "<group>"; };
 		729B1CD11901699500B5ABEA /* GVUserDefaults+Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+Settings.h"; sourceTree = "<group>"; };
@@ -147,20 +219,26 @@
 		729C6DC218E9C9B60043D48F /* BMETermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETermsViewController.m; sourceTree = "<group>"; };
 		72A7676A19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BMESnoozeRelativeDate.h"; sourceTree = "<group>"; };
 		72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BMESnoozeRelativeDate.m"; sourceTree = "<group>"; wrapsLines = 0; };
-		72A7676E1902A5C4003121C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEHelperMainViewController.strings; sourceTree = "<group>"; };
-		72A767711902A5F4003121C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESnoozeRelativeDate.strings; sourceTree = "<group>"; };
+		72A7676E1902A5C4003121C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEHelperMainLocalizationTable.strings; sourceTree = "<group>"; };
+		72A767711902A5F4003121C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESnoozeRelativeDateLocalizationTable.strings; sourceTree = "<group>"; };
 		72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallViewController.h; sourceTree = "<group>"; };
 		72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallViewController.m; sourceTree = "<group>"; };
-		72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeiOS7.mm; sourceTree = "<group>"; };
-		72B1493918DF686600E9A8A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMECallViewController.strings; sourceTree = "<group>"; };
+		72B1493918DF686600E9A8A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMECallLocalizationTable.strings; sourceTree = "<group>"; };
 		72B1493B18DF6AE100E9A8A9 /* BMESpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMESpeaker.h; sourceTree = "<group>"; };
 		72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESpeaker.m; sourceTree = "<group>"; };
+		72B3C4BC1987D21C00A56D49 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
+		72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		72B3C4C31987DF2A00A56D49 /* BMEVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEVideoViewController.h; sourceTree = "<group>"; };
+		72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEVideoViewController.m; sourceTree = "<group>"; };
+		72B3C4C71987E22100A56D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEVideoLocalizationTable.strings; sourceTree = "<group>"; };
+		72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEReportAbuseViewController.h; sourceTree = "<group>"; };
+		72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEReportAbuseViewController.m; sourceTree = "<group>"; };
 		72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEHelperMainViewController.h; sourceTree = "<group>"; };
 		72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEHelperMainViewController.m; sourceTree = "<group>"; };
 		72DA826918D45B61001F3312 /* BMEBlindMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEBlindMainViewController.h; sourceTree = "<group>"; };
 		72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEBlindMainViewController.m; sourceTree = "<group>"; };
-		72DA826D18D4699F001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEBlindMainViewController.strings; sourceTree = "<group>"; };
-		72DA827018D46C6A001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEAppDelegate.strings; sourceTree = "<group>"; };
+		72DA826D18D4699F001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEBlindMainLocalizationTable.strings; sourceTree = "<group>"; };
+		72DA827018D46C6A001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEAppDelegateLocalizationTable.strings; sourceTree = "<group>"; };
 		72DA827618D4716A001F3312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		72DEF70F18B907CB0048FA90 /* BMEClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEClient.h; sourceTree = "<group>"; };
 		72DEF71018B907CB0048FA90 /* BMEClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEClient.m; sourceTree = "<group>"; };
@@ -189,15 +267,39 @@
 		72DEF73718B90C790048FA90 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		72DEF73918B90E930048FA90 /* BMELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMELoginViewController.h; sourceTree = "<group>"; };
 		72DEF73A18B90E930048FA90 /* BMELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMELoginViewController.m; sourceTree = "<group>"; };
-		72E65F9D18BA7A35002FB2E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESignUpViewController.strings; sourceTree = "<group>"; };
-		72E65FA018BA7A4E002FB2E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMELoginViewController.strings; sourceTree = "<group>"; };
+		72DF589219B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEAppDelegateLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589319B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEBlindIntroLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589419B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEBlindMainLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589519B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMECallLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589619B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEForgotPasswordLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589719B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEFrontPageLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589819B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEHelperIntroLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589919B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEHelperMainLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589A19B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMELanguagesLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589B19B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMELoginLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589C19B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEMainLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589D19B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEPrivacyPolicyLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589E19B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMERegisteredLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF589F19B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEReportAbuseLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A019B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMESecretSettingsLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A119B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMESettingsLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A219B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMESignUpLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A319B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMESignUpMethodLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A419B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMESnoozeRelativeDateLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A519B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMETermsLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A619B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEVideoLocalizationTable.strings; sourceTree = "<group>"; };
+		72DF58A719B4BC53000D5F40 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		72E65F9D18BA7A35002FB2E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESignUpLocalizationTable.strings; sourceTree = "<group>"; };
+		72E65FA018BA7A4E002FB2E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMELoginLocalizationTable.strings; sourceTree = "<group>"; };
 		72E65FA218BA7C12002FB2E0 /* BMEIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEIntroViewController.h; sourceTree = "<group>"; };
 		72E65FA318BA7C12002FB2E0 /* BMEIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEIntroViewController.m; sourceTree = "<group>"; };
 		72E65FA518BA7CE3002FB2E0 /* BMEFrontPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEFrontPageViewController.h; sourceTree = "<group>"; };
 		72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFrontPageViewController.m; sourceTree = "<group>"; };
-		72E65FA918BA81BB002FB2E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESignUpMethodViewController.strings; sourceTree = "<group>"; };
+		72E65FA918BA81BB002FB2E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMESignUpMethodLocalizationTable.strings; sourceTree = "<group>"; };
 		72E65FAE18BA8214002FB2E0 /* BMEFacebookInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEFacebookInfo.h; sourceTree = "<group>"; };
 		72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFacebookInfo.m; sourceTree = "<group>"; };
+		72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+BMEPopToClass.h"; sourceTree = "<group>"; };
+		72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+BMEPopToClas.m"; sourceTree = "<group>"; };
 		AD111FA7EA9E4832890E7258 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +308,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B3C4BF1987D31D00A56D49 /* MediaPlayer.framework in Frameworks */,
+				72414AF2196A982D00A2C5F4 /* MessageUI.framework in Frameworks */,
+				72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */,
+				726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */,
+				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
+				726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */,
+				725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */,
+				726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */,
 				7262301818BA39E3006F388C /* Security.framework in Frameworks */,
 				7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */,
 				7262301418BA39DB006F388C /* OpenGLES.framework in Frameworks */,
@@ -219,9 +329,7 @@
 				7262300618BA39AA006F388C /* CoreAudio.framework in Frameworks */,
 				7262300418BA39A6006F388C /* CFNetwork.framework in Frameworks */,
 				7262300218BA39A1006F388C /* AVFoundation.framework in Frameworks */,
-				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
 				72622FFE18BA27FE006F388C /* AdSupport.framework in Frameworks */,
-				72622FFC18BA27F8006F388C /* Accounts.framework in Frameworks */,
 				72622FFA18BA27F2006F388C /* Social.framework in Frameworks */,
 				72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */,
 				72DEF73618B90C760048FA90 /* SystemConfiguration.framework in Frameworks */,
@@ -235,6 +343,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721CAF1F192D2EAA00B5B4E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72B3C4BC1987D21C00A56D49 /* intro.mp4 */,
+				725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */,
+				725B0EF71959875500BB4AE0 /* call.aiff */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7236DFF118B8A87B00F622AA = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +374,11 @@
 		7236DFFC18B8A87B00F622AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */,
+				72414AF1196A982D00A2C5F4 /* MessageUI.framework */,
+				726D7B8F191A8583005690B7 /* libxml2.dylib */,
+				726D7B8D191A8577005690B7 /* libpthread.dylib */,
+				726D7B8B191A8572005690B7 /* libstdc++.6.0.9.dylib */,
 				7262301718BA39E3006F388C /* Security.framework */,
 				7262301518BA39DF006F388C /* QuartzCore.framework */,
 				7262301318BA39DB006F388C /* OpenGLES.framework */,
@@ -288,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				7236E01518B8A87B00F622AA /* Images.xcassets */,
+				721CAF1F192D2EAA00B5B4E4 /* Resources */,
 				7236E03218B8A99500F622AA /* Storyboards */,
 				7236E03318B8A9EA00F622AA /* Source */,
 				7236E00418B8A87B00F622AA /* Supporting Files */,
@@ -318,7 +442,7 @@
 		7236E03318B8A9EA00F622AA /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				72B1493618DF65F900E9A8A9 /* FakeiOS7.mm */,
+				72856DDD19AF4D490027AFF5 /* MKLocalizationKeys.h */,
 				72858FA918DF81CE0002D6E1 /* BMEGlobal.h */,
 				72DEF72218B908140048FA90 /* BMEGlobal.temp.h */,
 				7236E03418B8A9EA00F622AA /* Application */,
@@ -348,6 +472,10 @@
 				729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */,
 				72A7676A19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.h */,
 				72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */,
+				72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */,
+				72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */,
+				7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */,
+				7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -361,8 +489,16 @@
 				72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */,
 				72E65FA218BA7C12002FB2E0 /* BMEIntroViewController.h */,
 				72E65FA318BA7C12002FB2E0 /* BMEIntroViewController.m */,
+				72856DE119AF65640027AFF5 /* BMEHelperIntroViewController.h */,
+				72856DE219AF65640027AFF5 /* BMEHelperIntroViewController.m */,
+				72856DE419AF65770027AFF5 /* BMEBlindIntroViewController.h */,
+				72856DE519AF65770027AFF5 /* BMEBlindIntroViewController.m */,
+				720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */,
+				720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */,
 				729C6DC118E9C9B60043D48F /* BMETermsViewController.h */,
 				729C6DC218E9C9B60043D48F /* BMETermsViewController.m */,
+				720A68DA192FD9030036CB1E /* BMEPrivacyPolicyViewController.h */,
+				720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */,
 				7236E04518B8DBDF00F622AA /* BMESignUpMethodViewController.h */,
 				7236E04618B8DBDF00F622AA /* BMESignUpMethodViewController.m */,
 				7236E04818B8DD8E00F622AA /* BMESignUpViewController.h */,
@@ -383,6 +519,14 @@
 				729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */,
 				72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */,
 				72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */,
+				72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */,
+				72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */,
+				727E13E7194B2AF8002EDA7E /* BMEForgotPasswordViewController.h */,
+				727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */,
+				72414AF5196AA33200A2C5F4 /* BMELanguagesViewController.h */,
+				72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */,
+				72B3C4C31987DF2A00A56D49 /* BMEVideoViewController.h */,
+				72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -400,6 +544,10 @@
 				729656A418CC933F00E1A9EE /* BMETopNavigationController.m */,
 				72B1493B18DF6AE100E9A8A9 /* BMESpeaker.h */,
 				72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */,
+				721C3956193BA03400637F88 /* BMEEmailValidator.h */,
+				721C3957193BA03400637F88 /* BMEEmailValidator.m */,
+				725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */,
+				725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -420,15 +568,27 @@
 		7262301918BA3B49006F388C /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
-				72E65F9C18BA7A35002FB2E0 /* BMESignUpViewController.strings */,
-				72E65F9F18BA7A4E002FB2E0 /* BMELoginViewController.strings */,
-				72E65FA818BA81BB002FB2E0 /* BMESignUpMethodViewController.strings */,
-				729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */,
-				72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */,
-				72DA826F18D46C6A001F3312 /* BMEAppDelegate.strings */,
-				72B1493818DF686600E9A8A9 /* BMECallViewController.strings */,
-				72A7676D1902A5C4003121C4 /* BMEHelperMainViewController.strings */,
-				72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */,
+				72DA826F18D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings */,
+				72856DEA19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings */,
+				72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */,
+				72B1493818DF686600E9A8A9 /* BMECallLocalizationTable.strings */,
+				727E13EA194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings */,
+				72856DDE19AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings */,
+				72856DE719AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings */,
+				72A7676D1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings */,
+				72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */,
+				72E65F9F18BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings */,
+				72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */,
+				72856DF319AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings */,
+				72856DF619AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings */,
+				720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */,
+				72856DED19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings */,
+				729656A618CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings */,
+				72E65F9C18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings */,
+				72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */,
+				72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */,
+				72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */,
+				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 			);
 			name = Localizable;
@@ -447,6 +607,8 @@
 				72DEF71D18B907D10048FA90 /* BMEUser.m */,
 				72E65FAE18BA8214002FB2E0 /* BMEFacebookInfo.h */,
 				72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */,
+				726D7B91191AA21A005690B7 /* BMEPointEntry.h */,
+				726D7B92191AA21A005690B7 /* BMEPointEntry.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,6 +616,7 @@
 		72DEF72318B90A6D0048FA90 /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
+				725B0EF51959836700BB4AE0 /* OpenTok.framework */,
 				72DEF72418B90A6D0048FA90 /* AESCrypt */,
 			);
 			path = "Other sources";
@@ -505,11 +668,11 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BME;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Be My Eyes";
 				TargetAttributes = {
 					7236DFF918B8A87B00F622AA = {
-						DevelopmentTeam = VS2JRRGV67;
+						DevelopmentTeam = FB85FFW734;
 					};
 				};
 			};
@@ -520,6 +683,7 @@
 			knownRegions = (
 				en,
 				Base,
+				da,
 			);
 			mainGroup = 7236DFF118B8A87B00F622AA;
 			productRefGroup = 7236DFFB18B8A87B00F622AA /* Products */;
@@ -536,21 +700,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E65FA118BA7A4E002FB2E0 /* BMELoginViewController.strings in Resources */,
+				72E65FA118BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings in Resources */,
 				72DA827718D4716A001F3312 /* Localizable.strings in Resources */,
-				72DA827118D46C6A001F3312 /* BMEAppDelegate.strings in Resources */,
-				72E65F9E18BA7A35002FB2E0 /* BMESignUpViewController.strings in Resources */,
+				72DA827118D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings in Resources */,
+				72414AFD196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings in Resources */,
+				72856DEC19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings in Resources */,
+				72E65F9E18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings in Resources */,
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
+				72856DEF19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings in Resources */,
+				727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */,
+				72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */,
+				72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */,
+				725B0EF81959875500BB4AE0 /* call.aiff in Resources */,
+				72856DE919AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
-				72B1493A18DF686600E9A8A9 /* BMECallViewController.strings in Resources */,
+				720D4D13194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings in Resources */,
+				72B1493A18DF686600E9A8A9 /* BMECallLocalizationTable.strings in Resources */,
+				72B3C4BD1987D21C00A56D49 /* intro.mp4 in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
-				729656A818CC9D5F00E1A9EE /* BMESettingsViewController.strings in Resources */,
-				72DA826E18D4699F001F3312 /* BMEBlindMainViewController.strings in Resources */,
+				72414AFA196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings in Resources */,
+				729656A818CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings in Resources */,
+				725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */,
+				72DA826E18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings in Resources */,
 				7236E01118B8A87B00F622AA /* Main.storyboard in Resources */,
-				72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodViewController.strings in Resources */,
-				72A7676F1902A5C4003121C4 /* BMEHelperMainViewController.strings in Resources */,
-				72A767721902A5F4003121C4 /* BMESnoozeRelativeDate.strings in Resources */,
+				72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings in Resources */,
+				72856DF819AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings in Resources */,
+				72A7676F1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings in Resources */,
+				72856DF519AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings in Resources */,
+				72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */,
+				72A767721902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,12 +773,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72856DE619AF65770027AFF5 /* BMEBlindIntroViewController.m in Sources */,
+				72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */,
 				7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */,
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
+				725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */,
 				72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */,
+				72856DE319AF65640027AFF5 /* BMEHelperIntroViewController.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
+				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
+				72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
@@ -611,16 +796,21 @@
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
+				727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
+				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
+				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
 				72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */,
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
+				72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
-				72B1493718DF65F900E9A8A9 /* FakeiOS7.mm in Sources */,
 				7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
+				7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */,
 				729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */,
 				72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */,
+				72B3C4C51987DF2A00A56D49 /* BMEVideoViewController.m in Sources */,
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
 				72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */,
 				72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */,
@@ -629,6 +819,7 @@
 				72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */,
 				72E65FA418BA7C12002FB2E0 /* BMEIntroViewController.m in Sources */,
 				72DEF73B18B90E930048FA90 /* BMELoginViewController.m in Sources */,
+				726D7B93191AA21A005690B7 /* BMEPointEntry.m in Sources */,
 				729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,6 +827,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				720D4D12194A1FAC00060D7F /* en */,
+				72DF589F19B4BC53000D5F40 /* da */,
+			);
+			name = BMEReportAbuseLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
 		7236E00618B8A87B00F622AA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -652,84 +852,193 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		729656A618CC9D5F00E1A9EE /* BMESettingsViewController.strings */ = {
+		72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72414AF9196AAD5C00A2C5F4 /* en */,
+				72DF589A19B4BC53000D5F40 /* da */,
+			);
+			name = BMELanguagesLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72414AFC196AB16A00A2C5F4 /* en */,
+				72DF589C19B4BC53000D5F40 /* da */,
+			);
+			name = BMEMainLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		727E13EA194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				727E13EB194B3189002EDA7E /* en */,
+				72DF589619B4BC53000D5F40 /* da */,
+			);
+			name = BMEForgotPasswordLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DDE19AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DDF19AF608B0027AFF5 /* en */,
+				72DF589719B4BC53000D5F40 /* da */,
+			);
+			name = BMEFrontPageLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DE719AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DE819AF66920027AFF5 /* en */,
+				72DF589819B4BC53000D5F40 /* da */,
+			);
+			name = BMEHelperIntroLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DEA19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DEB19AF66A20027AFF5 /* en */,
+				72DF589319B4BC53000D5F40 /* da */,
+			);
+			name = BMEBlindIntroLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DED19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DEE19AF71CB0027AFF5 /* en */,
+				72DF58A019B4BC53000D5F40 /* da */,
+			);
+			name = BMESecretSettingsLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DF119AF75420027AFF5 /* en */,
+				72DF58A519B4BC53000D5F40 /* da */,
+			);
+			name = BMETermsLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DF319AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DF419AF761F0027AFF5 /* en */,
+				72DF589D19B4BC53000D5F40 /* da */,
+			);
+			name = BMEPrivacyPolicyLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72856DF619AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72856DF719AF789E0027AFF5 /* en */,
+				72DF589E19B4BC53000D5F40 /* da */,
+			);
+			name = BMERegisteredLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		729656A618CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				729656A718CC9D5F00E1A9EE /* en */,
+				72DF58A119B4BC53000D5F40 /* da */,
 			);
-			name = BMESettingsViewController.strings;
+			name = BMESettingsLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
-		72A7676D1902A5C4003121C4 /* BMEHelperMainViewController.strings */ = {
+		72A7676D1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72A7676E1902A5C4003121C4 /* en */,
+				72DF589919B4BC53000D5F40 /* da */,
 			);
-			name = BMEHelperMainViewController.strings;
+			name = BMEHelperMainLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
-		72A767701902A5F4003121C4 /* BMESnoozeRelativeDate.strings */ = {
+		72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72A767711902A5F4003121C4 /* en */,
+				72DF58A419B4BC53000D5F40 /* da */,
 			);
-			name = BMESnoozeRelativeDate.strings;
+			name = BMESnoozeRelativeDateLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
-		72B1493818DF686600E9A8A9 /* BMECallViewController.strings */ = {
+		72B1493818DF686600E9A8A9 /* BMECallLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72B1493918DF686600E9A8A9 /* en */,
+				72DF589519B4BC53000D5F40 /* da */,
 			);
-			name = BMECallViewController.strings;
+			name = BMECallLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
-		72DA826C18D4699F001F3312 /* BMEBlindMainViewController.strings */ = {
+		72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72B3C4C71987E22100A56D49 /* en */,
+				72DF58A619B4BC53000D5F40 /* da */,
+			);
+			name = BMEVideoLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72DA826D18D4699F001F3312 /* en */,
+				72DF589419B4BC53000D5F40 /* da */,
 			);
-			name = BMEBlindMainViewController.strings;
+			name = BMEBlindMainLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
-		72DA826F18D46C6A001F3312 /* BMEAppDelegate.strings */ = {
+		72DA826F18D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72DA827018D46C6A001F3312 /* en */,
+				72DF589219B4BC53000D5F40 /* da */,
 			);
-			name = BMEAppDelegate.strings;
+			name = BMEAppDelegateLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
 		72DA827518D4716A001F3312 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72DA827618D4716A001F3312 /* en */,
+				72DF58A719B4BC53000D5F40 /* da */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		72E65F9C18BA7A35002FB2E0 /* BMESignUpViewController.strings */ = {
+		72E65F9C18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72E65F9D18BA7A35002FB2E0 /* en */,
+				72DF58A219B4BC53000D5F40 /* da */,
 			);
-			name = BMESignUpViewController.strings;
+			name = BMESignUpLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
-		72E65F9F18BA7A4E002FB2E0 /* BMELoginViewController.strings */ = {
+		72E65F9F18BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72E65FA018BA7A4E002FB2E0 /* en */,
+				72DF589B19B4BC53000D5F40 /* da */,
 			);
-			name = BMELoginViewController.strings;
+			name = BMELoginLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
-		72E65FA818BA81BB002FB2E0 /* BMESignUpMethodViewController.strings */ = {
+		72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72E65FA918BA81BB002FB2E0 /* en */,
+				72DF58A319B4BC53000D5F40 /* da */,
 			);
-			name = BMESignUpMethodViewController.strings;
+			name = BMESignUpMethodLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -739,9 +1048,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -752,8 +1060,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -771,8 +1079,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -780,9 +1089,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -793,8 +1101,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: S/I Be My Eyes";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -805,9 +1113,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
@@ -815,17 +1125,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -834,17 +1151,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: S/I Be My Eyes";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DED81CE4-D35C-403F-A426-22C8361ECD0D";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

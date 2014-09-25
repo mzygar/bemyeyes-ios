@@ -7,8 +7,11 @@
 //
 
 #import "BMEMainViewController.h"
+#import <PSAlertView/PSPDFAlertView.h>
 #import "BMEClient.h"
 #import "BMEUser.h"
+
+#define BMEMainKnownLanguagesSegue @"KnownLanguages"
 
 @interface BMEMainViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
@@ -41,13 +44,19 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-    
     if (self.isLoggedOut) {
         self.view.window.rootViewController = [self.view.window.rootViewController.storyboard instantiateInitialViewController];
+    } else {
+        [self askForMoreLanguagesIfNecessary];
     }
 }
 
@@ -75,6 +84,33 @@
     [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+- (void)askForMoreLanguagesIfNecessary {
+    if ([GVUserDefaults standardUserDefaults].peopleHelped >= BMEPeopleHelpedBeforeAskingForMoreLanguages &&
+        ![GVUserDefaults standardUserDefaults].hasAskedForMoreLanguages) {
+        NSString *title, *message, *cancelButton, *confirmButton;
+        if ([[BMEClient sharedClient].currentUser isHelper]) {
+            title = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE, BMEMainLocalizationTable);
+            message = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE, BMEMainLocalizationTable);
+            cancelButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL, BMEMainLocalizationTable);
+            confirmButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM, BMEMainLocalizationTable);
+        } else {
+            title = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE, BMEMainLocalizationTable);
+            message = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE, BMEMainLocalizationTable);
+            cancelButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL, BMEMainLocalizationTable);
+            confirmButton = MKLocalizedFromTable(BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM, BMEMainLocalizationTable);
+        }
+        
+        PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+        [alertView setCancelButtonWithTitle:cancelButton block:nil];
+        [alertView addButtonWithTitle:confirmButton block:^{
+            [self performSegueWithIdentifier:BMEMainKnownLanguagesSegue sender:self];
+        }];
+        [alertView show];
+        
+        [GVUserDefaults standardUserDefaults].hasAskedForMoreLanguages = YES;
+    }
 }
 
 #pragma mark -
