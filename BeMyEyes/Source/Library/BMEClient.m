@@ -326,6 +326,19 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }];
 }
 
+- (void)loadAvailableLanguagesWithCompletion:(void(^)(NSArray *languages, NSError *error))completion {
+    NSString *path = @"languages/common";
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion([self mapLanguagesFromRepresentation:responseObject], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(0, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
 #pragma mark -
 #pragma mark Requests
 
@@ -730,6 +743,17 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             self.fbAuthCompletion = nil;
         });
     }
+}
+
+- (NSArray *)mapLanguagesFromRepresentation:(NSArray *)representation {
+    NSMutableArray *languagesCodes = [NSMutableArray new];
+    for (NSDictionary *dictionary in representation) {
+        NSString *languageCode = dictionary[@"iso_639_1"];
+        if (languageCode) {
+            [languagesCodes addObject:languageCode];
+        }
+    }
+    return languagesCodes.count > 0 ? languagesCodes.copy : nil;
 }
 
 - (BMERequest *)mapRequestFromRepresentation:(NSDictionary *)representation {

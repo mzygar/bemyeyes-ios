@@ -28,8 +28,12 @@
     
     [MKLocalization registerForLocalization:self];
     
-    self.languageCodes = [NSLocale preferredLanguages];
     self.knowLanguageCodes = [NSMutableArray arrayWithArray:[BMEClient sharedClient].currentUser.languages];
+    self.languageCodes = self.knowLanguageCodes; // Use users languages untill server responds with all available languages
+    [[BMEClient sharedClient] loadAvailableLanguagesWithCompletion:^(NSArray *languages, NSError *error) {
+        self.languageCodes = languages;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
