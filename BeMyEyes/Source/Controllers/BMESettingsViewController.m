@@ -12,10 +12,9 @@
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "BMEEmailValidator.h"
+#import "BMETaskTableViewCell.h"
 
-#define BMEUnwindSettingsSegue @"UnwindSettings"
-
-@interface BMESettingsViewController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
+@interface BMESettingsViewController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
@@ -23,8 +22,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UILabel *knownLanguagesLabel;
+@property (weak, nonatomic) IBOutlet UITextField *knownLanguagesTextField;
 @property (weak, nonatomic) IBOutlet UIButton *selectLanguagesButton;
 @property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
+@property (weak, nonatomic) IBOutlet UITableView *TasksTableView;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (assign, nonatomic) BOOL shouldSave;
@@ -48,6 +50,11 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self populateFields];
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -61,9 +68,11 @@
     self.lastNameLabel.text = MKLocalizedFromTable(BME_SETTINGS_LAST_NAME, BMESettingsLocalizationTable);
     self.emailLabel.text = MKLocalizedFromTable(BME_SETTINGS_EMAIL, BMESettingsLocalizationTable);
     
-    [self.selectLanguagesButton setTitle:MKLocalizedFromTable(BME_SETTINGS_SELECT_LANGUAGES, BMESettingsLocalizationTable) forState:UIControlStateNormal];
+    self.knownLanguagesTextField.text = MKLocalizedFromTable(BME_SETTINGS_LANGUAGES, BMESettingsLocalizationTable);
+    [self.selectLanguagesButton setTitle:MKLocalizedFromTable(BME_SETTINGS_ADD_LANGUAGES, BMESettingsLocalizationTable) forState:UIControlStateNormal];
     [self.feedbackButton setTitle:MKLocalizedFromTable(BME_SETTINGS_FEEDBACK, BMESettingsLocalizationTable) forState:UIControlStateNormal];
-    [self.logoutButton setTitle:MKLocalizedFromTable(BME_SETTINGS_LOG_OUT, BMESettingsLocalizationTable) forState:UIControlStateNormal];
+    NSString *logoutString = [NSString stringWithFormat:@"  %@", MKLocalizedFromTable(BME_SETTINGS_LOG_OUT, BMESettingsLocalizationTable)];
+    [self.logoutButton setTitle:logoutString forState:UIControlStateNormal];
     
     self.versionLabel.text = MKLocalizedFromTableWithFormat(BME_SETTINGS_VERSION_TITLE, BMESettingsLocalizationTable, [self versionString]);
 }
@@ -82,7 +91,7 @@
         if (!error || [error code] == BMEClientErrorUserTokenNotFound) {
             [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogOutNotification object:nil];
             
-            [self performSegueWithIdentifier:BMEUnwindSettingsSegue sender:self];
+            [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"Could not log out: %@", error);
             
@@ -121,6 +130,19 @@
     self.firstNameTextField.text = user.firstName;
     self.lastNameTextField.text = user.lastName;
     self.emailTextField.text = user.email;
+    
+    NSArray *knownLanguageCodes = [NSMutableArray arrayWithArray:[BMEClient sharedClient].currentUser.languages];
+    NSMutableString *knownLanguages = [NSMutableString new];
+    for (NSString *languageCode in knownLanguageCodes) {
+        NSLocale *locale = [NSLocale localeWithLocaleIdentifier:languageCode];
+        NSString *languageString = [[locale displayNameForKey:NSLocaleIdentifier value:languageCode] capitalizedStringWithLocale:[NSLocale currentLocale]];
+        if (languageCode == knownLanguageCodes.firstObject) {
+            [knownLanguages appendString:languageString];
+        } else {
+            [knownLanguages appendFormat:@", %@", languageString];
+        }
+    }
+    self.knownLanguagesTextField.text = knownLanguages;
 }
 
 - (void)saveIfSettingChanged {
@@ -164,6 +186,22 @@
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BMETaskTableViewCell *cell = (BMETaskTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"TaskTableViewCellID"];
+    
+    cell.title = @"Hello";
+    cell.detail = @"+45 points";
+    
+    return cell;
 }
 
 @end

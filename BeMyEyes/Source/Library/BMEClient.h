@@ -8,7 +8,7 @@
 
 #import "AFHTTPClient.h"
 
-@class BMERequest, BMEToken, BMEUser, BMEFacebookInfo;
+@class BMERequest, BMEToken, BMEUser, BMEFacebookInfo, BMECommunityStats;
 
 enum {
     BMEClientErrorInvalidBody = 1000,
@@ -87,6 +87,8 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 
 - (void)loadTotalPoint:(void(^)(NSUInteger point, NSError *error))completion;
 - (void)loadPointForDays:(NSUInteger)days completion:(void(^)(NSArray *entries, NSError *error))completion;
+- (void)loadUserStatsCompletion:(void (^)(BMEUser *, NSError *))completion;
+- (void)loadCommunityStatsPointsCompletion:(void (^)(BMECommunityStats *, NSError *))completion;
 
 - (NSString *)token;
 - (NSDate *)tokenExpiryDate;
