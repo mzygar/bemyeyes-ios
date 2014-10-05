@@ -1,6 +1,6 @@
 # Getting started
 ## install CocoaPod
-sudo gem install cocoapods
+sudo gem install cocoapods  
 # install dependencies
 pod install
 
