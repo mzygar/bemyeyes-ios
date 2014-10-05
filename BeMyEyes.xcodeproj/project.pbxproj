@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08EE7919E1693200B45088 /* OpenTok.framework */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
@@ -29,7 +30,6 @@
 		72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */; };
 		72414AFA196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */; };
 		72414AFD196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */; };
-		725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B0EF51959836700BB4AE0 /* OpenTok.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		725B0EF81959875500BB4AE0 /* call.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EF71959875500BB4AE0 /* call.aiff */; };
 		725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */; };
 		725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */; };
@@ -118,6 +118,7 @@
 
 /* Begin PBXFileReference section */
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
 		7206A76018FA9BF000251824 /* BMEPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointLabel.m; sourceTree = "<group>"; };
 		7206A76218FA9C0D00251824 /* BMEPointGraphEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphEntry.h; sourceTree = "<group>"; };
@@ -155,7 +156,6 @@
 		72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMELanguagesViewController.m; sourceTree = "<group>"; };
 		72414AF9196AAD5C00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMELanguagesLocalizationTable.strings; sourceTree = "<group>"; };
 		72414AFC196AB16A00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEMainLocalizationTable.strings; sourceTree = "<group>"; };
-		725B0EF51959836700BB4AE0 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.2.0/OpenTok.framework"; sourceTree = "<group>"; };
 		725B0EF71959875500BB4AE0 /* call.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = call.aiff; sourceTree = "<group>"; };
 		725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallAudioPlayer.h; sourceTree = "<group>"; };
 		725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallAudioPlayer.m; sourceTree = "<group>"; };
@@ -314,7 +314,6 @@
 				726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */,
 				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
 				726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */,
-				725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */,
 				726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */,
 				7262301818BA39E3006F388C /* Security.framework in Frameworks */,
 				7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */,
@@ -329,6 +328,7 @@
 				7262300618BA39AA006F388C /* CoreAudio.framework in Frameworks */,
 				7262300418BA39A6006F388C /* CFNetwork.framework in Frameworks */,
 				7262300218BA39A1006F388C /* AVFoundation.framework in Frameworks */,
+				4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */,
 				72622FFE18BA27FE006F388C /* AdSupport.framework in Frameworks */,
 				72622FFA18BA27F2006F388C /* Social.framework in Frameworks */,
 				72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */,
@@ -616,7 +616,7 @@
 		72DEF72318B90A6D0048FA90 /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
-				725B0EF51959836700BB4AE0 /* OpenTok.framework */,
+				4E08EE7919E1693200B45088 /* OpenTok.framework */,
 				72DEF72418B90A6D0048FA90 /* AESCrypt */,
 			);
 			path = "Other sources";
