@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -187,43 +188,88 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bco-tk-hZd">
-                                <rect key="frame" x="0.0" y="67" width="320" height="325"/>
+                                <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-yu-g9L">
-                                        <rect key="frame" x="0.0" y="25" width="320" height="275"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKQ-48-6zn">
-                                                <rect key="frame" x="20" y="0.0" width="280" height="158"/>
-                                                <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Helping is easy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="yyU-Xz-NIz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="73"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="29"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help whenever you want, wherever you want." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="r46-QU-kdt">
-                                                        <rect key="frame" x="0.0" y="81" width="280" height="77"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVx-JZ-Jwn">
+                                                <rect key="frame" x="155" y="0.0" width="10" height="48"/>
+                                                <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="r3G-nY-V5m"/>
+                                                </constraints>
                                             </view>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your phone is open for calls from people who need help when you are signed in." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="pAg-cR-b9G">
-                                                <rect key="frame" x="20" y="188" width="280" height="87"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helping is easy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyU-Xz-NIz">
+                                                <rect key="frame" x="15" y="48" width="290" height="35"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="29"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUC-Ih-Y0N">
+                                                <rect key="frame" x="155" y="91" width="10" height="24"/>
+                                                <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="WeK-UP-3DR"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help whenever you want, wherever you want." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r46-QU-kdt">
+                                                <rect key="frame" x="15" y="115" width="290" height="59"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ta-bD-L2K">
+                                                <rect key="frame" x="155" y="174" width="10" height="23.5"/>
+                                                <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="OwE-MB-gjO"/>
+                                                </constraints>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Q5-wh-Isf">
+                                                <rect key="frame" x="155" y="272" width="10" height="48"/>
+                                                <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="2Lq-ZA-3UF"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your phone is open for calls from people who need help when you are signed in." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAg-cR-b9G">
+                                                <rect key="frame" x="15" y="197" width="290" height="74.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="275" id="QSB-QD-Jkz"/>
+                                            <constraint firstItem="r46-QU-kdt" firstAttribute="top" secondItem="IUC-Ih-Y0N" secondAttribute="bottom" id="2tm-ui-Sbu"/>
+                                            <constraint firstAttribute="centerX" secondItem="r46-QU-kdt" secondAttribute="centerX" id="5TY-ba-2TD"/>
+                                            <constraint firstAttribute="bottom" secondItem="9Q5-wh-Isf" secondAttribute="bottom" id="9vV-7h-nvK"/>
+                                            <constraint firstItem="iVx-JZ-Jwn" firstAttribute="height" secondItem="1ta-bD-L2K" secondAttribute="height" multiplier="2" id="Fme-0h-0UZ"/>
+                                            <constraint firstItem="iVx-JZ-Jwn" firstAttribute="top" secondItem="BDu-yu-g9L" secondAttribute="top" id="GI6-h8-naa"/>
+                                            <constraint firstAttribute="trailing" secondItem="yyU-Xz-NIz" secondAttribute="trailing" constant="15" id="Hdl-rv-xuc"/>
+                                            <constraint firstItem="9Q5-wh-Isf" firstAttribute="top" secondItem="pAg-cR-b9G" secondAttribute="bottom" id="Jvx-pF-yXN"/>
+                                            <constraint firstAttribute="centerX" secondItem="iVx-JZ-Jwn" secondAttribute="centerX" id="KoU-B5-MJp"/>
+                                            <constraint firstItem="iVx-JZ-Jwn" firstAttribute="height" secondItem="IUC-Ih-Y0N" secondAttribute="height" multiplier="2" id="L8Z-wl-o5E"/>
+                                            <constraint firstItem="yyU-Xz-NIz" firstAttribute="top" secondItem="iVx-JZ-Jwn" secondAttribute="bottom" id="M5L-qm-cbM"/>
+                                            <constraint firstAttribute="trailing" secondItem="pAg-cR-b9G" secondAttribute="trailing" constant="15" id="OAN-dE-oAE"/>
+                                            <constraint firstItem="yyU-Xz-NIz" firstAttribute="leading" secondItem="BDu-yu-g9L" secondAttribute="leading" constant="15" id="QpM-89-1JD"/>
+                                            <constraint firstItem="iVx-JZ-Jwn" firstAttribute="height" secondItem="9Q5-wh-Isf" secondAttribute="height" id="Zxm-3c-3Ox"/>
+                                            <constraint firstItem="1ta-bD-L2K" firstAttribute="top" secondItem="r46-QU-kdt" secondAttribute="bottom" id="eeB-Yh-L7K"/>
+                                            <constraint firstItem="pAg-cR-b9G" firstAttribute="leading" secondItem="BDu-yu-g9L" secondAttribute="leading" constant="15" id="feK-RH-atU"/>
+                                            <constraint firstAttribute="centerX" secondItem="IUC-Ih-Y0N" secondAttribute="centerX" id="hFT-82-la8"/>
+                                            <constraint firstAttribute="centerX" secondItem="9Q5-wh-Isf" secondAttribute="centerX" id="kPL-Xa-x6Q"/>
+                                            <constraint firstAttribute="centerX" secondItem="1ta-bD-L2K" secondAttribute="centerX" id="mfF-jl-wAE"/>
+                                            <constraint firstItem="r46-QU-kdt" firstAttribute="leading" secondItem="BDu-yu-g9L" secondAttribute="leading" constant="15" id="qaj-ok-jxI"/>
+                                            <constraint firstItem="pAg-cR-b9G" firstAttribute="top" secondItem="1ta-bD-L2K" secondAttribute="bottom" id="tck-76-KW5"/>
+                                            <constraint firstAttribute="trailing" secondItem="r46-QU-kdt" secondAttribute="trailing" constant="15" id="thE-zl-OkB"/>
+                                            <constraint firstItem="IUC-Ih-Y0N" firstAttribute="top" secondItem="yyU-Xz-NIz" secondAttribute="bottom" constant="8" id="xfK-dP-oaE"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="BDu-yu-g9L" firstAttribute="leading" secondItem="bco-tk-hZd" secondAttribute="leading" id="3zR-it-gr0"/>
+                                    <constraint firstItem="BDu-yu-g9L" firstAttribute="top" secondItem="bco-tk-hZd" secondAttribute="top" id="Dd6-xO-wfJ"/>
                                     <constraint firstAttribute="centerY" secondItem="BDu-yu-g9L" secondAttribute="centerY" id="Mhg-JY-czE"/>
+                                    <constraint firstAttribute="bottom" secondItem="BDu-yu-g9L" secondAttribute="bottom" id="QCZ-gO-Azw"/>
                                     <constraint firstAttribute="trailing" secondItem="BDu-yu-g9L" secondAttribute="trailing" id="ppa-1O-ExL"/>
                                 </constraints>
                             </view>
@@ -273,9 +319,9 @@
                             <constraint firstAttribute="trailing" secondItem="Jqf-te-yzQ" secondAttribute="trailing" constant="10" id="KXz-Jd-GrM"/>
                             <constraint firstItem="Hrt-37-M7c" firstAttribute="top" secondItem="Jqf-te-yzQ" secondAttribute="bottom" constant="20" id="QXM-SI-okI"/>
                             <constraint firstItem="meS-rG-ru3" firstAttribute="top" secondItem="XQC-4S-8pI" secondAttribute="bottom" id="lc1-X5-UAH"/>
-                            <constraint firstItem="bco-tk-hZd" firstAttribute="top" secondItem="meS-rG-ru3" secondAttribute="bottom" constant="-13" id="nV6-on-w0F"/>
+                            <constraint firstItem="bco-tk-hZd" firstAttribute="top" secondItem="meS-rG-ru3" secondAttribute="bottom" id="nV6-on-w0F"/>
                             <constraint firstAttribute="trailing" secondItem="bco-tk-hZd" secondAttribute="trailing" id="tOb-9g-zZy"/>
-                            <constraint firstItem="Jqf-te-yzQ" firstAttribute="top" secondItem="bco-tk-hZd" secondAttribute="bottom" constant="8" id="ywa-lA-1R6"/>
+                            <constraint firstItem="Jqf-te-yzQ" firstAttribute="top" secondItem="bco-tk-hZd" secondAttribute="bottom" id="ywa-lA-1R6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Khn-pj-PxL"/>
@@ -432,6 +478,13 @@
                                             <segue destination="wCM-Kk-HVA" kind="push" id="fEW-7P-iuR"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qid-cv-SCg" userLabel="Expander">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="Tdd-lb-uB0"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="yuq-Gm-fi6" firstAttribute="top" secondItem="fM4-jC-xC3" secondAttribute="bottom" constant="8" id="8zE-GL-50G"/>
@@ -442,10 +495,14 @@
                                     <constraint firstItem="oL9-6V-10R" firstAttribute="leading" secondItem="leT-UW-mSK" secondAttribute="leading" id="Iya-x5-Ykm"/>
                                     <constraint firstAttribute="trailing" secondItem="0BN-bJ-xSZ" secondAttribute="trailing" id="KY3-zC-fYC"/>
                                     <constraint firstItem="8pA-sN-peL" firstAttribute="top" secondItem="leT-UW-mSK" secondAttribute="top" constant="20" id="Pvv-nw-XhP"/>
+                                    <constraint firstItem="qid-cv-SCg" firstAttribute="leading" secondItem="leT-UW-mSK" secondAttribute="leading" id="Qhb-Sy-iSY"/>
+                                    <constraint firstItem="qid-cv-SCg" firstAttribute="top" secondItem="leT-UW-mSK" secondAttribute="top" id="Qio-FW-CGj"/>
                                     <constraint firstItem="q5v-lJ-cvR" firstAttribute="top" secondItem="yuq-Gm-fi6" secondAttribute="bottom" constant="8" id="TAY-Tg-3Jp"/>
                                     <constraint firstItem="oL9-6V-10R" firstAttribute="top" secondItem="0BN-bJ-xSZ" secondAttribute="bottom" constant="8" id="VZ0-Js-GGa"/>
+                                    <constraint firstAttribute="trailing" secondItem="qid-cv-SCg" secondAttribute="trailing" id="XJ8-98-m3j"/>
                                     <constraint firstAttribute="height" constant="421" id="Xh1-7K-xgm"/>
                                     <constraint firstItem="fM4-jC-xC3" firstAttribute="top" secondItem="8pA-sN-peL" secondAttribute="bottom" constant="8" id="XxO-9f-0nu"/>
+                                    <constraint firstItem="qid-cv-SCg" firstAttribute="width" secondItem="leT-UW-mSK" secondAttribute="width" id="bMQ-Ld-T1V"/>
                                     <constraint firstItem="fM4-jC-xC3" firstAttribute="leading" secondItem="leT-UW-mSK" secondAttribute="leading" id="gQQ-Ds-s65"/>
                                     <constraint firstAttribute="trailing" secondItem="q5v-lJ-cvR" secondAttribute="trailing" id="jGO-90-adm"/>
                                     <constraint firstItem="yuq-Gm-fi6" firstAttribute="leading" secondItem="leT-UW-mSK" secondAttribute="leading" id="nDk-Uf-Hox"/>
@@ -642,27 +699,27 @@
                                     <segue destination="rmT-tx-lgV" kind="push" identifier="SignUpMethod" id="46J-Mt-BiQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-Ti-keq">
-                                <rect key="frame" x="20" y="88" width="280" height="304"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-Ti-keq">
+                                <rect key="frame" x="15" y="80" width="290" height="320"/>
                                 <string key="text">The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.
 
 The helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.
 
 You may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information.
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vyn-Ti-keq" firstAttribute="top" secondItem="CIb-cS-zkf" secondAttribute="bottom" constant="8" id="8ZC-R9-B5a"/>
-                            <constraint firstItem="vyn-Ti-keq" firstAttribute="leading" secondItem="YfN-L6-fUE" secondAttribute="leading" constant="20" id="GJu-8B-AuH"/>
+                            <constraint firstItem="vyn-Ti-keq" firstAttribute="top" secondItem="CIb-cS-zkf" secondAttribute="bottom" id="8ZC-R9-B5a"/>
+                            <constraint firstItem="vyn-Ti-keq" firstAttribute="leading" secondItem="YfN-L6-fUE" secondAttribute="leading" constant="15" id="GJu-8B-AuH"/>
                             <constraint firstItem="xFS-Mo-f8B" firstAttribute="top" secondItem="osh-d7-3mB" secondAttribute="bottom" constant="20" id="Ss9-9L-uzG"/>
                             <constraint firstItem="CIb-cS-zkf" firstAttribute="top" secondItem="Sh6-5W-mZP" secondAttribute="bottom" id="VwN-UO-I7H"/>
-                            <constraint firstAttribute="trailing" secondItem="vyn-Ti-keq" secondAttribute="trailing" constant="20" id="nmG-j0-Usw"/>
-                            <constraint firstItem="osh-d7-3mB" firstAttribute="top" secondItem="vyn-Ti-keq" secondAttribute="bottom" constant="8" id="nwQ-nx-Z6Q"/>
+                            <constraint firstAttribute="trailing" secondItem="vyn-Ti-keq" secondAttribute="trailing" constant="15" id="nmG-j0-Usw"/>
+                            <constraint firstItem="osh-d7-3mB" firstAttribute="top" secondItem="vyn-Ti-keq" secondAttribute="bottom" id="nwQ-nx-Z6Q"/>
                             <constraint firstItem="CIb-cS-zkf" firstAttribute="leading" secondItem="YfN-L6-fUE" secondAttribute="leading" constant="10" id="ysR-M5-QQL"/>
                             <constraint firstAttribute="trailing" secondItem="osh-d7-3mB" secondAttribute="trailing" constant="10" id="zc9-by-FGF"/>
                         </constraints>
@@ -1396,10 +1453,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <rect key="frame" x="0.0" y="88" width="320" height="60"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-6l-1vq">
-                                                <rect key="frame" x="68" y="0.0" width="111" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="111" id="62H-PJ-GW4"/>
-                                                </constraints>
+                                                <rect key="frame" x="68" y="0.0" width="108.5" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                 <connections>
@@ -1407,10 +1461,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-e2-g2G">
-                                                <rect key="frame" x="189" y="0.0" width="111" height="60"/>
+                                                <rect key="frame" x="191" y="0.0" width="108.5" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="8Yb-vE-kjH"/>
-                                                    <constraint firstAttribute="width" constant="111" id="OWd-ne-iYw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -1433,13 +1486,15 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <constraint firstItem="5ci-cI-U8N" firstAttribute="leading" secondItem="iJh-xD-Sg7" secondAttribute="leading" constant="20" id="C7A-BS-0yM"/>
                                             <constraint firstAttribute="centerY" secondItem="5ci-cI-U8N" secondAttribute="centerY" id="CAV-QB-AfU"/>
                                             <constraint firstItem="2KI-e2-g2G" firstAttribute="baseline" secondItem="i9n-6l-1vq" secondAttribute="baseline" id="DP1-7W-2Zj"/>
+                                            <constraint firstItem="2KI-e2-g2G" firstAttribute="leading" secondItem="i9n-6l-1vq" secondAttribute="trailing" constant="15" id="IXb-uu-d23"/>
                                             <constraint firstItem="i9n-6l-1vq" firstAttribute="leading" secondItem="5ci-cI-U8N" secondAttribute="trailing" constant="8" id="U8Q-x9-3iN"/>
                                             <constraint firstAttribute="height" constant="60" id="VZG-lv-1sN"/>
                                             <constraint firstItem="i9n-6l-1vq" firstAttribute="top" secondItem="iJh-xD-Sg7" secondAttribute="top" id="ekE-cl-mxY"/>
+                                            <constraint firstItem="i9n-6l-1vq" firstAttribute="width" secondItem="2KI-e2-g2G" secondAttribute="width" id="wbA-bS-RN9"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="2LO-68-Sve">
-                                        <rect key="frame" x="20" y="156" width="280" height="34"/>
+                                        <rect key="frame" x="15" y="156" width="290" height="33.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Z6y-P9-XhC"/>
                                         </constraints>
@@ -1448,10 +1503,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-V2-8o2">
-                                        <rect key="frame" x="0.0" y="198" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="197" width="320" height="60"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opU-Be-2Hu">
-                                                <rect key="frame" x="68" y="0.0" width="232" height="60"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opU-Be-2Hu">
+                                                <rect key="frame" x="68" y="0.0" width="312" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                 <connections>
@@ -1478,7 +1533,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2K-Da-ArQ">
-                                        <rect key="frame" x="0.0" y="266" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="265" width="320" height="60"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-hZ-d1W">
                                                 <rect key="frame" x="68" y="0.0" width="232" height="60"/>
@@ -1503,13 +1558,12 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <constraint firstAttribute="bottom" secondItem="3Vw-hZ-d1W" secondAttribute="bottom" id="ZIu-8U-K9H"/>
                                             <constraint firstItem="vIE-TU-Boa" firstAttribute="leading" secondItem="X2K-Da-ArQ" secondAttribute="leading" constant="20" id="Zo0-gJ-xNU"/>
                                             <constraint firstAttribute="height" constant="60" id="cQi-Z6-rui"/>
-                                            <constraint firstAttribute="width" constant="320" id="oat-wD-CQ3"/>
                                             <constraint firstItem="3Vw-hZ-d1W" firstAttribute="leading" secondItem="vIE-TU-Boa" secondAttribute="trailing" constant="8" id="pBF-Hr-fI2"/>
                                             <constraint firstItem="3Vw-hZ-d1W" firstAttribute="top" secondItem="X2K-Da-ArQ" secondAttribute="top" id="vdZ-G4-6QL"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9X-vI-vZr">
-                                        <rect key="frame" x="0.0" y="334" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="333" width="320" height="60"/>
                                         <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="cWN-Nk-G7c"/>
@@ -1523,38 +1577,49 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <action selector="signUpButtonPressed:" destination="IOT-Cv-qKg" eventType="touchUpInside" id="Q1P-Zi-dhb"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weh-ih-OTj" userLabel="Expander">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="RbA-kA-NDn"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Y9X-vI-vZr" firstAttribute="leading" secondItem="guG-wR-qIH" secondAttribute="leading" id="G3X-WB-CSa"/>
                                     <constraint firstItem="jS9-FE-y1n" firstAttribute="top" secondItem="guG-wR-qIH" secondAttribute="top" constant="20" id="IE5-yz-bGr"/>
+                                    <constraint firstAttribute="trailing" secondItem="weh-ih-OTj" secondAttribute="trailing" id="MMl-gC-iBr"/>
                                     <constraint firstItem="X2K-Da-ArQ" firstAttribute="leading" secondItem="guG-wR-qIH" secondAttribute="leading" id="MZj-SZ-FfL"/>
                                     <constraint firstItem="2LO-68-Sve" firstAttribute="top" secondItem="iJh-xD-Sg7" secondAttribute="bottom" constant="8" id="Nlt-hE-g15"/>
                                     <constraint firstItem="iJh-xD-Sg7" firstAttribute="leading" secondItem="guG-wR-qIH" secondAttribute="leading" id="Onh-RD-kLo"/>
                                     <constraint firstAttribute="trailing" secondItem="iJh-xD-Sg7" secondAttribute="trailing" id="P6t-f2-qZY"/>
+                                    <constraint firstItem="weh-ih-OTj" firstAttribute="top" secondItem="guG-wR-qIH" secondAttribute="top" id="Qbp-8q-eTV"/>
                                     <constraint firstItem="BVL-V2-8o2" firstAttribute="leading" secondItem="guG-wR-qIH" secondAttribute="leading" id="Shy-f0-yLa"/>
-                                    <constraint firstItem="2LO-68-Sve" firstAttribute="leading" secondItem="guG-wR-qIH" secondAttribute="leading" constant="20" id="X7N-Gb-JvT"/>
+                                    <constraint firstItem="2LO-68-Sve" firstAttribute="leading" relation="lessThanOrEqual" secondItem="guG-wR-qIH" secondAttribute="leading" constant="15" id="X7N-Gb-JvT"/>
                                     <constraint firstItem="BVL-V2-8o2" firstAttribute="top" secondItem="2LO-68-Sve" secondAttribute="bottom" constant="8" id="XWD-Mu-V13"/>
                                     <constraint firstAttribute="height" constant="414" id="XYo-PY-H1H"/>
                                     <constraint firstAttribute="trailing" secondItem="Y9X-vI-vZr" secondAttribute="trailing" id="aDD-rC-JEh"/>
                                     <constraint firstAttribute="trailing" secondItem="X2K-Da-ArQ" secondAttribute="trailing" id="d2D-bG-BzU"/>
                                     <constraint firstItem="iJh-xD-Sg7" firstAttribute="top" secondItem="jS9-FE-y1n" secondAttribute="bottom" constant="8" id="dJj-VH-CfO"/>
+                                    <constraint firstItem="weh-ih-OTj" firstAttribute="leading" secondItem="guG-wR-qIH" secondAttribute="leading" id="dmd-FH-GYC"/>
                                     <constraint firstItem="X2K-Da-ArQ" firstAttribute="top" secondItem="BVL-V2-8o2" secondAttribute="bottom" constant="8" id="mZS-7O-ydc"/>
                                     <constraint firstItem="Y9X-vI-vZr" firstAttribute="top" secondItem="X2K-Da-ArQ" secondAttribute="bottom" constant="8" id="sSc-L1-ma6"/>
                                     <constraint firstItem="jS9-FE-y1n" firstAttribute="leading" secondItem="guG-wR-qIH" secondAttribute="leading" constant="10" id="t3c-q3-e9d"/>
                                     <constraint firstAttribute="trailing" secondItem="BVL-V2-8o2" secondAttribute="trailing" id="ulh-UB-qTy"/>
-                                    <constraint firstAttribute="trailing" secondItem="2LO-68-Sve" secondAttribute="trailing" constant="20" id="vdm-pi-Xcu"/>
+                                    <constraint firstAttribute="trailing" secondItem="2LO-68-Sve" secondAttribute="trailing" constant="15" id="vdm-pi-Xcu"/>
                                     <constraint firstAttribute="bottom" secondItem="Y9X-vI-vZr" secondAttribute="bottom" constant="20" id="xNF-aW-LbE"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="guG-wR-qIH" firstAttribute="leading" secondItem="3EX-EM-xwe" secondAttribute="leading" id="4GB-au-56i"/>
+                            <constraint firstAttribute="width" secondItem="weh-ih-OTj" secondAttribute="width" id="Yhc-zX-m0F"/>
                             <constraint firstAttribute="trailing" secondItem="guG-wR-qIH" secondAttribute="trailing" id="kas-dc-FZA"/>
                             <constraint firstItem="Ghn-vs-iB8" firstAttribute="top" secondItem="guG-wR-qIH" secondAttribute="bottom" constant="-394" id="rmR-KR-Sl3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a1e-JV-YXZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="jS9-FE-y1n" id="I6c-ZE-14a"/>
                         <outlet property="emailTextField" destination="opU-Be-2Hu" id="NO5-e6-koH"/>
@@ -1571,7 +1636,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAb-yu-tHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="-232"/>
+            <point key="canvasLocation" x="2100" y="-267"/>
         </scene>
         <!--Terms View Controller-->
         <scene sceneID="cO8-SD-QcU">
@@ -1959,6 +2024,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="mwC-2P-lmG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-eU-EhO" userLabel="Expander">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.7725490196" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="wKs-O1-gcc"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8w-6J-1MM" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="66" width="320" height="151"/>
                                         <subviews>
@@ -2013,7 +2085,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="3md-SL-3j3"/>
                                             <constraint firstAttribute="trailing" secondItem="oJX-Lh-aj1" secondAttribute="trailing" id="6me-EA-B3n"/>
                                             <constraint firstItem="oJX-Lh-aj1" firstAttribute="top" secondItem="C8w-6J-1MM" secondAttribute="top" id="FlO-7V-VMG"/>
                                             <constraint firstItem="oJX-Lh-aj1" firstAttribute="leading" secondItem="C8w-6J-1MM" secondAttribute="leading" id="SvE-gm-Nfm"/>
@@ -2022,10 +2093,14 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="sKw-eU-EhO" firstAttribute="top" secondItem="mwC-2P-lmG" secondAttribute="top" id="4Tp-ZA-AJ4"/>
+                                    <constraint firstItem="sKw-eU-EhO" firstAttribute="leading" secondItem="mwC-2P-lmG" secondAttribute="leading" id="HYc-hB-dws"/>
                                     <constraint firstItem="C8w-6J-1MM" firstAttribute="leading" secondItem="mwC-2P-lmG" secondAttribute="leading" id="XFt-6D-op5"/>
                                     <constraint firstItem="C8w-6J-1MM" firstAttribute="top" secondItem="mwC-2P-lmG" secondAttribute="top" constant="66" id="bkh-6z-buf"/>
+                                    <constraint firstAttribute="trailing" secondItem="sKw-eU-EhO" secondAttribute="trailing" id="hCZ-wh-FA6"/>
                                     <constraint firstAttribute="trailing" secondItem="C8w-6J-1MM" secondAttribute="trailing" id="mr2-uM-kjz"/>
                                     <constraint firstAttribute="bottom" secondItem="C8w-6J-1MM" secondAttribute="bottom" id="xTe-lw-waw"/>
+                                    <constraint firstAttribute="width" secondItem="sKw-eU-EhO" secondAttribute="width" id="xVe-ek-Y3z"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
