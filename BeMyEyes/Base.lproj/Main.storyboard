@@ -1263,7 +1263,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w7A-4Z-ko9" id="LlA-uW-b6t">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helped one person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-5i-7OK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Helped one person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-5i-7OK">
                                                     <rect key="frame" x="15" y="8" width="138.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -1290,6 +1290,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 <constraint firstItem="Hrm-bE-OmT" firstAttribute="baseline" secondItem="Itz-5i-7OK" secondAttribute="baseline" id="bg2-kx-NVn"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hrm-bE-OmT" secondAttribute="trailing" constant="15" id="cw2-bp-jS1"/>
                                                 <constraint firstItem="Hrm-bE-OmT" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="top" priority="900" constant="8" id="e38-Un-Rkf"/>
+                                                <constraint firstItem="Hrm-bE-OmT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Itz-5i-7OK" secondAttribute="trailing" constant="5" id="iF3-z6-fh6"/>
                                                 <constraint firstItem="Itz-5i-7OK" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="top" constant="8" id="uFT-PJ-03r"/>
                                             </constraints>
                                         </tableViewCellContentView>

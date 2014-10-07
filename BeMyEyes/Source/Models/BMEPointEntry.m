@@ -39,10 +39,22 @@
 - (NSString *)localizableKeyForTitle {
     if ([self.title isEqualToString:@"signup"]) {
         return BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION;
-    } else if ([self.title isEqualToString:@"helped"]) {
-        return BME_HELPER_MAIN_POINTS_ENTRY_HELPED_DESCRIPTION;
-    } else if ([self.title isEqualToString:@"helped_failed"]) {
-        return BME_HELPER_MAIN_POINTS_ENTRY_ATTEMPTED_HELP_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"answer_push_message"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"answer_push_message_technical_error"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"finish_helping_request"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"finish_10_helping_request_in_a_week"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"finish_5_high_fives_in_a_week"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"share_on_twitter"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"share_on_facebook"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION;
+    } else if ([self.title isEqualToString:@"watch_video"]) {
+        return BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION;
     }
     return nil;
 }
