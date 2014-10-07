@@ -13,7 +13,7 @@
 #import "BMEUser.h"
 #import "BMEEmailValidator.h"
 #import "BMETaskTableViewCell.h"
-#import "BMEVideoViewController.h"
+#import "BeMyEyes-Swift.h"
 
 @import Twitter;
 
@@ -276,16 +276,12 @@
 
 - (void)watchVideo
 {
-    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"intro" ofType:@"mp4"];
-    NSURL *videoUrl = [NSURL fileURLWithPath:videoPath];
-    BMEVideoViewController *videoController = [[BMEVideoViewController alloc] initWithContentURL:videoUrl];
-    videoController.finishedPlaying = ^{
-        // TODO: call endpoint
-        // TODO: on completion [self.tasksTableView reloadData];
+    IntroVideoViewController *videoController = [IntroVideoViewController new];
+    videoController.didFinishPlaying = ^{
+//        // TODO: call endpoint
+//        // TODO: on completion [self.tasksTableView reloadData];
     };
     [self presentViewController:videoController animated:YES completion:nil];
-    
-    
 }
 
 @end

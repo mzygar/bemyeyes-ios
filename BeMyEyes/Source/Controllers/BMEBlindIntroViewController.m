@@ -7,6 +7,9 @@
 //
 
 #import "BMEBlindIntroViewController.h"
+#import "BMESignUpMethodViewController.h"
+
+static NSString *const BMEIntroSignUpMethodSegue = @"SignUpMethod";
 
 @interface BMEBlindIntroViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
@@ -30,6 +33,12 @@
     [self.continueButton setTitle:MKLocalizedFromTable(BME_BLIND_INTRO_CONTINUE, BMEBlindIntroLocalizationTable) forState:UIControlStateNormal];
 
     self.descriptionLabel.text = MKLocalizedFromTable(BME_BLIND_INTRO_DESCRIPTION, BMEBlindIntroLocalizationTable);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:BMEIntroSignUpMethodSegue]) {
+        ((BMESignUpMethodViewController *)segue.destinationViewController).role = BMERoleBlind;
+    }
 }
 
 @end

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08EE7919E1693200B45088 /* OpenTok.framework */; };
+		4E13106619E47FEC00B056DF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13106519E47FEC00B056DF /* VideoViewController.swift */; };
+		4E13106819E48C5000B056DF /* OnboardingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */; };
 		4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC10F19E413E00035BB70 /* BMEUserTask.m */; };
+		4EB6A1DE19E4A4D500C72A02 /* IntroVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */; };
 		4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */; };
 		4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1419E1F48C00141615 /* GradientView.swift */; };
 		4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1519E1F48C00141615 /* PointsBarView.swift */; };
@@ -90,7 +93,6 @@
 		72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */; };
 		72B3C4BD1987D21C00A56D49 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 72B3C4BC1987D21C00A56D49 /* intro.mp4 */; };
 		72B3C4BF1987D31D00A56D49 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */; };
-		72B3C4C51987DF2A00A56D49 /* BMEVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */; };
 		72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */; };
 		72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */; };
 		72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */; };
@@ -126,11 +128,14 @@
 /* Begin PBXFileReference section */
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
+		4E13106519E47FEC00B056DF /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVideoViewController.swift; sourceTree = "<group>"; };
+		4E13106919E49BAE00B056DF /* BeMyEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeMyEyes-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E8AC10E19E413E00035BB70 /* BMEUserTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserTask.h; sourceTree = "<group>"; };
 		4E8AC10F19E413E00035BB70 /* BMEUserTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUserTask.m; sourceTree = "<group>"; };
+		4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVideoViewController.swift; sourceTree = "<group>"; };
 		4EB6AD1019E1F47A00141615 /* BMETaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETaskTableViewCell.h; sourceTree = "<group>"; };
 		4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETaskTableViewCell.m; sourceTree = "<group>"; };
-		4EB6AD1319E1F48B00141615 /* BeMyEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BeMyEyes-Bridging-Header.h"; path = "Views/BeMyEyes-Bridging-Header.h"; sourceTree = "<group>"; };
 		4EB6AD1419E1F48C00141615 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		4EB6AD1519E1F48C00141615 /* PointsBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsBarView.swift; sourceTree = "<group>"; };
 		4EB6AD1A19E1F4CD00141615 /* BMEUserLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserLevel.h; sourceTree = "<group>"; };
@@ -249,8 +254,6 @@
 		72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESpeaker.m; sourceTree = "<group>"; };
 		72B3C4BC1987D21C00A56D49 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		72B3C4C31987DF2A00A56D49 /* BMEVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEVideoViewController.h; sourceTree = "<group>"; };
-		72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEVideoViewController.m; sourceTree = "<group>"; };
 		72B3C4C71987E22100A56D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEVideoLocalizationTable.strings; sourceTree = "<group>"; };
 		72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEReportAbuseViewController.h; sourceTree = "<group>"; };
 		72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEReportAbuseViewController.m; sourceTree = "<group>"; };
@@ -472,7 +475,7 @@
 				72DEF71518B907D10048FA90 /* Models */,
 				7236E03B18B8A9EA00F622AA /* Library */,
 				7236E03C18B8A9EA00F622AA /* Views */,
-				4EB6AD1319E1F48B00141615 /* BeMyEyes-Bridging-Header.h */,
+				4E13106919E49BAE00B056DF /* BeMyEyes-Bridging-Header.h */,
 				72DEF72318B90A6D0048FA90 /* Other sources */,
 			);
 			path = Source;
@@ -509,6 +512,7 @@
 				7236E04018B8CCF400F622AA /* BMEBaseViewController.m */,
 				72E65FA518BA7CE3002FB2E0 /* BMEFrontPageViewController.h */,
 				72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */,
+				4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */,
 				72E65FA218BA7C12002FB2E0 /* BMEIntroViewController.h */,
 				72E65FA318BA7C12002FB2E0 /* BMEIntroViewController.m */,
 				72856DE119AF65640027AFF5 /* BMEHelperIntroViewController.h */,
@@ -547,8 +551,8 @@
 				727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */,
 				72414AF5196AA33200A2C5F4 /* BMELanguagesViewController.h */,
 				72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */,
-				72B3C4C31987DF2A00A56D49 /* BMEVideoViewController.h */,
-				72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */,
+				4E13106519E47FEC00B056DF /* VideoViewController.swift */,
+				4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -830,6 +834,7 @@
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
 				72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
+				4E13106819E48C5000B056DF /* OnboardingVideoViewController.swift in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
@@ -838,9 +843,11 @@
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
+				4E13106619E47FEC00B056DF /* VideoViewController.swift in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */,
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
+				4EB6A1DE19E4A4D500C72A02 /* IntroVideoViewController.swift in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
 				727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */,
 				4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */,
@@ -859,7 +866,6 @@
 				7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */,
 				729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */,
 				72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */,
-				72B3C4C51987DF2A00A56D49 /* BMEVideoViewController.m in Sources */,
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
 				72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */,
 				72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */,
@@ -1194,7 +1200,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/Views/BeMyEyes-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
@@ -1224,7 +1230,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/Views/BeMyEyes-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
