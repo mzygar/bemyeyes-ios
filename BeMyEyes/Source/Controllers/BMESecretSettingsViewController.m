@@ -56,8 +56,8 @@ enum {
     self.apiDescriptionLabel.text = MKLocalizedFromTable(BME_SECRET_SETTINGS_API_DESCRIPTION, BMESecretSettingsLocalizationTable);
     
     [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_DEVELOPMENT, BMESecretSettingsLocalizationTable) forSegmentAtIndex:0];
-    [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_STAGING, BMESecretSettingsLocalizationTable) forSegmentAtIndex:0];
-    [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_PUBLIC, BMESecretSettingsLocalizationTable) forSegmentAtIndex:0];
+    [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_STAGING, BMESecretSettingsLocalizationTable) forSegmentAtIndex:1];
+    [self.apiSegmentedControl setTitle:MKLocalizedFromTable(BME_SECRET_SETTINGS_API_PUBLIC, BMESecretSettingsLocalizationTable) forSegmentAtIndex:2];
 }
 
 #pragma mark -
