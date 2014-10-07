@@ -60,6 +60,9 @@
     NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"intro" ofType:@"mp4"];
     NSURL *videoUrl = [NSURL fileURLWithPath:videoPath];
     BMEVideoViewController *videoController = [[BMEVideoViewController alloc] initWithContentURL:videoUrl];
+    videoController.finishedPlaying = ^{
+        // TODO: call endpoint
+    };
     [self presentViewController:videoController animated:YES completion:^{
         [self presentHelperIntro];
     }];

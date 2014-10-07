@@ -12,6 +12,7 @@
 @interface BMEVideoViewController : BMEBaseViewController
 
 @property (readonly, nonatomic) MPMoviePlayerController *moviePlayerController;
+@property (strong, nonatomic) void (^finishedPlaying)();
 
 - (instancetype)initWithContentURL:(NSURL *)contentURL;
 

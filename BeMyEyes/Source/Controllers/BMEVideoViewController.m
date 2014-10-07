@@ -138,6 +138,10 @@
 - (void)playbackFinished:(NSNotification *)notification {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:self.moviePlayerController];
 
+    if (self.finishedPlaying) {
+        self.finishedPlaying();
+    }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

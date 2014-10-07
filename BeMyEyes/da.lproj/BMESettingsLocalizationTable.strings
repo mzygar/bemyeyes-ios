@@ -39,3 +39,6 @@
 
 /* Dismiss settings button accessibility label */
 "BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Tilbage";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d points";

@@ -30,6 +30,8 @@
         _currentLevel = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(currentLevel))];
         _nextLevel = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(nextLevel))];
         _lastPointEntries = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(lastPointEntries))];
+        _completedTasks = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(completedTasks))];
+        _remainingTasks = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(remainingTasks))];
     }
     
     return self;
@@ -49,6 +51,8 @@
     [aCoder encodeObject:self.currentLevel forKey:NSStringFromSelector(@selector(currentLevel))];
     [aCoder encodeObject:self.nextLevel forKey:NSStringFromSelector(@selector(nextLevel))];
     [aCoder encodeObject:self.lastPointEntries forKey:NSStringFromSelector(@selector(lastPointEntries))];
+    [aCoder encodeObject:self.completedTasks forKey:NSStringFromSelector(@selector(completedTasks))];
+    [aCoder encodeObject:self.remainingTasks forKey:NSStringFromSelector(@selector(remainingTasks))];
 }
 
 - (void)dealloc {
@@ -61,6 +65,8 @@
     _peopleHelped = nil;
     _totalPoints = nil;
     _lastPointEntries = nil;
+    _completedTasks = nil;
+    _remainingTasks = nil;
 }
 
 #pragma mark -

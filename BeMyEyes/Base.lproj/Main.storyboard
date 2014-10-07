@@ -1856,6 +1856,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="MrC-au-WgT" id="Lih-1X-2pI"/>
+                                    <outlet property="delegate" destination="MrC-au-WgT" id="3iA-Od-iDs"/>
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="English, Danish" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-5C-llP">
@@ -2067,7 +2068,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
                     <connections>
-                        <outlet property="TasksTableView" destination="4kB-AN-5cU" id="k1w-eP-TmN"/>
                         <outlet property="dismissButton" destination="tvF-nc-9Hj" id="ZHj-TU-Gtw"/>
                         <outlet property="emailLabel" destination="mvj-Dw-BPc" id="p2Q-hs-s4q"/>
                         <outlet property="emailTextField" destination="fEL-aF-32C" id="ViY-LK-yX9"/>
@@ -2081,6 +2081,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="lastNameTextField" destination="24Y-Oq-jej" id="T81-vr-GjG"/>
                         <outlet property="logoutButton" destination="af5-uQ-5WX" id="h0N-Cg-KIY"/>
                         <outlet property="selectLanguagesButton" destination="D0d-zV-1XX" id="h6x-iM-V5G"/>
+                        <outlet property="tasksTableView" destination="4kB-AN-5cU" id="Fr9-xO-euj"/>
                         <outlet property="versionLabel" destination="ub2-Qn-2Ma" id="eIk-44-IZo"/>
                     </connections>
                 </viewController>
