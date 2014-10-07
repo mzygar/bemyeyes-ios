@@ -14,6 +14,13 @@
 #pragma mark -
 #pragma mark Lifecycle
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.interactivePopGestureRecognizer.delegate = nil; // Enable swipe to dismiss http://stackoverflow.com/questions/24710258/no-swipe-back-when-hiding-navigation-bar-in-uinavigationcontroller
+}
+
 - (BOOL)shouldAutorotate {
     return [[self activeViewController] shouldAutorotate];
 }
