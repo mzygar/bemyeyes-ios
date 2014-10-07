@@ -22,4 +22,5 @@
     #import <MiawKit/MKFunctions.h>
     #import "MKLocalizationKeys.h"
     #import "BMEGlobal.h"
+    #import "BeMyEyes-Swift.h"
 #endif

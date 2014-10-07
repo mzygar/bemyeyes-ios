@@ -5,10 +5,49 @@
 "BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Du snoozer i %@";
 
 /* Point description */
-"BME_HELPER_MAIN_POINT_DESCRIPTION" = "Jo mere du hjælper, jo flere point får du";
+"BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION" = "Folk hjulpet";
 
-/* Point title */
-"BME_HELPER_MAIN_POINT_TITLE" = "Dine point er";
+/* Point total description */
+"BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION" = "Totale points";
+
+/* Level new helper */
+"BME_HELPER_MAIN_LEVEL_NEW_HELPER" = "Ny hjælper";
+
+/* Level promising helper */
+"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "Lovende hjælper";
+
+/* Level trusted helper */
+"BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER" = "Betroet hjælper";
+
+/* Level expert helper */
+"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Ekspert hjælper";
+
+/* Level master helper */
+"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Mester hjælper";
+
+/* Level points to next level description */
+"BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d points til næste niveau";
+
+/* Points signup description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Oprettede bruger";
+
+/* Points helped description */
+"BME_HELPER_MAIN_POINTS_ENTRY_HELPED_DESCRIPTION" = "Hjalp en person";
+
+/* Points attempted helped description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ATTEMPTED_HELP_DESCRIPTION" = "Hjælp næsten en person";
+
+/* Community network description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "Be My Eyes netværket";
+
+/* Community network sighted description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED" = "Seende";
+
+/* Community network blind description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND" = "Blinde";
+
+/* Community network helped description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED" = "Hjulpet";
 
 /* Message shown when the point could not be loaded */
 "BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Kunne ikke indlæse point";

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08EE7919E1693200B45088 /* OpenTok.framework */; };
+		4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */; };
+		4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1419E1F48C00141615 /* GradientView.swift */; };
+		4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1519E1F48C00141615 /* PointsBarView.swift */; };
+		4EB6AD1C19E1F4CD00141615 /* BMEUserLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */; };
+		4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */; };
+		4EB6AD2219E1F4F400141615 /* BMEPointsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
@@ -29,7 +36,6 @@
 		72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */; };
 		72414AFA196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */; };
 		72414AFD196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */; };
-		725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B0EF51959836700BB4AE0 /* OpenTok.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		725B0EF81959875500BB4AE0 /* call.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EF71959875500BB4AE0 /* call.aiff */; };
 		725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */; };
 		725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */; };
@@ -118,6 +124,19 @@
 
 /* Begin PBXFileReference section */
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
+		4EB6AD1019E1F47A00141615 /* BMETaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETaskTableViewCell.h; sourceTree = "<group>"; };
+		4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETaskTableViewCell.m; sourceTree = "<group>"; };
+		4EB6AD1319E1F48B00141615 /* BeMyEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BeMyEyes-Bridging-Header.h"; path = "Views/BeMyEyes-Bridging-Header.h"; sourceTree = "<group>"; };
+		4EB6AD1419E1F48C00141615 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		4EB6AD1519E1F48C00141615 /* PointsBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsBarView.swift; sourceTree = "<group>"; };
+		4EB6AD1A19E1F4CD00141615 /* BMEUserLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserLevel.h; sourceTree = "<group>"; };
+		4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUserLevel.m; sourceTree = "<group>"; };
+		4EB6AD1D19E1F4D700141615 /* BMECommunityStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECommunityStats.h; sourceTree = "<group>"; };
+		4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECommunityStats.m; sourceTree = "<group>"; };
+		4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointsTableViewCell.h; sourceTree = "<group>"; };
+		4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointsTableViewCell.m; sourceTree = "<group>"; };
+		60BAD311403180811F795B70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
 		7206A76018FA9BF000251824 /* BMEPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointLabel.m; sourceTree = "<group>"; };
 		7206A76218FA9C0D00251824 /* BMEPointGraphEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphEntry.h; sourceTree = "<group>"; };
@@ -155,7 +174,6 @@
 		72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMELanguagesViewController.m; sourceTree = "<group>"; };
 		72414AF9196AAD5C00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMELanguagesLocalizationTable.strings; sourceTree = "<group>"; };
 		72414AFC196AB16A00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEMainLocalizationTable.strings; sourceTree = "<group>"; };
-		725B0EF51959836700BB4AE0 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.2.0/OpenTok.framework"; sourceTree = "<group>"; };
 		725B0EF71959875500BB4AE0 /* call.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = call.aiff; sourceTree = "<group>"; };
 		725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallAudioPlayer.h; sourceTree = "<group>"; };
 		725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallAudioPlayer.m; sourceTree = "<group>"; };
@@ -300,7 +318,7 @@
 		72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFacebookInfo.m; sourceTree = "<group>"; };
 		72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+BMEPopToClass.h"; sourceTree = "<group>"; };
 		72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+BMEPopToClas.m"; sourceTree = "<group>"; };
-		AD111FA7EA9E4832890E7258 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FD524777E415681609BF9F5D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,7 +332,6 @@
 				726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */,
 				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
 				726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */,
-				725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */,
 				726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */,
 				7262301818BA39E3006F388C /* Security.framework in Frameworks */,
 				7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */,
@@ -329,6 +346,7 @@
 				7262300618BA39AA006F388C /* CoreAudio.framework in Frameworks */,
 				7262300418BA39A6006F388C /* CFNetwork.framework in Frameworks */,
 				7262300218BA39A1006F388C /* AVFoundation.framework in Frameworks */,
+				4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */,
 				72622FFE18BA27FE006F388C /* AdSupport.framework in Frameworks */,
 				72622FFA18BA27F2006F388C /* Social.framework in Frameworks */,
 				72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */,
@@ -359,7 +377,7 @@
 				7236E00318B8A87B00F622AA /* BeMyEyes */,
 				7236DFFC18B8A87B00F622AA /* Frameworks */,
 				7236DFFB18B8A87B00F622AA /* Products */,
-				AD111FA7EA9E4832890E7258 /* Pods.xcconfig */,
+				C9FEB88A05BA770475517824 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -451,6 +469,7 @@
 				72DEF71518B907D10048FA90 /* Models */,
 				7236E03B18B8A9EA00F622AA /* Library */,
 				7236E03C18B8A9EA00F622AA /* Views */,
+				4EB6AD1319E1F48B00141615 /* BeMyEyes-Bridging-Header.h */,
 				72DEF72318B90A6D0048FA90 /* Other sources */,
 			);
 			path = Source;
@@ -561,6 +580,12 @@
 				7206A76518FA9C0D00251824 /* BMEPointGraphView.m */,
 				7206A75F18FA9BF000251824 /* BMEPointLabel.h */,
 				7206A76018FA9BF000251824 /* BMEPointLabel.m */,
+				4EB6AD1019E1F47A00141615 /* BMETaskTableViewCell.h */,
+				4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */,
+				4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */,
+				4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */,
+				4EB6AD1419E1F48C00141615 /* GradientView.swift */,
+				4EB6AD1519E1F48C00141615 /* PointsBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -605,10 +630,14 @@
 				72DEF71B18B907D10048FA90 /* BMEToken.m */,
 				72DEF71C18B907D10048FA90 /* BMEUser.h */,
 				72DEF71D18B907D10048FA90 /* BMEUser.m */,
+				4EB6AD1A19E1F4CD00141615 /* BMEUserLevel.h */,
+				4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */,
 				72E65FAE18BA8214002FB2E0 /* BMEFacebookInfo.h */,
 				72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */,
 				726D7B91191AA21A005690B7 /* BMEPointEntry.h */,
 				726D7B92191AA21A005690B7 /* BMEPointEntry.m */,
+				4EB6AD1D19E1F4D700141615 /* BMECommunityStats.h */,
+				4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -616,7 +645,7 @@
 		72DEF72318B90A6D0048FA90 /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
-				725B0EF51959836700BB4AE0 /* OpenTok.framework */,
+				4E08EE7919E1693200B45088 /* OpenTok.framework */,
 				72DEF72418B90A6D0048FA90 /* AESCrypt */,
 			);
 			path = "Other sources";
@@ -637,6 +666,15 @@
 				72DEF72E18B90A6D0048FA90 /* README.md */,
 			);
 			path = AESCrypt;
+			sourceTree = "<group>";
+		};
+		C9FEB88A05BA770475517824 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60BAD311403180811F795B70 /* Pods.debug.xcconfig */,
+				FD524777E415681609BF9F5D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -672,7 +710,7 @@
 				ORGANIZATIONNAME = "Be My Eyes";
 				TargetAttributes = {
 					7236DFF918B8A87B00F622AA = {
-						DevelopmentTeam = FB85FFW734;
+						DevelopmentTeam = VS2JRRGV67;
 					};
 				};
 			};
@@ -748,7 +786,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7D633721AEF4038AC00C23E /* Check Pods Manifest.lock */ = {
@@ -778,6 +816,7 @@
 				7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */,
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,
+				4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */,
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
 				725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */,
 				72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */,
@@ -794,9 +833,13 @@
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
+				4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */,
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
 				727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */,
+				4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */,
+				4EB6AD2219E1F4F400141615 /* BMEPointsTableViewCell.m in Sources */,
+				4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
 				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
 				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
@@ -814,6 +857,7 @@
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
 				72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */,
 				72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */,
+				4EB6AD1C19E1F4CD00141615 /* BMEUserLevel.m in Sources */,
 				72DEF71F18B907D10048FA90 /* BMERequest.m in Sources */,
 				72DEF73118B90A6D0048FA90 /* NSData+Base64.m in Sources */,
 				72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */,
@@ -1060,8 +1104,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1079,7 +1123,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -1101,8 +1145,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1114,7 +1158,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
+				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
@@ -1123,14 +1167,15 @@
 		};
 		7236E02D18B8A87B00F622AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
+			baseConfigurationReference = 60BAD311403180811F795B70 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1139,9 +1184,12 @@
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/Views/BeMyEyes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1149,14 +1197,15 @@
 		};
 		7236E02E18B8A87B00F622AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
+			baseConfigurationReference = FD524777E415681609BF9F5D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1165,8 +1214,11 @@
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "799bd3bc-3a39-425e-be26-706b234c5e94";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/Views/BeMyEyes-Bridging-Header.h";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

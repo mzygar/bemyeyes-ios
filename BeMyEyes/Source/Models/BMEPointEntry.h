@@ -11,7 +11,9 @@
 @interface BMEPointEntry : NSObject
 
 @property (readonly, nonatomic) NSUInteger point;
-@property (readonly, nonatomic) NSString *message;
+@property (readonly, nonatomic) NSString *title;
 @property (readonly, nonatomic) NSDate *date;
+
+- (NSString *)localizableKeyForTitle;
 
 @end

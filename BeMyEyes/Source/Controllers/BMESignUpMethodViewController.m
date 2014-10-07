@@ -139,35 +139,38 @@
     [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
             [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId longLongValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
-                    if (success && !error) {
-                        progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE, BMESignUpMethodLocalizationTable);
-                    
-                        NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
-                        [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
+                if (success && !error) {
+                    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE, BMESignUpMethodLocalizationTable);
+                
+                    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+                    if (!deviceToken) {
+                        deviceToken = [NSString BMETemporaryDeviceToken];
+                        [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
                         [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
                         [GVUserDefaults synchronize];
-                        
-                        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:tempDeviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
-                            if (success && !error) {
-                                [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:tempDeviceToken success:^(BMEToken *token) {
-                                    [progressOverlayView hide:YES];
-                                    
-                                    [self didLogin];
-                                } failure:^(NSError *error) {
-                                    [progressOverlayView hide:YES];
-                                    
-                                    [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                                    
-                                    NSLog(@"Failed logging in after sign up: %@", error);
-                                }];
-                            } else {
+                    }
+                    
+                    [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:deviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+                        if (success && !error) {
+                            [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:deviceToken success:^(BMEToken *token) {
+                                [progressOverlayView hide:YES];
+                                
+                                [self didLogin];
+                            } failure:^(NSError *error) {
                                 [progressOverlayView hide:YES];
                                 
                                 [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
                                 
-                                NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
-                            }
-                        }];    
+                                NSLog(@"Failed logging in after sign up: %@", error);
+                            }];
+                        } else {
+                            [progressOverlayView hide:YES];
+                            
+                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
+                            
+                            NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
+                        }
+                    }];    
                 } else {
                     [progressOverlayView hide:YES];
                     

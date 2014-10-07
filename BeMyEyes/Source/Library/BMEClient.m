@@ -20,7 +20,9 @@
 #import "BMERequest.h"
 #import "BMEToken.h"
 #import "BMEUser.h"
+#import "BMEUserLevel.h"
 #import "BMEPointEntry.h"
+#import "BMECommunityStats.h"
 #import "BMEFacebookInfo.h"
 #import "BMERoleConverter.h"
 
@@ -326,6 +328,19 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }];
 }
 
+- (void)loadAvailableLanguagesWithCompletion:(void(^)(NSArray *languages, NSError *error))completion {
+    NSString *path = @"languages/common";
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion([self mapLanguagesFromRepresentation:responseObject], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(0, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
 #pragma mark -
 #pragma mark Requests
 
@@ -543,6 +558,32 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }];
 }
 
+- (void)loadUserStatsCompletion:(void (^)(BMEUser *, NSError *))completion {
+    NSString *path = [NSString stringWithFormat:@"stats/profile/%@", [self token]]; NSLog(@"%@", path);
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion([self mapUserStatsFromRepresentation:responseObject], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
+- (void)loadCommunityStatsPointsCompletion:(void (^)(BMECommunityStats *, NSError *))completion {
+    NSString *path = @"stats/community";
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion([self mapCommunityStatsFromRepresentation:responseObject], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
 #pragma mark -
 #pragma mark Public Accessors
 
@@ -732,6 +773,17 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }
 }
 
+- (NSArray *)mapLanguagesFromRepresentation:(NSArray *)representation {
+    NSMutableArray *languagesCodes = [NSMutableArray new];
+    for (NSDictionary *dictionary in representation) {
+        NSString *languageCode = dictionary[@"iso_639_1"];
+        if (languageCode) {
+            [languagesCodes addObject:languageCode];
+        }
+    }
+    return languagesCodes.count > 0 ? languagesCodes.copy : nil;
+}
+
 - (BMERequest *)mapRequestFromRepresentation:(NSDictionary *)representation {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     
@@ -773,11 +825,40 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     config.datePattern = @"y-M-d'T'H:m:s.SSS'Z'";
     
-    DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"log_time" toAttribute:@"date" onClass:[BMEPointEntry class]];
+    DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"date" toAttribute:@"date" onClass:[BMEPointEntry class]];
     [config addObjectMapping:dateMapping];
     
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEPointEntry class] andConfiguration:config];
     return [parser parseArray:representation];
+}
+
+- (BMEUser *)mapUserStatsFromRepresentation:(NSDictionary *)representation {
+    BMEUser *currentUser = [self currentUser];
+    [currentUser setValue:[representation objectForKey:@"no_helped"] forKeyPath:@"peopleHelped"];
+    [currentUser setValue:[representation objectForKey:@"total_points"] forKeyPath:@"totalPoints"];
+    // Point entries
+    NSArray *lastPointEntries = [self mapPointEntryFromRepresentation:[representation objectForKey:@"events"]];
+    [currentUser setValue:lastPointEntries forKey:@"lastPointEntries"];
+    // Levels
+    [currentUser setValue:[self mapLevelFromRepresentation:[representation objectForKey:@"current_level"]] forKey:@"currentLevel"];
+    [currentUser setValue:[self mapLevelFromRepresentation:[representation objectForKey:@"next_level"]] forKey:@"nextLevel"];
+
+    [self storeCurrentUser:currentUser];
+    return currentUser;
+}
+
+- (BMEUserLevel *)mapLevelFromRepresentation:(NSDictionary *)representation {
+    DCParserConfiguration *config = [DCParserConfiguration configuration];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEUserLevel class] andConfiguration:config];
+    return [parser parseDictionary:representation];
+}
+
+- (BMECommunityStats *)mapCommunityStatsFromRepresentation:(NSDictionary *)representation {
+    BMECommunityStats *stats = [BMECommunityStats new];
+    stats.blind = [representation objectForKey:@"blind"];
+    stats.sighted = [representation objectForKey:@"helpers"];
+    stats.helped = [representation objectForKey:@"no_helped"];
+    return stats;
 }
 
 - (NSError *)errorFromRepresentation:(NSDictionary *)representation {
