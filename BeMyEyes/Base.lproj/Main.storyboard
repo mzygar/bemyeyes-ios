@@ -1276,7 +1276,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx2-YA-dhW">
-                                                    <rect key="frame" x="15" y="27.5" width="50.5" height="13.5"/>
+                                                    <rect key="frame" x="15" y="27" width="50.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1289,7 +1289,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 <constraint firstItem="Itz-5i-7OK" firstAttribute="leading" secondItem="LlA-uW-b6t" secondAttribute="leading" constant="15" id="Xyz-qA-bZm"/>
                                                 <constraint firstItem="Hrm-bE-OmT" firstAttribute="baseline" secondItem="Itz-5i-7OK" secondAttribute="baseline" id="bg2-kx-NVn"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hrm-bE-OmT" secondAttribute="trailing" constant="15" id="cw2-bp-jS1"/>
-                                                <constraint firstItem="Itz-5i-7OK" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="topMargin" id="uFT-PJ-03r"/>
+                                                <constraint firstItem="Hrm-bE-OmT" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="top" priority="900" constant="8" id="e38-Un-Rkf"/>
+                                                <constraint firstItem="Itz-5i-7OK" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="top" constant="8" id="uFT-PJ-03r"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
