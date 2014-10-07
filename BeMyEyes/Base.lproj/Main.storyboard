@@ -2068,6 +2068,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
                     <connections>
                         <outlet property="TasksTableView" destination="4kB-AN-5cU" id="k1w-eP-TmN"/>
+                        <outlet property="dismissButton" destination="tvF-nc-9Hj" id="ZHj-TU-Gtw"/>
                         <outlet property="emailLabel" destination="mvj-Dw-BPc" id="p2Q-hs-s4q"/>
                         <outlet property="emailTextField" destination="fEL-aF-32C" id="ViY-LK-yX9"/>
                         <outlet property="feedbackButton" destination="kwZ-op-hZv" id="xmW-0d-nAN"/>

@@ -37,3 +37,5 @@
 /* Version title */
 "BME_SETTINGS_VERSION_TITLE" = "Version %@";
 
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Tilbage";

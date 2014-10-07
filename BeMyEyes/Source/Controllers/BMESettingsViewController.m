@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *TasksTableView;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
 @property (assign, nonatomic) BOOL shouldSave;
 @end
 
@@ -73,6 +74,8 @@
     [self.feedbackButton setTitle:MKLocalizedFromTable(BME_SETTINGS_FEEDBACK, BMESettingsLocalizationTable) forState:UIControlStateNormal];
     NSString *logoutString = [NSString stringWithFormat:@"  %@", MKLocalizedFromTable(BME_SETTINGS_LOG_OUT, BMESettingsLocalizationTable)];
     [self.logoutButton setTitle:logoutString forState:UIControlStateNormal];
+    
+    self.dismissButton.accessibilityLabel = MKLocalizedFromTableWithFormat(BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL, BMESettingsLocalizationTable);
     
     self.versionLabel.text = MKLocalizedFromTableWithFormat(BME_SETTINGS_VERSION_TITLE, BMESettingsLocalizationTable, [self versionString]);
 }
