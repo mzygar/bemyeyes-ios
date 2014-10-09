@@ -1,0 +1,291 @@
+
+/* Class = "IBUIButton"; normalTitle = "Log in with Facebook"; ObjectID = "0BN-bJ-xSZ"; */
+"0BN-bJ-xSZ.normalTitle" = "Log in with Facebook";
+
+/* Class = "IBUIButton"; normalTitle = "Log in"; ObjectID = "0EV-zp-tEr"; */
+"0EV-zp-tEr.normalTitle" = "Log in";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "10q-dZ-Qdv"; */
+"10q-dZ-Qdv.normalTitle" = "Back";
+
+/* Class = "IBUITextField"; text = "McCartney"; ObjectID = "24Y-Oq-jej"; */
+"24Y-Oq-jej.text" = "McCartney";
+
+/* Class = "IBUITextField"; placeholder = "Surname"; ObjectID = "2KI-e2-g2G"; */
+"2KI-e2-g2G.placeholder" = "Surname";
+
+/* Class = "IBUILabel"; text = "Your first name will be public and presented to helpers."; ObjectID = "2LO-68-Sve"; */
+"2LO-68-Sve.text" = "Your first name will be public and presented to helpers.";
+
+/* Class = "IBUIButton"; normalTitle = "Disconnect"; ObjectID = "2ev-9r-iXb"; */
+"2ev-9r-iXb.normalTitle" = "Disconnect";
+
+/* Class = "IBUITextField"; placeholder = "Password"; ObjectID = "3Vw-hZ-d1W"; */
+"3Vw-hZ-d1W.placeholder" = "Password";
+
+/* Class = "IBUILabel"; text = "512"; ObjectID = "3vn-oO-1sp"; */
+"3vn-oO-1sp.text" = "512";
+
+/* Class = "IBUILabel"; text = "By continuing you accept the"; ObjectID = "3wM-z3-EP5"; */
+"3wM-z3-EP5.text" = "By continuing you accept the";
+
+/* Class = "IBUILabel"; text = "Helped"; ObjectID = "6FE-RA-1MY"; */
+"6FE-RA-1MY.text" = "Helped";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "8pA-sN-peL"; */
+"8pA-sN-peL.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "Languages"; ObjectID = "8vb-6z-am3"; */
+"8vb-6z-am3.text" = "Languages";
+
+/* Class = "IBUILabel"; text = "17"; ObjectID = "936-Cz-Ktx"; */
+"936-Cz-Ktx.text" = "17";
+
+/* Class = "IBUILabel"; text = "Reason 1"; ObjectID = "AbN-ll-cDD"; */
+"AbN-ll-cDD.text" = "Reason 1";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "CIb-cS-zkf"; */
+"CIb-cS-zkf.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "Changing the API requires the app to be restarted."; ObjectID = "CTr-8B-1Vo"; */
+"CTr-8B-1Vo.text" = "Changing the API requires the app to be restarted.";
+
+/* Class = "IBUILabel"; text = "Reason 3"; ObjectID = "Cab-uR-m17"; */
+"Cab-uR-m17.text" = "Reason 3";
+
+/* Class = "IBUIButton"; normalTitle = "I am sighted"; ObjectID = "CeQ-6j-q8m"; */
+"CeQ-6j-q8m.normalTitle" = "I am sighted";
+
+/* Class = "IBUIButton"; normalTitle = "Add languages"; ObjectID = "D0d-zV-1XX"; */
+"D0d-zV-1XX.normalTitle" = "Add languages";
+
+/* Class = "IBUITextField"; text = "English, Danish"; ObjectID = "DB2-5C-llP"; */
+"DB2-5C-llP.text" = "English, Danish";
+
+/* Class = "IBUIButton"; normalTitle = "Connect to community"; ObjectID = "DQB-vd-Nyq"; */
+"DQB-vd-Nyq.normalTitle" = "Connect to community";
+
+/* Class = "IBUILabel"; text = "Yes!"; ObjectID = "EnW-DA-GD2"; */
+"EnW-DA-GD2.text" = "Yes!";
+
+/* Class = "IBUILabel"; text = "Terms and Agreements"; ObjectID = "Gvx-U1-YpW"; */
+"Gvx-U1-YpW.text" = "Terms and Agreements";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "Hdm-mf-RpA"; */
+"Hdm-mf-RpA.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "+50 points"; ObjectID = "Hrm-bE-OmT"; */
+"Hrm-bE-OmT.text" = "+50 points";
+
+/* Class = "IBUITextField"; text = "Paul"; ObjectID = "IH7-YW-7ZL"; */
+"IH7-YW-7ZL.text" = "Paul";
+
+/* Class = "IBUITextField"; placeholder = "Password"; ObjectID = "ITa-1Y-MSv"; */
+"ITa-1Y-MSv.placeholder" = "Password";
+
+/* Class = "IBUILabel"; text = "50"; ObjectID = "Iea-OD-NO6"; */
+"Iea-OD-NO6.text" = "50";
+
+/* Class = "IBUILabel"; text = "Helped one person"; ObjectID = "Itz-5i-7OK"; */
+"Itz-5i-7OK.text" = "Helped one person";
+
+/* Class = "IBUINavigationItem"; title = "Your Languages"; ObjectID = "Jln-3i-qXX"; */
+"Jln-3i-qXX.title" = "Your Languages";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "Jqf-te-yzQ"; */
+"Jqf-te-yzQ.normalTitle" = "Continue";
+
+/* Class = "IBUIButton"; normalTitle = "Already registered? Log in here."; ObjectID = "M9q-Oe-kOY"; */
+"M9q-Oe-kOY.normalTitle" = "Already registered? Log in here.";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "McL-j3-TQe"; */
+"McL-j3-TQe.text" = "Title";
+
+/* Class = "IBUILabel"; text = "3"; ObjectID = "OdZ-Jb-0ah"; */
+"OdZ-Jb-0ah.text" = "3";
+
+/* Class = "IBUILabel"; text = "register with your e-mail"; ObjectID = "RNw-7I-Wvf"; */
+"RNw-7I-Wvf.text" = "register with your e-mail";
+
+/* Class = "IBUILabel"; text = "Please wait..."; ObjectID = "SIz-JI-R6d"; */
+"SIz-JI-R6d.text" = "Please wait...";
+
+/* Class = "IBUILabel"; text = "+ 50 Points"; ObjectID = "SNa-gM-xxi"; */
+"SNa-gM-xxi.text" = "+ 50 Points";
+
+/* Class = "IBUILabel"; text = "Person helped"; ObjectID = "Sdj-6q-g4Z"; */
+"Sdj-6q-g4Z.text" = "Person helped";
+
+/* Class = "IBUIButton"; normalTitle = "I am blind"; ObjectID = "Tqb-HQ-rZY"; */
+"Tqb-HQ-rZY.normalTitle" = "I am blind";
+
+/* Class = "IBUILabel"; text = "Blind"; ObjectID = "U8b-Va-Uxg"; */
+"U8b-Va-Uxg.text" = "Blind";
+
+/* Class = "IBUILabel"; text = "API"; ObjectID = "U9n-IP-ODt"; */
+"U9n-IP-ODt.text" = "API";
+
+/* Class = "IBUINavigationItem"; title = "Secret Settings"; ObjectID = "UIb-xq-qBp"; */
+"UIb-xq-qBp.title" = "Secret Settings";
+
+/* Class = "IBUITextField"; placeholder = "E-mail"; ObjectID = "VDl-iP-Qe2"; */
+"VDl-iP-Qe2.placeholder" = "E-mail";
+
+/* Class = "IBUILabel"; text = "Be My Eyes"; ObjectID = "Vn6-bm-vhF"; */
+"Vn6-bm-vhF.text" = "Be My Eyes";
+
+/* Class = "IBUILabel"; text = "Hi Paul!"; ObjectID = "X7B-Ii-TJu"; */
+"X7B-Ii-TJu.text" = "Hi Paul!";
+
+/* Class = "IBUILabel"; text = "as well as the"; ObjectID = "XFF-B2-BZA"; */
+"XFF-B2-BZA.text" = "as well as the";
+
+/* Class = "IBUILabel"; text = "First name"; ObjectID = "XJV-uE-7uS"; */
+"XJV-uE-7uS.text" = "First name";
+
+/* Class = "IBUISegmentedControl"; Xk5-RI-0BI.segmentTitles[0] = "Development"; ObjectID = "Xk5-RI-0BI"; */
+"Xk5-RI-0BI.segmentTitles[0]" = "Development";
+
+/* Class = "IBUISegmentedControl"; Xk5-RI-0BI.segmentTitles[1] = "Staging"; ObjectID = "Xk5-RI-0BI"; */
+"Xk5-RI-0BI.segmentTitles[1]" = "Staging";
+
+/* Class = "IBUISegmentedControl"; Xk5-RI-0BI.segmentTitles[2] = "Public"; ObjectID = "Xk5-RI-0BI"; */
+"Xk5-RI-0BI.segmentTitles[2]" = "Public";
+
+/* Class = "IBUIButton"; normalTitle = "Register"; ObjectID = "Y9X-vI-vZr"; */
+"Y9X-vI-vZr.normalTitle" = "Register";
+
+/* Class = "IBUILabel"; text = "Yesterday"; ObjectID = "Yx2-YA-dhW"; */
+"Yx2-YA-dhW.text" = "Yesterday";
+
+/* Class = "IBUIButton"; normalTitle = "  Log out"; ObjectID = "af5-uQ-5WX"; */
+"af5-uQ-5WX.normalTitle" = "  Log out";
+
+/* Class = "IBUILabel"; text = "Surname"; ObjectID = "b3d-mk-uwU"; */
+"b3d-mk-uwU.text" = "Surname";
+
+/* Class = "IBUILabel"; text = "New Helper"; ObjectID = "bDk-Fp-G2F"; */
+"bDk-Fp-G2F.text" = "New Helper";
+
+/* Class = "IBUILabel"; text = "Reason 2"; ObjectID = "bTg-24-Pn6"; */
+"bTg-24-Pn6.text" = "Reason 2";
+
+/* Class = "IBUILabel"; text = "The Be My Eyes Network"; ObjectID = "bg7-T6-OWR"; */
+"bg7-T6-OWR.text" = "The Be My Eyes Network";
+
+/* Class = "IBUILabel"; text = "Enter your e-mail and we'll send you a new password."; ObjectID = "bl7-si-Ugu"; */
+"bl7-si-Ugu.text" = "Enter your e-mail and we'll send you a new password.";
+
+/* Class = "IBUIButton"; normalTitle = "Skip"; ObjectID = "bsE-VQ-xZI"; */
+"bsE-VQ-xZI.normalTitle" = "Skip";
+
+/* Class = "IBUITextField"; placeholder = "E-mail"; ObjectID = "bty-AZ-yfq"; */
+"bty-AZ-yfq.placeholder" = "E-mail";
+
+/* Class = "IBUILabel"; text = "Privacy Policy"; ObjectID = "cud-rC-Tmf"; */
+"cud-rC-Tmf.text" = "Privacy Policy";
+
+/* Class = "IBUILabel"; text = "Sighted"; ObjectID = "dRA-zk-BbC"; */
+"dRA-zk-BbC.text" = "Sighted";
+
+/* Class = "IBUILabel"; text = "Points total"; ObjectID = "e19-HE-m6G"; */
+"e19-HE-m6G.text" = "Points total";
+
+/* Class = "IBUIButton"; normalTitle = "Done"; ObjectID = "eni-M1-mvH"; */
+"eni-M1-mvH.normalTitle" = "Done";
+
+/* Class = "IBUITextField"; text = "demo@bemyeyes.org"; ObjectID = "fEL-aF-32C"; */
+"fEL-aF-32C.text" = "demo@bemyeyes.org";
+
+/* Class = "IBUILabel"; text = "You are now registered."; ObjectID = "fsI-0Y-m1f"; */
+"fsI-0Y-m1f.text" = "You are now registered.";
+
+/* Class = "IBUIButton"; normalTitle = "Sign up via Facebook"; ObjectID = "fw2-cM-Rvi"; */
+"fw2-cM-Rvi.normalTitle" = "Sign up via Facebook";
+
+/* Class = "IBUILabel"; text = "Your first name will be public and presented to helpers."; ObjectID = "hPR-12-sgI"; */
+"hPR-12-sgI.text" = "Your first name will be public and presented to helpers.";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "hrX-yr-C2w"; */
+"hrX-yr-C2w.normalTitle" = "Back";
+
+/* Class = "IBUITextField"; placeholder = "First name"; ObjectID = "i9n-6l-1vq"; */
+"i9n-6l-1vq.placeholder" = "First name";
+
+/* Class = "IBUILabel"; text = "Welcome to"; ObjectID = "iXe-li-Co7"; */
+"iXe-li-Co7.text" = "Welcome to";
+
+/* Class = "IBUIViewController"; title = "Test"; ObjectID = "ihY-sp-kva"; */
+"ihY-sp-kva.title" = "Test";
+
+/* Class = "IBUILabel"; text = "Choose a reason"; ObjectID = "j0k-QX-J5o"; */
+"j0k-QX-J5o.text" = "Choose a reason";
+
+/* Class = "IBUILabel"; text = "View the video"; ObjectID = "jDa-pe-Zox"; */
+"jDa-pe-Zox.text" = "View the video";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "jS9-FE-y1n"; */
+"jS9-FE-y1n.normalTitle" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "Report abuse"; ObjectID = "jhE-ej-zTI"; */
+"jhE-ej-zTI.normalTitle" = "Report abuse";
+
+/* Class = "IBUIButton"; normalTitle = "Give feedback on the app"; ObjectID = "kwZ-op-hZv"; */
+"kwZ-op-hZv.normalTitle" = "Give feedback on the app";
+
+/* Class = "IBUILabel"; text = "What is your role?"; ObjectID = "mHE-NR-WpR"; */
+"mHE-NR-WpR.text" = "What is your role?";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "meS-rG-ru3"; */
+"meS-rG-ru3.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "E-mail"; ObjectID = "mvj-Dw-BPc"; */
+"mvj-Dw-BPc.text" = "E-mail";
+
+/* Class = "IBUILabel"; text = "Settings"; ObjectID = "nom-F8-SPu"; */
+"nom-F8-SPu.text" = "Settings";
+
+/* Class = "IBUIButton"; normalTitle = "Forgot password"; ObjectID = "oL9-6V-10R"; */
+"oL9-6V-10R.normalTitle" = "Forgot password";
+
+/* Class = "IBUITextField"; placeholder = "E-mail"; ObjectID = "opU-Be-2Hu"; */
+"opU-Be-2Hu.placeholder" = "E-mail";
+
+/* Class = "IBUILabel"; text = "You can also"; ObjectID = "oqz-Jo-m0H"; */
+"oqz-Jo-m0H.text" = "You can also";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "osh-d7-3mB"; */
+"osh-d7-3mB.normalTitle" = "Continue";
+
+/* Class = "IBUILabel"; text = "Your phone is open for calls from people who need help when you are signed in."; ObjectID = "pAg-cR-b9G"; */
+"pAg-cR-b9G.text" = "Your phone is open for calls from people who need help when you are signed in.";
+
+/* Class = "IBUIButton"; normalTitle = "Log in"; ObjectID = "q5v-lJ-cvR"; */
+"q5v-lJ-cvR.normalTitle" = "Log in";
+
+/* Class = "IBUILabel"; text = "Help whenever you want, wherever you want."; ObjectID = "r46-QU-kdt"; */
+"r46-QU-kdt.text" = "Help whenever you want, wherever you want.";
+
+/* Class = "IBUILabel"; text = "Become a part of the network"; ObjectID = "taG-tn-K8A"; */
+"taG-tn-K8A.text" = "Become a part of the network";
+
+/* Class = "IBUILabel"; text = "Version 1.0 (2)"; ObjectID = "ub2-Qn-2Ma"; */
+"ub2-Qn-2Ma.text" = "Version 1.0 (2)";
+
+/* Class = "IBUILabel"; text = "Report abuse"; ObjectID = "v2L-Xn-kQ1"; */
+"v2L-Xn-kQ1.text" = "Report abuse";
+
+/* Class = "IBUIButton"; normalTitle = "Send new password"; ObjectID = "vib-97-qM8"; */
+"vib-97-qM8.normalTitle" = "Send new password";
+
+/* Class = "IBUILabel"; text = "The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.\n\nThe helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.\n\nYou may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information.\n"; ObjectID = "vyn-Ti-keq"; */
+"vyn-Ti-keq.text" = "The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.\n\nThe helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.\n\nYou may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information.\n";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "wjp-5g-kgm"; */
+"wjp-5g-kgm.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "42k"; ObjectID = "yoV-jm-40g"; */
+"yoV-jm-40g.text" = "42k";
+
+/* Class = "IBUILabel"; text = "Helping is easy!"; ObjectID = "yyU-Xz-NIz"; */
+"yyU-Xz-NIz.text" = "Helping is easy!";

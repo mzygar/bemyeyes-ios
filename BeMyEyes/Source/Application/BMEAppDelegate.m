@@ -7,13 +7,13 @@
 //
 
 #import "BMEAppDelegate.h"
-#import <AVFoundation/AVFoundation.h>
 #import <Appirater/Appirater.h>
 #import <PSAlertView/PSPDFAlertView.h>
 #import <MRProgress/MRProgress.h>
 #import "BMEClient.h"
 #import "BMECallViewController.h"
 #import "BMECallAudioPlayer.h"
+#import "BMEAccessControlHandler.h"
 
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
@@ -48,12 +48,10 @@
         [Appirater appLaunched:NO];
     }
     
-    [self registerForRemoteNotifications];
-    
-//    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
-//    secretTapGesture.numberOfTouchesRequired = 4;
-//    secretTapGesture.numberOfTapsRequired = 3;
-//    [self.window addGestureRecognizer:secretTapGesture];
+    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
+    secretTapGesture.numberOfTouchesRequired = 1;
+    secretTapGesture.numberOfTapsRequired = 3;
+    [self.window addGestureRecognizer:secretTapGesture];
     
     return YES;
 }
@@ -159,6 +157,8 @@
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
             [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
             [GVUserDefaults synchronize];
+            
+            // TODO: Register in BMEAccessControl
         }
     };
     
@@ -195,6 +195,8 @@
     NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_CANCEL, BMEAppDelegateLocalizationTable);
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
     [alert show];
+    
+    // TODO: Register in BMEAccessControl
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
@@ -202,36 +204,7 @@
     [application registerForRemoteNotifications];
 }
 
-#pragma mark -
-#pragma mark Public Methods
 
-- (void)registerForRemoteNotifications {
-    NSLog(@"Register for remote notifications");
-
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
-        UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
-    } else {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-    }
-}
-
-- (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion {
-    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-        if (!granted) {
-            NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE, BMEAppDelegateLocalizationTable);
-            NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE, BMEAppDelegateLocalizationTable);
-            NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_CANCEL, BMEAppDelegateLocalizationTable);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-            [alert show];
-        }
-        
-        if (completion) {
-            completion(granted);
-        }
-    }];
-}
 
 #pragma mark -
 #pragma mark Private Methods
@@ -244,7 +217,7 @@
 - (void)checkIfLoggedIn {
     NSLog(@"Check if logged in");
     if ([GVUserDefaults standardUserDefaults].deviceToken != nil && [[BMEClient sharedClient] isTokenValid]) {
-        UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainControllerIdentifier];
+        UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
         [self replaceTopController:mainController];
         
         [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
@@ -292,7 +265,7 @@
 }
 
 - (void)didAnswerCallWithShortId:(NSString *)shortId {
-    [self requireMicrophoneEnabled:^(BOOL isEnabled) {
+    [BMEAccessControlHandler requireMicrophoneEnabled:^(BOOL isEnabled) {
         if (isEnabled) {
             BMECallViewController *callController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMECallControllerIdentifier];
             callController.callMode = BMECallModeAnswer;
