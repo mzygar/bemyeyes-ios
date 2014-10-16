@@ -17,6 +17,7 @@
 		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
 		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
 		4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC10F19E413E00035BB70 /* BMEUserTask.m */; };
+		4EB46C4419F080FE008405B8 /* BMEAccessLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */; };
 		4EB6A1DE19E4A4D500C72A02 /* IntroVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */; };
 		4EB6A1E219E5725F00C72A02 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6A1E119E5725F00C72A02 /* Button.swift */; };
 		4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */; };
@@ -164,6 +165,8 @@
 		4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		4E8AC10E19E413E00035BB70 /* BMEUserTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserTask.h; sourceTree = "<group>"; };
 		4E8AC10F19E413E00035BB70 /* BMEUserTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUserTask.m; sourceTree = "<group>"; };
+		4EB46C4519F080FE008405B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
+		4EB46C4719F08102008405B8 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
 		4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVideoViewController.swift; sourceTree = "<group>"; };
 		4EB6A1E119E5725F00C72A02 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		4EB6AD1019E1F47A00141615 /* BMETaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETaskTableViewCell.h; sourceTree = "<group>"; };
@@ -666,6 +669,7 @@
 				72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */,
 				72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */,
 				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
+				4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 			);
 			name = Localizable;
@@ -821,6 +825,7 @@
 				72856DF819AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings in Resources */,
 				72A7676F1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings in Resources */,
 				72856DF519AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings in Resources */,
+				4EB46C4419F080FE008405B8 /* BMEAccessLocalization.strings in Resources */,
 				72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */,
 				72A767721902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings in Resources */,
 			);
@@ -937,6 +942,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EB46C4519F080FE008405B8 /* en */,
+				4EB46C4719F08102008405B8 /* da */,
+			);
+			name = BMEAccessLocalization.strings;
+			sourceTree = "<group>";
+		};
 		720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

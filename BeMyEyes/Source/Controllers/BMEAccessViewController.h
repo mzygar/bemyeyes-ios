@@ -10,4 +10,6 @@
 
 @interface BMEAccessViewController : UIViewController
 
+@property (assign, nonatomic) BMERole role;
+
 @end

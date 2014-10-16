@@ -24,28 +24,67 @@
 
 @implementation BMEAccessViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.view addSubview:self.gradientView];
     [self.gradientView keepInsets:UIEdgeInsetsZero];
     
-    NSArray *views = @[self.messageLabel, self.accessNotificationsView, self.accessMicrophoneView, self.accessVideoView];
+    NSArray *accessViews;
+    switch (self.role) {
+        case BMERoleHelper:
+            accessViews = @[self.messageLabel, self.accessMicrophoneView, self.accessVideoView];
+            break;
+        case BMERoleBlind:
+            accessViews = @[self.messageLabel, self.accessNotificationsView, self.accessMicrophoneView, self.accessVideoView];
+            break;
+    }
+    
+    NSArray *views = [@[self.messageLabel] arrayByAddingObjectsFromArray:accessViews];
     [views horizontallySpaceInView:self.view];
-    views.keepHorizontalMarginInsets.equal = 0;
-    [views keepHeightsEqual];
+    accessViews.keepHorizontalInsets.equal = 0;
+    self.messageLabel.keepHorizontalInsets.equal = 15;
+    
+    [self checkAccess];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
 
-/*
-#pragma mark - Navigation
+#pragma mark - 
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)checkAccess
+{
+    [BMEAccessControlHandler enabledForRole:self.role completion:^(BOOL isEnabled) {
+        if (isEnabled) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            return;
+        }
+        
+        if (_accessNotificationsView) {
+            [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+                _accessNotificationsView.selected = isEnabled;
+            }];
+        }
+        if (_accessMicrophoneView) {
+            [BMEAccessControlHandler hasMicrophoneEnabled:^(BOOL isEnabled) {
+                _accessMicrophoneView.selected = isEnabled;
+            }];
+        }
+        if (_accessVideoView) {
+            [BMEAccessControlHandler hasVideoEnabled:^(BOOL isEnabled) {
+                self.accessVideoView.selected = isEnabled;
+            }];
+        }
+    }];
 }
-*/
+
 
 #pragma mark - Setters and Getters
 
@@ -64,7 +103,7 @@
         _messageLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         _messageLabel.textAlignment = NSTextAlignmentCenter;
         _messageLabel.numberOfLines = 0;
-        _messageLabel.text = @"aælksdfjasælfdkj sdæflkj asæflkja sfdælkj asdlæfjk aslfdkj as";
+        _messageLabel.text = MKLocalizedFromTable(BME_ACCESS_INTRO_MESSAGE, BMEAccessLocalization);
         _messageLabel.textColor = [UIColor whiteColor];
     }
     return _messageLabel;
@@ -74,8 +113,8 @@
 {
     if (!_accessNotificationsView) {
         _accessNotificationsView = [BMEAccessView new];
-        _accessNotificationsView.titleLabel.text = @"Notifications";
-        _accessNotificationsView.messageLabel.text = @"læksdfj læasdf æafsdjkl afsdjkl af jkfjkl fasjkl sdfakj lfæ asælfk js";
+        _accessNotificationsView.titleLabel.text = MKLocalizedFromTable(BME_ACCESS_NOTIFICATIONS_TITLE, BMEAccessLocalization);
+        _accessNotificationsView.messageLabel.text = MKLocalizedFromTable(BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER, BMEAccessLocalization);
         [_accessNotificationsView addTarget:self action:@selector(touchUpInsideNotificationsView) forControlEvents:UIControlEventTouchUpInside];
     }
     return _accessNotificationsView;
@@ -85,25 +124,37 @@
 {
     if (!_accessMicrophoneView) {
         _accessMicrophoneView = [BMEAccessView new];
-        _accessMicrophoneView.titleLabel.text = @"Notifications";
-        _accessMicrophoneView.messageLabel.text = @"læksdfj læasdf æafsdjkl";
-        [BMEAccessControlHandler hasMicrophoneEnabled:^(BOOL isEnabled) {
-            _accessMicrophoneView.selected = isEnabled;
-        }];
+        _accessMicrophoneView.titleLabel.text = MKLocalizedFromTable(BME_ACCESS_MICROPHONE_TITLE, BMEAccessLocalization);
+        NSString *messageLocalizableKey;
+        switch (self.role) {
+            case BMERoleHelper:
+                messageLocalizableKey = BME_ACCESS_MICROPHONE_EXPLANATION_HELPER;
+                break;
+            case BMERoleBlind:
+                messageLocalizableKey = BME_ACCESS_MICROPHONE_EXPLANATION_BLIND;
+                break;
+        }
+        _accessMicrophoneView.messageLabel.text = MKLocalizedFromTable(messageLocalizableKey, BMEAccessLocalization);
         [_accessMicrophoneView addTarget:self action:@selector(touchUpInsideMicrophoneView) forControlEvents:UIControlEventTouchUpInside];
     }
     return _accessMicrophoneView;
 }
 
-- (BMEAccessView *)accessVideoView
+- (BMEAccessView *)accessCameraView
 {
     if (!_accessVideoView) {
         _accessVideoView = [BMEAccessView new];
-        _accessVideoView.titleLabel.text = @"Notifications";
-        _accessVideoView.messageLabel.text = @"læksdfj læasdf æafsdjkl";
-        [BMEAccessControlHandler hasVideoEnabled:^(BOOL isEnabled) {
-            self.accessVideoView.selected = isEnabled;
-        }];
+        _accessVideoView.titleLabel.text = MKLocalizedFromTable(BME_ACCESS_CAMERA_TITLE, BMEAccessLocalization);
+        NSString *messageLocalizableKey;
+        switch (self.role) {
+            case BMERoleHelper:
+                messageLocalizableKey = BME_ACCESS_CAMERA_EXPLANATION_HELPER;
+                break;
+            case BMERoleBlind:
+                messageLocalizableKey = BME_ACCESS_CAMERA_EXPLANATION_BLIND;
+                break;
+        }
+        _accessMicrophoneView.messageLabel.text = MKLocalizedFromTable(messageLocalizableKey, BMEAccessLocalization);
         [_accessVideoView addTarget:self action:@selector(touchUpInsideVideoView) forControlEvents:UIControlEventTouchUpInside];
     }
     return _accessVideoView;
@@ -132,12 +183,21 @@
 
 #pragma mark - 
 
+- (void)touchUpInsideNotificationsView
+{
+    if (self.accessNotificationsView.selected) {
+        return;
+    }
+    [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
+        self.accessNotificationsView.selected = isEnabled;
+    }];
+}
+
 - (void)touchUpInsideMicrophoneView
 {
     if (self.accessMicrophoneView.selected) {
         return;
     }
-    
     [BMEAccessControlHandler requireMicrophoneEnabled:^(BOOL isEnabled) {
         self.accessMicrophoneView.selected = isEnabled;
     }];
@@ -148,8 +208,7 @@
     if (self.accessVideoView.selected) {
         return;
     }
-    
-    [BMEAccessControlHandler requireVideoEnabled:^(BOOL isEnabled) {
+    [BMEAccessControlHandler requireCameraEnabled:^(BOOL isEnabled) {
         self.accessVideoView.selected = isEnabled;
     }];
 }

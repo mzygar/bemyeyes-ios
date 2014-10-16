@@ -10,9 +10,13 @@
 
 @interface BMEAccessControlHandler : NSObject
 
++ (void)requireNotificationsEnabled:(void(^)(BOOL isEnabled))completion;
++ (void)hasNotificationsEnabled:(void(^)(BOOL isEnabled))completion;
 + (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion;
 + (void)hasMicrophoneEnabled:(void(^)(BOOL isEnabled))completion;
-+ (void)requireVideoEnabled:(void(^)(BOOL isEnabled))completion;
++ (void)requireCameraEnabled:(void(^)(BOOL isEnabled))completion;
 + (void)hasVideoEnabled:(void(^)(BOOL isEnabled))completion;
+
++ (void)enabledForRole:(BMERole)role completion:(void(^)(BOOL isEnabled))completion;
 
 @end

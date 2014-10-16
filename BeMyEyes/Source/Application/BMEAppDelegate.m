@@ -157,8 +157,6 @@
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
             [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
             [GVUserDefaults synchronize];
-            
-            // TODO: Register in BMEAccessControl
         }
     };
     
@@ -189,14 +187,7 @@
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"Failed registering for remote notifications: %@", error);
-    
-    NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE, BMEAppDelegateLocalizationTable);
-    NSString *message = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE, BMEAppDelegateLocalizationTable);
-    NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_CANCEL, BMEAppDelegateLocalizationTable);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-    [alert show];
-    
-    // TODO: Register in BMEAccessControl
+    [GVUserDefaults standardUserDefaults].deviceToken = nil;
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
@@ -253,8 +244,7 @@
 }
 
 - (void)replaceTopController:(UIViewController *)topController {
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    navigationController.viewControllers = @[ topController ];
+    self.window.rootViewController = topController;
 }
 
 - (NSString *)shortIdInLaunchOptions:(NSDictionary *)launchOptions {

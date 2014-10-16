@@ -26,6 +26,17 @@ class RadioButton: UIButton {
         setup()
     }
     
+    override var selected: Bool {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    override var highlighted: Bool {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     override func drawRect(rect: CGRect)
     {
         super.drawRect(rect)
@@ -36,23 +47,27 @@ class RadioButton: UIButton {
         UIColor.whiteColor().setStroke()
         borderPath.stroke()
         
-        if (selected) {
+        if (selected || highlighted) {
+            let fillColor: UIColor = {
+                if self.selected {
+                    return UIColor.whiteColor()
+                } else if self.highlighted {
+                    return UIColor.lightTextColor()
+                }
+                return UIColor.whiteColor()
+            }()
             let dotRect = CGRectInset(circleRect, strokeWidth*1.5, strokeWidth*1.5)
             let borderPath = UIBezierPath(ovalInRect: dotRect)
-            UIColor.whiteColor().setFill()
+            fillColor.setFill()
             borderPath.fill()
         }
     }
+    
+    
 }
 
 extension RadioButton {
     
     func setup() {
-        self.addTarget(self, action: "touchUpInside", forControlEvents: UIControlEvents.TouchUpInside)
-    }
-    
-    func touchUpInside() {
-//        selected = !selected
-//        setNeedsDisplay()
     }
 }

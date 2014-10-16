@@ -26,6 +26,13 @@
     self.radioButton.selected = self.selected;
 }
 
+- (void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    
+    self.radioButton.highlighted = self.highlighted;
+    self.backgroundColor = highlighted ? [[UIColor lightTextColor] colorWithAlphaComponent:0.1] : nil;
+}
 
 #pragma mark - Setters and Getters
 
@@ -33,6 +40,7 @@
 {
     if (!_radioButton) {
         _radioButton = [RadioButton new];
+        _radioButton.userInteractionEnabled = NO;
         [self addSubview:_radioButton];
         _radioButton.keepLeftInset.equal =
         _radioButton.keepTopInset.equal = 15;
@@ -65,7 +73,7 @@
         _messageLabel.textColor = [UIColor whiteColor];
         [self addSubview:_messageLabel];
         _messageLabel.keepLeftAlignTo(self.titleLabel).equal = 0;
-        _messageLabel.keepTopOffsetTo(self.titleLabel).equal = 10;
+        _messageLabel.keepTopOffsetTo(self.titleLabel).equal = 2;
         _messageLabel.keepRightInset.min =
         _messageLabel.keepBottomInset.min = 15;
     }

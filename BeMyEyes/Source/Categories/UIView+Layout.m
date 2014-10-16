@@ -8,6 +8,7 @@
 
 #import "UIView+Layout.h"
 
+
 @interface UIView (Layout)
 
 - (UIView *)newSpacerTopView:(UIView *)view;
@@ -28,7 +29,6 @@
         
         [view setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
     }
-    [self keepHeightsEqual];
     
     UIView *firstSpacer, *lastSpacer;
     NSMutableArray *betweenSpacers = [NSMutableArray new];
@@ -69,14 +69,6 @@
 
 @implementation UIView (Layout)
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 
 #pragma mark -
 
@@ -115,7 +107,6 @@
 - (UIView *)newSpacer
 {
     UIView *spacer = [UIView new];
-//    spacer.backgroundColor = [UIColor greenColor];
     [self addSubview:spacer];
     return spacer;
 }

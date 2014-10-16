@@ -10,8 +10,10 @@
 #import <PSAlertView/PSPDFAlertView.h>
 #import "BMEClient.h"
 #import "BMEUser.h"
+#import "BMEAccessControlHandler.h"
 
 #define BMEMainKnownLanguagesSegue @"KnownLanguages"
+static NSString *const BMEAccessViewSegue = @"AccessView";
 
 @interface BMEMainViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
@@ -32,7 +34,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    switch ([BMEClient sharedClient].currentUser.role) {
+    BMERole role = [BMEClient sharedClient].currentUser.role;
+    switch (role) {
         case BMERoleHelper:
             [self displayHelperView];
             break;
@@ -57,6 +60,7 @@
         self.view.window.rootViewController = [self.view.window.rootViewController.storyboard instantiateInitialViewController];
     } else {
         [self askForMoreLanguagesIfNecessary];
+        [self askForAccessIfNecessary];
     }
 }
 
@@ -111,6 +115,16 @@
         
         [GVUserDefaults standardUserDefaults].hasAskedForMoreLanguages = YES;
     }
+}
+
+- (void)askForAccessIfNecessary
+{
+    [BMEAccessControlHandler enabledForRole:[BMEClient sharedClient].currentUser.role completion:^(BOOL isEnabled) {
+        if (isEnabled) {
+            return;
+        }
+        [self performSegueWithIdentifier:BMEAccessViewSegue sender:self];
+    }];
 }
 
 #pragma mark -
