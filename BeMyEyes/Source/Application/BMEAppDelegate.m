@@ -21,6 +21,11 @@
 @property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
 @end
 
+#define DEVELOPMENT 1
+#ifdef DEVELOPMENT
+static const BMESettingsAPI api = BMESettingsAPIDevelopment;
+#endif
+
 @implementation BMEAppDelegate
 
 #pragma mark -
@@ -29,6 +34,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString *shortIdInLaunchOptions = [self shortIdInLaunchOptions:launchOptions];
     self.launchedWithShortID = (shortIdInLaunchOptions != nil);
+    
+#ifdef DEVELOPMENT
+    [GVUserDefaults standardUserDefaults].api = api;
+#endif
     
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
@@ -50,10 +59,10 @@
     
     [self registerForRemoteNotifications];
     
-//    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
-//    secretTapGesture.numberOfTouchesRequired = 4;
-//    secretTapGesture.numberOfTapsRequired = 3;
-//    [self.window addGestureRecognizer:secretTapGesture];
+    UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
+    secretTapGesture.numberOfTouchesRequired = 4;
+    secretTapGesture.numberOfTapsRequired = 3;
+    [self.window addGestureRecognizer:secretTapGesture];
     
     return YES;
 }

@@ -39,6 +39,8 @@
 
 @implementation BMESettingsViewController
 
+static NSString *const videoSegueIdentifier = @"Video";
+
 #pragma mark -
 #pragma mark Lifecycle
 
@@ -48,6 +50,13 @@
     [MKLocalization registerForLocalization:self];
     
     [self populateFields];
+    
+    // Tasks
+    if ([BMEClient sharedClient].currentUser.isHelper) {
+        [[BMEClient sharedClient] loadUserTasksCompletion:^(BMEUser *user, NSError *error) {
+            [self updateUserTasks];
+        }];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -138,6 +147,7 @@
     self.lastNameTextField.text = user.lastName;
     self.emailTextField.text = user.email;
     
+    // Languages
     NSArray *knownLanguageCodes = [NSMutableArray arrayWithArray:[BMEClient sharedClient].currentUser.languages];
     NSMutableString *knownLanguages = [NSMutableString new];
     for (NSString *languageCode in knownLanguageCodes) {
@@ -150,6 +160,14 @@
         }
     }
     self.knownLanguagesTextField.text = knownLanguages;
+    
+    [self updateUserTasks];
+}
+
+- (void)updateUserTasks {
+    BMEUser *user = [BMEClient sharedClient].currentUser;
+    self.tasks = [user.remainingTasks arrayByAddingObjectsFromArray:user.completedTasks];
+    [self.tasksTableView reloadData];
 }
 
 - (void)saveIfSettingChanged {
@@ -246,17 +264,23 @@
 
 - (void)shareOnTwitter
 {
-    [self shareWithType:SLServiceTypeTwitter success:^{
-        // TODO: call endpoint
-        // TODO: on completion [self.tasksTableView reloadData];
+    NSString *shareType = SLServiceTypeTwitter;
+    BMEUserTaskType taskType = BMEUserTaskTypeShareOnTwitter;
+    [self shareWithType:shareType success:^{
+        [[BMEClient sharedClient] updateUserWithTaskType:taskType completion:^(BOOL success, NSError *error) {
+            [self updateUserTasks];
+        }];
     }];
 }
 
 - (void)shareOnFacebook
 {
-    [self shareWithType:SLServiceTypeFacebook success:^{
-        // TODO: call endpoint
-        // TODO: on completion [self.tasksTableView reloadData];
+    NSString *shareType = SLServiceTypeFacebook;
+    BMEUserTaskType taskType = BMEUserTaskTypeShareOnFacebook;
+    [self shareWithType:shareType success:^{
+        [[BMEClient sharedClient] updateUserWithTaskType:taskType completion:^(BOOL success, NSError *error) {
+            [self updateUserTasks];
+        }];
     }];
 }
 
@@ -276,12 +300,19 @@
 
 - (void)watchVideo
 {
-    IntroVideoViewController *videoController = [IntroVideoViewController new];
-    videoController.didFinishPlaying = ^{
-//        // TODO: call endpoint
-//        // TODO: on completion [self.tasksTableView reloadData];
-    };
-    [self presentViewController:videoController animated:YES completion:nil];
+    [self performSegueWithIdentifier:videoSegueIdentifier sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:videoSegueIdentifier]) {
+        IntroVideoViewController *videoController = (IntroVideoViewController *)segue.destinationViewController;
+        videoController.didFinishPlaying = ^{
+            [[BMEClient sharedClient] updateUserWithTaskType:BMEUserTaskTypeWatchVideo completion:^(BOOL success, NSError *error) {
+                [self updateUserTasks];
+            }];
+        };
+    }
 }
 
 @end

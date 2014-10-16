@@ -47,4 +47,29 @@
     return nil;
 }
 
++ (NSString *)serverKeyForType:(BMEUserTaskType)type
+{
+    switch (type) {
+        case BMEUserTaskTypeShareOnFacebook:
+            return @"share_on_facebook";
+        case BMEUserTaskTypeShareOnTwitter:
+            return @"share_on_twitter";
+        case BMEUserTaskTypeWatchVideo:
+            return @"watch_video";
+        default:
+            return nil;
+    }
+}
+
++ (BMEUserTaskType)taskTypeForServerKey:(NSString *)key
+{
+    for (NSNumber *typeNum in @[@(BMEUserTaskTypeShareOnFacebook), @(BMEUserTaskTypeShareOnTwitter), @(BMEUserTaskTypeWatchVideo)]) {
+        BMEUserTaskType type = typeNum.integerValue;
+        if ([key isEqualToString:[self serverKeyForType:type]]) {
+            return type;
+        }
+    }
+    return BMEUserTaskTypeUnknown;
+}
+
 @end

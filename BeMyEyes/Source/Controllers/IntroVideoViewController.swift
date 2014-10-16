@@ -12,15 +12,17 @@ class IntroVideoViewController: VideoViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        didFinishPlaying = {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
         
         if let videoPath = NSBundle.mainBundle().pathForResource("intro", ofType: "mp4") {
             let videoUrl = NSURL(fileURLWithPath: videoPath)
             moviePlayerController.contentURL = videoUrl
             moviePlayerController.play()
         }
+    }
+    
+    override func finishedPlaying() {
+        super.finishedPlaying()
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

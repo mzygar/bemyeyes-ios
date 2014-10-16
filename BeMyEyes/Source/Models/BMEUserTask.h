@@ -15,6 +15,7 @@ typedef NS_ENUM(NSUInteger, BMEUserTaskType)
     BMEUserTaskTypeShareOnTwitter = 0,
     BMEUserTaskTypeShareOnFacebook = 1,
     BMEUserTaskTypeWatchVideo = 2,
+    BMEUserTaskTypeUnknown,
 };
 
 @property (assign, nonatomic) BMEUserTaskType type;
@@ -22,5 +23,7 @@ typedef NS_ENUM(NSUInteger, BMEUserTaskType)
 @property (assign, nonatomic) NSUInteger points;
 
 - (NSString *)localizableKeyForType;
++ (NSString *)serverKeyForType:(BMEUserTaskType)type;
++ (BMEUserTaskType)taskTypeForServerKey:(NSString *)key;
 
 @end

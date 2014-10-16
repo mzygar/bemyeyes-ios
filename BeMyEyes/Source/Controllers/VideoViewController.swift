@@ -30,8 +30,6 @@ class VideoViewController: BMEBaseViewController {
         if let movieView = moviePlayerController.view {
             view.insertSubview(movieView, belowSubview: doneButton)
         }
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "finishedPlaying", name:  MPMoviePlayerPlaybackDidFinishNotification, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,9 +48,11 @@ class VideoViewController: BMEBaseViewController {
         if moviePlayerController.playbackState != .Playing {
             moviePlayerController.play()
         }
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "finishedPlaying", name:  MPMoviePlayerPlaybackDidFinishNotification, object: nil)
     }
     
     override func viewDidDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self) // Don't call finishedPlaying()
         moviePlayerController.stop()
         resetAudioCategory()
     }

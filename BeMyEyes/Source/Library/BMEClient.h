@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPClient.h"
+#import "BMEUserTask.h"
 
 @class BMERequest, BMEToken, BMEUser, BMEFacebookInfo, BMECommunityStats;
 
@@ -56,6 +57,7 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 - (void)updateUserInfoWithUTCOffset:(void (^)(BOOL success, NSError *error))completion;
 - (void)updateUserWithKnownLanguages:(NSArray *)languages completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)loadAvailableLanguagesWithCompletion:(void(^)(NSArray *languages, NSError *error))completion;
+- (void)updateUserWithTaskType:(BMEUserTaskType)taskType completion:(void (^)(BOOL success, NSError *error))completion;
 
 - (void)createRequestWithSuccess:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
 - (void)loadRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure;
@@ -89,6 +91,7 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 - (void)loadPointForDays:(NSUInteger)days completion:(void(^)(NSArray *entries, NSError *error))completion;
 - (void)loadUserStatsCompletion:(void (^)(BMEUser *, NSError *))completion;
 - (void)loadCommunityStatsPointsCompletion:(void (^)(BMECommunityStats *, NSError *))completion;
+- (void)loadUserTasksCompletion:(void (^)(BMEUser *, NSError *))completion;
 
 - (NSString *)token;
 - (NSDate *)tokenExpiryDate;

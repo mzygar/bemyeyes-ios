@@ -341,6 +341,53 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     }];
 }
 
+- (void)loadUserTasksCompletion:(void (^)(BMEUser *, NSError *))completion {
+    NSString *path = [NSString stringWithFormat:@"stats/actionable_tasks/%@", [self token]];
+    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion([self mapAllUserTasksFromRepresentation:responseObject], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
+}
+
+- (void)updateUserWithTaskType:(BMEUserTaskType)taskType completion:(void (^)(BOOL success, NSError *error))completion {
+    NSAssert([self isLoggedIn], @"User must be logged in.");
+    
+    NSDictionary *params = @{ @"token_repr" : [self token],
+                              @"event" : [BMEUserTask serverKeyForType:taskType] };
+    
+//    NSString *path = [NSString stringWithFormat:@"stats/event/%@", [self token]];
+    
+    [self postPath:@"stats/event" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        BMEUser *currentUser = [self currentUser];
+        NSMutableArray *newRemainingTasks = currentUser.remainingTasks.mutableCopy;
+        NSMutableArray *newCompletedTasks = currentUser.completedTasks.mutableCopy;
+        for (BMEUserTask *task in currentUser.remainingTasks) {
+            if (task.type == taskType) {
+                [newRemainingTasks removeObject:task];
+                task.completed = YES;
+                [newCompletedTasks addObject:task];
+            }
+        }
+        [currentUser setValue:newRemainingTasks.copy forKey:NSStringFromSelector(@selector(remainingTasks))];
+        [currentUser setValue:newCompletedTasks.copy forKey:NSStringFromSelector(@selector(completedTasks))];
+        [self storeCurrentUser:currentUser];
+        
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(NO, error);
+        }
+    }];
+}
+
+
 #pragma mark -
 #pragma mark Requests
 
@@ -859,6 +906,44 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     stats.sighted = [representation objectForKey:@"helpers"];
     stats.helped = [representation objectForKey:@"no_helped"];
     return stats;
+}
+
+- (BMEUser *)mapAllUserTasksFromRepresentation:(NSDictionary *)representation {
+    NSArray *remainingTasks = [self mapUserTasksFromRepresentation:[representation objectForKey:@"remaining_tasks"]];
+    for (BMEUserTask *task in remainingTasks) {
+        task.completed = NO;
+    }
+    NSArray *completedTasks = [self mapUserTasksFromRepresentation:[representation objectForKey:@"completed_tasks"]];
+    for (BMEUserTask *task in completedTasks) {
+        task.completed = YES;
+    }
+
+    BMEUser *currentUser = [self currentUser];
+    [currentUser setValue:remainingTasks forKey:NSStringFromSelector(@selector(remainingTasks))];
+    [currentUser setValue:completedTasks forKey:NSStringFromSelector(@selector(completedTasks))];
+    [self storeCurrentUser:currentUser];
+    
+    return currentUser;
+}
+
+- (NSArray *)mapUserTasksFromRepresentation:(NSArray *)representation {
+    NSMutableArray *tasks = [NSMutableArray new];
+    for (NSDictionary *taskRepresentation in representation) {
+        BMEUserTaskType type = [BMEUserTask taskTypeForServerKey:[taskRepresentation objectForKey:@"event"]];
+        if (type == BMEUserTaskTypeUnknown) {
+            continue;
+        }
+        BMEUserTask *task = [BMEUserTask new];
+        task.type = type;
+        NSNumber *points = [taskRepresentation objectForKey:@"point"];
+        if (points != nil && ![points isKindOfClass:[NSNull class]]) {
+            task.points = [points integerValue];
+        } else {
+            task.points = 0;
+        }
+        [tasks addObject:task];
+    }
+    return tasks.copy;
 }
 
 - (NSError *)errorFromRepresentation:(NSDictionary *)representation {

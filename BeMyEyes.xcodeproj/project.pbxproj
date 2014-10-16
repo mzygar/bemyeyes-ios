@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08EE7919E1693200B45088 /* OpenTok.framework */; };
-		4E13106619E47FEC00B056DF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13106519E47FEC00B056DF /* VideoViewController.swift */; };
-		4E13106819E48C5000B056DF /* OnboardingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */; };
 		4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC10F19E413E00035BB70 /* BMEUserTask.m */; };
-		4EB6A1DE19E4A4D500C72A02 /* IntroVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */; };
+		4E8E21F519E8C03C00316AD8 /* IntroVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */; };
+		4E8E21F619E8C03C00316AD8 /* OnboardingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */; };
+		4E8E21F719E8C03C00316AD8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */; };
 		4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */; };
 		4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1419E1F48C00141615 /* GradientView.swift */; };
 		4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1519E1F48C00141615 /* PointsBarView.swift */; };
 		4EB6AD1C19E1F4CD00141615 /* BMEUserLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */; };
 		4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */; };
 		4EB6AD2219E1F4F400141615 /* BMEPointsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */; };
+		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
@@ -128,12 +129,12 @@
 /* Begin PBXFileReference section */
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
-		4E13106519E47FEC00B056DF /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVideoViewController.swift; sourceTree = "<group>"; };
-		4E13106919E49BAE00B056DF /* BeMyEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeMyEyes-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E8AC10E19E413E00035BB70 /* BMEUserTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserTask.h; sourceTree = "<group>"; };
 		4E8AC10F19E413E00035BB70 /* BMEUserTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUserTask.m; sourceTree = "<group>"; };
-		4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVideoViewController.swift; sourceTree = "<group>"; };
+		4E8E21F119E8C02500316AD8 /* BeMyEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeMyEyes-Bridging-Header.h"; sourceTree = "<group>"; };
+		4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVideoViewController.swift; sourceTree = "<group>"; };
+		4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVideoViewController.swift; sourceTree = "<group>"; };
+		4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		4EB6AD1019E1F47A00141615 /* BMETaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETaskTableViewCell.h; sourceTree = "<group>"; };
 		4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETaskTableViewCell.m; sourceTree = "<group>"; };
 		4EB6AD1419E1F48C00141615 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -144,6 +145,8 @@
 		4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECommunityStats.m; sourceTree = "<group>"; };
 		4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointsTableViewCell.h; sourceTree = "<group>"; };
 		4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointsTableViewCell.m; sourceTree = "<group>"; };
+		4EBE9BF819E8C91000CBC675 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissSegue.h; path = Source/DismissSegue.h; sourceTree = "<group>"; };
+		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
 		60BAD311403180811F795B70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
 		7206A76018FA9BF000251824 /* BMEPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointLabel.m; sourceTree = "<group>"; };
@@ -459,6 +462,8 @@
 			isa = PBXGroup;
 			children = (
 				7236E00F18B8A87B00F622AA /* Main.storyboard */,
+				4EBE9BF819E8C91000CBC675 /* DismissSegue.h */,
+				4EBE9BF919E8C91000CBC675 /* DismissSegue.m */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -475,7 +480,7 @@
 				72DEF71518B907D10048FA90 /* Models */,
 				7236E03B18B8A9EA00F622AA /* Library */,
 				7236E03C18B8A9EA00F622AA /* Views */,
-				4E13106919E49BAE00B056DF /* BeMyEyes-Bridging-Header.h */,
+				4E8E21F119E8C02500316AD8 /* BeMyEyes-Bridging-Header.h */,
 				72DEF72318B90A6D0048FA90 /* Other sources */,
 			);
 			path = Source;
@@ -512,7 +517,6 @@
 				7236E04018B8CCF400F622AA /* BMEBaseViewController.m */,
 				72E65FA518BA7CE3002FB2E0 /* BMEFrontPageViewController.h */,
 				72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */,
-				4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */,
 				72E65FA218BA7C12002FB2E0 /* BMEIntroViewController.h */,
 				72E65FA318BA7C12002FB2E0 /* BMEIntroViewController.m */,
 				72856DE119AF65640027AFF5 /* BMEHelperIntroViewController.h */,
@@ -551,8 +555,9 @@
 				727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */,
 				72414AF5196AA33200A2C5F4 /* BMELanguagesViewController.h */,
 				72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */,
-				4E13106519E47FEC00B056DF /* VideoViewController.swift */,
-				4EB6A1DD19E4A4D500C72A02 /* IntroVideoViewController.swift */,
+				4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */,
+				4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */,
+				4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -825,6 +830,7 @@
 				7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */,
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,
+				4E8E21F719E8C03C00316AD8 /* VideoViewController.swift in Sources */,
 				4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */,
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
 				725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */,
@@ -834,7 +840,6 @@
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
 				72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
-				4E13106819E48C5000B056DF /* OnboardingVideoViewController.swift in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
@@ -843,11 +848,9 @@
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
-				4E13106619E47FEC00B056DF /* VideoViewController.swift in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */,
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
-				4EB6A1DE19E4A4D500C72A02 /* IntroVideoViewController.swift in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
 				727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */,
 				4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */,
@@ -860,15 +863,18 @@
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,
+				4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */,
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
 				7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
 				7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */,
 				729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */,
+				4E8E21F519E8C03C00316AD8 /* IntroVideoViewController.swift in Sources */,
 				72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */,
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
 				72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */,
 				72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */,
+				4E8E21F619E8C03C00316AD8 /* OnboardingVideoViewController.swift in Sources */,
 				4EB6AD1C19E1F4CD00141615 /* BMEUserLevel.m in Sources */,
 				72DEF71F18B907D10048FA90 /* BMERequest.m in Sources */,
 				72DEF73118B90A6D0048FA90 /* NSData+Base64.m in Sources */,
@@ -1211,6 +1217,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD524777E415681609BF9F5D /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
@@ -1218,6 +1225,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
