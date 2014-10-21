@@ -18,7 +18,7 @@
 @property (strong, nonatomic) UILabel *messageLabel;
 @property (strong, nonatomic) BMEAccessView *accessNotificationsView;
 @property (strong, nonatomic) BMEAccessView *accessMicrophoneView;
-@property (strong, nonatomic) BMEAccessView *accessVideoView;
+@property (strong, nonatomic) BMEAccessView *accessCameraView;
 
 @end
 
@@ -34,10 +34,10 @@
     NSArray *accessViews;
     switch (self.role) {
         case BMERoleHelper:
-            accessViews = @[self.messageLabel, self.accessMicrophoneView, self.accessVideoView];
+            accessViews = @[self.accessNotificationsView, self.accessMicrophoneView, self.accessCameraView];
             break;
         case BMERoleBlind:
-            accessViews = @[self.messageLabel, self.accessNotificationsView, self.accessMicrophoneView, self.accessVideoView];
+            accessViews = @[self.accessMicrophoneView, self.accessCameraView];
             break;
     }
     
@@ -77,9 +77,9 @@
                 _accessMicrophoneView.selected = isEnabled;
             }];
         }
-        if (_accessVideoView) {
+        if (_accessCameraView) {
             [BMEAccessControlHandler hasVideoEnabled:^(BOOL isEnabled) {
-                self.accessVideoView.selected = isEnabled;
+                self.accessCameraView.selected = isEnabled;
             }];
         }
     }];
@@ -142,9 +142,9 @@
 
 - (BMEAccessView *)accessCameraView
 {
-    if (!_accessVideoView) {
-        _accessVideoView = [BMEAccessView new];
-        _accessVideoView.titleLabel.text = MKLocalizedFromTable(BME_ACCESS_CAMERA_TITLE, BMEAccessLocalization);
+    if (!_accessCameraView) {
+        _accessCameraView = [BMEAccessView new];
+        _accessCameraView.titleLabel.text = MKLocalizedFromTable(BME_ACCESS_CAMERA_TITLE, BMEAccessLocalization);
         NSString *messageLocalizableKey;
         switch (self.role) {
             case BMERoleHelper:
@@ -154,10 +154,10 @@
                 messageLocalizableKey = BME_ACCESS_CAMERA_EXPLANATION_BLIND;
                 break;
         }
-        _accessMicrophoneView.messageLabel.text = MKLocalizedFromTable(messageLocalizableKey, BMEAccessLocalization);
-        [_accessVideoView addTarget:self action:@selector(touchUpInsideVideoView) forControlEvents:UIControlEventTouchUpInside];
+        _accessCameraView.messageLabel.text = MKLocalizedFromTable(messageLocalizableKey, BMEAccessLocalization);
+        [_accessCameraView addTarget:self action:@selector(touchUpInsideCameraView) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _accessVideoView;
+    return _accessCameraView;
 }
 
 
@@ -203,13 +203,13 @@
     }];
 }
 
-- (void)touchUpInsideVideoView
+- (void)touchUpInsideCameraView
 {
-    if (self.accessVideoView.selected) {
+    if (self.accessCameraView.selected) {
         return;
     }
     [BMEAccessControlHandler requireCameraEnabled:^(BOOL isEnabled) {
-        self.accessVideoView.selected = isEnabled;
+        self.accessCameraView.selected = isEnabled;
     }];
 }
 

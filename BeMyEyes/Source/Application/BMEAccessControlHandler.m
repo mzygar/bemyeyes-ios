@@ -70,21 +70,45 @@
 
 + (void)enabledForRole:(BMERole)role completion:(void (^)(BOOL))completion
 {
-    [self hasNotificationsEnabled:^(BOOL isEnabled) {
-        if (!isEnabled) {
-            completion(NO);
-            return;
-        }
-        [self hasMicrophoneEnabled:^(BOOL isEnabled) {
-            if (!isEnabled) {
-                completion(NO);
-                return;
-            }
-            [self hasVideoEnabled:^(BOOL isEnabled) {
-                completion(isEnabled);
+    switch (role) {
+        case BMERoleBlind:
+        {
+            // Ask for microphone + video
+            [self hasMicrophoneEnabled:^(BOOL isEnabled) {
+                if (!isEnabled) {
+                    completion(NO);
+                    return;
+                }
+                [self hasVideoEnabled:^(BOOL isEnabled) {
+                    completion(isEnabled);
+                }];
             }];
-        }];
-    }];
+        }
+            break;
+        case BMERoleHelper:
+        {
+            // Ask for notifications + microphone + video
+            [self hasNotificationsEnabled:^(BOOL isEnabled) {
+                if (!isEnabled) {
+                    completion(NO);
+                    return;
+                }
+                [self hasMicrophoneEnabled:^(BOOL isEnabled) {
+                    if (!isEnabled) {
+                        completion(NO);
+                        return;
+                    }
+                    [self hasVideoEnabled:^(BOOL isEnabled) {
+                        completion(isEnabled);
+                    }];
+                }];
+            }];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
@@ -217,12 +241,14 @@
 
 + (BOOL)canGoToSystemSettings
 {
-#ifdef UIApplicationOpenSettingsURLString
-    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-    return [[UIApplication sharedApplication] canOpenURL:url];
-#else
-    return NO;
-#endif
+    @try {
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        return [[UIApplication sharedApplication] canOpenURL:url];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"ff");
+        return NO;
+    }
 }
 
 + (void)openSystemSettings
