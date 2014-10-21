@@ -44,6 +44,7 @@ import UIKit
         super.layoutSubviews()
      
         label.frame = bounds
+        setup()
     }
     
     override func prepareForInterfaceBuilder() {
