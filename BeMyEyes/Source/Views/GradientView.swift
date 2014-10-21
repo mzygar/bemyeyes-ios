@@ -22,25 +22,11 @@ import UIKit
         }
     }
     
-    init(colors: UIColor...) {
-        self.colors = colors
-        
-        super.init(frame: CGRectZero)
-        
-        self.layer.addSublayer(gradientLayer)
-        update()
-    }
-    
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        self.layer.addSublayer(gradientLayer)
-        update()
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        update()
+        layer.addSublayer(gradientLayer)
         gradientLayer.frame = bounds
     }
     

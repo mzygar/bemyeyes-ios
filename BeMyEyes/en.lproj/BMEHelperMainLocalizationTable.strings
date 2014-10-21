@@ -29,13 +29,31 @@
 "BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d points until next level";
 
 /* Points signup description */
-"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Signed up";
+"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Sign up";
 
-/* Points helped description */
-"BME_HELPER_MAIN_POINTS_ENTRY_HELPED_DESCRIPTION" = "Helped one person";
+/* Points answer push message description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION" = "Answer push message";
 
-/* Points attempted helped description */
-"BME_HELPER_MAIN_POINTS_ENTRY_ATTEMPTED_HELP_DESCRIPTION" = "Almost helped one person";
+/* Points answer push message techinal error description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION" = "Answer push message (Technical error)";
+
+/* Points finish helping request description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Finish help";
+
+/* Points finish 10 helping requests in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION" = "Help 10 in a week";
+
+/* Points finish 5 high fives in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION" = "5 high fives in week";
+
+/* Points share on twitter description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Share on Twitter";
+
+/* Points share on facebook description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Share on Facebook";
+
+/* Points watch video description */
+"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Watch video";
 
 /* Community network description */
 "BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "The Be My Eyes Network";

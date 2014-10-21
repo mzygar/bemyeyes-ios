@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -48,7 +48,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="du8-BL-rDz" kind="push" identifier="IntroBlind" id="1zS-zg-Y9Q"/>
+                                    <segue destination="du8-BL-rDz" kind="push" identifier="FrontPageToIntroBlind" id="1zS-zg-Y9Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeQ-6j-q8m">
@@ -63,7 +63,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="helperButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K9x-KT-fdm"/>
+                                    <segue destination="rRF-Ua-fxy" kind="push" identifier="FrontPageToVideoHelper" id="PjQ-Wu-874"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your role?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-NR-WpR">
@@ -156,12 +156,11 @@
                         <outlet property="blindRoleButton" destination="Tqb-HQ-rZY" id="1NI-r2-7lK"/>
                         <outlet property="sightedRoleButton" destination="CeQ-6j-q8m" id="V9g-s1-4jB"/>
                         <outlet property="welcomeLabel" destination="iXe-li-Co7" id="UdA-MX-knx"/>
-                        <segue destination="hG3-jw-vqP" kind="push" identifier="IntroHelper" id="OvB-1I-sRy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="195" y="111"/>
+            <point key="canvasLocation" x="-39" y="117"/>
         </scene>
         <!--Top Navigation Controller-->
         <scene sceneID="eg8-GG-mp5">
@@ -176,7 +175,48 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBd-Zc-0Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="111"/>
+            <point key="canvasLocation" x="-532" y="117"/>
+        </scene>
+        <!--Onboarding Video View Controller-->
+        <scene sceneID="h5X-fl-V9X">
+            <objects>
+                <viewController id="rRF-Ua-fxy" customClass="OnboardingVideoViewController" customModule="BeMyEyes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KWo-eH-683"/>
+                        <viewControllerLayoutGuide type="bottom" id="q1x-Kd-9UI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xaE-Bk-D52">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eni-M1-mvH">
+                                <rect key="frame" x="250" y="430" width="70" height="50"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hG3-jw-vqP" kind="push" identifier="VideoToIntroHelper" id="A7j-PL-awY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q1x-Kd-9UI" firstAttribute="bottom" secondItem="eni-M1-mvH" secondAttribute="bottom" id="cbP-Su-8oX"/>
+                            <constraint firstAttribute="trailing" secondItem="eni-M1-mvH" secondAttribute="trailing" id="yje-fa-JUe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ihW-vb-1Lm"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="doneButton" destination="eni-M1-mvH" id="gIU-F6-afQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CeR-IK-Up2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="401" y="-230"/>
         </scene>
         <!--Helper Intro View Controller-->
         <scene sceneID="zB6-mI-jFV">
@@ -338,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yI4-gL-cCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="-236"/>
+            <point key="canvasLocation" x="837" y="-230"/>
         </scene>
         <!--Test-->
         <scene sceneID="Olh-l6-fc2">
@@ -528,8 +568,8 @@
                         <outlet property="forgotPasswordButton" destination="oL9-6V-10R" id="H8y-qu-o4P"/>
                         <outlet property="loginButton" destination="q5v-lJ-cvR" id="J1s-i4-OdR"/>
                         <outlet property="passwordTextField" destination="ITa-1Y-MSv" id="0ao-5k-ndG"/>
-                        <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="0nh-WJ-G11"/>
-                        <segue destination="tRy-Ev-R6e" kind="push" identifier="Registered" id="h1h-es-Gdp"/>
+                        <segue destination="pPv-pk-tQL" kind="modal" identifier="Registered" id="LUD-Ic-JoT"/>
+                        <segue destination="pPv-pk-tQL" kind="modal" identifier="LoggedIn" id="7rT-uz-6lZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAG-ss-trN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -733,7 +773,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUd-10-1IW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="458"/>
+            <point key="canvasLocation" x="631" y="458"/>
         </scene>
         <!--Sign Up Method View Controller-->
         <scene sceneID="n7M-7j-dg5">
@@ -837,7 +877,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <action selector="privacyButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpOutside" id="Wlk-rv-zrf"/>
                                     <action selector="privacyButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpInside" id="e4a-8C-yIX"/>
                                     <action selector="privacyButtonTouched:" destination="rmT-tx-lgV" eventType="touchDown" id="uN1-0G-EIz"/>
-                                    <segue destination="DP6-hh-C0u" kind="push" id="4oP-8G-5ff"/>
+                                    <segue destination="pPv-pk-tQL" kind="modal" identifier="LoggedIn" id="HLG-mD-PKe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Agreements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvx-U1-YpW">
@@ -985,7 +1025,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="termsBottomLabel" destination="Gvx-U1-YpW" id="Trp-ed-GMa"/>
                         <outlet property="termsButton" destination="fkb-Ab-ezV" id="3Te-s5-ymP"/>
                         <outlet property="termsTopLabel" destination="3wM-z3-EP5" id="IaZ-m4-uok"/>
-                        <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="Ce4-tx-KmL"/>
                         <segue destination="4fN-kL-DOK" kind="push" identifier="Registered" id="aMJ-13-MXV"/>
                         <segue destination="IOT-Cv-qKg" kind="push" identifier="SignUp" id="NCE-4i-JV4"/>
                     </connections>
@@ -993,6 +1032,22 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6C-aM-2p2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1276" y="155"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="Xdi-fl-Ovl">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavigation" navigationBarHidden="YES" id="pPv-pk-tQL" userLabel="Main Navigation Controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fte-9i-75s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tRy-Ev-R6e" kind="relationship" relationship="rootViewController" id="6ea-UP-TLy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhd-kG-Gsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2680" y="1775"/>
         </scene>
         <!--Registered View Controller-->
         <scene sceneID="7YK-U2-v1c">
@@ -1063,7 +1118,26 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho5-nl-OHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="2371"/>
+            <point key="canvasLocation" x="2680" y="2484"/>
+        </scene>
+        <!--Access View Controller-->
+        <scene sceneID="1nV-9r-U0k">
+            <objects>
+                <viewController id="zzo-OK-XFh" customClass="BMEAccessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Dc-p2-PCC"/>
+                        <viewControllerLayoutGuide type="bottom" id="RrY-8Y-D2K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y5a-MG-kcs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EgD-uv-dUP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgR-bu-MLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3130" y="2385"/>
         </scene>
         <!--Blind Main View Controller-->
         <scene sceneID="1Hj-xW-Qcp">
@@ -1108,12 +1182,12 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="connectToCommunityButton" destination="DQB-vd-Nyq" id="swz-Ee-N2b"/>
-                        <segue destination="RB1-LI-MQt" kind="push" identifier="Call" id="RbW-CW-NYl"/>
+                        <segue destination="RB1-LI-MQt" kind="modal" identifier="Call" id="RbW-CW-NYl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt2-1B-bf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3107" y="1175"/>
+            <point key="canvasLocation" x="3557" y="1175"/>
         </scene>
         <!--Helper Main View Controller-->
         <scene sceneID="i4r-nw-Lbv">
@@ -1263,7 +1337,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w7A-4Z-ko9" id="LlA-uW-b6t">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helped one person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-5i-7OK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Helped one person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-5i-7OK">
                                                     <rect key="frame" x="15" y="8" width="138.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -1276,7 +1350,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx2-YA-dhW">
-                                                    <rect key="frame" x="15" y="27.5" width="50.5" height="13.5"/>
+                                                    <rect key="frame" x="15" y="27" width="50.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1289,7 +1363,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 <constraint firstItem="Itz-5i-7OK" firstAttribute="leading" secondItem="LlA-uW-b6t" secondAttribute="leading" constant="15" id="Xyz-qA-bZm"/>
                                                 <constraint firstItem="Hrm-bE-OmT" firstAttribute="baseline" secondItem="Itz-5i-7OK" secondAttribute="baseline" id="bg2-kx-NVn"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hrm-bE-OmT" secondAttribute="trailing" constant="15" id="cw2-bp-jS1"/>
-                                                <constraint firstItem="Itz-5i-7OK" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="topMargin" id="uFT-PJ-03r"/>
+                                                <constraint firstItem="Hrm-bE-OmT" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="top" priority="900" constant="8" id="e38-Un-Rkf"/>
+                                                <constraint firstItem="Hrm-bE-OmT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Itz-5i-7OK" secondAttribute="trailing" constant="5" id="iF3-z6-fh6"/>
+                                                <constraint firstItem="Itz-5i-7OK" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="top" constant="8" id="uFT-PJ-03r"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1468,7 +1544,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="1175"/>
+            <point key="canvasLocation" x="3130" y="1175"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gq3-SN-wDx">
@@ -1688,7 +1764,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="passwordTextField" destination="3Vw-hZ-d1W" id="ryh-yc-g8i"/>
                         <outlet property="registerButton" destination="Y9X-vI-vZr" id="gd6-1O-fEx"/>
                         <outlet property="scrollView" destination="guG-wR-qIH" id="tQp-VZ-U80"/>
-                        <segue destination="tRy-Ev-R6e" kind="push" identifier="LoggedIn" id="jzc-Nc-kCA"/>
+                        <segue destination="pPv-pk-tQL" kind="modal" identifier="LoggedIn" id="OmC-0b-FbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAb-yu-tHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1854,6 +1930,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="MrC-au-WgT" id="Lih-1X-2pI"/>
+                                    <outlet property="delegate" destination="MrC-au-WgT" id="3iA-Od-iDs"/>
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="English, Danish" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-5C-llP">
@@ -1931,10 +2008,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJV-uE-7uS">
-                                <rect key="frame" x="15" y="92" width="89.5" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="bee-pV-Vmq"/>
-                                </constraints>
+                                <rect key="frame" x="15" y="92" width="89.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2068,7 +2142,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
                     <connections>
-                        <outlet property="TasksTableView" destination="4kB-AN-5cU" id="k1w-eP-TmN"/>
+                        <outlet property="dismissButton" destination="tvF-nc-9Hj" id="ZHj-TU-Gtw"/>
                         <outlet property="emailLabel" destination="mvj-Dw-BPc" id="p2Q-hs-s4q"/>
                         <outlet property="emailTextField" destination="fEL-aF-32C" id="ViY-LK-yX9"/>
                         <outlet property="feedbackButton" destination="kwZ-op-hZv" id="xmW-0d-nAN"/>
@@ -2081,13 +2155,54 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="lastNameTextField" destination="24Y-Oq-jej" id="T81-vr-GjG"/>
                         <outlet property="logoutButton" destination="af5-uQ-5WX" id="h0N-Cg-KIY"/>
                         <outlet property="selectLanguagesButton" destination="D0d-zV-1XX" id="h6x-iM-V5G"/>
+                        <outlet property="tasksTableView" destination="4kB-AN-5cU" id="Fr9-xO-euj"/>
                         <outlet property="versionLabel" destination="ub2-Qn-2Ma" id="eIk-44-IZo"/>
+                        <segue destination="joq-0X-lAZ" kind="modal" identifier="Video" id="xwK-IP-bSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N0m-gc-YxM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3107" y="1775"/>
+            <point key="canvasLocation" x="3578" y="1775"/>
+        </scene>
+        <!--Intro Video View Controller-->
+        <scene sceneID="rcX-St-YDh">
+            <objects>
+                <viewController id="joq-0X-lAZ" customClass="IntroVideoViewController" customModule="BeMyEyes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kTU-oZ-N1Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cex-b2-6DK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tRZ-C3-din">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch7-rm-I8T">
+                                <rect key="frame" x="250" y="430" width="70" height="50"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MrC-au-WgT" kind="custom" customClass="DismissSegue" id="THh-yj-HlV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cex-b2-6DK" firstAttribute="top" secondItem="Ch7-rm-I8T" secondAttribute="bottom" id="M6m-qK-9iV"/>
+                            <constraint firstAttribute="trailing" secondItem="Ch7-rm-I8T" secondAttribute="trailing" id="mnk-vc-paI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="Ch7-rm-I8T" id="E5d-NS-r6y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T65-hC-CyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3578" y="2385"/>
         </scene>
         <!--Your Languages-->
         <scene sceneID="SuY-BI-aAL">
@@ -2136,7 +2251,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gav-eW-E1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4151" y="1775"/>
+            <point key="canvasLocation" x="4429" y="1775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pDe-fZ-Ytj">
@@ -2347,12 +2462,12 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="disconnectButton" destination="2ev-9r-iXb" id="Fw3-Va-8pG"/>
                         <outlet property="statusLabel" destination="SIz-JI-R6d" id="ujO-VG-baX"/>
                         <outlet property="videoContainerView" destination="fRK-Xo-Ag6" id="jgB-VT-BKL"/>
-                        <segue destination="sPf-cG-W7c" kind="push" identifier="ReportAbuse" id="S6x-8p-bFY"/>
+                        <segue destination="sPf-cG-W7c" kind="modal" identifier="ReportAbuse" id="S6x-8p-bFY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Stf-oQ-mRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3617" y="1175"/>
+            <point key="canvasLocation" x="3995" y="1175"/>
         </scene>
         <!--Report Abuse View Controller-->
         <scene sceneID="WUV-od-PF3">
@@ -2603,7 +2718,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emM-fF-hv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4151" y="1175"/>
+            <point key="canvasLocation" x="4429" y="1175"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="xFF-Ds-18S">
@@ -2629,7 +2744,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MrC-au-WgT" kind="modal" identifier="" modalTransitionStyle="coverVertical" id="Zkk-7c-PpU"/>
+                                    <segue destination="MrC-au-WgT" kind="modal" identifier="" modalTransitionStyle="flipHorizontal" id="Zkk-7c-PpU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2645,11 +2760,12 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <connections>
                         <outlet property="settingsButton" destination="SKH-X4-RrH" id="0qj-hN-872"/>
                         <segue destination="PIb-FL-Uxe" kind="modal" identifier="KnownLanguages" id="6SH-Yu-aNS"/>
+                        <segue destination="zzo-OK-XFh" kind="modal" identifier="AccessView" id="ZV1-uX-4ce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfT-12-yrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="1775"/>
+            <point key="canvasLocation" x="3130" y="1775"/>
         </scene>
         <!--Privacy Policy View Controller-->
         <scene sceneID="1ve-sP-DTb">
@@ -2747,7 +2863,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBD-Cs-9fL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3617" y="1775"/>
+            <point key="canvasLocation" x="3995" y="1775"/>
         </scene>
     </scenes>
     <resources>
@@ -2770,8 +2886,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ce4-tx-KmL"/>
-        <segue reference="46J-Mt-BiQ"/>
-        <segue reference="tPL-wK-r0M"/>
+        <segue reference="LUD-Ic-JoT"/>
+        <segue reference="Zkk-7c-PpU"/>
+        <segue reference="6SH-Yu-aNS"/>
+        <segue reference="kdn-ps-MZv"/>
     </inferredMetricsTieBreakers>
 </document>

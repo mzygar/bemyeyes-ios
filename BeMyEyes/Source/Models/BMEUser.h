@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class BMEUserLevel;
+#import "BMEUserTask.h"
 
 @interface BMEUser : NSObject <NSCoding>
 
@@ -25,6 +26,8 @@
 @property (readonly, nonatomic) BMEUserLevel *currentLevel;
 @property (readonly, nonatomic) BMEUserLevel *nextLevel;
 @property (readonly, nonatomic) NSArray *lastPointEntries;
+@property (readonly, nonatomic) NSArray *completedTasks;
+@property (readonly, nonatomic) NSArray *remainingTasks;
 
 - (BOOL)isHelper;
 - (BOOL)isBlind;

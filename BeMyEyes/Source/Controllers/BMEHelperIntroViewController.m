@@ -7,6 +7,9 @@
 //
 
 #import "BMEHelperIntroViewController.h"
+#import "BMESignUpMethodViewController.h"
+
+static NSString *const BMEIntroSignUpMethodSegue = @"SignUpMethod";
 
 @interface BMEHelperIntroViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
@@ -34,6 +37,15 @@
     self.headlineLabel.text = MKLocalizedFromTable(BME_HELPER_INTRO_HEADLINE, BMEHelperIntroLocalizationTable);
     self.shortDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_INTRO_SHORT_DESCRIPTION, BMEHelperIntroLocalizationTable);
     self.longDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_INTRO_LONG_DESCRIPTION, BMEHelperIntroLocalizationTable);
+}
+
+#pragma mark -
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:BMEIntroSignUpMethodSegue]) {
+        ((BMESignUpMethodViewController *)segue.destinationViewController).role = BMERoleHelper;
+    }
 }
 
 @end
