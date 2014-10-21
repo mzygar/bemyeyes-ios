@@ -62,6 +62,12 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
     } else {
         [self askForMoreLanguagesIfNecessary];
         [self askForAccessIfNecessary];
+        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+            if (isEnabled) {
+                [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
+                }];
+            }
+        }];
     }
 }
 
