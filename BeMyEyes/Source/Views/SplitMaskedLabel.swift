@@ -79,7 +79,7 @@ import UIKit
         }
     }
     func draw(rect: CGRect, masked mask: CGRect, content: () -> ()) {
-        let context = UIGraphicsGetCurrentContext();
+        let context = UIGraphicsGetCurrentContext()
         
         CGContextSaveGState(context)
         let image = CGBitmapContextCreateImage(context)

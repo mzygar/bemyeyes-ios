@@ -17,6 +17,7 @@
 #import "BMEAppDelegate.h"
 #import "NSDate+BMESnoozeRelativeDate.h"
 #import "BMEPointsTableViewCell.h"
+#import "BeMyEyes-Swift.h"
 
 #define BMEHelperSnoozeAmount0 0.0f
 #define BMEHelperSnoozeAmount25 3600.0f
