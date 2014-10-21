@@ -11,6 +11,7 @@
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "BMEAccessControlHandler.h"
+#import "BMEAccessViewController.h"
 
 #define BMEMainKnownLanguagesSegue @"KnownLanguages"
 static NSString *const BMEAccessViewSegue = @"AccessView";
@@ -66,6 +67,13 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:BMEAccessViewSegue]) {
+        BMERole role = [BMEClient sharedClient].currentUser.role;
+        ((BMEAccessViewController *)segue.destinationViewController).role = role;
+    }
 }
 
 #pragma mark -
