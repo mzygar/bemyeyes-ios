@@ -29,31 +29,31 @@
 "BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d points til næste niveau";
 
 /* Points signup description */
-"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Opret bruger";
+"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Successful registrering";
 
 /* Points answer push message description */
-"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION" = "Svar push besked";
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION" = "Forsøgte at hjælpe";
 
 /* Points answer push message techinal error description */
-"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION" = "Svar push besked (Teknisk fejl)";
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION" = "Forsøgte at hjælpe";
 
 /* Points finish helping request description */
-"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Færdiggør hjælp";
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Hjalp en blind";
 
 /* Points finish 10 helping requests in a week description */
-"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION" = "Hjælp 10 på en uge";
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION" = "Hjalp 10 på en uge";
 
 /* Points finish 5 high fives in a week description */
 "BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION" = "5 high fives på en uge";
 
 /* Points share on twitter description */
-"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Del på Twitter";
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Delte på Twitter";
 
 /* Points share on facebook description */
-"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Del på Facebook";
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Delte på Facebook";
 
 /* Points watch video description */
-"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Se video";
+"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Så video";
 
 /* Community network description */
 "BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "Be My Eyes netværket";
