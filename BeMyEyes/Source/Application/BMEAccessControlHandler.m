@@ -217,12 +217,14 @@
 
 + (BOOL)canGoToSystemSettings
 {
-#ifdef UIApplicationOpenSettingsURLString
-    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-    return [[UIApplication sharedApplication] canOpenURL:url];
-#else
-    return NO;
-#endif
+    @try {
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        return [[UIApplication sharedApplication] canOpenURL:url];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"ff");
+        return NO;
+    }
 }
 
 + (void)openSystemSettings
