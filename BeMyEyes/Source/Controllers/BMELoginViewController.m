@@ -71,35 +71,32 @@
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
     [self dismissKeyboard];
     
-    void(^loginHandler)(void) = ^{
-        if (useFacebook) {
-            [self performLoginWithFacebook];
-        } else {
-            [self performLoginWithEmail];
-        }
-    };
-    
-    NSString *existingDeviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
-    if (existingDeviceToken) {
-        loginHandler();
-    } else {
-        NSString *tempDeviceToken = [NSString BMETemporaryDeviceToken];
-        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:tempDeviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
-            if (success) {
-                [GVUserDefaults standardUserDefaults].deviceToken = tempDeviceToken;
-                [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
-                [GVUserDefaults synchronize];
-                
-                loginHandler();
-            } else {
-                NSString *title = nil;
-                NSString *message = nil;
-                NSString *cancelButton = nil;
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-                [alertView show];
-            }
-        }];
+    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+    BOOL isTemporaryDeviceToken = NO;
+    if (!deviceToken) {
+        deviceToken = [NSString BMETemporaryDeviceToken];
+        isTemporaryDeviceToken = YES;
     }
+    BOOL isActiveDeviceToken = !isTemporaryDeviceToken;
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:deviceToken active:isActiveDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+        if (success) {
+            [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
+            [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = isTemporaryDeviceToken;
+            [GVUserDefaults synchronize];
+            
+            if (useFacebook) {
+                [self performLoginWithFacebook];
+            } else {
+                [self performLoginWithEmail];
+            }
+        } else {
+            NSString *title = nil;
+            NSString *message = nil;
+            NSString *cancelButton = nil;
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }];
 }
 
 - (void)performLoginWithEmail {
