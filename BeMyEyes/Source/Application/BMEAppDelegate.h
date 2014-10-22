@@ -14,7 +14,4 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-- (void)registerForRemoteNotifications;
-- (void)requireMicrophoneEnabled:(void(^)(BOOL isEnabled))completion;
-
 @end

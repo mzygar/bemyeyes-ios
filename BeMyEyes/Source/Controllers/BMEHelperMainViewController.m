@@ -9,11 +9,15 @@
 #import "BMEHelperMainViewController.h"
 #import "BMEClient.h"
 #import "BMEUser.h"
+#import "BMEUserLevel.h"
 #import "BMEPointEntry.h"
+#import "BMECommunityStats.h"
 #import "BMEPointLabel.h"
 #import "BMEPointGraphView.h"
 #import "BMEAppDelegate.h"
 #import "NSDate+BMESnoozeRelativeDate.h"
+#import "BMEPointsTableViewCell.h"
+#import "BeMyEyes-Swift.h"
 
 #define BMEHelperSnoozeAmount0 0.0f
 #define BMEHelperSnoozeAmount25 3600.0f
@@ -29,15 +33,19 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     BMESnoozeStep100
 };
 
-@interface BMEHelperMainViewController () <UIGestureRecognizerDelegate>
+@interface BMEHelperMainViewController () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet BMEPointLabel *pointsHelpedPersonsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointsHelpedPersonsDescriptionLabel;
+@property (weak, nonatomic) IBOutlet BMEPointLabel *pointsTotalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointsTotalDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *pointTitleLabel;
-@property (weak, nonatomic) IBOutlet BMEPointLabel *pointLabel;
-@property (weak, nonatomic) IBOutlet BMEPointGraphView *pointGraphView;
 @property (weak, nonatomic) IBOutlet UILabel *failedLoadingPointLabel;
 @property (weak, nonatomic) IBOutlet UIButton *retryLoadingPointButton;
+@property (weak, nonatomic) IBOutlet PointsBarView *pointsBarView;
 
 @property (weak, nonatomic) IBOutlet UILabel *snoozeTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *snoozeStatusLabel;
@@ -49,11 +57,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeStepImageView100;
 @property (weak, nonatomic) IBOutlet UIImageView *snoozeThumbImageView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitleLabelLeadingMarginConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitleLabelWidthConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pointLabelWidthConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scoreTitlePointSpaceConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *snoozeStep0CenterMarginXConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *snoozeStep25CenterMarginXConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *snoozeStep50CenterMarginXConstraint;
@@ -63,9 +66,15 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *snoozeThumbWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *snoozeSliderLineWidthConstraint;
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *pointActivityIndicator;
+@property (weak, nonatomic) IBOutlet UIView *communityStatsContainer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *communityStatsBottomConstraint;
+@property (weak, nonatomic) IBOutlet BMEPointLabel *pointsCommunitySightedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionCommunitySightedLabel;
+@property (weak, nonatomic) IBOutlet BMEPointLabel *pointsCommunityBlindLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionCommunityBlindLabel;
+@property (weak, nonatomic) IBOutlet BMEPointLabel *pointsCommunityHelpedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionCommunityHelpedLabel;
 
-@property (assign, nonatomic) NSUInteger totalPoint;
 @property (strong, nonatomic) NSArray *pointEntries;
 
 @property (strong, nonatomic) NSString *greetingFormat;
@@ -91,9 +100,13 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     [MKLocalization registerForLocalization:self];
      
-    self.pointLabel.colors = @{ @(0.0f) : [UIColor colorWithRed:220.0f/255.0f green:38.0f/255.0f blue:38.0f/255.0f alpha:1.0f],
-                                @(0.50f) : [UIColor colorWithRed:252.0f/255.0f green:197.0f/255.0f blue:46.0f/255.0f alpha:1.0f],
-                                @(1.0f) : [UIColor colorWithRed:117.0f/255.0f green:197.0f/255.0f blue:27.0f/255.0f alpha:1.0f] };
+    self.pointsHelpedPersonsLabel.colors =
+    self.pointsTotalLabel.colors = @{ @(0.0f) : [UIColor lightTextColor],
+                                      @(1.0f) : [UIColor whiteColor] };
+    self.pointsCommunitySightedLabel.colors =
+    self.pointsCommunityBlindLabel.colors =
+    self.pointsCommunityHelpedLabel.colors = @{ @(0.0f) : [UIColor darkTextColor],
+                                                @(1.0f) : [UIColor blackColor] };
  
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     panGesture.delegate = self;
@@ -103,6 +116,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     [self snapSnoozeSliderToStep:BMESnoozeStep0 animated:NO];
     
+    [self updatePointsAnimated:NO];
     [self reloadPoints];
 }
 
@@ -114,11 +128,35 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 }
 
 - (void)shouldLocalize {
-    self.snoozeTitleLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_SNOOZE_HEADLINE, BMEHelperMainLocalizationTable);
-    self.pointDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_DESCRIPTION, BMEHelperMainLocalizationTable);
-    self.pointTitleLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_POINT_TITLE, BMEHelperMainLocalizationTable);
+//    self.snoozeTitleLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_SNOOZE_HEADLINE, BMEHelperMainLocalizationTable);
+    self.pointsTotalDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION, BMEHelperMainLocalizationTable);
+    self.pointsHelpedPersonsDescriptionLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION, BMEHelperMainLocalizationTable);
+    self.descriptionCommunitySightedLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED, BMEHelperMainLocalizationTable);
+    self.descriptionCommunityBlindLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND, BMEHelperMainLocalizationTable);
+    self.descriptionCommunityHelpedLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED, BMEHelperMainLocalizationTable);
     self.failedLoadingPointLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_LOADING_POINT_FAILED, BMEHelperMainLocalizationTable);
     [self.retryLoadingPointButton setTitle:MKLocalizedFromTable(BME_HELPER_MAIN_RETRY_LOADING_POINT, BMEHelperMainLocalizationTable) forState:UIControlStateNormal];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    CGFloat communityHeight = self.communityStatsContainer.frame.size.height;
+    CGFloat contentHeight = self.tableView.contentSize.height;
+    CGFloat viewHeight = self.view.frame.size.height;
+    CGFloat bottomInset = 0;
+    CGFloat hiddenHeight = contentHeight - (viewHeight - communityHeight);
+    if (0 < hiddenHeight && hiddenHeight < communityHeight) {
+        bottomInset = viewHeight - contentHeight + hiddenHeight/2;
+    }
+    
+    UIEdgeInsets contentInsets = self.tableView.contentInset;
+    contentInsets.bottom = bottomInset;
+    self.tableView.contentInset = contentInsets;
+    
+    UIEdgeInsets scrollIndicatorInsets = self.tableView.contentInset;
+    scrollIndicatorInsets.bottom = bottomInset;
+    self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
 }
 
 #pragma mark -
@@ -230,119 +268,37 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     }
 }
 
-- (void)layoutPoint {
-    NSString *pointText = [NSString stringWithFormat:@"%i", self.totalPoint];
-    CGRect pointRect = [pointText boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName : self.pointLabel.font } context:nil];
-    self.pointLabelWidthConstraint.constant = CGRectGetWidth(pointRect) * 1.20f; // Add extra width for zoom animation
-    [self.view layoutIfNeeded];
+- (void)updatePointsAnimated:(BOOL)animated {
+    BMEUser *user = [BMEClient sharedClient].currentUser;
+    self.levelLabel.text = MKLocalizedFromTable(user.currentLevel.localizableKeyForTitle, BMEHelperMainLocalizationTable);
     
-    CGFloat totalWidth = self.scoreTitleLabelWidthConstraint.constant + self.scoreTitlePointSpaceConstraint.constant + self.pointLabelWidthConstraint.constant;
-    self.scoreTitleLabelLeadingMarginConstraint.constant = (CGRectGetWidth(self.view.bounds) - totalWidth) * 0.50f;
-    [self.view layoutIfNeeded];
+    [self.pointsHelpedPersonsLabel setPoint:user.peopleHelped.integerValue animated:YES];
+    [self.pointsTotalLabel setPoint:user.totalPoints.integerValue animated:YES];
+    
+    self.pointsBarView.text = [NSString stringWithFormat:MKLocalizedFromTable(BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION, BMEHelperMainLocalizationTable), user.pointsToNextLevel];
+    self.pointsBarView.progress = user.levelProgress;
+    
+    self.pointEntries = user.lastPointEntries;
+    [self.tableView reloadData];
 }
 
 - (void)reloadPoints {
-    [self.pointActivityIndicator startAnimating];
-    [UIView animateWithDuration:0.30f animations:^{
-        self.failedLoadingPointLabel.alpha = 0.0f;
-        self.retryLoadingPointButton.alpha = 0.0f;
-        self.pointTitleLabel.alpha = 0.0f;
-        self.pointLabel.alpha = 0.0f;
-        self.pointGraphView.alpha = 0.0f;
-    }];
-    
-    // Assume we didn't fail
-    self.failedLoadingPoints = NO;
-    
-    __block BOOL totalLoaded = NO;
-    __block BOOL daysLoaded = NO;
-    
-    void(^completion)(void) = ^{
-        [self.pointActivityIndicator stopAnimating];
-        
-        if (self.failedLoadingPoints) {
-            [self showFailedLoadingPoint];
-        } else if (totalLoaded && daysLoaded) {
-            [self showPoint];
-        }
-    };
-    
-    [[BMEClient sharedClient] loadTotalPoint:^(NSUInteger points, NSError *error) {
+    [[BMEClient sharedClient] loadUserStatsCompletion:^(BMEUser *user, NSError *error) {
         if (error) {
             NSLog(@"Could not load total point: %@", error);
-            
-            self.failedLoadingPoints = YES;
         } else {
-            totalLoaded = YES;
-            self.totalPoint = points;
+            [self updatePointsAnimated:YES];
         }
-        
-        completion();
     }];
     
-    [[BMEClient sharedClient] loadPointForDays:30 completion:^(NSArray *entries, NSError *error) {
+    [[BMEClient sharedClient] loadCommunityStatsPointsCompletion:^(BMECommunityStats *stats, NSError *error) {
         if (error) {
             NSLog(@"Could not load point for days: %@", error);
-            
-            self.failedLoadingPoints = YES;
         } else {
-            daysLoaded = YES;
-            self.pointEntries = entries;
+            [self.pointsCommunityBlindLabel setPoint:stats.blind.integerValue animated:YES];
+            [self.pointsCommunitySightedLabel setPoint:stats.sighted.integerValue animated:YES];
+            [self.pointsCommunityHelpedLabel setPoint:stats.helped.integerValue animated:YES];
         }
-        
-        completion();
-    }];
-}
-
-- (void)showPoint {
-    for (BMEPointEntry *pointEntry in self.pointEntries) {
-        [self.pointGraphView addPoint:pointEntry.point atDate:pointEntry.date];
-    }
-    
-    [self.pointGraphView draw];
-    [self.pointLabel setPoint:self.totalPoint animated:YES];
-    [self layoutPoint];
-
-    self.pointDescriptionLabel.alpha = 0.0f;
-    self.pointTitleLabel.alpha = 0.0f;
-    self.pointLabel.alpha = 0.0f;
-    self.pointGraphView.alpha = 0.0f;
-    
-    self.pointTitleLabel.hidden = NO;
-    self.pointLabel.hidden = NO;
-    self.pointGraphView.hidden = NO;
-    
-    [UIView animateWithDuration:0.30f animations:^{
-        self.pointDescriptionLabel.alpha = 1.0f;
-        self.pointTitleLabel.alpha = 1.0f;
-        self.pointLabel.alpha = 1.0f;
-        self.pointGraphView.alpha = 1.0f;
-        self.failedLoadingPointLabel.alpha = 0.0f;
-        self.retryLoadingPointButton.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        self.failedLoadingPointLabel.hidden = YES;
-        self.retryLoadingPointButton.hidden = YES;
-    }];
-}
-
-- (void)showFailedLoadingPoint {
-    self.failedLoadingPointLabel.alpha = 0.0f;
-    self.failedLoadingPointLabel.hidden = NO;
-    
-    self.retryLoadingPointButton.alpha = 0.0f;
-    self.retryLoadingPointButton.hidden = NO;
-    
-    [UILabel animateWithDuration:0.30f animations:^{
-        self.pointDescriptionLabel.alpha = 0.0f;
-        self.pointTitleLabel.alpha = 0.0f;
-        self.pointLabel.alpha = 0.0f;
-        self.pointGraphView.alpha = 0.0f;
-        self.failedLoadingPointLabel.alpha = 1.0f;
-        self.retryLoadingPointButton.alpha = 1.0f;
-    } completion:^(BOOL finished) {
-        self.pointTitleLabel.hidden = YES;
-        self.pointLabel.hidden = YES;
-        self.pointGraphView.hidden = YES;
     }];
 }
 
@@ -369,6 +325,36 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     if (self.failedLoadingPoints) {
         [self reloadPoints];
     }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat distanceFromTop = scrollView.contentOffset.y;
+    self.communityStatsBottomConstraint.constant = MIN(0, -distanceFromTop);
+    
+    BOOL hideStatusBar = distanceFromTop > 20;
+    [[UIApplication sharedApplication] setStatusBarHidden:hideStatusBar withAnimation:UIStatusBarAnimationFade];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.pointEntries.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BMEPointsTableViewCell *cell = (BMEPointsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PointsCellID"];
+    
+    BMEPointEntry *pointEntry = self.pointEntries[indexPath.row];
+    
+    cell.pointsDescription = MKLocalizedFromTable(pointEntry.localizableKeyForTitle, BMEHelperMainLocalizationTable);
+    cell.date = pointEntry.date;
+    cell.points = @(pointEntry.point);
+    
+    return cell;
 }
 
 @end

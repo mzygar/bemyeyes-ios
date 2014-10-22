@@ -10,8 +10,11 @@
 #import <PSAlertView/PSPDFAlertView.h>
 #import "BMEClient.h"
 #import "BMEUser.h"
+#import "BMEAccessControlHandler.h"
+#import "BMEAccessViewController.h"
 
 #define BMEMainKnownLanguagesSegue @"KnownLanguages"
+static NSString *const BMEAccessViewSegue = @"AccessView";
 
 @interface BMEMainViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
@@ -32,7 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    switch ([BMEClient sharedClient].currentUser.role) {
+    BMERole role = [BMEClient sharedClient].currentUser.role;
+    switch (role) {
         case BMERoleHelper:
             [self displayHelperView];
             break;
@@ -47,7 +51,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -57,11 +61,25 @@
         self.view.window.rootViewController = [self.view.window.rootViewController.storyboard instantiateInitialViewController];
     } else {
         [self askForMoreLanguagesIfNecessary];
+        [self askForAccessIfNecessary];
+        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+            if (isEnabled) {
+                [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
+                }];
+            }
+        }];
     }
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:BMEAccessViewSegue]) {
+        BMERole role = [BMEClient sharedClient].currentUser.role;
+        ((BMEAccessViewController *)segue.destinationViewController).role = role;
+    }
 }
 
 #pragma mark -
@@ -111,6 +129,16 @@
         
         [GVUserDefaults standardUserDefaults].hasAskedForMoreLanguages = YES;
     }
+}
+
+- (void)askForAccessIfNecessary
+{
+    [BMEAccessControlHandler enabledForRole:[BMEClient sharedClient].currentUser.role completion:^(BOOL isEnabled) {
+        if (isEnabled) {
+            return;
+        }
+        [self performSegueWithIdentifier:BMEAccessViewSegue sender:self];
+    }];
 }
 
 #pragma mark -

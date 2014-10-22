@@ -10,8 +10,11 @@
 /* E-mail title */
 "BME_SETTINGS_EMAIL" = "E-mail";
 
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Languages";
+
 /* Select languages title */
-"BME_SETTINGS_SELECT_LANGUAGES" = "Select languages you know";
+"BME_SETTINGS_ADD_LANGUAGES" = "Add languages";
 
 /* Feedback title */
 "BME_SETTINGS_FEEDBACK" = "Give feedback on the app";
@@ -33,3 +36,9 @@
 
 /* Version title */
 "BME_SETTINGS_VERSION_TITLE" = "Version %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Back";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d points";

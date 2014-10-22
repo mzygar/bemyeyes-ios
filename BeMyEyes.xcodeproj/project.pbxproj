@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08EE7919E1693200B45088 /* OpenTok.framework */; };
+		4E1916CF19E5800300B85E61 /* MaskedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1916CE19E5800300B85E61 /* MaskedLabel.swift */; };
+		4E1916D119E5804800B85E61 /* SplitMaskedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */; };
+		4E2B919B19E67F1F00C9D0ED /* BMEAccessControlHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B919A19E67F1F00C9D0ED /* BMEAccessControlHandler.m */; };
+		4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */; };
+		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
+		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
+		4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC10F19E413E00035BB70 /* BMEUserTask.m */; };
+		4E8E21F519E8C03C00316AD8 /* IntroVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */; };
+		4E8E21F619E8C03C00316AD8 /* OnboardingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */; };
+		4E8E21F719E8C03C00316AD8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */; };
+		4EB46C4419F080FE008405B8 /* BMEAccessLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */; };
+		4EB6A1E219E5725F00C72A02 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6A1E119E5725F00C72A02 /* Button.swift */; };
+		4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */; };
+		4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1419E1F48C00141615 /* GradientView.swift */; };
+		4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1519E1F48C00141615 /* PointsBarView.swift */; };
+		4EB6AD1C19E1F4CD00141615 /* BMEUserLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */; };
+		4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */; };
+		4EB6AD2219E1F4F400141615 /* BMEPointsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */; };
+		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
+		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
@@ -29,7 +50,6 @@
 		72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */; };
 		72414AFA196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */; };
 		72414AFD196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */; };
-		725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B0EF51959836700BB4AE0 /* OpenTok.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		725B0EF81959875500BB4AE0 /* call.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EF71959875500BB4AE0 /* call.aiff */; };
 		725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */; };
 		725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */; };
@@ -83,7 +103,6 @@
 		72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */; };
 		72B3C4BD1987D21C00A56D49 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 72B3C4BC1987D21C00A56D49 /* intro.mp4 */; };
 		72B3C4BF1987D31D00A56D49 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */; };
-		72B3C4C51987DF2A00A56D49 /* BMEVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */; };
 		72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */; };
 		72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */; };
 		72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */; };
@@ -116,8 +135,56 @@
 		8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A222A28C44403D94B34BA1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4E901DCD19E5B5680067CEB2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
+		4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVideoViewController.swift; sourceTree = "<group>"; };
+		4E1916CE19E5800300B85E61 /* MaskedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedLabel.swift; sourceTree = "<group>"; };
+		4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitMaskedLabel.swift; sourceTree = "<group>"; };
+		4E2B919919E67F1F00C9D0ED /* BMEAccessControlHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessControlHandler.h; sourceTree = "<group>"; };
+		4E2B919A19E67F1F00C9D0ED /* BMEAccessControlHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessControlHandler.m; sourceTree = "<group>"; };
+		4E7E106D19E5BFCE00D476B2 /* BMEAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessViewController.h; sourceTree = "<group>"; };
+		4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessViewController.m; sourceTree = "<group>"; };
+		4E7E107019E5C02000D476B2 /* BMEAccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessView.h; sourceTree = "<group>"; };
+		4E7E107119E5C02000D476B2 /* BMEAccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessView.m; sourceTree = "<group>"; };
+		4E7E107319E5C3DB00D476B2 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		4E8AC10E19E413E00035BB70 /* BMEUserTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserTask.h; sourceTree = "<group>"; };
+		4E8AC10F19E413E00035BB70 /* BMEUserTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUserTask.m; sourceTree = "<group>"; };
+		4E8E21F119E8C02500316AD8 /* BeMyEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeMyEyes-Bridging-Header.h"; sourceTree = "<group>"; };
+		4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVideoViewController.swift; sourceTree = "<group>"; };
+		4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVideoViewController.swift; sourceTree = "<group>"; };
+		4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		4EB46C4519F080FE008405B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
+		4EB46C4719F08102008405B8 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
+		4EB6A1E119E5725F00C72A02 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		4EB6AD1019E1F47A00141615 /* BMETaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMETaskTableViewCell.h; sourceTree = "<group>"; };
+		4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMETaskTableViewCell.m; sourceTree = "<group>"; };
+		4EB6AD1419E1F48C00141615 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		4EB6AD1519E1F48C00141615 /* PointsBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsBarView.swift; sourceTree = "<group>"; };
+		4EB6AD1A19E1F4CD00141615 /* BMEUserLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserLevel.h; sourceTree = "<group>"; };
+		4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUserLevel.m; sourceTree = "<group>"; };
+		4EB6AD1D19E1F4D700141615 /* BMECommunityStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECommunityStats.h; sourceTree = "<group>"; };
+		4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECommunityStats.m; sourceTree = "<group>"; };
+		4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointsTableViewCell.h; sourceTree = "<group>"; };
+		4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointsTableViewCell.m; sourceTree = "<group>"; };
+		4EBE9BF819E8C91000CBC675 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissSegue.h; path = Source/DismissSegue.h; sourceTree = "<group>"; };
+		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
+		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		60BAD311403180811F795B70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
 		7206A76018FA9BF000251824 /* BMEPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointLabel.m; sourceTree = "<group>"; };
 		7206A76218FA9C0D00251824 /* BMEPointGraphEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphEntry.h; sourceTree = "<group>"; };
@@ -155,7 +222,6 @@
 		72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMELanguagesViewController.m; sourceTree = "<group>"; };
 		72414AF9196AAD5C00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMELanguagesLocalizationTable.strings; sourceTree = "<group>"; };
 		72414AFC196AB16A00A2C5F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEMainLocalizationTable.strings; sourceTree = "<group>"; };
-		725B0EF51959836700BB4AE0 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.2.0/OpenTok.framework"; sourceTree = "<group>"; };
 		725B0EF71959875500BB4AE0 /* call.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = call.aiff; sourceTree = "<group>"; };
 		725B0EF91959896600BB4AE0 /* BMECallAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECallAudioPlayer.h; sourceTree = "<group>"; };
 		725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECallAudioPlayer.m; sourceTree = "<group>"; };
@@ -228,8 +294,6 @@
 		72B1493C18DF6AE100E9A8A9 /* BMESpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMESpeaker.m; sourceTree = "<group>"; };
 		72B3C4BC1987D21C00A56D49 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		72B3C4C31987DF2A00A56D49 /* BMEVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEVideoViewController.h; sourceTree = "<group>"; };
-		72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEVideoViewController.m; sourceTree = "<group>"; };
 		72B3C4C71987E22100A56D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEVideoLocalizationTable.strings; sourceTree = "<group>"; };
 		72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEReportAbuseViewController.h; sourceTree = "<group>"; };
 		72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEReportAbuseViewController.m; sourceTree = "<group>"; };
@@ -300,7 +364,7 @@
 		72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFacebookInfo.m; sourceTree = "<group>"; };
 		72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+BMEPopToClass.h"; sourceTree = "<group>"; };
 		72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+BMEPopToClas.m"; sourceTree = "<group>"; };
-		AD111FA7EA9E4832890E7258 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FD524777E415681609BF9F5D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,7 +378,6 @@
 				726D7B90191A8583005690B7 /* libxml2.dylib in Frameworks */,
 				7262300018BA2807006F388C /* libsqlite3.dylib in Frameworks */,
 				726D7B8E191A8577005690B7 /* libpthread.dylib in Frameworks */,
-				725B0EF61959836800BB4AE0 /* OpenTok.framework in Frameworks */,
 				726D7B8C191A8572005690B7 /* libstdc++.6.0.9.dylib in Frameworks */,
 				7262301818BA39E3006F388C /* Security.framework in Frameworks */,
 				7262301618BA39DF006F388C /* QuartzCore.framework in Frameworks */,
@@ -329,6 +392,7 @@
 				7262300618BA39AA006F388C /* CoreAudio.framework in Frameworks */,
 				7262300418BA39A6006F388C /* CFNetwork.framework in Frameworks */,
 				7262300218BA39A1006F388C /* AVFoundation.framework in Frameworks */,
+				4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */,
 				72622FFE18BA27FE006F388C /* AdSupport.framework in Frameworks */,
 				72622FFA18BA27F2006F388C /* Social.framework in Frameworks */,
 				72622FF818BA27EE006F388C /* Twitter.framework in Frameworks */,
@@ -359,7 +423,7 @@
 				7236E00318B8A87B00F622AA /* BeMyEyes */,
 				7236DFFC18B8A87B00F622AA /* Frameworks */,
 				7236DFFB18B8A87B00F622AA /* Products */,
-				AD111FA7EA9E4832890E7258 /* Pods.xcconfig */,
+				C9FEB88A05BA770475517824 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -435,6 +499,8 @@
 			isa = PBXGroup;
 			children = (
 				7236E00F18B8A87B00F622AA /* Main.storyboard */,
+				4EBE9BF819E8C91000CBC675 /* DismissSegue.h */,
+				4EBE9BF919E8C91000CBC675 /* DismissSegue.m */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -451,6 +517,7 @@
 				72DEF71518B907D10048FA90 /* Models */,
 				7236E03B18B8A9EA00F622AA /* Library */,
 				7236E03C18B8A9EA00F622AA /* Views */,
+				4E8E21F119E8C02500316AD8 /* BeMyEyes-Bridging-Header.h */,
 				72DEF72318B90A6D0048FA90 /* Other sources */,
 			);
 			path = Source;
@@ -461,6 +528,8 @@
 			children = (
 				7236E03518B8A9EA00F622AA /* BMEAppDelegate.h */,
 				7236E03618B8A9EA00F622AA /* BMEAppDelegate.m */,
+				4E2B919919E67F1F00C9D0ED /* BMEAccessControlHandler.h */,
+				4E2B919A19E67F1F00C9D0ED /* BMEAccessControlHandler.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -476,6 +545,8 @@
 				72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */,
 				7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */,
 				7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */,
+				4E7E107319E5C3DB00D476B2 /* UIView+Layout.h */,
+				4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -487,6 +558,7 @@
 				7236E04018B8CCF400F622AA /* BMEBaseViewController.m */,
 				72E65FA518BA7CE3002FB2E0 /* BMEFrontPageViewController.h */,
 				72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */,
+				4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */,
 				72E65FA218BA7C12002FB2E0 /* BMEIntroViewController.h */,
 				72E65FA318BA7C12002FB2E0 /* BMEIntroViewController.m */,
 				72856DE119AF65640027AFF5 /* BMEHelperIntroViewController.h */,
@@ -507,6 +579,8 @@
 				7296569518CC874500E1A9EE /* BMERegisteredViewController.m */,
 				72DEF73918B90E930048FA90 /* BMELoginViewController.h */,
 				72DEF73A18B90E930048FA90 /* BMELoginViewController.m */,
+				4E7E106D19E5BFCE00D476B2 /* BMEAccessViewController.h */,
+				4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */,
 				7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */,
 				7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */,
 				72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */,
@@ -525,8 +599,9 @@
 				727E13E8194B2AF8002EDA7E /* BMEForgotPasswordViewController.m */,
 				72414AF5196AA33200A2C5F4 /* BMELanguagesViewController.h */,
 				72414AF6196AA33200A2C5F4 /* BMELanguagesViewController.m */,
-				72B3C4C31987DF2A00A56D49 /* BMEVideoViewController.h */,
-				72B3C4C41987DF2A00A56D49 /* BMEVideoViewController.m */,
+				4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */,
+				4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */,
+				4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -561,6 +636,18 @@
 				7206A76518FA9C0D00251824 /* BMEPointGraphView.m */,
 				7206A75F18FA9BF000251824 /* BMEPointLabel.h */,
 				7206A76018FA9BF000251824 /* BMEPointLabel.m */,
+				4EB6AD1019E1F47A00141615 /* BMETaskTableViewCell.h */,
+				4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */,
+				4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */,
+				4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */,
+				4EB6AD1419E1F48C00141615 /* GradientView.swift */,
+				4E1916CE19E5800300B85E61 /* MaskedLabel.swift */,
+				4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */,
+				4EB6AD1519E1F48C00141615 /* PointsBarView.swift */,
+				4EB6A1E119E5725F00C72A02 /* Button.swift */,
+				4EE91D1319E5977C00CF4F23 /* RadioButton.swift */,
+				4E7E107019E5C02000D476B2 /* BMEAccessView.h */,
+				4E7E107119E5C02000D476B2 /* BMEAccessView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -589,6 +676,7 @@
 				72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */,
 				72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */,
 				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
+				4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 			);
 			name = Localizable;
@@ -605,10 +693,16 @@
 				72DEF71B18B907D10048FA90 /* BMEToken.m */,
 				72DEF71C18B907D10048FA90 /* BMEUser.h */,
 				72DEF71D18B907D10048FA90 /* BMEUser.m */,
+				4EB6AD1A19E1F4CD00141615 /* BMEUserLevel.h */,
+				4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */,
+				4E8AC10E19E413E00035BB70 /* BMEUserTask.h */,
+				4E8AC10F19E413E00035BB70 /* BMEUserTask.m */,
 				72E65FAE18BA8214002FB2E0 /* BMEFacebookInfo.h */,
 				72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */,
 				726D7B91191AA21A005690B7 /* BMEPointEntry.h */,
 				726D7B92191AA21A005690B7 /* BMEPointEntry.m */,
+				4EB6AD1D19E1F4D700141615 /* BMECommunityStats.h */,
+				4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -616,7 +710,7 @@
 		72DEF72318B90A6D0048FA90 /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
-				725B0EF51959836700BB4AE0 /* OpenTok.framework */,
+				4E08EE7919E1693200B45088 /* OpenTok.framework */,
 				72DEF72418B90A6D0048FA90 /* AESCrypt */,
 			);
 			path = "Other sources";
@@ -639,6 +733,15 @@
 			path = AESCrypt;
 			sourceTree = "<group>";
 		};
+		C9FEB88A05BA770475517824 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60BAD311403180811F795B70 /* Pods.debug.xcconfig */,
+				FD524777E415681609BF9F5D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -651,6 +754,7 @@
 				7236DFF718B8A87B00F622AA /* Frameworks */,
 				7236DFF818B8A87B00F622AA /* Resources */,
 				B7DF8BE5A9DE4CE1B1BDE152 /* Copy Pods Resources */,
+				4E901DCD19E5B5680067CEB2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -672,7 +776,12 @@
 				ORGANIZATIONNAME = "Be My Eyes";
 				TargetAttributes = {
 					7236DFF918B8A87B00F622AA = {
-						DevelopmentTeam = FB85FFW734;
+						DevelopmentTeam = VS2JRRGV67;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -728,6 +837,7 @@
 				72856DF819AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings in Resources */,
 				72A7676F1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings in Resources */,
 				72856DF519AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings in Resources */,
+				4EB46C4419F080FE008405B8 /* BMEAccessLocalization.strings in Resources */,
 				72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */,
 				72A767721902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings in Resources */,
 			);
@@ -748,7 +858,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7D633721AEF4038AC00C23E /* Check Pods Manifest.lock */ = {
@@ -774,19 +884,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				72856DE619AF65770027AFF5 /* BMEBlindIntroViewController.m in Sources */,
+				4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */,
 				72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */,
 				7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */,
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,
+				4E8E21F719E8C03C00316AD8 /* VideoViewController.swift in Sources */,
+				4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */,
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
 				725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */,
 				72B1493D18DF6AE100E9A8A9 /* BMESpeaker.m in Sources */,
 				72856DE319AF65640027AFF5 /* BMEHelperIntroViewController.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
+				4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */,
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
 				72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
+				4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
 				729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
@@ -794,26 +909,39 @@
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
+				4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */,
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,
+				4E1916CF19E5800300B85E61 /* MaskedLabel.swift in Sources */,
 				7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */,
 				727E13E9194B2AF8002EDA7E /* BMEForgotPasswordViewController.m in Sources */,
+				4EB6AD1819E1F48C00141615 /* PointsBarView.swift in Sources */,
+				4EB6AD2219E1F4F400141615 /* BMEPointsTableViewCell.m in Sources */,
+				4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */,
+				4EB6A1E219E5725F00C72A02 /* Button.swift in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
 				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
+				4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */,
 				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
 				72B1493418DF4C8900E9A8A9 /* BMECallViewController.m in Sources */,
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
+				4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */,
 				72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,
+				4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */,
 				7236E04118B8CCF400F622AA /* BMEBaseViewController.m in Sources */,
 				7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */,
+				4E2B919B19E67F1F00C9D0ED /* BMEAccessControlHandler.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
 				7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */,
+				4E1916D119E5804800B85E61 /* SplitMaskedLabel.swift in Sources */,
 				729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */,
+				4E8E21F519E8C03C00316AD8 /* IntroVideoViewController.swift in Sources */,
 				72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */,
-				72B3C4C51987DF2A00A56D49 /* BMEVideoViewController.m in Sources */,
 				72DEF73318B90A6D0048FA90 /* NSString+Base64.m in Sources */,
 				72DEF71318B907CB0048FA90 /* BMEClient.m in Sources */,
 				72DEF71E18B907D10048FA90 /* BMEOpenTokSession.m in Sources */,
+				4E8E21F619E8C03C00316AD8 /* OnboardingVideoViewController.swift in Sources */,
+				4EB6AD1C19E1F4CD00141615 /* BMEUserLevel.m in Sources */,
 				72DEF71F18B907D10048FA90 /* BMERequest.m in Sources */,
 				72DEF73118B90A6D0048FA90 /* NSData+Base64.m in Sources */,
 				72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */,
@@ -827,6 +955,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EB46C4519F080FE008405B8 /* en */,
+				4EB46C4719F08102008405B8 /* da */,
+			);
+			name = BMEAccessLocalization.strings;
+			sourceTree = "<group>";
+		};
 		720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1078,10 +1215,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1113,24 +1249,25 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		7236E02D18B8A87B00F622AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
+			baseConfigurationReference = 60BAD311403180811F795B70 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1139,24 +1276,28 @@
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
-				VALID_ARCHS = armv7;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		7236E02E18B8A87B00F622AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD111FA7EA9E4832890E7258 /* Pods.xcconfig */;
+			baseConfigurationReference = FD524777E415681609BF9F5D /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (64H298RDY6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Simon Stovring (64H298RDY6)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BeMyEyes/Source/Other\\ sources/**",
@@ -1165,8 +1306,10 @@
 				GCC_PREFIX_HEADER = "BeMyEyes/BeMyEyes-Prefix.pch";
 				INFOPLIST_FILE = "BeMyEyes/BeMyEyes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d8b4b68d-bfb7-4f6f-ad23-1fcedfa4e9e6";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

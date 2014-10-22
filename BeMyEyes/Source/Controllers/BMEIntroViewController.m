@@ -7,19 +7,14 @@
 //
 
 #import "BMEIntroViewController.h"
-#import "BMESignUpMethodViewController.h"
-
-#define BMEIntroSignUpMethodSegue @"SignUpMethod"
 
 @implementation BMEIntroViewController
 
-#pragma mark -
-#pragma mark Segue
+#pragma mark - Life cycle
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:BMEIntroSignUpMethodSegue]) {
-        ((BMESignUpMethodViewController *)segue.destinationViewController).role = self.role;
-    }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 
 @end
