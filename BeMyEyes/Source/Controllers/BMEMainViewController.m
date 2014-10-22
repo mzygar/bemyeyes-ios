@@ -82,6 +82,10 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
     }
 }
 
+- (void)shouldLocalize {
+    [self.settingsButton setAccessibilityLabel:MKLocalizedFromTable(BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL, BMEMainLocalizationTable)];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 

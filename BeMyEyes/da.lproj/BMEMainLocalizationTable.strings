@@ -1,9 +1,11 @@
 /* 
   BMEMainViewController.strings
   BeMyEyes
+ 
   Created by Simon Støvring on 07/07/14.
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
+
 /* Title of cancel button in alert view shown when asking the blind if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "Nej";
 
@@ -28,3 +30,5 @@
 /* Title in alert view shown when asking the helper if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "Kender du flere sprog?";
 
+/* Settings button accessibility label */
+"BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Indstillinger";
