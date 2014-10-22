@@ -122,7 +122,7 @@
 
 + (void)hasNotificationsEnabled:(void(^)(BOOL isEnabled))completion {
     BOOL hasNotificationsToken = [GVUserDefaults standardUserDefaults].deviceToken != nil;
-    BOOL isTemporary = [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken;
+    BOOL isTemporary = [[GVUserDefaults standardUserDefaults].deviceToken rangeOfString:@"bmetemp"].location == 0; // [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken might not have been set yet
     BOOL isEnabled = hasNotificationsToken && !isTemporary;
     completion(isEnabled);
 }
