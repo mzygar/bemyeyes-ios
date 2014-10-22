@@ -806,11 +806,11 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <action selector="backButtonPressed:" destination="rmT-tx-lgV" eventType="touchUpInside" id="CeZ-qI-5eR"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rf-UO-nE9">
-                                <rect key="frame" x="20" y="88" width="280" height="94"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rf-UO-nE9">
+                                <rect key="frame" x="20" y="88" width="280" height="91"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Become a part of the network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="taG-tn-K8A">
-                                        <rect key="frame" x="0.0" y="11" width="280" height="73"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become a part of the network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="taG-tn-K8A">
+                                        <rect key="frame" x="0.0" y="9" width="280" height="73"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="4cy-MZ-UDo"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="73" id="V1O-on-rTL"/>
@@ -837,8 +837,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <action selector="facebookButtonPressed:" destination="rmT-tx-lgV" eventType="touchUpInside" id="AX5-i2-bJZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-12-sgI">
-                                <rect key="frame" x="10" y="258" width="300" height="33.5"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your first name will be public and presented to helpers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-12-sgI">
+                                <rect key="frame" x="10" y="261" width="300" height="33.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="gjA-8l-8Pn"/>
                                 </constraints>
@@ -908,11 +908,11 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <segue destination="4E4-en-CHX" kind="push" id="WIe-9w-E6D"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mp2-8S-Uh2">
-                                <rect key="frame" x="0.0" y="301" width="320" height="67.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mp2-8S-Uh2">
+                                <rect key="frame" x="0.0" y="304" width="320" height="65"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVH-Zf-Tf9">
-                                        <rect key="frame" x="20" y="-1" width="286" height="70"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVH-Zf-Tf9">
+                                        <rect key="frame" x="20" y="-2" width="286" height="70"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can also" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqz-Jo-m0H">
                                                 <rect key="frame" x="0.0" y="0.0" width="286" height="35"/>
@@ -938,8 +938,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <constraint firstItem="oqz-Jo-m0H" firstAttribute="height" secondItem="EVH-Zf-Tf9" secondAttribute="height" multiplier="0.5" id="rxp-vG-Btf"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLG-Sj-ggw" userLabel="Sign Up Button">
-                                        <rect key="frame" x="17" y="-1" width="286" height="70"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLG-Sj-ggw" userLabel="Sign Up Button">
+                                        <rect key="frame" x="17" y="-2" width="286" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
