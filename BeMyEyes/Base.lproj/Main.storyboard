@@ -2164,12 +2164,12 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N0m-gc-YxM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3578" y="1775"/>
+            <point key="canvasLocation" x="3557" y="1775"/>
         </scene>
-        <!--Intro Video View Controller-->
+        <!--Task Intro Video View Controller-->
         <scene sceneID="rcX-St-YDh">
             <objects>
-                <viewController id="joq-0X-lAZ" customClass="IntroVideoViewController" customModule="BeMyEyes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="joq-0X-lAZ" customClass="TaskIntroVideoViewController" customModule="BeMyEyes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kTU-oZ-N1Q"/>
                         <viewControllerLayoutGuide type="bottom" id="Cex-b2-6DK"/>
@@ -2203,7 +2203,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T65-hC-CyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3578" y="2385"/>
+            <point key="canvasLocation" x="3557" y="2385"/>
         </scene>
         <!--Your Languages-->
         <scene sceneID="SuY-BI-aAL">
@@ -2889,7 +2889,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
     <inferredMetricsTieBreakers>
         <segue reference="LUD-Ic-JoT"/>
         <segue reference="kdn-ps-MZv"/>
-        <segue reference="Zkk-7c-PpU"/>
         <segue reference="tPL-wK-r0M"/>
+        <segue reference="THh-yj-HlV"/>
     </inferredMetricsTieBreakers>
 </document>
