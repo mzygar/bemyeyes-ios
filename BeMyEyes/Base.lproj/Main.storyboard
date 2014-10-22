@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1356,9 +1354,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Yx2-YA-dhW" firstAttribute="leading" secondItem="Itz-5i-7OK" secondAttribute="leading" id="1oM-a4-Ujz"/>
-                                                <constraint firstItem="Yx2-YA-dhW" firstAttribute="firstBaseline" secondItem="Itz-5i-7OK" secondAttribute="baseline" constant="15" id="Hue-Hy-aZP"/>
+                                                <constraint firstItem="Yx2-YA-dhW" firstAttribute="top" secondItem="Itz-5i-7OK" secondAttribute="bottom" id="BRl-Ha-jzG"/>
+                                                <constraint firstItem="Itz-5i-7OK" firstAttribute="top" secondItem="Hrm-bE-OmT" secondAttribute="top" id="Bla-Uf-sqi"/>
                                                 <constraint firstItem="Itz-5i-7OK" firstAttribute="leading" secondItem="LlA-uW-b6t" secondAttribute="leading" constant="15" id="Xyz-qA-bZm"/>
-                                                <constraint firstItem="Hrm-bE-OmT" firstAttribute="baseline" secondItem="Itz-5i-7OK" secondAttribute="baseline" id="bg2-kx-NVn"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hrm-bE-OmT" secondAttribute="trailing" constant="15" id="cw2-bp-jS1"/>
                                                 <constraint firstItem="Hrm-bE-OmT" firstAttribute="top" secondItem="LlA-uW-b6t" secondAttribute="top" priority="900" constant="8" id="e38-Un-Rkf"/>
                                                 <constraint firstItem="Hrm-bE-OmT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Itz-5i-7OK" secondAttribute="trailing" constant="5" id="iF3-z6-fh6"/>
@@ -2887,8 +2885,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LUD-Ic-JoT"/>
         <segue reference="kdn-ps-MZv"/>
+        <segue reference="OmC-0b-FbA"/>
         <segue reference="tPL-wK-r0M"/>
         <segue reference="THh-yj-HlV"/>
     </inferredMetricsTieBreakers>
