@@ -874,7 +874,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <action selector="privacyButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpOutside" id="Wlk-rv-zrf"/>
                                     <action selector="privacyButtonReleased:" destination="rmT-tx-lgV" eventType="touchUpInside" id="e4a-8C-yIX"/>
                                     <action selector="privacyButtonTouched:" destination="rmT-tx-lgV" eventType="touchDown" id="uN1-0G-EIz"/>
-                                    <segue destination="pPv-pk-tQL" kind="modal" identifier="LoggedIn" id="HLG-mD-PKe"/>
+                                    <segue destination="DP6-hh-C0u" kind="push" id="h35-Xz-inH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Agreements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvx-U1-YpW">
@@ -2842,7 +2842,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXf-lv-Byk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="1175"/>
+            <point key="canvasLocation" x="2129" y="1084"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SjL-ii-72Q">
@@ -2884,7 +2884,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="6SH-Yu-aNS"/>
-        <segue reference="HLG-mD-PKe"/>
+        <segue reference="OmC-0b-FbA"/>
         <segue reference="kdn-ps-MZv"/>
         <segue reference="Zkk-7c-PpU"/>
     </inferredMetricsTieBreakers>
