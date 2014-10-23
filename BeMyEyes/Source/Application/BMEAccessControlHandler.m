@@ -262,13 +262,11 @@
 
 + (BOOL)canGoToSystemSettings
 {
-    @try {
+    if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
+        return NO; 
+    } else {
         NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         return [[UIApplication sharedApplication] canOpenURL:url];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"ff");
-        return NO;
     }
 }
 
