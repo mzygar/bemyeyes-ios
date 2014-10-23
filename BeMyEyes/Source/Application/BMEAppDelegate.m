@@ -14,6 +14,7 @@
 #import "BMECallViewController.h"
 #import "BMECallAudioPlayer.h"
 #import "BMEAccessControlHandler.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
@@ -38,6 +39,8 @@ static const BMESettingsAPI api = BMESettingsAPIDevelopment;
 #ifdef DEVELOPMENT
     [GVUserDefaults standardUserDefaults].api = api;
 #endif
+    
+    [Crashlytics startWithAPIKey:@"41644116426a80147f822825bb643b3020b0f9d3"];
     
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
