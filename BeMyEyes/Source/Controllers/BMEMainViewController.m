@@ -46,6 +46,11 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
         default:
             break;
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleAppBecameActive)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,17 +63,30 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self checkAppState];
+}
+
+- (void)handleAppBecameActive
+{
+    [self checkAppState];
+}
+
+- (void)checkAppState
+{
     if (self.isLoggedOut) {
         self.view.window.rootViewController = [self.view.window.rootViewController.storyboard instantiateInitialViewController];
     } else {
         [self askForMoreLanguagesIfNecessary];
         [self askForAccessIfNecessary];
-        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
-                [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
-                }];
-            }
-        }];
+        if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
+            [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+                if (isEnabled) {
+                    // If user is helper and has notifications enabled, to a request to register for a possibly new device token
+                    [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
+                    }];
+                }
+            }];
+        }
     }
 }
 
