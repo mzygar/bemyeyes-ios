@@ -28,8 +28,8 @@
 "BME_ACCESS_CAMERA_TITLE" = "Camera";
 
 /* Explanation for why the helper needs to enable camera access */
-"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Even though we don't send your video to the person you're helping, this is necessary due to technicalities.";
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "We don't send your video to the person you're helping, but it's needed to establish the connection.";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Your camera content is shown to the helpers.";
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "To be able to show the helper what you need help with.";
 
