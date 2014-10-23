@@ -1950,7 +1950,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PIb-FL-Uxe" kind="modal" id="tPL-wK-r0M"/>
+                                    <segue destination="PIb-FL-Uxe" kind="modal" identifier="KnownLanguages" id="tPL-wK-r0M"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZO-6I-4RC" userLabel="Separator Account Info">
@@ -2758,7 +2758,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="settingsButton" destination="SKH-X4-RrH" id="0qj-hN-872"/>
-                        <segue destination="PIb-FL-Uxe" kind="modal" identifier="KnownLanguages" id="6SH-Yu-aNS"/>
                         <segue destination="zzo-OK-XFh" kind="modal" identifier="AccessView" id="ZV1-uX-4ce"/>
                     </connections>
                 </viewController>
@@ -2885,9 +2884,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="THh-yj-HlV"/>
         <segue reference="kdn-ps-MZv"/>
         <segue reference="OmC-0b-FbA"/>
-        <segue reference="tPL-wK-r0M"/>
-        <segue reference="THh-yj-HlV"/>
     </inferredMetricsTieBreakers>
 </document>
