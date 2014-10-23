@@ -116,7 +116,11 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
         [alert show];
     } else {
-        [self loginWithEmail:self.emailTextField.text password:self.passwordTextField.text];
+        // Trim whitespace
+        NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        [self loginWithEmail:email password:password];
         [self dismissKeyboard];
     }
 }

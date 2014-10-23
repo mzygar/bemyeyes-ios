@@ -48,12 +48,14 @@
     }
     
     if ([self performEmailValidation]) {
-        [self sendNewPasswordToEmail:self.emailTextField.text];
+        NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [self sendNewPasswordToEmail:email];
     }
 }
 
 - (BOOL)performEmailValidation {
-    if ([BMEEmailValidator isEmailValid:self.emailTextField.text]) {
+    NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if ([BMEEmailValidator isEmailValid:email]) {
         return YES;
     } else {
         NSString *title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_TITLE, BMEForgotPasswordLocalizationTable);
