@@ -22,9 +22,11 @@
 @property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
 @end
 
-#define DEVELOPMENT 1
-#ifdef DEVELOPMENT
-static const BMESettingsAPI api = BMESettingsAPIDevelopment;
+#define DEVELOPMENT 0
+#if DEVELOPMENT
+    #define API BMESettingsAPIDevelopment
+#else 
+    #define API BMESettingsAPIPublic
 #endif
 
 @implementation BMEAppDelegate
@@ -35,10 +37,8 @@ static const BMESettingsAPI api = BMESettingsAPIDevelopment;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString *shortIdInLaunchOptions = [self shortIdInLaunchOptions:launchOptions];
     self.launchedWithShortID = (shortIdInLaunchOptions != nil);
-    
-#ifdef DEVELOPMENT
-    [GVUserDefaults standardUserDefaults].api = api;
-#endif
+  
+    [GVUserDefaults standardUserDefaults].api = API;
     
     [Crashlytics startWithAPIKey:@"41644116426a80147f822825bb643b3020b0f9d3"];
     
@@ -59,11 +59,13 @@ static const BMESettingsAPI api = BMESettingsAPIDevelopment;
         [Appirater setTimeBeforeReminding:2];
         [Appirater appLaunched:NO];
     }
-    
+
+#if DEVELOPMENT
     UITapGestureRecognizer *secretTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSecretTapGesture:)];
     secretTapGesture.numberOfTouchesRequired = 4;
     secretTapGesture.numberOfTapsRequired = 3;
     [self.window addGestureRecognizer:secretTapGesture];
+#endif
     
     return YES;
 }
