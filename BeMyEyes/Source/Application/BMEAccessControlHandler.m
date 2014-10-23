@@ -121,9 +121,30 @@
 }
 
 + (void)hasNotificationsEnabled:(void(^)(BOOL isEnabled))completion {
-    BOOL hasNotificationsToken = [GVUserDefaults standardUserDefaults].deviceToken != nil;
-    BOOL isTemporary = [[GVUserDefaults standardUserDefaults].deviceToken rangeOfString:@"bmetemp"].location == 0; // [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken might not have been set yet
-    BOOL isEnabled = hasNotificationsToken && !isTemporary;
+    // System – require badge and alert
+    BOOL isUserEnabled = NO;
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
+        BOOL isRegisteredForRemoteNotifications = [UIApplication sharedApplication].isRegisteredForRemoteNotifications;
+        UIUserNotificationSettings *userNotificationSettings = [UIApplication sharedApplication].currentUserNotificationSettings;
+        UIUserNotificationType types = userNotificationSettings.types;
+        BOOL hasAlertEnabled = types & UIUserNotificationTypeAlert;
+        BOOL hasBadgeEnabled = types & UIUserNotificationTypeBadge;
+        BOOL hasAlertAndBadgeEnabled = hasAlertEnabled && hasBadgeEnabled;
+        isUserEnabled = isRegisteredForRemoteNotifications && hasAlertAndBadgeEnabled;
+    } else { // iOS 7 and older
+        UIRemoteNotificationType types = [UIApplication sharedApplication].enabledRemoteNotificationTypes;
+        BOOL hasAlertEnabled = types & UIRemoteNotificationTypeAlert;
+        BOOL hasBadgeEnabled = types & UIRemoteNotificationTypeBadge;
+        BOOL hasAlertAndBadgeEnabled = hasAlertEnabled && hasBadgeEnabled;
+        isUserEnabled = hasAlertAndBadgeEnabled;
+    }
+    // Token
+    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
+    BOOL hasNotificationsToken = deviceToken != nil;
+    BOOL isTemporary = [deviceToken rangeOfString:@"bmetemp"].location == 0; // [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken might not have been set yet
+    BOOL hasValidToken = hasNotificationsToken && !isTemporary;
+    // Combined
+    BOOL isEnabled = hasValidToken && isUserEnabled;
     completion(isEnabled);
 }
 
