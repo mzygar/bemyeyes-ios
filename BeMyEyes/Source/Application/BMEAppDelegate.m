@@ -273,8 +273,7 @@ static const BMESettingsAPI api = BMESettingsAPIDevelopment;
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
             navigationController.navigationBarHidden = YES;
             
-            UINavigationController *rootNavigationController = (UINavigationController *)self.window.rootViewController;
-            [rootNavigationController presentViewController:navigationController animated:YES completion:nil];
+            [self.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
         }
     }];
 }

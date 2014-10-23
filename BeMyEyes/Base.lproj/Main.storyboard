@@ -2461,7 +2461,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="disconnectButton" destination="2ev-9r-iXb" id="Fw3-Va-8pG"/>
                         <outlet property="statusLabel" destination="SIz-JI-R6d" id="ujO-VG-baX"/>
                         <outlet property="videoContainerView" destination="fRK-Xo-Ag6" id="jgB-VT-BKL"/>
-                        <segue destination="sPf-cG-W7c" kind="modal" identifier="ReportAbuse" id="S6x-8p-bFY"/>
+                        <segue destination="sPf-cG-W7c" kind="push" identifier="ReportAbuse" id="S6x-8p-bFY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Stf-oQ-mRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
