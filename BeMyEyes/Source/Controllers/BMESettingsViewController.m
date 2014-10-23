@@ -254,7 +254,7 @@ static NSString *const videoSegueIdentifier = @"Video";
 
 - (NSString *)shareMessage
 {
-    return @"Be My Eyes";
+    return MKLocalizedFromTable(BME_SETTINGS_TASK_SHARE_MESSAGE, BMESettingsLocalizationTable);
 }
 
 - (NSURL *)shareUrl
