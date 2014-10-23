@@ -43,7 +43,7 @@ class VideoViewController: BMEBaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Slide)
         ignoreMuteSwitch()
         if moviePlayerController.playbackState != .Playing {
             moviePlayerController.play()

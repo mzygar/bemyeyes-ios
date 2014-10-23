@@ -46,28 +46,47 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
         default:
             break;
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleAppBecameActive)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self checkAppState];
+}
+
+- (void)handleAppBecameActive
+{
+    [self checkAppState];
+}
+
+- (void)checkAppState
+{
     if (self.isLoggedOut) {
         self.view.window.rootViewController = [self.view.window.rootViewController.storyboard instantiateInitialViewController];
     } else {
         [self askForMoreLanguagesIfNecessary];
         [self askForAccessIfNecessary];
-        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
-                [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
-                }];
-            }
-        }];
+        if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
+            [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+                if (isEnabled) {
+                    // If user is helper and has notifications enabled, to a request to register for a possibly new device token
+                    [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
+                    }];
+                }
+            }];
+        }
     }
 }
 
@@ -80,6 +99,10 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
         BMERole role = [BMEClient sharedClient].currentUser.role;
         ((BMEAccessViewController *)segue.destinationViewController).role = role;
     }
+}
+
+- (void)shouldLocalize {
+    [self.settingsButton setAccessibilityLabel:MKLocalizedFromTable(BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL, BMEMainLocalizationTable)];
 }
 
 #pragma mark -

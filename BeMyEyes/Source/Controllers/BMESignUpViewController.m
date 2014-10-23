@@ -95,10 +95,11 @@
         progressOverlayView.mode = MRProgressOverlayViewModeIndeterminate;
         progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_OVERLAY_REGISTERING_TITLE, BMESignUpLocalizationTable);
         
-        NSString *email = [self.emailTextField text];
-        NSString *password = [self.passwordTextField text];
-        NSString *firstName = [self.firstNameTextField text];
-        NSString *lastName = [self.lastNameTextField text];
+        // Trim whitespace
+        NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *firstName = [self.firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *lastName = [self.lastNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [[BMEClient sharedClient] createUserWithEmail:email password:password firstName:firstName lastName:lastName role:self.role completion:^(BOOL success, NSError *error) {
             if (success && !error) {
                 progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE, BMESignUpLocalizationTable);
@@ -161,10 +162,14 @@
 }
 
 - (BOOL)isInformationValid {
-    BOOL isFirstNameEmpty = [self.firstNameTextField text] == 0;
-    BOOL isLastNameEmpty = [self.lastNameTextField text] == 0;
-    BOOL isEmailEmpty = [self.emailTextField text] == 0;
-    BOOL isPasswordEmpty = [self.passwordTextField text] == 0;
+    NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *firstName = [self.firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *lastName = [self.lastNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    BOOL isFirstNameEmpty = firstName == 0;
+    BOOL isLastNameEmpty = lastName == 0;
+    BOOL isEmailEmpty = email == 0;
+    BOOL isPasswordEmpty = email == 0;
     
     if (isFirstNameEmpty || isLastNameEmpty || isEmailEmpty || isPasswordEmpty) {
         if (isFirstNameEmpty) {
@@ -184,7 +189,7 @@
         [alert show];
         
         return NO;
-    } else if (![BMEEmailValidator isEmailValid:[self.emailTextField text]]) {
+    } else if (![BMEEmailValidator isEmailValid:email]) {
         NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_TITLE, BMESignUpLocalizationTable);
         NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_MESSAGE, BMESignUpLocalizationTable);
         NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_CANCEL, BMESignUpLocalizationTable);
@@ -192,7 +197,7 @@
         [alert show];
         
         return NO;
-    } else if ([[self.passwordTextField text] length] < BMESignUpMinimumPasswordLength) {
+    } else if ([password length] < BMESignUpMinimumPasswordLength) {
         NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_TITLE, BMESignUpLocalizationTable);
         NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_MESSAGE, BMESignUpLocalizationTable);
         NSString *cancelButton = MKLocalizedFromTable(BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_CANCEL, BMESignUpLocalizationTable);

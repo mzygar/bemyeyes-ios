@@ -14,14 +14,10 @@ class OnboardingVideoViewController: IntroVideoViewController {
     
     var role: BMERole?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
-        didFinishPlaying = {
-            if self.navigationController?.presentedViewController == self {
-                self.performSegueWithIdentifier(self.videoToIntroHelperSegue, sender: self)
-            }
-        }
+    override func finishedPlaying() {
+        super.finishedPlaying()
+        
+        self.performSegueWithIdentifier(videoToIntroHelperSegue, sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
