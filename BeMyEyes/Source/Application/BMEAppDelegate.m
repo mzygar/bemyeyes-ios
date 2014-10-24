@@ -22,7 +22,7 @@
 @property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
 @end
 
-#define DEVELOPMENT 0
+#define DEVELOPMENT 1
 #if DEVELOPMENT
     #define API BMESettingsAPIDevelopment
 #else 
