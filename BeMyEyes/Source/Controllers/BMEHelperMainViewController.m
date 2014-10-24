@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 };
 
 @interface BMEHelperMainViewController () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -77,8 +77,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 @property (strong, nonatomic) NSArray *pointEntries;
 
-@property (strong, nonatomic) NSString *greetingFormat;
-
 @property (assign, nonatomic) BOOL failedLoadingPoints;
 @end
 
@@ -112,7 +110,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
     
-    [self displayGreeting];
+    [self updateToProfile];
     
     [self snapSnoozeSliderToStep:BMESnoozeStep0 animated:NO];
     
@@ -124,7 +122,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     self.pointEntries = nil;
-    self.greetingFormat = nil;
 }
 
 - (void)shouldLocalize {
@@ -166,31 +163,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self reloadPoints];
 }
 
-- (void)displayGreeting {
-    if (!self.greetingFormat) {
-        self.greetingFormat = [self randomGreetingFormat];
-    }
-    
-    if (self.greetingFormat) {
-        NSString *name = [BMEClient sharedClient].currentUser.firstName;
-        self.greetingLabel.text = [NSString stringWithFormat:self.greetingFormat, name];
-    } else {
-        self.greetingLabel.text = nil;
-    }
-}
-
-- (NSString *)randomGreetingFormat {
-    NSArray *greetingFormats = @[ MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_1, BMEHelperMainLocalizationTable),
-                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_2, BMEHelperMainLocalizationTable),
-                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_3, BMEHelperMainLocalizationTable),
-                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_4, BMEHelperMainLocalizationTable),
-                                  MKLocalizedFromTable(BME_HELPER_MAIN_GREETING_5, BMEHelperMainLocalizationTable) ];
-    if (greetingFormats) {
-        NSString *greetingFormat = greetingFormats[arc4random() % [greetingFormats count]];
-        return greetingFormat;
-    }
-    
-    return nil;
+- (void)updateToProfile {
+    NSString *name = [BMEClient sharedClient].currentUser.firstName;
+    self.nameLabel.text = name;
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
@@ -314,7 +289,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 #pragma mark Notifications
 
 - (void)didUpdateProfile:(NSNotification *)notification {
-    [self displayGreeting];
+    [self updateToProfile];
 }
 
 - (void)didUpdatePoint:(NSNotification *)notification {
