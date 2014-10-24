@@ -58,4 +58,16 @@
     }
 }
 
+#pragma mark - Accessibility
+
+- (NSString *)accessibilityLabel
+{
+    NSString *title = self.title;
+    NSString *detail = self.detail;
+    if ([detail isEqual:MKLocalizedFromTableWithFormat(BME_SETTINGS_TASK_COMPLETED, BMESettingsLocalizationTable)]) {
+        detail = MKLocalizedFromTableWithFormat(BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL, BMESettingsLocalizationTable);
+    }
+    return [title stringByAppendingFormat:@". %@", detail];
+}
+
 @end

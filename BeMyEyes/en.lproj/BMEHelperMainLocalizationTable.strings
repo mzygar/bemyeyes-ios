@@ -55,6 +55,15 @@
 /* Points watch video description */
 "BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Watched video";
 
+/* Task share on twitter description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION" = "Share on Twitter";
+
+/* Task share on facebook description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION" = "Share on Facebook";
+
+/* Task watch video description */
+"BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION" = "Watch video";
+
 /* Community network description */
 "BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "The Be My Eyes Network";
 
@@ -75,19 +84,4 @@
 
 /* Snooze status text when not snoozing */
 "BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "You are currently active";
-
-/* Greeting for helper. %@ is replaced with the name. */
-"BME_HELPER_MAIN_GREETING_1" = "Hi %@!";
-
-/* Greeting for helper. %@ is replaced with the name. */
-"BME_HELPER_MAIN_GREETING_2" = "Ciao %@!";
-
-/* Greeting for helper. %@ is replaced with the name. */
-"BME_HELPER_MAIN_GREETING_3" = "Hello %@!";
-
-/* Greeting for helper. %@ is replaced with the name. */
-"BME_HELPER_MAIN_GREETING_4" = "Hey %@!";
-
-/* Greeting for helper. %@ is replaced with the name. */
-"BME_HELPER_MAIN_GREETING_5" = "Howdy %@!";
 

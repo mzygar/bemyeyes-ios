@@ -36,11 +36,11 @@
 - (NSString *)localizableKeyForType {
     switch (self.type) {
         case BMEUserTaskTypeShareOnFacebook:
-            return BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION;
+            return BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION;
         case BMEUserTaskTypeShareOnTwitter:
-            return BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION;
+            return BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION;
         case BMEUserTaskTypeWatchVideo:
-            return BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION;
+            return BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION;
         default:
             break;
     }

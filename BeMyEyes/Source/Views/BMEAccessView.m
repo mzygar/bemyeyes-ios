@@ -80,5 +80,24 @@
     return _messageLabel;
 }
 
+
+#pragma mark - Accessibility
+
+- (BOOL)isAccessibilityElement
+{
+    return YES;
+}
+
+- (NSString *)accessibilityLabel
+{
+    return [self.titleLabel.text stringByAppendingFormat:@". %@", self.messageLabel.text];
+}
+
+- (UIAccessibilityTraits)accessibilityTraits
+{
+    return UIAccessibilityTraitButton;
+}
+
+
 @end
 

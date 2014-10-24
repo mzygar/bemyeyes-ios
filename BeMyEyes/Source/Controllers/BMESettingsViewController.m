@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UILabel *knownLanguagesLabel;
-@property (weak, nonatomic) IBOutlet UITextField *knownLanguagesTextField;
+@property (weak, nonatomic) IBOutlet UILabel *knownLanguagesField;
 @property (weak, nonatomic) IBOutlet UIButton *selectLanguagesButton;
 @property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
 @property (weak, nonatomic) IBOutlet UITableView *tasksTableView;
@@ -78,11 +78,15 @@ static NSString *const videoSegueIdentifier = @"Video";
 
 - (void)shouldLocalize {
     self.headlineLabel.text = MKLocalizedFromTable(BME_SETTINGS_HEADLINE, BMESettingsLocalizationTable);
+    self.headlineLabel.accessibilityTraits = UIAccessibilityTraitHeader;
     self.firstNameLabel.text = MKLocalizedFromTable(BME_SETTINGS_FIRST_NAME, BMESettingsLocalizationTable);
+    self.firstNameTextField.accessibilityLabel = self.firstNameLabel.text;
     self.lastNameLabel.text = MKLocalizedFromTable(BME_SETTINGS_LAST_NAME, BMESettingsLocalizationTable);
+    self.lastNameTextField.accessibilityLabel = self.lastNameLabel.text;
     self.emailLabel.text = MKLocalizedFromTable(BME_SETTINGS_EMAIL, BMESettingsLocalizationTable);
+    self.emailTextField.accessibilityLabel = self.emailLabel.text;
     
-    self.knownLanguagesTextField.text = MKLocalizedFromTable(BME_SETTINGS_LANGUAGES, BMESettingsLocalizationTable);
+    self.knownLanguagesLabel.text = MKLocalizedFromTable(BME_SETTINGS_LANGUAGES, BMESettingsLocalizationTable);
     [self.selectLanguagesButton setTitle:MKLocalizedFromTable(BME_SETTINGS_ADD_LANGUAGES, BMESettingsLocalizationTable) forState:UIControlStateNormal];
     [self.feedbackButton setTitle:MKLocalizedFromTable(BME_SETTINGS_FEEDBACK, BMESettingsLocalizationTable) forState:UIControlStateNormal];
     NSString *logoutString = [NSString stringWithFormat:@"  %@", MKLocalizedFromTable(BME_SETTINGS_LOG_OUT, BMESettingsLocalizationTable)];
@@ -159,7 +163,8 @@ static NSString *const videoSegueIdentifier = @"Video";
             [knownLanguages appendFormat:@", %@", languageString];
         }
     }
-    self.knownLanguagesTextField.text = knownLanguages;
+    self.knownLanguagesField.text = knownLanguages;
+    self.knownLanguagesField.accessibilityLabel = [self.knownLanguagesLabel.text stringByAppendingFormat:@". %@", self.knownLanguagesField.text];
     
     [self updateUserTasks];
 }
@@ -225,7 +230,8 @@ static NSString *const videoSegueIdentifier = @"Video";
     
     BMEUserTask *task = self.tasks[indexPath.row];
     cell.title = MKLocalizedFromTable(task.localizableKeyForType, BMEHelperMainLocalizationTable);
-    cell.detail = task.completed ? @"√" : MKLocalizedFromTableWithFormat(BME_SETTINGS_TASK_POINTS, BMESettingsLocalizationTable, task.points);
+    NSString *detailLocalizableKey = task.completed ? BME_SETTINGS_TASK_COMPLETED : BME_SETTINGS_TASK_POINTS;
+    cell.detail = MKLocalizedFromTableWithFormat(detailLocalizableKey, BMESettingsLocalizationTable, task.points);
     
     return cell;
 }

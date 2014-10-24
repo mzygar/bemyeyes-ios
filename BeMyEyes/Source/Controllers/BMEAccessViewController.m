@@ -205,6 +205,7 @@
     }
     [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
         self.accessNotificationsView.selected = isEnabled;
+        [self checkAccess];
     }];
 }
 
@@ -215,6 +216,7 @@
     }
     [BMEAccessControlHandler requireMicrophoneEnabled:^(BOOL isEnabled) {
         self.accessMicrophoneView.selected = isEnabled;
+        [self checkAccess];
     }];
 }
 
@@ -225,6 +227,7 @@
     }
     [BMEAccessControlHandler requireCameraEnabled:^(BOOL isEnabled) {
         self.accessCameraView.selected = isEnabled;
+        [self checkAccess];
     }];
 }
 
