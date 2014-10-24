@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NHr-Jb-n4i">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1927,20 +1928,12 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <outlet property="delegate" destination="MrC-au-WgT" id="3iA-Od-iDs"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="English, Danish" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-5C-llP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English, Danish" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyH-yG-Xzl">
                                 <rect key="frame" x="119" y="212" width="185.5" height="44"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="settingValueChanged:" destination="MrC-au-WgT" eventType="editingChanged" id="Nes-DY-23h"/>
-                                    <outlet property="delegate" destination="MrC-au-WgT" id="0O4-eE-9U9"/>
-                                </connections>
-                            </textField>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-zV-1XX">
                                 <rect key="frame" x="119" y="256" width="185.5" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
@@ -2080,20 +2073,19 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="top" secondItem="XJV-uE-7uS" secondAttribute="bottom" id="1Ma-9X-Zqj"/>
                             <constraint firstItem="fEL-aF-32C" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="2b4-pe-LRK"/>
                             <constraint firstItem="XJV-uE-7uS" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="15" id="3q3-ar-dDs"/>
-                            <constraint firstItem="DB2-5C-llP" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="4jY-hE-CIc"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="51q-H9-55v"/>
                             <constraint firstItem="mvj-Dw-BPc" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="5RV-ZL-Aoj"/>
-                            <constraint firstItem="D0d-zV-1XX" firstAttribute="top" secondItem="DB2-5C-llP" secondAttribute="bottom" id="6Il-iT-s7u"/>
                             <constraint firstAttribute="centerX" secondItem="nom-F8-SPu" secondAttribute="centerX" id="6mb-sV-FkQ"/>
+                            <constraint firstItem="IH7-YW-7ZL" firstAttribute="leading" secondItem="nyH-yG-Xzl" secondAttribute="leading" id="6t4-XA-sfm"/>
                             <constraint firstItem="D0d-zV-1XX" firstAttribute="leading" secondItem="IH7-YW-7ZL" secondAttribute="leading" id="9kR-j4-RTQ"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="top" secondItem="24Y-Oq-jej" secondAttribute="top" id="ARp-48-mKt"/>
                             <constraint firstItem="mZO-6I-4RC" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" constant="15" id="Bey-6g-HRk"/>
                             <constraint firstItem="ThA-Ho-cH9" firstAttribute="top" secondItem="af5-uQ-5WX" secondAttribute="bottom" id="CPJ-sh-SBj"/>
                             <constraint firstItem="nom-F8-SPu" firstAttribute="bottom" secondItem="tvF-nc-9Hj" secondAttribute="bottom" id="D5E-3h-N73"/>
                             <constraint firstItem="IH7-YW-7ZL" firstAttribute="trailing" secondItem="24Y-Oq-jej" secondAttribute="trailing" id="EoT-xu-Mau"/>
+                            <constraint firstItem="IH7-YW-7ZL" firstAttribute="trailing" secondItem="nyH-yG-Xzl" secondAttribute="trailing" id="EzG-F2-Ks3"/>
                             <constraint firstItem="D0d-zV-1XX" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="H7S-sO-SKY"/>
                             <constraint firstItem="b3d-mk-uwU" firstAttribute="width" secondItem="XJV-uE-7uS" secondAttribute="width" id="IMy-UE-jFx"/>
-                            <constraint firstItem="DB2-5C-llP" firstAttribute="leading" secondItem="IH7-YW-7ZL" secondAttribute="leading" id="Icm-uw-bST"/>
                             <constraint firstItem="8vb-6z-am3" firstAttribute="top" secondItem="mvj-Dw-BPc" secondAttribute="bottom" id="JFG-iy-5qT"/>
                             <constraint firstItem="kwZ-op-hZv" firstAttribute="leading" secondItem="XJV-uE-7uS" secondAttribute="leading" id="N2i-ao-s8T"/>
                             <constraint firstItem="af5-uQ-5WX" firstAttribute="top" secondItem="4kB-AN-5cU" secondAttribute="bottom" priority="900" id="NCI-kb-XRF"/>
@@ -2106,15 +2098,17 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstItem="fEL-aF-32C" firstAttribute="leading" secondItem="IH7-YW-7ZL" secondAttribute="leading" id="X1o-0q-lSF"/>
                             <constraint firstAttribute="trailing" secondItem="ub2-Qn-2Ma" secondAttribute="trailing" constant="15" id="ZUF-dC-Uj6"/>
                             <constraint firstAttribute="trailing" secondItem="IH7-YW-7ZL" secondAttribute="trailing" constant="15" id="aQH-Sw-WV4"/>
+                            <constraint firstItem="8vb-6z-am3" firstAttribute="top" secondItem="nyH-yG-Xzl" secondAttribute="top" id="aex-7t-PL9"/>
                             <constraint firstItem="XJV-uE-7uS" firstAttribute="height" secondItem="IH7-YW-7ZL" secondAttribute="height" id="alk-a4-mqV"/>
                             <constraint firstItem="kwZ-op-hZv" firstAttribute="height" secondItem="XJV-uE-7uS" secondAttribute="height" id="as3-Ho-Ue4"/>
-                            <constraint firstItem="DB2-5C-llP" firstAttribute="trailing" secondItem="IH7-YW-7ZL" secondAttribute="trailing" id="cTG-QE-ccu"/>
+                            <constraint firstItem="XJV-uE-7uS" firstAttribute="height" secondItem="nyH-yG-Xzl" secondAttribute="height" id="bFd-wY-xhB"/>
                             <constraint firstItem="mvj-Dw-BPc" firstAttribute="leading" secondItem="XJV-uE-7uS" secondAttribute="leading" id="cf2-Bp-8pL"/>
                             <constraint firstItem="mvj-Dw-BPc" firstAttribute="width" secondItem="XJV-uE-7uS" secondAttribute="width" id="cy6-qG-e63"/>
                             <constraint firstItem="IH7-YW-7ZL" firstAttribute="leading" secondItem="XJV-uE-7uS" secondAttribute="trailing" constant="15" id="d1j-fe-Jsr"/>
                             <constraint firstItem="mZO-6I-4RC" firstAttribute="top" secondItem="D0d-zV-1XX" secondAttribute="bottom" id="ec9-Zv-48O"/>
                             <constraint firstItem="XJV-uE-7uS" firstAttribute="height" secondItem="24Y-Oq-jej" secondAttribute="height" id="gGX-74-4p4"/>
                             <constraint firstItem="tvF-nc-9Hj" firstAttribute="leading" secondItem="i9w-7H-kvL" secondAttribute="leading" id="gOF-YN-zKV"/>
+                            <constraint firstItem="D0d-zV-1XX" firstAttribute="top" secondItem="nyH-yG-Xzl" secondAttribute="bottom" id="gOL-Dc-MNP"/>
                             <constraint firstItem="IH7-YW-7ZL" firstAttribute="leading" secondItem="24Y-Oq-jej" secondAttribute="leading" id="gny-WZ-KE0"/>
                             <constraint firstItem="af5-uQ-5WX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4kB-AN-5cU" secondAttribute="bottom" id="h9E-T5-5ma"/>
                             <constraint firstAttribute="trailing" secondItem="mZO-6I-4RC" secondAttribute="trailing" constant="15" id="j5j-eP-gVp"/>
@@ -2124,7 +2118,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstItem="XJV-uE-7uS" firstAttribute="top" secondItem="IH7-YW-7ZL" secondAttribute="top" id="lft-iO-83F"/>
                             <constraint firstItem="kwZ-op-hZv" firstAttribute="trailing" secondItem="IH7-YW-7ZL" secondAttribute="trailing" id="llR-ZQ-tAx"/>
                             <constraint firstAttribute="trailing" secondItem="4kB-AN-5cU" secondAttribute="trailing" id="o3V-H5-e8M"/>
-                            <constraint firstItem="DB2-5C-llP" firstAttribute="top" secondItem="8vb-6z-am3" secondAttribute="top" id="o5b-BY-SVU"/>
                             <constraint firstItem="fEL-aF-32C" firstAttribute="trailing" secondItem="IH7-YW-7ZL" secondAttribute="trailing" id="pBZ-Wg-PML"/>
                             <constraint firstItem="09q-I0-lZJ" firstAttribute="leading" secondItem="oA8-ms-JHo" secondAttribute="leading" id="pSZ-N1-l7n"/>
                             <constraint firstItem="ThA-Ho-cH9" firstAttribute="top" secondItem="ub2-Qn-2Ma" secondAttribute="bottom" constant="22" id="qKa-Zq-B29"/>
@@ -2147,8 +2140,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="firstNameLabel" destination="XJV-uE-7uS" id="MlO-Cm-m6m"/>
                         <outlet property="firstNameTextField" destination="IH7-YW-7ZL" id="2sa-Nn-ZMW"/>
                         <outlet property="headlineLabel" destination="nom-F8-SPu" id="0y4-UZ-xa0"/>
+                        <outlet property="knownLanguagesField" destination="nyH-yG-Xzl" id="1NO-C7-x2A"/>
                         <outlet property="knownLanguagesLabel" destination="8vb-6z-am3" id="J7w-gr-tYa"/>
-                        <outlet property="knownLanguagesTextField" destination="DB2-5C-llP" id="qK4-7g-Dz6"/>
                         <outlet property="lastNameLabel" destination="b3d-mk-uwU" id="2H0-Wy-E2l"/>
                         <outlet property="lastNameTextField" destination="24Y-Oq-jej" id="T81-vr-GjG"/>
                         <outlet property="logoutButton" destination="af5-uQ-5WX" id="h0N-Cg-KIY"/>

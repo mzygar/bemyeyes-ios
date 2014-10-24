@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UILabel *knownLanguagesLabel;
-@property (weak, nonatomic) IBOutlet UITextField *knownLanguagesTextField;
+@property (weak, nonatomic) IBOutlet UILabel *knownLanguagesField;
 @property (weak, nonatomic) IBOutlet UIButton *selectLanguagesButton;
 @property (weak, nonatomic) IBOutlet UIButton *feedbackButton;
 @property (weak, nonatomic) IBOutlet UITableView *tasksTableView;
@@ -159,7 +159,7 @@ static NSString *const videoSegueIdentifier = @"Video";
             [knownLanguages appendFormat:@", %@", languageString];
         }
     }
-    self.knownLanguagesTextField.text = knownLanguages;
+    self.knownLanguagesField.text = knownLanguages;
     
     [self updateUserTasks];
 }
