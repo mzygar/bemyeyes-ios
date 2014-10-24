@@ -225,7 +225,8 @@ static NSString *const videoSegueIdentifier = @"Video";
     
     BMEUserTask *task = self.tasks[indexPath.row];
     cell.title = MKLocalizedFromTable(task.localizableKeyForType, BMEHelperMainLocalizationTable);
-    cell.detail = task.completed ? @"√" : MKLocalizedFromTableWithFormat(BME_SETTINGS_TASK_POINTS, BMESettingsLocalizationTable, task.points);
+    NSString *detailLocalizableKey = task.completed ? BME_SETTINGS_TASK_COMPLETED : BME_SETTINGS_TASK_POINTS;
+    cell.detail = MKLocalizedFromTableWithFormat(detailLocalizableKey, BMESettingsLocalizationTable, task.points);
     
     return cell;
 }
