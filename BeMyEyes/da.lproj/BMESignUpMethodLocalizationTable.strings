@@ -17,7 +17,7 @@
 "BME_SIGN_UP_METHOD_EMAIL_BOTTOM" = "Tilmeld dig med din e-mail";
 
 /* Top part of button for viewing terms and conditions */
-"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Ved fortsætte accepterer du";
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Ved at fortsætte accepterer du";
 
 /* Bottom part of button for viewing terms and conditions */
 "BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Betingelser for brug";
@@ -71,7 +71,7 @@
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Ingen konto fundet";
 
 /* Accessibility hint for email sign up button */
-"BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT" = "tilmelde dig med e-mail";
+"BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT" = "tilmeld dig med e-mail";
 
 /* Accessibility label for email sign up button */
 "BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL" = " ";
