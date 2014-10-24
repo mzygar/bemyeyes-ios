@@ -142,8 +142,8 @@
         [imageViews addObject:imageView];
     }
     
-    NSString *originalString = self.text;
-    self.text = nil;
+    UIColor *originalTextColor = self.textColor;
+    self.textColor = [UIColor clearColor];
     
     CGFloat finishedDelay = 0.0f;
     for (NSInteger i = 0; i < [imageViews count]; i++) {
@@ -167,8 +167,8 @@
             [imageView removeFromSuperview];
         }
         
-        self.text = originalString;
-
+        self.textColor = originalTextColor;
+        
         if (completion) {
             completion();
         }
