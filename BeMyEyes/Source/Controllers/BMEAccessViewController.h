@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BMEAccessViewController : UIViewController
+@interface BMEAccessViewController : BMEBaseViewController
 
 @property (assign, nonatomic) BMERole role;
 

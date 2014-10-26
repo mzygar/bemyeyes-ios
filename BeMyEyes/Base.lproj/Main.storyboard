@@ -207,7 +207,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ihW-vb-1Lm"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="doneButton" destination="eni-M1-mvH" id="gIU-F6-afQ"/>
                     </connections>
@@ -366,6 +366,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Khn-pj-PxL"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="backButton" destination="meS-rG-ru3" id="0WG-kh-IJl"/>
                         <outlet property="continueButton" destination="Jqf-te-yzQ" id="bsj-kG-5ZI"/>
@@ -2141,6 +2142,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sG8-dc-y2F"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="dismissButton" destination="tvF-nc-9Hj" id="ZHj-TU-Gtw"/>
                         <outlet property="emailLabel" destination="mvj-Dw-BPc" id="p2Q-hs-s4q"/>
@@ -2852,6 +2854,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PIb-FL-Uxe" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="amD-TJ-mVr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2886,8 +2889,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Zkk-7c-PpU"/>
+        <segue reference="LUD-Ic-JoT"/>
         <segue reference="kdn-ps-MZv"/>
-        <segue reference="OmC-0b-FbA"/>
-        <segue reference="THh-yj-HlV"/>
     </inferredMetricsTieBreakers>
 </document>
