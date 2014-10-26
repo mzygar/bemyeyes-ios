@@ -10,12 +10,13 @@
 #import <MRProgress/MRProgress.h>
 #import "BMEEmailValidator.h"
 #import "BMEClient.h"
+#import "BeMyEyes-Swift.h"
 
 @interface BMEForgotPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UIButton *sendPasswordButton;
+@property (weak, nonatomic) IBOutlet Button *sendPasswordButton;
 @end
 
 @implementation BMEForgotPasswordViewController
@@ -36,7 +37,7 @@
     
     self.emailTextField.placeholder = MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable);
     
-    [self.sendPasswordButton setTitle:MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable) forState:UIControlStateNormal];
+    self.sendPasswordButton.title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable);
 }
 
 #pragma mark -
