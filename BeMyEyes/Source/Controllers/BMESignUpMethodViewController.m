@@ -15,6 +15,7 @@
 #import "BMEUser.h"
 #import "BMEFacebookInfo.h"
 #import "NSString+BMEDeviceToken.h"
+#import "BeMyEyes-Swift.h"
 
 #define BMESignUpLoggedInSegue @"LoggedIn"
 #define BMESignUpMethodSignUpSegue @"SignUp"
@@ -23,20 +24,15 @@
 @interface BMESignUpMethodViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
-@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
-@property (weak, nonatomic) IBOutlet UILabel *facebookFooterLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signUpTopLabel;
-@property (weak, nonatomic) IBOutlet UILabel *signUpBottomLabel;
+@property (weak, nonatomic) IBOutlet Button *facebookButton;
 @property (weak, nonatomic) IBOutlet UILabel *termsTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *termsBottomLabel;
 @property (weak, nonatomic) IBOutlet UILabel *privacyTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *privacyBottomLabel;
-@property (weak, nonatomic) IBOutlet UIButton *emailSignUpButton;
+@property (weak, nonatomic) IBOutlet Button *emailSignUpButton;
 @property (weak, nonatomic) IBOutlet UIButton *termsButton;
 @property (weak, nonatomic) IBOutlet UIButton *privacyButton;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *facebookFooterTopMarginConstraint;
 @end
 
 @implementation BMESignUpMethodViewController
@@ -49,18 +45,10 @@
     
     [MKLocalization registerForLocalization:self];
     
-    self.signUpTopLabel.isAccessibilityElement = NO;
-    self.signUpBottomLabel.isAccessibilityElement = NO;
     self.termsTopLabel.isAccessibilityElement = NO;
     self.termsBottomLabel.isAccessibilityElement = NO;
     self.privacyTopLabel.isAccessibilityElement = NO;
     self.privacyBottomLabel.isAccessibilityElement = NO;
-    
-    if (self.role == BMERoleHelper) {
-        self.facebookFooterLabel.text = nil;
-        self.facebookFooterHeightConstraint.constant = 0.0f;
-        self.facebookFooterTopMarginConstraint.constant = 0.0f;
-    }
 }
 
 - (void)shouldLocalize {
@@ -68,11 +56,7 @@
     
     self.headlineLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_HEADLINE, BMESignUpMethodLocalizationTable);
     
-    [self.facebookButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK, BMESignUpMethodLocalizationTable) forState:UIControlStateNormal];
-    self.facebookFooterLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK_FOOTER, BMESignUpMethodLocalizationTable);
-    
-    self.signUpTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_TOP, BMESignUpMethodLocalizationTable);
-    self.signUpBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_BOTTOM, BMESignUpMethodLocalizationTable);
+    self.facebookButton.title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK, BMESignUpMethodLocalizationTable);
     
     self.termsTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP, BMESignUpMethodLocalizationTable);
     self.termsBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM, BMESignUpMethodLocalizationTable);
@@ -99,16 +83,6 @@
 
 - (IBAction)signUpButtonPressed:(id)sender {
     [self presentSignUp];
-}
-
-- (IBAction)signUpButtonTouched:(id)sender {
-    self.signUpTopLabel.alpha = 0.50f;
-    self.signUpBottomLabel.alpha = 0.50f;
-}
-
-- (IBAction)signUpButtonReleased:(id)sender {
-    self.signUpTopLabel.alpha = 1.0f;
-    self.signUpBottomLabel.alpha = 1.0f;
 }
 
 - (IBAction)termsButtonTouched:(id)sender {

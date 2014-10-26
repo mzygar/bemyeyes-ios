@@ -9,7 +9,7 @@
 import UIKit
 
 
-@IBDesignable class MaskedButton: UIControl {
+@IBDesignable class Button: UIControl {
 
     @IBInspectable var title: String? {
         didSet {
@@ -36,6 +36,7 @@ import UIKit
     private lazy var titleLabel: MaskedLabel = {
         let label = MaskedLabel()
         label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        label.textAlignment = .Center
         return label
     }()
 
@@ -51,15 +52,16 @@ import UIKit
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel.frame = bounds
+        titleLabel.frame = CGRectInset(bounds, 15, 7.5)
     }
 }
 
-extension MaskedButton {
+extension Button {
     
     func setup() {
-        addSubview(titleLabel)
-    }
+        opaque = false
+        backgroundColor = UIColor.clearColor()
+        addSubview(titleLabel)    }
     
     func updateToState() {
         titleLabel.color = colorForState(state)
