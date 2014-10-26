@@ -36,12 +36,6 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-}
-
 - (void)dealloc {
     _languageCodes = nil;
     _knowLanguageCodes = nil;

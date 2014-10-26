@@ -53,13 +53,6 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
                                                object:nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
-}
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     

@@ -43,7 +43,6 @@ class VideoViewController: BMEBaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Slide)
         ignoreMuteSwitch()
         if moviePlayerController.playbackState != .Playing {
             moviePlayerController.play()
@@ -55,6 +54,10 @@ class VideoViewController: BMEBaseViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self) // Don't call finishedPlaying()
         moviePlayerController.stop()
         resetAudioCategory()
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     deinit {
