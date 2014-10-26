@@ -1747,6 +1747,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <constraint firstAttribute="height" constant="60" id="34k-hs-GJ0"/>
                                             <constraint firstAttribute="width" constant="120" id="N0T-xJ-eF0"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="Back" image="BackButton">
@@ -2750,6 +2751,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <constraint firstAttribute="height" constant="60" id="JL6-6k-IyY"/>
                                             <constraint firstAttribute="width" constant="120" id="VPj-25-Efz"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="Back" image="BackButton">
