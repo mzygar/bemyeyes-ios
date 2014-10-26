@@ -835,7 +835,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Facebook"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="facebookButtonPressed:" destination="rmT-tx-lgV" eventType="valueChanged" id="VDN-BS-nDB"/>
+                                    <action selector="facebookButtonPressed:" destination="rmT-tx-lgV" eventType="touchUpInside" id="Hkb-gU-H4L"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-eT-VL6" userLabel="E-mail" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
@@ -848,7 +848,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Sign up with e-mail"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signUpButtonPressed:" destination="rmT-tx-lgV" eventType="valueChanged" id="k7K-AC-ph3"/>
+                                    <action selector="signUpButtonPressed:" destination="rmT-tx-lgV" eventType="touchUpInside" id="ef2-Ru-i7Z"/>
                                 </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing you accept the" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wM-z3-EP5">
