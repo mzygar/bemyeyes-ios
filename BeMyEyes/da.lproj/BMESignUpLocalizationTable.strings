@@ -7,9 +7,6 @@
 /* Placeholder in last name field */
 "BME_SIGN_UP_LAST_NAME_PLACEHOLDER" = "Efternavn";
 
-/* Footer beneath name fields telling blind people that their first name will be presented to helpers */
-"BME_SIGN_UP_NAME_FOOTER" = "Dit fornavn vil blive præsenteret til hjælpere.";
-
 /* Placeholder in e-mail field */
 "BME_SIGN_UP_EMAIL_PLACEHOLDER" = "E-mail";
 

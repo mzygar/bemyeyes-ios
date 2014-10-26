@@ -12,6 +12,7 @@
 #import "BMEClient.h"
 #import "BMEEmailValidator.h"
 #import "NSString+BMEDeviceToken.h"
+#import "BeMyEyes-Swift.h"
 
 #define BMESignUpMinimumPasswordLength 6
 #define BMESignUpLoggedInSegue @"LoggedIn"
@@ -24,11 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UILabel *nameFooterLabel;
-@property (weak, nonatomic) IBOutlet UIButton *registerButton;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameFooterTopMarginConstraint;
+@property (weak, nonatomic) IBOutlet Button *registerButton;
 
 @property (strong, nonatomic) UITextField *activeTextField;
 @property (assign, nonatomic) CGSize keyboardSize;
@@ -52,13 +49,6 @@
     [super viewDidLoad];
     
     [MKLocalization registerForLocalization:self];
-    
-    if (self.role == BMERoleHelper) {
-        self.nameFooterLabel.text = nil;
-        self.nameFooterLabel.hidden = YES;
-        self.nameFooterHeightConstraint.constant = 0.0f;
-        self.nameFooterTopMarginConstraint.constant = 0.0f;
-    }
 }
 
 - (void)dealloc {
@@ -72,12 +62,11 @@
     
     self.firstNameTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_FIRST_NAME_PLACEHOLDER, BMESignUpLocalizationTable);
     self.lastNameTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_LAST_NAME_PLACEHOLDER, BMESignUpLocalizationTable);
-    self.nameFooterLabel.text = MKLocalizedFromTable(BME_SIGN_UP_NAME_FOOTER, BMESignUpLocalizationTable);
     
     self.emailTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_EMAIL_PLACEHOLDER, BMESignUpLocalizationTable);
     self.passwordTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_PASSWORD_PLACEHOLDER, BMESignUpLocalizationTable);
     
-    [self.registerButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_REGISTER, BMESignUpLocalizationTable) forState:UIControlStateNormal];
+    self.registerButton.title = MKLocalizedFromTable(BME_SIGN_UP_REGISTER, BMESignUpLocalizationTable);
 }
 
 #pragma mark -

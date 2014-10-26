@@ -31,4 +31,9 @@
     [self.backButton setTitle:MKLocalizedFromTable(BME_PRIVACY_POLICY_BACK, BMEPrivacyPolicyLocalizationTable) forState:UIControlStateNormal];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
 @end

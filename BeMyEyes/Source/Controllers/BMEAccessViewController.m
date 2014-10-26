@@ -54,13 +54,6 @@
                                                object:nil];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-}
-
 - (void)handleAppBecameActive
 {
     [self checkAccess];

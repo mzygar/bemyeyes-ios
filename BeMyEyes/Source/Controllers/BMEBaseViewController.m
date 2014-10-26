@@ -25,6 +25,16 @@
     return UIInterfaceOrientationPortrait;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
 #pragma mark -
 #pragma mark Private Methods
 

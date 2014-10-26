@@ -7,14 +7,8 @@
 /* Tiel of Facebook sign up button */
 "BME_SIGN_UP_METHOD_FACEBOOK" = "Sign up via Facebook";
 
-/* Text beneath Facebook button informing blind users that their first name will be presnted to helpers */
-"BME_SIGN_UP_METHOD_FACEBOOK_FOOTER" = "Your first name will be presented to helpers.";
-
-/* Top part of button for signing up via e-mail */
-"BME_SIGN_UP_METHOD_EMAIL_TOP" = "You can also";
-
-/* Bottom part of button for signing up via e-mail */
-"BME_SIGN_UP_METHOD_EMAIL_BOTTOM" = "register with your e-mail";
+/* Sign up with e-mail button */
+"BME_SIGN_UP_METHOD_EMAIL" = "Sign up with e-mail";
 
 /* Top part of button for viewing terms and conditions */
 "BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "By continuing you accept the";
@@ -69,12 +63,6 @@
 
 /* Title in alert view shown when no Facebook account was found. */
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "No account found";
-
-/* Accessibility hint for email sign up button */
-"BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT" = "Sign up with e-mail";
-
-/* Accessibility label for email sign up button */
-"BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL" = " ";
 
 /* Accessibility hint for privacy policy button */
 "BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "Privacy Policy";

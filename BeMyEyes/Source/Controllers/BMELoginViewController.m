@@ -13,6 +13,7 @@
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "NSString+BMEDeviceToken.h"
+#import "BeMyEyes-Swift.h"
 
 #define BMELoginLoggedInSegue @"LoggedIn"
 
@@ -20,8 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
-@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet Button *loginButton;
+@property (weak, nonatomic) IBOutlet Button *facebookButton;
 @property (weak, nonatomic) IBOutlet UIButton *forgotPasswordButton;
 
 @property (strong, nonatomic) MRProgressOverlayView *loggingInOverlayView;
@@ -52,9 +53,9 @@
     self.emailTextField.placeholder = MKLocalizedFromTable(BME_LOGIN_EMAIL_PLACEHOLDER, BMELoginLocalizationTable);
     self.passwordTextField.placeholder = MKLocalizedFromTable(BME_LOGIN_PASSWORD_PLACEHOLDER, BMELoginLocalizationTable);
     
-    [self.loginButton setTitle:MKLocalizedFromTable(BME_LOGIN_PERFORM_LOG_IN, BMELoginLocalizationTable) forState:UIControlStateNormal];
-    [self.facebookButton setTitle:MKLocalizedFromTable(BME_LOGIN_FACEBOOK, BMELoginLocalizationTable) forState:UIControlStateNormal];
-    [self.forgotPasswordButton setTitle:MKLocalizedFromTable(BME_LOGIN_FORGOT_PASSWORD, BMELoginLocalizationTable) forState:UIControlStateNormal];
+    self.loginButton.title = MKLocalizedFromTable(BME_LOGIN_PERFORM_LOG_IN, BMELoginLocalizationTable);
+    self.facebookButton.title = MKLocalizedFromTable(BME_LOGIN_FACEBOOK, BMELoginLocalizationTable);
+     [self.forgotPasswordButton setTitle:MKLocalizedFromTable(BME_LOGIN_FORGOT_PASSWORD, BMELoginLocalizationTable) forState:UIControlStateNormal];
 }
 
 #pragma mark -

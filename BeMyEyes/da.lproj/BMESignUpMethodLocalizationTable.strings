@@ -7,14 +7,8 @@
 /* Tiel of Facebook sign up button */
 "BME_SIGN_UP_METHOD_FACEBOOK" = "Tilmeld dig via Facebook";
 
-/* Text beneath Facebook button informing blind users that their first name will be presnted to helpers */
-"BME_SIGN_UP_METHOD_FACEBOOK_FOOTER" = "Dit fornavn vil blive præsenteret til hjælpere";
-
-/* Top part of button for signing up via e-mail */
-"BME_SIGN_UP_METHOD_EMAIL_TOP" = "Du kan også";
-
-/* Bottom part of button for signing up via e-mail */
-"BME_SIGN_UP_METHOD_EMAIL_BOTTOM" = "Tilmeld dig med din e-mail";
+/* Sign up with e-mail button */
+"BME_SIGN_UP_METHOD_EMAIL" = "Tilmeld dig via e-mail";
 
 /* Top part of button for viewing terms and conditions */
 "BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Ved at fortsætte accepterer du";
@@ -69,12 +63,6 @@
 
 /* Title in alert view shown when no Facebook account was found. */
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Ingen konto fundet";
-
-/* Accessibility hint for email sign up button */
-"BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT" = "tilmeld dig med e-mail";
-
-/* Accessibility label for email sign up button */
-"BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL" = " ";
 
 /* Accessibility hint for privacy policy button */
 "BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "Privatlivspolitik";
