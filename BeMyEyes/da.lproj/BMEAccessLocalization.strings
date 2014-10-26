@@ -7,29 +7,29 @@
 */
 
 /* Introductory message for access for notifications, microphone and camera */
-"BME_ACCESS_INTRO_MESSAGE" = "Please enable the following to fully join the Be My Eyes network";
+"BME_ACCESS_INTRO_MESSAGE" = "Slå venligst følgende til for at blive en del af Be My Eyes netværket";
 
 /* Title for notifications */
-"BME_ACCESS_NOTIFICATIONS_TITLE" = "Notifications";
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "Meddelelser";
 
 /* Explanation for why the helper needs to enable notifications */
-"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "When a blind person needs your help, we notify you about the incoming call.";
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Når en blind person har brug for din hjælp, giver vi dig besked om opkaldet.";
 
 /* Title for microphone */
-"BME_ACCESS_MICROPHONE_TITLE" = "Microphone";
+"BME_ACCESS_MICROPHONE_TITLE" = "Mikrofon";
 
 /* Explanation for why the helper needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "To be able to talk with and guide the blind person";
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "For at kunne at tale med og hjælpe den blinde";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "To be able to explain your problem to the helper.";
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "For at kunne forklare dit problem til hjælperen.";
 
 /* Title for camera */
-"BME_ACCESS_CAMERA_TITLE" = "Camera";
+"BME_ACCESS_CAMERA_TITLE" = "Kamera";
 
 /* Explanation for why the helper needs to enable camera access */
-"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Even though we don't send your video to the person you're helping, this is necessary due to technicalities.";
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Vi sender ikke din video til den person du hjælper, men det er nødvendigt for at etablere forbindelsen.";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Your camera content is shown to the helpers.";
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "For at kunne vise hjælperen hvad du har brug for hjælp til.";
 
