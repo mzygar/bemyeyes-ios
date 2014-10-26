@@ -43,13 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [MKLocalization registerForLocalization:self];
-    
-    self.termsTopLabel.isAccessibilityElement = NO;
-    self.termsBottomLabel.isAccessibilityElement = NO;
-    self.privacyTopLabel.isAccessibilityElement = NO;
-    self.privacyBottomLabel.isAccessibilityElement = NO;
-}
+    [MKLocalization registerForLocalization:self];}
 
 - (void)shouldLocalize {
     [self.backButton setTitle:MKLocalizedFromTable(BME_SIGN_UP_METHOD_BACK, BMESignUpMethodLocalizationTable) forState:UIControlStateNormal];
