@@ -58,14 +58,13 @@
     
     self.facebookButton.title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_FACEBOOK, BMESignUpMethodLocalizationTable);
     
+    self.emailSignUpButton.title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL, BMESignUpMethodLocalizationTable);
+    
     self.termsTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP, BMESignUpMethodLocalizationTable);
     self.termsBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM, BMESignUpMethodLocalizationTable);
     
     self.privacyTopLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP, BMESignUpMethodLocalizationTable);
     self.privacyBottomLabel.text = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM, BMESignUpMethodLocalizationTable);
-    
-    self.emailSignUpButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
-    self.emailSignUpButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_EMAIL_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
     
     self.termsButton.accessibilityLabel = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL, BMESignUpMethodLocalizationTable);
     self.termsButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
