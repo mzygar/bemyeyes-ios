@@ -20,7 +20,8 @@
 @implementation BMEPointsTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    // Fix backgroundColor not being set to clearColor from Storyboard on iPad.
+    self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {}
