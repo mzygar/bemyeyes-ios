@@ -1162,7 +1162,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="connectToCommunityButton" destination="DQB-vd-Nyq" id="swz-Ee-N2b"/>
-                        <segue destination="RB1-LI-MQt" kind="modal" identifier="Call" id="RbW-CW-NYl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt2-1B-bf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2889,8 +2888,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Zkk-7c-PpU"/>
-        <segue reference="LUD-Ic-JoT"/>
         <segue reference="kdn-ps-MZv"/>
+        <segue reference="OmC-0b-FbA"/>
+        <segue reference="Zkk-7c-PpU"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -37,17 +37,14 @@
 #pragma mark Private Methods
 
 - (IBAction)connectToCommunityButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:BMEBlindMainCallSegue sender:self];
-}
-
-#pragma mark -
-#pragma mark Segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:BMEBlindMainCallSegue]) {
-        BMECallViewController *callController = (BMECallViewController *)segue.destinationViewController;
-        callController.callMode = BMECallModeCreate;
-    }
+    
+    BMECallViewController *callController = [self.view.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMECallControllerIdentifier];
+    callController.callMode = BMECallModeCreate;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
+    navigationController.navigationBarHidden = YES;
+    
+    [self.view.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end
