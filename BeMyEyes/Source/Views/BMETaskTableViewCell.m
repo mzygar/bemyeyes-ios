@@ -16,7 +16,8 @@
 @implementation BMETaskTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    // Fix backgroundColor not being set to clearColor from Storyboard on iPad.
+    self.backgroundColor = [UIColor clearColor];
     
     // Set these in IB when possible (currently IB is buggy)
     self.titleLabel.color =

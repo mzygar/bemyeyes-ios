@@ -70,6 +70,11 @@
 
 + (void)enabledForRole:(BMERole)role completion:(void (^)(BOOL))completion
 {
+#if TARGET_IPHONE_SIMULATOR
+    completion(YES);
+    return;
+#endif
+    
     switch (role) {
         case BMERoleBlind:
         {
