@@ -76,7 +76,6 @@
     
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     
-    [self changeAudioCategoryToDefault];
     [self stopCallTone];
 }
 
@@ -300,14 +299,6 @@
     }
 }
 
-- (void)changeAudioCategoryToDefault {
-    NSError *error = nil;
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-    if (error) {
-        NSLog(@"Could not change audio category to default: %@", error);
-    }
-}
-
 - (BOOL)isUserBlind {
     return [BMEClient sharedClient].currentUser.role == BMERoleBlind;
 }
@@ -350,7 +341,6 @@
 - (void)sessionDidDisconnect:(OTSession *)session {
     NSLog(@"OpenTok: [Session] Did disconnect");
     [self dismiss];
-    [self changeAudioCategoryToDefault];
 }
 
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
