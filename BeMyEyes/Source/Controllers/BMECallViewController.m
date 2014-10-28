@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (weak, nonatomic) IBOutlet UIButton *disconnectButton;
+@property (weak, nonatomic) IBOutlet Button *disconnectButton;
 
 @property (strong, nonatomic) NSString *requestIdentifier;
 @property (strong, nonatomic) NSString *sessionId;
@@ -93,7 +93,7 @@
 }
 
 - (void)shouldLocalize {
-    [self.disconnectButton setTitle:MKLocalizedFromTable(BME_CALL_DISCONNECT, BMECallLocalizationTable) forState:UIControlStateNormal];
+    self.disconnectButton.title = MKLocalizedFromTable(BME_CALL_DISCONNECT, BMECallLocalizationTable);
 }
 
 #pragma mark -
@@ -259,8 +259,8 @@
 
 - (void)displayVideoView:(UIView *)videoView {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.view addSubview:videoView];
-        videoView.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.videoContainerView.bounds), CGRectGetHeight(self.videoContainerView.bounds));
+        [self.videoContainerView addSubview:videoView];
+        [videoView keepInsets:UIEdgeInsetsZero];
         self.videoView = videoView;
     });
 }
