@@ -29,6 +29,7 @@
 		4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */; };
 		4EB6AD2219E1F4F400141615 /* BMEPointsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */; };
 		4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */; };
+		4EB6C13D19FFB6B50048735E /* BMEButtonImageToRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */; };
 		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
 		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
@@ -186,6 +187,8 @@
 		4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointsTableViewCell.h; sourceTree = "<group>"; };
 		4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointsTableViewCell.m; sourceTree = "<group>"; };
 		4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueShadowGradientView.swift; sourceTree = "<group>"; };
+		4EB6C13B19FFB6B50048735E /* BMEButtonImageToRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEButtonImageToRight.h; sourceTree = "<group>"; };
+		4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEButtonImageToRight.m; sourceTree = "<group>"; };
 		4EBE9BF819E8C91000CBC675 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissSegue.h; path = Source/DismissSegue.h; sourceTree = "<group>"; };
 		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -654,6 +657,8 @@
 				4EE91D1319E5977C00CF4F23 /* RadioButton.swift */,
 				4E7E107019E5C02000D476B2 /* BMEAccessView.h */,
 				4E7E107119E5C02000D476B2 /* BMEAccessView.m */,
+				4EB6C13B19FFB6B50048735E /* BMEButtonImageToRight.h */,
+				4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -910,6 +915,7 @@
 				72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */,
 				7236E00A18B8A87B00F622AA /* main.m in Sources */,
 				4E8E21F719E8C03C00316AD8 /* VideoViewController.swift in Sources */,
+				4EB6C13D19FFB6B50048735E /* BMEButtonImageToRight.m in Sources */,
 				4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */,
 				72DEF72118B907D10048FA90 /* BMEUser.m in Sources */,
 				725B0EFB1959896600BB4AE0 /* BMECallAudioPlayer.m in Sources */,
