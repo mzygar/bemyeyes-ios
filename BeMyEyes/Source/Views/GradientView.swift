@@ -22,18 +22,37 @@ import UIKit
         }
     }
     
+    var startPoint: CGPoint = CGPoint(x: 0, y: 0) {
+        didSet {
+            update()
+        }
+    }
+    var endPoint: CGPoint = CGPoint(x: 1, y: 1) {
+        didSet {
+            update()
+        }
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    func setup() {
+        update()
+        backgroundColor = .clearColor()
+        layer.addSublayer(gradientLayer)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        update()
-        layer.addSublayer(gradientLayer)
         gradientLayer.frame = bounds
     }
     
     func update() {
         gradientLayer.colors = colors.map { return $0.CGColor }
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
     }
     
     override func prepareForInterfaceBuilder() {

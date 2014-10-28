@@ -1360,6 +1360,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <outlet property="delegate" destination="SGY-Uz-e4n" id="EvT-GW-SMr"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1Q-n2-Dxz" customClass="BlueShadowGradientView" customModule="BeMyEyes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="286" width="320" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AVM-Hb-3RJ"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DK5-dj-UnV" userLabel="Community Stats View">
                                 <rect key="frame" x="0.0" y="326" width="320" height="153.5"/>
                                 <subviews>
@@ -1494,11 +1501,14 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstAttribute="trailing" secondItem="B9q-5c-YB9" secondAttribute="trailing" id="CXI-KU-RYE"/>
                             <constraint firstItem="vfI-ce-tKn" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="Kyu-ox-YAQ"/>
                             <constraint firstAttribute="trailing" secondItem="DK5-dj-UnV" secondAttribute="trailing" id="QyD-H1-yC7"/>
+                            <constraint firstItem="DK5-dj-UnV" firstAttribute="top" secondItem="R1Q-n2-Dxz" secondAttribute="bottom" id="ZBh-o3-6xV"/>
                             <constraint firstItem="0cc-vG-sTm" firstAttribute="top" secondItem="DK5-dj-UnV" secondAttribute="bottom" id="cT1-H4-NMk"/>
                             <constraint firstItem="vfI-ce-tKn" firstAttribute="top" secondItem="AHJ-ED-lfq" secondAttribute="top" id="crU-a2-8EM"/>
+                            <constraint firstItem="R1Q-n2-Dxz" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="ioF-54-jT4"/>
                             <constraint firstItem="B9q-5c-YB9" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="mMF-aF-orT"/>
                             <constraint firstItem="0cc-vG-sTm" firstAttribute="top" secondItem="vfI-ce-tKn" secondAttribute="bottom" id="qbk-pu-8tP"/>
                             <constraint firstItem="DK5-dj-UnV" firstAttribute="leading" secondItem="AHJ-ED-lfq" secondAttribute="leading" id="rIt-h2-0vg"/>
+                            <constraint firstAttribute="trailing" secondItem="R1Q-n2-Dxz" secondAttribute="trailing" id="xvL-nY-fPV"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

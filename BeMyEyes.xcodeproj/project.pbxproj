@@ -28,6 +28,7 @@
 		4EB6AD1C19E1F4CD00141615 /* BMEUserLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1B19E1F4CD00141615 /* BMEUserLevel.m */; };
 		4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */; };
 		4EB6AD2219E1F4F400141615 /* BMEPointsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */; };
+		4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */; };
 		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
 		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
@@ -184,6 +185,7 @@
 		4EB6AD1E19E1F4D700141615 /* BMECommunityStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECommunityStats.m; sourceTree = "<group>"; };
 		4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointsTableViewCell.h; sourceTree = "<group>"; };
 		4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointsTableViewCell.m; sourceTree = "<group>"; };
+		4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueShadowGradientView.swift; sourceTree = "<group>"; };
 		4EBE9BF819E8C91000CBC675 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissSegue.h; path = Source/DismissSegue.h; sourceTree = "<group>"; };
 		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -644,6 +646,7 @@
 				4EB6AD2019E1F4F400141615 /* BMEPointsTableViewCell.h */,
 				4EB6AD2119E1F4F400141615 /* BMEPointsTableViewCell.m */,
 				4EB6AD1419E1F48C00141615 /* GradientView.swift */,
+				4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */,
 				4E1916CE19E5800300B85E61 /* MaskedLabel.swift */,
 				4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */,
 				4EB6AD1519E1F48C00141615 /* PointsBarView.swift */,
@@ -914,6 +917,7 @@
 				72856DE319AF65640027AFF5 /* BMEHelperIntroViewController.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
 				4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */,
+				4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */,
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
 				72414AF7196AA33200A2C5F4 /* BMELanguagesViewController.m in Sources */,
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
