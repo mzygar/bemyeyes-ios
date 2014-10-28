@@ -17,13 +17,13 @@
 #import "BMESpeaker.h"
 #import "BMECallAudioPlayer.h"
 
-#define BMECallReportAbuseSegue @"ReportAbuse"
+static NSString *BMECallPostSegue = @"PostCall";
 
 @interface BMECallViewController () <OTSessionDelegate, OTPublisherDelegate, OTSubscriberKitDelegate>
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (weak, nonatomic) IBOutlet UIButton *disconnectButton;
+@property (weak, nonatomic) IBOutlet Button *disconnectButton;
 
 @property (strong, nonatomic) NSString *requestIdentifier;
 @property (strong, nonatomic) NSString *sessionId;
@@ -66,11 +66,6 @@
     }
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
@@ -93,7 +88,7 @@
 }
 
 - (void)shouldLocalize {
-    [self.disconnectButton setTitle:MKLocalizedFromTable(BME_CALL_DISCONNECT, BMECallLocalizationTable) forState:UIControlStateNormal];
+    self.disconnectButton.title = MKLocalizedFromTable(BME_CALL_DISCONNECT, BMECallLocalizationTable);
 }
 
 #pragma mark -
@@ -259,8 +254,8 @@
 
 - (void)displayVideoView:(UIView *)videoView {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.view addSubview:videoView];
-        videoView.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.videoContainerView.bounds), CGRectGetHeight(self.videoContainerView.bounds));
+        [self.videoContainerView addSubview:videoView];
+        [videoView keepInsets:UIEdgeInsetsZero];
         self.videoView = videoView;
     });
 }
@@ -289,7 +284,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidUpdatePointNotification object:nil];
     
     if (self.shouldPresentReportAbuseWhenDismissing) {
-        [self performSegueWithIdentifier:BMECallReportAbuseSegue sender:self];
+        [self performSegueWithIdentifier:BMECallPostSegue sender:self];
     } else {
         if (self.presentingViewController) {
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -434,9 +429,9 @@
 #pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:BMECallReportAbuseSegue]) {
-        BMEReportAbuseViewController *reportAbuseController = segue.destinationViewController;
-        reportAbuseController.requestIdentifier = self.requestIdentifier;
+    if ([segue.identifier isEqualToString:BMECallPostSegue]) {
+        PostCallViewController *postCallViewController = (PostCallViewController *)segue.destinationViewController;
+        postCallViewController.requestIdentifier = self.requestIdentifier;
     }
 }
 

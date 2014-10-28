@@ -11,7 +11,7 @@
 @interface BMEWebViewViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *navigationBarHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *navigationBar;
 @end
 
 @implementation BMEWebViewViewController
@@ -19,12 +19,19 @@
 #pragma mark -
 #pragma mark Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    UIEdgeInsets insets = UIEdgeInsetsZero;
-    insets.top = self.navigationBarHeightConstraint.constant;
     self.webView.hidden = YES;
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    UIEdgeInsets insets = self.webView.scrollView.contentInset;
+    insets.top = CGRectGetMaxY(self.navigationBar.frame);
     self.webView.scrollView.contentInset = insets;
     self.webView.scrollView.scrollIndicatorInsets = insets;
 }

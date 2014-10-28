@@ -8,3 +8,8 @@
 #import "MKLocalization.h"
 #import "BMESignupViewController.h"
 #import "KeepLayout.h"
+#import "BMECrashlyticsLoggingSwift.h"
+#import "BMEReportAbuseViewController.h"
+#import "MKLocalizationKeys.h"
+#import "BMEClient.h"
+#import "BMEUser.h"

@@ -15,6 +15,7 @@ class VideoViewController: BMEBaseViewController {
     @IBOutlet weak var doneButton: UIButton!
     
     lazy var moviePlayerController: MPMoviePlayerController = {
+        BMECrashlyticsLoggingSwift.log("moviePlayerController 1")
         let moviePlayerController = MPMoviePlayerController()
         moviePlayerController.controlStyle = .None
         return moviePlayerController
@@ -25,29 +26,40 @@ class VideoViewController: BMEBaseViewController {
     let defaultAudioCategory = AVAudioSession.sharedInstance().category
     
     override func viewDidLoad() {
+        BMECrashlyticsLoggingSwift.log("viewDidLoad 1")
         super.viewDidLoad()
-        
+        BMECrashlyticsLoggingSwift.log("viewDidLoad 2")
         if let movieView = moviePlayerController.view {
+            BMECrashlyticsLoggingSwift.log("viewDidLoad 3")
             view.insertSubview(movieView, belowSubview: doneButton)
+            BMECrashlyticsLoggingSwift.log("viewDidLoad 4")
         }
     }
     
     override func viewDidLayoutSubviews() {
+        BMECrashlyticsLoggingSwift.log("viewDidLayoutSubviews 1")
         super.viewDidLayoutSubviews()
-        
+        BMECrashlyticsLoggingSwift.log("viewDidLayoutSubviews 2")
         if let movieView = moviePlayerController.view {
+            BMECrashlyticsLoggingSwift.log("viewDidLayoutSubviews 3")
             movieView.frame = view.bounds
+            BMECrashlyticsLoggingSwift.log("viewDidLayoutSubviews 4")
         }
     }
     
     override func viewDidAppear(animated: Bool) {
+        BMECrashlyticsLoggingSwift.log("viewDidAppear 1")
         super.viewDidAppear(animated)
-        
+        BMECrashlyticsLoggingSwift.log("viewDidAppear 2")
         ignoreMuteSwitch()
+        BMECrashlyticsLoggingSwift.log("viewDidAppear 3")
         if moviePlayerController.playbackState != .Playing {
+            BMECrashlyticsLoggingSwift.log("viewDidAppear 4")
             moviePlayerController.play()
         }
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "finishedPlaying", name:  MPMoviePlayerPlaybackDidFinishNotification, object: nil)
+        BMECrashlyticsLoggingSwift.log("viewDidAppear 5")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "finishedPlaying", name:  MPMoviePlayerPlaybackDidFinishNotification, object: nil)
+        BMECrashlyticsLoggingSwift.log("viewDidAppear 6")
     }
     
     override func viewDidDisappear(animated: Bool) {
