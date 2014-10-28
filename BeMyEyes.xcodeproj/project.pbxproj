@@ -12,6 +12,8 @@
 		4E1916D119E5804800B85E61 /* SplitMaskedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */; };
 		4E2B919B19E67F1F00C9D0ED /* BMEAccessControlHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B919A19E67F1F00C9D0ED /* BMEAccessControlHandler.m */; };
 		4E3ACE1619FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACE1519FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m */; };
+		4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACE1719FFEF4F002548C8 /* PostCallViewController.swift */; };
+		4E6544721A00279000B71C1C /* PostCallLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */; };
 		4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */; };
 		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
 		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
@@ -163,6 +165,9 @@
 		4E2B919A19E67F1F00C9D0ED /* BMEAccessControlHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessControlHandler.m; sourceTree = "<group>"; };
 		4E3ACE1419FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECrashlyticsLoggingSwift.h; sourceTree = "<group>"; };
 		4E3ACE1519FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECrashlyticsLoggingSwift.m; sourceTree = "<group>"; };
+		4E3ACE1719FFEF4F002548C8 /* PostCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCallViewController.swift; sourceTree = "<group>"; };
+		4E6544731A00279000B71C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PostCallLocalizationTable.strings; sourceTree = "<group>"; };
+		4E6544761A00288400B71C1C /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/PostCallLocalizationTable.strings; sourceTree = "<group>"; };
 		4E7E106D19E5BFCE00D476B2 /* BMEAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessViewController.h; sourceTree = "<group>"; };
 		4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessViewController.m; sourceTree = "<group>"; };
 		4E7E107019E5C02000D476B2 /* BMEAccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessView.h; sourceTree = "<group>"; };
@@ -603,6 +608,7 @@
 				729B1CCF19015F0700B5ABEA /* BMESecretSettingsViewController.m */,
 				72B1493218DF4C8900E9A8A9 /* BMECallViewController.h */,
 				72B1493318DF4C8900E9A8A9 /* BMECallViewController.m */,
+				4E3ACE1719FFEF4F002548C8 /* PostCallViewController.swift */,
 				72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */,
 				72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */,
 				727E13E7194B2AF8002EDA7E /* BMEForgotPasswordViewController.h */,
@@ -672,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				72DA826F18D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings */,
+				4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */,
 				72856DEA19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings */,
 				72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */,
 				72B1493818DF686600E9A8A9 /* BMECallLocalizationTable.strings */,
@@ -849,6 +856,7 @@
 				725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */,
 				72DA826E18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings in Resources */,
 				7236E01118B8A87B00F622AA /* Main.storyboard in Resources */,
+				4E6544721A00279000B71C1C /* PostCallLocalizationTable.strings in Resources */,
 				72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings in Resources */,
 				4E8ABED319F7F4300005F6E8 /* intro.mp4 in Resources */,
 				72856DF819AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings in Resources */,
@@ -939,6 +947,7 @@
 				729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
+				4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
@@ -989,6 +998,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E6544731A00279000B71C1C /* en */,
+				4E6544761A00288400B71C1C /* da */,
+			);
+			name = PostCallLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
 		4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

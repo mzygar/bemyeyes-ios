@@ -17,7 +17,7 @@
 #import "BMESpeaker.h"
 #import "BMECallAudioPlayer.h"
 
-#define BMECallReportAbuseSegue @"ReportAbuse"
+static NSString *BMECallPostSegue = @"PostCall";
 
 @interface BMECallViewController () <OTSessionDelegate, OTPublisherDelegate, OTSubscriberKitDelegate>
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
@@ -284,7 +284,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidUpdatePointNotification object:nil];
     
     if (self.shouldPresentReportAbuseWhenDismissing) {
-        [self performSegueWithIdentifier:BMECallReportAbuseSegue sender:self];
+        [self performSegueWithIdentifier:BMECallPostSegue sender:self];
     } else {
         if (self.presentingViewController) {
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -429,9 +429,9 @@
 #pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:BMECallReportAbuseSegue]) {
-        BMEReportAbuseViewController *reportAbuseController = segue.destinationViewController;
-        reportAbuseController.requestIdentifier = self.requestIdentifier;
+    if ([segue.identifier isEqualToString:BMECallPostSegue]) {
+        PostCallViewController *postCallViewController = (PostCallViewController *)segue.destinationViewController;
+        postCallViewController.requestIdentifier = self.requestIdentifier;
     }
 }
 
