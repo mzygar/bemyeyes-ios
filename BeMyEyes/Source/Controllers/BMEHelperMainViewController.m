@@ -17,6 +17,7 @@
 #import "BMEAppDelegate.h"
 #import "NSDate+BMESnoozeRelativeDate.h"
 #import "BMEPointsTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "BeMyEyes-Swift.h"
 
 #define BMEHelperSnoozeAmount0 0.0f
@@ -38,6 +39,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointsHelpedPersonsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsHelpedPersonsDescriptionLabel;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointsTotalLabel;
@@ -164,8 +166,18 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 }
 
 - (void)updateToProfile {
-    NSString *name = [BMEClient sharedClient].currentUser.firstName;
+    BMEUser *user = [BMEClient sharedClient].currentUser;
+    NSString *name = user.firstName;
     self.nameLabel.text = name;
+
+    self.profileImageView.image = nil;
+    NSNumber *facebookId = (NSNumber *)user.userId;
+    if (facebookId) {
+        NSURL *url = [FacebookHelper urlForId:facebookId.integerValue];
+        [self.profileImageView sd_setImageWithURL:url];
+    } else {
+        [self.profileImageView sd_cancelCurrentImageLoad];
+    }
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
