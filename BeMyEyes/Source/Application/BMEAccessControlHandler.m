@@ -70,6 +70,9 @@
 
 + (void)enabledForRole:(BMERole)role completion:(void (^)(BOOL))completion
 {
+    completion(NO);
+    return;
+    
 #if TARGET_IPHONE_SIMULATOR
     completion(YES);
     return;

@@ -90,7 +90,8 @@
 
 - (NSString *)accessibilityLabel
 {
-    return [self.titleLabel.text stringByAppendingFormat:@". %@", self.messageLabel.text];
+    NSString *selected = self.selected ? MKLocalizedFromTable(BME_INTERFACE_CONTROL_STATE_SELECTED, BMEInterfaceLocalizationTable) : @"";
+    return [self.titleLabel.text stringByAppendingFormat:@". %@. %@", self.messageLabel.text, selected];
 }
 
 - (UIAccessibilityTraits)accessibilityTraits
