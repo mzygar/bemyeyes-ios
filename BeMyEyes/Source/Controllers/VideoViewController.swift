@@ -27,7 +27,7 @@ class VideoViewController: BMEBaseViewController {
     
     override func viewDidLoad() {
         BMECrashlyticsLoggingSwift.log("viewDidLoad 1")
-        super.viewDidLoad()
+//        super.viewDidLoad() Don't call super.viewDidLoad(), to avoid crash issue on shipped builds
         BMECrashlyticsLoggingSwift.log("viewDidLoad 2")
         if let movieView = moviePlayerController.view {
             BMECrashlyticsLoggingSwift.log("viewDidLoad 3")
