@@ -48,6 +48,10 @@
         [self.emailTextField resignFirstResponder];
     }
     
+    [self performSendPasswordToEmail];
+}
+
+- (void)performSendPasswordToEmail {
     if ([self performEmailValidation]) {
         NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [self sendNewPasswordToEmail:email];
@@ -103,8 +107,10 @@
 #pragma mark Text Field Delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    
+    if (textField == self.emailTextField) {
+        [textField resignFirstResponder];
+        [self performSendPasswordToEmail];
+    }
     return YES;
 }
 

@@ -224,8 +224,12 @@
 #pragma mark Text Field Delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    
+    if (textField == self.emailTextField) {
+        [self.passwordTextField becomeFirstResponder];
+    } else if (textField == self.passwordTextField) {
+        [textField resignFirstResponder];
+        [self performLoginUsingFacebook:NO];
+    }
     return YES;
 }
 
