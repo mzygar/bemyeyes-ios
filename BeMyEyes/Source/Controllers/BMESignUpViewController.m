@@ -12,6 +12,7 @@
 #import "BMEClient.h"
 #import "BMEEmailValidator.h"
 #import "NSString+BMEDeviceToken.h"
+#import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 
 #define BMESignUpMinimumPasswordLength 6
@@ -26,11 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet Button *registerButton;
-
-@property (strong, nonatomic) UITextField *activeTextField;
-@property (assign, nonatomic) CGSize keyboardSize;
-
-@property (assign, nonatomic, getter = hasScrolled) BOOL scrolled;
+@property (strong, nonatomic) BMEScrollViewTextFieldHelper *scrollViewHelper;
 @end
 
 @implementation BMESignUpViewController
@@ -38,23 +35,12 @@
 #pragma mark -
 #pragma mark Lifecycle
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [MKLocalization registerForLocalization:self];
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    self.activeTextField = nil;
+    self.scrollViewHelper = [[BMEScrollViewTextFieldHelper alloc] initWithScrollview:self.scrollView inViewController:self];
 }
 
 - (void)shouldLocalize {
@@ -67,6 +53,16 @@
     self.passwordTextField.placeholder = MKLocalizedFromTable(BME_SIGN_UP_PASSWORD_PLACEHOLDER, BMESignUpLocalizationTable);
     
     self.registerButton.title = MKLocalizedFromTable(BME_SIGN_UP_REGISTER, BMESignUpLocalizationTable);
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return self.scrollViewHelper.prefersStatusBarHidden;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return self.scrollViewHelper.preferredStatusBarUpdateAnimation;
 }
 
 #pragma mark -
@@ -199,39 +195,6 @@
     return YES;
 }
 
-- (void)scrollIfNecessary {
-    CGRect rect = self.view.frame;
-    rect.size.height -= self.keyboardSize.height;
-    
-    CGRect textFieldFrame = [self.activeTextField convertRect:self.activeTextField.frame toView:self.scrollView];
-    if (CGRectGetMaxY(textFieldFrame) > CGRectGetMaxY(rect)) {
-        CGRect visibleRect = CGRectZero;
-        visibleRect.origin = CGPointMake(0.0f, CGRectGetMinY(textFieldFrame));
-        visibleRect.size = CGSizeMake(CGRectGetWidth(self.scrollView.bounds), CGRectGetHeight(textFieldFrame) + 20.0f);
-        
-        CGPoint scrollOffset = CGPointMake(0.0f, CGRectGetMaxY(textFieldFrame) - CGRectGetMaxY(rect));
-        [self.scrollView setContentOffset:scrollOffset animated:YES];
-        
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-        
-        self.scrolled = YES;
-    } else {
-        [self resetScrollIfNecessary];
-    }
-}
-
-- (void)resetScrollIfNecessary {
-    if (self.hasScrolled) {
-        self.scrollView.contentInset = UIEdgeInsetsZero;
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero;
-        [self.scrollView setContentOffset:CGPointMake(0.0f, 0.0f) animated:YES];
-    
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-        
-        self.scrolled = NO;
-    }
-}
-
 - (void)dismissKeyboard {
     if ([self.firstNameTextField isFirstResponder]) {
         [self.firstNameTextField resignFirstResponder];
@@ -248,13 +211,11 @@
 #pragma mark Text Field Delegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.activeTextField = textField;
-    
-    [self scrollIfNecessary];
+    self.scrollViewHelper.activeTextField = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.activeTextField = nil;
+    self.scrollViewHelper.activeTextField = nil;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -270,21 +231,6 @@
     }
     
     return YES;
-}
-
-#pragma mark -
-#pragma mark Notifications
-
-- (void)keyboardDidShow:(NSNotification *)notification {
-    CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    CGRect convertedKeyboardFrame = [self.view convertRect:keyboardFrame fromView:self.view.window];
-    self.keyboardSize = convertedKeyboardFrame.size;
-    
-    [self scrollIfNecessary];
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-    [self resetScrollIfNecessary];
 }
 
 @end

@@ -15,6 +15,7 @@
 		4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACE1719FFEF4F002548C8 /* PostCallViewController.swift */; };
 		4E6544721A00279000B71C1C /* PostCallLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */; };
 		4E6544821A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E6544841A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings */; };
+		4E6544881A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */; };
 		4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */; };
 		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
 		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
@@ -171,6 +172,8 @@
 		4E6544761A00288400B71C1C /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/PostCallLocalizationTable.strings; sourceTree = "<group>"; };
 		4E6544831A010BEC00B71C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEInterfaceLocalizationTable.strings; sourceTree = "<group>"; };
 		4E6544851A010C6200B71C1C /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEInterfaceLocalizationTable.strings; sourceTree = "<group>"; };
+		4E6544861A0136F700B71C1C /* BMEScrollViewTextFieldHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEScrollViewTextFieldHelper.h; sourceTree = "<group>"; };
+		4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEScrollViewTextFieldHelper.m; sourceTree = "<group>"; };
 		4E7E106D19E5BFCE00D476B2 /* BMEAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessViewController.h; sourceTree = "<group>"; };
 		4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessViewController.m; sourceTree = "<group>"; };
 		4E7E107019E5C02000D476B2 /* BMEAccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessView.h; sourceTree = "<group>"; };
@@ -645,6 +648,8 @@
 				725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */,
 				4E3ACE1419FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.h */,
 				4E3ACE1519FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m */,
+				4E6544861A0136F700B71C1C /* BMEScrollViewTextFieldHelper.h */,
+				4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -966,6 +971,7 @@
 				4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */,
 				4EB6A1E219E5725F00C72A02 /* Button.swift in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
+				4E6544881A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m in Sources */,
 				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
 				4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */,
 				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
