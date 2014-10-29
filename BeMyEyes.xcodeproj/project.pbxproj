@@ -16,6 +16,7 @@
 		4E6544721A00279000B71C1C /* PostCallLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */; };
 		4E6544821A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E6544841A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings */; };
 		4E6544881A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */; };
+		4E65448C1A017E8D00B71C1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65448B1A017E8D00B71C1C /* BaseViewController.swift */; };
 		4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */; };
 		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
 		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
@@ -174,6 +175,7 @@
 		4E6544851A010C6200B71C1C /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEInterfaceLocalizationTable.strings; sourceTree = "<group>"; };
 		4E6544861A0136F700B71C1C /* BMEScrollViewTextFieldHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEScrollViewTextFieldHelper.h; sourceTree = "<group>"; };
 		4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEScrollViewTextFieldHelper.m; sourceTree = "<group>"; };
+		4E65448B1A017E8D00B71C1C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4E7E106D19E5BFCE00D476B2 /* BMEAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessViewController.h; sourceTree = "<group>"; };
 		4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessViewController.m; sourceTree = "<group>"; };
 		4E7E107019E5C02000D476B2 /* BMEAccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessView.h; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 			children = (
 				7236E03F18B8CCF400F622AA /* BMEBaseViewController.h */,
 				7236E04018B8CCF400F622AA /* BMEBaseViewController.m */,
+				4E65448B1A017E8D00B71C1C /* BaseViewController.swift */,
 				72E65FA518BA7CE3002FB2E0 /* BMEFrontPageViewController.h */,
 				72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */,
 				4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */,
@@ -946,6 +949,7 @@
 				4E3ACE1619FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m in Sources */,
 				72856DE319AF65640027AFF5 /* BMEHelperIntroViewController.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
+				4E65448C1A017E8D00B71C1C /* BaseViewController.swift in Sources */,
 				4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */,
 				4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */,
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
