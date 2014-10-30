@@ -20,79 +20,205 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usY-iz-Xp5" customClass="GradientView" customModule="BeMyEyes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9q-Oe-kOY">
-                                <rect key="frame" x="0.0" y="420" width="320" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="qjB-XI-VQ5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                                 <state key="normal" title="Already registered? Log in here.">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="ihY-sp-kva" kind="push" id="Y8W-tr-yNw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqb-HQ-rZY">
-                                <rect key="frame" x="0.0" y="360" width="320" height="60"/>
-                                <color key="backgroundColor" red="0.23529411759999999" green="0.5568627451" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Niu-0S-LZZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="I am blind">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="du8-BL-rDz" kind="push" identifier="FrontPageToIntroBlind" id="1zS-zg-Y9Q"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeQ-6j-q8m">
-                                <rect key="frame" x="0.0" y="300" width="320" height="60"/>
-                                <color key="backgroundColor" red="0.1019607843" green="0.22352941179999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="qdA-jd-1Gs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="I am sighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rRF-Ua-fxy" kind="push" identifier="FrontPageToVideoHelper" id="PjQ-Wu-874"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your role?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-NR-WpR">
-                                <rect key="frame" x="20" y="266" width="280" height="26"/>
+                                <rect key="frame" x="20" y="249" width="280" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="guc-9V-yrk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ag-KE-c4b">
-                                <rect key="frame" x="0.0" y="20" width="320" height="246"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmg-sQ-kOY" userLabel="Community Stats View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNI-8U-fEM">
-                                        <rect key="frame" x="0.0" y="37" width="320" height="171"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaF-5V-Oag" userLabel="Logo + label">
+                                        <rect key="frame" x="59" y="5" width="201" height="31"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoNoText" translatesAutoresizingMaskIntoConstraints="NO" id="5ee-ch-0ke">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="5ee-ch-0ke" secondAttribute="height" id="2Fp-Em-cKL"/>
+                                                    <constraint firstAttribute="height" constant="31" id="hcV-gq-g2G"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Be My Eyes Network" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="938-5k-IQu">
+                                                <rect key="frame" x="36" y="0.0" width="165" height="30.5"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="938-5k-IQu" firstAttribute="trailing" secondItem="VaF-5V-Oag" secondAttribute="trailing" id="K2C-k6-g3a"/>
+                                            <constraint firstItem="938-5k-IQu" firstAttribute="leading" secondItem="5ee-ch-0ke" secondAttribute="trailing" constant="5" id="OEz-z6-3y8"/>
+                                            <constraint firstAttribute="bottom" secondItem="5ee-ch-0ke" secondAttribute="bottom" id="RfV-Ef-7g5"/>
+                                            <constraint firstItem="5ee-ch-0ke" firstAttribute="top" secondItem="VaF-5V-Oag" secondAttribute="top" id="TWD-ZT-pUG"/>
+                                            <constraint firstItem="5ee-ch-0ke" firstAttribute="leading" secondItem="VaF-5V-Oag" secondAttribute="leading" id="cBm-KT-sXJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="938-5k-IQu" secondAttribute="bottom" id="vi4-U5-LlN"/>
+                                            <constraint firstItem="938-5k-IQu" firstAttribute="top" secondItem="VaF-5V-Oag" secondAttribute="top" id="xbP-7C-YT8"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voN-tL-YkH" userLabel="Sighted">
+                                        <rect key="frame" x="10" y="36" width="93.5" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kz3-fb-tJr" userLabel="42k" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="36"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sighted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-r0-eEf" userLabel="Sighted">
+                                                <rect key="frame" x="0.0" y="31" width="93.5" height="16"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dEj-r0-eEf" secondAttribute="bottom" id="0eN-kR-gT5"/>
+                                            <constraint firstItem="Kz3-fb-tJr" firstAttribute="top" secondItem="voN-tL-YkH" secondAttribute="top" id="1sl-b6-1gn"/>
+                                            <constraint firstItem="Kz3-fb-tJr" firstAttribute="leading" secondItem="voN-tL-YkH" secondAttribute="leading" id="3SB-uG-Sky"/>
+                                            <constraint firstAttribute="trailing" secondItem="dEj-r0-eEf" secondAttribute="trailing" id="Kst-eT-mhQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kz3-fb-tJr" secondAttribute="trailing" id="QL9-Fz-wm8"/>
+                                            <constraint firstItem="dEj-r0-eEf" firstAttribute="top" secondItem="Kz3-fb-tJr" secondAttribute="bottom" constant="-5" id="Qqt-kZ-sOa"/>
+                                            <constraint firstItem="dEj-r0-eEf" firstAttribute="leading" secondItem="voN-tL-YkH" secondAttribute="leading" id="qry-SU-f47"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BS6-su-hfO" userLabel="Blind">
+                                        <rect key="frame" x="113" y="36" width="93" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="512" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-R4-9bG" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="36"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-2Q-gty">
+                                                <rect key="frame" x="0.0" y="31" width="93" height="16"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Wih-2Q-gty" firstAttribute="leading" secondItem="BS6-su-hfO" secondAttribute="leading" id="1Ip-e5-SN9"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wih-2Q-gty" secondAttribute="bottom" id="44Q-Wg-Am2"/>
+                                            <constraint firstItem="LzD-R4-9bG" firstAttribute="leading" secondItem="BS6-su-hfO" secondAttribute="leading" id="8mX-Se-dap"/>
+                                            <constraint firstAttribute="trailing" secondItem="LzD-R4-9bG" secondAttribute="trailing" id="E16-rZ-mj5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wih-2Q-gty" secondAttribute="trailing" id="Jp3-D4-8B3"/>
+                                            <constraint firstItem="Wih-2Q-gty" firstAttribute="top" secondItem="LzD-R4-9bG" secondAttribute="bottom" constant="-5" id="Mn1-ll-PgU"/>
+                                            <constraint firstItem="LzD-R4-9bG" firstAttribute="top" secondItem="BS6-su-hfO" secondAttribute="top" id="xeA-J3-Dit"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rz-TP-5dg" userLabel="Helped">
+                                        <rect key="frame" x="216" y="36" width="93.5" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXJ-n1-HIU" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="36"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRX-sl-5ha">
+                                                <rect key="frame" x="0.0" y="31" width="93.5" height="16"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="rXJ-n1-HIU" secondAttribute="trailing" id="3M4-w5-Xb0"/>
+                                            <constraint firstItem="rXJ-n1-HIU" firstAttribute="leading" secondItem="9rz-TP-5dg" secondAttribute="leading" id="DlG-xo-vf8"/>
+                                            <constraint firstItem="HRX-sl-5ha" firstAttribute="leading" secondItem="9rz-TP-5dg" secondAttribute="leading" id="E0q-ZP-s1V"/>
+                                            <constraint firstAttribute="bottom" secondItem="HRX-sl-5ha" secondAttribute="bottom" id="ZNT-OQ-f7K"/>
+                                            <constraint firstAttribute="trailing" secondItem="HRX-sl-5ha" secondAttribute="trailing" id="Zwy-Qv-rGi"/>
+                                            <constraint firstItem="rXJ-n1-HIU" firstAttribute="top" secondItem="9rz-TP-5dg" secondAttribute="top" id="qqk-yK-Wi8"/>
+                                            <constraint firstItem="HRX-sl-5ha" firstAttribute="top" secondItem="rXJ-n1-HIU" secondAttribute="bottom" constant="-5" id="xob-Yj-JpX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" summaryElement="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="9rz-TP-5dg" firstAttribute="leading" secondItem="LzD-R4-9bG" secondAttribute="trailing" constant="10" id="27Z-uV-tbU"/>
+                                    <constraint firstItem="voN-tL-YkH" firstAttribute="top" secondItem="VaF-5V-Oag" secondAttribute="bottom" id="4gZ-Bz-cLh"/>
+                                    <constraint firstAttribute="bottom" secondItem="voN-tL-YkH" secondAttribute="bottom" id="AeD-qg-Hzw"/>
+                                    <constraint firstAttribute="trailing" secondItem="9rz-TP-5dg" secondAttribute="trailing" constant="10" id="HMB-0v-SVU"/>
+                                    <constraint firstItem="VaF-5V-Oag" firstAttribute="top" secondItem="mmg-sQ-kOY" secondAttribute="top" constant="5" id="Hbd-sl-IGs"/>
+                                    <constraint firstItem="voN-tL-YkH" firstAttribute="width" secondItem="9rz-TP-5dg" secondAttribute="width" id="OqU-X7-UMV"/>
+                                    <constraint firstAttribute="centerX" secondItem="VaF-5V-Oag" secondAttribute="centerX" id="STA-cz-fKu"/>
+                                    <constraint firstItem="voN-tL-YkH" firstAttribute="width" secondItem="BS6-su-hfO" secondAttribute="width" id="Va2-Wc-LTa"/>
+                                    <constraint firstItem="Kz3-fb-tJr" firstAttribute="top" secondItem="BS6-su-hfO" secondAttribute="top" id="b1j-jQ-bCq"/>
+                                    <constraint firstItem="BS6-su-hfO" firstAttribute="leading" secondItem="Kz3-fb-tJr" secondAttribute="trailing" constant="10" id="g6a-Td-6dD"/>
+                                    <constraint firstItem="9rz-TP-5dg" firstAttribute="top" secondItem="LzD-R4-9bG" secondAttribute="top" id="nKH-6m-Fop"/>
+                                    <constraint firstItem="voN-tL-YkH" firstAttribute="leading" secondItem="mmg-sQ-kOY" secondAttribute="leading" constant="10" id="tXT-dc-0yz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ag-KE-c4b" userLabel="Logo Wrapper">
+                                <rect key="frame" x="0.0" y="83" width="320" height="166"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNI-8U-fEM" userLabel="Logo Container">
+                                        <rect key="frame" x="0.0" y="-3.5" width="320" height="171"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXe-li-Co7">
-                                                <rect key="frame" x="20" y="93" width="280" height="27"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="27" id="xeq-zx-F3L"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                                <rect key="frame" x="20" y="93" width="280" height="20.5"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be My Eyes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vn6-bm-vhF">
-                                                <rect key="frame" x="20" y="120" width="280" height="51"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="51" id="jRd-iB-Rty"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
+                                                <rect key="frame" x="20" y="106.5" width="280" height="48"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoNoText" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-ka-v6O">
@@ -103,7 +229,10 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration" label="Welcome to Be My Eyes">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="171" id="Gve-2D-cz4"/>
                                             <constraint firstItem="m2L-ka-v6O" firstAttribute="top" secondItem="aNI-8U-fEM" secondAttribute="top" id="I6r-dE-srE"/>
@@ -112,12 +241,11 @@
                                             <constraint firstAttribute="trailing" secondItem="Vn6-bm-vhF" secondAttribute="trailing" constant="20" id="Tyy-33-XwL"/>
                                             <constraint firstItem="iXe-li-Co7" firstAttribute="leading" secondItem="aNI-8U-fEM" secondAttribute="leading" constant="20" id="auh-hh-n6C"/>
                                             <constraint firstItem="Vn6-bm-vhF" firstAttribute="leading" secondItem="aNI-8U-fEM" secondAttribute="leading" constant="20" id="dlm-eP-Yoz"/>
-                                            <constraint firstItem="Vn6-bm-vhF" firstAttribute="top" secondItem="iXe-li-Co7" secondAttribute="bottom" id="jwc-do-rBA"/>
+                                            <constraint firstItem="Vn6-bm-vhF" firstAttribute="top" secondItem="iXe-li-Co7" secondAttribute="bottom" constant="-7" id="jwc-do-rBA"/>
                                             <constraint firstItem="iXe-li-Co7" firstAttribute="top" secondItem="m2L-ka-v6O" secondAttribute="bottom" constant="-7" id="oGn-6A-7Gq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="aNI-8U-fEM" secondAttribute="trailing" id="NUD-G2-UEf"/>
                                     <constraint firstAttribute="centerY" secondItem="aNI-8U-fEM" secondAttribute="centerY" constant="0.5" id="Xq6-wC-znw"/>
@@ -125,35 +253,88 @@
                                     <constraint firstItem="aNI-8U-fEM" firstAttribute="leading" secondItem="6ag-KE-c4b" secondAttribute="leading" id="yqg-AD-owX"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kV5-ME-fhW" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="280" width="320" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="d3d-Zl-dif"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="I am sighted"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapSighted:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uT7-dB-Oo4"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-r7-DMS" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="355" width="320" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="HV3-4o-Wpc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="I am blind"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapBlind:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HDB-Hn-0cP"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kV5-ME-fhW" secondAttribute="trailing" id="4GI-qh-xx9"/>
                             <constraint firstAttribute="trailing" secondItem="mHE-NR-WpR" secondAttribute="trailing" constant="20" id="4r7-UX-yDw"/>
-                            <constraint firstAttribute="trailing" secondItem="Tqb-HQ-rZY" secondAttribute="trailing" id="7lk-F2-pTJ"/>
+                            <constraint firstItem="ESf-r7-DMS" firstAttribute="top" secondItem="kV5-ME-fhW" secondAttribute="bottom" id="BPw-Ne-xSn"/>
                             <constraint firstItem="Uzk-Yk-OlI" firstAttribute="top" secondItem="M9q-Oe-kOY" secondAttribute="bottom" id="C1T-cs-CA1"/>
-                            <constraint firstItem="CeQ-6j-q8m" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="C7f-fN-kZS"/>
                             <constraint firstItem="mHE-NR-WpR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="CNB-s2-WAd"/>
                             <constraint firstAttribute="trailing" secondItem="6ag-KE-c4b" secondAttribute="trailing" id="CYf-kI-iv1"/>
-                            <constraint firstItem="6ag-KE-c4b" firstAttribute="top" secondItem="LUz-nx-Suh" secondAttribute="bottom" id="Cpv-ne-wJk"/>
+                            <constraint firstItem="mmg-sQ-kOY" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="CnK-Nu-Sfr"/>
                             <constraint firstAttribute="trailing" secondItem="M9q-Oe-kOY" secondAttribute="trailing" id="DEr-5q-DMA"/>
-                            <constraint firstItem="M9q-Oe-kOY" firstAttribute="top" secondItem="Tqb-HQ-rZY" secondAttribute="bottom" id="Kgx-OP-6Cq"/>
-                            <constraint firstAttribute="trailing" secondItem="CeQ-6j-q8m" secondAttribute="trailing" id="KvZ-FD-jg9"/>
-                            <constraint firstItem="Tqb-HQ-rZY" firstAttribute="top" secondItem="CeQ-6j-q8m" secondAttribute="bottom" id="Ma5-pU-Z4P"/>
-                            <constraint firstItem="Tqb-HQ-rZY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TYx-lM-v1W"/>
+                            <constraint firstItem="M9q-Oe-kOY" firstAttribute="top" secondItem="ESf-r7-DMS" secondAttribute="bottom" id="I18-UV-Mxy"/>
+                            <constraint firstAttribute="trailing" secondItem="ESf-r7-DMS" secondAttribute="trailing" id="QIW-F1-PJG"/>
                             <constraint firstItem="M9q-Oe-kOY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Udx-JV-XuY"/>
-                            <constraint firstItem="CeQ-6j-q8m" firstAttribute="top" secondItem="mHE-NR-WpR" secondAttribute="bottom" constant="8" id="fVP-A7-RTS"/>
+                            <constraint firstItem="mmg-sQ-kOY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="UfC-cl-gsi"/>
+                            <constraint firstItem="usY-iz-Xp5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="bHx-2Z-4KR"/>
+                            <constraint firstItem="ESf-r7-DMS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="em8-Xj-A20"/>
+                            <constraint firstItem="usY-iz-Xp5" firstAttribute="top" secondItem="LUz-nx-Suh" secondAttribute="bottom" id="fKH-Hl-9FG"/>
+                            <constraint firstAttribute="trailing" secondItem="usY-iz-Xp5" secondAttribute="trailing" id="gWb-M3-1lj"/>
+                            <constraint firstItem="6ag-KE-c4b" firstAttribute="top" secondItem="mmg-sQ-kOY" secondAttribute="bottom" id="mG7-B3-WCo"/>
+                            <constraint firstItem="kV5-ME-fhW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="q8t-Tb-po2"/>
                             <constraint firstItem="6ag-KE-c4b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rai-Xv-zdX"/>
+                            <constraint firstItem="Uzk-Yk-OlI" firstAttribute="top" secondItem="usY-iz-Xp5" secondAttribute="bottom" id="rsU-3r-MUP"/>
                             <constraint firstItem="mHE-NR-WpR" firstAttribute="top" secondItem="6ag-KE-c4b" secondAttribute="bottom" id="wk8-BG-RAd"/>
+                            <constraint firstAttribute="trailing" secondItem="mmg-sQ-kOY" secondAttribute="trailing" id="x85-sY-3fB"/>
+                            <constraint firstItem="kV5-ME-fhW" firstAttribute="top" secondItem="mHE-NR-WpR" secondAttribute="bottom" constant="5" id="xaY-aS-3iL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gva-8w-2WT"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="alreadyRegisteredButton" destination="M9q-Oe-kOY" id="ziS-WG-v45"/>
                         <outlet property="appNameLabel" destination="Vn6-bm-vhF" id="UOk-Wd-6P3"/>
                         <outlet property="askForRoleLabel" destination="mHE-NR-WpR" id="04i-EH-Ens"/>
-                        <outlet property="blindRoleButton" destination="Tqb-HQ-rZY" id="1NI-r2-7lK"/>
-                        <outlet property="sightedRoleButton" destination="CeQ-6j-q8m" id="V9g-s1-4jB"/>
+                        <outlet property="blindRoleButton" destination="ESf-r7-DMS" id="Zom-U2-RvB"/>
+                        <outlet property="communityStatsLabel" destination="938-5k-IQu" id="Blg-3x-uJ1"/>
+                        <outlet property="communityStatsView" destination="mmg-sQ-kOY" id="Dmg-oE-Ndb"/>
+                        <outlet property="descriptionCommunityBlindLabel" destination="Wih-2Q-gty" id="5kQ-a8-D2Q"/>
+                        <outlet property="descriptionCommunityHelpedLabel" destination="HRX-sl-5ha" id="Tyo-g9-cDD"/>
+                        <outlet property="descriptionCommunitySightedLabel" destination="dEj-r0-eEf" id="CZO-JT-iRA"/>
+                        <outlet property="logoContainer" destination="aNI-8U-fEM" id="LJe-Je-1s7"/>
+                        <outlet property="pointsCommunityBlindLabel" destination="LzD-R4-9bG" id="sIN-Ph-S9U"/>
+                        <outlet property="pointsCommunityHelpedLabel" destination="rXJ-n1-HIU" id="40A-DO-MWv"/>
+                        <outlet property="pointsCommunitySightedLabel" destination="Kz3-fb-tJr" id="Nqg-nn-6Vf"/>
+                        <outlet property="sightedRoleButton" destination="kV5-ME-fhW" id="dTS-ut-p3K"/>
                         <outlet property="welcomeLabel" destination="iXe-li-Co7" id="UdA-MX-knx"/>
+                        <segue destination="rRF-Ua-fxy" kind="push" identifier="Helper" id="z5a-7f-Ou4"/>
+                        <segue destination="du8-BL-rDz" kind="push" identifier="Blind" id="dq6-Ez-jnR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -412,6 +593,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-9t-PDp" userLabel="Facebook" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="81" width="320" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="T5S-SQ-q1H"/>
                                                 </constraints>
@@ -497,6 +682,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eav-yG-qgk" userLabel="E-mail" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="313" width="320" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="XzG-Ot-TJ0"/>
                                                 </constraints>
@@ -664,6 +853,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7J-gM-nC7" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="203.5" width="320" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="mh5-J4-gmV"/>
                                                 </constraints>
@@ -853,6 +1046,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Duu-to-o9F" userLabel="Facebook" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="199" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="5Dp-9c-AYi"/>
                                 </constraints>
@@ -866,6 +1063,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-eT-VL6" userLabel="E-mail" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="274" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="djH-H3-EJT"/>
                                 </constraints>
@@ -1194,13 +1395,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nD0-Ei-SWE" customClass="ProfileImageView" customModule="BeMyEyes" customModuleProvider="target">
-                                            <rect key="frame" x="110" y="40" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="U7U-Gu-nr1"/>
-                                                <constraint firstAttribute="width" secondItem="nD0-Ei-SWE" secondAttribute="height" id="yEK-Kx-6RB"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Paul!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="X7B-Ii-TJu">
                                             <rect key="frame" x="107" y="140" width="106" height="50"/>
                                             <constraints>
@@ -1296,6 +1490,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 <constraint firstAttribute="trailing" secondItem="bDk-Fp-G2F" secondAttribute="trailing" id="qzD-3Z-15A"/>
                                             </constraints>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nD0-Ei-SWE" customClass="ProfileImageView" customModule="BeMyEyes" customModuleProvider="target">
+                                            <rect key="frame" x="110" y="40" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="U7U-Gu-nr1"/>
+                                                <constraint firstAttribute="width" secondItem="nD0-Ei-SWE" secondAttribute="height" id="yEK-Kx-6RB"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -2462,6 +2663,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pr4-7v-mGa" userLabel="Button" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="405" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Gdh-jZ-Ni3"/>
                                 </constraints>
@@ -2533,6 +2738,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4O-VG-VGH" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="330" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="bpd-sb-guT"/>
                                 </constraints>
@@ -3016,9 +3225,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kdn-ps-MZv"/>
         <segue reference="LUD-Ic-JoT"/>
-        <segue reference="THh-yj-HlV"/>
-        <segue reference="tPL-wK-r0M"/>
+        <segue reference="Zkk-7c-PpU"/>
+        <segue reference="wQZ-b3-l1S"/>
+        <segue reference="kdn-ps-MZv"/>
     </inferredMetricsTieBreakers>
 </document>

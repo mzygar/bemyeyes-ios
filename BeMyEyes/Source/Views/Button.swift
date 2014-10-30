@@ -17,6 +17,12 @@ import UIKit
         }
     }
     
+    @IBInspectable var font: UIFont = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline) {
+        didSet {
+            titleLabel.font = font
+        }
+    }
+    
     var color: UIColor = UIColor.whiteColor()
     var highlightedColor: UIColor = UIColor.lightTextColor()
     var selectedColor: UIColor = UIColor.lightTextColor()
@@ -35,7 +41,7 @@ import UIKit
     
     private lazy var titleLabel: MaskedLabel = {
         let label = MaskedLabel()
-        label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        label.font = self.font
         label.textAlignment = .Center
         return label
     }()
@@ -54,6 +60,10 @@ import UIKit
         super.layoutSubviews()
         titleLabel.frame = CGRectInset(bounds, 15, 7.5)
     }
+    
+    override func prepareForInterfaceBuilder() {
+        setup()
+    }
 }
 
 extension Button {
@@ -61,7 +71,12 @@ extension Button {
     func setup() {
         opaque = false
         backgroundColor = UIColor.clearColor()
-        addSubview(titleLabel)    }
+        addSubview(titleLabel)
+    }
+    
+    func accessibilityLabel() -> String! {
+        return titleLabel.accessibilityLabel
+    }
     
     func updateToState() {
         titleLabel.color = colorForState(state)
