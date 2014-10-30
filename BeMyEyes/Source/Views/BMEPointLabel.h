@@ -14,6 +14,7 @@
 @property (assign, nonatomic) NSTimeInterval tickAnimationDuration;
 @property (copy, nonatomic) NSDictionary *colors;
 
+- (NSString *)finalText;
 - (void)setPoint:(NSInteger)point animated:(BOOL)animted;
 
 @end
