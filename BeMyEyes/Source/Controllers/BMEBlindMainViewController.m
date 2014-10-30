@@ -38,13 +38,13 @@
 
 - (IBAction)connectToCommunityButtonPressed:(id)sender {
     
-    BMECallViewController *callController = [self.view.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMECallControllerIdentifier];
+    BMECallViewController *callController = [self.storyboard instantiateViewControllerWithIdentifier:BMECallControllerIdentifier];
     callController.callMode = BMECallModeCreate;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
     navigationController.navigationBarHidden = YES;
     
-    [self.view.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end
