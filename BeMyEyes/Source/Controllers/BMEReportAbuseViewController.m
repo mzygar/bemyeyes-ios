@@ -23,16 +23,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *reason2Label;
 @property (weak, nonatomic) IBOutlet UILabel *reason3Label;
 
-@property (weak, nonatomic) IBOutlet UIImageView *reason1StateImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *reason2StateImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *reason3StateImageView;
+@property (weak, nonatomic) IBOutlet RadioButton *reason1StateRadioButton;
+@property (weak, nonatomic) IBOutlet RadioButton *reason2StateRadioButton;
+@property (weak, nonatomic) IBOutlet RadioButton *reason3StateRadioButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *reason1Button;
 @property (weak, nonatomic) IBOutlet UIButton *reason2Button;
 @property (weak, nonatomic) IBOutlet UIButton *reason3Button;
 
-@property (weak, nonatomic) IBOutlet UIButton *reportButton;
-@property (weak, nonatomic) IBOutlet UIButton *skipButton;
+@property (weak, nonatomic) IBOutlet Button *reportButton;
+@property (weak, nonatomic) IBOutlet Button *skipButton;
 @end
 
 @implementation BMEReportAbuseViewController
@@ -59,8 +59,8 @@
     self.headlineLabel.text = MKLocalizedFromTable(BME_REPORT_ABUSE_HEADLINE, BMEReportAbuseLocalizationTable);
     self.chooseReasonLabel.text = MKLocalizedFromTable(BME_REPORT_ABUSE_CHOOSE_REASON, BMEReportAbuseLocalizationTable);
     
-    [self.reportButton setTitle:MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT, BMEReportAbuseLocalizationTable) forState:UIControlStateNormal];
-    [self.skipButton setTitle:MKLocalizedFromTable(BME_REPORT_ABUSE_SKIP, BMEReportAbuseLocalizationTable) forState:UIControlStateNormal];
+    self.reportButton.title = MKLocalizedFromTable(BME_REPORT_ABUSE_REPORT, BMEReportAbuseLocalizationTable);
+    self.skipButton.title = MKLocalizedFromTable(BME_REPORT_ABUSE_SKIP, BMEReportAbuseLocalizationTable);
     
     [self writeReasons];
 }
@@ -158,19 +158,19 @@
 - (void)writeAccessibilityLabels {
     NSString *label1, *label2, *label3;
     
-    if ([self.reason1StateImageView isHighlighted]) {
+    if (self.reason1StateRadioButton.selected) {
         label1 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED, BMEReportAbuseLocalizationTable);
     } else {
-        label1 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2, BMEReportAbuseLocalizationTable);
+        label1 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1, BMEReportAbuseLocalizationTable);
     }
     
-    if ([self.reason2StateImageView isHighlighted]) {
+    if (self.reason2StateRadioButton.selected) {
         label2 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED, BMEReportAbuseLocalizationTable);
     } else {
         label2 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2, BMEReportAbuseLocalizationTable);
     }
     
-    if ([self.reason3StateImageView isHighlighted]) {
+    if (self.reason3StateRadioButton.selected) {
         label3 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED, BMEReportAbuseLocalizationTable);
     } else {
         label3 = MKLocalizedFromTable(BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3, BMEReportAbuseLocalizationTable);
@@ -182,9 +182,9 @@
 }
 
 - (void)selectReasonNumber:(NSUInteger)number {
-    self.reason1StateImageView.highlighted = (number == 1);
-    self.reason2StateImageView.highlighted = (number == 2);
-    self.reason3StateImageView.highlighted = (number == 3);
+    self.reason1StateRadioButton.selected = (number == 1);
+    self.reason2StateRadioButton.selected = (number == 2);
+    self.reason3StateRadioButton.selected = (number == 3);
     
     if (![self.reportButton isEnabled]) {
         self.reportButton.enabled = YES;
@@ -196,11 +196,11 @@
 
 - (NSString *)selectedReason {
     NSString *reason = nil;
-    if ([self.reason1StateImageView isHighlighted]) {
+    if (self.reason1StateRadioButton.selected) {
         reason = self.reason1Label.text;
-    } else if ([self.reason2StateImageView isHighlighted]) {
+    } else if (self.reason2StateRadioButton.selected) {
         reason = self.reason2Label.text;
-    } else if ([self.reason3StateImageView isHighlighted]) {
+    } else if (self.reason3StateRadioButton.selected) {
         reason = self.reason3Label.text;
     }
     

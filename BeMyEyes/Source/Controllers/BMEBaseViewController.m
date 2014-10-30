@@ -30,6 +30,11 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return UIStatusBarAnimationFade;
+}
+
 - (BOOL)prefersStatusBarHidden
 {
     return NO;

@@ -10,13 +10,16 @@
 #import <MRProgress/MRProgress.h>
 #import "BMEEmailValidator.h"
 #import "BMEClient.h"
+#import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 
 @interface BMEForgotPasswordViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet Button *sendPasswordButton;
+@property (strong, nonatomic) BMEScrollViewTextFieldHelper *scrollViewHelper;
 @end
 
 @implementation BMEForgotPasswordViewController
@@ -28,6 +31,8 @@
     [super viewDidLoad];
     
     [MKLocalization registerForLocalization:self];
+    
+    self.scrollViewHelper = [[BMEScrollViewTextFieldHelper alloc] initWithScrollview:self.scrollView inViewController:self];
 }
 
 - (void)shouldLocalize {
@@ -40,6 +45,16 @@
     self.sendPasswordButton.title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER, BMEForgotPasswordLocalizationTable);
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return self.scrollViewHelper.prefersStatusBarHidden;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return self.scrollViewHelper.preferredStatusBarUpdateAnimation;
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -48,6 +63,10 @@
         [self.emailTextField resignFirstResponder];
     }
     
+    [self performSendPasswordToEmail];
+}
+
+- (void)performSendPasswordToEmail {
     if ([self performEmailValidation]) {
         NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [self sendNewPasswordToEmail:email];
@@ -102,9 +121,19 @@
 #pragma mark -
 #pragma mark Text Field Delegate
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.scrollViewHelper.activeTextField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.scrollViewHelper.activeTextField = nil;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    
+    if (textField == self.emailTextField) {
+        [textField resignFirstResponder];
+        [self performSendPasswordToEmail];
+    }
     return YES;
 }
 

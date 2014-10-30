@@ -88,8 +88,12 @@
     }
 }
 
+- (NSString *)finalText {
+    return [NSString stringWithFormat:@"%d", self.point];
+}
+
 - (void)displayPoint {
-    self.text = [NSString stringWithFormat:@"%.0f", self.currentPoint];
+    self.text = self.finalText;
 }
 
 - (void)animatePoint {

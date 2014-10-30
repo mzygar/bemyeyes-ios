@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadioButton: UIButton {
+@IBDesignable class RadioButton: UIButton {
     
     private let strokeWidth: CGFloat = 3
     

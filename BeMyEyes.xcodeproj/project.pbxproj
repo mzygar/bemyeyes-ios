@@ -14,6 +14,11 @@
 		4E3ACE1619FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACE1519FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m */; };
 		4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ACE1719FFEF4F002548C8 /* PostCallViewController.swift */; };
 		4E6544721A00279000B71C1C /* PostCallLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */; };
+		4E6544821A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E6544841A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings */; };
+		4E6544881A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */; };
+		4E65448C1A017E8D00B71C1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65448B1A017E8D00B71C1C /* BaseViewController.swift */; };
+		4E6AE89E1A01927F0019247A /* FacebookHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AE89D1A01927F0019247A /* FacebookHelper.swift */; };
+		4E6AE8A01A0194430019247A /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AE89F1A0194430019247A /* ProfileImageView.swift */; };
 		4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */; };
 		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
 		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
@@ -34,6 +39,7 @@
 		4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */; };
 		4EB6C13D19FFB6B50048735E /* BMEButtonImageToRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */; };
 		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
+		4EDCE93F1A01E069006C7A4A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCE9411A01E069006C7A4A /* Launch Screen.storyboard */; };
 		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
@@ -163,11 +169,19 @@
 		4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitMaskedLabel.swift; sourceTree = "<group>"; };
 		4E2B919919E67F1F00C9D0ED /* BMEAccessControlHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessControlHandler.h; sourceTree = "<group>"; };
 		4E2B919A19E67F1F00C9D0ED /* BMEAccessControlHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessControlHandler.m; sourceTree = "<group>"; };
+		4E3054201A01E0AB00FA9044 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = "da.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		4E3ACE1419FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECrashlyticsLoggingSwift.h; sourceTree = "<group>"; };
 		4E3ACE1519FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECrashlyticsLoggingSwift.m; sourceTree = "<group>"; };
 		4E3ACE1719FFEF4F002548C8 /* PostCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCallViewController.swift; sourceTree = "<group>"; };
 		4E6544731A00279000B71C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PostCallLocalizationTable.strings; sourceTree = "<group>"; };
 		4E6544761A00288400B71C1C /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/PostCallLocalizationTable.strings; sourceTree = "<group>"; };
+		4E6544831A010BEC00B71C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEInterfaceLocalizationTable.strings; sourceTree = "<group>"; };
+		4E6544851A010C6200B71C1C /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEInterfaceLocalizationTable.strings; sourceTree = "<group>"; };
+		4E6544861A0136F700B71C1C /* BMEScrollViewTextFieldHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEScrollViewTextFieldHelper.h; sourceTree = "<group>"; };
+		4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEScrollViewTextFieldHelper.m; sourceTree = "<group>"; };
+		4E65448B1A017E8D00B71C1C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4E6AE89D1A01927F0019247A /* FacebookHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookHelper.swift; sourceTree = "<group>"; };
+		4E6AE89F1A0194430019247A /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		4E7E106D19E5BFCE00D476B2 /* BMEAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessViewController.h; sourceTree = "<group>"; };
 		4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessViewController.m; sourceTree = "<group>"; };
 		4E7E107019E5C02000D476B2 /* BMEAccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessView.h; sourceTree = "<group>"; };
@@ -199,6 +213,7 @@
 		4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEButtonImageToRight.m; sourceTree = "<group>"; };
 		4EBE9BF819E8C91000CBC675 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissSegue.h; path = Source/DismissSegue.h; sourceTree = "<group>"; };
 		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
+		4EDCE9441A01E07A006C7A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		60BAD311403180811F795B70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
@@ -516,6 +531,7 @@
 				7236E00F18B8A87B00F622AA /* Main.storyboard */,
 				4EBE9BF819E8C91000CBC675 /* DismissSegue.h */,
 				4EBE9BF919E8C91000CBC675 /* DismissSegue.m */,
+				4EDCE9411A01E069006C7A4A /* Launch Screen.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -571,6 +587,7 @@
 			children = (
 				7236E03F18B8CCF400F622AA /* BMEBaseViewController.h */,
 				7236E04018B8CCF400F622AA /* BMEBaseViewController.m */,
+				4E65448B1A017E8D00B71C1C /* BaseViewController.swift */,
 				72E65FA518BA7CE3002FB2E0 /* BMEFrontPageViewController.h */,
 				72E65FA618BA7CE3002FB2E0 /* BMEFrontPageViewController.m */,
 				4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */,
@@ -642,6 +659,9 @@
 				725B0EFA1959896600BB4AE0 /* BMECallAudioPlayer.m */,
 				4E3ACE1419FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.h */,
 				4E3ACE1519FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m */,
+				4E6544861A0136F700B71C1C /* BMEScrollViewTextFieldHelper.h */,
+				4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */,
+				4E6AE89D1A01927F0019247A /* FacebookHelper.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -670,6 +690,7 @@
 				4E7E107119E5C02000D476B2 /* BMEAccessView.m */,
 				4EB6C13B19FFB6B50048735E /* BMEButtonImageToRight.h */,
 				4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */,
+				4E6AE89F1A0194430019247A /* ProfileImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -701,6 +722,7 @@
 				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
 				4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
+				4E6544841A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -837,6 +859,7 @@
 				72DA827718D4716A001F3312 /* Localizable.strings in Resources */,
 				72DA827118D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings in Resources */,
 				72414AFD196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings in Resources */,
+				4E6544821A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings in Resources */,
 				72856DEC19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings in Resources */,
 				72E65F9E18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings in Resources */,
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
@@ -844,6 +867,7 @@
 				72856DEF19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings in Resources */,
 				727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */,
 				72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */,
+				4EDCE93F1A01E069006C7A4A /* Launch Screen.storyboard in Resources */,
 				72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */,
 				725B0EF81959875500BB4AE0 /* call.aiff in Resources */,
 				72856DE919AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings in Resources */,
@@ -922,6 +946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72856DE619AF65770027AFF5 /* BMEBlindIntroViewController.m in Sources */,
+				4E6AE89E1A01927F0019247A /* FacebookHelper.swift in Sources */,
 				4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */,
 				72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */,
 				7236E04718B8DBDF00F622AA /* BMESignUpMethodViewController.m in Sources */,
@@ -936,6 +961,7 @@
 				4E3ACE1619FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m in Sources */,
 				72856DE319AF65640027AFF5 /* BMEHelperIntroViewController.m in Sources */,
 				729B1CD31901699500B5ABEA /* GVUserDefaults+Settings.m in Sources */,
+				4E65448C1A017E8D00B71C1C /* BaseViewController.swift in Sources */,
 				4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */,
 				4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */,
 				720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */,
@@ -961,6 +987,7 @@
 				4EB6AD1F19E1F4D700141615 /* BMECommunityStats.m in Sources */,
 				4EB6A1E219E5725F00C72A02 /* Button.swift in Sources */,
 				72DEF73218B90A6D0048FA90 /* NSData+CommonCrypto.m in Sources */,
+				4E6544881A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m in Sources */,
 				720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */,
 				4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */,
 				721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */,
@@ -990,6 +1017,7 @@
 				72DEF71418B907CB0048FA90 /* BMERoleConverter.m in Sources */,
 				72E65FA418BA7C12002FB2E0 /* BMEIntroViewController.m in Sources */,
 				72DEF73B18B90E930048FA90 /* BMELoginViewController.m in Sources */,
+				4E6AE8A01A0194430019247A /* ProfileImageView.swift in Sources */,
 				726D7B93191AA21A005690B7 /* BMEPointEntry.m in Sources */,
 				729656A518CC933F00E1A9EE /* BMETopNavigationController.m in Sources */,
 			);
@@ -1007,6 +1035,15 @@
 			name = PostCallLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
+		4E6544841A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E6544831A010BEC00B71C1C /* en */,
+				4E6544851A010C6200B71C1C /* da */,
+			);
+			name = BMEInterfaceLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
 		4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1014,6 +1051,15 @@
 				4EB46C4719F08102008405B8 /* da */,
 			);
 			name = BMEAccessLocalization.strings;
+			sourceTree = "<group>";
+		};
+		4EDCE9411A01E069006C7A4A /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EDCE9441A01E07A006C7A4A /* Base */,
+				4E3054201A01E0AB00FA9044 /* da */,
+			);
+			name = "Launch Screen.storyboard";
 			sourceTree = "<group>";
 		};
 		720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */ = {

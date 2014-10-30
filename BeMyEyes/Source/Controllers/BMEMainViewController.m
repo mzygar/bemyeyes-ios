@@ -35,6 +35,8 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MKLocalization registerForLocalization:self];
+    
     BMERole role = [BMEClient sharedClient].currentUser.role;
     switch (role) {
         case BMERoleHelper:
@@ -95,7 +97,7 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 }
 
 - (void)shouldLocalize {
-    [self.settingsButton setAccessibilityLabel:MKLocalizedFromTable(BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL, BMEMainLocalizationTable)];
+    self.settingsButton.accessibilityLabel = MKLocalizedFromTable(BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL, BMEMainLocalizationTable);
 }
 
 #pragma mark -
