@@ -153,7 +153,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     contentInsets.bottom = bottomInset;
     self.tableView.contentInset = contentInsets;
     
-    UIEdgeInsets scrollIndicatorInsets = self.tableView.contentInset;
+    UIEdgeInsets scrollIndicatorInsets = self.tableView.scrollIndicatorInsets;
     scrollIndicatorInsets.bottom = bottomInset;
     self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
 }
