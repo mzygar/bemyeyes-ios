@@ -44,7 +44,7 @@
 "BME_SETTINGS_TASK_POINTS" = "+%d points";
 
 /* Points description task completed */
-"BME_SETTINGS_TASK_COMPLETED" = "√";
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
 
 /* Points description task completed accessibility label */
 "BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Udført";
