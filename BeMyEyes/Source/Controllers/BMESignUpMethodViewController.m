@@ -17,9 +17,7 @@
 #import "NSString+BMEDeviceToken.h"
 #import "BeMyEyes-Swift.h"
 
-#define BMESignUpLoggedInSegue @"LoggedIn"
 #define BMESignUpMethodSignUpSegue @"SignUp"
-#define BMERegisteredSegue @"Registered"
 
 @interface BMESignUpMethodViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
@@ -126,14 +124,10 @@
                             } failure:^(NSError *error) {
                                 [progressOverlayView hide:YES];
                                 
-                                [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                                
                                 NSLog(@"Failed logging in after sign up: %@", error);
                             }];
                         } else {
                             [progressOverlayView hide:YES];
-                            
-                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
                             
                             NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
                         }
@@ -185,7 +179,7 @@
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
     [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     
-    [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }
 
 #pragma mark -

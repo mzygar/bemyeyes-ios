@@ -16,8 +16,6 @@
 #import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 
-#define BMELoginLoggedInSegue @"LoggedIn"
-
 @interface BMELoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
@@ -232,7 +230,7 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }
 
 #pragma mark -

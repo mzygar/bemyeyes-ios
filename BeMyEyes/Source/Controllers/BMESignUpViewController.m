@@ -16,8 +16,6 @@
 #import "BeMyEyes-Swift.h"
 
 #define BMESignUpMinimumPasswordLength 6
-#define BMESignUpLoggedInSegue @"LoggedIn"
-#define BMERegisteredSegue @"Registered"
 
 @interface BMESignUpViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -106,14 +104,10 @@
                         } failure:^(NSError *error) {
                             [progressOverlayView hide:YES];
                             
-                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                            
                             NSLog(@"Failed logging in after sign up: %@", error);
                         }];
                     } else {
                         [progressOverlayView hide:YES];
-                        
-                        [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
                         
                         NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
                     }
@@ -143,7 +137,7 @@
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
     [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     
-    [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }
 
 - (BOOL)isInformationValid {

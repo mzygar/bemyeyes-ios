@@ -105,8 +105,6 @@ static NSString *const videoSegueIdentifier = @"Video";
         
         if (!error || [error code] == BMEClientErrorUserTokenNotFound) {
             [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogOutNotification object:nil];
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"Could not log out: %@", error);
             

@@ -15,6 +15,7 @@
 #import "BMECallAudioPlayer.h"
 #import "BMEAccessControlHandler.h"
 #import <Crashlytics/Crashlytics.h>
+#import "BMETopNavigationController.h"
 
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
@@ -66,6 +67,9 @@
     secretTapGesture.numberOfTapsRequired = 3;
     [self.window addGestureRecognizer:secretTapGesture];
 #endif
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogIn:) name:BMEDidLogInNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogOut:) name:BMEDidLogOutNotification object:nil];
     
     return YES;
 }
@@ -222,8 +226,7 @@
 - (void)checkIfLoggedIn {
     NSLog(@"Check if logged in");
     if ([GVUserDefaults standardUserDefaults].deviceToken != nil && [[BMEClient sharedClient] isTokenValid]) {
-        UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
-        [self replaceTopController:mainController];
+        [self showLoggedInMainView];
         
         [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
             if (success) {
@@ -241,7 +244,7 @@
 }
 
 - (void)loginFailed {
-    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
+    [self showFrontPage];
     
     [[BMEClient sharedClient] logoutWithCompletion:nil];
     [[BMEClient sharedClient] resetLogin];
@@ -249,16 +252,14 @@
 }
 
 - (void)didLogin {
+    [self showLoggedInMainView];
+    
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
     [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
     
     if (!self.isLaunchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];
     }
-}
-
-- (void)replaceTopController:(UIViewController *)topController {
-    self.window.rootViewController = topController;
 }
 
 - (NSString *)shortIdInLaunchOptions:(NSDictionary *)launchOptions {
@@ -278,7 +279,12 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
             navigationController.navigationBarHidden = YES;
             
-            [self.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
+            UIViewController *presentFromController = self.window.rootViewController;
+            if (presentFromController.presentedViewController) {
+                presentFromController = presentFromController.presentedViewController;
+            }
+            
+            [presentFromController presentViewController:navigationController animated:YES completion:nil];
         }
     }];
 }
@@ -354,6 +360,39 @@
             }
         }];
     }
+}
+
+- (void)didLogOut:(NSNotification *)notification {
+    [self showFrontPage];
+    [self resetBadgeIcon];
+}
+
+- (void)didLogIn:(NSNotification *)notification {
+    [self showLoggedInMainView];
+    [self resetBadgeIcon];
+}
+
+
+- (void)showFrontPage {
+    BMETopNavigationController *initialViewController;
+    if ([self.window.rootViewController isKindOfClass:[BMETopNavigationController class]]) {
+        initialViewController = (BMETopNavigationController *)self.window.rootViewController;
+        if (initialViewController.presentedViewController) {
+            [initialViewController dismissViewControllerAnimated:YES completion:nil];
+        }
+        [initialViewController popToRootViewControllerAnimated:YES];
+    } else {
+        initialViewController = (BMETopNavigationController *)[self.window.rootViewController.storyboard instantiateInitialViewController];
+        self.window.rootViewController = initialViewController;
+    }
+}
+
+- (void)showLoggedInMainView {
+    UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
+    if (self.window.rootViewController.presentedViewController == mainController) {
+        return;
+    }
+    [self.window.rootViewController presentViewController:mainController animated:YES completion:nil];
 }
 
 @end
