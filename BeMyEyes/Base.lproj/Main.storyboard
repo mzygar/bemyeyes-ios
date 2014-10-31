@@ -768,7 +768,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAG-ss-trN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="1263"/>
+            <point key="canvasLocation" x="-82" y="1091"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="3Dy-h7-cko">
@@ -914,7 +914,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2x1-Li-78v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="1263"/>
+            <point key="canvasLocation" x="358" y="1091"/>
         </scene>
         <!--Blind Intro View Controller-->
         <scene sceneID="0Jd-Fy-FjZ">
@@ -1294,7 +1294,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt2-1B-bf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="2175"/>
+            <point key="canvasLocation" x="358" y="2527"/>
         </scene>
         <!--Helper Main View Controller-->
         <scene sceneID="i4r-nw-Lbv">
@@ -1674,7 +1674,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYu-V3-w0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="2124"/>
+            <point key="canvasLocation" x="358" y="1912"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gq3-SN-wDx">
@@ -2325,7 +2325,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-so-bqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N0m-gc-YxM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="358" y="3121"/>
+            <point key="canvasLocation" x="358" y="3385"/>
         </scene>
         <!--Task Intro Video View Controller-->
         <scene sceneID="rcX-St-YDh">
@@ -2364,7 +2364,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T65-hC-CyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="3731"/>
+            <point key="canvasLocation" x="358" y="3995"/>
         </scene>
         <!--Your Languages-->
         <scene sceneID="SuY-BI-aAL">
@@ -2413,7 +2413,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gav-eW-E1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="2775"/>
+            <point key="canvasLocation" x="1222" y="3039"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pDe-fZ-Ytj">
@@ -2638,7 +2638,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Stf-oQ-mRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="2175"/>
+            <point key="canvasLocation" x="788" y="2183"/>
         </scene>
         <!--Post Call View Controller-->
         <scene sceneID="oXP-Ev-N4O">
@@ -2717,7 +2717,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsE-Fe-gIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="2175"/>
+            <point key="canvasLocation" x="1222" y="2183"/>
         </scene>
         <!--Report Abuse View Controller-->
         <scene sceneID="WUV-od-PF3">
@@ -2988,7 +2988,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emM-fF-hv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664" y="2175"/>
+            <point key="canvasLocation" x="1656" y="2183"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="xFF-Ds-18S">
@@ -3130,7 +3130,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBD-Cs-9fL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="2775"/>
+            <point key="canvasLocation" x="788" y="3039"/>
         </scene>
     </scenes>
     <resources>
