@@ -122,6 +122,11 @@ static NSString * const BMETermsLocalizationTable = @"BMETermsLocalizationTable"
 static NSString * const BMEVideoLocalizationTable = @"BMEVideoLocalizationTable";
 
 /*!
+ * LaunchScreen strings file 
+ */
+static NSString * const LaunchScreen = @"LaunchScreen";
+
+/*!
  * Localizable strings file 
  */
 static NSString * const Localizable = @"Localizable";
@@ -3531,6 +3536,30 @@ static NSString * const BME_TERMS_BACK = @"BME_TERMS_BACK";
 
  */
 static NSString * const BME_VIDEO_CANCEL_TITLE = @"BME_VIDEO_CANCEL_TITLE";
+
+/*!
+ * "Be My Eyes"
+
+ * All translations:
+
+ * @b da@: "BeMyEyes"
+
+ * @b en@: "Be My Eyes"
+
+ */
+static NSString * const logoLabel_text = @"logoLabel.text";
+
+/*!
+ * "Crafted with ❤︎ from Copenhagen"
+
+ * All translations:
+
+ * @b da@: "Laved med ❤︎ i København"
+
+ * @b en@: "Crafted with ❤︎ from Copenhagen"
+
+ */
+static NSString * const taglineLabel_text = @"taglineLabel.text";
 
 /*!
  * "%@ needs your help! Swipe or tap to answer."

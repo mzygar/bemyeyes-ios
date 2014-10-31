@@ -39,7 +39,7 @@
 		4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */; };
 		4EB6C13D19FFB6B50048735E /* BMEButtonImageToRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */; };
 		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
-		4EDCE93F1A01E069006C7A4A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCE9411A01E069006C7A4A /* Launch Screen.storyboard */; };
+		4EDCE93F1A01E069006C7A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCE9411A01E069006C7A4A /* LaunchScreen.storyboard */; };
 		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
@@ -162,6 +162,7 @@
 
 /* Begin PBXFileReference section */
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E011A081A03A46C0042A895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
 		4E10F2FE19F7F176004EA22E /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		4E13106719E48C5000B056DF /* OnboardingVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVideoViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +170,7 @@
 		4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitMaskedLabel.swift; sourceTree = "<group>"; };
 		4E2B919919E67F1F00C9D0ED /* BMEAccessControlHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessControlHandler.h; sourceTree = "<group>"; };
 		4E2B919A19E67F1F00C9D0ED /* BMEAccessControlHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessControlHandler.m; sourceTree = "<group>"; };
-		4E3054201A01E0AB00FA9044 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = "da.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		4E3054201A01E0AB00FA9044 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4E3ACE1419FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMECrashlyticsLoggingSwift.h; sourceTree = "<group>"; };
 		4E3ACE1519FFDFBA002548C8 /* BMECrashlyticsLoggingSwift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMECrashlyticsLoggingSwift.m; sourceTree = "<group>"; };
 		4E3ACE1719FFEF4F002548C8 /* PostCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCallViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +214,7 @@
 		4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEButtonImageToRight.m; sourceTree = "<group>"; };
 		4EBE9BF819E8C91000CBC675 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissSegue.h; path = Source/DismissSegue.h; sourceTree = "<group>"; };
 		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
-		4EDCE9441A01E07A006C7A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		4EDCE9441A01E07A006C7A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		60BAD311403180811F795B70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
@@ -531,7 +532,7 @@
 				7236E00F18B8A87B00F622AA /* Main.storyboard */,
 				4EBE9BF819E8C91000CBC675 /* DismissSegue.h */,
 				4EBE9BF919E8C91000CBC675 /* DismissSegue.m */,
-				4EDCE9411A01E069006C7A4A /* Launch Screen.storyboard */,
+				4EDCE9411A01E069006C7A4A /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -867,7 +868,7 @@
 				72856DEF19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings in Resources */,
 				727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */,
 				72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */,
-				4EDCE93F1A01E069006C7A4A /* Launch Screen.storyboard in Resources */,
+				4EDCE93F1A01E069006C7A4A /* LaunchScreen.storyboard in Resources */,
 				72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */,
 				725B0EF81959875500BB4AE0 /* call.aiff in Resources */,
 				72856DE919AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings in Resources */,
@@ -1053,13 +1054,14 @@
 			name = BMEAccessLocalization.strings;
 			sourceTree = "<group>";
 		};
-		4EDCE9411A01E069006C7A4A /* Launch Screen.storyboard */ = {
+		4EDCE9411A01E069006C7A4A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4EDCE9441A01E07A006C7A4A /* Base */,
 				4E3054201A01E0AB00FA9044 /* da */,
+				4E011A081A03A46C0042A895 /* en */,
 			);
-			name = "Launch Screen.storyboard";
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */ = {
