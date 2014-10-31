@@ -802,6 +802,7 @@
 				B7DF8BE5A9DE4CE1B1BDE152 /* Copy Pods Resources */,
 				4E901DCD19E5B5680067CEB2 /* Embed Frameworks */,
 				4E8ABED719F9423B0005F6E8 /* ShellScript */,
+				4E011A061A03A0570042A895 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -896,6 +897,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4E011A061A03A0570042A895 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Scripts/./miaw -g -o BeMyEyes/Source/";
+		};
 		4E8ABED719F9423B0005F6E8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
