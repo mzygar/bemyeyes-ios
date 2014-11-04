@@ -908,7 +908,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Scripts/./miaw -g -o BeMyEyes/Source/";
+			shellScript = "Scripts/./miaw -g -d -o BeMyEyes/Source/";
 		};
 		4E8ABED719F9423B0005F6E8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
