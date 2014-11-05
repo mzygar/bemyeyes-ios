@@ -122,11 +122,11 @@
 #pragma mark Text Field Delegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.scrollViewHelper.activeTextField = textField;
+    self.scrollViewHelper.activeView = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.scrollViewHelper.activeTextField = nil;
+    self.scrollViewHelper.activeView = nil;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
