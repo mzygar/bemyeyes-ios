@@ -92,7 +92,7 @@
         isTemporaryDeviceToken = YES;
     }
     BOOL isActiveDeviceToken = !isTemporaryDeviceToken;
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:deviceToken active:isActiveDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:deviceToken active:isActiveDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
         if (success) {
             [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
             [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = isTemporaryDeviceToken;

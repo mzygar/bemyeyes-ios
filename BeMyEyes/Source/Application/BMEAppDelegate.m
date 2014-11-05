@@ -36,11 +36,37 @@
 #pragma mark Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /* Environment */
+    // BundleId: Production / Staging / Development
+    NSString *bundleId = [NSBundle mainBundle].bundleIdentifier;
+    if ([bundleId isEqualToString:BMEBundleIdProduction]) {
+        [GVUserDefaults standardUserDefaults].api = BMESettingsAPIPublic;
+        NSLog(@"API: Production");
+    } else if ([bundleId isEqualToString:BMEBundleIdStaging]) {
+        [GVUserDefaults standardUserDefaults].api = BMESettingsAPIStaging;
+        NSLog(@"API: Staging");
+    } else if ([bundleId isEqualToString:BMEBundleIdDevelopment]) {
+        NSLog(@"API: Development");
+        [GVUserDefaults standardUserDefaults].api = BMESettingsAPIDevelopment;
+    } else {
+        NSLog(@"Wrong bundle id: %@", bundleId);
+        abort();
+    }
+    // Provisiong: Production / Development
+    BOOL isDebug;
+#ifdef DEBUG
+    isDebug = YES;
+#else
+    isDebug = NO;
+#endif
+    [GVUserDefaults standardUserDefaults].isRelease = !isDebug;
+    NSLog(@"Environment: %@", isDebug ? @"Debug" : @"Release");
+    
+    // IDs
     NSString *shortIdInLaunchOptions = [self shortIdInLaunchOptions:launchOptions];
     self.launchedWithShortID = (shortIdInLaunchOptions != nil);
-  
-    [GVUserDefaults standardUserDefaults].api = API;
     
+    // Crashlytics
     [Crashlytics startWithAPIKey:@"41644116426a80147f822825bb643b3020b0f9d3"];
     
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
@@ -182,7 +208,7 @@
         NSLog(@"Update device token '%@' to: %@", existingDeviceToken, normalizedDeviceToken);
         
         // Update using existing device token
-        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
             completionHandler(error);
             
             if (error) {
@@ -193,7 +219,7 @@
         NSLog(@"Register new device token: %@", normalizedDeviceToken);
         
         // Register new device token
-        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
             completionHandler(error);
             
             if (error) {
@@ -255,7 +281,7 @@
     [self showLoggedInMainView];
     
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease];
     
     if (!self.isLaunchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];

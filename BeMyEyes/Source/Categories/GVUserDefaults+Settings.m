@@ -10,7 +10,7 @@
 
 @implementation GVUserDefaults (Settings)
 
-@dynamic api, deviceToken, isTemporaryDeviceToken, peopleHelped,
+@dynamic api, isRelease, deviceToken, isTemporaryDeviceToken, peopleHelped,
          hasAskedForMoreLanguages;
 
 #pragma mark -
