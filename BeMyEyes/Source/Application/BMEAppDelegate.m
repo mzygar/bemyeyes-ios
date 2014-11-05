@@ -21,14 +21,8 @@
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
 @property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
 @property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
+@property (strong, nonatomic) InAppTestBadge *inAppTestBadgeWindow;
 @end
-
-#define DEVELOPMENT 1
-#if DEVELOPMENT
-    #define API BMESettingsAPIDevelopment
-#else 
-    #define API BMESettingsAPIPublic
-#endif
 
 @implementation BMEAppDelegate
 
@@ -39,19 +33,29 @@
     /* Environment */
     // BundleId: Production / Staging / Development
     NSString *bundleId = [NSBundle mainBundle].bundleIdentifier;
-    if ([bundleId isEqualToString:BMEBundleIdProduction]) {
+    NSLog(@"%@", bundleId);
+    BOOL isProduction = [bundleId isEqualToString:BMEBundleIdProduction];
+    BOOL isStaging = [bundleId isEqualToString:BMEBundleIdStaging];
+    BOOL isDevelopment = [bundleId isEqualToString:BMEBundleIdDevelopment];
+    if (isProduction) {
         [GVUserDefaults standardUserDefaults].api = BMESettingsAPIPublic;
         NSLog(@"API: Production");
-    } else if ([bundleId isEqualToString:BMEBundleIdStaging]) {
+    } else if (isStaging) {
         [GVUserDefaults standardUserDefaults].api = BMESettingsAPIStaging;
         NSLog(@"API: Staging");
-    } else if ([bundleId isEqualToString:BMEBundleIdDevelopment]) {
+    } else if (isDevelopment) {
         NSLog(@"API: Development");
         [GVUserDefaults standardUserDefaults].api = BMESettingsAPIDevelopment;
     } else {
         NSLog(@"Wrong bundle id: %@", bundleId);
         abort();
     }
+    if (isStaging || isDevelopment) {
+        self.inAppTestBadgeWindow = [[InAppTestBadge alloc] initWithType:isStaging ? @"Beta" : @"Alpha"];
+        [self.window makeKeyAndVisible];
+        [self.window addSubview:self.inAppTestBadgeWindow];
+    }
+    
     // Provisiong: Production / Development
     BOOL isDebug;
 #ifdef DEBUG
@@ -96,7 +100,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogIn:) name:BMEDidLogInNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogOut:) name:BMEDidLogOutNotification object:nil];
-    
+  
     return YES;
 }
 							
@@ -112,7 +116,6 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
