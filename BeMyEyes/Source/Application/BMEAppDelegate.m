@@ -309,7 +309,7 @@
             navigationController.navigationBarHidden = YES;
             
             UIViewController *presentFromController = self.window.rootViewController;
-            if (presentFromController.presentedViewController) {
+            while (presentFromController.presentedViewController) {
                 presentFromController = presentFromController.presentedViewController;
             }
             
