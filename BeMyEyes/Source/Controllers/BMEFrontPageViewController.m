@@ -12,7 +12,6 @@
 
 @interface BMEFrontPageViewController ()
 @property (weak, nonatomic) IBOutlet UIView *logoContainer;
-@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *askForRoleLabel;
 @property (weak, nonatomic) IBOutlet Button *sightedRoleButton;
@@ -63,9 +62,7 @@ static NSString *const BMEBlindSegue = @"Blind";
 }
 
 - (void)shouldLocalize {
-    self.welcomeLabel.text = MKLocalizedFromTable(BME_FRONT_PAGE_WELCOME_TO, BMEFrontPageLocalizationTable);
     self.appNameLabel.text = MKLocalizedFromTable(BME_FRONT_PAGE_APP_NAME, BMEFrontPageLocalizationTable);
-    self.logoContainer.accessibilityLabel = [NSString stringWithFormat:@"%@ %@", self.welcomeLabel.text, self.appNameLabel.text];
     
     self.askForRoleLabel.text = MKLocalizedFromTable(BME_FRONT_PAGE_ASK_FOR_ROLE, BMEFrontPageLocalizationTable);
     

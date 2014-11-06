@@ -1077,18 +1077,6 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCC
 static NSString * const BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE = @"BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE";
 
 /*!
- * "Welcome to"
-
- * All translations:
-
- * @b da@: "Velkommen til"
-
- * @b en@: "Welcome to"
-
- */
-static NSString * const BME_FRONT_PAGE_WELCOME_TO = @"BME_FRONT_PAGE_WELCOME_TO";
-
-/*!
  * "Be My Eyes"
 
  * All translations:
