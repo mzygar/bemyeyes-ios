@@ -15,19 +15,14 @@
 #import "BMECallAudioPlayer.h"
 #import "BMEAccessControlHandler.h"
 #import <Crashlytics/Crashlytics.h>
+#import "BMETopNavigationController.h"
 
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
 @property (strong, nonatomic) BMECallAudioPlayer *callAudioPlayer;
 @property (assign, nonatomic, getter = isLaunchedWithShortID) BOOL launchedWithShortID;
+@property (strong, nonatomic) InAppTestBadge *inAppTestBadgeWindow;
 @end
-
-#define DEVELOPMENT 1
-#if DEVELOPMENT
-    #define API BMESettingsAPIDevelopment
-#else 
-    #define API BMESettingsAPIPublic
-#endif
 
 @implementation BMEAppDelegate
 
@@ -35,16 +30,54 @@
 #pragma mark Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /* Environment */
+    // BundleId: Production / Staging / Development
+    NSString *bundleId = [NSBundle mainBundle].bundleIdentifier;
+    NSLog(@"%@", bundleId);
+    BOOL isProduction = [bundleId isEqualToString:BMEBundleIdProduction];
+    BOOL isStaging = [bundleId isEqualToString:BMEBundleIdStaging];
+    BOOL isDevelopment = [bundleId isEqualToString:BMEBundleIdDevelopment];
+    if (isProduction) {
+        [GVUserDefaults standardUserDefaults].api = BMESettingsAPIPublic;
+        NSLog(@"API: Production");
+    } else if (isStaging) {
+        [GVUserDefaults standardUserDefaults].api = BMESettingsAPIStaging;
+        NSLog(@"API: Staging");
+    } else if (isDevelopment) {
+        NSLog(@"API: Development");
+        [GVUserDefaults standardUserDefaults].api = BMESettingsAPIDevelopment;
+    } else {
+        NSLog(@"Wrong bundle id: %@", bundleId);
+        abort();
+    }
+    if (isStaging || isDevelopment) {
+        self.inAppTestBadgeWindow = [[InAppTestBadge alloc] initWithType:isStaging ? @"Beta" : @"Alpha"];
+        [self.window makeKeyAndVisible];
+        [self.window addSubview:self.inAppTestBadgeWindow];
+    }
+    
+    // Provisiong: Production / Development
+    BOOL isDebug;
+#ifdef DEBUG
+    isDebug = YES;
+#else
+    isDebug = NO;
+#endif
+    [GVUserDefaults standardUserDefaults].isRelease = !isDebug;
+    NSLog(@"Environment: %@", isDebug ? @"Debug" : @"Release");
+    
+    // IDs
     NSString *shortIdInLaunchOptions = [self shortIdInLaunchOptions:launchOptions];
     self.launchedWithShortID = (shortIdInLaunchOptions != nil);
-  
-    [GVUserDefaults standardUserDefaults].api = API;
     
+    // Crashlytics
     [Crashlytics startWithAPIKey:@"41644116426a80147f822825bb643b3020b0f9d3"];
     
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
-    [self checkIfLoggedIn];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self checkIfLoggedIn];
+    });
     
     if (self.isLaunchedWithShortID) {
         [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortIdInLaunchOptions afterDelay:0.0f];
@@ -67,6 +100,9 @@
     [self.window addGestureRecognizer:secretTapGesture];
 #endif
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogIn:) name:BMEDidLogInNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogOut:) name:BMEDidLogOutNotification object:nil];
+  
     return YES;
 }
 							
@@ -82,7 +118,6 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -178,7 +213,7 @@
         NSLog(@"Update device token '%@' to: %@", existingDeviceToken, normalizedDeviceToken);
         
         // Update using existing device token
-        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
             completionHandler(error);
             
             if (error) {
@@ -189,7 +224,7 @@
         NSLog(@"Register new device token: %@", normalizedDeviceToken);
         
         // Register new device token
-        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
             completionHandler(error);
             
             if (error) {
@@ -222,8 +257,7 @@
 - (void)checkIfLoggedIn {
     NSLog(@"Check if logged in");
     if ([GVUserDefaults standardUserDefaults].deviceToken != nil && [[BMEClient sharedClient] isTokenValid]) {
-        UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
-        [self replaceTopController:mainController];
+        [self showLoggedInMainView];
         
         [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
             if (success) {
@@ -241,7 +275,7 @@
 }
 
 - (void)loginFailed {
-    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
+    [self showFrontPage];
     
     [[BMEClient sharedClient] logoutWithCompletion:nil];
     [[BMEClient sharedClient] resetLogin];
@@ -249,16 +283,14 @@
 }
 
 - (void)didLogin {
+    [self showLoggedInMainView];
+    
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease];
     
     if (!self.isLaunchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];
     }
-}
-
-- (void)replaceTopController:(UIViewController *)topController {
-    self.window.rootViewController = topController;
 }
 
 - (NSString *)shortIdInLaunchOptions:(NSDictionary *)launchOptions {
@@ -278,7 +310,12 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
             navigationController.navigationBarHidden = YES;
             
-            [self.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
+            UIViewController *presentFromController = self.window.rootViewController;
+            while (presentFromController.presentedViewController) {
+                presentFromController = presentFromController.presentedViewController;
+            }
+            
+            [presentFromController presentViewController:navigationController animated:YES completion:nil];
         }
     }];
 }
@@ -354,6 +391,39 @@
             }
         }];
     }
+}
+
+- (void)didLogOut:(NSNotification *)notification {
+    [self showFrontPage];
+    [self resetBadgeIcon];
+}
+
+- (void)didLogIn:(NSNotification *)notification {
+    [self showLoggedInMainView];
+    [self resetBadgeIcon];
+}
+
+
+- (void)showFrontPage {
+    BMETopNavigationController *initialViewController;
+    if ([self.window.rootViewController isKindOfClass:[BMETopNavigationController class]]) {
+        initialViewController = (BMETopNavigationController *)self.window.rootViewController;
+        if (initialViewController.presentedViewController) {
+            [initialViewController dismissViewControllerAnimated:YES completion:nil];
+        }
+        [initialViewController popToRootViewControllerAnimated:YES];
+    } else {
+        initialViewController = (BMETopNavigationController *)[self.window.rootViewController.storyboard instantiateInitialViewController];
+        self.window.rootViewController = initialViewController;
+    }
+}
+
+- (void)showLoggedInMainView {
+    if ([self.window.rootViewController.presentedViewController.restorationIdentifier isEqualToString:BMEMainNavigationControllerIdentifier]) {
+        return;
+    }
+    UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
+    [self.window.rootViewController presentViewController:mainController animated:YES completion:nil];
 }
 
 @end

@@ -37,10 +37,10 @@
 #pragma mark Private Methods
 
 - (UIViewController *)activeViewController {
-    if (self.presentedViewController) {
-        return self.presentedViewController;
+    UIViewController *topViewController = self.presentedViewController;
+    while (topViewController.presentedViewController) {
+        topViewController = topViewController.presentedViewController;
     }
-    
     return self.topViewController;
 }
 

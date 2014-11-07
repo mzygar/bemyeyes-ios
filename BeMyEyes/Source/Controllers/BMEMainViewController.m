@@ -19,18 +19,13 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 @interface BMEMainViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (assign, nonatomic, getter = isLoggedOut) BOOL loggedOut;
+@property (weak, nonatomic) UIViewController *currentViewController;
 @end
 
 @implementation BMEMainViewController
 
 #pragma mark -
 #pragma mark Lifecycle
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogOut:) name:BMEDidLogOutNotification object:nil];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,30 +53,26 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self checkAppState];
+    [self check];
 }
 
 - (void)handleAppBecameActive
 {
-    [self checkAppState];
+    [self check];
 }
 
-- (void)checkAppState
+- (void)check
 {
-    if (self.isLoggedOut) {
-        self.view.window.rootViewController = [self.view.window.rootViewController.storyboard instantiateInitialViewController];
-    } else {
-        [self askForMoreLanguagesIfNecessary];
-        [self askForAccessIfNecessary];
-        if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
-            [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
-                if (isEnabled) {
-                    // If user is helper and has notifications enabled, to a request to register for a possibly new device token
-                    [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
-                    }];
-                }
-            }];
-        }
+    [self askForMoreLanguagesIfNecessary];
+    [self askForAccessIfNecessary];
+    if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
+        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+            if (isEnabled) {
+                // If user is helper and has notifications enabled, to a request to register for a possibly new device token
+                [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
+                }];
+            }
+        }];
     }
 }
 
@@ -98,6 +89,21 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 
 - (void)shouldLocalize {
     self.settingsButton.accessibilityLabel = MKLocalizedFromTable(BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL, BMEMainLocalizationTable);
+}
+
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return _currentViewController ? self.currentViewController : nil;
+}
+
+- (UIViewController *)childViewControllerForStatusBarHidden {
+    return _currentViewController ? self.currentViewController : nil;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    if (_currentViewController) {
+        return self.currentViewController.preferredStatusBarUpdateAnimation;
+    }
+    return super.preferredStatusBarUpdateAnimation;
 }
 
 #pragma mark -
@@ -120,6 +126,7 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
     [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    self.currentViewController = controller;
 }
 
 - (void)askForMoreLanguagesIfNecessary {
@@ -157,13 +164,6 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
         }
         [self performSegueWithIdentifier:BMEAccessViewSegue sender:self];
     }];
-}
-
-#pragma mark -
-#pragma mark Notifications
-
-- (void)didLogOut:(NSNotification *)notification {
-    self.loggedOut = YES;
 }
 
 @end

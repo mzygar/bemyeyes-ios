@@ -37,6 +37,7 @@ import UIKit
         backgroundColor = UIColor.clearColor()
         textColor = UIColor.whiteColor()
         setNeedsDisplay()
+        clipsToBounds = true // Fixes incorrect layout of unicode characters
     }
     
     override func drawRect(rect: CGRect) {

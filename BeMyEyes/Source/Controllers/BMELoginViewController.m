@@ -16,8 +16,6 @@
 #import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 
-#define BMELoginLoggedInSegue @"LoggedIn"
-
 @interface BMELoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
@@ -94,7 +92,7 @@
         isTemporaryDeviceToken = YES;
     }
     BOOL isActiveDeviceToken = !isTemporaryDeviceToken;
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:deviceToken active:isActiveDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:deviceToken active:isActiveDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
         if (success) {
             [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
             [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = isTemporaryDeviceToken;
@@ -232,18 +230,18 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [self performSegueWithIdentifier:BMELoginLoggedInSegue sender:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }
 
 #pragma mark -
 #pragma mark Text Field Delegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.scrollViewHelper.activeTextField = textField;
+    self.scrollViewHelper.activeView = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.scrollViewHelper.activeTextField = nil;
+    self.scrollViewHelper.activeView = nil;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

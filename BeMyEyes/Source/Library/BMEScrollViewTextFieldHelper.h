@@ -11,7 +11,7 @@
 @interface BMEScrollViewTextFieldHelper : NSObject
 
 @property (readonly, nonatomic, getter = hasScrolled) BOOL scrolled;
-@property (strong, nonatomic) UITextField *activeTextField;
+@property (strong, nonatomic) UIView *activeView;
 
 - (instancetype)initWithScrollview:(UIScrollView *)scrollView inViewController:(UIViewController *)viewController;
 

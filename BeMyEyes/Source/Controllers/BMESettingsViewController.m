@@ -89,7 +89,13 @@ static NSString *const videoSegueIdentifier = @"Video";
     
     self.dismissButton.accessibilityLabel = MKLocalizedFromTableWithFormat(BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL, BMESettingsLocalizationTable);
     
-    self.versionLabel.text = MKLocalizedFromTableWithFormat(BME_SETTINGS_VERSION_TITLE, BMESettingsLocalizationTable, [self versionString]);
+    NSString *versionText = MKLocalizedFromTableWithFormat(BME_SETTINGS_VERSION_TITLE, BMESettingsLocalizationTable, [self versionString]);
+    if ([GVUserDefaults standardUserDefaults].api == BMESettingsAPIDevelopment) {
+        versionText = [versionText stringByAppendingString:@" Alpha"];
+    } else if ([GVUserDefaults standardUserDefaults].api == BMESettingsAPIStaging) {
+        versionText = [versionText stringByAppendingString:@" Beta"];
+    }
+    self.versionLabel.text = versionText;
 }
 
 #pragma mark -
@@ -105,8 +111,6 @@ static NSString *const videoSegueIdentifier = @"Video";
         
         if (!error || [error code] == BMEClientErrorUserTokenNotFound) {
             [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogOutNotification object:nil];
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"Could not log out: %@", error);
             

@@ -30,8 +30,7 @@
         
         self.viewController = viewController;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChange:) name:UIKeyboardDidChangeFrameNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardWillHideNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     }
     return self;
 }
@@ -39,17 +38,17 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    self.activeTextField = nil;
+    self.activeView = nil;
 }
 
 #pragma mark - Setters and Getters
 
-- (void)setActiveTextField:(UITextField *)activeTextField
+- (void)setActiveView:(UIView *)activeTextField
 {
-    if (activeTextField != _activeTextField) {
-        _activeTextField = activeTextField;
+    if (activeTextField != _activeView) {
+        _activeView = activeTextField;
         
-        [self scrollIfNecessary];
+        [self scrollIfNecessaryAnimated:YES];
     }
 }
 
@@ -57,7 +56,7 @@
 
 - (BOOL)prefersStatusBarHidden
 {
-    return self.hasScrolled ? YES : NO;
+    return self.hasScrolled;
 }
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
@@ -68,8 +67,8 @@
 
 #pragma mark -
 
-- (void)scrollIfNecessary {
-    CGRect textFieldFrame = [self.activeTextField convertRect:self.activeTextField.frame toView:self.scrollView];
+- (void)scrollIfNecessaryAnimated:(BOOL)animated {
+    CGRect textFieldFrame = [self.activeView convertRect:self.activeView.frame toView:self.scrollView];
     
     CGFloat textFieldTop = CGRectGetMinY(textFieldFrame);
     CGFloat topYScrollOffset = textFieldTop - 20.0f;
@@ -79,7 +78,7 @@
     
     if (yScrollOffset > 0) {
         CGPoint scrollOffset = CGPointMake(0.0f, yScrollOffset);
-        [self.scrollView setContentOffset:scrollOffset animated:YES];
+        [self.scrollView setContentOffset:scrollOffset animated:animated];
     } else {
         [self resetScrollIfNecessary];
     }
@@ -93,19 +92,39 @@
 
 #pragma mark - Notifications
 
-- (void)keyboardDidChange:(NSNotification *)notification {
-    CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGRect convertedKeyboardFrame = [self.viewController.view convertRect:keyboardFrame fromView:self.viewController.view.window];
-    self.keyboardSize = convertedKeyboardFrame.size;
+- (void)keyboardWillChange:(NSNotification *)notification {
+    CGRect oldKeyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    CGRect oldConvertedKeyboardFrame = [self.viewController.view convertRect:oldKeyboardFrame fromView:self.viewController.view.window];
     
-    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, self.keyboardSize.height, 0);
-    [self scrollIfNecessary];
+    CGRect newKeyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect newConvertedKeyboardFrame = [self.viewController.view convertRect:newKeyboardFrame fromView:self.viewController.view.window];
+    self.keyboardSize = newConvertedKeyboardFrame.size;
+    
+    BOOL wasShown = [self keyboardIsShownForRect:oldConvertedKeyboardFrame];
+    BOOL willBeShown = [self keyboardIsShownForRect:newConvertedKeyboardFrame];
+    
+    CGFloat bottom = willBeShown ? self.keyboardSize.height : 0;
+    
+    UIEdgeInsets contentInset = self.scrollView.contentInset;
+    contentInset.bottom = bottom;
+    self.scrollView.contentInset = contentInset;
+    
+    UIEdgeInsets scrollIndicatorInsets = self.scrollView.scrollIndicatorInsets;
+    scrollIndicatorInsets.bottom = bottom;
+    self.scrollView.contentInset = scrollIndicatorInsets;
+    
+    BOOL animate = NO; // Don't animate when called from notification block
+    if (wasShown && willBeShown) {
+        animate = YES; // If frame just changed, e.g. hide or show suggestion bar/QuickType bar
+    }
+    [self scrollIfNecessaryAnimated:animate];
 }
 
-- (void)keyboardDidHide:(NSNotification *)notification {
-    self.scrollView.contentInset = UIEdgeInsetsZero;
-    
-    [self resetScrollIfNecessary];
+
+#pragma mark - 
+
+- (BOOL)keyboardIsShownForRect:(CGRect)rect {
+    return rect.origin.y < [UIScreen mainScreen].bounds.size.height;
 }
 
 

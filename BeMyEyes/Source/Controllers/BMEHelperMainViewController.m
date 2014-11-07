@@ -80,6 +80,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (strong, nonatomic) NSArray *pointEntries;
 
 @property (assign, nonatomic) BOOL failedLoadingPoints;
+
+@property (assign, nonatomic) BOOL scrolled;
+
 @end
 
 @implementation BMEHelperMainViewController
@@ -99,6 +102,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [super viewDidLoad];
     
     [MKLocalization registerForLocalization:self];
+    
+    self.tableView.estimatedRowHeight = self.tableView.rowHeight;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
      
     self.pointsHelpedPersonsLabel.colors =
     self.pointsTotalLabel.colors = @{ @(0.0f) : [UIColor lightTextColor],
@@ -145,7 +152,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     CGFloat viewHeight = self.view.frame.size.height;
     CGFloat bottomInset = 0;
     CGFloat hiddenHeight = contentHeight - (viewHeight - communityHeight);
-    if (0 < hiddenHeight && hiddenHeight < communityHeight) {
+    if (0 < hiddenHeight) {
         bottomInset = viewHeight - contentHeight + hiddenHeight/2;
     }
     
@@ -153,9 +160,30 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     contentInsets.bottom = bottomInset;
     self.tableView.contentInset = contentInsets;
     
-    UIEdgeInsets scrollIndicatorInsets = self.tableView.contentInset;
+    UIEdgeInsets scrollIndicatorInsets = self.tableView.scrollIndicatorInsets;
     scrollIndicatorInsets.bottom = bottomInset;
     self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return UIStatusBarAnimationSlide;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return self.scrolled;
+}
+
+#pragma mark - Setters and Getters
+
+- (void)setScrolled:(BOOL)scrolled
+{
+    if (scrolled != _scrolled) {
+        _scrolled = scrolled;
+        
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
 }
 
 #pragma mark -
@@ -321,8 +349,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     CGFloat distanceFromTop = scrollView.contentOffset.y;
     self.communityStatsBottomConstraint.constant = MIN(0, -distanceFromTop);
     
-    BOOL hideStatusBar = distanceFromTop > 20;
-    [[UIApplication sharedApplication] setStatusBarHidden:hideStatusBar withAnimation:UIStatusBarAnimationFade];
+    self.scrolled = distanceFromTop > 20;
 }
 
 #pragma mark - UITableViewDataSource

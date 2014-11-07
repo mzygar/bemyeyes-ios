@@ -16,8 +16,6 @@
 #import "BeMyEyes-Swift.h"
 
 #define BMESignUpMinimumPasswordLength 6
-#define BMESignUpLoggedInSegue @"LoggedIn"
-#define BMERegisteredSegue @"Registered"
 
 @interface BMESignUpViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -97,7 +95,7 @@
                     [GVUserDefaults synchronize];
                 }
                 
-                [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:deviceToken active:NO production:BMEIsProductionOrAdHoc completion:^(BOOL success, NSError *error) {
+                [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:deviceToken active:NO production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
                     if (success && !error) {
                         [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:deviceToken success:^(BMEToken *token) {
                             [progressOverlayView hide:YES];
@@ -106,14 +104,10 @@
                         } failure:^(NSError *error) {
                             [progressOverlayView hide:YES];
                             
-                            [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
-                            
                             NSLog(@"Failed logging in after sign up: %@", error);
                         }];
                     } else {
                         [progressOverlayView hide:YES];
-                        
-                        [self performSegueWithIdentifier:BMERegisteredSegue sender:self];
                         
                         NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
                     }
@@ -141,9 +135,9 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:BMEIsProductionOrAdHoc];
+    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease];
     
-    [self performSegueWithIdentifier:BMESignUpLoggedInSegue sender:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }
 
 - (BOOL)isInformationValid {
@@ -211,11 +205,11 @@
 #pragma mark Text Field Delegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.scrollViewHelper.activeTextField = textField;
+    self.scrollViewHelper.activeView = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.scrollViewHelper.activeTextField = nil;
+    self.scrollViewHelper.activeView = nil;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
