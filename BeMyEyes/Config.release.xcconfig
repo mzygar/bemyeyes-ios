@@ -1,0 +1,10 @@
+//
+//  Config.release.xcconfig
+//  BeMyEyes
+//
+//  Created by Tobias Due Munk on 07/11/14.
+//  Copyright (c) 2014 Be My Eyes. All rights reserved.
+//
+
+ENABLE_NS_ASSERTIONS = NO
+VALIDATE_PRODUCT = YES
