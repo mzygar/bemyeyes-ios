@@ -8,6 +8,16 @@
 
 import UIKit
 
+extension UIColor {
+    
+    class func lightBlueColor() -> UIColor {
+        return UIColor(red: 0.24, green: 0.56, blue: 0.71, alpha: 1)
+    }
+    class func darkBlueColor() -> UIColor {
+        return UIColor(red: 0.1, green: 0.22, blue: 0.36, alpha: 1)
+    }
+}
+
 @IBDesignable class GradientView: UIView {
     
     private lazy var gradientLayer: CAGradientLayer = {
@@ -16,7 +26,7 @@ import UIKit
     }()
     
     
-    var colors: [UIColor] = [UIColor(red: 0.24, green: 0.56, blue: 0.71, alpha: 1), UIColor(red: 0.1, green: 0.22, blue: 0.36, alpha: 1)] {
+    var colors: [UIColor] = [.lightBlueColor(), .darkBlueColor()] {
         didSet {
             update()
         }

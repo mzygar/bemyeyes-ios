@@ -15,7 +15,7 @@
 #import "BMEClient.h"
 #import "BMEUser.h"
 
-@interface BMEReportAbuseViewController ()
+@interface BMEReportAbuseViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *chooseReasonLabel;
 
@@ -33,6 +33,10 @@
 
 @property (weak, nonatomic) IBOutlet Button *reportButton;
 @property (weak, nonatomic) IBOutlet Button *skipButton;
+
+@property (assign, nonatomic) BOOL scrolled;
+
+
 @end
 
 @implementation BMEReportAbuseViewController
@@ -64,6 +68,29 @@
     
     [self writeReasons];
 }
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return UIStatusBarAnimationSlide;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return self.scrolled;
+}
+
+
+#pragma mark - Setters and Getters
+
+- (void)setScrolled:(BOOL)scrolled
+{
+    if (scrolled != _scrolled) {
+        _scrolled = scrolled;
+        
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+}
+
 
 #pragma mark -
 #pragma mark Private Methods
@@ -213,6 +240,14 @@
     } else {
         [self.navigationController BMEPopToViewControllerOfClass:[BMEMainViewController class] animated:YES];
     }
+}
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    self.scrolled = scrollView.contentOffset.y > 20;
 }
 
 @end

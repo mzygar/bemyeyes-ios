@@ -19,6 +19,7 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 @interface BMEMainViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (assign, nonatomic, getter = isLoggedOut) BOOL loggedOut;
+@property (weak, nonatomic) UIViewController *currentViewController;
 @end
 
 @implementation BMEMainViewController
@@ -90,6 +91,21 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
     self.settingsButton.accessibilityLabel = MKLocalizedFromTable(BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL, BMEMainLocalizationTable);
 }
 
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return _currentViewController ? self.currentViewController : nil;
+}
+
+- (UIViewController *)childViewControllerForStatusBarHidden {
+    return _currentViewController ? self.currentViewController : nil;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    if (_currentViewController) {
+        return self.currentViewController.preferredStatusBarUpdateAnimation;
+    }
+    return super.preferredStatusBarUpdateAnimation;
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -110,6 +126,7 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
     [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    self.currentViewController = controller;
 }
 
 - (void)askForMoreLanguagesIfNecessary {

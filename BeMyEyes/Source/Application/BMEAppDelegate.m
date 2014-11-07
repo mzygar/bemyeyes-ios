@@ -75,7 +75,9 @@
     
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
-    [self checkIfLoggedIn];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self checkIfLoggedIn];
+    });
     
     if (self.isLaunchedWithShortID) {
         [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortIdInLaunchOptions afterDelay:0.0f];
@@ -417,10 +419,10 @@
 }
 
 - (void)showLoggedInMainView {
-    UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
-    if (self.window.rootViewController.presentedViewController == mainController) {
+    if ([self.window.rootViewController.presentedViewController.restorationIdentifier isEqualToString:BMEMainNavigationControllerIdentifier]) {
         return;
     }
+    UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
     [self.window.rootViewController presentViewController:mainController animated:YES completion:nil];
 }
 

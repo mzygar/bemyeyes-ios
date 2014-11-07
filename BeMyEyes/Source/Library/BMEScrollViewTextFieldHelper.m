@@ -56,7 +56,7 @@
 
 - (BOOL)prefersStatusBarHidden
 {
-    return self.hasScrolled ? YES : NO;
+    return self.hasScrolled;
 }
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
