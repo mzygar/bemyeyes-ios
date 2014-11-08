@@ -43,10 +43,7 @@
 }
 
 - (void)dealloc {
-    if (_loggingInOverlayView) {
-        [_loggingInOverlayView hide:YES];
-    }
-    
+    [self hideLoggingInOverlay];
     _loggingInOverlayView = nil;
 }
 
@@ -84,6 +81,7 @@
 
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
     [self dismissKeyboard];
+    [self showLoggingInOverlay];
     
     NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
     BOOL isTemporaryDeviceToken = NO;
@@ -104,6 +102,7 @@
                 [self performLoginWithEmail];
             }
         } else {
+            [self hideLoggingInOverlay];
             NSString *title = nil;
             NSString *message = nil;
             NSString *cancelButton = nil;
@@ -140,14 +139,14 @@
 }
 
 - (void)performLoginWithFacebook {
-    self.loggingInOverlayView = [self addLoggingInOverlay];
+    [self showLoggingInOverlay];
     
     [[BMEClient sharedClient] loginUsingFacebookWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
-        [self.loggingInOverlayView hide:YES];
+        [self hideLoggingInOverlay];
         
         [self didLogin];
     } loginFailure:^(NSError *error) {
-        [self.loggingInOverlayView hide:YES];
+        [self hideLoggingInOverlay];
         
         if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE, BMELoginLocalizationTable);
@@ -165,7 +164,7 @@
         
         NSLog(@"Could not log in with Facebook: %@", error);
     } accountFailure:^(NSError *error) {
-        [self.loggingInOverlayView hide:YES];
+        [self hideLoggingInOverlay];
         
         if ([error code] == ACErrorAccountNotFound) {
             NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE, BMELoginLocalizationTable);
@@ -186,14 +185,14 @@
 }
 
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password {
-    self.loggingInOverlayView = [self addLoggingInOverlay];
+    [self showLoggingInOverlay];
     
     [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:[GVUserDefaults standardUserDefaults].deviceToken success:^(BMEToken *token) {
-        [self.loggingInOverlayView hide:YES];
+        [self hideLoggingInOverlay];
         
         [self didLogin];
     } failure:^(NSError *error) {
-        [self.loggingInOverlayView hide:YES];
+        [self hideLoggingInOverlay];
         
         if ([error code] == BMEClientErrorUserIncorrectCredentials) {
             NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE, BMELoginLocalizationTable);
@@ -219,6 +218,21 @@
     } else if ([self.passwordTextField isFirstResponder]) {
         [self.passwordTextField resignFirstResponder];
     }
+}
+
+- (void)showLoggingInOverlay {
+    if (_loggingInOverlayView) {
+        return;
+    }
+    self.loggingInOverlayView = [self addLoggingInOverlay];
+}
+
+- (void)hideLoggingInOverlay {
+    if (!_loggingInOverlayView) {
+        return;
+    }
+    [self.loggingInOverlayView hide:YES];
+    _loggingInOverlayView = nil;
 }
 
 - (MRProgressOverlayView *)addLoggingInOverlay {
