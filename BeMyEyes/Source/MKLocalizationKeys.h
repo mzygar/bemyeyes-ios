@@ -2097,6 +2097,42 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE = @"BME_MAIN_
 static NSString * const BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL = @"BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL";
 
 /*!
+ * "Notifications"
+
+ * All translations:
+
+ * @b da@: "Notifikationer"
+
+ * @b en@: "Notifications"
+
+ */
+static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE = @"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE";
+
+/*!
+ * "Something went wrong and you might not receive notifications"
+
+ * All translations:
+
+ * @b da@: "Noget gik galt og du kan måske ikke modtage notifikationer"
+
+ * @b en@: "Something went wrong and you might not receive notifications"
+
+ */
+static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE = @"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE";
+
+/*!
+ * "Ok"
+
+ * All translations:
+
+ * @b da@: "Ok"
+
+ * @b en@: "Ok"
+
+ */
+static NSString * const BME_MAIN_ALERT_CANCEL = @"BME_MAIN_ALERT_CANCEL";
+
+/*!
  * "Back"
 
  * All translations:

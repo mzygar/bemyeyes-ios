@@ -32,3 +32,12 @@
 
 /* Settings button accessibility label */
 "BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Settings";
+
+/* Title of notifications error title in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Notifications";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Something went wrong and you might not receive notifications";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_CANCEL" = "Ok";
