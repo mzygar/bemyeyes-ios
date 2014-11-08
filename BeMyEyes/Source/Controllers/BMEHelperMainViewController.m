@@ -103,9 +103,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     [MKLocalization registerForLocalization:self];
     
-    self.tableView.estimatedRowHeight = self.tableView.rowHeight;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        self.tableView.estimatedRowHeight = self.tableView.rowHeight;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+    }
      
     self.pointsHelpedPersonsLabel.colors =
     self.pointsTotalLabel.colors = @{ @(0.0f) : [UIColor lightTextColor],
