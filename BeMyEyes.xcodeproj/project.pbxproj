@@ -29,6 +29,7 @@
 		4E8E21F519E8C03C00316AD8 /* IntroVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */; };
 		4E8E21F619E8C03C00316AD8 /* OnboardingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */; };
 		4E8E21F719E8C03C00316AD8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */; };
+		4EB3A9A41A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3A9A31A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.m */; };
 		4EB46C4419F080FE008405B8 /* BMEAccessLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */; };
 		4EB6A1E219E5725F00C72A02 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6A1E119E5725F00C72A02 /* Button.swift */; };
 		4EB6AD1219E1F47A00141615 /* BMETaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6AD1119E1F47A00141615 /* BMETaskTableViewCell.m */; };
@@ -200,6 +201,8 @@
 		4E8E21F219E8C03C00316AD8 /* IntroVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVideoViewController.swift; sourceTree = "<group>"; };
 		4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVideoViewController.swift; sourceTree = "<group>"; };
 		4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		4EB3A9A21A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEOpenTokVideoCapture.h; sourceTree = "<group>"; };
+		4EB3A9A31A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEOpenTokVideoCapture.m; sourceTree = "<group>"; };
 		4EB46C4519F080FE008405B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
 		4EB46C4719F08102008405B8 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
 		4EB6A1E119E5725F00C72A02 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -670,6 +673,8 @@
 				4E6544861A0136F700B71C1C /* BMEScrollViewTextFieldHelper.h */,
 				4E6544871A0136F700B71C1C /* BMEScrollViewTextFieldHelper.m */,
 				4E6AE89D1A01927F0019247A /* FacebookHelper.swift */,
+				4EB3A9A21A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.h */,
+				4EB3A9A31A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -998,6 +1003,7 @@
 				4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,
+				4EB3A9A41A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.m in Sources */,
 				7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */,
 				4EB6AD1719E1F48C00141615 /* GradientView.swift in Sources */,
 				72A7676C19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m in Sources */,

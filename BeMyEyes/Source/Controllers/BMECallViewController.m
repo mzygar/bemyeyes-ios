@@ -16,6 +16,7 @@
 #import "BMERequest.h"
 #import "BMESpeaker.h"
 #import "BMECallAudioPlayer.h"
+#import "BMEOpenTokVideoCapture.h"
 
 static NSString *BMECallPostSegue = @"PostCall";
 
@@ -222,6 +223,7 @@ static NSString *BMECallPostSegue = @"PostCall";
     self.publisher.cameraPosition = AVCaptureDevicePositionBack;
     self.publisher.publishAudio = YES;
     self.publisher.publishVideo = [self isUserBlind];
+    self.publisher.videoCapture = [BMEOpenTokVideoCapture new];
     
     OTError *error = nil;
     [self.session publish:self.publisher error:&error];
