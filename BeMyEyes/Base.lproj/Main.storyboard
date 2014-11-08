@@ -1060,13 +1060,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Become a part of the network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taG-tn-K8A">
-                                <rect key="frame" x="15" y="81" width="290" height="131.5"/>
+                                <rect key="frame" x="15" y="81" width="290" height="130"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Duu-to-o9F" userLabel="Facebook" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="212" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="211" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
@@ -1083,7 +1083,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-eT-VL6" userLabel="E-mail" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="287" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="286" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
@@ -1100,7 +1100,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="By continuing you accept the" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wM-z3-EP5">
-                                <rect key="frame" x="15" y="397" width="290" height="14.5"/>
+                                <rect key="frame" x="15" y="396" width="290" height="14.5"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -1118,7 +1118,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkb-Ab-ezV" userLabel="Terms Button">
-                                <rect key="frame" x="0.0" y="392" width="320" height="43.5"/>
+                                <rect key="frame" x="0.0" y="391" width="320" height="44.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1151,7 +1151,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9k-mY-n6b" userLabel="Privacy Button">
-                                <rect key="frame" x="0.0" y="435" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="435" width="320" height="45"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1345,7 +1345,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AN-ix-uS6" userLabel="Helped persons">
-                                            <rect key="frame" x="8" y="210" width="142" height="71.5"/>
+                                            <rect key="frame" x="8" y="210" width="142" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Jb-0ah" customClass="BMEPointLabel">
                                                     <rect key="frame" x="0.0" y="0.0" width="142" height="60"/>
@@ -1354,7 +1354,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-6q-g4Z">
-                                                    <rect key="frame" x="0.0" y="51" width="142" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="51" width="142" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1373,7 +1373,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L93-LG-eip" userLabel="Total points">
-                                            <rect key="frame" x="170" y="210" width="142" height="72"/>
+                                            <rect key="frame" x="170" y="210" width="142" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-OD-NO6" customClass="BMEPointLabel">
                                                     <rect key="frame" x="0.0" y="0.0" width="142" height="60"/>
@@ -1382,7 +1382,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e19-HE-m6G">
-                                                    <rect key="frame" x="0.0" y="51" width="142" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="51" width="142" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1407,7 +1407,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pl8-pe-Xnt" userLabel="User type + level">
-                                            <rect key="frame" x="108.5" y="186" width="103.5" height="14"/>
+                                            <rect key="frame" x="108" y="186" width="103.5" height="14"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Helper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDk-Fp-G2F">
                                                     <rect key="frame" x="28" y="-2" width="75.5" height="17"/>
@@ -2757,7 +2757,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLY-qL-vvZ" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="306.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="305"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Report abuse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="v2L-Xn-kQ1">
                                                 <rect key="frame" x="15" y="20" width="290" height="36"/>
@@ -2772,7 +2772,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2y-gv-9Y5">
-                                                <rect key="frame" x="0.0" y="95" width="320" height="211.5"/>
+                                                <rect key="frame" x="0.0" y="95" width="320" height="210"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19s-Lx-UkH" userLabel="Top Separator">
                                                         <rect key="frame" x="15" y="0.0" width="290" height="1"/>
@@ -2815,7 +2815,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni7-bf-m1Y" userLabel="Button 2">
-                                                        <rect key="frame" x="0.0" y="70" width="320" height="71.5"/>
+                                                        <rect key="frame" x="0.0" y="70" width="320" height="70"/>
                                                         <state key="normal">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -2824,7 +2824,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The blind person acted inappropriate." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-24-Pn6">
-                                                        <rect key="frame" x="15" y="75" width="250" height="61.5"/>
+                                                        <rect key="frame" x="15" y="75" width="250" height="60"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -2841,14 +2841,14 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                         </constraints>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xq-OI-ekn" userLabel="Separator 2">
-                                                        <rect key="frame" x="15" y="141" width="290" height="1"/>
+                                                        <rect key="frame" x="15" y="140" width="290" height="1"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="mDH-SG-wH7"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yza-pt-yXm" userLabel="Button 3">
-                                                        <rect key="frame" x="0.0" y="141" width="320" height="70"/>
+                                                        <rect key="frame" x="0.0" y="140" width="320" height="70"/>
                                                         <state key="normal">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -2857,13 +2857,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The reason is not listed." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="Cab-uR-m17">
-                                                        <rect key="frame" x="15" y="141" width="250" height="66"/>
+                                                        <rect key="frame" x="15" y="140" width="250" height="66"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtV-WP-S13" userLabel="Radio Button 3" customClass="RadioButton" customModule="BeMyEyes" customModuleProvider="target">
-                                                        <rect key="frame" x="265" y="156" width="40" height="40"/>
+                                                        <rect key="frame" x="265" y="155" width="40" height="40"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" none="YES" button="YES" notEnabled="YES"/>
                                                             <bool key="isElement" value="NO"/>
@@ -2874,7 +2874,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                         </constraints>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="685-xm-B2U" userLabel="Bottom Separator">
-                                                        <rect key="frame" x="15" y="210" width="290" height="1"/>
+                                                        <rect key="frame" x="15" y="209" width="290" height="1"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="GYP-92-unD"/>

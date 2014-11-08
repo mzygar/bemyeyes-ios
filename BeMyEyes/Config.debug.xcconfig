@@ -1,0 +1,14 @@
+//
+//  Config.xcconfig
+//  BeMyEyes
+//
+//  Created by Tobias Due Munk on 07/11/14.
+//  Copyright (c) 2014 Be My Eyes. All rights reserved.
+//
+
+SWIFT_OPTIMIZATION_LEVEL = 0
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1
+COPY_PHASE_STRIP = NO
+
+
