@@ -64,15 +64,19 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 - (void)check
 {
     [self askForMoreLanguagesIfNecessary];
-    [self askForAccessIfNecessary];
     if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
-        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
-            if (isEnabled) {
+        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isUserEnabled, BOOL validToken) {
+            if (isUserEnabled) {
                 // If user is helper and has notifications enabled, to a request to register for a possibly new device token
-                [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
+                [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isUserEnabled, BOOL validToken) {
+                    [self askForAccessIfNecessary];
                 }];
+            } else {
+                [self askForAccessIfNecessary];
             }
         }];
+    } else {
+        [self askForAccessIfNecessary];
     }
 }
 
@@ -158,8 +162,18 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 
 - (void)askForAccessIfNecessary
 {
-    [BMEAccessControlHandler enabledForRole:[BMEClient sharedClient].currentUser.role completion:^(BOOL isEnabled) {
+    [BMEAccessControlHandler enabledForRole:[BMEClient sharedClient].currentUser.role completion:^(BOOL isEnabled, BOOL validToken) {
         if (isEnabled) {
+            return;
+        }
+        if (!validToken) {
+            // User has enable push, but something else went wrong
+            NSString *title = MKLocalizedFromTable(BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE, BMEMainLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE, BMEMainLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_MAIN_ALERT_CANCEL, BMEMainLocalizationTable);
+            PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+            [alertView setCancelButtonWithTitle:cancelButton block:nil];
+            [alertView show];
             return;
         }
         [self performSegueWithIdentifier:BMEAccessViewSegue sender:self];

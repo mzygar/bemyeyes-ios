@@ -12,7 +12,8 @@ class IntroVideoViewController: VideoViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        moviePlayerController.scalingMode = .AspectFill
+        let isIpad = UIDevice.currentDevice().userInterfaceIdiom == .Pad
+        moviePlayerController.scalingMode = isIpad ? .AspectFit : .AspectFill
         if let videoPath = NSBundle.mainBundle().pathForResource("intro", ofType: "mp4") {
             let videoUrl = NSURL(fileURLWithPath: videoPath)
             moviePlayerController.contentURL = videoUrl

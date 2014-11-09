@@ -32,3 +32,12 @@
 
 /* Settings button accessibility label */
 "BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Indstillinger";
+
+/* Title of notifications error title in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Notifikationer";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Noget gik galt og du kan måske ikke modtage notifikationer";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_CANCEL" = "Ok";

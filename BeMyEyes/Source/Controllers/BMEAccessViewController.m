@@ -69,14 +69,14 @@
 
 - (void)checkAccess
 {
-    [BMEAccessControlHandler enabledForRole:self.role completion:^(BOOL isEnabled) {
-        if (isEnabled) {
+    [BMEAccessControlHandler enabledForRole:self.role completion:^(BOOL isEnabled, BOOL validToken) {
+        if (isEnabled && validToken) {
             [self dismissViewControllerAnimated:YES completion:nil];
             return;
         }
         
         if (_accessNotificationsView) {
-            [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+            [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled, BOOL validToken) {
                 _accessNotificationsView.selected = isEnabled;
             }];
         }
@@ -87,7 +87,7 @@
         }
         if (_accessCameraView) {
             [BMEAccessControlHandler hasVideoEnabled:^(BOOL isEnabled) {
-                self.accessCameraView.selected = isEnabled;
+                _accessCameraView.selected = isEnabled;
             }];
         }
     }];
@@ -196,8 +196,8 @@
     if (self.accessNotificationsView.selected) {
         return;
     }
-    [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isEnabled) {
-        self.accessNotificationsView.selected = isEnabled;
+    [BMEAccessControlHandler requireNotificationsEnabled:^(BOOL isUserEnabled, BOOL validToken) {
+        self.accessNotificationsView.selected = isUserEnabled;
         [self checkAccess];
     }];
 }

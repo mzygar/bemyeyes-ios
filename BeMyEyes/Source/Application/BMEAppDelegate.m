@@ -75,9 +75,7 @@
     
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self checkIfLoggedIn];
-    });
+    [self checkIfLoggedIn];
     
     if (self.isLaunchedWithShortID) {
         [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortIdInLaunchOptions afterDelay:0.0f];
@@ -269,6 +267,7 @@
             }
         }];
     } else {
+        [self showFrontPage];
         NSLog(@"Device token: %@", [GVUserDefaults standardUserDefaults].deviceToken);
         NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");
     }
@@ -405,25 +404,34 @@
 
 
 - (void)showFrontPage {
-    BMETopNavigationController *initialViewController;
-    if ([self.window.rootViewController isKindOfClass:[BMETopNavigationController class]]) {
-        initialViewController = (BMETopNavigationController *)self.window.rootViewController;
+    if ([self.window.rootViewController.restorationIdentifier isEqualToString:BMEFrontPageNavigationControllerIdentifier]) {
+        BMETopNavigationController *initialViewController = (BMETopNavigationController *)self.window.rootViewController;
         if (initialViewController.presentedViewController) {
             [initialViewController dismissViewControllerAnimated:YES completion:nil];
         }
         [initialViewController popToRootViewControllerAnimated:YES];
-    } else {
-        initialViewController = (BMETopNavigationController *)[self.window.rootViewController.storyboard instantiateInitialViewController];
-        self.window.rootViewController = initialViewController;
+        return;
     }
+    [self setTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:BMEFrontPageNavigationControllerIdentifier]];
 }
 
 - (void)showLoggedInMainView {
-    if ([self.window.rootViewController.presentedViewController.restorationIdentifier isEqualToString:BMEMainNavigationControllerIdentifier]) {
+    if ([self.window.rootViewController.restorationIdentifier isEqualToString:BMEMainNavigationControllerIdentifier]) {
         return;
     }
-    UIViewController *mainController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier];
-    [self.window.rootViewController presentViewController:mainController animated:YES completion:nil];
+    [self setTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:BMEMainNavigationControllerIdentifier]];
+}
+
+- (void)setTopViewController:(UIViewController *)viewController {
+    for (UIView *view in self.window.subviews) { // Clear out, since presentedViewController might not be removed when settings window.rootViewController
+        [view removeFromSuperview];
+    }
+    self.window.rootViewController = viewController;
+}
+
+- (UIStoryboard *)storyboard {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    return storyboard;
 }
 
 @end

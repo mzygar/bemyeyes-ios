@@ -19,11 +19,8 @@ class BaseViewController: UIViewController {
     }
 
     override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-    }
-    
-    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
-        return .Portrait
+        let isIpad = UIDevice.currentDevice().userInterfaceIdiom == .Pad;
+        return Int((isIpad ? UIInterfaceOrientationMask.All : .Portrait).rawValue);
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

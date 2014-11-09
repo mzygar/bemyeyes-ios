@@ -12,7 +12,7 @@
 
 @interface BMEAccessControlHandler() <UIAlertViewDelegate>
 
-@property (strong, nonatomic) void (^notificationsCompletion)(BOOL);
+@property (strong, nonatomic) void (^notificationsCompletion)(BOOL isEnabled, BOOL validToken);
 
 @end
 
@@ -50,13 +50,13 @@
 {
     if ([keyPath isEqualToString:NSStringFromSelector(@selector(deviceToken))] &&
         object == [GVUserDefaults standardUserDefaults]) {
-        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled) {
+        [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isEnabled, BOOL validToken) {
             if (!isEnabled) {
                 [BMEAccessControlHandler showNotificationsAlert];
             }
             if (self.notificationsCompletion) {
-                self.notificationsCompletion(isEnabled);
-                self.notificationsCompletion = nil;
+                self.notificationsCompletion(isEnabled, validToken);
+                _notificationsCompletion = nil;
             }
         }];
         return;
@@ -68,10 +68,10 @@
 #pragma mark -
 #pragma mark Public Methods
 
-+ (void)enabledForRole:(BMERole)role completion:(void (^)(BOOL))completion
++ (void)enabledForRole:(BMERole)role completion:(void (^)(BOOL isEnabled, BOOL validToken))completion
 {
 #if TARGET_IPHONE_SIMULATOR
-    completion(YES);
+    completion(YES, YES);
     return;
 #endif
     
@@ -81,11 +81,11 @@
             // Ask for microphone + video
             [self hasMicrophoneEnabled:^(BOOL isEnabled) {
                 if (!isEnabled) {
-                    completion(NO);
+                    completion(NO, YES);
                     return;
                 }
                 [self hasVideoEnabled:^(BOOL isEnabled) {
-                    completion(isEnabled);
+                    completion(isEnabled, YES);
                 }];
             }];
         }
@@ -93,18 +93,18 @@
         case BMERoleHelper:
         {
             // Ask for notifications + microphone + video
-            [self hasNotificationsEnabled:^(BOOL isEnabled) {
+            [self hasNotificationsEnabled:^(BOOL isEnabled, BOOL validToken) {
                 if (!isEnabled) {
-                    completion(NO);
+                    completion(NO, validToken);
                     return;
                 }
                 [self hasMicrophoneEnabled:^(BOOL isEnabled) {
                     if (!isEnabled) {
-                        completion(NO);
+                        completion(NO, validToken);
                         return;
                     }
                     [self hasVideoEnabled:^(BOOL isEnabled) {
-                        completion(isEnabled);
+                        completion(isEnabled, validToken);
                     }];
                 }];
             }];
@@ -119,13 +119,13 @@
 
 // Remote notifications
 
-+ (void)requireNotificationsEnabled:(void(^)(BOOL isEnabled))completion {
++ (void)requireNotificationsEnabled:(void(^)(BOOL isEnabled, BOOL validToken))completion {
     // Store completion block
     [self sharedInstance].notificationsCompletion = completion;
     [self registerForRemoteNotifications];
 }
 
-+ (void)hasNotificationsEnabled:(void(^)(BOOL isEnabled))completion {
++ (void)hasNotificationsEnabled:(void(^)(BOOL isUserEnabled, BOOL validToken))completion {
     // System – require badge and alert
     BOOL isUserEnabled = NO;
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
@@ -149,8 +149,7 @@
     BOOL isTemporary = [deviceToken rangeOfString:@"bmetemp"].location == 0; // [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken might not have been set yet
     BOOL hasValidToken = hasNotificationsToken && !isTemporary;
     // Combined
-    BOOL isEnabled = hasValidToken && isUserEnabled;
-    completion(isEnabled);
+    completion(isUserEnabled, hasValidToken);
 }
 
 
