@@ -152,9 +152,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     CGFloat contentHeight = self.tableView.contentSize.height;
     CGFloat viewHeight = self.view.frame.size.height;
     CGFloat bottomInset = 0;
-    CGFloat hiddenHeight = contentHeight - (viewHeight - communityHeight);
-    if (0 < hiddenHeight) {
-        bottomInset = viewHeight - contentHeight + hiddenHeight/2;
+    if (contentHeight > viewHeight - communityHeight &&
+        contentHeight < viewHeight + communityHeight) {
+        bottomInset = (viewHeight - contentHeight + communityHeight)/2;
     }
     
     UIEdgeInsets contentInsets = self.tableView.contentInset;
