@@ -1,11 +1,7 @@
 # Getting started
-## install CocoaPod
-sudo gem install cocoapods  
-# install dependencies
-pod install
+## Install Dependencies
+Install pods by running `pod install` in the terminal
+If you don't have CocoaPods already, install by `sudo gem install cocoapods`
 
-## configuration
-rename BMEGlobal.temp.h to BMEGlobal.h and configure to your own needs
-
-# Localization
-Update localization keys by running `Scripts/./miaw -g -o BeMyEyes/Source/` from the top level folder.
+## Configuration
+Rename BMEGlobal.temp.h to BMEGlobal.h and configure to your own needs
