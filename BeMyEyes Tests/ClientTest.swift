@@ -37,8 +37,16 @@ class ClientTest: XCTestCase {
             expectation.fulfill()
             XCTAssert(success, "Failed sign up")
             if let error = error {
-                XCTAssert(success, "...with error: " + error.localizedDescription)
+                XCTFail("...with error: " + error.localizedDescription)
             }
+            let user = BMEClient.sharedClient().currentUser
+            XCTAssert(user != nil, "No current user")
+            XCTAssert(user.email == email, "Wrong email")
+            XCTAssert(user.firstName == firstName, "Wrong first name")
+            XCTAssert(user.lastName == lastName, "Wrong last name")
+            XCTAssert(user.role == role, "Wrong role")
+            let token = BMEClient.sharedClient().token()
+            XCTAssert(token != nil, "No token")
         }
         waitForExpectationsWithTimeout(3, handler: nil)
     }
@@ -47,9 +55,17 @@ class ClientTest: XCTestCase {
         let expectation = expectationWithDescription("Login")
         let (email, firstName, lastName, password, role) = newUser()
         BMEClient.sharedClient().createUserWithEmail(email, password: password, firstName: firstName, lastName: lastName, role: role) { (success, error) in
-            BMEClient.sharedClient().loginWithEmail(email, password: password, deviceToken: nil, success: { (token) -> Void in
+            BMEClient.sharedClient().loginWithEmail(email, password: password, deviceToken: nil, success: { token in
                 expectation.fulfill()
-                }, failure: { (error) -> Void in
+                let user = BMEClient.sharedClient().currentUser
+                XCTAssert(user != nil, "No current user")
+                XCTAssert(user.email == email, "Wrong email")
+                XCTAssert(user.firstName == firstName, "Wrong first name")
+                XCTAssert(user.lastName == lastName, "Wrong last name")
+                XCTAssert(user.role == role, "Wrong role")
+                let token = BMEClient.sharedClient().token()
+                XCTAssert(token != nil, "No token")
+            }, failure: { (error) -> Void in
                     XCTFail("Failed log in: " + error.localizedDescription)
                     expectation.fulfill()
             })
@@ -61,13 +77,12 @@ class ClientTest: XCTestCase {
         let expectation = expectationWithDescription("Insert token")
         let (email, firstName, lastName, password, role) = newUser()
         BMEClient.sharedClient().createUserWithEmail(email, password: password, firstName: firstName, lastName: lastName, role: role) { (success, error) in
-            
             let newToken = "adfjsk234hj432k23j"
             BMEClient.sharedClient().upsertDeviceWithNewToken(newToken, currentToken: nil, production: false, completion: { (success, error) in
                 expectation.fulfill()
                 XCTAssert(success, "Failed insert")
                 if let error = error {
-                    XCTAssert(success, "...with error: " + error.localizedDescription)
+                    XCTFail("...with error: " + error.localizedDescription)
                 }
             })
         }
