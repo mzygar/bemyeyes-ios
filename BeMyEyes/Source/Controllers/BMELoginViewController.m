@@ -12,7 +12,6 @@
 #import "BMEAppDelegate.h"
 #import "BMEClient.h"
 #import "BMEUser.h"
-#import "NSString+BMEDeviceToken.h"
 #import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 
@@ -84,16 +83,9 @@
     [self showLoggingInOverlay];
     
     NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
-    BOOL isTemporaryDeviceToken = NO;
-    if (!deviceToken) {
-        deviceToken = [NSString BMETemporaryDeviceToken];
-        isTemporaryDeviceToken = YES;
-    }
-    BOOL isActiveDeviceToken = !isTemporaryDeviceToken;
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:deviceToken active:isActiveDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:deviceToken currentToken:nil production:[GVUserDefaults standardUserDefaults].isRelease  completion:^(BOOL success, NSError *error) {
         if (success) {
             [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
-            [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = isTemporaryDeviceToken;
             [GVUserDefaults synchronize];
             
             if (useFacebook) {

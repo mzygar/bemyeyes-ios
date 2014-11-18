@@ -4,6 +4,8 @@ platform :ios, '7.0'
 
 inhibit_all_warnings!
 
+link_with 'BeMyEyes', 'BeMyEyes Tests'
+
 pod 'AFNetworking', '~> 1.3.2'
 pod 'DCKeyValueObjectMapping'
 pod 'ISO8601DateFormatter', '~> 0.7'

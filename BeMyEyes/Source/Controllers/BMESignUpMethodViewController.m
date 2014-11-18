@@ -14,7 +14,6 @@
 #import "BMEClient.h"
 #import "BMEUser.h"
 #import "BMEFacebookInfo.h"
-#import "NSString+BMEDeviceToken.h"
 #import "BeMyEyes-Swift.h"
 
 #define BMESignUpMethodSignUpSegue @"SignUp"
@@ -103,38 +102,12 @@
     
     [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
+            // TODO: Add deviceToken if available
             [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId longLongValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
+                [progressOverlayView hide:YES];
                 if (success && !error) {
-                    progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE, BMESignUpMethodLocalizationTable);
-                
-                    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
-                    if (!deviceToken) {
-                        deviceToken = [NSString BMETemporaryDeviceToken];
-                        [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
-                        [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
-                        [GVUserDefaults synchronize];
-                    }
-                    
-                    [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:deviceToken active:NO production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
-                        if (success && !error) {
-                            [[BMEClient sharedClient] loginWithEmail:fbInfo.email userId:[fbInfo.userId longLongValue] deviceToken:deviceToken success:^(BMEToken *token) {
-                                [progressOverlayView hide:YES];
-                                
-                                [self didLogin];
-                            } failure:^(NSError *error) {
-                                [progressOverlayView hide:YES];
-                                
-                                NSLog(@"Failed logging in after sign up: %@", error);
-                            }];
-                        } else {
-                            [progressOverlayView hide:YES];
-                            
-                            NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
-                        }
-                    }];    
+                    [self didLogin];
                 } else {
-                    [progressOverlayView hide:YES];
-                    
                     if ([error code] == BMEClientErrorUserEmailAlreadyRegistered)  {
                         NSString *title = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE, BMESignUpMethodLocalizationTable);
                         NSString *message = MKLocalizedFromTable(BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE, BMESignUpMethodLocalizationTable);
@@ -177,7 +150,7 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease];
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:[GVUserDefaults standardUserDefaults].deviceToken currentToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }

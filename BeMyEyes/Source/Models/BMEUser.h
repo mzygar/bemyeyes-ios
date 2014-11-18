@@ -11,6 +11,11 @@
 @class BMEUserLevel;
 #import "BMEUserTask.h"
 
+typedef NS_ENUM(NSInteger, BMERole) {
+    BMERoleBlind = 0,
+    BMERoleHelper,
+};
+
 @interface BMEUser : NSObject <NSCoding>
 
 @property (readonly, nonatomic) NSString *identifier;

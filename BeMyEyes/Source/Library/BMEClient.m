@@ -18,8 +18,6 @@
 #import <Social/Social.h>
 #import "AESCrypt.h"
 #import "BMERequest.h"
-#import "BMEToken.h"
-#import "BMEUser.h"
 #import "BMEUserLevel.h"
 #import "BMEPointEntry.h"
 #import "BMECommunityStats.h"
@@ -189,8 +187,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     NSAssert([deviceToken length] > 0, @"Device token cannot be empty.");
 
     NSDictionary *parameters = @{ @"email" : email,
-                                  @"user_id" : @(userId),
-                                  @"device_token" : deviceToken };
+                                  @"user_id" : @(userId)};
     
     [self loginWithParameters:parameters success:success failure:failure];
 }
@@ -198,19 +195,21 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL, NSError *))completion {
     NSDictionary *parameters = @{ @"token" : [self token],
                                   @"device_token" : deviceToken };
+    NSLog(@"Log in using endpoint /users/login/token with parameters: %@", parameters);
     [self putPath:@"users/login/token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         _loggedIn = YES;
         
         BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
         [self storeCurrentUser:currentUser];
         
-        NSLog(@"Did log in using endpoint /users/login/token with parameters: %@", parameters);
+        NSLog(@"Did log in w/ token");
 
         if (completion) {
             completion(YES, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSError *bmeError = [self errorWithRecoverySuggestionInvestigated:error];
+        NSLog(@"Failed login: %@", bmeError.localizedDescription);
         switch ([bmeError code]) {
             case BMEClientErrorUserNotFound:
             case BMEClientErrorUserFacebookUserNotFound:
@@ -231,7 +230,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
                 _loggedIn = YES;
                 
                 if (completion) {
-                    completion(YES, nil);
+                    completion(YES, bmeError);
                 }
                 break;
         }
@@ -508,63 +507,10 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 #pragma mark -
-#pragma mark Devices
+#pragma mark Notifications Token
 
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction {
-    [self registerDeviceWithDeviceToken:deviceToken active:YES production:isProduction completion:nil];
-}
-
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    [self registerDeviceWithDeviceToken:deviceToken active:YES production:isProduction completion:completion];
-}
-
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction {
-    [self registerDeviceWithDeviceToken:deviceToken production:isProduction completion:nil];
-}
-
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
-    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:normalizedDeviceToken newToken:nil active:isActive productionOrAdHoc:isProduction completion:completion];
-}
-
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction {
-    [self registerDeviceWithAbsoluteDeviceToken:deviceToken active:YES production:isProduction completion:nil];
-}
-
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
-    [self registerDeviceWithAbsoluteDeviceToken:deviceToken active:YES production:isProduction completion:completion];
-}
-
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction {
-    [self registerDeviceWithAbsoluteDeviceToken:deviceToken active:isActive production:isProduction completion:nil];
-}
-
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
-    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:deviceToken newToken:nil active:isActive productionOrAdHoc:isProduction completion:completion];
-}
-
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction {
-    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES production:isProduction completion:nil];
-}
-
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
-    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:YES production:isProduction completion:completion];
-}
-
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction {
-    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:isActive production:isProduction completion:nil];
-}
-
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion {
-    [self updateDeviceWithDeviceToken:deviceToken newToken:nil active:isActive production:isProduction completion:completion];
-}
-
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction {
-    [self updateDeviceWithDeviceToken:deviceToken newToken:newToken active:isActive production:isProduction completion:nil];
-}
-
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    [self sendDeviceInfoToPath:@"devices/update" withDeviceToken:deviceToken newToken:newToken active:isActive productionOrAdHoc:isProduction completion:completion];
+- (void)upsertDeviceWithNewToken:(NSString *)newToken currentToken:(NSString *)currentToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:currentToken newToken:newToken productionOrAdHoc:isProduction completion:completion];
 }
 
 #pragma mark -
@@ -658,7 +604,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)sendDeviceInfoToPath:(NSString *)path withDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+- (void)sendDeviceInfoToPath:(NSString *)path withDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
     NSString *alias = [UIDevice currentDevice].name;
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
@@ -667,15 +613,14 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
 
-    NSDictionary *parameters = @{ @"device_token" : deviceToken,
+    NSDictionary *parameters = @{ @"device_token" : deviceToken ? deviceToken : @"",
                                   @"device_name" : alias,
                                   @"model" : model,
                                   @"system_version" : [NSString stringWithFormat:@"%@ %@", systemName, systemVersion],
                                   @"app_version" : appVersion,
                                   @"app_bundle_version" : appBundleVersion,
                                   @"locale" : locale,
-                                  @"development" : isProduction ? @(NO) : @(YES),
-                                  @"inactive" : @(!isActive) };
+                                  @"development" : isProduction ? @(NO) : @(YES) };
     
     NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
     if (newToken) {
@@ -698,8 +643,18 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)createUserWithParameters:(NSDictionary *)params completion:(void (^)(BOOL success, NSError *error))completion {
+    NSLog(@"Create user with parameters: %@", params);
     [self postPath:@"users" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
+            BMEToken *token = [self mapTokenFromRepresentation:[responseObject objectForKey:@"token"]];
+            [self storeToken:token.token];
+            [self storeTokenExpiryDate:token.expiryDate];
+            
+            _loggedIn = YES;
+            
+            BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
+            [self storeCurrentUser:currentUser];
+            
             completion(YES, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -711,7 +666,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 
 - (void)loginWithParameters:(NSDictionary *)params success:(void (^)(BMEToken *))success failure:(void (^)(NSError *error))failure {
     NSLog(@"Login with parameters: %@", params);
-    [self postPath:@"users/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self postPath:@"auth/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         BMEToken *token = [self mapTokenFromRepresentation:[responseObject objectForKey:@"token"]];
         [self storeToken:token.token];
         [self storeTokenExpiryDate:token.expiryDate];

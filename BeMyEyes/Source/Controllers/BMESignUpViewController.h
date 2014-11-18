@@ -7,6 +7,7 @@
 //
 
 #import "BMEBaseViewController.h"
+#import "BMEUser.h"
 
 @interface BMESignUpViewController : BMEBaseViewController <MKLocalizable>
 

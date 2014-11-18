@@ -8,8 +8,10 @@
 
 #import "AFHTTPClient.h"
 #import "BMEUserTask.h"
+#import "BMEUser.h"
+#import "BMEToken.h"
 
-@class BMERequest, BMEToken, BMEUser, BMEFacebookInfo, BMECommunityStats;
+@class BMERequest, BMEFacebookInfo, BMECommunityStats;
 
 enum {
     BMEClientErrorInvalidBody = 1000,
@@ -68,22 +70,8 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 
 - (void)reportAbuseForRequestWithId:(NSString *)identifier reason:(NSString *)reason completion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction;
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction;
-- (void)registerDeviceWithDeviceToken:(NSData *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
+- (void)upsertDeviceWithNewToken:(NSString *)newToken currentToken:(NSString *)currentToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion;
 
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction;
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction;
-- (void)registerDeviceWithAbsoluteDeviceToken:(NSString *)deviceToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
-
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction;
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction;
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken active:(BOOL)isActive productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction;
-- (void)updateDeviceWithDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken active:(BOOL)isActive production:(BOOL)isProduction completion:(void (^)(BOOL success, NSError *error))completion;
 
 - (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo, NSError *error))completion;
 
