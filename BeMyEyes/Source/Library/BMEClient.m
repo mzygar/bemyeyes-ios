@@ -227,6 +227,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)resetLogin {
+    [self storeCurrentUser:nil];
     [self storeToken:nil];
     [self storeTokenExpiryDate:nil];
     [self setHeaderAuthToken:nil];
