@@ -101,6 +101,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)setHeaderAuthToken:(NSString *)authToken {
+    NSLog(@"Set header auth token: %@", authToken);
     [self setDefaultHeader:BMEHeaderAuthTokenKey value:authToken];
     _loggedIn = authToken != nil;
 }
