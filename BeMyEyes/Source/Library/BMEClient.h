@@ -70,7 +70,7 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 
 - (void)reportAbuseForRequestWithId:(NSString *)identifier reason:(NSString *)reason completion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void)upsertDeviceWithNewToken:(NSString *)newToken currentToken:(NSString *)currentToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion;
+- (void)upsertDeviceWithNewToken:(NSString *)newToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion;
 
 
 - (void)authenticateWithFacebook:(void(^)(BMEFacebookInfo *fbInfo, NSError *error))completion;

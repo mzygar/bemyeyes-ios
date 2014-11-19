@@ -197,7 +197,6 @@
     NSLog(@"Did register for remote notifications");
     
     NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
-    NSString *existingDeviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
     
     void(^completionHandler)(NSError *) = ^(NSError *error) {
         if (!error && normalizedDeviceToken) {
@@ -206,10 +205,8 @@
         }
     };
     
-    NSLog(@"Upsert device token '%@' to: %@", existingDeviceToken, normalizedDeviceToken);
-    
     // Update using existing device token
-    [[BMEClient sharedClient] upsertDeviceWithNewToken:normalizedDeviceToken currentToken:existingDeviceToken production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:normalizedDeviceToken production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
         completionHandler(error);
         
         if (error) {
@@ -272,7 +269,7 @@
     [self showLoggedInMainView];
     
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] upsertDeviceWithNewToken:[GVUserDefaults standardUserDefaults].deviceToken currentToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
     
     if (!self.isLaunchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];

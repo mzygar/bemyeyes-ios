@@ -82,12 +82,8 @@
     [self dismissKeyboard];
     [self showLoggingInOverlay];
     
-    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
-    [[BMEClient sharedClient] upsertDeviceWithNewToken:deviceToken currentToken:nil production:[GVUserDefaults standardUserDefaults].isRelease  completion:^(BOOL success, NSError *error) {
-        if (success) {
-            [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
-            [GVUserDefaults synchronize];
-            
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:nil production:[GVUserDefaults standardUserDefaults].isRelease  completion:^(BOOL success, NSError *error) {
+        if (success) {            
             if (useFacebook) {
                 [self performLoginWithFacebook];
             } else {

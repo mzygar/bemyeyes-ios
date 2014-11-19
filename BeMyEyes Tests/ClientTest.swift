@@ -66,9 +66,26 @@ class ClientTest: XCTestCase {
                 let token = BMEClient.sharedClient().token()
                 XCTAssert(token != nil, "No token")
             }, failure: { (error) -> Void in
-                    XCTFail("Failed log in: " + error.localizedDescription)
-                    expectation.fulfill()
+                XCTFail("Failed log in: " + error.localizedDescription)
+                expectation.fulfill()
             })
+        }
+        waitForExpectationsWithTimeout(3, handler: nil)
+    }
+    
+    func testLogout() {
+        let expectation = expectationWithDescription("Logout")
+        let (email, firstName, lastName, password, role) = newUser()
+        BMEClient.sharedClient().createUserWithEmail(email, password: password, firstName: firstName, lastName: lastName, role: role) { (success, error) in
+            BMEClient.sharedClient().logoutWithCompletion(){ success, error in
+                expectation.fulfill()
+                XCTAssert(success, "Failed log out")
+                if let error = error {
+                    XCTFail("...with error: " + error.localizedDescription)
+                }
+                let user = BMEClient.sharedClient().currentUser
+                XCTAssert(user == nil, "Shouldn't have current user")
+            } 
         }
         waitForExpectationsWithTimeout(3, handler: nil)
     }
@@ -76,19 +93,19 @@ class ClientTest: XCTestCase {
     func testInsertDeviceToken() {
         let expectation = expectationWithDescription("Insert token")
         let (email, firstName, lastName, password, role) = newUser()
-        BMEClient.sharedClient().createUserWithEmail(email, password: password, firstName: firstName, lastName: lastName, role: role) { (success, error) in
-            let newToken = "adfjsk234hj432k23j"
-            BMEClient.sharedClient().upsertDeviceWithNewToken(newToken, currentToken: nil, production: false, completion: { (success, error) in
+        BMEClient.sharedClient().createUserWithEmail(email, password: password, firstName: firstName, lastName: lastName, role: role) { success, error in
+            let newToken = "0f744707bebcf74f9b7c25d48e3358945f6aa01da5ddb387462c7eaf61bbad78"
+            BMEClient.sharedClient().upsertDeviceWithNewToken(newToken, production: false, completion: { (success, error) in
                 expectation.fulfill()
                 XCTAssert(success, "Failed insert")
                 if let error = error {
                     XCTFail("...with error: " + error.localizedDescription)
                 }
+                XCTAssert(BMEClient.sharedClient().token() == newToken, "Wrong token")
             })
         }
         waitForExpectationsWithTimeout(3, handler: nil)
     }
-
 }
 
 

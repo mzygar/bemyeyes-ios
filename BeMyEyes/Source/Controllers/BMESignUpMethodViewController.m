@@ -150,7 +150,7 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] upsertDeviceWithNewToken:[GVUserDefaults standardUserDefaults].deviceToken currentToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }

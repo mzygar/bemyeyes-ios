@@ -509,8 +509,48 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark -
 #pragma mark Notifications Token
 
-- (void)upsertDeviceWithNewToken:(NSString *)newToken currentToken:(NSString *)currentToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    [self sendDeviceInfoToPath:@"devices/register" withDeviceToken:currentToken newToken:newToken productionOrAdHoc:isProduction completion:completion];
+- (void)upsertDeviceWithNewToken:(NSString *)newToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+    NSString *alias = [UIDevice currentDevice].name;
+    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+    NSString *model = [[UIDevice currentDevice] model];
+    NSString *systemName = [[UIDevice currentDevice] systemName];
+    NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
+    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
+    
+    NSMutableDictionary *parameters = @{ @"device_name" : alias,
+                                         @"model" : model,
+                                         @"system_version" : [NSString stringWithFormat:@"%@ %@", systemName, systemVersion],
+                                         @"app_version" : appVersion,
+                                         @"app_bundle_version" : appBundleVersion,
+                                         @"locale" : locale,
+                                         @"development" : isProduction ? @(NO) : @(YES) }.mutableCopy;
+    
+    if (!newToken) {
+        // If no token, just send current local as "truth" to server
+        newToken = [GVUserDefaults standardUserDefaults].deviceToken;
+    }
+    if (newToken) {
+        [parameters setObject:newToken forKey:@"device_token"];
+    }
+    
+    [self postPath:@"devices/register" parameters:parameters.copy success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Upsert device info with parameters: %@", parameters);
+        
+        NSString *deviceToken = [responseObject objectForKey:@"device_token"];
+        [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
+        [GVUserDefaults synchronize];
+        
+        if (completion) {
+            completion(YES, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed upsert device info with parameters: %@", parameters);
+        
+        if (completion) {
+            completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
+        }
+    }];
 }
 
 #pragma mark -
@@ -604,55 +644,17 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)sendDeviceInfoToPath:(NSString *)path withDeviceToken:(NSString *)deviceToken newToken:(NSString *)newToken productionOrAdHoc:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
-    NSString *alias = [UIDevice currentDevice].name;
-    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
-    NSString *model = [[UIDevice currentDevice] model];
-    NSString *systemName = [[UIDevice currentDevice] systemName];
-    NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
-    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
-
-    NSDictionary *parameters = @{ @"device_token" : deviceToken ? deviceToken : @"",
-                                  @"device_name" : alias,
-                                  @"model" : model,
-                                  @"system_version" : [NSString stringWithFormat:@"%@ %@", systemName, systemVersion],
-                                  @"app_version" : appVersion,
-                                  @"app_bundle_version" : appBundleVersion,
-                                  @"locale" : locale,
-                                  @"development" : isProduction ? @(NO) : @(YES) };
-    
-    NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-    if (newToken) {
-        [mutableParameters setObject:newToken forKey:@"new_device_token"];
-    }
-    
-    [self postPath:path parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Device info sent to path %@ with parameters: %@", path, mutableParameters);
-        
-        if (completion) {
-            completion(YES, nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed sending device info to path %@ with parameters: %@", path, mutableParameters);
-        
-        if (completion) {
-            completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);
-        }
-    }];
-}
-
 - (void)createUserWithParameters:(NSDictionary *)params completion:(void (^)(BOOL success, NSError *error))completion {
     NSLog(@"Create user with parameters: %@", params);
     [self postPath:@"users" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
-            BMEToken *token = [self mapTokenFromRepresentation:[responseObject objectForKey:@"token"]];
+            BMEToken *token = [self mapTokenFromRepresentation:responseObject];
             [self storeToken:token.token];
             [self storeTokenExpiryDate:token.expiryDate];
             
             _loggedIn = YES;
             
-            BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
+            BMEUser *currentUser = [self mapUserFromRepresentation:responseObject];
             [self storeCurrentUser:currentUser];
             
             completion(YES, nil);
@@ -667,13 +669,13 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)loginWithParameters:(NSDictionary *)params success:(void (^)(BMEToken *))success failure:(void (^)(NSError *error))failure {
     NSLog(@"Login with parameters: %@", params);
     [self postPath:@"auth/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        BMEToken *token = [self mapTokenFromRepresentation:[responseObject objectForKey:@"token"]];
+        BMEToken *token = [self mapTokenFromRepresentation:responseObject];
         [self storeToken:token.token];
         [self storeTokenExpiryDate:token.expiryDate];
         
         _loggedIn = YES;
         
-        BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
+        BMEUser *currentUser = [self mapUserFromRepresentation:responseObject];
         [self storeCurrentUser:currentUser];
         
         NSLog(@"Did log in using endpoints users/login with parameters: %@", params);
@@ -803,7 +805,11 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     ISO8601DateFormatter *formatter = [[ISO8601DateFormatter alloc] init];
     NSDate *expiryDate = [formatter dateFromString:[representation objectForKey:@"expiry_time"]];
     
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEToken class]];
+    DCParserConfiguration *config = [DCParserConfiguration configuration];
+    DCObjectMapping *authTokenMapping = [DCObjectMapping mapKeyPath:@"auth_token" toAttribute:@"token" onClass:[BMEToken class]];
+    [config addObjectMapping:authTokenMapping];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEToken class] andConfiguration:config];
     BMEToken *token = [parser parseDictionary:representation];
     [token setValue:expiryDate forKey:@"expiryDate"];
     return token;
