@@ -102,6 +102,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 
 - (void)setHeaderAuthToken:(NSString *)authToken {
     [self setDefaultHeader:BMEHeaderAuthTokenKey value:authToken];
+    _loggedIn = authToken != nil;
 }
 
 #pragma mark -
@@ -214,8 +215,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)logoutWithCompletion:(void (^)(BOOL, NSError *))completion {
     [self putPath:@"auth/logout" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self resetLogin];
-        
-        _loggedIn = NO;
         
         if (completion) {
             completion(YES, nil);
@@ -609,8 +608,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             [self storeTokenExpiryDate:token.expiryDate];
             [self setHeaderAuthToken:token.token];
             
-            _loggedIn = YES;
-            
             BMEUser *currentUser = [self mapUserFromRepresentation:responseObject];
             [self storeCurrentUser:currentUser];
             
@@ -630,8 +627,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
         [self storeToken:token.token];
         [self storeTokenExpiryDate:token.expiryDate];
         [self setHeaderAuthToken:token.token];
-        
-        _loggedIn = YES;
         
         BMEUser *currentUser = [self mapUserFromRepresentation:responseObject];
         [self storeCurrentUser:currentUser];
