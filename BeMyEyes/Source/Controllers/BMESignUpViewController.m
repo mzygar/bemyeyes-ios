@@ -83,8 +83,6 @@
         NSString *firstName = [self.firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *lastName = [self.lastNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        // TODO: use deviceToken if available
-        NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
         [[BMEClient sharedClient] createUserWithEmail:email password:password firstName:firstName lastName:lastName role:self.role completion:^(BOOL success, NSError *error) {
             [progressOverlayView hide:YES];
             if (success && !error) {

@@ -102,7 +102,6 @@
     
     [[BMEClient sharedClient] authenticateWithFacebook:^(BMEFacebookInfo *fbInfo, NSError *error) {
         if (!error) {
-            // TODO: Add deviceToken if available
             [[BMEClient sharedClient] createFacebookUserId:[fbInfo.userId longLongValue] email:fbInfo.email firstName:fbInfo.firstName lastName:fbInfo.lastName role:self.role completion:^(BOOL success, NSError *error) {
                 [progressOverlayView hide:YES];
                 if (success && !error) {
