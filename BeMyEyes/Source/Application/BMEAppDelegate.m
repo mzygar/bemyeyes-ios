@@ -213,7 +213,6 @@
             NSLog(@"Failed upsert device token: %@", error);
         }
     }];
-    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -238,22 +237,19 @@
 
 - (void)checkIfLoggedIn {
     NSLog(@"Check if logged in");
-    if ([GVUserDefaults standardUserDefaults].deviceToken != nil && [[BMEClient sharedClient] isTokenValid]) {
-        [self showLoggedInMainView];
-        
-        [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
-            if (success) {
-                [self didLogin];
-            } else {
-                NSLog(@"Could not automatically log in: %@", error);
-                
-                [self loginFailed];
-            }
-        }];
+    if ([BMEClient sharedClient].token) {
+        NSLog(@"Has auth token");
+        if ([BMEClient sharedClient].isTokenValid) {
+            NSLog(@"Auth token is valid");
+            [self didLogin];
+        } else {
+            NSLog(@"Auth token not valid");
+            // TODO: If auth token expiried, ask user to login.
+            [self loginFailed];
+        }
     } else {
+        NSLog(@"No user");
         [self showFrontPage];
-        NSLog(@"Device token: %@", [GVUserDefaults standardUserDefaults].deviceToken);
-        NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");
     }
 }
 

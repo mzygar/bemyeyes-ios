@@ -22,6 +22,7 @@
 		4E6AE89E1A01927F0019247A /* FacebookHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AE89D1A01927F0019247A /* FacebookHelper.swift */; };
 		4E6AE8A01A0194430019247A /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AE89F1A0194430019247A /* ProfileImageView.swift */; };
 		4E7BA9AC1A1BDC1400F9744A /* ClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BA9AB1A1BDC1400F9744A /* ClientTest.swift */; };
+		4E7BA9B41A1CD10900F9744A /* GVUserDefaults+Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */; };
 		4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */; };
 		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
 		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
@@ -1081,6 +1082,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7BA9B41A1CD10900F9744A /* GVUserDefaults+Settings.m in Sources */,
 				4E7BA9AC1A1BDC1400F9744A /* ClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

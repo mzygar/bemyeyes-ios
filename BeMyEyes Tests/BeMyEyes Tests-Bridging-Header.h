@@ -4,3 +4,5 @@
 
 #import "BMEGlobal.h"
 #import "BMEClient.h"
+
+#import "GVUserDefaults+Settings.h"

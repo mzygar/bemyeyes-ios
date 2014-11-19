@@ -51,7 +51,6 @@ extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);
 - (void)updateUserWithIdentifier:(NSString *)identifier firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
 - (void)loginWithEmail:(NSString *)email userId:(long long)userId deviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success failure:(void (^)(NSError *error))failure;
-- (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL success, NSError *error))completion;
 - (void)loginUsingFacebookWithDeviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *token))success loginFailure:(void (^)(NSError *error))loginFailure accountFailure:(void (^)(NSError *error))accountFailure;
 - (void)logoutWithCompletion:(void (^)(BOOL success, NSError *error))completion;
 - (void)resetLogin;

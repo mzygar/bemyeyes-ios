@@ -197,50 +197,6 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     [self loginWithParameters:parameters success:success failure:failure];
 }
 
-- (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL, NSError *))completion {
-    NSDictionary *parameters = @{ @"device_token" : deviceToken };
-    NSLog(@"Log in using endpoint /users/login/token with parameters: %@", parameters);
-    [self putPath:@"users/login/token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        _loggedIn = YES;
-        
-        BMEUser *currentUser = [self mapUserFromRepresentation:[responseObject objectForKey:@"user"]];
-        [self storeCurrentUser:currentUser];
-        
-        NSLog(@"Did log in w/ token");
-
-        if (completion) {
-            completion(YES, nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSError *bmeError = [self errorWithRecoverySuggestionInvestigated:error];
-        NSLog(@"Failed login: %@", bmeError.localizedDescription);
-        switch ([bmeError code]) {
-            case BMEClientErrorUserNotFound:
-            case BMEClientErrorUserFacebookUserNotFound:
-            case BMEClientErrorUserTokenNotFound:
-            case BMEClientErrorUserTokenExpired: {
-                _loggedIn = NO;
-                
-                [self storeCurrentUser:nil];
-                
-                if (completion) {
-                    completion(NO, bmeError);
-                }
-                break;
-            }
-            default:
-                // The log in with token failed due to a network error (meaning that the user may be offline),
-                // so we reuse the users stored user and assume that he has the rights to log in.
-                _loggedIn = YES;
-                
-                if (completion) {
-                    completion(YES, bmeError);
-                }
-                break;
-        }
-    }];
-}
-
 - (void)loginUsingFacebookWithDeviceToken:(NSString *)deviceToken success:(void (^)(BMEToken *))success loginFailure:(void (^)(NSError *))loginFailure accountFailure:(void (^)(NSError *))accountFailure {
     NSAssert([self.facebookAppId length] > 0, @"Facebook app ID must be set in order to login with Facebook.");
     
@@ -256,7 +212,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)logoutWithCompletion:(void (^)(BOOL, NSError *))completion {
-    [self putPath:@"users/logout" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self putPath:@"auth/logout" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self resetLogin];
         
         _loggedIn = NO;
@@ -545,6 +501,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failed upsert device info with parameters: %@", parameters);
+        NSLog(@"... with error: %@", error.localizedDescription);
         
         if (completion) {
             completion(NO, [self errorWithRecoverySuggestionInvestigated:error]);

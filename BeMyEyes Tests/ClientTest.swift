@@ -101,7 +101,7 @@ class ClientTest: XCTestCase {
                 if let error = error {
                     XCTFail("...with error: " + error.localizedDescription)
                 }
-                XCTAssert(BMEClient.sharedClient().token() == newToken, "Wrong token")
+                XCTAssert(GVUserDefaults.standardUserDefaults().deviceToken == newToken, "Wrong token")
             })
         }
         waitForExpectationsWithTimeout(3, handler: nil)
