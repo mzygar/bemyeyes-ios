@@ -71,6 +71,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
         self.parameterEncoding = AFJSONParameterEncoding;
+        [self setHeaderAuthToken:self.token];
         
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     }
@@ -97,6 +98,10 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)setUsername:(NSString *)username password:(NSString *)password {
     [self clearAuthorizationHeader];
     [self setAuthorizationHeaderWithUsername:username password:password];
+}
+
+- (void)setHeaderAuthToken:(NSString *)authToken {
+    [self setDefaultHeader:BMEHeaderAuthTokenKey value:authToken];
 }
 
 #pragma mark -
@@ -193,8 +198,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)loginUsingUserTokenWithDeviceToken:(NSString *)deviceToken completion:(void (^)(BOOL, NSError *))completion {
-    NSDictionary *parameters = @{ @"token" : [self token],
-                                  @"device_token" : deviceToken };
+    NSDictionary *parameters = @{ @"device_token" : deviceToken };
     NSLog(@"Log in using endpoint /users/login/token with parameters: %@", parameters);
     [self putPath:@"users/login/token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         _loggedIn = YES;
@@ -252,8 +256,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)logoutWithCompletion:(void (^)(BOOL, NSError *))completion {
-    NSDictionary *parameters = @{ @"token" : [self token] };
-    [self putPath:@"users/logout" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self putPath:@"users/logout" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self resetLogin];
         
         _loggedIn = NO;
@@ -271,6 +274,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)resetLogin {
     [self storeToken:nil];
     [self storeTokenExpiryDate:nil];
+    [self setHeaderAuthToken:nil];
 }
 
 - (void)sendNewPasswordToEmail:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion {
@@ -391,8 +395,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark Requests
 
 - (void)createRequestWithSuccess:(void (^)(BMERequest *))success failure:(void (^)(NSError *))failure {
-    NSDictionary *parameters = @{ @"token" : [self token] };
-    [self postPath:@"requests" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self postPath:@"requests" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@", responseObject);
         if (success) {
             success([self mapRequestFromRepresentation:responseObject]);
@@ -418,9 +421,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)answerRequestWithShortId:(NSString *)shortId success:(void (^)(BMERequest *request))success failure:(void (^)(NSError *error))failure {
-    NSDictionary *parameters = @{ @"token" : [self token] };
     NSString *path = [NSString stringWithFormat:@"requests/%@/answer", shortId];
-    [self putPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self putPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success([self mapRequestFromRepresentation:responseObject]);
         }
@@ -432,9 +434,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)cancelAnswerForRequestWithShortId:(NSString *)shortId completion:(void (^)(BOOL success, NSError *error))completion {
-    NSDictionary *parameters = @{ @"token" : [self token] };
     NSString *path = [NSString stringWithFormat:@"requests/%@/answer/cancel", shortId];
-    [self putPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self putPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
             completion(YES, nil);
         }
@@ -446,9 +447,8 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)disconnectFromRequestWithShortId:(NSString *)shortId completion:(void (^)(BOOL success, NSError *error))completion {
-    NSDictionary *parameters = @{ @"token" : [self token] };
     NSString *path = [NSString stringWithFormat:@"requests/%@/disconnect", shortId];
-    [self putPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self putPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
             completion(YES, nil);
         }
@@ -484,8 +484,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark Abuse
 
 - (void)reportAbuseForRequestWithId:(NSString *)identifier reason:(NSString *)reason completion:(void (^)(BOOL success, NSError *error))completion {
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    [params setObject:[self token] forKey:@"token"];
+    NSMutableDictionary *params = @{ @"auth_token" : [self token] }.mutableCopy;
     
     if (identifier) {
         [params setObject:identifier forKey:@"request_id"];
@@ -651,6 +650,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             BMEToken *token = [self mapTokenFromRepresentation:responseObject];
             [self storeToken:token.token];
             [self storeTokenExpiryDate:token.expiryDate];
+            [self setHeaderAuthToken:token.token];
             
             _loggedIn = YES;
             
@@ -672,6 +672,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
         BMEToken *token = [self mapTokenFromRepresentation:responseObject];
         [self storeToken:token.token];
         [self storeTokenExpiryDate:token.expiryDate];
+        [self setHeaderAuthToken:token.token];
         
         _loggedIn = YES;
         
