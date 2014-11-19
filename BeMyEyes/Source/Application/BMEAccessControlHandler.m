@@ -146,8 +146,7 @@
     // Token
     NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
     BOOL hasNotificationsToken = deviceToken != nil;
-    BOOL isTemporary = [deviceToken rangeOfString:@"bmetemp"].location == 0; // [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken might not have been set yet
-    BOOL hasValidToken = hasNotificationsToken && !isTemporary;
+    BOOL hasValidToken = hasNotificationsToken;
     // Combined
     completion(isUserEnabled, hasValidToken);
 }

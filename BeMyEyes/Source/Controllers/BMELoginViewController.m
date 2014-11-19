@@ -12,7 +12,6 @@
 #import "BMEAppDelegate.h"
 #import "BMEClient.h"
 #import "BMEUser.h"
-#import "NSString+BMEDeviceToken.h"
 #import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 
@@ -83,33 +82,11 @@
     [self dismissKeyboard];
     [self showLoggingInOverlay];
     
-    NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
-    BOOL isTemporaryDeviceToken = NO;
-    if (!deviceToken) {
-        deviceToken = [NSString BMETemporaryDeviceToken];
-        isTemporaryDeviceToken = YES;
+    if (useFacebook) {
+        [self performLoginWithFacebook];
+    } else {
+        [self performLoginWithEmail];
     }
-    BOOL isActiveDeviceToken = !isTemporaryDeviceToken;
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:deviceToken active:isActiveDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
-        if (success) {
-            [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
-            [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = isTemporaryDeviceToken;
-            [GVUserDefaults synchronize];
-            
-            if (useFacebook) {
-                [self performLoginWithFacebook];
-            } else {
-                [self performLoginWithEmail];
-            }
-        } else {
-            [self hideLoggingInOverlay];
-            NSString *title = nil;
-            NSString *message = nil;
-            NSString *cancelButton = nil;
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-            [alertView show];
-        }
-    }];
 }
 
 - (void)performLoginWithEmail {
@@ -244,6 +221,7 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }
 
