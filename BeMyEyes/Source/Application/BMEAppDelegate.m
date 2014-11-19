@@ -197,39 +197,23 @@
     NSLog(@"Did register for remote notifications");
     
     NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
-    NSString *existingDeviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
     
     void(^completionHandler)(NSError *) = ^(NSError *error) {
         if (!error && normalizedDeviceToken) {
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
-            [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
             [GVUserDefaults synchronize];
         }
     };
     
-    if (existingDeviceToken) {
-        NSLog(@"Update device token '%@' to: %@", existingDeviceToken, normalizedDeviceToken);
+    // Update using existing device token
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:normalizedDeviceToken production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
+        completionHandler(error);
         
-        // Update using existing device token
-        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
-            completionHandler(error);
-            
-            if (error) {
-                NSLog(@"Failed updating device: %@", error);
-            }
-        }];
-    } else {
-        NSLog(@"Register new device token: %@", normalizedDeviceToken);
-        
-        // Register new device token
-        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
-            completionHandler(error);
-            
-            if (error) {
-                NSLog(@"Failed registering device: %@", error);
-            }
-        }];
-    }
+        if (error) {
+            NSLog(@"Failed upsert device token: %@", error);
+        }
+    }];
+    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -285,7 +269,7 @@
     [self showLoggedInMainView];
     
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease];
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
     
     if (!self.isLaunchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];
