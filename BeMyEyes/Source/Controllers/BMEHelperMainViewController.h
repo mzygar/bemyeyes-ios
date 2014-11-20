@@ -10,4 +10,6 @@
 
 @interface BMEHelperMainViewController : BMEBaseViewController <MKLocalizable>
 
+@property (weak, nonatomic) BMEUser *user;
+
 @end

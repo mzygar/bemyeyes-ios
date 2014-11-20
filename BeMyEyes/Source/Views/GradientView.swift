@@ -62,9 +62,12 @@ extension UIColor {
         layer.addSublayer(gradientLayer)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func layoutSublayersOfLayer(layer: CALayer!) {
+        super.layoutSublayersOfLayer(layer)
+        CATransaction.begin()
+        CATransaction.setDisableActions(true) // Disable animations when changing bounds of CALayer
         gradientLayer.frame = bounds
+        CATransaction.commit()
     }
     
     func update() {
