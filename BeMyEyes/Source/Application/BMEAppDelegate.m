@@ -197,39 +197,22 @@
     NSLog(@"Did register for remote notifications");
     
     NSString *normalizedDeviceToken = BMENormalizedDeviceTokenStringWithDeviceToken(deviceToken);
-    NSString *existingDeviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
     
     void(^completionHandler)(NSError *) = ^(NSError *error) {
         if (!error && normalizedDeviceToken) {
             [GVUserDefaults standardUserDefaults].deviceToken = normalizedDeviceToken;
-            [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = NO;
             [GVUserDefaults synchronize];
         }
     };
     
-    if (existingDeviceToken) {
-        NSLog(@"Update device token '%@' to: %@", existingDeviceToken, normalizedDeviceToken);
+    // Update using existing device token
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:normalizedDeviceToken production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
+        completionHandler(error);
         
-        // Update using existing device token
-        [[BMEClient sharedClient] updateDeviceWithDeviceToken:existingDeviceToken newToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
-            completionHandler(error);
-            
-            if (error) {
-                NSLog(@"Failed updating device: %@", error);
-            }
-        }];
-    } else {
-        NSLog(@"Register new device token: %@", normalizedDeviceToken);
-        
-        // Register new device token
-        [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:normalizedDeviceToken active:YES production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
-            completionHandler(error);
-            
-            if (error) {
-                NSLog(@"Failed registering device: %@", error);
-            }
-        }];
-    }
+        if (error) {
+            NSLog(@"Failed upsert device token: %@", error);
+        }
+    }];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -254,22 +237,19 @@
 
 - (void)checkIfLoggedIn {
     NSLog(@"Check if logged in");
-    if ([GVUserDefaults standardUserDefaults].deviceToken != nil && [[BMEClient sharedClient] isTokenValid]) {
-        [self showLoggedInMainView];
-        
-        [[BMEClient sharedClient] loginUsingUserTokenWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken completion:^(BOOL success, NSError *error) {
-            if (success) {
-                [self didLogin];
-            } else {
-                NSLog(@"Could not automatically log in: %@", error);
-                
-                [self loginFailed];
-            }
-        }];
+    if ([BMEClient sharedClient].token) {
+        NSLog(@"Has auth token");
+        if ([BMEClient sharedClient].isTokenValid) {
+            NSLog(@"Auth token is valid");
+            [self didLogin];
+        } else {
+            NSLog(@"Auth token not valid");
+            // TODO: If auth token expiried, ask user to login.
+            [self loginFailed];
+        }
     } else {
+        NSLog(@"No user");
         [self showFrontPage];
-        NSLog(@"Device token: %@", [GVUserDefaults standardUserDefaults].deviceToken);
-        NSLog(@"Is valid: %@", [BMEClient sharedClient].isTokenValid ? @"YES" : @"NO");
     }
 }
 
@@ -285,7 +265,7 @@
     [self showLoggedInMainView];
     
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease];
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
     
     if (!self.isLaunchedWithShortID) {
         [self checkForPendingRequestIfIconHasBadge];

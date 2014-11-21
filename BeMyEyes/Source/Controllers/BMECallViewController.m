@@ -119,7 +119,7 @@ static NSString *BMECallPostSegue = @"PostCall";
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
         [alertView show];
         
-        NSLog(@"Request could not be created: %@", error);
+        NSLog(@"Request could not be created: %@", error.localizedDescription);
         
         [self dismiss];
     }];

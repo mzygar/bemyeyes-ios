@@ -11,7 +11,6 @@
 #import "BMEAppDelegate.h"
 #import "BMEClient.h"
 #import "BMEEmailValidator.h"
-#import "NSString+BMEDeviceToken.h"
 #import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 
@@ -83,38 +82,12 @@
         NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *firstName = [self.firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSString *lastName = [self.lastNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
         [[BMEClient sharedClient] createUserWithEmail:email password:password firstName:firstName lastName:lastName role:self.role completion:^(BOOL success, NSError *error) {
+            [progressOverlayView hide:YES];
             if (success && !error) {
-                progressOverlayView.titleLabelText = MKLocalizedFromTable(BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE, BMESignUpLocalizationTable);
-                
-                NSString *deviceToken = [GVUserDefaults standardUserDefaults].deviceToken;
-                if (!deviceToken) {
-                    deviceToken = [NSString BMETemporaryDeviceToken];
-                    [GVUserDefaults standardUserDefaults].deviceToken = deviceToken;
-                    [GVUserDefaults standardUserDefaults].isTemporaryDeviceToken = YES;
-                    [GVUserDefaults synchronize];
-                }
-                
-                [[BMEClient sharedClient] registerDeviceWithAbsoluteDeviceToken:deviceToken active:NO production:[GVUserDefaults standardUserDefaults].isRelease completion:^(BOOL success, NSError *error) {
-                    if (success && !error) {
-                        [[BMEClient sharedClient] loginWithEmail:email password:password deviceToken:deviceToken success:^(BMEToken *token) {
-                            [progressOverlayView hide:YES];
-                            
-                            [self didLogin];
-                        } failure:^(NSError *error) {
-                            [progressOverlayView hide:YES];
-                            
-                            NSLog(@"Failed logging in after sign up: %@", error);
-                        }];
-                    } else {
-                        [progressOverlayView hide:YES];
-                        
-                        NSLog(@"Failed registering device before automatic log in after sign up: %@", error);
-                    }
-                }];
+                [self didLogin];
             } else {
-                [progressOverlayView hide:YES];
-                
                 if ([error code] == BMEClientErrorUserEmailAlreadyRegistered) {
                     NSString *title = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_TITLE, BMESignUpLocalizationTable);
                     NSString *message = MKLocalizedFromTable(BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE, BMESignUpLocalizationTable);
@@ -135,7 +108,7 @@
 
 - (void)didLogin {
     [[BMEClient sharedClient] updateUserInfoWithUTCOffset:nil];
-    [[BMEClient sharedClient] updateDeviceWithDeviceToken:[GVUserDefaults standardUserDefaults].deviceToken active:![GVUserDefaults standardUserDefaults].isTemporaryDeviceToken productionOrAdHoc:[GVUserDefaults standardUserDefaults].isRelease];
+    [[BMEClient sharedClient] upsertDeviceWithNewToken:nil production:[GVUserDefaults standardUserDefaults].isRelease completion:nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogInNotification object:nil];
 }

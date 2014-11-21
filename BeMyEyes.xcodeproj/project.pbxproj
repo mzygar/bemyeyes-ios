@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FD4008389D1CCFBA33318E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A222A28C44403D94B34BA1 /* libPods.a */; };
 		4E08EE7A19E1693200B45088 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E08EE7919E1693200B45088 /* OpenTok.framework */; };
 		4E1916CF19E5800300B85E61 /* MaskedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1916CE19E5800300B85E61 /* MaskedLabel.swift */; };
 		4E1916D119E5804800B85E61 /* SplitMaskedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1916D019E5804800B85E61 /* SplitMaskedLabel.swift */; };
@@ -20,6 +21,13 @@
 		4E65448C1A017E8D00B71C1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65448B1A017E8D00B71C1C /* BaseViewController.swift */; };
 		4E6AE89E1A01927F0019247A /* FacebookHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AE89D1A01927F0019247A /* FacebookHelper.swift */; };
 		4E6AE8A01A0194430019247A /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6AE89F1A0194430019247A /* ProfileImageView.swift */; };
+		4E7BA9AC1A1BDC1400F9744A /* ClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BA9AB1A1BDC1400F9744A /* ClientTest.swift */; };
+		4E7BA9B61A1CE2DC00F9744A /* MaskedLabel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BA9B51A1CE2DC00F9744A /* MaskedLabel_Tests.swift */; };
+		4E7BA9B81A1CE64300F9744A /* GVUserDefaults+Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B1CD21901699500B5ABEA /* GVUserDefaults+Settings.m */; };
+		4E7BA9BA1A1CF4B800F9744A /* MaskedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1916CE19E5800300B85E61 /* MaskedLabel.swift */; };
+		4E7BA9BC1A1CF50C00F9744A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BA9BB1A1CF50C00F9744A /* SnapshotHelper.swift */; };
+		4E7BA9BE1A1CF5DA00F9744A /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BA9BD1A1CF5DA00F9744A /* DataHelper.swift */; };
+		4E7BA9C31A1DEE4500F9744A /* HelperMainViewController_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BA9C21A1DEE4500F9744A /* HelperMainViewController_Tests.swift */; };
 		4E7E106F19E5BFCE00D476B2 /* BMEAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */; };
 		4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107119E5C02000D476B2 /* BMEAccessView.m */; };
 		4E7E107519E5C3DB00D476B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */; };
@@ -43,6 +51,7 @@
 		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
 		4EDCE93F1A01E069006C7A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCE9411A01E069006C7A4A /* LaunchScreen.storyboard */; };
 		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
+		556D82D33DA8A505A137BD4A /* libPods-BeMyEyes Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03381774851623C2C6BE0645 /* libPods-BeMyEyes Tests.a */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
 		7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76318FA9C0D00251824 /* BMEPointGraphEntry.m */; };
 		7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76518FA9C0D00251824 /* BMEPointGraphView.m */; };
@@ -100,7 +109,6 @@
 		72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */; };
 		72856DF519AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DF319AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings */; };
 		72856DF819AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72856DF619AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings */; };
-		7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */; };
 		7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569518CC874500E1A9EE /* BMERegisteredViewController.m */; };
 		7296569918CC8C3E00E1A9EE /* BMEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569818CC8C3E00E1A9EE /* BMEMainViewController.m */; };
 		7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7296569B18CC8C4B00E1A9EE /* BMESettingsViewController.m */; };
@@ -146,8 +154,19 @@
 		72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */; };
 		72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */; };
 		72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */; };
+		7D08A53457682982D33E6E2E /* libPods-BeMyEyes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2757E9B3734C671FBC49ABB4 /* libPods-BeMyEyes.a */; };
 		8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A222A28C44403D94B34BA1 /* libPods.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E7BA99F1A1B5D9300F9744A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7236DFF218B8A87B00F622AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7236DFF918B8A87B00F622AA;
+			remoteInfo = BeMyEyes;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4E901DCD19E5B5680067CEB2 /* Embed Frameworks */ = {
@@ -163,7 +182,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0039FB5AC8BCCFB402F91B43 /* Pods.release – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release – dev.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release – dev.xcconfig"; sourceTree = "<group>"; };
+		03381774851623C2C6BE0645 /* libPods-BeMyEyes Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeMyEyes Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A0EF5D7BEFA581FEDA1E71D /* Pods-BeMyEyes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debug.xcconfig"; sourceTree = "<group>"; };
+		0FC8EC0B7F5CAC2C041F1D7C /* Pods.debug – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug – staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug – staging.xcconfig"; sourceTree = "<group>"; };
+		20A4A64B818425150D20B64E /* Pods-BeMyEyes.debug – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debug – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debug – dev.xcconfig"; sourceTree = "<group>"; };
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		255B65A506FA02763D8751F5 /* Pods-BeMyEyes Tests.release – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.release – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.release – staging.xcconfig"; sourceTree = "<group>"; };
+		2757E9B3734C671FBC49ABB4 /* libPods-BeMyEyes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeMyEyes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43AC6CAF59D2D47FBCE576C9 /* Pods-BeMyEyes Tests.release – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.release – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.release – dev.xcconfig"; sourceTree = "<group>"; };
+		46EF66D0630EA9710A5BEB38 /* Pods-BeMyEyes Tests.debug – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug – dev.xcconfig"; sourceTree = "<group>"; };
 		4E011A081A03A46C0042A895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
 		4E10F2FE19F7F176004EA22E /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
@@ -188,6 +216,14 @@
 		4E6AE89F1A0194430019247A /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		4E7A85C41A0C49DB0006BDC8 /* Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.debug.xcconfig; sourceTree = "<group>"; };
 		4E7A85C51A0C4AC60006BDC8 /* Config.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.release.xcconfig; sourceTree = "<group>"; };
+		4E7BA9991A1B5D9300F9744A /* BeMyEyes Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BeMyEyes Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E7BA99C1A1B5D9300F9744A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E7BA9A81A1B5E9900F9744A /* BeMyEyes Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeMyEyes Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4E7BA9AB1A1BDC1400F9744A /* ClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTest.swift; sourceTree = "<group>"; };
+		4E7BA9B51A1CE2DC00F9744A /* MaskedLabel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedLabel_Tests.swift; sourceTree = "<group>"; };
+		4E7BA9BB1A1CF50C00F9744A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		4E7BA9BD1A1CF5DA00F9744A /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		4E7BA9C21A1DEE4500F9744A /* HelperMainViewController_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMainViewController_Tests.swift; sourceTree = "<group>"; };
 		4E7E106D19E5BFCE00D476B2 /* BMEAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessViewController.h; sourceTree = "<group>"; };
 		4E7E106E19E5BFCE00D476B2 /* BMEAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEAccessViewController.m; sourceTree = "<group>"; };
 		4E7E107019E5C02000D476B2 /* BMEAccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEAccessView.h; sourceTree = "<group>"; };
@@ -223,7 +259,9 @@
 		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
 		4EDCE9441A01E07A006C7A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		524A97A1D18BD60D91454CCD /* Pods-BeMyEyes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.release.xcconfig"; sourceTree = "<group>"; };
 		60BAD311403180811F795B70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6FD57F6EC69F4E919F8FC342 /* Pods-BeMyEyes.release – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.release – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.release – staging.xcconfig"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
 		7206A76018FA9BF000251824 /* BMEPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointLabel.m; sourceTree = "<group>"; };
 		7206A76218FA9C0D00251824 /* BMEPointGraphEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphEntry.h; sourceTree = "<group>"; };
@@ -303,8 +341,6 @@
 		72856DF419AF761F0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEPrivacyPolicyLocalizationTable.strings; sourceTree = "<group>"; };
 		72856DF719AF789E0027AFF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMERegisteredLocalizationTable.strings; sourceTree = "<group>"; };
 		72858FA918DF81CE0002D6E1 /* BMEGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEGlobal.h; sourceTree = "<group>"; };
-		7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BMEDeviceToken.h"; sourceTree = "<group>"; };
-		7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BMEDeviceToken.m"; sourceTree = "<group>"; };
 		7296569418CC874500E1A9EE /* BMERegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMERegisteredViewController.h; sourceTree = "<group>"; };
 		7296569518CC874500E1A9EE /* BMERegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMERegisteredViewController.m; sourceTree = "<group>"; };
 		7296569718CC8C3E00E1A9EE /* BMEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEMainViewController.h; sourceTree = "<group>"; };
@@ -402,10 +438,26 @@
 		72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFacebookInfo.m; sourceTree = "<group>"; };
 		72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+BMEPopToClass.h"; sourceTree = "<group>"; };
 		72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+BMEPopToClas.m"; sourceTree = "<group>"; };
+		82D40ADAF2FF94D17998B5A7 /* Pods-BeMyEyes Tests.debug – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug – staging.xcconfig"; sourceTree = "<group>"; };
+		BE7F82DF13DC736365B286FD /* Pods-BeMyEyes.release – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.release – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.release – dev.xcconfig"; sourceTree = "<group>"; };
+		C2849BF8C6E57CD0799FEF11 /* Pods-BeMyEyes.debug – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debug – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debug – staging.xcconfig"; sourceTree = "<group>"; };
+		CAE72299908411953AA833CC /* Pods.debug – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug – dev.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug – dev.xcconfig"; sourceTree = "<group>"; };
+		CE96F2A1FB7797C3A62C8F72 /* Pods-BeMyEyes Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F6FB25A78F3B3719D724C7B0 /* Pods-BeMyEyes Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F8BE8295630BA0274578BCE8 /* Pods.release – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release – staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release – staging.xcconfig"; sourceTree = "<group>"; };
 		FD524777E415681609BF9F5D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E7BA9961A1B5D9300F9744A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FD4008389D1CCFBA33318E8 /* libPods.a in Frameworks */,
+				556D82D33DA8A505A137BD4A /* libPods-BeMyEyes Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7236DFF718B8A87B00F622AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,12 +491,35 @@
 				7236E00218B8A87B00F622AA /* UIKit.framework in Frameworks */,
 				7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */,
 				8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */,
+				7D08A53457682982D33E6E2E /* libPods-BeMyEyes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E7BA99A1A1B5D9300F9744A /* BeMyEyes Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4E7BA9AB1A1BDC1400F9744A /* ClientTest.swift */,
+				4E7BA9B51A1CE2DC00F9744A /* MaskedLabel_Tests.swift */,
+				4E7BA9C21A1DEE4500F9744A /* HelperMainViewController_Tests.swift */,
+				4E7BA9BB1A1CF50C00F9744A /* SnapshotHelper.swift */,
+				4E7BA9BD1A1CF5DA00F9744A /* DataHelper.swift */,
+				4E7BA9A81A1B5E9900F9744A /* BeMyEyes Tests-Bridging-Header.h */,
+				4E7BA99B1A1B5D9300F9744A /* Supporting Files */,
+			);
+			path = "BeMyEyes Tests";
+			sourceTree = "<group>";
+		};
+		4E7BA99B1A1B5D9300F9744A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E7BA99C1A1B5D9300F9744A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		721CAF1F192D2EAA00B5B4E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				7236E00318B8A87B00F622AA /* BeMyEyes */,
+				4E7BA99A1A1B5D9300F9744A /* BeMyEyes Tests */,
 				7236DFFC18B8A87B00F622AA /* Frameworks */,
 				7236DFFB18B8A87B00F622AA /* Products */,
 				C9FEB88A05BA770475517824 /* Pods */,
@@ -469,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				7236DFFA18B8A87B00F622AA /* BeMyEyes.app */,
+				4E7BA9991A1B5D9300F9744A /* BeMyEyes Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -505,6 +582,8 @@
 				7236E00118B8A87B00F622AA /* UIKit.framework */,
 				7236E01C18B8A87B00F622AA /* XCTest.framework */,
 				22A222A28C44403D94B34BA1 /* libPods.a */,
+				03381774851623C2C6BE0645 /* libPods-BeMyEyes Tests.a */,
+				2757E9B3734C671FBC49ABB4 /* libPods-BeMyEyes.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -585,8 +664,6 @@
 				72A7676B19029F34003121C4 /* NSDate+BMESnoozeRelativeDate.m */,
 				72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */,
 				72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */,
-				7287E8E219A75689006B8A2C /* NSString+BMEDeviceToken.h */,
-				7287E8E319A75689006B8A2C /* NSString+BMEDeviceToken.m */,
 				4E7E107319E5C3DB00D476B2 /* UIView+Layout.h */,
 				4E7E107419E5C3DB00D476B2 /* UIView+Layout.m */,
 			);
@@ -796,6 +873,22 @@
 			children = (
 				60BAD311403180811F795B70 /* Pods.debug.xcconfig */,
 				FD524777E415681609BF9F5D /* Pods.release.xcconfig */,
+				0FC8EC0B7F5CAC2C041F1D7C /* Pods.debug – staging.xcconfig */,
+				CAE72299908411953AA833CC /* Pods.debug – dev.xcconfig */,
+				F8BE8295630BA0274578BCE8 /* Pods.release – staging.xcconfig */,
+				0039FB5AC8BCCFB402F91B43 /* Pods.release – dev.xcconfig */,
+				0A0EF5D7BEFA581FEDA1E71D /* Pods-BeMyEyes.debug.xcconfig */,
+				CE96F2A1FB7797C3A62C8F72 /* Pods-BeMyEyes Tests.debug.xcconfig */,
+				82D40ADAF2FF94D17998B5A7 /* Pods-BeMyEyes Tests.debug – staging.xcconfig */,
+				46EF66D0630EA9710A5BEB38 /* Pods-BeMyEyes Tests.debug – dev.xcconfig */,
+				F6FB25A78F3B3719D724C7B0 /* Pods-BeMyEyes Tests.release.xcconfig */,
+				255B65A506FA02763D8751F5 /* Pods-BeMyEyes Tests.release – staging.xcconfig */,
+				43AC6CAF59D2D47FBCE576C9 /* Pods-BeMyEyes Tests.release – dev.xcconfig */,
+				C2849BF8C6E57CD0799FEF11 /* Pods-BeMyEyes.debug – staging.xcconfig */,
+				20A4A64B818425150D20B64E /* Pods-BeMyEyes.debug – dev.xcconfig */,
+				524A97A1D18BD60D91454CCD /* Pods-BeMyEyes.release.xcconfig */,
+				6FD57F6EC69F4E919F8FC342 /* Pods-BeMyEyes.release – staging.xcconfig */,
+				BE7F82DF13DC736365B286FD /* Pods-BeMyEyes.release – dev.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -803,6 +896,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E7BA9981A1B5D9300F9744A /* BeMyEyes Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E7BA9A11A1B5D9400F9744A /* Build configuration list for PBXNativeTarget "BeMyEyes Tests" */;
+			buildPhases = (
+				8E2F39EC94737FCB4B30ACE4 /* Check Pods Manifest.lock */,
+				4E7BA9951A1B5D9300F9744A /* Sources */,
+				4E7BA9961A1B5D9300F9744A /* Frameworks */,
+				4E7BA9971A1B5D9300F9744A /* Resources */,
+				47C570E79D5ED67FA34BE15B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E7BA9A01A1B5D9300F9744A /* PBXTargetDependency */,
+			);
+			name = "BeMyEyes Tests";
+			productName = "BeMyEyes Tests";
+			productReference = 4E7BA9991A1B5D9300F9744A /* BeMyEyes Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7236DFF918B8A87B00F622AA /* BeMyEyes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7236E02C18B8A87B00F622AA /* Build configuration list for PBXNativeTarget "BeMyEyes" */;
@@ -835,6 +948,10 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Be My Eyes";
 				TargetAttributes = {
+					4E7BA9981A1B5D9300F9744A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 7236DFF918B8A87B00F622AA;
+					};
 					7236DFF918B8A87B00F622AA = {
 						DevelopmentTeam = VS2JRRGV67;
 						SystemCapabilities = {
@@ -860,11 +977,19 @@
 			projectRoot = "";
 			targets = (
 				7236DFF918B8A87B00F622AA /* BeMyEyes */,
+				4E7BA9981A1B5D9300F9744A /* BeMyEyes Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E7BA9971A1B5D9300F9744A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7236DFF818B8A87B00F622AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -909,6 +1034,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47C570E79D5ED67FA34BE15B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4E011A061A03A0570042A895 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -935,6 +1075,21 @@
 			shellPath = /bin/sh;
 			shellScript = "./Pods/CrashlyticsFramework/Crashlytics.framework/run 41644116426a80147f822825bb643b3020b0f9d3 d46cde6eb84378999f53f4c323d53c7537a9c764c126ba8de77c0df968081cd1";
 		};
+		8E2F39EC94737FCB4B30ACE4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		B7DF8BE5A9DE4CE1B1BDE152 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -947,7 +1102,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7D633721AEF4038AC00C23E /* Check Pods Manifest.lock */ = {
@@ -968,6 +1123,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E7BA9951A1B5D9300F9744A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E7BA9B61A1CE2DC00F9744A /* MaskedLabel_Tests.swift in Sources */,
+				4E7BA9BA1A1CF4B800F9744A /* MaskedLabel.swift in Sources */,
+				4E7BA9B81A1CE64300F9744A /* GVUserDefaults+Settings.m in Sources */,
+				4E7BA9BE1A1CF5DA00F9744A /* DataHelper.swift in Sources */,
+				4E7BA9AC1A1BDC1400F9744A /* ClientTest.swift in Sources */,
+				4E7BA9C31A1DEE4500F9744A /* HelperMainViewController_Tests.swift in Sources */,
+				4E7BA9BC1A1CF50C00F9744A /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7236DFF618B8A87B00F622AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1031,7 +1200,6 @@
 				7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */,
 				4E2B919B19E67F1F00C9D0ED /* BMEAccessControlHandler.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
-				7287E8E419A75689006B8A2C /* NSString+BMEDeviceToken.m in Sources */,
 				4E1916D119E5804800B85E61 /* SplitMaskedLabel.swift in Sources */,
 				729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */,
 				4E8E21F519E8C03C00316AD8 /* IntroVideoViewController.swift in Sources */,
@@ -1053,6 +1221,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E7BA9A01A1B5D9300F9744A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7236DFF918B8A87B00F622AA /* BeMyEyes */;
+			targetProxy = 4E7BA99F1A1B5D9300F9744A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */ = {
@@ -1341,7 +1517,7 @@
 		};
 		4E5C66911A0A3DA20094A06B /* Release – Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD524777E415681609BF9F5D /* Pods.release.xcconfig */;
+			baseConfigurationReference = BE7F82DF13DC736365B286FD /* Pods-BeMyEyes.release – dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1350,7 +1526,6 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DISPLAY_NAME = "Be My Alpha";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1404,7 +1579,7 @@
 		};
 		4E5C66931A0A3DCD0094A06B /* Debug – Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60BAD311403180811F795B70 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 20A4A64B818425150D20B64E /* Pods-BeMyEyes.debug – dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1413,7 +1588,6 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DISPLAY_NAME = "Be My Alpha";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1467,7 +1641,7 @@
 		};
 		4E5C66951A0A4A0A0094A06B /* Debug – Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60BAD311403180811F795B70 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C2849BF8C6E57CD0799FEF11 /* Pods-BeMyEyes.debug – staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStaging;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1476,7 +1650,6 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DISPLAY_NAME = "Be My Beta";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1528,7 +1701,7 @@
 		};
 		4E5C66971A0A4A1E0094A06B /* Release – Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD524777E415681609BF9F5D /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6FD57F6EC69F4E919F8FC342 /* Pods-BeMyEyes.release – staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStaging;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1537,7 +1710,6 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DISPLAY_NAME = "Be My Beta";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1556,6 +1728,181 @@
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Release – Staging";
+		};
+		4E7BA9A21A1B5D9400F9744A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE96F2A1FB7797C3A62C8F72 /* Pods-BeMyEyes Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FB_REFERENCE_IMAGE_DIR=\"\\\"$(SOURCE_ROOT)/$(PROJECT_NAME)\\ Tests/ReferenceImages\\\"\"",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+			};
+			name = Debug;
+		};
+		4E7BA9A31A1B5D9400F9744A /* Debug – Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82D40ADAF2FF94D17998B5A7 /* Pods-BeMyEyes Tests.debug – staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FB_REFERENCE_IMAGE_DIR=\"\\\"$(SOURCE_ROOT)/$(PROJECT_NAME)\\ Tests/ReferenceImages\\\"\"",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+			};
+			name = "Debug – Staging";
+		};
+		4E7BA9A41A1B5D9400F9744A /* Debug – Dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EF66D0630EA9710A5BEB38 /* Pods-BeMyEyes Tests.debug – dev.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FB_REFERENCE_IMAGE_DIR=\"\\\"$(SOURCE_ROOT)/$(PROJECT_NAME)\\ Tests/ReferenceImages\\\"\"",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+			};
+			name = "Debug – Dev";
+		};
+		4E7BA9A51A1B5D9400F9744A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6FB25A78F3B3719D724C7B0 /* Pods-BeMyEyes Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+			};
+			name = Release;
+		};
+		4E7BA9A61A1B5D9400F9744A /* Release – Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 255B65A506FA02763D8751F5 /* Pods-BeMyEyes Tests.release – staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+			};
+			name = "Release – Staging";
+		};
+		4E7BA9A71A1B5D9400F9744A /* Release – Dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AC6CAF59D2D47FBCE576C9 /* Pods-BeMyEyes Tests.release – dev.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BeMyEyes Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
+			};
+			name = "Release – Dev";
 		};
 		7236E02A18B8A87B00F622AA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1621,7 +1968,7 @@
 		};
 		7236E02D18B8A87B00F622AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60BAD311403180811F795B70 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 0A0EF5D7BEFA581FEDA1E71D /* Pods-BeMyEyes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1652,7 +1999,7 @@
 		};
 		7236E02E18B8A87B00F622AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD524777E415681609BF9F5D /* Pods.release.xcconfig */;
+			baseConfigurationReference = 524A97A1D18BD60D91454CCD /* Pods-BeMyEyes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1661,7 +2008,6 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DISPLAY_NAME = "Be My Eyes";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1684,6 +2030,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E7BA9A11A1B5D9400F9744A /* Build configuration list for PBXNativeTarget "BeMyEyes Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E7BA9A21A1B5D9400F9744A /* Debug */,
+				4E7BA9A31A1B5D9400F9744A /* Debug – Staging */,
+				4E7BA9A41A1B5D9400F9744A /* Debug – Dev */,
+				4E7BA9A51A1B5D9400F9744A /* Release */,
+				4E7BA9A61A1B5D9400F9744A /* Release – Staging */,
+				4E7BA9A71A1B5D9400F9744A /* Release – Dev */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7236DFF518B8A87B00F622AA /* Build configuration list for PBXProject "BeMyEyes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

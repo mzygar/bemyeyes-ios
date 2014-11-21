@@ -3,6 +3,7 @@ PODS:
   - Appirater (2.0.4)
   - CrashlyticsFramework (2.2.5.1)
   - DCKeyValueObjectMapping (1.4)
+  - FBSnapshotTestCase (1.4)
   - FormatterKit (1.7.2):
     - FormatterKit/AddressFormatter
     - FormatterKit/ArrayFormatter
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - Appirater (~> 2.0.2)
   - CrashlyticsFramework
   - DCKeyValueObjectMapping
+  - FBSnapshotTestCase
   - FormatterKit (~> 1.7.1)
   - GVUserDefaults (~> 0.9.4)
   - ISO8601DateFormatter (~> 0.7)
@@ -93,6 +95,7 @@ SPEC CHECKSUMS:
   Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
   CrashlyticsFramework: 195dfef587ade7a3954ce8effd483a3879d35877
   DCKeyValueObjectMapping: c3561709f296ddffba7768a9d7ccf234307fd3c9
+  FBSnapshotTestCase: f9f225b5ba11c8d8c09075590490df16314e4d62
   FormatterKit: 230f6ae7a6e9ac468cb09b3ac2b7524effc8daaa
   GVUserDefaults: 66c524fc1709b2d95db774f4bb665dfad4671168
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
