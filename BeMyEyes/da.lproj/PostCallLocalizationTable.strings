@@ -7,10 +7,10 @@
 */
 
 /* Motivational message to helper when call has ended */
-"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER" = "Tak fordi to hjalp!";
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER" = "Tak fordi du hjalp!";
 
 /* Motivational message to blind when call has ended */
-"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "Vi håber du fik den hjælp du ledte efter!";
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "Vi håber du fik den hjælp du søgte!";
 
 /* Title of dismiss button to helper */
 "POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER" = "Det var så lidt";

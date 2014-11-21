@@ -2269,7 +2269,7 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND = @"BME_REPORT_ABUS
 
  * All translations:
 
- * @b da@: "Den blinde person handlede upassendet."
+ * @b da@: "Den blinde person handlede upassende."
 
  * @b en@: "The blind person acted inappropriate."
 
@@ -3637,7 +3637,7 @@ static NSString * const PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION = @"PUSH_NOTIFIC
 
  * All translations:
 
- * @b da@: "Tak fordi to hjalp!"
+ * @b da@: "Tak fordi du hjalp!"
 
  * @b en@: "Thanks for helping out!"
 
