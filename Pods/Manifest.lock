@@ -1,0 +1,119 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - Appirater (2.0.4)
+  - CrashlyticsFramework (2.2.5.1)
+  - DCKeyValueObjectMapping (1.4)
+  - FBSnapshotTestCase (1.4)
+  - FormatterKit (1.7.2):
+    - FormatterKit/AddressFormatter (= 1.7.2)
+    - FormatterKit/ArrayFormatter (= 1.7.2)
+    - FormatterKit/ColorFormatter (= 1.7.2)
+    - FormatterKit/LocationFormatter (= 1.7.2)
+    - FormatterKit/NameFormatter (= 1.7.2)
+    - FormatterKit/OrdinalNumberFormatter (= 1.7.2)
+    - FormatterKit/TimeIntervalFormatter (= 1.7.2)
+    - FormatterKit/UnitOfInformationFormatter (= 1.7.2)
+    - FormatterKit/URLRequestFormatter (= 1.7.2)
+  - FormatterKit/AddressFormatter (1.7.2)
+  - FormatterKit/ArrayFormatter (1.7.2)
+  - FormatterKit/ColorFormatter (1.7.2)
+  - FormatterKit/LocationFormatter (1.7.2)
+  - FormatterKit/NameFormatter (1.7.2)
+  - FormatterKit/OrdinalNumberFormatter (1.7.2)
+  - FormatterKit/TimeIntervalFormatter (1.7.2)
+  - FormatterKit/UnitOfInformationFormatter (1.7.2)
+  - FormatterKit/URLRequestFormatter (1.7.2)
+  - GVUserDefaults (0.9.5)
+  - ISO8601DateFormatter (0.7)
+  - KeepLayout (1.6.0)
+  - Masonry (0.5.3)
+  - MiawKit (1.0)
+  - MRProgress (0.4.3):
+    - MRProgress/ActivityIndicator (= 0.4.3)
+    - MRProgress/Blur (= 0.4.3)
+    - MRProgress/Circular (= 0.4.3)
+    - MRProgress/Helper (= 0.4.3)
+    - MRProgress/Icons (= 0.4.3)
+    - MRProgress/MessageInterceptor (= 0.4.3)
+    - MRProgress/NavigationBarProgress (= 0.4.3)
+    - MRProgress/Overlay (= 0.4.3)
+    - MRProgress/Stopable (= 0.4.3)
+    - MRProgress/WeakProxy (= 0.4.3)
+  - MRProgress/ActivityIndicator (0.4.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.4.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.4.3):
+    - MRProgress/Helper
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.4.3)
+  - MRProgress/Icons (0.4.3)
+  - MRProgress/MessageInterceptor (0.4.3)
+  - MRProgress/NavigationBarProgress (0.4.3)
+  - MRProgress/Overlay (0.4.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/Stopable (0.4.3):
+    - MRProgress/Helper
+  - MRProgress/WeakProxy (0.4.3)
+  - NewRelicAgent (4.83)
+  - PSAlertView (1.1)
+  - Reveal-iOS-SDK (1.0.6)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.3.2)
+  - Appirater (~> 2.0.2)
+  - CrashlyticsFramework
+  - DCKeyValueObjectMapping
+  - FBSnapshotTestCase
+  - FormatterKit (~> 1.7.1)
+  - GVUserDefaults (~> 0.9.4)
+  - ISO8601DateFormatter (~> 0.7)
+  - KeepLayout (from `https://github.com/iMartinKiss/KeepLayout.git`)
+  - Masonry (~> 0.5.3)
+  - MiawKit (from `https://github.com/robocat/MiawKit.git`)
+  - MRProgress (~> 0.4.1)
+  - NewRelicAgent
+  - PSAlertView (~> 1.1)
+  - Reveal-iOS-SDK
+  - SDWebImage (~> 3.6)
+
+EXTERNAL SOURCES:
+  KeepLayout:
+    :git: https://github.com/iMartinKiss/KeepLayout.git
+  MiawKit:
+    :git: https://github.com/robocat/MiawKit.git
+
+CHECKOUT OPTIONS:
+  KeepLayout:
+    :commit: 9201857d11fb219217c056ba808f6981e8b3775d
+    :git: https://github.com/iMartinKiss/KeepLayout.git
+  MiawKit:
+    :commit: 25f4fb747d5b67466ef5e37ad722a58921bec200
+    :git: https://github.com/robocat/MiawKit.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
+  Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
+  CrashlyticsFramework: 195dfef587ade7a3954ce8effd483a3879d35877
+  DCKeyValueObjectMapping: c3561709f296ddffba7768a9d7ccf234307fd3c9
+  FBSnapshotTestCase: f9f225b5ba11c8d8c09075590490df16314e4d62
+  FormatterKit: 230f6ae7a6e9ac468cb09b3ac2b7524effc8daaa
+  GVUserDefaults: 66c524fc1709b2d95db774f4bb665dfad4671168
+  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+  KeepLayout: f6364def4921aca9853b91d998b5737a7210fd6a
+  Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
+  MiawKit: 952999049ff88dfc24df1e65274b728ad3d5e234
+  MRProgress: e588fb8d0fba293715eaf0e485dd8402f4ce1de6
+  NewRelicAgent: 1adba1fb51631f598a2a130e7b1c3be1de715736
+  PSAlertView: e9c9bc8ef41d86012ca1f6839fd450a35c6f8a97
+  Reveal-iOS-SDK: 74a39b426dbc915962704ed24f43ee32ae7797f9
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+
+COCOAPODS: 0.35.0
