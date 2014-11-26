@@ -32,6 +32,7 @@
 
 static NSString *const BMEHelperSegue = @"Helper";
 static NSString *const BMEBlindSegue = @"Blind";
+static NSString *const BMELoginSegue = @"Login";
 
 @implementation BMEFrontPageViewController
 
@@ -59,6 +60,8 @@ static NSString *const BMEBlindSegue = @"Blind";
         self.communityStatsView.isAccessibilityElement = YES;
         UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goToLoginIfPossible:) name:BMEGoToLoginIfPossibleNotification object:nil];
 }
 
 - (void)shouldLocalize {
@@ -99,6 +102,10 @@ static NSString *const BMEBlindSegue = @"Blind";
     [self performSegueWithIdentifier:BMEBlindSegue sender:self];
 }
 
+- (void)performLoginSegue {
+    [self performSegueWithIdentifier:BMELoginSegue sender:self];
+}
+
 
 #pragma mark - Private
 
@@ -111,6 +118,13 @@ static NSString *const BMEBlindSegue = @"Blind";
     }
     
     self.communityStatsView.accessibilityLabel = [NSString stringWithFormat:@"%@. %@ %@. %@ %@. %@ %@.", self.communityStatsLabel.text, self.pointsCommunitySightedLabel.finalText, self.descriptionCommunitySightedLabel.text, self.pointsCommunityBlindLabel.finalText, self.descriptionCommunityBlindLabel.text, self.pointsCommunityHelpedLabel.finalText, self.descriptionCommunityHelpedLabel.text];
+}
+
+
+#pragma mark - Notifications
+
+- (void)goToLoginIfPossible:(NSNotification *)notification {
+    [self performLoginSegue];
 }
 
 @end

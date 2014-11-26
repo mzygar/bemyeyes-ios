@@ -48,6 +48,22 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
                                              selector:@selector(handleAppBecameActive)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+    
+    [[BMEClient sharedClient] verifyTokenAuthOnServerWithCompletion:^(BOOL valid) {
+        if (!valid) { // Force user to log out
+            NSString *title = MKLocalizedFromTable(BME_MAIN_ALERT_FORCED_LOGOUT_TITLE, BMEMainLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE, BMEMainLocalizationTable);
+            NSString *confirmButton = MKLocalizedFromTable(BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM, BMEMainLocalizationTable);
+        
+            PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+            [alertView addButtonWithTitle:confirmButton block:^{
+                [[BMEClient sharedClient] logoutWithCompletion:^(BOOL success, NSError *error) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:BMEDidLogOutNotification object:nil];
+                }];
+            }];
+            [alertView show];
+        }
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

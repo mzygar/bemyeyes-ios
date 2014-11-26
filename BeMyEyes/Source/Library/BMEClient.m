@@ -234,6 +234,23 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     [self setHeaderAuthToken:nil];
 }
 
+- (void)verifyTokenAuthOnServerWithCompletion:(void (^)(BOOL))completion {
+    if (!self.isTokenValid) {
+        // No valid token locally, so don't check server for validity
+        return;
+    }
+    [self putPath:@"auth/login/token" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion(YES);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        BOOL validToken = operation.response.statusCode != 401;
+        if (completion) {
+            completion(validToken);
+        }
+    }];
+}
+
 - (void)sendNewPasswordToEmail:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion {
     NSDictionary *params = @{ @"email" : email };
     [self postPath:@"auth/request-reset-password" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {

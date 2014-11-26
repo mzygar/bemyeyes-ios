@@ -2133,6 +2133,42 @@ static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE = @"BME_MAIN_
 static NSString * const BME_MAIN_ALERT_CANCEL = @"BME_MAIN_ALERT_CANCEL";
 
 /*!
+ * "Log in error"
+
+ * All translations:
+
+ * @b da@: "Logind-fejl"
+
+ * @b en@: "Log in error"
+
+ */
+static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_TITLE = @"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE";
+
+/*!
+ * "Due to a technical error you will be logged out."
+
+ * All translations:
+
+ * @b da@: "Pga. en teknisk fejl bliver du logget ud."
+
+ * @b en@: "Due to a technical error you will be logged out."
+
+ */
+static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE = @"BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE";
+
+/*!
+ * "Log in"
+
+ * All translations:
+
+ * @b da@: "Log ind"
+
+ * @b en@: "Log in"
+
+ */
+static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM = @"BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM";
+
+/*!
  * "Back"
 
  * All translations:
