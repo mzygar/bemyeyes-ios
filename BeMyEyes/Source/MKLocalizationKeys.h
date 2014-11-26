@@ -3565,7 +3565,7 @@ static NSString * const BME_VIDEO_CANCEL_TITLE = @"BME_VIDEO_CANCEL_TITLE";
 
  * All translations:
 
- * @b da@: "Be My Eyes"
+ * @b da@: "BeMyEyes"
 
  * @b en@: "Be My Eyes"
 
@@ -3577,9 +3577,9 @@ static NSString * const logoLabel_text = @"logoLabel.text";
 
  * All translations:
 
- * @b da@: "Lavet med ❤︎ i København"
+ * @b da@: "Laved med ❤︎ i København"
 
- * @b en@: "Crafted with ❤︎ in Copenhagen"
+ * @b en@: "Crafted with ❤︎ from Copenhagen"
 
  */
 static NSString * const taglineLabel_text = @"taglineLabel.text";
@@ -3649,7 +3649,7 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER = 
 
  * All translations:
 
- * @b da@: "Vi håber du fik den hjælp du ledte efter!"
+ * @b da@: "Vi håber du fik den hjælp du søgte!"
 
  * @b en@: "We hope you received the help you requested!"
 
