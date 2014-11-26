@@ -26,13 +26,13 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug &#x2013; Staging">
+      buildConfiguration = "DebugStaging">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B6D7006199B34B5009DC926"
+               BlueprintIdentifier = "4E7BA9981A1B5D9300F9744A"
                BuildableName = "BeMyEyes Tests.xctest"
                BlueprintName = "BeMyEyes Tests"
                ReferencedContainer = "container:BeMyEyes.xcodeproj">
@@ -54,7 +54,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug &#x2013; Staging"
+      buildConfiguration = "DebugStaging"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
@@ -74,7 +74,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release &#x2013; Staging"
+      buildConfiguration = "ReleaseStaging"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable>
          <BuildableReference
@@ -87,10 +87,10 @@
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug &#x2013; Staging">
+      buildConfiguration = "DebugStaging">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release &#x2013; Staging"
+      buildConfiguration = "ReleaseStaging"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

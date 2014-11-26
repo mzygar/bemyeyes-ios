@@ -154,8 +154,7 @@
 		72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E65FA818BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings */; };
 		72E65FB018BA8214002FB2E0 /* BMEFacebookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */; };
 		72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */; };
-		7D08A53457682982D33E6E2E /* libPods-BeMyEyes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2757E9B3734C671FBC49ABB4 /* libPods-BeMyEyes.a */; };
-		8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A222A28C44403D94B34BA1 /* libPods.a */; };
+		AAC2BBF280F2E11531CE8AD1 /* libPods-BeMyEyes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2757E9B3734C671FBC49ABB4 /* libPods-BeMyEyes.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,16 +181,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0039FB5AC8BCCFB402F91B43 /* Pods.release – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release – dev.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release – dev.xcconfig"; sourceTree = "<group>"; };
 		03381774851623C2C6BE0645 /* libPods-BeMyEyes Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeMyEyes Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A0EF5D7BEFA581FEDA1E71D /* Pods-BeMyEyes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debug.xcconfig"; sourceTree = "<group>"; };
-		0FC8EC0B7F5CAC2C041F1D7C /* Pods.debug – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug – staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug – staging.xcconfig"; sourceTree = "<group>"; };
-		20A4A64B818425150D20B64E /* Pods-BeMyEyes.debug – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debug – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debug – dev.xcconfig"; sourceTree = "<group>"; };
+		0F2432F5A352B7A1A5EE26D3 /* Pods-BeMyEyes Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1EAB835B9457F11109406035 /* Pods-BeMyEyes.releasestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.releasestaging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.releasestaging.xcconfig"; sourceTree = "<group>"; };
+		222A0D2573FDEB1C8C62268C /* Pods.debugstaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debugstaging.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debugstaging.xcconfig"; sourceTree = "<group>"; };
 		22A222A28C44403D94B34BA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		255B65A506FA02763D8751F5 /* Pods-BeMyEyes Tests.release – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.release – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.release – staging.xcconfig"; sourceTree = "<group>"; };
 		2757E9B3734C671FBC49ABB4 /* libPods-BeMyEyes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeMyEyes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		43AC6CAF59D2D47FBCE576C9 /* Pods-BeMyEyes Tests.release – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.release – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.release – dev.xcconfig"; sourceTree = "<group>"; };
-		46EF66D0630EA9710A5BEB38 /* Pods-BeMyEyes Tests.debug – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug – dev.xcconfig"; sourceTree = "<group>"; };
+		3168DA5A000B6A36C7147FB6 /* Pods-BeMyEyes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debug.xcconfig"; sourceTree = "<group>"; };
+		48877F93D8E56E4310DAF4B9 /* Pods.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debugdev.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debugdev.xcconfig"; sourceTree = "<group>"; };
 		4E011A081A03A46C0042A895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4E08EE7919E1693200B45088 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.3.0/OpenTok.framework"; sourceTree = "<group>"; };
 		4E10F2FE19F7F176004EA22E /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
@@ -259,9 +256,9 @@
 		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
 		4EDCE9441A01E07A006C7A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		524A97A1D18BD60D91454CCD /* Pods-BeMyEyes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.release.xcconfig"; sourceTree = "<group>"; };
+		541D916399355C19CD490FDC /* Pods-BeMyEyes Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DB997FFB6ADF4A3BE47FEBF /* Pods.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.releasedev.xcconfig; path = "Pods/Target Support Files/Pods/Pods.releasedev.xcconfig"; sourceTree = "<group>"; };
 		60BAD311403180811F795B70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6FD57F6EC69F4E919F8FC342 /* Pods-BeMyEyes.release – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.release – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.release – staging.xcconfig"; sourceTree = "<group>"; };
 		7206A75F18FA9BF000251824 /* BMEPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointLabel.h; sourceTree = "<group>"; };
 		7206A76018FA9BF000251824 /* BMEPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEPointLabel.m; sourceTree = "<group>"; };
 		7206A76218FA9C0D00251824 /* BMEPointGraphEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEPointGraphEntry.h; sourceTree = "<group>"; };
@@ -438,14 +435,16 @@
 		72E65FAF18BA8214002FB2E0 /* BMEFacebookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEFacebookInfo.m; sourceTree = "<group>"; };
 		72F41E04194A3A3A001727CA /* UINavigationController+BMEPopToClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+BMEPopToClass.h"; sourceTree = "<group>"; };
 		72F41E05194A3A3A001727CA /* UINavigationController+BMEPopToClas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+BMEPopToClas.m"; sourceTree = "<group>"; };
-		82D40ADAF2FF94D17998B5A7 /* Pods-BeMyEyes Tests.debug – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug – staging.xcconfig"; sourceTree = "<group>"; };
-		BE7F82DF13DC736365B286FD /* Pods-BeMyEyes.release – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.release – dev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.release – dev.xcconfig"; sourceTree = "<group>"; };
-		C2849BF8C6E57CD0799FEF11 /* Pods-BeMyEyes.debug – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debug – staging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debug – staging.xcconfig"; sourceTree = "<group>"; };
-		CAE72299908411953AA833CC /* Pods.debug – dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug – dev.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug – dev.xcconfig"; sourceTree = "<group>"; };
-		CE96F2A1FB7797C3A62C8F72 /* Pods-BeMyEyes Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F6FB25A78F3B3719D724C7B0 /* Pods-BeMyEyes Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F8BE8295630BA0274578BCE8 /* Pods.release – staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release – staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release – staging.xcconfig"; sourceTree = "<group>"; };
+		79BC611E857EDB17B2AC57D3 /* Pods-BeMyEyes.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debugdev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debugdev.xcconfig"; sourceTree = "<group>"; };
+		82B8D6546ABA7CA540AFFF9D /* Pods-BeMyEyes.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.releasedev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.releasedev.xcconfig"; sourceTree = "<group>"; };
+		83014EEAF95A76A5B2F2EDF8 /* Pods-BeMyEyes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.release.xcconfig"; sourceTree = "<group>"; };
+		9FC41417CEAB56C7A64AE960 /* Pods-BeMyEyes Tests.releasestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.releasestaging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.releasestaging.xcconfig"; sourceTree = "<group>"; };
+		CB483C0BCD31022AA3EAA288 /* Pods-BeMyEyes Tests.debugstaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debugstaging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debugstaging.xcconfig"; sourceTree = "<group>"; };
+		DCA643E239063BDC20E69EDE /* Pods-BeMyEyes Tests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debugdev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debugdev.xcconfig"; sourceTree = "<group>"; };
+		E3F3226DE27E77F610C3DCEB /* Pods.releasestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.releasestaging.xcconfig; path = "Pods/Target Support Files/Pods/Pods.releasestaging.xcconfig"; sourceTree = "<group>"; };
+		EF5261FEFCC6483B812A4095 /* Pods-BeMyEyes.debugstaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes.debugstaging.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes/Pods-BeMyEyes.debugstaging.xcconfig"; sourceTree = "<group>"; };
 		FD524777E415681609BF9F5D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FFA76015A30E7A2E3D9FA7DE /* Pods-BeMyEyes Tests.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.releasedev.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.releasedev.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,8 +489,7 @@
 				7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */,
 				7236E00218B8A87B00F622AA /* UIKit.framework in Frameworks */,
 				7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */,
-				8948E3B77AD04A42BAB311A1 /* libPods.a in Frameworks */,
-				7D08A53457682982D33E6E2E /* libPods-BeMyEyes.a in Frameworks */,
+				AAC2BBF280F2E11531CE8AD1 /* libPods-BeMyEyes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,22 +871,22 @@
 			children = (
 				60BAD311403180811F795B70 /* Pods.debug.xcconfig */,
 				FD524777E415681609BF9F5D /* Pods.release.xcconfig */,
-				0FC8EC0B7F5CAC2C041F1D7C /* Pods.debug – staging.xcconfig */,
-				CAE72299908411953AA833CC /* Pods.debug – dev.xcconfig */,
-				F8BE8295630BA0274578BCE8 /* Pods.release – staging.xcconfig */,
-				0039FB5AC8BCCFB402F91B43 /* Pods.release – dev.xcconfig */,
-				0A0EF5D7BEFA581FEDA1E71D /* Pods-BeMyEyes.debug.xcconfig */,
-				CE96F2A1FB7797C3A62C8F72 /* Pods-BeMyEyes Tests.debug.xcconfig */,
-				82D40ADAF2FF94D17998B5A7 /* Pods-BeMyEyes Tests.debug – staging.xcconfig */,
-				46EF66D0630EA9710A5BEB38 /* Pods-BeMyEyes Tests.debug – dev.xcconfig */,
-				F6FB25A78F3B3719D724C7B0 /* Pods-BeMyEyes Tests.release.xcconfig */,
-				255B65A506FA02763D8751F5 /* Pods-BeMyEyes Tests.release – staging.xcconfig */,
-				43AC6CAF59D2D47FBCE576C9 /* Pods-BeMyEyes Tests.release – dev.xcconfig */,
-				C2849BF8C6E57CD0799FEF11 /* Pods-BeMyEyes.debug – staging.xcconfig */,
-				20A4A64B818425150D20B64E /* Pods-BeMyEyes.debug – dev.xcconfig */,
-				524A97A1D18BD60D91454CCD /* Pods-BeMyEyes.release.xcconfig */,
-				6FD57F6EC69F4E919F8FC342 /* Pods-BeMyEyes.release – staging.xcconfig */,
-				BE7F82DF13DC736365B286FD /* Pods-BeMyEyes.release – dev.xcconfig */,
+				222A0D2573FDEB1C8C62268C /* Pods.debugstaging.xcconfig */,
+				48877F93D8E56E4310DAF4B9 /* Pods.debugdev.xcconfig */,
+				E3F3226DE27E77F610C3DCEB /* Pods.releasestaging.xcconfig */,
+				5DB997FFB6ADF4A3BE47FEBF /* Pods.releasedev.xcconfig */,
+				3168DA5A000B6A36C7147FB6 /* Pods-BeMyEyes.debug.xcconfig */,
+				EF5261FEFCC6483B812A4095 /* Pods-BeMyEyes.debugstaging.xcconfig */,
+				79BC611E857EDB17B2AC57D3 /* Pods-BeMyEyes.debugdev.xcconfig */,
+				83014EEAF95A76A5B2F2EDF8 /* Pods-BeMyEyes.release.xcconfig */,
+				1EAB835B9457F11109406035 /* Pods-BeMyEyes.releasestaging.xcconfig */,
+				82B8D6546ABA7CA540AFFF9D /* Pods-BeMyEyes.releasedev.xcconfig */,
+				541D916399355C19CD490FDC /* Pods-BeMyEyes Tests.debug.xcconfig */,
+				CB483C0BCD31022AA3EAA288 /* Pods-BeMyEyes Tests.debugstaging.xcconfig */,
+				DCA643E239063BDC20E69EDE /* Pods-BeMyEyes Tests.debugdev.xcconfig */,
+				0F2432F5A352B7A1A5EE26D3 /* Pods-BeMyEyes Tests.release.xcconfig */,
+				9FC41417CEAB56C7A64AE960 /* Pods-BeMyEyes Tests.releasestaging.xcconfig */,
+				FFA76015A30E7A2E3D9FA7DE /* Pods-BeMyEyes Tests.releasedev.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1485,7 +1483,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4E5C66901A0A3DA20094A06B /* Release – Dev */ = {
+		4E5C66901A0A3DA20094A06B /* ReleaseDev */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E7A85C51A0C4AC60006BDC8 /* Config.release.xcconfig */;
 			buildSettings = {
@@ -1510,14 +1508,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
-			name = "Release – Dev";
+			name = ReleaseDev;
 		};
-		4E5C66911A0A3DA20094A06B /* Release – Dev */ = {
+		4E5C66911A0A3DA20094A06B /* ReleaseDev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE7F82DF13DC736365B286FD /* Pods-BeMyEyes.release – dev.xcconfig */;
+			baseConfigurationReference = 82B8D6546ABA7CA540AFFF9D /* Pods-BeMyEyes.releasedev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1543,9 +1542,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
-			name = "Release – Dev";
+			name = ReleaseDev;
 		};
-		4E5C66921A0A3DCD0094A06B /* Debug – Dev */ = {
+		4E5C66921A0A3DCD0094A06B /* DebugDev */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E7A85C41A0C49DB0006BDC8 /* Config.debug.xcconfig */;
 			buildSettings = {
@@ -1572,14 +1571,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
-			name = "Debug – Dev";
+			name = DebugDev;
 		};
-		4E5C66931A0A3DCD0094A06B /* Debug – Dev */ = {
+		4E5C66931A0A3DCD0094A06B /* DebugDev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20A4A64B818425150D20B64E /* Pods-BeMyEyes.debug – dev.xcconfig */;
+			baseConfigurationReference = 79BC611E857EDB17B2AC57D3 /* Pods-BeMyEyes.debugdev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1605,9 +1605,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
-			name = "Debug – Dev";
+			name = DebugDev;
 		};
-		4E5C66941A0A4A0A0094A06B /* Debug – Staging */ = {
+		4E5C66941A0A4A0A0094A06B /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E7A85C41A0C49DB0006BDC8 /* Config.debug.xcconfig */;
 			buildSettings = {
@@ -1634,14 +1634,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
-			name = "Debug – Staging";
+			name = DebugStaging;
 		};
-		4E5C66951A0A4A0A0094A06B /* Debug – Staging */ = {
+		4E5C66951A0A4A0A0094A06B /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2849BF8C6E57CD0799FEF11 /* Pods-BeMyEyes.debug – staging.xcconfig */;
+			baseConfigurationReference = EF5261FEFCC6483B812A4095 /* Pods-BeMyEyes.debugstaging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStaging;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1667,9 +1668,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
-			name = "Debug – Staging";
+			name = DebugStaging;
 		};
-		4E5C66961A0A4A1E0094A06B /* Release – Staging */ = {
+		4E5C66961A0A4A1E0094A06B /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E7A85C51A0C4AC60006BDC8 /* Config.release.xcconfig */;
 			buildSettings = {
@@ -1694,14 +1695,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
-			name = "Release – Staging";
+			name = ReleaseStaging;
 		};
-		4E5C66971A0A4A1E0094A06B /* Release – Staging */ = {
+		4E5C66971A0A4A1E0094A06B /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FD57F6EC69F4E919F8FC342 /* Pods-BeMyEyes.release – staging.xcconfig */;
+			baseConfigurationReference = 1EAB835B9457F11109406035 /* Pods-BeMyEyes.releasestaging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStaging;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1727,11 +1729,11 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
-			name = "Release – Staging";
+			name = ReleaseStaging;
 		};
 		4E7BA9A21A1B5D9400F9744A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE96F2A1FB7797C3A62C8F72 /* Pods-BeMyEyes Tests.debug.xcconfig */;
+			baseConfigurationReference = 541D916399355C19CD490FDC /* Pods-BeMyEyes Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1761,9 +1763,9 @@
 			};
 			name = Debug;
 		};
-		4E7BA9A31A1B5D9400F9744A /* Debug – Staging */ = {
+		4E7BA9A31A1B5D9400F9744A /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82D40ADAF2FF94D17998B5A7 /* Pods-BeMyEyes Tests.debug – staging.xcconfig */;
+			baseConfigurationReference = CB483C0BCD31022AA3EAA288 /* Pods-BeMyEyes Tests.debugstaging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1790,11 +1792,11 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
 			};
-			name = "Debug – Staging";
+			name = DebugStaging;
 		};
-		4E7BA9A41A1B5D9400F9744A /* Debug – Dev */ = {
+		4E7BA9A41A1B5D9400F9744A /* DebugDev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EF66D0630EA9710A5BEB38 /* Pods-BeMyEyes Tests.debug – dev.xcconfig */;
+			baseConfigurationReference = DCA643E239063BDC20E69EDE /* Pods-BeMyEyes Tests.debugdev.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1821,11 +1823,11 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
 			};
-			name = "Debug – Dev";
+			name = DebugDev;
 		};
 		4E7BA9A51A1B5D9400F9744A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6FB25A78F3B3719D724C7B0 /* Pods-BeMyEyes Tests.release.xcconfig */;
+			baseConfigurationReference = 0F2432F5A352B7A1A5EE26D3 /* Pods-BeMyEyes Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1850,9 +1852,9 @@
 			};
 			name = Release;
 		};
-		4E7BA9A61A1B5D9400F9744A /* Release – Staging */ = {
+		4E7BA9A61A1B5D9400F9744A /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 255B65A506FA02763D8751F5 /* Pods-BeMyEyes Tests.release – staging.xcconfig */;
+			baseConfigurationReference = 9FC41417CEAB56C7A64AE960 /* Pods-BeMyEyes Tests.releasestaging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1875,11 +1877,11 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
 			};
-			name = "Release – Staging";
+			name = ReleaseStaging;
 		};
-		4E7BA9A71A1B5D9400F9744A /* Release – Dev */ = {
+		4E7BA9A71A1B5D9400F9744A /* ReleaseDev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43AC6CAF59D2D47FBCE576C9 /* Pods-BeMyEyes Tests.release – dev.xcconfig */;
+			baseConfigurationReference = FFA76015A30E7A2E3D9FA7DE /* Pods-BeMyEyes Tests.releasedev.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1902,7 +1904,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes Tests/BeMyEyes Tests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeMyEyes.app/BeMyEyes";
 			};
-			name = "Release – Dev";
+			name = ReleaseDev;
 		};
 		7236E02A18B8A87B00F622AA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1931,6 +1933,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1961,6 +1964,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1968,7 +1972,7 @@
 		};
 		7236E02D18B8A87B00F622AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A0EF5D7BEFA581FEDA1E71D /* Pods-BeMyEyes.debug.xcconfig */;
+			baseConfigurationReference = 3168DA5A000B6A36C7147FB6 /* Pods-BeMyEyes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1977,7 +1981,6 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DISPLAY_NAME = "Be My Eyes";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1999,7 +2002,7 @@
 		};
 		7236E02E18B8A87B00F622AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 524A97A1D18BD60D91454CCD /* Pods-BeMyEyes.release.xcconfig */;
+			baseConfigurationReference = 83014EEAF95A76A5B2F2EDF8 /* Pods-BeMyEyes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2034,11 +2037,11 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E7BA9A21A1B5D9400F9744A /* Debug */,
-				4E7BA9A31A1B5D9400F9744A /* Debug – Staging */,
-				4E7BA9A41A1B5D9400F9744A /* Debug – Dev */,
+				4E7BA9A31A1B5D9400F9744A /* DebugStaging */,
+				4E7BA9A41A1B5D9400F9744A /* DebugDev */,
 				4E7BA9A51A1B5D9400F9744A /* Release */,
-				4E7BA9A61A1B5D9400F9744A /* Release – Staging */,
-				4E7BA9A71A1B5D9400F9744A /* Release – Dev */,
+				4E7BA9A61A1B5D9400F9744A /* ReleaseStaging */,
+				4E7BA9A71A1B5D9400F9744A /* ReleaseDev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2047,11 +2050,11 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7236E02A18B8A87B00F622AA /* Debug */,
-				4E5C66941A0A4A0A0094A06B /* Debug – Staging */,
-				4E5C66921A0A3DCD0094A06B /* Debug – Dev */,
+				4E5C66941A0A4A0A0094A06B /* DebugStaging */,
+				4E5C66921A0A3DCD0094A06B /* DebugDev */,
 				7236E02B18B8A87B00F622AA /* Release */,
-				4E5C66961A0A4A1E0094A06B /* Release – Staging */,
-				4E5C66901A0A3DA20094A06B /* Release – Dev */,
+				4E5C66961A0A4A1E0094A06B /* ReleaseStaging */,
+				4E5C66901A0A3DA20094A06B /* ReleaseDev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2060,11 +2063,11 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7236E02D18B8A87B00F622AA /* Debug */,
-				4E5C66951A0A4A0A0094A06B /* Debug – Staging */,
-				4E5C66931A0A3DCD0094A06B /* Debug – Dev */,
+				4E5C66951A0A4A0A0094A06B /* DebugStaging */,
+				4E5C66931A0A3DCD0094A06B /* DebugDev */,
 				7236E02E18B8A87B00F622AA /* Release */,
-				4E5C66971A0A4A1E0094A06B /* Release – Staging */,
-				4E5C66911A0A3DA20094A06B /* Release – Dev */,
+				4E5C66971A0A4A1E0094A06B /* ReleaseStaging */,
+				4E5C66911A0A3DA20094A06B /* ReleaseDev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
