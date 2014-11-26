@@ -25,6 +25,7 @@
         _lastName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(lastName))];
         _languages = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(languages))];
         _role = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(role))];
+        _type = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(type))];
         _peopleHelped = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(peopleHelped))];
         _totalPoints = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(totalPoints))];
         _currentLevel = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(currentLevel))];
@@ -46,6 +47,7 @@
     [aCoder encodeObject:self.lastName forKey:NSStringFromSelector(@selector(lastName))];
     [aCoder encodeObject:self.languages forKey:NSStringFromSelector(@selector(languages))];
     [aCoder encodeInteger:self.role forKey:NSStringFromSelector(@selector(role))];
+    [aCoder encodeInteger:self.type forKey:NSStringFromSelector(@selector(type))];
     [aCoder encodeObject:self.peopleHelped forKey:NSStringFromSelector(@selector(peopleHelped))];
     [aCoder encodeObject:self.totalPoints forKey:NSStringFromSelector(@selector(totalPoints))];
     [aCoder encodeObject:self.currentLevel forKey:NSStringFromSelector(@selector(currentLevel))];

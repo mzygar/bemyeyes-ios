@@ -6,3 +6,12 @@
 #import "BMEClient.h"
 
 #import "GVUserDefaults+Settings.h"
+#import "BMEUserLevel.h"
+
+#import <FBSnapshotTestCase/FBSnapshotTestCase.h>
+#import <MiawKit/MKLocalization.h>
+#import <MiawKit/MKFunctions.h>
+#import "MKLocalizationKeys.h"
+
+
+#import "BMEHelperMainViewController.h"

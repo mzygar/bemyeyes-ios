@@ -103,6 +103,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     [MKLocalization registerForLocalization:self];
     
+    self.user = [BMEClient sharedClient].currentUser;
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         self.tableView.estimatedRowHeight = self.tableView.rowHeight;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -120,12 +122,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
     
-    [self updateToProfile];
-    
     [self snapSnoozeSliderToStep:BMESnoozeStep0 animated:NO];
     
-    [self updatePointsAnimated:NO];
-    [self reloadPoints];
+    [self updateToProfile];
 }
 
 - (void)dealloc {
@@ -195,18 +194,22 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 }
 
 - (void)updateToProfile {
-    BMEUser *user = [BMEClient sharedClient].currentUser;
+    BMEUser *user = self.user;
     NSString *name = user.firstName;
     self.nameLabel.text = name;
 
     self.profileImageView.image = nil;
-    NSNumber *facebookId = (NSNumber *)user.userId;
-    if (facebookId) {
+    if (user.type == BMEUserTypeFacebook) {
+        NSNumber *facebookId = (NSNumber *)user.userId;
         NSURL *url = [FacebookHelper urlForId:facebookId.integerValue];
         [self.profileImageView sd_setImageWithURL:url];
     } else {
         [self.profileImageView sd_cancelCurrentImageLoad];
+        self.profileImageView.image = [UIImage imageNamed:@"ProfileFilledInSquare"];
     }
+    
+    [self updatePointsAnimated:NO];
+    [self reloadPoints];
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
@@ -285,7 +288,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 }
 
 - (void)updatePointsAnimated:(BOOL)animated {
-    BMEUser *user = [BMEClient sharedClient].currentUser;
+    BMEUser *user = self.user;
     self.levelLabel.text = MKLocalizedFromTable(user.currentLevel.localizableKeyForTitle, BMEHelperMainLocalizationTable);
     
     [self.pointsHelpedPersonsLabel setPoint:user.peopleHelped.integerValue animated:YES];
@@ -303,6 +306,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (error) {
             NSLog(@"Could not load total point: %@", error);
         } else {
+            _user = user;
             [self updatePointsAnimated:YES];
         }
     }];
@@ -370,6 +374,21 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     cell.points = @(pointEntry.point);
     
     return cell;
+}
+
+
+#pragma mark - Setters and Getters
+
+
+#pragma mark – Setters and Getters
+
+- (void)setUser:(BMEUser *)user
+{
+    if (user != _user) {
+        _user = user;
+        
+        [self updateToProfile];
+    }
 }
 
 @end

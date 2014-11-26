@@ -2133,6 +2133,42 @@ static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE = @"BME_MAIN_
 static NSString * const BME_MAIN_ALERT_CANCEL = @"BME_MAIN_ALERT_CANCEL";
 
 /*!
+ * "Log in error"
+
+ * All translations:
+
+ * @b da@: "Logind-fejl"
+
+ * @b en@: "Log in error"
+
+ */
+static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_TITLE = @"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE";
+
+/*!
+ * "Due to a technical error you will be logged out."
+
+ * All translations:
+
+ * @b da@: "Pga. en teknisk fejl bliver du logget ud."
+
+ * @b en@: "Due to a technical error you will be logged out."
+
+ */
+static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE = @"BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE";
+
+/*!
+ * "Log in"
+
+ * All translations:
+
+ * @b da@: "Log ind"
+
+ * @b en@: "Log in"
+
+ */
+static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM = @"BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM";
+
+/*!
  * "Back"
 
  * All translations:
@@ -2269,7 +2305,7 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND = @"BME_REPORT_ABUS
 
  * All translations:
 
- * @b da@: "Den blinde person handlede upassendet."
+ * @b da@: "Den blinde person handlede upassende."
 
  * @b en@: "The blind person acted inappropriate."
 
@@ -3637,7 +3673,7 @@ static NSString * const PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION = @"PUSH_NOTIFIC
 
  * All translations:
 
- * @b da@: "Tak fordi to hjalp!"
+ * @b da@: "Tak fordi du hjalp!"
 
  * @b en@: "Thanks for helping out!"
 
@@ -3649,7 +3685,7 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER = 
 
  * All translations:
 
- * @b da@: "Vi håber du fik den hjælp du ledte efter!"
+ * @b da@: "Vi håber du fik den hjælp du søgte!"
 
  * @b en@: "We hope you received the help you requested!"
 

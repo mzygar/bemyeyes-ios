@@ -374,6 +374,7 @@
 
 - (void)didLogOut:(NSNotification *)notification {
     [self showFrontPage];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEGoToLoginIfPossibleNotification object:nil];
     [self resetBadgeIcon];
 }
 

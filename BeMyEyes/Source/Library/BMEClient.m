@@ -23,6 +23,7 @@
 #import "BMECommunityStats.h"
 #import "BMEFacebookInfo.h"
 #import "BMERoleConverter.h"
+#import "BMEUserTypeConverter.h"
 
 #define BMEClientTokenKey @"BMEClientToken"
 #define BMEClientCurrentUserKey @"BMEClientCurrentUser"
@@ -101,6 +102,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (void)setHeaderAuthToken:(NSString *)authToken {
+    NSLog(@"Set header auth token: %@", authToken);
     [self setDefaultHeader:BMEHeaderAuthTokenKey value:authToken];
     _loggedIn = authToken != nil;
 }
@@ -231,6 +233,23 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     [self storeToken:nil];
     [self storeTokenExpiryDate:nil];
     [self setHeaderAuthToken:nil];
+}
+
+- (void)verifyTokenAuthOnServerWithCompletion:(void (^)(BOOL))completion {
+    if (!self.isTokenValid) {
+        // No valid token locally, so don't check server for validity
+        return;
+    }
+    [self putPath:@"auth/login/token" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion(YES);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        BOOL validToken = operation.response.statusCode != 401;
+        if (completion) {
+            completion(validToken);
+        }
+    }];
 }
 
 - (void)sendNewPasswordToEmail:(NSString *)email completion:(void (^)(BOOL success, NSError *error))completion {
@@ -778,6 +797,10 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     id <DCValueConverter> roleConverter = [[BMERoleConverter alloc] init];
     DCObjectMapping *roleMapping = [DCObjectMapping mapKeyPath:@"role" toAttribute:@"role" onClass:[BMEUser class] converter:roleConverter];
     [config addObjectMapping:roleMapping];
+    
+    id <DCValueConverter> userTypeConverter = [[BMEUserTypeConverter alloc] init];
+    DCObjectMapping *userTypeMapping = [DCObjectMapping mapKeyPath:@"facebook_user" toAttribute:@"type" onClass:[BMEUser class] converter:userTypeConverter];
+    [config addObjectMapping:userTypeMapping];
     
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEUser class] andConfiguration:config];
     return [parser parseDictionary:representation];
