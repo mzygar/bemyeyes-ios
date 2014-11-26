@@ -13,6 +13,7 @@ struct Device {
     let description: String
 
     static func allDevices() -> [Device] {
+        // TODO: Support scaling @1x, @2x, @3x etc.
         return [Device(bounds: CGRect(x: 0, y: 0, width: 320, height: 480), description: "iPhone 4"),
             Device(bounds: CGRect(x: 0, y: 0, width: 320, height: 568), description: "iPhone 5"),
             Device(bounds: CGRect(x: 0, y: 0, width: 375, height: 667), description: "iPhone 6"),
