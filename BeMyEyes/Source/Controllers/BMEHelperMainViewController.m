@@ -199,12 +199,13 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.nameLabel.text = name;
 
     self.profileImageView.image = nil;
-    NSNumber *facebookId = (NSNumber *)user.userId;
-    if (facebookId) {
+    if (user.type == BMEUserTypeFacebook) {
+        NSNumber *facebookId = (NSNumber *)user.userId;
         NSURL *url = [FacebookHelper urlForId:facebookId.integerValue];
         [self.profileImageView sd_setImageWithURL:url];
     } else {
         [self.profileImageView sd_cancelCurrentImageLoad];
+        self.profileImageView.image = [UIImage imageNamed:@"ProfileFilledInSquare"];
     }
     
     [self updatePointsAnimated:NO];
@@ -305,6 +306,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (error) {
             NSLog(@"Could not load total point: %@", error);
         } else {
+            _user = user;
             [self updatePointsAnimated:YES];
         }
     }];

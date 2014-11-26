@@ -49,6 +49,7 @@
 		4EB6C13A19FFA6970048735E /* BlueShadowGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13919FFA6970048735E /* BlueShadowGradientView.swift */; };
 		4EB6C13D19FFB6B50048735E /* BMEButtonImageToRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */; };
 		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
+		4EC696EE1A2625E6007E5680 /* BMEUserTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC696ED1A2625E6007E5680 /* BMEUserTypeConverter.m */; };
 		4EDCE93F1A01E069006C7A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCE9411A01E069006C7A4A /* LaunchScreen.storyboard */; };
 		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
 		556D82D33DA8A505A137BD4A /* libPods-BeMyEyes Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03381774851623C2C6BE0645 /* libPods-BeMyEyes Tests.a */; };
@@ -254,6 +255,8 @@
 		4EB6C13C19FFB6B50048735E /* BMEButtonImageToRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEButtonImageToRight.m; sourceTree = "<group>"; };
 		4EBE9BF819E8C91000CBC675 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissSegue.h; path = Source/DismissSegue.h; sourceTree = "<group>"; };
 		4EBE9BF919E8C91000CBC675 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissSegue.m; path = Source/DismissSegue.m; sourceTree = "<group>"; };
+		4EC696EC1A2625E6007E5680 /* BMEUserTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEUserTypeConverter.h; sourceTree = "<group>"; };
+		4EC696ED1A2625E6007E5680 /* BMEUserTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEUserTypeConverter.m; sourceTree = "<group>"; };
 		4EDCE9441A01E07A006C7A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		541D916399355C19CD490FDC /* Pods-BeMyEyes Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeMyEyes Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeMyEyes Tests/Pods-BeMyEyes Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -733,6 +736,8 @@
 				72DEF71018B907CB0048FA90 /* BMEClient.m */,
 				72DEF71118B907CB0048FA90 /* BMERoleConverter.h */,
 				72DEF71218B907CB0048FA90 /* BMERoleConverter.m */,
+				4EC696EC1A2625E6007E5680 /* BMEUserTypeConverter.h */,
+				4EC696ED1A2625E6007E5680 /* BMEUserTypeConverter.m */,
 				7296569D18CC8D3200E1A9EE /* BMERightToLeftSegue.h */,
 				7296569E18CC8D3200E1A9EE /* BMERightToLeftSegue.m */,
 				729656A318CC933E00E1A9EE /* BMETopNavigationController.h */,
@@ -1167,6 +1172,7 @@
 				729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
+				4EC696EE1A2625E6007E5680 /* BMEUserTypeConverter.m in Sources */,
 				4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
 				7236E04A18B8DD8E00F622AA /* BMESignUpViewController.m in Sources */,

@@ -23,6 +23,7 @@
 #import "BMECommunityStats.h"
 #import "BMEFacebookInfo.h"
 #import "BMERoleConverter.h"
+#import "BMEUserTypeConverter.h"
 
 #define BMEClientTokenKey @"BMEClientToken"
 #define BMEClientCurrentUserKey @"BMEClientCurrentUser"
@@ -796,6 +797,10 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
     id <DCValueConverter> roleConverter = [[BMERoleConverter alloc] init];
     DCObjectMapping *roleMapping = [DCObjectMapping mapKeyPath:@"role" toAttribute:@"role" onClass:[BMEUser class] converter:roleConverter];
     [config addObjectMapping:roleMapping];
+    
+    id <DCValueConverter> userTypeConverter = [[BMEUserTypeConverter alloc] init];
+    DCObjectMapping *userTypeMapping = [DCObjectMapping mapKeyPath:@"facebook_user" toAttribute:@"type" onClass:[BMEUser class] converter:userTypeConverter];
+    [config addObjectMapping:userTypeMapping];
     
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEUser class] andConfiguration:config];
     return [parser parseDictionary:representation];

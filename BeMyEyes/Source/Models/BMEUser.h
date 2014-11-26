@@ -16,6 +16,11 @@ typedef NS_ENUM(NSInteger, BMERole) {
     BMERoleHelper,
 };
 
+typedef NS_ENUM(NSInteger, BMEUserType) {
+    BMEUserTypeNative = 0,
+    BMEUserTypeFacebook,
+};
+
 @interface BMEUser : NSObject <NSCoding>
 
 @property (readonly, nonatomic) NSString *identifier;
@@ -26,6 +31,7 @@ typedef NS_ENUM(NSInteger, BMERole) {
 @property (readonly, nonatomic) NSString *lastName;
 @property (readonly, nonatomic) NSArray *languages;
 @property (readonly, nonatomic) BMERole role;
+@property (readonly, nonatomic) BMEUserType type;
 @property (readonly, nonatomic) NSNumber *peopleHelped;
 @property (readonly, nonatomic) NSNumber *totalPoints;
 @property (readonly, nonatomic) BMEUserLevel *currentLevel;
