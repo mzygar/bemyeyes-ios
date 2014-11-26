@@ -2269,7 +2269,7 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND = @"BME_REPORT_ABUS
 
  * All translations:
 
- * @b da@: "Den blinde person handlede upassendet."
+ * @b da@: "Den blinde person handlede upassende."
 
  * @b en@: "The blind person acted inappropriate."
 
@@ -3565,7 +3565,7 @@ static NSString * const BME_VIDEO_CANCEL_TITLE = @"BME_VIDEO_CANCEL_TITLE";
 
  * All translations:
 
- * @b da@: "BeMyEyes"
+ * @b da@: "Be My Eyes"
 
  * @b en@: "Be My Eyes"
 
@@ -3577,9 +3577,9 @@ static NSString * const logoLabel_text = @"logoLabel.text";
 
  * All translations:
 
- * @b da@: "Laved med ❤︎ i København"
+ * @b da@: "Lavet med ❤︎ i København"
 
- * @b en@: "Crafted with ❤︎ from Copenhagen"
+ * @b en@: "Crafted with ❤︎ in Copenhagen"
 
  */
 static NSString * const taglineLabel_text = @"taglineLabel.text";
@@ -3637,7 +3637,7 @@ static NSString * const PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION = @"PUSH_NOTIFIC
 
  * All translations:
 
- * @b da@: "Tak fordi to hjalp!"
+ * @b da@: "Tak fordi du hjalp!"
 
  * @b en@: "Thanks for helping out!"
 

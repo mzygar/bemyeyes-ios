@@ -20,7 +20,7 @@
 "BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND" = "Hjælperen handlede upassende.";
 
 /* Text 2 for reporting abuse as a helper. */
-"BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER" = "Den blinde person handlede upassendet.";
+"BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER" = "Den blinde person handlede upassende.";
 
 /* Text 3 for reporting abuse as a blind person. */
 "BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND" = "Grunden er ikke angivet.";
