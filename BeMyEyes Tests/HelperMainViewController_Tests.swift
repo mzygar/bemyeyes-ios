@@ -15,7 +15,7 @@ class HelperMainViewController_Tests: FBSnapshotTestCase {
     
     override func setUp() {
         super.setUp()
-        recordMode = false
+//        recordMode = true
         
         helperVC = UIApplication.sharedApplication().keyWindow?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier(BMEMainHelperControllerIdentifier) as? BMEHelperMainViewController
         helperVC?.viewDidLoad()

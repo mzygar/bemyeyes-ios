@@ -15,7 +15,7 @@ class BlindMainViewController_Tests: FBSnapshotTestCase {
     
     override func setUp() {
         super.setUp()
-        recordMode = false
+//        recordMode = true
         
         helperVC = UIApplication.sharedApplication().keyWindow?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier(BMEMainBlindControllerIdentifier) as? BMEBlindMainViewController
         helperVC?.viewDidLoad()
