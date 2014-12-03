@@ -39,12 +39,14 @@ class ClientTest: XCTestCase {
             if let error = error {
                 XCTFail("...with error: " + error.localizedDescription)
             }
-            let user = BMEClient.sharedClient().currentUser
-            XCTAssert(user != nil, "No current user")
-            XCTAssert(user.email == email, "Wrong email")
-            XCTAssert(user.firstName == firstName, "Wrong first name")
-            XCTAssert(user.lastName == lastName, "Wrong last name")
-            XCTAssert(user.role == role, "Wrong role")
+            if let user = BMEClient.sharedClient().currentUser {
+                XCTAssert(user.email == email, "Wrong email")
+                XCTAssert(user.firstName == firstName, "Wrong first name")
+                XCTAssert(user.lastName == lastName, "Wrong last name")
+                XCTAssert(user.role == role, "Wrong role")
+            } else {
+                XCTFail("No current user")
+            }
             let token = BMEClient.sharedClient().token()
             XCTAssert(token != nil, "No token")
         }
@@ -57,12 +59,14 @@ class ClientTest: XCTestCase {
         BMEClient.sharedClient().createUserWithEmail(email, password: password, firstName: firstName, lastName: lastName, role: role) { (success, error) in
             BMEClient.sharedClient().loginWithEmail(email, password: password, deviceToken: nil, success: { token in
                 expectation.fulfill()
-                let user = BMEClient.sharedClient().currentUser
-                XCTAssert(user != nil, "No current user")
-                XCTAssert(user.email == email, "Wrong email")
-                XCTAssert(user.firstName == firstName, "Wrong first name")
-                XCTAssert(user.lastName == lastName, "Wrong last name")
-                XCTAssert(user.role == role, "Wrong role")
+                if let user = BMEClient.sharedClient().currentUser {
+                    XCTAssert(user.email == email, "Wrong email")
+                    XCTAssert(user.firstName == firstName, "Wrong first name")
+                    XCTAssert(user.lastName == lastName, "Wrong last name")
+                    XCTAssert(user.role == role, "Wrong role")
+                } else {
+                    XCTFail("No current user")
+                }
                 let token = BMEClient.sharedClient().token()
                 XCTAssert(token != nil, "No token")
             }, failure: { (error) -> Void in
