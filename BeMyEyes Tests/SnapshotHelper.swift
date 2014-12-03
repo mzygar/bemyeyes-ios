@@ -20,6 +20,11 @@ struct Device {
             Device(bounds: CGRect(x: 0, y: 0, width: 621, height: 1104), description: "iPhone 6+"),
             Device(bounds: CGRect(x: 0, y: 0, width: 768, height: 1024), description: "iPad")]
     }
+    
+    static func allPromoScreenshots() -> [Device] {
+        return [ Device(bounds: CGRect(x: 0, y: 0, width: 375, height: 590), description: "iPhone 6 for promo Screenshot"),
+            Device(bounds: CGRect(x: 0, y: 0, width: 375, height: 667), description: "iPhone 6 for promo Screenshot (full)")]
+    }
 }
 
 extension FBSnapshotTestCase {
@@ -38,6 +43,15 @@ extension FBSnapshotTestCase {
 
     func verifyViewOnAllDevices(view: UIView, identifier: String = "") {
         for device in Device.allDevices() {
+            view.frame = device.bounds
+            
+            verifyView(view, identifier: identifier + device.description)
+        }
+    }
+    
+    func verifyViewForPromoScreenshots(view: UIView, identifier: String = "") {
+        
+        for device in Device.allPromoScreenshots() {
             view.frame = device.bounds
             
             verifyView(view, identifier: identifier + device.description)

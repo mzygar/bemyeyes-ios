@@ -12,6 +12,8 @@
 #import <MiawKit/MKLocalization.h>
 #import <MiawKit/MKFunctions.h>
 #import "MKLocalizationKeys.h"
-
+#import "BMEPointEntry.h"
+#import "BMECommunityStats.h"
 
 #import "BMEHelperMainViewController.h"
+#import "BMEBlindMainViewController.h"

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class BMEUserLevel;
 #import "BMEUserTask.h"
@@ -39,6 +40,7 @@ typedef NS_ENUM(NSInteger, BMEUserType) {
 @property (readonly, nonatomic) NSArray *lastPointEntries;
 @property (readonly, nonatomic) NSArray *completedTasks;
 @property (readonly, nonatomic) NSArray *remainingTasks;
+@property (readonly, nonatomic) UIImage *profileImage;
 
 - (BOOL)isHelper;
 - (BOOL)isBlind;

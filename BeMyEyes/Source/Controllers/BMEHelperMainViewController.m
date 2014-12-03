@@ -205,7 +205,11 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         [self.profileImageView sd_setImageWithURL:url];
     } else {
         [self.profileImageView sd_cancelCurrentImageLoad];
-        self.profileImageView.image = [UIImage imageNamed:@"ProfileFilledInSquare"];
+        if (user.profileImage) {
+            self.profileImageView.image = user.profileImage;
+        } else {
+            self.profileImageView.image = [UIImage imageNamed:@"ProfileFilledInSquare"];
+        }
     }
     
     [self updatePointsAnimated:NO];
@@ -291,14 +295,20 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     BMEUser *user = self.user;
     self.levelLabel.text = MKLocalizedFromTable(user.currentLevel.localizableKeyForTitle, BMEHelperMainLocalizationTable);
     
-    [self.pointsHelpedPersonsLabel setPoint:user.peopleHelped.integerValue animated:YES];
-    [self.pointsTotalLabel setPoint:user.totalPoints.integerValue animated:YES];
+    [self.pointsHelpedPersonsLabel setPoint:user.peopleHelped.integerValue animated:animated];
+    [self.pointsTotalLabel setPoint:user.totalPoints.integerValue animated:animated];
     
     self.pointsBarView.text = [NSString stringWithFormat:MKLocalizedFromTable(BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION, BMEHelperMainLocalizationTable), user.pointsToNextLevel];
     self.pointsBarView.progress = user.levelProgress;
     
     self.pointEntries = user.lastPointEntries;
     [self.tableView reloadData];
+}
+
+- (void)updateStatsPointsAnimated:(BOOL)animated {
+    [self.pointsCommunityBlindLabel setPoint:self.stats.blind.integerValue animated:animated];
+    [self.pointsCommunitySightedLabel setPoint:self.stats.sighted.integerValue animated:animated];
+    [self.pointsCommunityHelpedLabel setPoint:self.stats.helped.integerValue animated:animated];
 }
 
 - (void)reloadPoints {
@@ -315,9 +325,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         if (error) {
             NSLog(@"Could not load point for days: %@", error);
         } else {
-            [self.pointsCommunityBlindLabel setPoint:stats.blind.integerValue animated:YES];
-            [self.pointsCommunitySightedLabel setPoint:stats.sighted.integerValue animated:YES];
-            [self.pointsCommunityHelpedLabel setPoint:stats.helped.integerValue animated:YES];
+            _stats = stats;
+            [self updateStatsPointsAnimated:YES];
         }
     }];
 }
@@ -388,6 +397,15 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         _user = user;
         
         [self updateToProfile];
+    }
+}
+
+- (void)setStats:(BMECommunityStats *)stats
+{
+    if (stats != _stats) {
+        _stats = stats;
+        
+        [self updateStatsPointsAnimated:NO];
     }
 }
 
