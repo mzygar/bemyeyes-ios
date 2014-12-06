@@ -180,16 +180,16 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 {
     [BMEAccessControlHandler enabledForRole:[BMEClient sharedClient].currentUser.role completion:^(BOOL isEnabled, BOOL validToken) {
         if (isEnabled) {
-            return;
-        }
-        if (!validToken) {
-            // User has enable push, but something else went wrong
-            NSString *title = MKLocalizedFromTable(BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE, BMEMainLocalizationTable);
-            NSString *message = MKLocalizedFromTable(BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE, BMEMainLocalizationTable);
-            NSString *cancelButton = MKLocalizedFromTable(BME_MAIN_ALERT_CANCEL, BMEMainLocalizationTable);
-            PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
-            [alertView setCancelButtonWithTitle:cancelButton block:nil];
-            [alertView show];
+            if (!validToken) {
+                // User has enable push, but something else went wrong
+                NSString *title = MKLocalizedFromTable(BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE, BMEMainLocalizationTable);
+                NSString *message = MKLocalizedFromTable(BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE, BMEMainLocalizationTable);
+                NSString *cancelButton = MKLocalizedFromTable(BME_MAIN_ALERT_CANCEL, BMEMainLocalizationTable);
+                PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+                [alertView setCancelButtonWithTitle:cancelButton block:nil];
+                [alertView show];
+                return;
+            }
             return;
         }
         [self performSegueWithIdentifier:BMEAccessViewSegue sender:self];
