@@ -205,18 +205,24 @@
 }
 
 + (void)hasVideoEnabled:(void(^)(BOOL isEnabled))completion {
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
-    if (deviceInput)
-    {
-        // Access to the camera succeeded.
-        if (completion) {
-            completion(YES);
-        }
-        return;
+    BOOL enabled;
+    switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo]) {
+        case AVAuthorizationStatusNotDetermined:
+            enabled = NO;
+            break;
+        case AVAuthorizationStatusDenied:
+            enabled = NO;
+            break;
+        case AVAuthorizationStatusRestricted:
+            enabled = NO;
+            break;
+        case AVAuthorizationStatusAuthorized:
+            enabled = YES;
+        default:
+            break;
     }
     if (completion) {
-        completion(NO);
+        completion(enabled);
     }
 }
 
