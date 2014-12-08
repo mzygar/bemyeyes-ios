@@ -89,6 +89,10 @@
 }
 
 - (NSString *)finalText {
+    if (self.point >= 1000) {
+        double kPoint = (double)self.point / 1000.f;
+        return [NSString stringWithFormat:@"%.1fk", kPoint];
+    }
     return [NSString stringWithFormat:@"%d", self.point];
 }
 
