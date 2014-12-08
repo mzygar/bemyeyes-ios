@@ -23,7 +23,7 @@
 // This library does not follow semantic-versioning,
 // so we were not able to define version macros.
 // Please contact the author.
-// Version: 2.2.5.1.
+// Version: 2.2.5.2.
 
 // DCKeyValueObjectMapping
 #define COCOAPODS_POD_AVAILABLE_DCKeyValueObjectMapping
