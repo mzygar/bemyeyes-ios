@@ -385,7 +385,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_
 
  * All translations:
 
- * @b da@: "Åben indstillinger"
+ * @b da@: "Åbn indstillinger"
 
  * @b en@: "Open settings"
 
