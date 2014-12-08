@@ -37,7 +37,7 @@
 "BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Annuller";
 
 /* Title of ok button in alert view shown when the access is disabled, and app supports going to settings */
-"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Åben indstillinger";
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Åbn indstillinger";
 
 /* Title of cancel button in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
 "BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "OK";
