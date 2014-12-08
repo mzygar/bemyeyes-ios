@@ -100,6 +100,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogIn:) name:BMEDidLogInNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogOut:) name:BMEDidLogOutNotification object:nil];
+    
+    self.window.tintColor = [UIColor lightBlueColor];
   
     return YES;
 }
