@@ -118,10 +118,10 @@
     NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *firstName = [self.firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *lastName = [self.lastNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    BOOL isFirstNameEmpty = firstName == 0;
-    BOOL isLastNameEmpty = lastName == 0;
-    BOOL isEmailEmpty = email == 0;
-    BOOL isPasswordEmpty = email == 0;
+    BOOL isFirstNameEmpty = firstName.length == 0;
+    BOOL isLastNameEmpty = lastName.length == 0;
+    BOOL isEmailEmpty = email.length == 0;
+    BOOL isPasswordEmpty = email.length == 0;
     
     if (isFirstNameEmpty || isLastNameEmpty || isEmailEmpty || isPasswordEmpty) {
         if (isFirstNameEmpty) {
