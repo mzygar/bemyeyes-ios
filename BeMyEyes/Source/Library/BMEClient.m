@@ -245,7 +245,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             completion(YES);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        BOOL validToken = operation.response.statusCode != 401;
+        BOOL validToken = operation.response.statusCode != 401; // Authorization error
         if (completion) {
             completion(validToken);
         }
@@ -484,6 +484,9 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 #pragma mark Notifications Token
 
 - (void)upsertDeviceWithNewToken:(NSString *)newToken production:(BOOL)isProduction completion:(void (^)(BOOL, NSError *))completion {
+    if (!self.isTokenValid) {
+        return;
+    }
     NSString *alias = [UIDevice currentDevice].name;
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *appBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
