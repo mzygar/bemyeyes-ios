@@ -8,7 +8,7 @@ def import_pods
     pod 'AFNetworking', '~> 1.3.2'
     pod 'DCKeyValueObjectMapping'
     pod 'ISO8601DateFormatter', '~> 0.7'
-    pod 'MRProgress', '~> 0.4.1'
+    pod 'MRProgress', '~> 0.8.0'
     pod 'Masonry', '~> 0.5.3'
     pod 'PSAlertView', '~> 1.1'
     pod 'GVUserDefaults', '~> 0.9.4'
