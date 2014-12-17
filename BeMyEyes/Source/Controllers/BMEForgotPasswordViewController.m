@@ -57,6 +57,11 @@
     return self.scrollViewHelper.preferredStatusBarUpdateAnimation;
 }
 
+- (BOOL)accessibilityPerformEscape {
+    [self.navigationController popViewControllerAnimated:NO];
+    return YES;
+}
+
 
 #pragma mark - Public Methods
 

@@ -64,6 +64,12 @@
     self.privacyButton.accessibilityHint = MKLocalizedFromTable(BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT, BMESignUpMethodLocalizationTable);
 }
 
+- (BOOL)accessibilityPerformEscape {
+    [self.navigationController popViewControllerAnimated:NO];
+    return YES;
+}
+
+
 #pragma mark -
 #pragma mark Private Methods
 

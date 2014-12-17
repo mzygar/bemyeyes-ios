@@ -92,6 +92,16 @@ static NSString *BMECallPostSegue = @"PostCall";
     self.disconnectButton.title = MKLocalizedFromTable(BME_CALL_DISCONNECT, BMECallLocalizationTable);
 }
 
+
+- (BOOL)accessibilityPerformEscape {
+    if (self.disconnecting) {
+        return NO;
+    }
+    [self disconnect];
+    return YES;
+}
+
+
 #pragma mark -
 #pragma mark Private Methods
 

@@ -75,6 +75,11 @@
     }
 }
 
+- (BOOL)accessibilityPerformEscape {
+    [self.navigationController popViewControllerAnimated:NO];
+    return YES;
+}
+
 #pragma mark -
 #pragma mark Private Methods
 

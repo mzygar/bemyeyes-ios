@@ -98,6 +98,13 @@ static NSString *const videoSegueIdentifier = @"Video";
     self.versionLabel.text = versionText;
 }
 
+
+- (BOOL)accessibilityPerformEscape {
+    [self dismissViewControllerAnimated:NO completion:nil];
+    return YES;
+}
+
+
 #pragma mark -
 #pragma mark Private Methods
 
