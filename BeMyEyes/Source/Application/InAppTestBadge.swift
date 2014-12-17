@@ -22,6 +22,7 @@ import UIKit
         label.font = UIFont.boldSystemFontOfSize(12)
         label.textColor = .whiteColor()
         label.textAlignment = .Center
+        label.isAccessibilityElement = false
         return label
     }()
     
