@@ -80,7 +80,6 @@
 
 - (void)performLoginUsingFacebook:(BOOL)useFacebook {
     [self dismissKeyboard];
-    [self showLoggingInOverlay];
     
     if (useFacebook) {
         [self performLoginWithFacebook];
