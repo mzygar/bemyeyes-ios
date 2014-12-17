@@ -69,17 +69,17 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self check];
+    [self checkAccess];
+    [self askForMoreLanguagesIfNecessary];
 }
 
 - (void)handleAppBecameActive
 {
-    [self check];
+    [self checkAccess];
 }
 
-- (void)check
+- (void)checkAccess
 {
-    [self askForMoreLanguagesIfNecessary];
     if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
         [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isUserEnabled, BOOL validToken) {
             if (isUserEnabled) {
@@ -150,7 +150,7 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 }
 
 - (void)askForMoreLanguagesIfNecessary {
-    if ([GVUserDefaults standardUserDefaults].peopleHelped >= BMEPeopleHelpedBeforeAskingForMoreLanguages &&
+    if ([BMEClient sharedClient].currentUser.peopleHelped.integerValue >= BMEPeopleHelpedBeforeAskingForMoreLanguages &&
         ![GVUserDefaults standardUserDefaults].hasAskedForMoreLanguages) {
         NSString *title, *message, *cancelButton, *confirmButton;
         if ([[BMEClient sharedClient].currentUser isHelper]) {

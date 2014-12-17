@@ -48,11 +48,6 @@
     [super viewDidLoad];
     
     [MKLocalization registerForLocalization:self];
-    
-    if ([[BMEClient sharedClient].currentUser isHelper]) {
-        NSUInteger peopleHelped = [GVUserDefaults standardUserDefaults].peopleHelped;
-        [GVUserDefaults standardUserDefaults].peopleHelped = peopleHelped + 1;
-    }
 }
 
 - (void)dealloc {
