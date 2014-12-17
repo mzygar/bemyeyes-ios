@@ -8,7 +8,6 @@
 
 #import "BMEBlindMainViewController.h"
 #import "BMEAppDelegate.h"
-#import "BMECallViewController.h"
 #import "BMEPointLabel.h"
 #import "BMECommunityStats.h"
 
@@ -49,7 +48,6 @@
         }
         [self updateToCommunityStats:stats];
         self.communityStatsView.isAccessibilityElement = YES;
-        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
     }];
 }
 
@@ -64,18 +62,12 @@
     [self updateToCommunityStats:nil];
 }
 
+
 #pragma mark -
 #pragma mark Private Methods
 
 - (IBAction)connectToCommunityButtonPressed:(id)sender {
-    
-    BMECallViewController *callController = [self.storyboard instantiateViewControllerWithIdentifier:BMECallControllerIdentifier];
-    callController.callMode = BMECallModeCreate;
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
-    navigationController.navigationBarHidden = YES;
-    
-    [self presentViewController:navigationController animated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEInitiateCallIfPossibleNotification object:self];
 }
 
 

@@ -98,6 +98,11 @@ static NSString *const videoSegueIdentifier = @"Video";
     self.versionLabel.text = versionText;
 }
 
+- (BOOL)accessibilityPerformMagicTap {
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BMEInitiateCallIfPossibleNotification object:nil];
+    return YES;
+}
 
 - (BOOL)accessibilityPerformEscape {
     [self dismissViewControllerAnimated:NO completion:nil];
