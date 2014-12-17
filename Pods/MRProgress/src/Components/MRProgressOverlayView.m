@@ -6,6 +6,15 @@
 //  Copyright (c) 2013 Marius Rackwitz. All rights reserved.
 //
 
+//#define MRProgress_EnableUIVisualEffectView
+#if defined(MRProgress_EnableUIVisualEffectView)
+    #define MR_UIEffectViewIsEnabled   1
+#else
+    #define MR_UIEffectViewIsEnabled   0
+#endif
+#define MR_UIEffectViewIsAllowed   (MR_UIEffectViewIsEnabled && __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000)
+#define MR_UIEffectViewIsAvailable (MR_UIEffectViewIsAllowed && NSClassFromString(@"UIVisualEffectView") != nil)
+
 #import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import "MRProgressOverlayView.h"
@@ -16,8 +25,8 @@
 #import "MRProgressHelper.h"
 
 
-const CGFloat MRProgressOverlayViewCornerRadius = 7;
-const CGFloat MRProgressOverlayViewMotionEffectExtent = 10;
+static const CGFloat MRProgressOverlayViewCornerRadius = 7;
+static const CGFloat MRProgressOverlayViewMotionEffectExtent = 10;
 
 
 @interface MRProgressOverlayView () {
@@ -26,6 +35,7 @@ const CGFloat MRProgressOverlayViewMotionEffectExtent = 10;
 
 @property (nonatomic, weak, readwrite) UIView *dialogView;
 @property (nonatomic, weak, readwrite) UIView *blurView;
+@property (nonatomic, strong, readwrite) UIView *blurMaskView;
 @property (nonatomic, weak, readwrite) UILabel *titleLabel;
 
 - (UIView *)createModeView;
@@ -42,6 +52,8 @@ const CGFloat MRProgressOverlayViewMotionEffectExtent = 10;
 
 - (void)showModeView:(UIView *)modeView;
 - (void)hideModeView:(UIView *)modeView;
+
+- (BOOL)mayStop;
 
 - (void)setSubviewTransform:(CGAffineTransform)transform alpha:(CGFloat)alpha;
 
@@ -158,6 +170,8 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 }
 
 - (void)commonInit {
+    self.accessibilityViewIsModal = YES;
+    
     self.hidden = YES;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
@@ -165,7 +179,6 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
     
     // Create blurView
     self.blurView = [self createBlurView];
-    self.blurView.layer.cornerRadius = cornerRadius;
     
     // Create container with contents
     UIView *dialogView = [UIView new];
@@ -188,6 +201,7 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
         NSFontAttributeName:            [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline],
         NSKernAttributeName:            NSNull.null,  // turn on auto-kerning
     }];
+    titleLabel.accessibilityTraits = UIAccessibilityTraitHeader;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.numberOfLines = 0;
     titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -282,11 +296,30 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 #pragma mark - Create subviews
 
 - (UIView *)createBlurView {
-    UIView *blurView = [MRBlurView new];
-    blurView.alpha = 0.98;
-    [self addSubview:blurView];
+    const CGFloat cornerRadius = MRProgressOverlayViewCornerRadius;
     
-    return blurView;
+    if (MR_UIEffectViewIsAvailable) {
+        #if MR_UIEffectViewIsAllowed
+            UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+            [self addSubview:effectView];
+            
+            // Setup mask view
+            UIView *maskView = [UIView new];
+            maskView.backgroundColor = UIColor.whiteColor;
+            maskView.layer.cornerRadius = cornerRadius;
+            self.blurMaskView = maskView; // Memorize for layout changes
+            
+            effectView.maskView = maskView;
+            
+            return effectView;
+        #endif
+    } else {
+        UIView *blurView = [MRBlurView new];
+        blurView.alpha = 0.98;
+        blurView.layer.cornerRadius = cornerRadius;
+        [self addSubview:blurView];
+        return blurView;
+    }
 }
 
 - (UIView *)createModeView {
@@ -441,6 +474,7 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
     _mode = mode;
     
     [self showModeView:[self createModeView]];
+    [self updateModeViewMayStop];
     
     if (!self.hidden) {
         [self manualLayoutSubviews];
@@ -467,11 +501,7 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 - (void)setStopBlock:(MRProgressOverlayViewStopBlock)stopBlock {
     _stopBlock = stopBlock;
     
-    BOOL mayStop = stopBlock != nil;
-    if ([self.modeView conformsToProtocol:@protocol(MRStopableView)]
-        && [self.modeView respondsToSelector:@selector(setMayStop:)]) {
-        [((id<MRStopableView>)self.modeView) setMayStop:mayStop];
-    } else {
+    if (![self updateModeViewMayStop]) {
         #if DEBUG
             NSLog(@"** WARNING - %@: %@ is only valid to call when the mode view supports %@ declared in %@!",
                   NSStringFromClass(self.class),
@@ -482,9 +512,34 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
     }
 }
 
+- (BOOL)mayStop {
+    return _stopBlock != nil;
+}
+
+- (BOOL)updateModeViewMayStop {
+    if ([self.modeView conformsToProtocol:@protocol(MRStopableView)]
+        && [self.modeView respondsToSelector:@selector(setMayStop:)]) {
+        [((id<MRStopableView>)self.modeView) setMayStop:self.mayStop];
+        return YES;
+    }
+    return NO;
+}
+
 - (void)modeViewStopButtonTouchUpInside {
     if (self.stopBlock) {
         self.stopBlock(self);
+    }
+}
+
+
+#pragma mark - A11y
+
+- (BOOL)accessibilityPerformEscape {
+    if (self.mayStop) {
+        [self modeViewStopButtonTouchUpInside];
+        return YES;
+    } else {
+        return NO;
     }
 }
 
@@ -493,9 +548,8 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 
 - (void)setSubviewTransform:(CGAffineTransform)transform alpha:(CGFloat)alpha {
     self.blurView.transform = transform;
-    self.blurView.alpha = alpha;
     self.dialogView.transform = transform;
-    self.dialogView.alpha = alpha;
+    self.alpha = alpha;
 }
 
 - (void)show:(BOOL)animated {
@@ -522,6 +576,9 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
     } else {
         animBlock();
     }
+    
+    UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.titleLabelText);
 }
 
 - (void)dismiss:(BOOL)animated {
@@ -552,6 +609,9 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
     void(^animCompletionBlock)(BOOL) = ^(BOOL finished) {
         self.hidden = YES;
         [self hideModeView:self.modeView];
+        
+        UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
+        
         if (completionBlock) {
             completionBlock();
         }
@@ -579,15 +639,30 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 
 // Don't overwrite layoutSubviews here. This would cause issues with animation.
 - (void)manualLayoutSubviews {
-    self.transform = self.transformForOrientation;
+    if (!MRSystemVersionGreaterThanOrEqualTo8()) {
+        self.transform = self.transformForOrientation;
+    }
     
     CGRect bounds = self.superview.bounds;
-    self.center = CGPointMake(bounds.size.width / 2.0f, bounds.size.height / 2.0f);
-    if ([self.superview isKindOfClass:UIWindow.class] && UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation)) {
-        // Swap width and height
-        self.bounds = (CGRect){CGPointZero, {bounds.size.height, bounds.size.width}};
-    } else {
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    
+    if ([self.superview isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)self.superview;
+        insets = scrollView.contentInset;
+    }
+    
+    self.center = CGPointMake((bounds.size.width - insets.left - insets.right) / 2.0f,
+                              (bounds.size.height - insets.top - insets.bottom) / 2.0f);
+
+    if (MRSystemVersionGreaterThanOrEqualTo8()) {
         self.bounds = (CGRect){CGPointZero, bounds.size};
+    } else {
+        if ([self.superview isKindOfClass:UIWindow.class] && UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation)) {
+            // Swap width and height
+            self.bounds = (CGRect){CGPointZero, {bounds.size.height, bounds.size.width}};
+        } else {
+            self.bounds = (CGRect){CGPointZero, bounds.size};
+        }
     }
     
     const CGFloat dialogPadding = 15;
@@ -687,7 +762,18 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
     {
         self.dialogView.frame = MRCenterCGSizeInCGRect(CGSizeMake(dialogWidth, y), self.bounds);
         
-        self.blurView.frame = self.dialogView.frame;
+        if (!CGRectEqualToRect(self.blurView.frame, self.dialogView.frame)) {
+            self.blurView.frame = self.dialogView.frame;
+            
+            if (MR_UIEffectViewIsAvailable) {
+                #if MR_UIEffectViewIsAllowed
+                    // As the blurMaskView will be copied internally by UIKit, we have to re-assign
+                    // it to the blurView, after we change its layout
+                    self.blurMaskView.frame = self.dialogView.bounds;
+                    self.blurView.maskView = self.blurMaskView;
+                #endif
+            }
+        }
     }
 }
 
@@ -699,8 +785,14 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 }
 
 - (void)setProgress:(float)progress animated:(BOOL)animated {
+    NSParameterAssert(progress >= 0 && progress <= 1);
+    _progress = progress;
+    [self applyProgressAnimated:(BOOL)animated];
+}
+    
+- (void)applyProgressAnimated:(BOOL)animated {
     if ([self.modeView respondsToSelector:@selector(setProgress:animated:)]) {
-        [((id)self.modeView) setProgress:progress animated:animated];
+        [((id)self.modeView) setProgress:self.progress animated:animated];
     } else if ([self.modeView respondsToSelector:@selector(setProgress:)]) {
         if (animated) {
             #if DEBUG
@@ -710,7 +802,7 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
                       NSStringFromSelector(@selector(setProgress:animated:)));
             #endif
         }
-        [((id)self.modeView) setProgress:progress];
+        [((id)self.modeView) setProgress:self.progress];
     } else {
         NSAssert(self.mode == MRProgressOverlayViewModeDeterminateCircular
                  || self.mode == MRProgressOverlayViewModeDeterminateHorizontalBar,

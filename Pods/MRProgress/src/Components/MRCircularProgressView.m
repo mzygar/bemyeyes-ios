@@ -12,7 +12,7 @@
 #import "MRStopButton.h"
 
 
-NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgressViewProgressAnimationKey";
+static NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgressViewProgressAnimationKey";
 
 
 @interface MRCircularProgressView ()
@@ -31,6 +31,12 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
 }
 
 @synthesize stopButton = _stopButton;
+
++ (void)load {
+    [self.appearance setAnimationDuration:0.3];
+    [self.appearance setBorderWidth:2.0];
+    [self.appearance setLineWidth:2.0];
+}
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -57,17 +63,15 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
 }
 
 - (void)commonInit {
-    _animationDuration = 0.3;
-    self.progress = 0;
+    self.isAccessibilityElement = YES;
+    self.accessibilityLabel = NSLocalizedString(@"Determinate Progress", @"Accessibility label for circular progress view");
+    self.accessibilityTraits = UIAccessibilityTraitUpdatesFrequently;
     
     NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
     self.numberFormatter = numberFormatter;
     numberFormatter.numberStyle = NSNumberFormatterPercentStyle;
     numberFormatter.locale = NSLocale.currentLocale;
     
-    self.layer.borderWidth = 2.0f;
-    
-    self.shapeLayer.lineWidth = 2.0f;
     self.shapeLayer.fillColor = UIColor.clearColor.CGColor;
     
     UILabel *valueLabel = [UILabel new];
@@ -83,7 +87,28 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
     
     self.mayStop = NO;
     
+    self.progress = 0;
+    
     [self tintColorDidChange];
+}
+
+
+#pragma mark - Properties
+
+- (CGFloat)borderWidth {
+    return self.shapeLayer.borderWidth;
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth {
+    self.shapeLayer.borderWidth = borderWidth;
+}
+
+- (CGFloat)lineWidth {
+    return self.shapeLayer.lineWidth;
+}
+
+- (void)setLineWidth:(CGFloat)lineWidth {
+    self.shapeLayer.lineWidth = lineWidth;
 }
 
 
@@ -95,7 +120,7 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
     const CGFloat offset = 4;
     CGRect valueLabelRect = self.bounds;
     valueLabelRect.origin.x += offset;
-    valueLabelRect.size.width -= offset;
+    valueLabelRect.size.width -= 2*offset;
     self.valueLabel.frame = valueLabelRect;
     
     self.layer.cornerRadius = self.frame.size.width / 2.0f;
@@ -110,8 +135,10 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
     const double endAngle = startAngle + TWO_M_PI;
     
     CGFloat width = self.frame.size.width;
+    CGFloat borderWidth = self.borderWidth;
+    CGFloat lineWidth = self.lineWidth;
     return [UIBezierPath bezierPathWithArcCenter:CGPointMake(width/2.0f, width/2.0f)
-                                          radius:width/2.0f - 2.5f
+                                          radius:(width - lineWidth - borderWidth)/2.0f
                                       startAngle:startAngle
                                         endAngle:endAngle
                                        clockwise:YES];
@@ -126,7 +153,7 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
     self.shapeLayer.strokeColor = tintColor.CGColor;
     self.layer.borderColor = tintColor.CGColor;
     self.valueLabel.textColor = tintColor;
-    self.stopButton.backgroundColor = tintColor;
+    self.stopButton.tintColor = tintColor;
 }
 
 
@@ -152,6 +179,7 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
     _progress = progress;
     
     [self updateProgress];
+    UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, self);
 }
 
 - (void)updateProgress {
@@ -165,11 +193,12 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
 
 - (void)updateLabel:(float)progress {
     self.valueLabel.text = [self.numberFormatter stringFromNumber:@(progress)];
+    self.accessibilityValue = self.valueLabel.text;
 }
 
 - (void)setProgress:(float)progress animated:(BOOL)animated {
     if (animated) {
-        if (self.progress == progress) {
+        if (ABS(self.progress - progress) < CGFLOAT_MIN) {
             return;
         }
         
@@ -177,6 +206,7 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
     } else {
         self.progress = progress;
     }
+    UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, self);
 }
 
 - (void)setAnimationDuration:(CFTimeInterval)animationDuration {
@@ -193,6 +223,8 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
     animation.fromValue = @(self.progress);
     animation.toValue = @(progress);
     animation.delegate = self;
+    animation.removedOnCompletion = NO;
+    animation.fillMode = kCAFillModeForwards;
     [self.shapeLayer addAnimation:animation forKey:MRCircularProgressViewProgressAnimationKey];
     
     // Add timer to update valueLabel
@@ -232,8 +264,7 @@ NSString *const MRCircularProgressViewProgressAnimationKey = @"MRCircularProgres
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     [self updateProgress];
-    [self.valueLabelUpdateTimer invalidate];
-    self.valueLabelUpdateTimer = nil;
+    [self stopAnimation];
 }
 
 @end

@@ -12,6 +12,7 @@
 #import "BMEUser.h"
 #import "BMEAccessControlHandler.h"
 #import "BMEAccessViewController.h"
+#import "BMECallViewController.h"
 
 #define BMEMainKnownLanguagesSegue @"KnownLanguages"
 static NSString *const BMEAccessViewSegue = @"AccessView";
@@ -48,6 +49,7 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
                                              selector:@selector(handleAppBecameActive)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initiateCall) name:BMEInitiateCallIfPossibleNotification object:nil];
     
     [[BMEClient sharedClient] verifyTokenAuthOnServerWithCompletion:^(BOOL valid) {
         if (!valid) { // Force user to log out
@@ -69,17 +71,17 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self check];
+    [self checkAccess];
+    [self askForMoreLanguagesIfNecessary];
 }
 
 - (void)handleAppBecameActive
 {
-    [self check];
+    [self checkAccess];
 }
 
-- (void)check
+- (void)checkAccess
 {
-    [self askForMoreLanguagesIfNecessary];
     if ([BMEClient sharedClient].currentUser.role == BMERoleHelper) {
         [BMEAccessControlHandler hasNotificationsEnabled:^(BOOL isUserEnabled, BOOL validToken) {
             if (isUserEnabled) {
@@ -150,7 +152,7 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 }
 
 - (void)askForMoreLanguagesIfNecessary {
-    if ([GVUserDefaults standardUserDefaults].peopleHelped >= BMEPeopleHelpedBeforeAskingForMoreLanguages &&
+    if ([BMEClient sharedClient].currentUser.peopleHelped.integerValue >= BMEPeopleHelpedBeforeAskingForMoreLanguages &&
         ![GVUserDefaults standardUserDefaults].hasAskedForMoreLanguages) {
         NSString *title, *message, *cancelButton, *confirmButton;
         if ([[BMEClient sharedClient].currentUser isHelper]) {
@@ -194,6 +196,43 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
         }
         [self performSegueWithIdentifier:BMEAccessViewSegue sender:self];
     }];
+}
+
+
+
+#pragma mark - Call
+
+- (BOOL)inCall {
+    return [self.navigationController.visibleViewController isKindOfClass:[BMECallViewController class]];
+}
+
+- (BOOL)ableToCall {
+    BOOL inCall = [self inCall];
+    return !inCall; // Not in call
+}
+
+- (BOOL)accessibilityPerformMagicTap {
+    if ([self inCall]) {
+        // Do nothing
+    } else if([self ableToCall]) {
+        return [self initiateCall];
+    }
+    return NO;
+}
+
+- (BOOL)initiateCall {
+    if (![BMEClient sharedClient].currentUser.isBlind) {
+        return NO;
+    }
+    
+    BMECallViewController *callController = [self.storyboard instantiateViewControllerWithIdentifier:BMECallControllerIdentifier];
+    callController.callMode = BMECallModeCreate;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:callController];
+    navigationController.navigationBarHidden = YES;
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+    return YES;
 }
 
 @end

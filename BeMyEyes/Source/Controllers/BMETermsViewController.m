@@ -31,4 +31,9 @@
     [self.backButton setTitle:MKLocalizedFromTable(BME_TERMS_BACK, BMETermsLocalizationTable) forState:UIControlStateNormal];
 }
 
+- (BOOL)accessibilityPerformEscape {
+    [self.navigationController popViewControllerAnimated:NO];
+    return YES;
+}
+
 @end

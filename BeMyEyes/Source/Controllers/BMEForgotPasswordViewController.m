@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet Button *sendPasswordButton;
 @property (strong, nonatomic) BMEScrollViewTextFieldHelper *scrollViewHelper;
+@property (strong, nonatomic) NSString *prepopulatingEmail;
 @end
 
 @implementation BMEForgotPasswordViewController
@@ -33,6 +34,7 @@
     [MKLocalization registerForLocalization:self];
     
     self.scrollViewHelper = [[BMEScrollViewTextFieldHelper alloc] initWithScrollview:self.scrollView inViewController:self];
+    self.emailTextField.text = self.prepopulatingEmail;
 }
 
 - (void)shouldLocalize {
@@ -54,6 +56,20 @@
 {
     return self.scrollViewHelper.preferredStatusBarUpdateAnimation;
 }
+
+- (BOOL)accessibilityPerformEscape {
+    [self.navigationController popViewControllerAnimated:NO];
+    return YES;
+}
+
+
+#pragma mark - Public Methods
+
+- (void)prepopulateWithEmail:(NSString *)email {
+    self.prepopulatingEmail = email;
+    self.emailTextField.text = self.prepopulatingEmail;
+}
+
 
 #pragma mark -
 #pragma mark Private Methods
@@ -96,7 +112,10 @@
     [[BMEClient sharedClient] sendNewPasswordToEmail:email completion:^(BOOL success, NSError *error) {
         [progressOverlayView hide:YES];
         
-        if (error && [error code] != BMEClientErrorUserNotFound && [error code] != BMEClientErrorNotPermitted) {
+        BOOL hasError = error != nil;
+        BOOL userNotFound = error.code == BMEClientErrorUserNotFound;
+        BOOL notPermitted = [error code] != BMEClientErrorNotPermitted;
+        if (hasError && !userNotFound && !notPermitted) {
             NSString *title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_TITLE, BMEForgotPasswordLocalizationTable);
             NSString *message = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_MESSAGE, BMEForgotPasswordLocalizationTable);
             NSString *cancelButton = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_CANCEL, BMEForgotPasswordLocalizationTable);

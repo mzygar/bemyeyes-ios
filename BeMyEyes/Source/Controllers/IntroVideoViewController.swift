@@ -20,4 +20,9 @@ class IntroVideoViewController: VideoViewController {
             moviePlayerController.play()
         }
     }
+    
+    override func accessibilityPerformEscape() -> Bool {
+        navigationController?.popViewControllerAnimated(false)
+        return true
+    }
 }

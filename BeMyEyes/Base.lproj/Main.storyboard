@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pPv-pk-tQL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pPv-pk-tQL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -25,13 +25,13 @@
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your role?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-NR-WpR">
-                                <rect key="frame" x="15" y="247.5" width="290" height="19.5"/>
+                                <rect key="frame" x="15" y="247" width="290" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmg-sQ-kOY" userLabel="Community Stats View">
-                                <rect key="frame" x="15" y="0.0" width="290" height="71.5"/>
+                                <rect key="frame" x="15" y="0.0" width="290" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Be My Eyes Network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlY-08-fhH">
                                         <rect key="frame" x="0.0" y="5" width="290" height="17"/>
@@ -50,7 +50,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voN-tL-YkH" userLabel="Sighted">
-                                        <rect key="frame" x="31" y="27" width="66" height="44.5"/>
+                                        <rect key="frame" x="31" y="27" width="66" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="421k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kz3-fb-tJr" userLabel="42k" customClass="BMEPointLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="66" height="36"/>
@@ -62,7 +62,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sighted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-r0-eEf" userLabel="Sighted">
-                                                <rect key="frame" x="0.0" y="31" width="66" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="31" width="66" height="14"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <bool key="isElement" value="NO"/>
                                                 </accessibility>
@@ -83,17 +83,17 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dM-tL-aO5" userLabel="Separator 2">
-                                        <rect key="frame" x="97" y="47" width="15.5" height="5"/>
+                                        <rect key="frame" x="97" y="47" width="15" height="5"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="BTs-jS-oJY"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BS6-su-hfO" userLabel="Blind">
-                                        <rect key="frame" x="112" y="27" width="65.5" height="44.5"/>
+                                        <rect key="frame" x="112" y="27" width="66" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="512" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-R4-9bG" customClass="BMEPointLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="66" height="36"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <bool key="isElement" value="NO"/>
                                                 </accessibility>
@@ -102,7 +102,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-2Q-gty">
-                                                <rect key="frame" x="0.0" y="31" width="65.5" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="31" width="66" height="14"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <bool key="isElement" value="NO"/>
                                                 </accessibility>
@@ -130,7 +130,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rz-TP-5dg" userLabel="Helped">
-                                        <rect key="frame" x="193" y="27" width="66" height="44.5"/>
+                                        <rect key="frame" x="193" y="27" width="66" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXJ-n1-HIU" customClass="BMEPointLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="66" height="36"/>
@@ -142,7 +142,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRX-sl-5ha">
-                                                <rect key="frame" x="0.0" y="31" width="66" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="31" width="66" height="14"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <bool key="isElement" value="NO"/>
                                                 </accessibility>
@@ -202,10 +202,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ag-KE-c4b" userLabel="Logo Wrapper">
-                                <rect key="frame" x="0.0" y="71" width="320" height="176.5"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="175"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNI-8U-fEM" userLabel="Logo Container">
-                                        <rect key="frame" x="0.0" y="25" width="320" height="127"/>
+                                        <rect key="frame" x="0.0" y="24" width="320" height="127"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoNoTextWhite" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-ka-v6O">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="69"/>
@@ -939,7 +939,7 @@
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuU-AT-9Ye">
-                                <rect key="frame" x="-0.5" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -953,7 +953,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVa-7a-H1F" customClass="LightBlueOverlayViewReverse" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.5" y="0.5" width="319" height="80.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-cS-zkf">
@@ -972,7 +972,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-ws-91N" customClass="DarkBlueOverlayView" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="419" width="320" height="60.5"/>
+                                <rect key="frame" x="0.0" y="419" width="320" height="61"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osh-d7-3mB" customClass="BMEButtonImageToRight">
@@ -1060,13 +1060,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Become a part of the network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taG-tn-K8A">
-                                <rect key="frame" x="15" y="81" width="290" height="130"/>
+                                <rect key="frame" x="15" y="81" width="290" height="129"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Duu-to-o9F" userLabel="Facebook" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="211" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="210" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
@@ -1083,7 +1083,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-eT-VL6" userLabel="E-mail" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="286" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="285" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
@@ -1100,7 +1100,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="By continuing you accept the" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wM-z3-EP5">
-                                <rect key="frame" x="15" y="396" width="290" height="14.5"/>
+                                <rect key="frame" x="15" y="395" width="290" height="15"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -1109,7 +1109,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Terms and Agreements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvx-U1-YpW">
-                                <rect key="frame" x="15" y="411" width="290" height="19.5"/>
+                                <rect key="frame" x="15" y="410" width="290" height="20"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -1118,7 +1118,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkb-Ab-ezV" userLabel="Terms Button">
-                                <rect key="frame" x="0.0" y="391" width="320" height="44.5"/>
+                                <rect key="frame" x="0.0" y="390" width="320" height="45"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1133,7 +1133,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="as well as the" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFF-B2-BZA">
-                                <rect key="frame" x="15" y="440" width="290" height="14.5"/>
+                                <rect key="frame" x="15" y="440" width="290" height="15"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -1142,7 +1142,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-rC-Tmf">
-                                <rect key="frame" x="15" y="455" width="290" height="19.5"/>
+                                <rect key="frame" x="15" y="455" width="290" height="20"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -1277,9 +1277,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DQB-vd-Nyq">
-                                <rect key="frame" x="15" y="0.0" width="290" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="398"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="52"/>
-                                <state key="normal" title="Connect to community">
+                                <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <state key="normal" title="Connect to first available helper">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1287,22 +1288,204 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <action selector="connectToCommunityButtonPressed:" destination="tm6-3P-dXI" eventType="touchUpInside" id="xYw-VK-RwG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVe-nH-SIl" userLabel="Community Stats View">
+                                <rect key="frame" x="0.0" y="398" width="320" height="81.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Be My Eyes Network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaF-6x-DRZ">
+                                        <rect key="frame" x="0.0" y="5" width="320" height="17"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fra-zQ-yBq" userLabel="Separator 1">
+                                        <rect key="frame" x="0.0" y="47" width="41" height="5"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="tOI-Da-0Nk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TA-Du-nqY" userLabel="Sighted">
+                                        <rect key="frame" x="41" y="27" width="66" height="44.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="421k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHO-hf-tdb" userLabel="42k" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="66" height="36"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sighted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISa-e7-iku" userLabel="Sighted">
+                                                <rect key="frame" x="0.0" y="31" width="66" height="13.5"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ISa-e7-iku" secondAttribute="trailing" id="1FJ-N7-M0W"/>
+                                            <constraint firstItem="ISa-e7-iku" firstAttribute="top" secondItem="OHO-hf-tdb" secondAttribute="bottom" constant="-5" id="1nM-tG-Fuw"/>
+                                            <constraint firstItem="OHO-hf-tdb" firstAttribute="leading" secondItem="4TA-Du-nqY" secondAttribute="leading" id="GYF-ac-Qnu"/>
+                                            <constraint firstItem="ISa-e7-iku" firstAttribute="leading" secondItem="4TA-Du-nqY" secondAttribute="leading" id="l1r-bH-MaN"/>
+                                            <constraint firstAttribute="bottom" secondItem="ISa-e7-iku" secondAttribute="bottom" id="mWO-sc-4QI"/>
+                                            <constraint firstItem="OHO-hf-tdb" firstAttribute="top" secondItem="4TA-Du-nqY" secondAttribute="top" id="vwZ-xj-Tnh"/>
+                                            <constraint firstAttribute="trailing" secondItem="OHO-hf-tdb" secondAttribute="trailing" id="wvd-ja-Gea"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EB3-Hs-pVj" userLabel="Separator 2">
+                                        <rect key="frame" x="107" y="47" width="20.5" height="5"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="pPp-TS-DGW"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEv-EF-bcS" userLabel="Blind">
+                                        <rect key="frame" x="127" y="27" width="65.5" height="44.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="512" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGD-lW-24Y" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="36"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frc-eU-icy">
+                                                <rect key="frame" x="0.0" y="31" width="65.5" height="13.5"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="mGD-lW-24Y" firstAttribute="leading" secondItem="wEv-EF-bcS" secondAttribute="leading" id="31y-nj-0pn"/>
+                                            <constraint firstItem="Frc-eU-icy" firstAttribute="top" secondItem="mGD-lW-24Y" secondAttribute="bottom" constant="-5" id="3PJ-Ad-o3E"/>
+                                            <constraint firstAttribute="trailing" secondItem="mGD-lW-24Y" secondAttribute="trailing" id="5iC-KA-ozW"/>
+                                            <constraint firstAttribute="bottom" secondItem="Frc-eU-icy" secondAttribute="bottom" id="CJ4-dm-tjV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Frc-eU-icy" secondAttribute="trailing" id="Ii9-8C-nK7"/>
+                                            <constraint firstItem="Frc-eU-icy" firstAttribute="leading" secondItem="wEv-EF-bcS" secondAttribute="leading" id="aWv-No-0Z6"/>
+                                            <constraint firstItem="mGD-lW-24Y" firstAttribute="top" secondItem="wEv-EF-bcS" secondAttribute="top" id="oef-an-1Zz"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIc-4h-jhx" userLabel="Separator 3">
+                                        <rect key="frame" x="193" y="47" width="20" height="5"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="ELa-FJ-fuq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2EI-XV-uAP" userLabel="Helped">
+                                        <rect key="frame" x="213" y="27" width="66" height="44.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0I-as-A8f" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="66" height="36"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpY-Tm-5WY">
+                                                <rect key="frame" x="0.0" y="31" width="66" height="13.5"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="c0I-as-A8f" secondAttribute="trailing" id="5LF-MJ-k3f"/>
+                                            <constraint firstAttribute="trailing" secondItem="MpY-Tm-5WY" secondAttribute="trailing" id="78S-iw-mxW"/>
+                                            <constraint firstItem="c0I-as-A8f" firstAttribute="top" secondItem="2EI-XV-uAP" secondAttribute="top" id="DOe-wb-DA4"/>
+                                            <constraint firstItem="c0I-as-A8f" firstAttribute="leading" secondItem="2EI-XV-uAP" secondAttribute="leading" id="GxC-xN-iTM"/>
+                                            <constraint firstAttribute="bottom" secondItem="MpY-Tm-5WY" secondAttribute="bottom" id="TeX-pZ-Aq6"/>
+                                            <constraint firstItem="MpY-Tm-5WY" firstAttribute="leading" secondItem="2EI-XV-uAP" secondAttribute="leading" id="aqU-oG-QXD"/>
+                                            <constraint firstItem="MpY-Tm-5WY" firstAttribute="top" secondItem="c0I-as-A8f" secondAttribute="bottom" constant="-5" id="svP-8c-uDx"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbl-r9-EPK" userLabel="Separator 4">
+                                        <rect key="frame" x="279" y="47" width="41" height="5"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="7nq-EH-xis"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" summaryElement="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yaF-6x-DRZ" secondAttribute="trailing" id="0ek-27-SQg"/>
+                                    <constraint firstItem="fra-zQ-yBq" firstAttribute="width" secondItem="Nbl-r9-EPK" secondAttribute="width" id="0ug-Li-b1l"/>
+                                    <constraint firstItem="fra-zQ-yBq" firstAttribute="width" secondItem="EB3-Hs-pVj" secondAttribute="width" multiplier="2" id="5w2-dv-QIs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nbl-r9-EPK" secondAttribute="trailing" id="7wD-yb-KmP"/>
+                                    <constraint firstItem="2EI-XV-uAP" firstAttribute="top" secondItem="mGD-lW-24Y" secondAttribute="top" id="8zT-AF-9xh"/>
+                                    <constraint firstItem="EB3-Hs-pVj" firstAttribute="width" secondItem="fIc-4h-jhx" secondAttribute="width" id="AGW-yx-ZQg"/>
+                                    <constraint firstItem="fra-zQ-yBq" firstAttribute="centerY" secondItem="Nbl-r9-EPK" secondAttribute="centerY" id="NKX-Xa-n0k"/>
+                                    <constraint firstItem="wEv-EF-bcS" firstAttribute="leading" secondItem="EB3-Hs-pVj" secondAttribute="trailing" id="NiM-fL-OdX"/>
+                                    <constraint firstItem="fra-zQ-yBq" firstAttribute="leading" secondItem="VVe-nH-SIl" secondAttribute="leading" id="PCV-it-4lK"/>
+                                    <constraint firstItem="EB3-Hs-pVj" firstAttribute="leading" secondItem="4TA-Du-nqY" secondAttribute="trailing" id="SBt-jM-MIX"/>
+                                    <constraint firstItem="4TA-Du-nqY" firstAttribute="width" secondItem="wEv-EF-bcS" secondAttribute="width" id="Sau-VB-cT8"/>
+                                    <constraint firstItem="fIc-4h-jhx" firstAttribute="leading" secondItem="wEv-EF-bcS" secondAttribute="trailing" id="WKu-A7-QfO"/>
+                                    <constraint firstItem="fra-zQ-yBq" firstAttribute="centerY" secondItem="EB3-Hs-pVj" secondAttribute="centerY" id="aCS-MU-DoZ"/>
+                                    <constraint firstItem="yaF-6x-DRZ" firstAttribute="leading" secondItem="VVe-nH-SIl" secondAttribute="leading" id="b5K-Rw-Zff"/>
+                                    <constraint firstItem="fra-zQ-yBq" firstAttribute="centerY" secondItem="4TA-Du-nqY" secondAttribute="centerY" id="cQi-zd-mSA"/>
+                                    <constraint firstAttribute="bottom" secondItem="4TA-Du-nqY" secondAttribute="bottom" constant="10" id="dXN-NH-kzT"/>
+                                    <constraint firstItem="yaF-6x-DRZ" firstAttribute="top" secondItem="VVe-nH-SIl" secondAttribute="top" constant="5" id="gym-xH-IzQ"/>
+                                    <constraint firstItem="fra-zQ-yBq" firstAttribute="centerY" secondItem="fIc-4h-jhx" secondAttribute="centerY" id="k2E-f0-5I8"/>
+                                    <constraint firstItem="OHO-hf-tdb" firstAttribute="top" secondItem="wEv-EF-bcS" secondAttribute="top" id="p1g-aE-mOT"/>
+                                    <constraint firstItem="4TA-Du-nqY" firstAttribute="width" secondItem="2EI-XV-uAP" secondAttribute="width" id="rxn-cS-A6y"/>
+                                    <constraint firstItem="2EI-XV-uAP" firstAttribute="leading" secondItem="fIc-4h-jhx" secondAttribute="trailing" id="u4c-WF-UnZ"/>
+                                    <constraint firstItem="4TA-Du-nqY" firstAttribute="top" secondItem="yaF-6x-DRZ" secondAttribute="bottom" constant="5" id="u7J-mF-p52"/>
+                                    <constraint firstItem="Nbl-r9-EPK" firstAttribute="leading" secondItem="2EI-XV-uAP" secondAttribute="trailing" id="vat-rS-8mH"/>
+                                    <constraint firstItem="4TA-Du-nqY" firstAttribute="leading" secondItem="fra-zQ-yBq" secondAttribute="trailing" id="y4A-3b-ngu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1803921568627451" green="0.45098039215686275" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Srd-lE-AKK" firstAttribute="top" secondItem="DQB-vd-Nyq" secondAttribute="bottom" id="2qB-8s-zGM"/>
                             <constraint firstItem="DQB-vd-Nyq" firstAttribute="top" secondItem="zhv-3s-ib2" secondAttribute="bottom" constant="-20" id="Esd-Dq-peb"/>
+                            <constraint firstItem="VVe-nH-SIl" firstAttribute="top" secondItem="DQB-vd-Nyq" secondAttribute="bottom" id="FHY-oU-3HJ"/>
+                            <constraint firstItem="VVe-nH-SIl" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" id="HeC-A3-nuV"/>
                             <constraint firstAttribute="trailing" secondItem="BrI-At-32f" secondAttribute="trailing" id="Io2-bx-lc8"/>
-                            <constraint firstAttribute="trailing" secondItem="DQB-vd-Nyq" secondAttribute="trailing" constant="15" id="TFQ-KC-ekf"/>
+                            <constraint firstAttribute="trailing" secondItem="DQB-vd-Nyq" secondAttribute="trailing" id="TFQ-KC-ekf"/>
+                            <constraint firstAttribute="trailing" secondItem="VVe-nH-SIl" secondAttribute="trailing" id="bt9-Zg-05L"/>
+                            <constraint firstItem="Srd-lE-AKK" firstAttribute="top" secondItem="VVe-nH-SIl" secondAttribute="bottom" id="dbp-hJ-a9I"/>
                             <constraint firstItem="BrI-At-32f" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" id="iO6-2L-JfF"/>
                             <constraint firstItem="Srd-lE-AKK" firstAttribute="bottom" secondItem="BrI-At-32f" secondAttribute="bottom" id="q3v-tb-niV"/>
-                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" constant="15" id="wWq-aA-fyy"/>
+                            <constraint firstItem="DQB-vd-Nyq" firstAttribute="leading" secondItem="l5O-Mo-SKL" secondAttribute="leading" id="wWq-aA-fyy"/>
                             <constraint firstItem="BrI-At-32f" firstAttribute="top" secondItem="l5O-Mo-SKL" secondAttribute="top" id="zXZ-Pf-AdH"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="communityStatsLabel" destination="yaF-6x-DRZ" id="V8h-41-o09"/>
+                        <outlet property="communityStatsView" destination="VVe-nH-SIl" id="dKK-G6-knT"/>
                         <outlet property="connectToCommunityButton" destination="DQB-vd-Nyq" id="swz-Ee-N2b"/>
+                        <outlet property="descriptionCommunityBlindLabel" destination="Frc-eU-icy" id="QBn-go-CDB"/>
+                        <outlet property="descriptionCommunityHelpedLabel" destination="MpY-Tm-5WY" id="ZHb-vy-dT6"/>
+                        <outlet property="descriptionCommunitySightedLabel" destination="ISa-e7-iku" id="Deu-IF-AgD"/>
+                        <outlet property="pointsCommunityBlindLabel" destination="mGD-lW-24Y" id="8vW-qf-iRx"/>
+                        <outlet property="pointsCommunityHelpedLabel" destination="c0I-as-A8f" id="ZAp-hb-10i"/>
+                        <outlet property="pointsCommunitySightedLabel" destination="OHO-hf-tdb" id="aAF-ef-Qxz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt2-1B-bf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1345,7 +1528,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AN-ix-uS6" userLabel="Helped persons">
-                                            <rect key="frame" x="8" y="210" width="142" height="68"/>
+                                            <rect key="frame" x="8" y="211" width="142" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Jb-0ah" customClass="BMEPointLabel">
                                                     <rect key="frame" x="0.0" y="0.0" width="142" height="60"/>
@@ -1373,7 +1556,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L93-LG-eip" userLabel="Total points">
-                                            <rect key="frame" x="170" y="210" width="142" height="68"/>
+                                            <rect key="frame" x="170" y="211" width="142" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-OD-NO6" customClass="BMEPointLabel">
                                                     <rect key="frame" x="0.0" y="0.0" width="142" height="60"/>
@@ -1407,10 +1590,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pl8-pe-Xnt" userLabel="User type + level">
-                                            <rect key="frame" x="108" y="186" width="103.5" height="14"/>
+                                            <rect key="frame" x="108" y="187" width="104" height="14"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Helper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDk-Fp-G2F">
-                                                    <rect key="frame" x="28" y="-2" width="75.5" height="17"/>
+                                                    <rect key="frame" x="28" y="-2" width="76" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1467,20 +1650,20 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w7A-4Z-ko9" id="LlA-uW-b6t">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Helped one person" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-5i-7OK">
-                                                    <rect key="frame" x="15" y="8" width="138.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="Helped one person" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-5i-7OK">
+                                                    <rect key="frame" x="15" y="8" width="139" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+50 points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrm-bE-OmT">
-                                                    <rect key="frame" x="226" y="8" width="78.5" height="19.5"/>
+                                                    <rect key="frame" x="226" y="8" width="79" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx2-YA-dhW">
-                                                    <rect key="frame" x="15" y="28" width="50.5" height="13.5"/>
+                                                    <rect key="frame" x="15" y="28" width="51" height="13"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2089,13 +2272,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English, Danish" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyH-yG-Xzl">
-                                <rect key="frame" x="119" y="212" width="185.5" height="44"/>
+                                <rect key="frame" x="120" y="212" width="185" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-zV-1XX">
-                                <rect key="frame" x="119" y="256" width="185.5" height="44"/>
+                                <rect key="frame" x="120" y="256" width="185" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Add languages">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2113,7 +2296,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Languages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-6z-am3">
-                                <rect key="frame" x="15" y="212" width="89.5" height="44"/>
+                                <rect key="frame" x="15" y="212" width="90" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -2122,7 +2305,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwZ-op-hZv">
-                                <rect key="frame" x="15" y="301" width="289.5" height="44"/>
+                                <rect key="frame" x="15" y="301" width="290" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Give feedback on the app">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2133,7 +2316,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nom-F8-SPu">
-                                <rect key="frame" x="103" y="20" width="113.5" height="50"/>
+                                <rect key="frame" x="103" y="20" width="114" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2155,7 +2338,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJV-uE-7uS">
-                                <rect key="frame" x="15" y="80" width="89.5" height="44"/>
+                                <rect key="frame" x="15" y="80" width="90" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -2167,7 +2350,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3d-mk-uwU">
-                                <rect key="frame" x="15" y="124" width="89.5" height="44"/>
+                                <rect key="frame" x="15" y="124" width="90" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -2176,7 +2359,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvj-Dw-BPc">
-                                <rect key="frame" x="15" y="168" width="89.5" height="44"/>
+                                <rect key="frame" x="15" y="168" width="90" height="44"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -2185,7 +2368,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Paul" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IH7-YW-7ZL">
-                                <rect key="frame" x="119" y="80" width="185.5" height="44"/>
+                                <rect key="frame" x="120" y="80" width="185" height="44"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
@@ -2200,7 +2383,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="McCartney" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24Y-Oq-jej">
-                                <rect key="frame" x="119" y="124" width="185.5" height="44"/>
+                                <rect key="frame" x="120" y="124" width="185" height="44"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
@@ -2215,7 +2398,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="demomail@bemyeyes.org" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-aF-32C">
-                                <rect key="frame" x="119" y="168" width="185.5" height="44"/>
+                                <rect key="frame" x="120" y="168" width="185" height="44"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
@@ -2229,8 +2412,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <outlet property="delegate" destination="MrC-au-WgT" id="vSt-az-DDA"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0 (2)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-Qn-2Ma">
-                                <rect key="frame" x="225" y="443" width="79.5" height="15.5"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.2 (43)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-Qn-2Ma">
+                                <rect key="frame" x="218" y="442" width="87" height="16"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -3183,8 +3366,8 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="THh-yj-HlV"/>
+        <segue reference="46J-Mt-BiQ"/>
         <segue reference="tPL-wK-r0M"/>
-        <segue reference="kdn-ps-MZv"/>
+        <segue reference="Zkk-7c-PpU"/>
     </inferredMetricsTieBreakers>
 </document>

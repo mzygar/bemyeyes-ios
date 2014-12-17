@@ -10,4 +10,9 @@
 
 @implementation BMEIntroViewController
 
+- (BOOL)accessibilityPerformEscape {
+    [self.navigationController popViewControllerAnimated:NO];
+    return YES;
+}
+
 @end

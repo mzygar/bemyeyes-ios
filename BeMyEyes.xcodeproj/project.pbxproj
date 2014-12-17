@@ -808,8 +808,8 @@
 		7262301918BA3B49006F388C /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
+				4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */,
 				72DA826F18D46C6A001F3312 /* BMEAppDelegateLocalizationTable.strings */,
-				4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */,
 				72856DEA19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings */,
 				72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */,
 				72B1493818DF686600E9A8A9 /* BMECallLocalizationTable.strings */,
@@ -817,6 +817,7 @@
 				72856DDE19AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings */,
 				72856DE719AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings */,
 				72A7676D1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings */,
+				4E6544841A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings */,
 				72414AF8196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings */,
 				72E65F9F18BA7A4E002FB2E0 /* BMELoginLocalizationTable.strings */,
 				72414AFB196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings */,
@@ -830,9 +831,8 @@
 				72A767701902A5F4003121C4 /* BMESnoozeRelativeDateLocalizationTable.strings */,
 				72856DF019AF75420027AFF5 /* BMETermsLocalizationTable.strings */,
 				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
-				4EB46C4619F080FE008405B8 /* BMEAccessLocalization.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
-				4E6544841A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings */,
+				4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";

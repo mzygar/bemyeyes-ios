@@ -385,7 +385,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_
 
  * All translations:
 
- * @b da@: "Åben indstillinger"
+ * @b da@: "Åbn indstillinger"
 
  * @b en@: "Open settings"
 
@@ -1173,13 +1173,13 @@ static NSString * const BME_HELPER_INTRO_CONTINUE = @"BME_HELPER_INTRO_CONTINUE"
 static NSString * const BME_HELPER_INTRO_HEADLINE = @"BME_HELPER_INTRO_HEADLINE";
 
 /*!
- * "Help whenever you want, wherever you want."
+ * "Help whenever you want, wherever you are."
 
  * All translations:
 
- * @b da@: "Hjælp når du vil, uanset hvor du ønsker."
+ * @b da@: "Hjælp når du vil, uanset hvor du er."
 
- * @b en@: "Help whenever you want, wherever you want."
+ * @b en@: "Help whenever you want, wherever you are."
 
  */
 static NSString * const BME_HELPER_INTRO_SHORT_DESCRIPTION = @"BME_HELPER_INTRO_SHORT_DESCRIPTION";
