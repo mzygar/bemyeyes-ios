@@ -14,6 +14,7 @@
 #import "BMEUser.h"
 #import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
+#import "BMEForgotPasswordViewController.h"
 
 @interface BMELoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -65,6 +66,13 @@
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
 {
     return self.scrollViewHelper.preferredStatusBarUpdateAnimation;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[BMEForgotPasswordViewController class]]) {
+        BMEForgotPasswordViewController *viewController = (BMEForgotPasswordViewController *)segue.destinationViewController;
+        [viewController prepopulateWithEmail:self.emailTextField.text];
+    }
 }
 
 #pragma mark -

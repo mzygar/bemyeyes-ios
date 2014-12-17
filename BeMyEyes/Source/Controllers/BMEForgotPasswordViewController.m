@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet Button *sendPasswordButton;
 @property (strong, nonatomic) BMEScrollViewTextFieldHelper *scrollViewHelper;
+@property (strong, nonatomic) NSString *prepopulatingEmail;
 @end
 
 @implementation BMEForgotPasswordViewController
@@ -33,6 +34,7 @@
     [MKLocalization registerForLocalization:self];
     
     self.scrollViewHelper = [[BMEScrollViewTextFieldHelper alloc] initWithScrollview:self.scrollView inViewController:self];
+    self.emailTextField.text = self.prepopulatingEmail;
 }
 
 - (void)shouldLocalize {
@@ -54,6 +56,15 @@
 {
     return self.scrollViewHelper.preferredStatusBarUpdateAnimation;
 }
+
+
+#pragma mark - Public Methods
+
+- (void)prepopulateWithEmail:(NSString *)email {
+    self.prepopulatingEmail = email;
+    self.emailTextField.text = self.prepopulatingEmail;
+}
+
 
 #pragma mark -
 #pragma mark Private Methods

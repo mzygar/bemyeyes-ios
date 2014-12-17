@@ -10,4 +10,6 @@
 
 @interface BMEForgotPasswordViewController : BMEBaseViewController <MKLocalizable>
 
+- (void)prepopulateWithEmail:(NSString *)email;
+
 @end
