@@ -107,7 +107,10 @@
     [[BMEClient sharedClient] sendNewPasswordToEmail:email completion:^(BOOL success, NSError *error) {
         [progressOverlayView hide:YES];
         
-        if (error && [error code] != BMEClientErrorUserNotFound && [error code] != BMEClientErrorNotPermitted) {
+        BOOL hasError = error != nil;
+        BOOL userNotFound = error.code == BMEClientErrorUserNotFound;
+        BOOL notPermitted = [error code] != BMEClientErrorNotPermitted;
+        if (hasError && !userNotFound && !notPermitted) {
             NSString *title = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_TITLE, BMEForgotPasswordLocalizationTable);
             NSString *message = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_MESSAGE, BMEForgotPasswordLocalizationTable);
             NSString *cancelButton = MKLocalizedFromTable(BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_CANCEL, BMEForgotPasswordLocalizationTable);
