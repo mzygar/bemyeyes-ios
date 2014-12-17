@@ -136,9 +136,16 @@ static NSString *const videoSegueIdentifier = @"Video";
 
 - (IBAction)feedbackButtonPressed:(id)sender {
     NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    NSString *appVersionText = MKLocalizedFromTableWithFormat(BME_SETTINGS_VERSION_TITLE, BMESettingsLocalizationTable, [self versionString]);
+    if ([GVUserDefaults standardUserDefaults].api == BMESettingsAPIDevelopment) {
+        appVersionText = [appVersionText stringByAppendingString:@" Alpha"];
+    } else if ([GVUserDefaults standardUserDefaults].api == BMESettingsAPIStaging) {
+        appVersionText = [appVersionText stringByAppendingString:@" Beta"];
+    }
     NSString *hardwareModel = [UIDevice currentDevice].model;
     NSString *systemVersion = [UIDevice currentDevice].systemVersion;
-    NSString *initialBody = [NSString stringWithFormat:@"\n———\n%@ %@\n%@\niOS %@", appName, [self versionString], hardwareModel, systemVersion];
+    NSString *initialBody = [NSString stringWithFormat:@"\n———\n%@ %@\n%@\niOS %@", appName, appVersionText, hardwareModel, systemVersion];
+    
     MFMailComposeViewController *mailComposeController = [MFMailComposeViewController new];
     mailComposeController.mailComposeDelegate = self;
     [mailComposeController setToRecipients:@[ BMEFeedbackRecipientEmail ]];
