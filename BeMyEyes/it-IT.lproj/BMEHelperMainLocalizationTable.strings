@@ -1,0 +1,87 @@
+/* Headline of snooze */
+"BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Posticipa";
+
+/* Format for snooze status text. %@ is replaced with the snooze amount. */
+"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Stai posticipando il prossimo %@";
+
+/* Point description */
+"BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION" = "Persone aiutate";
+
+/* Point total description */
+"BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION" = "Totale Punti";
+
+/* Level new helper */
+"BME_HELPER_MAIN_LEVEL_NEW_HELPER" = "Aiutante Principiante";
+
+/* Level promising helper */
+"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "Aiutante Promettente";
+
+/* Level trusted helper */
+"BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER" = "Aiutante Fidato";
+
+/* Level expert helper */
+"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Aiutante Esperto";
+
+/* Level master helper */
+"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Aiutante Professionista";
+
+/* Level points to next level description */
+"BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d punti al prossimo livello";
+
+/* Points signup description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Iscrizione avvenuta con successo";
+
+/* Points answer push message description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION" = "Tentativo di aiuto";
+
+/* Points answer push message techinal error description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION" = "Tentativo di aiuto";
+
+/* Points finish helping request description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Ha aiutato un non vedente";
+
+/* Points finish 10 helping requests in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION" = "10 aiuti in una settimana";
+
+/* Points finish 5 high fives in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION" = "5 \"Dammi il cinque\" nella settimana";
+
+/* Points share on twitter description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Condiviso su Twitter";
+
+/* Points share on facebook description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Condiviso su Facebook";
+
+/* Points watch video description */
+"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "VIdeo guardato";
+
+/* Task share on twitter description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION" = "Condividi su Twitter";
+
+/* Task share on facebook description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION" = "Condividi su Facebook";
+
+/* Task watch video description */
+"BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION" = "Guarda il video";
+
+/* Community network description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "La rete di Be My Eyes";
+
+/* Community network sighted description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED" = "Vedente";
+
+/* Community network blind description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND" = "Non vedente";
+
+/* Community network helped description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED" = "Aiutato";
+
+/* Message shown when the point could not be loaded */
+"BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Impossibile caricare il punto";
+
+/* Title of button for retrying loading point when failed */
+"BME_HELPER_MAIN_RETRY_LOADING_POINT" = "Riprova";
+
+/* Snooze status text when not snoozing */
+"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "Attualmente sei attivo";
+

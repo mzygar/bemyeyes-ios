@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Setări";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Prenume";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Numele de familie";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "Email";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Limbi";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "adaugă limbi";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Oferă feedback aplicației";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Deconectaţi-vă";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Nu a-ți fost deconectat. Asiguraţi-vă că aveţi o conexiune la internet activă şi încercaţi din nou.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Nu s-a putut deconecta";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Logare afară...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Versiunea %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Înapoi";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "%d puncte";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Finalizat";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Ajută o persoană nevăzătoare să vadă cu aplicația #BeMyEyes - aplicația care conectează oamenii cu deficienţe de vedere cu persoane văzătoare!";
+

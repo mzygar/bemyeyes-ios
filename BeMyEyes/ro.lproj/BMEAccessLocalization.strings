@@ -1,0 +1,33 @@
+/* 
+  BMEAccessLocalization.strings
+  BeMyEyes
+  Created by Tobias DM on 17/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Introductory message for access for notifications, microphone and camera */
+"BME_ACCESS_INTRO_MESSAGE" = "Vă rugăm să activați următoarele pentru a avea access deplin in rețeaua Be My Eyes ";
+
+/* Title for notifications */
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "NOTIFICĂRI";
+
+/* Explanation for why the helper needs to enable notifications */
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Atunci când o persoană nevăzătoare va avea nevoie de ajutorul dumneavoastră, vă vom notifica despre apel.";
+
+/* Title for microphone */
+"BME_ACCESS_MICROPHONE_TITLE" = "Microfon";
+
+/* Explanation for why the helper needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Pentru a putea vorbi și ghida persoana nevăzătoare";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Pentru a putea explica problema ta celui ce te va ajuta.";
+
+/* Title for camera */
+"BME_ACCESS_CAMERA_TITLE" = "Mod Cameră";
+
+/* Explanation for why the helper needs to enable camera access */
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Nu trimitem video-ul persoanei pe care o ajuți, dar este nevoie de video pentru a stabili conexiunea.";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Pentru a putea explica celui ce te ajută problemele pe care dorești să le rezolvi. ";
+

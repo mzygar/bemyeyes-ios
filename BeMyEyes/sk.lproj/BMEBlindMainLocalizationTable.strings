@@ -1,0 +1,15 @@
+/* Title of connect to community button */
+"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Pripojiť k prvému pomocníkovi, ktoré je k dispozícii. ";
+
+/* Cancel in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+
+/* Message in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Žiadosť sa nevytvorila. Prosím skúste to znova.";
+
+/* Title in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Zlyhalo vytvorenie žiadosti";
+
+/* Title in hud shown when creating request */
+"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Vytváranie žiadosti...";
+

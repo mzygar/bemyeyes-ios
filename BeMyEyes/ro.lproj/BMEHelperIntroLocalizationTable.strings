@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Înapoi";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Continuați";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Este ușor să ajuți!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Ajuți ori de câte ori dorești, oriunde te-ai afla.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Telefonul tău este deschis pentru apeluri de la persoanele care au nevoie de ajutor, când ești autentificat.";
+

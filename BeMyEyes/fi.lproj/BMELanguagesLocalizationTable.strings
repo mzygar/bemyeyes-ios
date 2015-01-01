@@ -1,0 +1,12 @@
+/* Title */
+"BME_LANGUAGES_TITLE" = "Kielesi";
+
+/* Title of cancel button in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "OK";
+
+/* MEssage in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "Kieliä ei voitu tallentaa. Yritä myöhemmin uudelleen.";
+
+/* Title in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "Tallentaminen ei onnistunut";
+

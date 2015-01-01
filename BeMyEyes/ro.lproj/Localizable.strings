@@ -1,0 +1,12 @@
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE" = "%@ are nevoie de ajutorul dumneavoastră! Săriți peste sau apăsați pentru a răspunde.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE" = "%@ a anulat cererea.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE" = "Cererea de %@ a fost răspunsă.";
+
+/* Title of button in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION" = "Răspuns";
+

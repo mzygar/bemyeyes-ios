@@ -1,0 +1,12 @@
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE" = "%@ potrebuje Vašu pomoc! Potiahnite prstom alebo ťuknite na tlačidlo odpovedať.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE" = "%@ zrušil požiadavku.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE" = "Žiadosť od %@ bola zodpovedaná.";
+
+/* Title of button in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION" = "Odpovedať";
+
