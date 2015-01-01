@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Nastavení";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Křestní Jméno";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Příjmení";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-mail";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Jazyky";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Přidat jazyky";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Názor na aplikaci";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Odhlásit se";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "Ok";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Nebyli jste odhlášen. Přesvědčte se, zda máte aktivní připojení k internetu a opakujte akci.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Nelze odhlásit";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Odhlášení...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Verze %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Zpět";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "%d bodů";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Dokončeno";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Pomáhejte nevidomemu člověku vidět s #BeMyEyes - aplikace, která spojuje slepé lidé s vidicími pomocníky!";
+

@@ -1,0 +1,87 @@
+/* Headline of snooze */
+"BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Odložit";
+
+/* Format for snooze status text. %@ is replaced with the snooze amount. */
+"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Odkládate další %@";
+
+/* Point description */
+"BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION" = "Lidé, kterým bylo pomoženo";
+
+/* Point total description */
+"BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION" = "Bodů celkem";
+
+/* Level new helper */
+"BME_HELPER_MAIN_LEVEL_NEW_HELPER" = "Nový pomocník";
+
+/* Level promising helper */
+"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "Slibný pomocník";
+
+/* Level trusted helper */
+"BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER" = "Důvěryhodný pomocník";
+
+/* Level expert helper */
+"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Pomocník Expert";
+
+/* Level master helper */
+"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Pomocník Majster";
+
+/* Level points to next level description */
+"BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d bodů do další úrovně";
+
+/* Points signup description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Úspěšná registrace";
+
+/* Points answer push message description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION" = "Pokusit o pomoc";
+
+/* Points answer push message techinal error description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION" = "Pokusit o pomoc";
+
+/* Points finish helping request description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Pomohl nevidomému";
+
+/* Points finish 10 helping requests in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION" = "Pomáhl 10 za týden";
+
+/* Points finish 5 high fives in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION" = "5 dej na to v týdnu";
+
+/* Points share on twitter description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Sdílel na Twitteru";
+
+/* Points share on facebook description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Sdílel na Facebooku";
+
+/* Points watch video description */
+"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Sledoval video";
+
+/* Task share on twitter description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION" = "Sdílet na Twitteru";
+
+/* Task share on facebook description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION" = "Sdílet na Facebooku";
+
+/* Task watch video description */
+"BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION" = "Přehrát video";
+
+/* Community network description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "Síť Be My Eyes";
+
+/* Community network sighted description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED" = "Vidíci ";
+
+/* Community network blind description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND" = "Nevidomý";
+
+/* Community network helped description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED" = "Pomohl";
+
+/* Message shown when the point could not be loaded */
+"BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Nelze načíst bod";
+
+/* Title of button for retrying loading point when failed */
+"BME_HELPER_MAIN_RETRY_LOADING_POINT" = "Zkusit znovu";
+
+/* Snooze status text when not snoozing */
+"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "Ste aktívny";
+
