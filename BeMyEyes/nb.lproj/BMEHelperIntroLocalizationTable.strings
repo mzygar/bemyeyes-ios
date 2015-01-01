@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Tilbake";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Fortsett";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Det er lett å hjelpe!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Hjelp når du vil, uansett hvor du er.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Telefonen din er åpen for samtaler fra personer som trenger hjelp når du er logget inn.";
+

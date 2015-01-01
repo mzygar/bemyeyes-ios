@@ -1,0 +1,15 @@
+/* App name. Please don't translate this. */
+"BME_FRONT_PAGE_APP_NAME" = "Be My Eyes";
+
+/* Asking the user to choose if he is sighted or blind */
+"BME_FRONT_PAGE_ASK_FOR_ROLE" = "Hva er din rolle?";
+
+/* Title for choosing sighted role */
+"BME_FRONT_PAGE_SIGHTED_ROLE" = "Jeg er seende";
+
+/* Title for choosing blind role */
+"BME_FRONT_PAGE_BLIND_ROLE" = "Jeg er blind";
+
+/* Log in button, if the user is already registered */
+"BME_FRONT_PAGE_ALREADY_REGISTERED" = "Allerede registrert? Logg på her.";
+

@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Innstillinger";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Fornavn";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Etternavn";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-post";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Språk";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Legg til språk";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Gi tilbakemeldinger på appen";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Logg ut";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Du ble ikke logget ut. Vennligst forsikre deg om at du er koblet til internett og prøv igjen.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Kunne ikke logge ut";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Logger ut...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Versjon %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Tilbake";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d poeng";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Fullført";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Hjelp en blind person å se med #BeMyEyes appen - appen som forbinder blinde personer med seende hjelpere!";
+

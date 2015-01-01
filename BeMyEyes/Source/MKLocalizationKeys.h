@@ -149,6 +149,8 @@ static NSString * const InfoPlist = @"InfoPlist";
 
  * @b en@: "Please enable the following to fully join the Be My Eyes network"
 
+ * @b nb@: "Vennligst aktiver følgende for å bli med i Be My Eyes network"
+
  */
 static NSString * const BME_ACCESS_INTRO_MESSAGE = @"BME_ACCESS_INTRO_MESSAGE";
 
@@ -160,6 +162,8 @@ static NSString * const BME_ACCESS_INTRO_MESSAGE = @"BME_ACCESS_INTRO_MESSAGE";
  * @b da@: "Meddelelser"
 
  * @b en@: "Notifications"
+
+ * @b nb@: "Varslinger"
 
  */
 static NSString * const BME_ACCESS_NOTIFICATIONS_TITLE = @"BME_ACCESS_NOTIFICATIONS_TITLE";
@@ -173,6 +177,8 @@ static NSString * const BME_ACCESS_NOTIFICATIONS_TITLE = @"BME_ACCESS_NOTIFICATI
 
  * @b en@: "When a blind person needs your help, we notify you about the incoming call."
 
+ * @b nb@: "Når en blind person behøver din hjelp, varsler vi deg om den inkommende samtalen."
+
  */
 static NSString * const BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER = @"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER";
 
@@ -184,6 +190,8 @@ static NSString * const BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER = @"BME_ACCE
  * @b da@: "Mikrofon"
 
  * @b en@: "Microphone"
+
+ * @b nb@: "Mikrofon"
 
  */
 static NSString * const BME_ACCESS_MICROPHONE_TITLE = @"BME_ACCESS_MICROPHONE_TITLE";
@@ -197,6 +205,8 @@ static NSString * const BME_ACCESS_MICROPHONE_TITLE = @"BME_ACCESS_MICROPHONE_TI
 
  * @b en@: "To be able to talk with and guide the blind person"
 
+ * @b nb@: "Å kunne snakke med og lede den blinde personen"
+
  */
 static NSString * const BME_ACCESS_MICROPHONE_EXPLANATION_HELPER = @"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER";
 
@@ -208,6 +218,8 @@ static NSString * const BME_ACCESS_MICROPHONE_EXPLANATION_HELPER = @"BME_ACCESS_
  * @b da@: "For at kunne forklare dit problem til hjælperen."
 
  * @b en@: "To be able to explain your problem to the helper."
+
+ * @b nb@: "Å kunne forklare problemet ditt til hjelperen."
 
  */
 static NSString * const BME_ACCESS_MICROPHONE_EXPLANATION_BLIND = @"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND";
@@ -221,6 +233,8 @@ static NSString * const BME_ACCESS_MICROPHONE_EXPLANATION_BLIND = @"BME_ACCESS_M
 
  * @b en@: "Camera"
 
+ * @b nb@: "Kamera"
+
  */
 static NSString * const BME_ACCESS_CAMERA_TITLE = @"BME_ACCESS_CAMERA_TITLE";
 
@@ -232,6 +246,8 @@ static NSString * const BME_ACCESS_CAMERA_TITLE = @"BME_ACCESS_CAMERA_TITLE";
  * @b da@: "Vi sender ikke din video til den person du hjælper, men det er nødvendigt for at etablere forbindelsen."
 
  * @b en@: "We don't send your video to the person you're helping, but it's needed to establish the connection."
+
+ * @b nb@: "Vi sender ikke videoen din til personen du hjelper, men det er nødvendig for å opprette tilkoblingen."
 
  */
 static NSString * const BME_ACCESS_CAMERA_EXPLANATION_HELPER = @"BME_ACCESS_CAMERA_EXPLANATION_HELPER";
@@ -245,6 +261,8 @@ static NSString * const BME_ACCESS_CAMERA_EXPLANATION_HELPER = @"BME_ACCESS_CAME
 
  * @b en@: "To be able to show the helper what you need help with."
 
+ * @b nb@: "Å kunne vise hjelperen hva du trenger hjelp med."
+
  */
 static NSString * const BME_ACCESS_CAMERA_EXPLANATION_BLIND = @"BME_ACCESS_CAMERA_EXPLANATION_BLIND";
 
@@ -256,6 +274,8 @@ static NSString * const BME_ACCESS_CAMERA_EXPLANATION_BLIND = @"BME_ACCESS_CAMER
  * @b da@: "Push-meddelelser er en central del af Be My Eyes appen og du skal have dem slået til for at tilmelde dig."
 
  * @b en@: "Push notifications are a central part of the Be My Eyes app and you must have them enabled to sign up."
+
+ * @b nb@: "Varslinger er en sentral del av Be My Eyes appen og du må ha disse aktivert for å kunne registrere deg."
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE = @"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE";
@@ -269,6 +289,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE = @"BME_
 
  * @b en@: "Push notifications not enabled"
 
+ * @b nb@: "Varslinger ikke aktivert"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE = @"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE";
 
@@ -280,6 +302,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE = @"BME_AP
  * @b da@: "Nogen"
 
  * @b en@: "Someone"
+
+ * @b nb@: "Noen"
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME = @"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME";
@@ -293,6 +317,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME = @"BME
 
  * @b en@: "Your help is needed!"
 
+ * @b nb@: "Din hjelp er nødvendig!"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE = @"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE";
 
@@ -304,6 +330,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE = @"BME_APP_DE
  * @b da@: "Annuller"
 
  * @b en@: "Cancel"
+
+ * @b nb@: "Avbryt"
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL = @"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL";
@@ -317,6 +345,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL = @"BME_APP_D
 
  * @b en@: "You must give the application permission to use your microphone in the system settings."
 
+ * @b nb@: "Du må gi programmet tillatelse til å bruke mikrofonen i systeminnstillingene."
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE = @"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE";
 
@@ -328,6 +358,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE = @"B
  * @b da@: "Mikrofon ikke aktiveret"
 
  * @b en@: "Microphone not enabled"
+
+ * @b nb@: "Mikrofon ikke aktivert"
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE = @"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE";
@@ -341,6 +373,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE = @"BME
 
  * @b en@: "You must give the application permission to use your camera in the system settings."
 
+ * @b nb@: "Du må gi programmet tillatelse til å bruke kameraet i systeminnstillingene."
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE = @"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE";
 
@@ -352,6 +386,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE = @"BME_A
  * @b da@: "Kamera ikke aktiveret"
 
  * @b en@: "Camera not enabled"
+
+ * @b nb@: "Kamera ikke aktivert"
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE = @"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE";
@@ -365,6 +401,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE = @"BME_APP
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL = @"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL";
 
@@ -376,6 +414,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL = @"BME_AP
  * @b da@: "Annuller"
 
  * @b en@: "Cancel"
+
+ * @b nb@: "Avbryt"
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS = @"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS";
@@ -389,6 +429,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_
 
  * @b en@: "Open settings"
 
+ * @b nb@: "Åpne innstillinger"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS = @"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS";
 
@@ -400,6 +442,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS = 
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL = @"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL";
@@ -413,6 +457,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL = 
 
  * @b en@: "The pending request has been answered or was cancelled by the blind but thank you for helping out!"
 
+ * @b nb@: "Den vendtende forespørselen har blitt besvart eller ble avbrutt av den blinde. Takk for din hjelp!"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE = @"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE";
 
@@ -424,6 +470,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE =
  * @b da@: "Anmodning allerede besvaret eller annulleret"
 
  * @b en@: "Request already answered or cancelled"
+
+ * @b nb@: "Forespørsel er allerede besvart eller avbrutt"
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE = @"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE";
@@ -437,6 +485,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE = @
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL = @"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL";
 
@@ -448,6 +498,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL
  * @b da@: "Anmodningen kunne ikke indlæses. Bare rolig, en anden vil besvare forespørgslen."
 
  * @b en@: "The pending request could not be loaded. Don't worry, someone else will answer the request."
+
+ * @b nb@: "Den ventende forespørselen kunne ikke lastes. Men ikke bekymre deg, noen andre vil svare på den."
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE = @"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE";
@@ -461,6 +513,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAG
 
  * @b en@: "Request not loaded"
 
+ * @b nb@: "Forespørsel ikke lastet"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE = @"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE";
 
@@ -472,6 +526,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE 
  * @b da@: "Indlæser..."
 
  * @b en@: "Loading..."
+
+ * @b nb@: "Laster..."
 
  */
 static NSString * const BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE = @"BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE";
@@ -485,6 +541,8 @@ static NSString * const BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE =
 
  * @b en@: "Could not register"
 
+ * @b nb@: "Kunne ikke registrere"
+
  */
 static NSString * const BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE = @"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE";
 
@@ -496,6 +554,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFIC
  * @b da@: "Enheden kunne ikke registreres til at modtage push notifikationer. Dette kan betyde, at applikationen ikke er blevet rigtigt signed."
 
  * @b en@: "The device was not registered to receive push notifications. This could mean that the application has been incorrectly signed."
+
+ * @b nb@: "Enheten ble ikke registrert for å motta push-varsling. Dette kan bety at programmet er feil signert."
 
  */
 static NSString * const BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE = @"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE";
@@ -509,6 +569,8 @@ static NSString * const BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFIC
 
  * @b en@: "Back"
 
+ * @b nb@: "Tilbake"
+
  */
 static NSString * const BME_BLIND_INTRO_BACK = @"BME_BLIND_INTRO_BACK";
 
@@ -520,6 +582,8 @@ static NSString * const BME_BLIND_INTRO_BACK = @"BME_BLIND_INTRO_BACK";
  * @b da@: "Fortsæt"
 
  * @b en@: "Continue"
+
+ * @b nb@: "Fortsett"
 
  */
 static NSString * const BME_BLIND_INTRO_CONTINUE = @"BME_BLIND_INTRO_CONTINUE";
@@ -533,6 +597,8 @@ static NSString * const BME_BLIND_INTRO_CONTINUE = @"BME_BLIND_INTRO_CONTINUE";
 
  * @b en@: "The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.\n\nThe helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.\n\nYou may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information."
 
+ * @b nb@: "Appen vil sette deg i live kontakt med en seende hjelper som eksternt vil assistere deg med oppgaver som krever assistanse fra en seende - gjennom en live videostrøm forteller hjelperen deg hva han eller hun ser når du peker din telefon mot noe. \n\nHjelperne i Be My Eyes nettverket er frivillige, og vi kan ikke garantere for kvaliteten på deres hjelp eller ta ansvar for noen av deres handlinger. Fordi vi er avhengige av ekte mennesker til å hjelpe deg, oppfordrer vi deg til å være tålmodig når du ber om hjelp. \n\nDu kan under ingen omstendigheter dele ulovlig, hatefullt eller seksuelt ladet innhold gjennom applikasjonen, og du må aldri vise sensitiv informasjon slik som kredittkort, pass eller annen personlig informasjon."
+
  */
 static NSString * const BME_BLIND_INTRO_DESCRIPTION = @"BME_BLIND_INTRO_DESCRIPTION";
 
@@ -544,6 +610,8 @@ static NSString * const BME_BLIND_INTRO_DESCRIPTION = @"BME_BLIND_INTRO_DESCRIPT
  * @b da@: "Forbind til første tilgængelige hjælper"
 
  * @b en@: "Connect to first available helper"
+
+ * @b nb@: "Koble til første tilgjengelige hjelper"
 
  */
 static NSString * const BME_BLIND_MAIN_CONNECT_TO_COMMUNITY = @"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY";
@@ -557,6 +625,8 @@ static NSString * const BME_BLIND_MAIN_CONNECT_TO_COMMUNITY = @"BME_BLIND_MAIN_C
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL = @"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL";
 
@@ -568,6 +638,8 @@ static NSString * const BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL = @"
  * @b da@: "Anmodningen kunne ikke oprettes. Prøv venligst igen."
 
  * @b en@: "The request could not be created. Please try again."
+
+ * @b nb@: "Forespørselen kunne ikke opprettes. Vennligst prøv igjen."
 
  */
 static NSString * const BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE = @"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE";
@@ -581,6 +653,8 @@ static NSString * const BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE = @
 
  * @b en@: "Failed creating request"
 
+ * @b nb@: "Kan ikke opprette forespørsel"
+
  */
 static NSString * const BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE = @"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE";
 
@@ -592,6 +666,8 @@ static NSString * const BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE = @"B
  * @b da@: "Opretter anmodning..."
 
  * @b en@: "Creating request..."
+
+ * @b nb@: "Oppretter forespørsel..."
 
  */
 static NSString * const BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE = @"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE";
@@ -605,6 +681,8 @@ static NSString * const BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE = @"BME_BLIND_
 
  * @b en@: "Disconnect"
 
+ * @b nb@: "Koble fra"
+
  */
 static NSString * const BME_CALL_DISCONNECT = @"BME_CALL_DISCONNECT";
 
@@ -616,6 +694,8 @@ static NSString * const BME_CALL_DISCONNECT = @"BME_CALL_DISCONNECT";
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL = @"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL";
@@ -629,6 +709,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL 
 
  * @b en@: "The request has already been answered. Thanks for your help!"
 
+ * @b nb@: "Forespørselen har allerede blitt besvart. Takk for din hjelp!"
+
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE = @"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE";
 
@@ -640,6 +722,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE
  * @b da@: "Anmodning allerede besvaret"
 
  * @b en@: "Request already answered"
+
+ * @b nb@: "Forespørsel er allerede besvart"
 
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE = @"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE";
@@ -653,6 +737,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE =
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL = @"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL";
 
@@ -664,6 +750,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL =
  * @b da@: "Den blinde har annulleret anmodningen. Tak for din hjælp!"
 
  * @b en@: "The blind has cancelled the request. Thanks for your help!"
+
+ * @b nb@: "Den blinde har avbrutt forespørselen. Takk for din hjelp!"
 
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE = @"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE";
@@ -677,6 +765,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE 
 
  * @b en@: "Request cancelled"
 
+ * @b nb@: "Forespørselen ble avbrutt"
+
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE = @"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE";
 
@@ -688,6 +778,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE = 
  * @b da@: "Kunne ikke besvare anmodningen"
 
  * @b en@: "Could not answer request"
+
+ * @b nb@: "Kunne ikke svare på forespørselen"
 
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE = @"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE";
@@ -701,6 +793,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE = @"BME_CA
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL = @"BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL";
 
@@ -712,6 +806,8 @@ static NSString * const BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL = @"BME_CA
  * @b da@: "Anmodningen kunne ikke oprettes. Prøv venligst igen."
 
  * @b en@: "The request could not be created. Please try again."
+
+ * @b nb@: "Forespørselen kunne ikke opprettes. Vennligst prøv igjen."
 
  */
 static NSString * const BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE = @"BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE";
@@ -725,6 +821,8 @@ static NSString * const BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE = @"BME_C
 
  * @b en@: "Could not create request"
 
+ * @b nb@: "Kunne ikke opprette forespørsel"
+
  */
 static NSString * const BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE = @"BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE";
 
@@ -736,6 +834,8 @@ static NSString * const BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE = @"BME_CAL
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL = @"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL";
@@ -749,6 +849,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL = @"BME_C
 
  * @b en@: "Please wait..."
 
+ * @b nb@: "Vennligst vent..."
+
  */
 static NSString * const BME_CALL_STATUS_PLEASE_WAIT = @"BME_CALL_STATUS_PLEASE_WAIT";
 
@@ -760,6 +862,8 @@ static NSString * const BME_CALL_STATUS_PLEASE_WAIT = @"BME_CALL_STATUS_PLEASE_W
  * @b da@: "Besvarer anmodningen..."
 
  * @b en@: "Answering request..."
+
+ * @b nb@: "Svarer på forespørsel..."
 
  */
 static NSString * const BME_CALL_STATUS_ANSWERING_REQUEST = @"BME_CALL_STATUS_ANSWERING_REQUEST";
@@ -773,6 +877,8 @@ static NSString * const BME_CALL_STATUS_ANSWERING_REQUEST = @"BME_CALL_STATUS_AN
 
  * @b en@: "The request could not be answered at this time. Thanks for your help!"
 
+ * @b nb@: "Forespørselen kan ikke besvares nå. Takk for hjelpen!"
+
  */
 static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE = @"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE";
 
@@ -784,6 +890,8 @@ static NSString * const BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE = @"BME_
  * @b da@: "Opretter anmodning..."
 
  * @b en@: "Creating request..."
+
+ * @b nb@: "Oppretter forespørsel..."
 
  */
 static NSString * const BME_CALL_STATUS_CREATING_REQUEST = @"BME_CALL_STATUS_CREATING_REQUEST";
@@ -797,6 +905,8 @@ static NSString * const BME_CALL_STATUS_CREATING_REQUEST = @"BME_CALL_STATUS_CRE
 
  * @b en@: "Connecting to servers..."
 
+ * @b nb@: "Kobler til servere..."
+
  */
 static NSString * const BME_CALL_STATUS_CONNECTING = @"BME_CALL_STATUS_CONNECTING";
 
@@ -808,6 +918,8 @@ static NSString * const BME_CALL_STATUS_CONNECTING = @"BME_CALL_STATUS_CONNECTIN
  * @b da@: "Venter på modparten..."
 
  * @b en@: "Waiting for other part..."
+
+ * @b nb@: "Venter på svar fra den annen part..."
 
  */
 static NSString * const BME_CALL_STATUS_CONNECTION_ESTABLISHED = @"BME_CALL_STATUS_CONNECTION_ESTABLISHED";
@@ -821,6 +933,8 @@ static NSString * const BME_CALL_STATUS_CONNECTION_ESTABLISHED = @"BME_CALL_STAT
 
  * @b en@: "Connection failed"
 
+ * @b nb@: "Tilkobling mislyktes"
+
  */
 static NSString * const BME_CALL_STATUS_SESSION_FAILED = @"BME_CALL_STATUS_SESSION_FAILED";
 
@@ -832,6 +946,8 @@ static NSString * const BME_CALL_STATUS_SESSION_FAILED = @"BME_CALL_STATUS_SESSI
  * @b da@: "Mislykkedes at dele lyd og video"
 
  * @b en@: "Failed publishing audio and video"
+
+ * @b nb@: "Kunne ikke publisere lyd og video"
 
  */
 static NSString * const BME_CALL_STATUS_FAILED_PUBLISHING = @"BME_CALL_STATUS_FAILED_PUBLISHING";
@@ -845,6 +961,8 @@ static NSString * const BME_CALL_STATUS_FAILED_PUBLISHING = @"BME_CALL_STATUS_FA
 
  * @b en@: "Connected to other part"
 
+ * @b nb@: "Koblet til den annen part"
+
  */
 static NSString * const BME_CALL_SPEECH_DID_SUBSCRIBE = @"BME_CALL_SPEECH_DID_SUBSCRIBE";
 
@@ -856,6 +974,8 @@ static NSString * const BME_CALL_SPEECH_DID_SUBSCRIBE = @"BME_CALL_SPEECH_DID_SU
  * @b da@: "Kunne ikke oprette forbindelse til modparten"
 
  * @b en@: "Failed connecting to other part"
+
+ * @b nb@: "Kunne ikke koble til den annen part"
 
  */
 static NSString * const BME_CALL_STATUS_FAILED_SUBSCRIBING = @"BME_CALL_STATUS_FAILED_SUBSCRIBING";
@@ -869,6 +989,8 @@ static NSString * const BME_CALL_STATUS_FAILED_SUBSCRIBING = @"BME_CALL_STATUS_F
 
  * @b en@: "Disconnecting..."
 
+ * @b nb@: "Kobler fra..."
+
  */
 static NSString * const BME_CALL_STATUS_DISCONNECTING = @"BME_CALL_STATUS_DISCONNECTING";
 
@@ -880,6 +1002,8 @@ static NSString * const BME_CALL_STATUS_DISCONNECTING = @"BME_CALL_STATUS_DISCON
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL = @"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL";
@@ -893,6 +1017,8 @@ static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL = @"BME_CA
 
  * @b en@: "The other part has disconnected and the session has ended."
 
+ * @b nb@: "Den andre parten har koblet fra og økten er avsluttet."
+
  */
 static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE = @"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE";
 
@@ -904,6 +1030,8 @@ static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE = @"BME_C
  * @b da@: "Sessionen sluttede"
 
  * @b en@: "Session ended"
+
+ * @b nb@: "Økt avsluttet"
 
  */
 static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE = @"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE";
@@ -917,6 +1045,8 @@ static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE = @"BME_CAL
 
  * @b en@: "Back"
 
+ * @b nb@: "Tilbake"
+
  */
 static NSString * const BME_FORGOT_PASSWORD_BACK = @"BME_FORGOT_PASSWORD_BACK";
 
@@ -928,6 +1058,8 @@ static NSString * const BME_FORGOT_PASSWORD_BACK = @"BME_FORGOT_PASSWORD_BACK";
  * @b da@: "Indtast din e-mail og vi vil sende dig en ny adgangskode."
 
  * @b en@: "Enter your e-mail and we'll send you a new password."
+
+ * @b nb@: "Angi e-posten din, så sender vi deg et nytt passord."
 
  */
 static NSString * const BME_FORGOT_PASSWORD_DESCRIPTION = @"BME_FORGOT_PASSWORD_DESCRIPTION";
@@ -941,6 +1073,8 @@ static NSString * const BME_FORGOT_PASSWORD_DESCRIPTION = @"BME_FORGOT_PASSWORD_
 
  * @b en@: "E-mail"
 
+ * @b nb@: "E-post"
+
  */
 static NSString * const BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER = @"BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER";
 
@@ -952,6 +1086,8 @@ static NSString * const BME_FORGOT_PASSWORD_EMAIL_PLACEHOLDER = @"BME_FORGOT_PAS
  * @b da@: "Send nyt password"
 
  * @b en@: "Send new password"
+
+ * @b nb@: "Send nytt passord"
 
  */
 static NSString * const BME_FORGOT_PASSWORD_SEND_PASSWORD = @"BME_FORGOT_PASSWORD_SEND_PASSWORD";
@@ -965,6 +1101,8 @@ static NSString * const BME_FORGOT_PASSWORD_SEND_PASSWORD = @"BME_FORGOT_PASSWOR
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_CANCEL = @"BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_CANCEL";
 
@@ -976,6 +1114,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_CANCEL = @"BME
  * @b da@: "Den indtastede e-mail er ikke gyldig. Ret e-mail adressen og prøv igen."
 
  * @b en@: "The entered e-mail is not valid. Please change the email and try again."
+
+ * @b nb@: "E-posten er ikke gyldig. Vennligst endre e-post og prøv igjen."
 
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_MESSAGE = @"BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_MESSAGE";
@@ -989,6 +1129,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_MESSAGE = @"BM
 
  * @b en@: "Email is not valid"
 
+ * @b nb@: "E-post er ikke gyldig"
+
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_TITLE = @"BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_TITLE";
 
@@ -1000,6 +1142,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_EMAIL_NOT_VALID_TITLE = @"BME_
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_CANCEL = @"BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_CANCEL";
@@ -1013,6 +1157,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAIL
 
  * @b en@: "The request for a new password could not be sent. Please ensure that you have an active internet connection and try again."
 
+ * @b nb@: "Forespørselen om nytt passord kunne ikke sendes. Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
+
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_MESSAGE = @"BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_MESSAGE";
 
@@ -1024,6 +1170,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAIL
  * @b da@: "Kunne ikke anmode om nyt password"
 
  * @b en@: "Could not request new password"
+
+ * @b nb@: "Kunne ikke be om nytt passord"
 
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_TITLE = @"BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAILED_TITLE";
@@ -1037,6 +1185,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_FAIL
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_CANCEL = @"BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_CANCEL";
 
@@ -1048,6 +1198,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCC
  * @b da@: "Du har modtaget en e-mail med din nye adgangskode."
 
  * @b en@: "You have received an e-mail with your new password."
+
+ * @b nb@: "Du har mottatt en e-post med ditt nye passord."
 
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_MESSAGE = @"BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_MESSAGE";
@@ -1061,6 +1213,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCC
 
  * @b en@: "New password sent"
 
+ * @b nb@: "Nytt passord sendt"
+
  */
 static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_TITLE = @"BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCCESS_TITLE";
 
@@ -1072,6 +1226,8 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCC
  * @b da@: "Sender anmodning..."
 
  * @b en@: "Sending request..."
+
+ * @b nb@: "Sender forespørsel..."
 
  */
 static NSString * const BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE = @"BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASSWORD_TITLE";
@@ -1085,6 +1241,8 @@ static NSString * const BME_FORGOT_PASSWORD_OVERLAY_SENDING_REQUEST_FOR_NEW_PASS
 
  * @b en@: "Be My Eyes"
 
+ * @b nb@: "Be My Eyes"
+
  */
 static NSString * const BME_FRONT_PAGE_APP_NAME = @"BME_FRONT_PAGE_APP_NAME";
 
@@ -1096,6 +1254,8 @@ static NSString * const BME_FRONT_PAGE_APP_NAME = @"BME_FRONT_PAGE_APP_NAME";
  * @b da@: "Hvad er din rolle?"
 
  * @b en@: "What is your role?"
+
+ * @b nb@: "Hva er din rolle?"
 
  */
 static NSString * const BME_FRONT_PAGE_ASK_FOR_ROLE = @"BME_FRONT_PAGE_ASK_FOR_ROLE";
@@ -1109,6 +1269,8 @@ static NSString * const BME_FRONT_PAGE_ASK_FOR_ROLE = @"BME_FRONT_PAGE_ASK_FOR_R
 
  * @b en@: "I am sighted"
 
+ * @b nb@: "Jeg er seende"
+
  */
 static NSString * const BME_FRONT_PAGE_SIGHTED_ROLE = @"BME_FRONT_PAGE_SIGHTED_ROLE";
 
@@ -1120,6 +1282,8 @@ static NSString * const BME_FRONT_PAGE_SIGHTED_ROLE = @"BME_FRONT_PAGE_SIGHTED_R
  * @b da@: "Jeg er blind"
 
  * @b en@: "I am blind"
+
+ * @b nb@: "Jeg er blind"
 
  */
 static NSString * const BME_FRONT_PAGE_BLIND_ROLE = @"BME_FRONT_PAGE_BLIND_ROLE";
@@ -1133,6 +1297,8 @@ static NSString * const BME_FRONT_PAGE_BLIND_ROLE = @"BME_FRONT_PAGE_BLIND_ROLE"
 
  * @b en@: "Already registered? Log in here."
 
+ * @b nb@: "Allerede registrert? Logg på her."
+
  */
 static NSString * const BME_FRONT_PAGE_ALREADY_REGISTERED = @"BME_FRONT_PAGE_ALREADY_REGISTERED";
 
@@ -1144,6 +1310,8 @@ static NSString * const BME_FRONT_PAGE_ALREADY_REGISTERED = @"BME_FRONT_PAGE_ALR
  * @b da@: "Tilbage"
 
  * @b en@: "Back"
+
+ * @b nb@: "Tilbake"
 
  */
 static NSString * const BME_HELPER_INTRO_BACK = @"BME_HELPER_INTRO_BACK";
@@ -1157,6 +1325,8 @@ static NSString * const BME_HELPER_INTRO_BACK = @"BME_HELPER_INTRO_BACK";
 
  * @b en@: "Continue"
 
+ * @b nb@: "Fortsett"
+
  */
 static NSString * const BME_HELPER_INTRO_CONTINUE = @"BME_HELPER_INTRO_CONTINUE";
 
@@ -1168,6 +1338,8 @@ static NSString * const BME_HELPER_INTRO_CONTINUE = @"BME_HELPER_INTRO_CONTINUE"
  * @b da@: "Det er nemt at hjælpe!"
 
  * @b en@: "Helping is easy!"
+
+ * @b nb@: "Det er lett å hjelpe!"
 
  */
 static NSString * const BME_HELPER_INTRO_HEADLINE = @"BME_HELPER_INTRO_HEADLINE";
@@ -1181,6 +1353,8 @@ static NSString * const BME_HELPER_INTRO_HEADLINE = @"BME_HELPER_INTRO_HEADLINE"
 
  * @b en@: "Help whenever you want, wherever you are."
 
+ * @b nb@: "Hjelp når du vil, uansett hvor du er."
+
  */
 static NSString * const BME_HELPER_INTRO_SHORT_DESCRIPTION = @"BME_HELPER_INTRO_SHORT_DESCRIPTION";
 
@@ -1192,6 +1366,8 @@ static NSString * const BME_HELPER_INTRO_SHORT_DESCRIPTION = @"BME_HELPER_INTRO_
  * @b da@: "Din telefon er åben for opkald fra folk, der har brug for hjælp, når du er logget på."
 
  * @b en@: "Your phone is open for calls from people who need help when you are signed in."
+
+ * @b nb@: "Telefonen din er åpen for samtaler fra personer som trenger hjelp når du er logget inn."
 
  */
 static NSString * const BME_HELPER_INTRO_LONG_DESCRIPTION = @"BME_HELPER_INTRO_LONG_DESCRIPTION";
@@ -1205,6 +1381,8 @@ static NSString * const BME_HELPER_INTRO_LONG_DESCRIPTION = @"BME_HELPER_INTRO_L
 
  * @b en@: "Snooze"
 
+ * @b nb@: "Slumre"
+
  */
 static NSString * const BME_HELPER_MAIN_SNOOZE_HEADLINE = @"BME_HELPER_MAIN_SNOOZE_HEADLINE";
 
@@ -1216,6 +1394,8 @@ static NSString * const BME_HELPER_MAIN_SNOOZE_HEADLINE = @"BME_HELPER_MAIN_SNOO
  * @b da@: "Du snoozer i %@"
 
  * @b en@: "You are snoozing the next %@"
+
+ * @b nb@: "Du slumrer de neste %@"
 
  */
 static NSString * const BME_HELPER_MAIN_SNOOZE_STATUS_TEXT = @"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT";
@@ -1229,6 +1409,8 @@ static NSString * const BME_HELPER_MAIN_SNOOZE_STATUS_TEXT = @"BME_HELPER_MAIN_S
 
  * @b en@: "People Helped"
 
+ * @b nb@: "Personer hjulpet"
+
  */
 static NSString * const BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION = @"BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION";
 
@@ -1240,6 +1422,8 @@ static NSString * const BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION = @"BME_HELPER_
  * @b da@: "Totale points"
 
  * @b en@: "Points Total"
+
+ * @b nb@: "Poeng totalt"
 
  */
 static NSString * const BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION = @"BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION";
@@ -1253,6 +1437,8 @@ static NSString * const BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION = @"BME_HELPER_M
 
  * @b en@: "New Helper"
 
+ * @b nb@: "Ny hjelper"
+
  */
 static NSString * const BME_HELPER_MAIN_LEVEL_NEW_HELPER = @"BME_HELPER_MAIN_LEVEL_NEW_HELPER";
 
@@ -1264,6 +1450,8 @@ static NSString * const BME_HELPER_MAIN_LEVEL_NEW_HELPER = @"BME_HELPER_MAIN_LEV
  * @b da@: "Lovende hjælper"
 
  * @b en@: "Promising Helper"
+
+ * @b nb@: "Lovende hjelper"
 
  */
 static NSString * const BME_HELPER_MAIN_LEVEL_PROMISING_HELPER = @"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER";
@@ -1277,6 +1465,8 @@ static NSString * const BME_HELPER_MAIN_LEVEL_PROMISING_HELPER = @"BME_HELPER_MA
 
  * @b en@: "Trusted Helper"
 
+ * @b nb@: "Pålitelig hjelper"
+
  */
 static NSString * const BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER = @"BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER";
 
@@ -1288,6 +1478,8 @@ static NSString * const BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER = @"BME_HELPER_MAIN
  * @b da@: "Ekspert hjælper"
 
  * @b en@: "Expert Helper"
+
+ * @b nb@: "Ekspert hjelper"
 
  */
 static NSString * const BME_HELPER_MAIN_LEVEL_EXPERT_HELPER = @"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER";
@@ -1301,6 +1493,8 @@ static NSString * const BME_HELPER_MAIN_LEVEL_EXPERT_HELPER = @"BME_HELPER_MAIN_
 
  * @b en@: "Master Helper"
 
+ * @b nb@: "Mester hjelper"
+
  */
 static NSString * const BME_HELPER_MAIN_LEVEL_MASTER_HELPER = @"BME_HELPER_MAIN_LEVEL_MASTER_HELPER";
 
@@ -1312,6 +1506,8 @@ static NSString * const BME_HELPER_MAIN_LEVEL_MASTER_HELPER = @"BME_HELPER_MAIN_
  * @b da@: "%d points til næste niveau"
 
  * @b en@: "%d points until next level"
+
+ * @b nb@: "%d poeng til neste nivå"
 
  */
 static NSString * const BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION = @"BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION";
@@ -1325,6 +1521,8 @@ static NSString * const BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION = @"BME_HE
 
  * @b en@: "Successful sign up"
 
+ * @b nb@: "Vellykket registrering"
+
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION";
 
@@ -1336,6 +1534,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION = @"BME_
  * @b da@: "Forsøgte at hjælpe"
 
  * @b en@: "Attempted to help"
+
+ * @b nb@: "Forsøkte å hjelpe"
 
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION";
@@ -1349,6 +1549,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIP
 
  * @b en@: "Attempted to help"
 
+ * @b nb@: "Forsøkte å hjelpe"
+
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION";
 
@@ -1360,6 +1562,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNIC
  * @b da@: "Hjalp en blind"
 
  * @b en@: "Helped a blind person"
+
+ * @b nb@: "Hjalp en blind person"
 
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION";
@@ -1373,6 +1577,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESC
 
  * @b en@: "Helped 10 in a week"
 
+ * @b nb@: "Hjulpet 10 på en uke"
+
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION";
 
@@ -1384,6 +1590,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_
  * @b da@: "5 high fives på en uge"
 
  * @b en@: "5 high fives in week"
+
+ * @b nb@: "5 high fives på en uke"
 
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION";
@@ -1397,6 +1605,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WE
 
  * @b en@: "Shared on Twitter"
 
+ * @b nb@: "Delt på Twitter"
+
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION";
 
@@ -1408,6 +1618,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTIO
  * @b da@: "Delte på Facebook"
 
  * @b en@: "Shared on Facebook"
+
+ * @b nb@: "Delt på Facebook"
 
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION";
@@ -1421,6 +1633,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTI
 
  * @b en@: "Watched video"
 
+ * @b nb@: "Så video"
+
  */
 static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION = @"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION";
 
@@ -1432,6 +1646,8 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION = @
  * @b da@: "Del på Twitter"
 
  * @b en@: "Share on Twitter"
+
+ * @b nb@: "Del på Twitter"
 
  */
 static NSString * const BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION = @"BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION";
@@ -1445,6 +1661,8 @@ static NSString * const BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION = @"BM
 
  * @b en@: "Share on Facebook"
 
+ * @b nb@: "Del på Facebook"
+
  */
 static NSString * const BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION = @"BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION";
 
@@ -1456,6 +1674,8 @@ static NSString * const BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION = @"B
  * @b da@: "Se video"
 
  * @b en@: "Watch video"
+
+ * @b nb@: "Se video"
 
  */
 static NSString * const BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION = @"BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION";
@@ -1469,6 +1689,8 @@ static NSString * const BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION = @"BME_HEL
 
  * @b en@: "The Be My Eyes Network"
 
+ * @b nb@: "Be My Eyes nettverket"
+
  */
 static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION = @"BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION";
 
@@ -1480,6 +1702,8 @@ static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION = @"BME_HE
  * @b da@: "Seende"
 
  * @b en@: "Sighted"
+
+ * @b nb@: "Seende"
 
  */
 static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED = @"BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED";
@@ -1493,6 +1717,8 @@ static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED = @"BME_HELPER
 
  * @b en@: "Blind"
 
+ * @b nb@: "Blinde"
+
  */
 static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND = @"BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND";
 
@@ -1504,6 +1730,8 @@ static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND = @"BME_HELPER_M
  * @b da@: "Hjulpet"
 
  * @b en@: "Helped"
+
+ * @b nb@: "Hjulpet"
 
  */
 static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED = @"BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED";
@@ -1517,6 +1745,8 @@ static NSString * const BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED = @"BME_HELPER_
 
  * @b en@: "Could not load point"
 
+ * @b nb@: "Kunne ikke laste inn punkt"
+
  */
 static NSString * const BME_HELPER_MAIN_LOADING_POINT_FAILED = @"BME_HELPER_MAIN_LOADING_POINT_FAILED";
 
@@ -1528,6 +1758,8 @@ static NSString * const BME_HELPER_MAIN_LOADING_POINT_FAILED = @"BME_HELPER_MAIN
  * @b da@: "Prøv igen"
 
  * @b en@: "Retry"
+
+ * @b nb@: "Prøv igjen"
 
  */
 static NSString * const BME_HELPER_MAIN_RETRY_LOADING_POINT = @"BME_HELPER_MAIN_RETRY_LOADING_POINT";
@@ -1541,6 +1773,8 @@ static NSString * const BME_HELPER_MAIN_RETRY_LOADING_POINT = @"BME_HELPER_MAIN_
 
  * @b en@: "You are currently active"
 
+ * @b nb@: "Du er for øyeblikket aktiv"
+
  */
 static NSString * const BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT = @"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT";
 
@@ -1552,6 +1786,8 @@ static NSString * const BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT = @"BME_
  * @b da@: "Valgt"
 
  * @b en@: "Selected"
+
+ * @b nb@: "Valgt"
 
  */
 static NSString * const BME_INTERFACE_CONTROL_STATE_SELECTED = @"BME_INTERFACE_CONTROL_STATE_SELECTED";
@@ -1565,6 +1801,8 @@ static NSString * const BME_INTERFACE_CONTROL_STATE_SELECTED = @"BME_INTERFACE_C
 
  * @b en@: "Your Languages"
 
+ * @b nb@: "Språk"
+
  */
 static NSString * const BME_LANGUAGES_TITLE = @"BME_LANGUAGES_TITLE";
 
@@ -1576,6 +1814,8 @@ static NSString * const BME_LANGUAGES_TITLE = @"BME_LANGUAGES_TITLE";
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL = @"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL";
@@ -1589,6 +1829,8 @@ static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL = @"BME_LANGUA
 
  * @b en@: "The languages could not be saved. Please try again later."
 
+ * @b nb@: "Språk kunne ikke lagres. Vennligst prøv igjen senere."
+
  */
 static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE = @"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE";
 
@@ -1600,6 +1842,8 @@ static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE = @"BME_LANGU
  * @b da@: "Kunne ikke gemme"
 
  * @b en@: "Could not save"
+
+ * @b nb@: "Kunne ikke lagre"
 
  */
 static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE = @"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE";
@@ -1613,6 +1857,8 @@ static NSString * const BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE = @"BME_LANGUAG
 
  * @b en@: "Back"
 
+ * @b nb@: "Tilbake"
+
  */
 static NSString * const BME_LOGIN_BACK = @"BME_LOGIN_BACK";
 
@@ -1624,6 +1870,8 @@ static NSString * const BME_LOGIN_BACK = @"BME_LOGIN_BACK";
  * @b da@: "E-mail"
 
  * @b en@: "E-mail"
+
+ * @b nb@: "E-post"
 
  */
 static NSString * const BME_LOGIN_EMAIL_PLACEHOLDER = @"BME_LOGIN_EMAIL_PLACEHOLDER";
@@ -1637,6 +1885,8 @@ static NSString * const BME_LOGIN_EMAIL_PLACEHOLDER = @"BME_LOGIN_EMAIL_PLACEHOL
 
  * @b en@: "Password"
 
+ * @b nb@: "Passord"
+
  */
 static NSString * const BME_LOGIN_PASSWORD_PLACEHOLDER = @"BME_LOGIN_PASSWORD_PLACEHOLDER";
 
@@ -1648,6 +1898,8 @@ static NSString * const BME_LOGIN_PASSWORD_PLACEHOLDER = @"BME_LOGIN_PASSWORD_PL
  * @b da@: "Log på"
 
  * @b en@: "Log in"
+
+ * @b nb@: "Logg inn"
 
  */
 static NSString * const BME_LOGIN_PERFORM_LOG_IN = @"BME_LOGIN_PERFORM_LOG_IN";
@@ -1661,6 +1913,8 @@ static NSString * const BME_LOGIN_PERFORM_LOG_IN = @"BME_LOGIN_PERFORM_LOG_IN";
 
  * @b en@: "Log in with Facebook"
 
+ * @b nb@: "Logg inn med Facebook"
+
  */
 static NSString * const BME_LOGIN_FACEBOOK = @"BME_LOGIN_FACEBOOK";
 
@@ -1672,6 +1926,8 @@ static NSString * const BME_LOGIN_FACEBOOK = @"BME_LOGIN_FACEBOOK";
  * @b da@: "Glemt adgangskode"
 
  * @b en@: "Forgot password"
+
+ * @b nb@: "Glemt passord"
 
  */
 static NSString * const BME_LOGIN_FORGOT_PASSWORD = @"BME_LOGIN_FORGOT_PASSWORD";
@@ -1685,6 +1941,8 @@ static NSString * const BME_LOGIN_FORGOT_PASSWORD = @"BME_LOGIN_FORGOT_PASSWORD"
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL = @"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL";
 
@@ -1696,6 +1954,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL = @"BME_LO
  * @b da@: "Kontroller at du har en aktiv internetforbindelse og prøv igen."
 
  * @b en@: "Please verify that you have an active internet connection and try again."
+
+ * @b nb@: "Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
 
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE = @"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE";
@@ -1709,6 +1969,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE = @"BME_L
 
  * @b en@: "An error occurred"
 
+ * @b nb@: "En feil oppstod"
+
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE = @"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE";
 
@@ -1720,6 +1982,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE = @"BME_LOG
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL = @"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL";
@@ -1733,6 +1997,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL = @"BME_LO
 
  * @b en@: "You were not logged in. Please try again."
 
+ * @b nb@: "Du ble ikke logget inn. Vennligst prøv igjen."
+
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE = @"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE";
 
@@ -1744,6 +2010,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE = @"BME_L
  * @b da@: "Ikke logget ind"
 
  * @b en@: "Not logged in"
+
+ * @b nb@: "Ikke logget inn"
 
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE = @"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE";
@@ -1757,6 +2025,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE = @"BME_LOG
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL = @"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL";
 
@@ -1768,6 +2038,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL = @"
  * @b da@: "Du skal først tilmelde dig med din Facebook-konto, før du kan logge ind."
 
  * @b en@: "You must first sign up with your Facebook account before you can log in."
+
+ * @b nb@: "Du må registrere deg med din Facebook-konto før du kan logge inn."
 
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE = @"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE";
@@ -1781,6 +2053,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE = @
 
  * @b en@: "Account not registered"
 
+ * @b nb@: "Konto ikke registrert"
+
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE = @"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE";
 
@@ -1792,6 +2066,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE = @"B
  * @b da@: "Indtast venligst både e-mail og adgangskode."
 
  * @b en@: "Please enter both e-mail and password."
+
+ * @b nb@: "Vennligst fyll inn både e-post og passord."
 
  */
 static NSString * const BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE = @"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE";
@@ -1805,6 +2081,8 @@ static NSString * const BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE = @"BME_LOGIN_ALERT_
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL = @"BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL";
 
@@ -1816,6 +2094,8 @@ static NSString * const BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL = @"BME_LOGIN_ALERT_
  * @b da@: "Tomme felter"
 
  * @b en@: "Empty fields"
+
+ * @b nb@: "Tomme felt"
 
  */
 static NSString * const BME_LOGIN_ALERT_EMPTY_FIELDS_TITLE = @"BME_LOGIN_ALERT_EMPTY_FIELDS_TITLE";
@@ -1829,6 +2109,8 @@ static NSString * const BME_LOGIN_ALERT_EMPTY_FIELDS_TITLE = @"BME_LOGIN_ALERT_E
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL = @"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL";
 
@@ -1840,6 +2122,8 @@ static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL = @"BME_LOG
  * @b da@: "Den indtastede e-mail og adgangskode stemmer ikke overens."
 
  * @b en@: "The entered e-mail and password does not match."
+
+ * @b nb@: "E-posten eller passordet du har angitt er feil."
 
  */
 static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE = @"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE";
@@ -1853,6 +2137,8 @@ static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE = @"BME_LO
 
  * @b en@: "Incorrect credentials"
 
+ * @b nb@: "Feil påloggingsdetaljer"
+
  */
 static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE = @"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE";
 
@@ -1864,6 +2150,8 @@ static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE = @"BME_LOGI
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL = @"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL";
@@ -1877,6 +2165,8 @@ static NSString * const BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL = @"BME
 
  * @b en@: "Please verify that you have an active internet connection and try again."
 
+ * @b nb@: "Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
+
  */
 static NSString * const BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE = @"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE";
 
@@ -1888,6 +2178,8 @@ static NSString * const BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE = @"BM
  * @b da@: "Der opstod en fejl"
 
  * @b en@: "An error occurred"
+
+ * @b nb@: "En feil oppstod"
 
  */
 static NSString * const BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE = @"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE";
@@ -1901,6 +2193,8 @@ static NSString * const BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE = @"BME_
 
  * @b en@: "Logging in..."
 
+ * @b nb@: "Logger inn..."
+
  */
 static NSString * const BME_LOGIN_OVERLAY_LOGGING_IN_TITLE = @"BME_LOGIN_OVERLAY_LOGGING_IN_TITLE";
 
@@ -1912,6 +2206,8 @@ static NSString * const BME_LOGIN_OVERLAY_LOGGING_IN_TITLE = @"BME_LOGIN_OVERLAY
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL = @"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL";
@@ -1925,6 +2221,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL = @"BM
 
  * @b en@: "No Facebook accounts were found on the device. Please add you account in the system settings."
 
+ * @b nb@: "Ingen Facebook-kontoer ble funnet på enheten. Vennligst legg til din konto i systeminnstillingene."
+
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE = @"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE";
 
@@ -1936,6 +2234,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE = @"B
  * @b da@: "Ingen konto fundet"
 
  * @b en@: "No account found"
+
+ * @b nb@: "Ingen konto funnet"
 
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE = @"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE";
@@ -1949,6 +2249,8 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE = @"BME
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL = @"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL";
 
@@ -1960,6 +2262,8 @@ static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_
  * @b da@: "Kunne ikke tilmelde meddelelser. Dette er nødvendig for Be My Eyes appen. Sørg venligst for at du har meddelelser aktiveret i systemindstillingerne, og prøv igen."
 
  * @b en@: "Could not register for remote notifications. This is required for the Be My Eyes application. Please ensure that you have remote notifications enabled in your system settings and try again."
+
+ * @b nb@: "Kunne ikke registrere varslinger. Dette er nødvendig for Be My Eyes applikasjonen. Vennligst forsikre deg om at du har aktivert varslinger i systeminnstillingene og prøv igjen."
 
  */
 static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE = @"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE";
@@ -1973,6 +2277,8 @@ static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_
 
  * @b en@: "Log in failed"
 
+ * @b nb@: "Pålogging mislyktes"
+
  */
 static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE = @"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE";
 
@@ -1984,6 +2290,8 @@ static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_
  * @b da@: "Henter forespørgsel..."
 
  * @b en@: "Loading request..."
+
+ * @b nb@: "Laster forespørsel..."
 
  */
 static NSString * const BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE = @"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE";
@@ -1997,6 +2305,8 @@ static NSString * const BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE = @"BME_
 
  * @b en@: "No"
 
+ * @b nb@: "Nei"
+
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL = @"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL";
 
@@ -2008,6 +2318,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL = @"BME_MAIN_
  * @b da@: "Ja jeg gør"
 
  * @b en@: "Yes, I do"
+
+ * @b nb@: "Ja"
 
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM = @"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM";
@@ -2021,6 +2333,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM = @"BME_MAIN
 
  * @b en@: "If you know more languages you can select those and be matched with a helper who also knows that language thereby receiving help faster."
 
+ * @b nb@: "Hvis du kan flere språk, vennligst velg disse. Du blir da matchet med hjelpere som kan samme språk som deg, og vil kunne få hjelp raskere."
+
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE = @"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE";
 
@@ -2032,6 +2346,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE = @"BME_MAIN
  * @b da@: "Kender du flere sprog?"
 
  * @b en@: "Do you know more languages?"
+
+ * @b nb@: "Kan du flere språk?"
 
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE = @"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE";
@@ -2045,6 +2361,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE = @"BME_MAIN_A
 
  * @b en@: "No"
 
+ * @b nb@: "Nei"
+
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL = @"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL";
 
@@ -2056,6 +2374,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL = @"BME_MAIN
  * @b da@: "Ja jeg gør"
 
  * @b en@: "Yes, I do"
+
+ * @b nb@: "Ja"
 
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM = @"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM";
@@ -2069,6 +2389,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM = @"BME_MAI
 
  * @b en@: "If you know more languages, you can select those and you will be matched with blind people who needs help in that language."
 
+ * @b nb@: "Dersom du kan flere språk, vennligst velg disse og du vil bli matchet med blinde personer som trenger hjelp på de språkene du kan."
+
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE = @"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE";
 
@@ -2080,6 +2402,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE = @"BME_MAI
  * @b da@: "Kender du flere sprog?"
 
  * @b en@: "Do you know more languages?"
+
+ * @b nb@: "Kan du flere språk?"
 
  */
 static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE = @"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE";
@@ -2093,6 +2417,8 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE = @"BME_MAIN_
 
  * @b en@: "Settings"
 
+ * @b nb@: "Innstillinger"
+
  */
 static NSString * const BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL = @"BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL";
 
@@ -2104,6 +2430,8 @@ static NSString * const BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL = @"BME_MAI
  * @b da@: "Notifikationer"
 
  * @b en@: "Notifications"
+
+ * @b nb@: "Varslinger"
 
  */
 static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE = @"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE";
@@ -2117,6 +2445,8 @@ static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE = @"BME_MAIN_AL
 
  * @b en@: "Something went wrong and you might not receive notifications"
 
+ * @b nb@: "Noe gikk galt, og det kan være du ikke vil motta varsler"
+
  */
 static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE = @"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE";
 
@@ -2128,6 +2458,8 @@ static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE = @"BME_MAIN_
  * @b da@: "Ok"
 
  * @b en@: "Ok"
+
+ * @b nb@: "Ok"
 
  */
 static NSString * const BME_MAIN_ALERT_CANCEL = @"BME_MAIN_ALERT_CANCEL";
@@ -2141,6 +2473,8 @@ static NSString * const BME_MAIN_ALERT_CANCEL = @"BME_MAIN_ALERT_CANCEL";
 
  * @b en@: "Log in error"
 
+ * @b nb@: "Innloggingsfeil"
+
  */
 static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_TITLE = @"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE";
 
@@ -2152,6 +2486,8 @@ static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_TITLE = @"BME_MAIN_ALERT_FO
  * @b da@: "Pga. en teknisk fejl bliver du logget ud."
 
  * @b en@: "Due to a technical error you will be logged out."
+
+ * @b nb@: "På grunn av en teknisk feil vil du nå bli logget ut."
 
  */
 static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE = @"BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE";
@@ -2165,6 +2501,8 @@ static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE = @"BME_MAIN_ALERT_
 
  * @b en@: "Log in"
 
+ * @b nb@: "Logg inn"
+
  */
 static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM = @"BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM";
 
@@ -2176,6 +2514,8 @@ static NSString * const BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM = @"BME_MAIN_ALERT_
  * @b da@: "Tilbage"
 
  * @b en@: "Back"
+
+ * @b nb@: "Tilbake"
 
  */
 static NSString * const BME_PRIVACY_POLICY_BACK = @"BME_PRIVACY_POLICY_BACK";
@@ -2189,6 +2529,8 @@ static NSString * const BME_PRIVACY_POLICY_BACK = @"BME_PRIVACY_POLICY_BACK";
 
  * @b en@: "Yes!"
 
+ * @b nb@: "Ja!"
+
  */
 static NSString * const BME_REGISTERED_HEADLINE = @"BME_REGISTERED_HEADLINE";
 
@@ -2200,6 +2542,8 @@ static NSString * const BME_REGISTERED_HEADLINE = @"BME_REGISTERED_HEADLINE";
  * @b da@: "Du er nu registreret."
 
  * @b en@: "You are now registered."
+
+ * @b nb@: "Du er nå registrert."
 
  */
 static NSString * const BME_REGISTERED_DESCRIPTION = @"BME_REGISTERED_DESCRIPTION";
@@ -2213,6 +2557,8 @@ static NSString * const BME_REGISTERED_DESCRIPTION = @"BME_REGISTERED_DESCRIPTIO
 
  * @b en@: "Log in"
 
+ * @b nb@: "Logg inn"
+
  */
 static NSString * const BME_REGISTERED_LOG_IN = @"BME_REGISTERED_LOG_IN";
 
@@ -2224,6 +2570,8 @@ static NSString * const BME_REGISTERED_LOG_IN = @"BME_REGISTERED_LOG_IN";
  * @b da@: "Rapporter misbrug"
 
  * @b en@: "Report abuse"
+
+ * @b nb@: "Rapporter misbruk"
 
  */
 static NSString * const BME_REPORT_ABUSE_HEADLINE = @"BME_REPORT_ABUSE_HEADLINE";
@@ -2237,6 +2585,8 @@ static NSString * const BME_REPORT_ABUSE_HEADLINE = @"BME_REPORT_ABUSE_HEADLINE"
 
  * @b en@: "Choose a reason"
 
+ * @b nb@: "Velg årsak"
+
  */
 static NSString * const BME_REPORT_ABUSE_CHOOSE_REASON = @"BME_REPORT_ABUSE_CHOOSE_REASON";
 
@@ -2248,6 +2598,8 @@ static NSString * const BME_REPORT_ABUSE_CHOOSE_REASON = @"BME_REPORT_ABUSE_CHOO
  * @b da@: "Rapporter misbrug"
 
  * @b en@: "Report abuse"
+
+ * @b nb@: "Rapporter misbruk"
 
  */
 static NSString * const BME_REPORT_ABUSE_REPORT = @"BME_REPORT_ABUSE_REPORT";
@@ -2261,6 +2613,8 @@ static NSString * const BME_REPORT_ABUSE_REPORT = @"BME_REPORT_ABUSE_REPORT";
 
  * @b en@: "Skip"
 
+ * @b nb@: "Hopp over"
+
  */
 static NSString * const BME_REPORT_ABUSE_SKIP = @"BME_REPORT_ABUSE_SKIP";
 
@@ -2272,6 +2626,8 @@ static NSString * const BME_REPORT_ABUSE_SKIP = @"BME_REPORT_ABUSE_SKIP";
  * @b da@: "Personen ønskede ikke at hjælpe."
 
  * @b en@: "The person did not want to help."
+
+ * @b nb@: "Personen ville ikke hjelpe."
 
  */
 static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND = @"BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND";
@@ -2285,6 +2641,8 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND = @"BME_REPORT_ABUS
 
  * @b en@: "The person was not blind."
 
+ * @b nb@: "Personen var ikke blind."
+
  */
 static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER = @"BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER";
 
@@ -2296,6 +2654,8 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER = @"BME_REPORT_ABU
  * @b da@: "Hjælperen handlede upassende."
 
  * @b en@: "The helper acted inappropriate."
+
+ * @b nb@: "Hjelperen oppførte seg upassende."
 
  */
 static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND = @"BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND";
@@ -2309,6 +2669,8 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND = @"BME_REPORT_ABUS
 
  * @b en@: "The blind person acted inappropriate."
 
+ * @b nb@: "Den blinde oppførte seg upassende."
+
  */
 static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER = @"BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER";
 
@@ -2320,6 +2682,8 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER = @"BME_REPORT_ABU
  * @b da@: "Grunden er ikke angivet."
 
  * @b en@: "The reason is not listed."
+
+ * @b nb@: "Årsaken er ikke på listen."
 
  */
 static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND = @"BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND";
@@ -2333,6 +2697,8 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND = @"BME_REPORT_ABUS
 
  * @b en@: "The reason is not listed."
 
+ * @b nb@: "Årsaken er ikke på listen."
+
  */
 static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER = @"BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER";
 
@@ -2344,6 +2710,8 @@ static NSString * const BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER = @"BME_REPORT_ABU
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_CANCEL = @"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_CANCEL";
@@ -2357,6 +2725,8 @@ static NSString * const BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_CANCEL = @"BME_R
 
  * @b en@: "The report could not be sent. Please ensure that you have an active internet connection and try again."
 
+ * @b nb@: "Rapporteringen kunne ikke sendes. Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
+
  */
 static NSString * const BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE = @"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE";
 
@@ -2368,6 +2738,8 @@ static NSString * const BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE = @"BME_
  * @b da@: "Kunne ikke rapportere misbrug"
 
  * @b en@: "Could not report abuse"
+
+ * @b nb@: "Kunne ikke rapprotere misbruk"
 
  */
 static NSString * const BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE = @"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE";
@@ -2381,6 +2753,8 @@ static NSString * const BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE = @"BME_RE
 
  * @b en@: "Reporting..."
 
+ * @b nb@: "Rapporterer..."
+
  */
 static NSString * const BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE = @"BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE";
 
@@ -2392,6 +2766,8 @@ static NSString * const BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE = @"BME_REPORT_
  * @b da@: "Annuller"
 
  * @b en@: "Cancel"
+
+ * @b nb@: "Avbryt"
 
  */
 static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL = @"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL";
@@ -2405,6 +2781,8 @@ static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL = @"B
 
  * @b en@: "Confirm"
 
+ * @b nb@: "Bekreft"
+
  */
 static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM = @"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM";
 
@@ -2416,6 +2794,8 @@ static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM = @"
  * @b da@: "Alle tilfælde af misbrug tages alvorligt og undersøges. Er du sikker på at du vil rapportere modparten?"
 
  * @b en@: "All abuse cases are taken serious and looked into. Are you sure that you want to report the other part for abuse?"
+
+ * @b nb@: "Alle rapporterte saker blir tatt seriøst og sett nærmere på. Er du sikker på at du vil rapportere den annen part for misbruk?"
 
  */
 static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE = @"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE";
@@ -2429,6 +2809,8 @@ static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE = @"
 
  * @b en@: "Report Abuse"
 
+ * @b nb@: "Rapporter misbruk"
+
  */
 static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE = @"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE";
 
@@ -2440,6 +2822,8 @@ static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE = @"BM
  * @b da@: "Personen ønskede ikke at hjælpe (Valgt)"
 
  * @b en@: "The person did not want to help (Selected)"
+
+ * @b nb@: "Personen ville ikke hjelpe (valgt)"
 
  */
 static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED = @"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED";
@@ -2453,6 +2837,8 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED = @"BME_
 
  * @b en@: "The person did not want to help."
 
+ * @b nb@: "Personen ville ikke hjelpe."
+
  */
 static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1 = @"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1";
 
@@ -2464,6 +2850,8 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1 = @"BME_REPORT_AB
  * @b da@: "Hjælperen handlede upassende (valgt)"
 
  * @b en@: "The helper acted inappropriate (Selected)"
+
+ * @b nb@: "Hjelperen oppførte seg upassende (valgt)"
 
  */
 static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED = @"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED";
@@ -2477,6 +2865,8 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED = @"BME_
 
  * @b en@: "The helper acted inappropriate."
 
+ * @b nb@: "Hjelperen oppførte seg upassende."
+
  */
 static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2 = @"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2";
 
@@ -2488,6 +2878,8 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2 = @"BME_REPORT_AB
  * @b da@: "Grunden er ikke angivet (Valgt)"
 
  * @b en@: "The reason is not listed (Selected)"
+
+ * @b nb@: "Årsaken er ikke på listen (valgt)"
 
  */
 static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED = @"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED";
@@ -2501,6 +2893,8 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED = @"BME_
 
  * @b en@: "The reason is not listed."
 
+ * @b nb@: "Årsaken er ikke på listen."
+
  */
 static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3 = @"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3";
 
@@ -2512,6 +2906,8 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3 = @"BME_REPORT_AB
  * @b da@: "API"
 
  * @b en@: "API"
+
+ * @b nb@: "API"
 
  */
 static NSString * const BME_SECRET_SETTINGS_API_TITLE = @"BME_SECRET_SETTINGS_API_TITLE";
@@ -2525,6 +2921,8 @@ static NSString * const BME_SECRET_SETTINGS_API_TITLE = @"BME_SECRET_SETTINGS_AP
 
  * @b en@: "Changing the API requires the app to be restarted."
 
+ * @b nb@: "Endringer i API krever omstart av applikasjonen."
+
  */
 static NSString * const BME_SECRET_SETTINGS_API_DESCRIPTION = @"BME_SECRET_SETTINGS_API_DESCRIPTION";
 
@@ -2536,6 +2934,8 @@ static NSString * const BME_SECRET_SETTINGS_API_DESCRIPTION = @"BME_SECRET_SETTI
  * @b da@: "Development"
 
  * @b en@: "Development"
+
+ * @b nb@: "Utvikling"
 
  */
 static NSString * const BME_SECRET_SETTINGS_API_DEVELOPMENT = @"BME_SECRET_SETTINGS_API_DEVELOPMENT";
@@ -2549,6 +2949,8 @@ static NSString * const BME_SECRET_SETTINGS_API_DEVELOPMENT = @"BME_SECRET_SETTI
 
  * @b en@: "Staging"
 
+ * @b nb@: "Regi"
+
  */
 static NSString * const BME_SECRET_SETTINGS_API_STAGING = @"BME_SECRET_SETTINGS_API_STAGING";
 
@@ -2560,6 +2962,8 @@ static NSString * const BME_SECRET_SETTINGS_API_STAGING = @"BME_SECRET_SETTINGS_
  * @b da@: "Public"
 
  * @b en@: "Public"
+
+ * @b nb@: "Offentlig"
 
  */
 static NSString * const BME_SECRET_SETTINGS_API_PUBLIC = @"BME_SECRET_SETTINGS_API_PUBLIC";
@@ -2573,6 +2977,8 @@ static NSString * const BME_SECRET_SETTINGS_API_PUBLIC = @"BME_SECRET_SETTINGS_A
 
  * @b en@: "Settings"
 
+ * @b nb@: "Innstillinger"
+
  */
 static NSString * const BME_SETTINGS_HEADLINE = @"BME_SETTINGS_HEADLINE";
 
@@ -2584,6 +2990,8 @@ static NSString * const BME_SETTINGS_HEADLINE = @"BME_SETTINGS_HEADLINE";
  * @b da@: "Fornavn"
 
  * @b en@: "First name"
+
+ * @b nb@: "Fornavn"
 
  */
 static NSString * const BME_SETTINGS_FIRST_NAME = @"BME_SETTINGS_FIRST_NAME";
@@ -2597,6 +3005,8 @@ static NSString * const BME_SETTINGS_FIRST_NAME = @"BME_SETTINGS_FIRST_NAME";
 
  * @b en@: "Surname"
 
+ * @b nb@: "Etternavn"
+
  */
 static NSString * const BME_SETTINGS_LAST_NAME = @"BME_SETTINGS_LAST_NAME";
 
@@ -2608,6 +3018,8 @@ static NSString * const BME_SETTINGS_LAST_NAME = @"BME_SETTINGS_LAST_NAME";
  * @b da@: "E-mail"
 
  * @b en@: "E-mail"
+
+ * @b nb@: "E-post"
 
  */
 static NSString * const BME_SETTINGS_EMAIL = @"BME_SETTINGS_EMAIL";
@@ -2621,6 +3033,8 @@ static NSString * const BME_SETTINGS_EMAIL = @"BME_SETTINGS_EMAIL";
 
  * @b en@: "Languages"
 
+ * @b nb@: "Språk"
+
  */
 static NSString * const BME_SETTINGS_LANGUAGES = @"BME_SETTINGS_LANGUAGES";
 
@@ -2632,6 +3046,8 @@ static NSString * const BME_SETTINGS_LANGUAGES = @"BME_SETTINGS_LANGUAGES";
  * @b da@: "Tilføj sprog"
 
  * @b en@: "Add languages"
+
+ * @b nb@: "Legg til språk"
 
  */
 static NSString * const BME_SETTINGS_ADD_LANGUAGES = @"BME_SETTINGS_ADD_LANGUAGES";
@@ -2645,6 +3061,8 @@ static NSString * const BME_SETTINGS_ADD_LANGUAGES = @"BME_SETTINGS_ADD_LANGUAGE
 
  * @b en@: "Give feedback on the app"
 
+ * @b nb@: "Gi tilbakemeldinger på appen"
+
  */
 static NSString * const BME_SETTINGS_FEEDBACK = @"BME_SETTINGS_FEEDBACK";
 
@@ -2656,6 +3074,8 @@ static NSString * const BME_SETTINGS_FEEDBACK = @"BME_SETTINGS_FEEDBACK";
  * @b da@: "Log ud"
 
  * @b en@: "Log out"
+
+ * @b nb@: "Logg ut"
 
  */
 static NSString * const BME_SETTINGS_LOG_OUT = @"BME_SETTINGS_LOG_OUT";
@@ -2669,6 +3089,8 @@ static NSString * const BME_SETTINGS_LOG_OUT = @"BME_SETTINGS_LOG_OUT";
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL = @"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL";
 
@@ -2680,6 +3102,8 @@ static NSString * const BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL = @"BME_SETTING
  * @b da@: "Du blev ikke logget ud. Sørg for at du har en aktiv internetforbindelse og prøv igen."
 
  * @b en@: "You were not logged out. Please ensure that you have an active internet connection and try again."
+
+ * @b nb@: "Du ble ikke logget ut. Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
 
  */
 static NSString * const BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE = @"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE";
@@ -2693,6 +3117,8 @@ static NSString * const BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE = @"BME_SETTIN
 
  * @b en@: "Could not log out"
 
+ * @b nb@: "Kunne ikke logge ut"
+
  */
 static NSString * const BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE = @"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE";
 
@@ -2704,6 +3130,8 @@ static NSString * const BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE = @"BME_SETTINGS
  * @b da@: "Logger ud..."
 
  * @b en@: "Logging out..."
+
+ * @b nb@: "Logger ut..."
 
  */
 static NSString * const BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE = @"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE";
@@ -2717,6 +3145,8 @@ static NSString * const BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE = @"BME_SETTINGS_
 
  * @b en@: "Version %@"
 
+ * @b nb@: "Versjon %@"
+
  */
 static NSString * const BME_SETTINGS_VERSION_TITLE = @"BME_SETTINGS_VERSION_TITLE";
 
@@ -2728,6 +3158,8 @@ static NSString * const BME_SETTINGS_VERSION_TITLE = @"BME_SETTINGS_VERSION_TITL
  * @b da@: "Tilbage"
 
  * @b en@: "Back"
+
+ * @b nb@: "Tilbake"
 
  */
 static NSString * const BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL = @"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL";
@@ -2741,6 +3173,8 @@ static NSString * const BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL = @"BME_
 
  * @b en@: "+%d points"
 
+ * @b nb@: "+%d poeng"
+
  */
 static NSString * const BME_SETTINGS_TASK_POINTS = @"BME_SETTINGS_TASK_POINTS";
 
@@ -2752,6 +3186,8 @@ static NSString * const BME_SETTINGS_TASK_POINTS = @"BME_SETTINGS_TASK_POINTS";
  * @b da@: "✓"
 
  * @b en@: "✓"
+
+ * @b nb@: "✓"
 
  */
 static NSString * const BME_SETTINGS_TASK_COMPLETED = @"BME_SETTINGS_TASK_COMPLETED";
@@ -2765,6 +3201,8 @@ static NSString * const BME_SETTINGS_TASK_COMPLETED = @"BME_SETTINGS_TASK_COMPLE
 
  * @b en@: "Completed"
 
+ * @b nb@: "Fullført"
+
  */
 static NSString * const BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL = @"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL";
 
@@ -2776,6 +3214,8 @@ static NSString * const BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL = @"BME_
  * @b da@: "Hjælp en blind med at se med #BeMyEyes appen - appen som forbinder blinde med seende hjælpere!"
 
  * @b en@: "Help a blind person see with the #BeMyEyes app - the app that connects blind people with sighted helpers!"
+
+ * @b nb@: "Hjelp en blind person å se med #BeMyEyes appen - appen som forbinder blinde personer med seende hjelpere!"
 
  */
 static NSString * const BME_SETTINGS_TASK_SHARE_MESSAGE = @"BME_SETTINGS_TASK_SHARE_MESSAGE";
@@ -2789,6 +3229,8 @@ static NSString * const BME_SETTINGS_TASK_SHARE_MESSAGE = @"BME_SETTINGS_TASK_SH
 
  * @b en@: "Back"
 
+ * @b nb@: "Tilbake"
+
  */
 static NSString * const BME_SIGN_UP_BACK = @"BME_SIGN_UP_BACK";
 
@@ -2800,6 +3242,8 @@ static NSString * const BME_SIGN_UP_BACK = @"BME_SIGN_UP_BACK";
  * @b da@: "Fornavn"
 
  * @b en@: "First name"
+
+ * @b nb@: "Fornavn"
 
  */
 static NSString * const BME_SIGN_UP_FIRST_NAME_PLACEHOLDER = @"BME_SIGN_UP_FIRST_NAME_PLACEHOLDER";
@@ -2813,6 +3257,8 @@ static NSString * const BME_SIGN_UP_FIRST_NAME_PLACEHOLDER = @"BME_SIGN_UP_FIRST
 
  * @b en@: "Surname"
 
+ * @b nb@: "Etternavn"
+
  */
 static NSString * const BME_SIGN_UP_LAST_NAME_PLACEHOLDER = @"BME_SIGN_UP_LAST_NAME_PLACEHOLDER";
 
@@ -2824,6 +3270,8 @@ static NSString * const BME_SIGN_UP_LAST_NAME_PLACEHOLDER = @"BME_SIGN_UP_LAST_N
  * @b da@: "E-mail"
 
  * @b en@: "E-mail"
+
+ * @b nb@: "E-post"
 
  */
 static NSString * const BME_SIGN_UP_EMAIL_PLACEHOLDER = @"BME_SIGN_UP_EMAIL_PLACEHOLDER";
@@ -2837,6 +3285,8 @@ static NSString * const BME_SIGN_UP_EMAIL_PLACEHOLDER = @"BME_SIGN_UP_EMAIL_PLAC
 
  * @b en@: "Password"
 
+ * @b nb@: "Passord"
+
  */
 static NSString * const BME_SIGN_UP_PASSWORD_PLACEHOLDER = @"BME_SIGN_UP_PASSWORD_PLACEHOLDER";
 
@@ -2848,6 +3298,8 @@ static NSString * const BME_SIGN_UP_PASSWORD_PLACEHOLDER = @"BME_SIGN_UP_PASSWOR
  * @b da@: "Tilmeld"
 
  * @b en@: "Register"
+
+ * @b nb@: "Registrer"
 
  */
 static NSString * const BME_SIGN_UP_REGISTER = @"BME_SIGN_UP_REGISTER";
@@ -2861,6 +3313,8 @@ static NSString * const BME_SIGN_UP_REGISTER = @"BME_SIGN_UP_REGISTER";
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_CANCEL = @"BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_CANCEL";
 
@@ -2872,6 +3326,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_CANCEL = @"BM
  * @b da@: "Der findes allerede en konto med den indtastede e-mail-adresse."
 
  * @b en@: "An account with the entered e-mail address already exists."
+
+ * @b nb@: "En konto med denne e-post adressen eksisterer allerede."
 
  */
 static NSString * const BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE = @"BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE";
@@ -2885,6 +3341,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE = @"B
 
  * @b en@: "E-mail already registered"
 
+ * @b nb@: "E-post allerede registrert"
+
  */
 static NSString * const BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_TITLE = @"BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_TITLE";
 
@@ -2896,6 +3354,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_TITLE = @"BME
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_CANCEL = @"BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_CANCEL";
@@ -2909,6 +3369,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_CANCEL = @"BME_SIGN_UP
 
  * @b en@: "The entered e-mail address is not valid."
 
+ * @b nb@: "E-posten du skrev inn er ikke gyldig."
+
  */
 static NSString * const BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_MESSAGE = @"BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_MESSAGE";
 
@@ -2920,6 +3382,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_MESSAGE = @"BME_SIGN_U
  * @b da@: "E-mail er ugyldig"
 
  * @b en@: "E-mail is invalid"
+
+ * @b nb@: "Ugyldig e-post"
 
  */
 static NSString * const BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_TITLE = @"BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_TITLE";
@@ -2933,6 +3397,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_TITLE = @"BME_SIGN_UP_
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_SIGN_UP_ALERT_EMPTY_FIELDS_CANCEL = @"BME_SIGN_UP_ALERT_EMPTY_FIELDS_CANCEL";
 
@@ -2944,6 +3410,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMPTY_FIELDS_CANCEL = @"BME_SIGN_UP_AL
  * @b da@: "Udfyld venligst alle oplysninger, før du fortsætter."
 
  * @b en@: "Please fill out all information before proceeding."
+
+ * @b nb@: "Vennligst fyll ut all informasjon før du går videre."
 
  */
 static NSString * const BME_SIGN_UP_ALERT_EMPTY_FIELDS_MESSAGE = @"BME_SIGN_UP_ALERT_EMPTY_FIELDS_MESSAGE";
@@ -2957,6 +3425,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMPTY_FIELDS_MESSAGE = @"BME_SIGN_UP_A
 
  * @b en@: "Empty fields"
 
+ * @b nb@: "Tomme felt"
+
  */
 static NSString * const BME_SIGN_UP_ALERT_EMPTY_FIELDS_TITLE = @"BME_SIGN_UP_ALERT_EMPTY_FIELDS_TITLE";
 
@@ -2968,6 +3438,8 @@ static NSString * const BME_SIGN_UP_ALERT_EMPTY_FIELDS_TITLE = @"BME_SIGN_UP_ALE
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_CANCEL = @"BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_CANCEL";
@@ -2981,6 +3453,8 @@ static NSString * const BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_CANCEL = @"BME_SIGN
 
  * @b en@: "The entered password is too short."
 
+ * @b nb@: "Passordet du skrev inn er for kort."
+
  */
 static NSString * const BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_MESSAGE = @"BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_MESSAGE";
 
@@ -2992,6 +3466,8 @@ static NSString * const BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_MESSAGE = @"BME_SIG
  * @b da@: "Adgangskoden er for kort"
 
  * @b en@: "Password is too short"
+
+ * @b nb@: "Passordet er for kort"
 
  */
 static NSString * const BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_TITLE = @"BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_TITLE";
@@ -3005,6 +3481,8 @@ static NSString * const BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_TITLE = @"BME_SIGN_
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_CANCEL = @"BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_CANCEL";
 
@@ -3016,6 +3494,8 @@ static NSString * const BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_CANCEL = @"BME_
  * @b da@: "De indtastede adgangskoder stemmer ikke overens."
 
  * @b en@: "The entered passwords does not match."
+
+ * @b nb@: "Passordene du skrev inn samsvarer ikke."
 
  */
 static NSString * const BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_MESSAGE = @"BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_MESSAGE";
@@ -3029,6 +3509,8 @@ static NSString * const BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_MESSAGE = @"BME
 
  * @b en@: "Passwords not matching"
 
+ * @b nb@: "Passordene samsvarer ikke"
+
  */
 static NSString * const BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_TITLE = @"BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_TITLE";
 
@@ -3040,6 +3522,8 @@ static NSString * const BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_TITLE = @"BME_S
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL = @"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL";
@@ -3053,6 +3537,8 @@ static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL = @"BME_SIGN_UP_A
 
  * @b en@: "Your account could not be created. Please verify that you have an active internet connection and try again."
 
+ * @b nb@: "Kontoen din kunne ikke opprettes. Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
+
  */
 static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE = @"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE";
 
@@ -3064,6 +3550,8 @@ static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE = @"BME_SIGN_UP_
  * @b da@: "Kunne ikke oprette konto"
 
  * @b en@: "Could not create account"
+
+ * @b nb@: "Kunne ikke opprette konto"
 
  */
 static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE = @"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE";
@@ -3077,6 +3565,8 @@ static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE = @"BME_SIGN_UP_AL
 
  * @b en@: "Logging in..."
 
+ * @b nb@: "Logger inn..."
+
  */
 static NSString * const BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE = @"BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE";
 
@@ -3088,6 +3578,8 @@ static NSString * const BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE = @"BME_SIGN_UP_OVE
  * @b da@: "Tilmelder..."
 
  * @b en@: "Registering..."
+
+ * @b nb@: "Reistrerer..."
 
  */
 static NSString * const BME_SIGN_UP_OVERLAY_REGISTERING_TITLE = @"BME_SIGN_UP_OVERLAY_REGISTERING_TITLE";
@@ -3101,6 +3593,8 @@ static NSString * const BME_SIGN_UP_OVERLAY_REGISTERING_TITLE = @"BME_SIGN_UP_OV
 
  * @b en@: "Back"
 
+ * @b nb@: "Tilbake"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_BACK = @"BME_SIGN_UP_METHOD_BACK";
 
@@ -3112,6 +3606,8 @@ static NSString * const BME_SIGN_UP_METHOD_BACK = @"BME_SIGN_UP_METHOD_BACK";
  * @b da@: "Bliv en del af netværket"
 
  * @b en@: "Become a part of the network"
+
+ * @b nb@: "Bli en del av nettverket"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_HEADLINE = @"BME_SIGN_UP_METHOD_HEADLINE";
@@ -3125,6 +3621,8 @@ static NSString * const BME_SIGN_UP_METHOD_HEADLINE = @"BME_SIGN_UP_METHOD_HEADL
 
  * @b en@: "Sign up via Facebook"
 
+ * @b nb@: "Registrer deg via Facebook"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_FACEBOOK = @"BME_SIGN_UP_METHOD_FACEBOOK";
 
@@ -3136,6 +3634,8 @@ static NSString * const BME_SIGN_UP_METHOD_FACEBOOK = @"BME_SIGN_UP_METHOD_FACEB
  * @b da@: "Tilmeld dig via e-mail"
 
  * @b en@: "Sign up with e-mail"
+
+ * @b nb@: "Registrer deg med e-post"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_EMAIL = @"BME_SIGN_UP_METHOD_EMAIL";
@@ -3149,6 +3649,8 @@ static NSString * const BME_SIGN_UP_METHOD_EMAIL = @"BME_SIGN_UP_METHOD_EMAIL";
 
  * @b en@: "By continuing you accept the"
 
+ * @b nb@: "Ved å fortsetter godtar du våre"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP = @"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP";
 
@@ -3160,6 +3662,8 @@ static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP = @"BME_SIGN
  * @b da@: "Betingelser for brug"
 
  * @b en@: "Terms and Agreements"
+
+ * @b nb@: "Avtalevilkår"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM = @"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM";
@@ -3173,6 +3677,8 @@ static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM = @"BME_S
 
  * @b en@: "as well as the"
 
+ * @b nb@: "og du godtar også våre"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP = @"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP";
 
@@ -3184,6 +3690,8 @@ static NSString * const BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP = @"BME_SIGN_UP_ME
  * @b da@: "Privatlivspolitik"
 
  * @b en@: "Privacy Policy"
+
+ * @b nb@: "Retningslinjer for personvern"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM = @"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM";
@@ -3197,6 +3705,8 @@ static NSString * const BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM = @"BME_SIGN_UP
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL";
 
@@ -3208,6 +3718,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTER
  * @b da@: "En konto med samme e-mail-adresse som pågældende facebook bruger er allerede registreret."
 
  * @b en@: "An account with the e-mail address of the Facebook user has already been registered."
+
+ * @b nb@: "En konto med e-postadressen til Facebook-kontoen er allerede registrert."
 
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE";
@@ -3221,6 +3733,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTER
 
  * @b en@: "E-mail already registered"
 
+ * @b nb@: "E-post allerede registrert"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE";
 
@@ -3232,6 +3746,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTER
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL";
@@ -3245,6 +3761,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_
 
  * @b en@: "Please verify that you have an active internet connection and try again."
 
+ * @b nb@: "Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
+
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE";
 
@@ -3256,6 +3774,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_
  * @b da@: "Der opstod en fejl"
 
  * @b en@: "An error occurred"
+
+ * @b nb@: "En feil oppstod"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE";
@@ -3269,6 +3789,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_
 
  * @b en@: "OK"
 
+ * @b nb@: "OK"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL = @"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL";
 
@@ -3280,6 +3802,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL = @"BME_SI
  * @b da@: "Kunne ikke godkende med Facebook."
 
  * @b en@: "Could not authenticate with Facebook."
+
+ * @b nb@: "Kunne ikke godkjenne med Facebook."
 
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE = @"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE";
@@ -3293,6 +3817,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE = @"BME_S
 
  * @b en@: "Authentication failed"
 
+ * @b nb@: "Godkjenning mislyktes"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE = @"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE";
 
@@ -3304,6 +3830,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE = @"BME_SIG
  * @b da@: "Logger ind..."
 
  * @b en@: "Logging in..."
+
+ * @b nb@: "Logger inn..."
 
  */
 static NSString * const BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE = @"BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE";
@@ -3317,6 +3845,8 @@ static NSString * const BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE = @"BME_SIGN
 
  * @b en@: "Registering..."
 
+ * @b nb@: "Reistrerer..."
+
  */
 static NSString * const BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE = @"BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE";
 
@@ -3328,6 +3858,8 @@ static NSString * const BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE = @"BME_SIG
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL";
@@ -3341,6 +3873,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANC
 
  * @b en@: "No Facebook accounts were found on the device. Please add your account in the system settings."
 
+ * @b nb@: "Ingen Facebook-kontoer ble funnet på enheten. Vennligst legg til din konto i systeminnstillingene."
+
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE";
 
@@ -3352,6 +3886,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESS
  * @b da@: "Ingen konto fundet"
 
  * @b en@: "No account found"
+
+ * @b nb@: "Ingen konto funnet"
 
  */
 static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE = @"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE";
@@ -3365,6 +3901,8 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITL
 
  * @b en@: "Privacy Policy"
 
+ * @b nb@: "Retningslinjer for personvern"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT = @"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT";
 
@@ -3376,6 +3914,8 @@ static NSString * const BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT = @"BME_SI
  * @b da@: " "
 
  * @b en@: " "
+
+ * @b nb@: " "
 
  */
 static NSString * const BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL = @"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL";
@@ -3389,6 +3929,8 @@ static NSString * const BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL = @"BME_S
 
  * @b en@: "Terms and agreements"
 
+ * @b nb@: "avtalevilkår"
+
  */
 static NSString * const BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT = @"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT";
 
@@ -3400,6 +3942,8 @@ static NSString * const BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT = @"BME_SIGN
  * @b da@: " "
 
  * @b en@: " "
+
+ * @b nb@: " "
 
  */
 static NSString * const BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL = @"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL";
@@ -3413,6 +3957,8 @@ static NSString * const BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL = @"BME_SIG
 
  * @b en@: "day"
 
+ * @b nb@: "dag"
+
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_DAY = @"BME_SNOOZE_RELATIVE_DATE_DAY";
 
@@ -3424,6 +3970,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_DAY = @"BME_SNOOZE_RELATIVE_DAT
  * @b da@: "%.0f dage"
 
  * @b en@: "%.0f days"
+
+ * @b nb@: "%.0f dager"
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_DAYS = @"BME_SNOOZE_RELATIVE_DATE_DAYS";
@@ -3437,6 +3985,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_DAYS = @"BME_SNOOZE_RELATIVE_DA
 
  * @b en@: "hour"
 
+ * @b nb@: "time"
+
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_HOUR = @"BME_SNOOZE_RELATIVE_DATE_HOUR";
 
@@ -3448,6 +3998,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_HOUR = @"BME_SNOOZE_RELATIVE_DA
  * @b da@: "%.0f timer"
 
  * @b en@: "%.0f hours"
+
+ * @b nb@: "%.0f timer"
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_HOURS = @"BME_SNOOZE_RELATIVE_DATE_HOURS";
@@ -3461,6 +4013,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_HOURS = @"BME_SNOOZE_RELATIVE_D
 
  * @b en@: "minute"
 
+ * @b nb@: "minutt"
+
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_MINUTE = @"BME_SNOOZE_RELATIVE_DATE_MINUTE";
 
@@ -3472,6 +4026,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_MINUTE = @"BME_SNOOZE_RELATIVE_
  * @b da@: "%.0f minutter"
 
  * @b en@: "%.0f minutes"
+
+ * @b nb@: "%.0f minutter"
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_MINUTES = @"BME_SNOOZE_RELATIVE_DATE_MINUTES";
@@ -3485,6 +4041,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_MINUTES = @"BME_SNOOZE_RELATIVE
 
  * @b en@: "month"
 
+ * @b nb@: "måned"
+
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_MONTH = @"BME_SNOOZE_RELATIVE_DATE_MONTH";
 
@@ -3496,6 +4054,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_MONTH = @"BME_SNOOZE_RELATIVE_D
  * @b da@: "%.0f måneder"
 
  * @b en@: "%.0f months"
+
+ * @b nb@: "%.0f måneder"
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_MONTHS = @"BME_SNOOZE_RELATIVE_DATE_MONTHS";
@@ -3509,6 +4069,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_MONTHS = @"BME_SNOOZE_RELATIVE_
 
  * @b en@: "second"
 
+ * @b nb@: "sekund"
+
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_SECOND = @"BME_SNOOZE_RELATIVE_DATE_SECOND";
 
@@ -3520,6 +4082,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_SECOND = @"BME_SNOOZE_RELATIVE_
  * @b da@: "%.0f sekunder"
 
  * @b en@: "%.0f seconds"
+
+ * @b nb@: "%.0f sekunder"
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_SECONDS = @"BME_SNOOZE_RELATIVE_DATE_SECONDS";
@@ -3533,6 +4097,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_SECONDS = @"BME_SNOOZE_RELATIVE
 
  * @b en@: "week"
 
+ * @b nb@: "uke"
+
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_WEEK = @"BME_SNOOZE_RELATIVE_DATE_WEEK";
 
@@ -3544,6 +4110,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_WEEK = @"BME_SNOOZE_RELATIVE_DA
  * @b da@: "%.0f uger"
 
  * @b en@: "%.0f weeks"
+
+ * @b nb@: "%.0f uker"
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_WEEKS = @"BME_SNOOZE_RELATIVE_DATE_WEEKS";
@@ -3557,6 +4125,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_WEEKS = @"BME_SNOOZE_RELATIVE_D
 
  * @b en@: "year"
 
+ * @b nb@: "år"
+
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_YEAR = @"BME_SNOOZE_RELATIVE_DATE_YEAR";
 
@@ -3568,6 +4138,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_YEAR = @"BME_SNOOZE_RELATIVE_DA
  * @b da@: "%.0f år"
 
  * @b en@: "%.0f years"
+
+ * @b nb@: "%.0f år"
 
  */
 static NSString * const BME_SNOOZE_RELATIVE_DATE_YEARS = @"BME_SNOOZE_RELATIVE_DATE_YEARS";
@@ -3581,6 +4153,8 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_YEARS = @"BME_SNOOZE_RELATIVE_D
 
  * @b en@: "Back"
 
+ * @b nb@: "Tilbake"
+
  */
 static NSString * const BME_TERMS_BACK = @"BME_TERMS_BACK";
 
@@ -3592,6 +4166,8 @@ static NSString * const BME_TERMS_BACK = @"BME_TERMS_BACK";
  * @b da@: "OK"
 
  * @b en@: "OK"
+
+ * @b nb@: "OK"
 
  */
 static NSString * const BME_VIDEO_CANCEL_TITLE = @"BME_VIDEO_CANCEL_TITLE";
@@ -3605,6 +4181,8 @@ static NSString * const BME_VIDEO_CANCEL_TITLE = @"BME_VIDEO_CANCEL_TITLE";
 
  * @b en@: "Be My Eyes"
 
+ * @b nb@: "Be My Eyes"
+
  */
 static NSString * const logoLabel_text = @"logoLabel.text";
 
@@ -3616,6 +4194,8 @@ static NSString * const logoLabel_text = @"logoLabel.text";
  * @b da@: "Laved med ❤︎ i København"
 
  * @b en@: "Crafted with ❤︎ from Copenhagen"
+
+ * @b nb@: "Utformet med ❤︎ fra København"
 
  */
 static NSString * const taglineLabel_text = @"taglineLabel.text";
@@ -3629,6 +4209,8 @@ static NSString * const taglineLabel_text = @"taglineLabel.text";
 
  * @b en@: "%@ needs your help! Swipe or tap to answer."
 
+ * @b nb@: "%@ trenger din hjelp! Sveip eller trykk for å svare."
+
  */
 static NSString * const PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE = @"PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE";
 
@@ -3640,6 +4222,8 @@ static NSString * const PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE = @"PUSH_NOTIFI
  * @b da@: "%@ annullerede anmodningen."
 
  * @b en@: "%@ cancelled the request."
+
+ * @b nb@: "%@ avbrøt forespørselen."
 
  */
 static NSString * const PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE = @"PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE";
@@ -3653,6 +4237,8 @@ static NSString * const PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE = @"PUSH_NOT
 
  * @b en@: "The request from %@ was answered."
 
+ * @b nb@: "Forespørselen fra %@ ble besvart."
+
  */
 static NSString * const PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE = @"PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE";
 
@@ -3664,6 +4250,8 @@ static NSString * const PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE = @"PUSH_
  * @b da@: "Svar"
 
  * @b en@: "Answer"
+
+ * @b nb@: "Svar"
 
  */
 static NSString * const PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION = @"PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION";
@@ -3677,6 +4265,8 @@ static NSString * const PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION = @"PUSH_NOTIFIC
 
  * @b en@: "Thanks for helping out!"
 
+ * @b nb@: "Takk for hjelpen!"
+
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER = @"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER";
 
@@ -3688,6 +4278,8 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER = 
  * @b da@: "Vi håber du fik den hjælp du søgte!"
 
  * @b en@: "We hope you received the help you requested!"
+
+ * @b nb@: "Vi håper du fikk den hjelpen du trengte!"
 
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND = @"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND";
@@ -3701,6 +4293,8 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND = @
 
  * @b en@: "No problem"
 
+ * @b nb@: "Ingen problem"
+
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER = @"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER";
 
@@ -3713,6 +4307,8 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER = @"POST
 
  * @b en@: "Done"
 
+ * @b nb@: "Utført"
+
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND = @"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND";
 
@@ -3724,6 +4320,8 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND = @"POST_
  * @b da@: "Rapporter"
 
  * @b en@: "Report"
+
+ * @b nb@: "Rapporter"
 
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE = @"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE";
