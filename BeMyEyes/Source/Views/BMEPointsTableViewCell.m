@@ -27,7 +27,6 @@
 }
 
 - (void)shouldLocalize {
-    [self updateTimeFormatLocale];
     [self updateDateLabel];
     [self updatePointsLabel];
 }
@@ -69,26 +68,15 @@
     if (!_timeFormatter) {
         _timeFormatter = [TTTTimeIntervalFormatter new];
         _timeFormatter.usesIdiomaticDeicticExpressions = YES; // Allow 'yesterday' instead of '1 day ago'
-        [self updateTimeFormatLocale];
     }
     return _timeFormatter;
 }
 
 
-#pragma mark - 
-
-- (void)updateTimeFormatLocale {
-    NSString *languageCode = MKLocalizationPreferredLanguage();
-    NSString *localeIdentifier = [NSLocale currentLocale].localeIdentifier;
-    NSString *autoLocaleIdentifier = [NSLocale autoupdatingCurrentLocale].localeIdentifier;
-    //        NSString *localeIdentifier = [NSString stringWithFormat:@"%@_%@", languageCode, regionCode];
-    NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"da_DK"];
-    self.timeFormatter.locale = locale;
-    NSLog(@"[[ %@ %@ %@ %@", localeIdentifier, autoLocaleIdentifier, locale, locale.localeIdentifier);
-}
+#pragma mark -
 
 - (void)updateDateLabel {
-    self.dateLabel.text = [self.timeFormatter stringForTimeIntervalFromDate:[NSDate date] toDate:self.date];
+    self.dateLabel.text = _date ? [self.timeFormatter stringForTimeIntervalFromDate:[NSDate date] toDate:self.date] : nil;
 }
 
 - (void)updatePointsLabel {
