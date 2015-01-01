@@ -184,7 +184,7 @@
 // MiawKit
 #define COCOAPODS_POD_AVAILABLE_MiawKit
 #define COCOAPODS_VERSION_MAJOR_MiawKit 1
-#define COCOAPODS_VERSION_MINOR_MiawKit 0
+#define COCOAPODS_VERSION_MINOR_MiawKit 1
 #define COCOAPODS_VERSION_PATCH_MiawKit 0
 
 // NewRelicAgent

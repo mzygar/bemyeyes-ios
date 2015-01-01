@@ -14,7 +14,7 @@ def import_pods
     pod 'GVUserDefaults', '~> 0.9.4'
     pod 'Appirater', '~> 2.0.2'
     pod 'NewRelicAgent'
-    pod 'MiawKit', :git => 'https://github.com/robocat/MiawKit.git'
+    pod 'MiawKit'
     pod 'FormatterKit', '~> 1.7.1'
     pod 'KeepLayout', :git => 'https://github.com/iMartinKiss/KeepLayout.git'
     pod 'CrashlyticsFramework'
