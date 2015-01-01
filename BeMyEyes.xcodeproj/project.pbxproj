@@ -240,6 +240,32 @@
 		4E68F2D01A55D4020031E8D3 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E68F2D11A55D4020031E8D3 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/PostCallLocalizationTable.strings; sourceTree = "<group>"; };
 		4E68F2D21A55D4030031E8D3 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4E68F2D31A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMESignUpLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2D41A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMESignUpMethodLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2D51A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMESnoozeRelativeDateLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2D61A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMETermsLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2D71A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEVideoLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2D81A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E68F2D91A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/PostCallLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2DA1A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4E68F2DB1A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
+		4E68F2DC1A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEAppDelegateLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2DD1A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEBlindIntroLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2DE1A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEBlindMainLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2DF1A55D5890031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMECallLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E01A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEForgotPasswordLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E11A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEFrontPageLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E21A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEHelperIntroLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E31A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEHelperMainLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E41A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEInterfaceLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E51A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMELanguagesLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E61A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMELoginLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E71A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEMainLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E81A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEPrivacyPolicyLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2E91A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMERegisteredLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2EA1A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMEReportAbuseLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2EB1A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMESecretSettingsLocalizationTable.strings; sourceTree = "<group>"; };
+		4E68F2EC1A55D58A0031E8D3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/BMESettingsLocalizationTable.strings; sourceTree = "<group>"; };
 		4E6AE89D1A01927F0019247A /* FacebookHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookHelper.swift; sourceTree = "<group>"; };
 		4E6AE89F1A0194430019247A /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		4E7A85C41A0C49DB0006BDC8 /* Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.debug.xcconfig; sourceTree = "<group>"; };
@@ -1044,6 +1070,7 @@
 				da,
 				nb,
 				cs,
+				nl,
 			);
 			mainGroup = 7236DFF118B8A87B00F622AA;
 			productRefGroup = 7236DFFB18B8A87B00F622AA /* Products */;
@@ -1318,6 +1345,7 @@
 				4E6544761A00288400B71C1C /* da */,
 				4EFCE5881A55C57700FAE663 /* nb */,
 				4E68F2D11A55D4020031E8D3 /* cs */,
+				4E68F2D91A55D5890031E8D3 /* nl */,
 			);
 			name = PostCallLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1329,6 +1357,7 @@
 				4E6544851A010C6200B71C1C /* da */,
 				4EFCE5791A55C57600FAE663 /* nb */,
 				4E68F2C21A55D4020031E8D3 /* cs */,
+				4E68F2E41A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEInterfaceLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1340,6 +1369,7 @@
 				4EB46C4719F08102008405B8 /* da */,
 				4EFCE5701A55C57500FAE663 /* nb */,
 				4E68F2B91A55D4020031E8D3 /* cs */,
+				4E68F2DB1A55D5890031E8D3 /* nl */,
 			);
 			name = BMEAccessLocalization.strings;
 			sourceTree = "<group>";
@@ -1352,6 +1382,7 @@
 				4E011A081A03A46C0042A895 /* en */,
 				4EFCE56F1A55C57500FAE663 /* nb */,
 				4E68F2D21A55D4030031E8D3 /* cs */,
+				4E68F2DA1A55D5890031E8D3 /* nl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1363,6 +1394,7 @@
 				72DF589F19B4BC53000D5F40 /* da */,
 				4EFCE57F1A55C57700FAE663 /* nb */,
 				4E68F2C81A55D4020031E8D3 /* cs */,
+				4E68F2EA1A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEReportAbuseLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1390,6 +1422,7 @@
 				72DF589A19B4BC53000D5F40 /* da */,
 				4EFCE57A1A55C57600FAE663 /* nb */,
 				4E68F2C31A55D4020031E8D3 /* cs */,
+				4E68F2E51A55D58A0031E8D3 /* nl */,
 			);
 			name = BMELanguagesLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1401,6 +1434,7 @@
 				72DF589C19B4BC53000D5F40 /* da */,
 				4EFCE57C1A55C57700FAE663 /* nb */,
 				4E68F2C51A55D4020031E8D3 /* cs */,
+				4E68F2E71A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEMainLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1412,6 +1446,7 @@
 				72DF589619B4BC53000D5F40 /* da */,
 				4EFCE5751A55C57500FAE663 /* nb */,
 				4E68F2BE1A55D4020031E8D3 /* cs */,
+				4E68F2E01A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEForgotPasswordLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1423,6 +1458,7 @@
 				72DF589719B4BC53000D5F40 /* da */,
 				4EFCE5761A55C57500FAE663 /* nb */,
 				4E68F2BF1A55D4020031E8D3 /* cs */,
+				4E68F2E11A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEFrontPageLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1434,6 +1470,7 @@
 				72DF589819B4BC53000D5F40 /* da */,
 				4EFCE5771A55C57500FAE663 /* nb */,
 				4E68F2C01A55D4020031E8D3 /* cs */,
+				4E68F2E21A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEHelperIntroLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1445,6 +1482,7 @@
 				72DF589319B4BC53000D5F40 /* da */,
 				4EFCE5721A55C57500FAE663 /* nb */,
 				4E68F2BB1A55D4020031E8D3 /* cs */,
+				4E68F2DD1A55D5890031E8D3 /* nl */,
 			);
 			name = BMEBlindIntroLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1456,6 +1494,7 @@
 				72DF58A019B4BC53000D5F40 /* da */,
 				4EFCE5801A55C57700FAE663 /* nb */,
 				4E68F2C91A55D4020031E8D3 /* cs */,
+				4E68F2EB1A55D58A0031E8D3 /* nl */,
 			);
 			name = BMESecretSettingsLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1467,6 +1506,7 @@
 				72DF58A519B4BC53000D5F40 /* da */,
 				4EFCE5851A55C57700FAE663 /* nb */,
 				4E68F2CE1A55D4020031E8D3 /* cs */,
+				4E68F2D61A55D5890031E8D3 /* nl */,
 			);
 			name = BMETermsLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1478,6 +1518,7 @@
 				72DF589D19B4BC53000D5F40 /* da */,
 				4EFCE57D1A55C57700FAE663 /* nb */,
 				4E68F2C61A55D4020031E8D3 /* cs */,
+				4E68F2E81A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEPrivacyPolicyLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1489,6 +1530,7 @@
 				72DF589E19B4BC53000D5F40 /* da */,
 				4EFCE57E1A55C57700FAE663 /* nb */,
 				4E68F2C71A55D4020031E8D3 /* cs */,
+				4E68F2E91A55D58A0031E8D3 /* nl */,
 			);
 			name = BMERegisteredLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1500,6 +1542,7 @@
 				72DF58A119B4BC53000D5F40 /* da */,
 				4EFCE5811A55C57700FAE663 /* nb */,
 				4E68F2CA1A55D4020031E8D3 /* cs */,
+				4E68F2EC1A55D58A0031E8D3 /* nl */,
 			);
 			name = BMESettingsLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1511,6 +1554,7 @@
 				72DF589919B4BC53000D5F40 /* da */,
 				4EFCE5781A55C57600FAE663 /* nb */,
 				4E68F2C11A55D4020031E8D3 /* cs */,
+				4E68F2E31A55D58A0031E8D3 /* nl */,
 			);
 			name = BMEHelperMainLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1522,6 +1566,7 @@
 				72DF58A419B4BC53000D5F40 /* da */,
 				4EFCE5841A55C57700FAE663 /* nb */,
 				4E68F2CD1A55D4020031E8D3 /* cs */,
+				4E68F2D51A55D5890031E8D3 /* nl */,
 			);
 			name = BMESnoozeRelativeDateLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1533,6 +1578,7 @@
 				72DF589519B4BC53000D5F40 /* da */,
 				4EFCE5741A55C57500FAE663 /* nb */,
 				4E68F2BD1A55D4020031E8D3 /* cs */,
+				4E68F2DF1A55D5890031E8D3 /* nl */,
 			);
 			name = BMECallLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1544,6 +1590,7 @@
 				72DF58A619B4BC53000D5F40 /* da */,
 				4EFCE5861A55C57700FAE663 /* nb */,
 				4E68F2CF1A55D4020031E8D3 /* cs */,
+				4E68F2D71A55D5890031E8D3 /* nl */,
 			);
 			name = BMEVideoLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1555,6 +1602,7 @@
 				72DF589419B4BC53000D5F40 /* da */,
 				4EFCE5731A55C57500FAE663 /* nb */,
 				4E68F2BC1A55D4020031E8D3 /* cs */,
+				4E68F2DE1A55D5890031E8D3 /* nl */,
 			);
 			name = BMEBlindMainLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1566,6 +1614,7 @@
 				72DF589219B4BC53000D5F40 /* da */,
 				4EFCE5711A55C57500FAE663 /* nb */,
 				4E68F2BA1A55D4020031E8D3 /* cs */,
+				4E68F2DC1A55D5890031E8D3 /* nl */,
 			);
 			name = BMEAppDelegateLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1577,6 +1626,7 @@
 				72DF58A719B4BC53000D5F40 /* da */,
 				4EFCE5871A55C57700FAE663 /* nb */,
 				4E68F2D01A55D4020031E8D3 /* cs */,
+				4E68F2D81A55D5890031E8D3 /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1588,6 +1638,7 @@
 				72DF58A219B4BC53000D5F40 /* da */,
 				4EFCE5821A55C57700FAE663 /* nb */,
 				4E68F2CB1A55D4020031E8D3 /* cs */,
+				4E68F2D31A55D5890031E8D3 /* nl */,
 			);
 			name = BMESignUpLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1599,6 +1650,7 @@
 				72DF589B19B4BC53000D5F40 /* da */,
 				4EFCE57B1A55C57700FAE663 /* nb */,
 				4E68F2C41A55D4020031E8D3 /* cs */,
+				4E68F2E61A55D58A0031E8D3 /* nl */,
 			);
 			name = BMELoginLocalizationTable.strings;
 			sourceTree = "<group>";
@@ -1610,6 +1662,7 @@
 				72DF58A319B4BC53000D5F40 /* da */,
 				4EFCE5831A55C57700FAE663 /* nb */,
 				4E68F2CC1A55D4020031E8D3 /* cs */,
+				4E68F2D41A55D5890031E8D3 /* nl */,
 			);
 			name = BMESignUpMethodLocalizationTable.strings;
 			sourceTree = "<group>";
