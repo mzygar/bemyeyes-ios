@@ -26,7 +26,7 @@ class BlindMainViewController_Tests: FBSnapshotTestCase {
     }
     
     func testOnAllDevices() {
-        verifyViewOnAllDevices(helperVC!.view)
+        verifyViewOnAllDevicesAndLanguages(helperVC!)
     }
     
     func testCreatePromoScreenshots() {

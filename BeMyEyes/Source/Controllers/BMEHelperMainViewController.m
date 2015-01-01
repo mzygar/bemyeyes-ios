@@ -142,6 +142,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.descriptionCommunityHelpedLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED, BMEHelperMainLocalizationTable);
     self.failedLoadingPointLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_LOADING_POINT_FAILED, BMEHelperMainLocalizationTable);
     [self.retryLoadingPointButton setTitle:MKLocalizedFromTable(BME_HELPER_MAIN_RETRY_LOADING_POINT, BMEHelperMainLocalizationTable) forState:UIControlStateNormal];
+    
+    [self updatePointsAnimated:NO];
 }
 
 - (void)viewDidLayoutSubviews {
