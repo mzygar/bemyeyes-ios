@@ -1,78 +1,78 @@
 /* Title of disconnect button */
-"BME_CALL_DISCONNECT" = "Disconnect";
+"BME_CALL_DISCONNECT" = "Ansluta ifrån, koppla ifrån.";
 
 /* Title of cancel button in alert view shown when failed answering request because the request has already been answered */
-"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL" = "OK";
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL" = "Okej";
 
 /* Message in alert view shown when failed answering request because the request has already been answered */
-"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE" = "The request has already been answered. Thanks for your help!";
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE" = "Begäran har redan varit besvarad. Tack för din hjälp!";
 
 /* Title in alert view shown when failed answering request because the request has already been answered */
-"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE" = "Request already answered";
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE" = "Begäran redan  besvarad";
 
 /* Title of cancel button in alert view shown when failed answering request because the request has been stopped */
-"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL" = "OK";
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL" = "Okej";
 
 /* Message in alert view shown when failed answering request because the request has been stopped */
-"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE" = "The blind has cancelled the request. Thanks for your help!";
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE" = "Den blinda har avslagit begäran. Tack för din hjälp!";
 
 /* Title in alert view shown when failed answering request because the request has been stopped */
-"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE" = "Request cancelled";
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE" = "Begäran avbryten.";
 
 /* Title in alert view shown when failed answering request for an unknown reason */
-"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE" = "Could not answer request";
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE" = "Kunde ej svara på begäran.";
 
 /* Cancel in alert showed when failed creating request */
-"BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "Okej";
 
 /* Message in alert showed when failed creating request */
-"BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "The request could not be created. Please try again.";
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Begäran kunde ej skapas. Vänligen försök igen";
 
 /* Title in alert showed when failed creating request */
-"BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Could not create request";
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Kunde inte skapa begäran";
 
 /* Title of cancel button in alert view shown when failed answering request for an unknown reason */
-"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL" = "OK";
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL" = "Okej";
 
 /* Status when asking the user to wait */
-"BME_CALL_STATUS_PLEASE_WAIT" = "Please wait...";
+"BME_CALL_STATUS_PLEASE_WAIT" = "Snälla vänta.";
 
 /* Status when answering request */
-"BME_CALL_STATUS_ANSWERING_REQUEST" = "Answering request...";
+"BME_CALL_STATUS_ANSWERING_REQUEST" = "Svarande begäran.";
 
 /* Message in alert view shown when failed answering request for an unknown reason */
-"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE" = "The request could not be answered at this time. Thanks for your help!";
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE" = "Begäran kunde inte svaras vid denna tidpunkt. Tack för din hjälp!";
 
 /* Status when creating request */
-"BME_CALL_STATUS_CREATING_REQUEST" = "Creating request...";
+"BME_CALL_STATUS_CREATING_REQUEST" = "Skapar begäran...";
 
 /* Status when connecting */
-"BME_CALL_STATUS_CONNECTING" = "Connecting to servers...";
+"BME_CALL_STATUS_CONNECTING" = "Ansluter till servarna.";
 
 /* Status when connection is established */
-"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Waiting for other part...";
+"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Väntar på andra delen";
 
 /* Status when session failed */
-"BME_CALL_STATUS_SESSION_FAILED" = "Connection failed";
+"BME_CALL_STATUS_SESSION_FAILED" = "Anslutning misslyckas";
 
 /* Status when failed publishing */
-"BME_CALL_STATUS_FAILED_PUBLISHING" = "Failed publishing audio and video";
+"BME_CALL_STATUS_FAILED_PUBLISHING" = "Misslyckas med publicering av ljud och video";
 
 /* Speech when connected to other part */
-"BME_CALL_SPEECH_DID_SUBSCRIBE" = "Connected to other part";
+"BME_CALL_SPEECH_DID_SUBSCRIBE" = "Uppkopplad till andra delen.";
 
 /* Status when failed subscribing */
-"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "Failed connecting to other part";
+"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "Gick inte och ansluta till andra delen";
 
 /* Status when disconnecting */
-"BME_CALL_STATUS_DISCONNECTING" = "Disconnecting...";
+"BME_CALL_STATUS_DISCONNECTING" = "kopplar ifrån";
 
 /* Title of cancel button in alert shown when other part has disconnected */
-"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "OK";
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "Okej";
 
 /* Message in alert shown when other part has disconnected */
-"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "The other part has disconnected and the session has ended.";
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "Andra delen har anslutit ifrån och session har avslutats";
 
 /* Title in alert shown when other part has disconnected */
-"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "Session ended";
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "Sessionen slut.";
 

@@ -1,23 +1,21 @@
 /* 
   PostCallViewController.strings
   BeMyEyes
-
   Created by Tobias Due Munk on 28/10/14.
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
-
 /* Motivational message to helper when call has ended */
-"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER" = "Thanks for helping out!";
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER" = "Tack för hjälpen!";
 
 /* Motivational message to blind when call has ended */
-"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "We hope you received the help you requested!";
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "Vi hoppas att du fått hjälp du begärt!";
 
 /* Title of dismiss button to helper */
-"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER" = "No problem";
+"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER" = "Inga problem";
 
 /* Title of dismiss button to blind */
-"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND" = "Done";
+"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND" = "Färdigt";
 
 /* Title of report button */
-"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE" = "Report";
+"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE" = "Rapportera";
 

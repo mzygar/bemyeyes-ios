@@ -30,15 +30,13 @@ struct Device {
 struct Language {
     
     static func allLanguages() -> [String] {
-        return ["en", "da"]
+        return ["en", "da", "cs", "nl", "fi", "it", "nb", "ro", "sk", "sv"]
     }
 }
 
 extension FBSnapshotTestCase {
 
     func verifyView(view: UIView, identifier: String) {
-        
-       
         var error: NSError?
         let referenceImagesDirectory = "\(FB_REFERENCE_IMAGE_DIR)"
         UIView.setAnimationsEnabled(false)

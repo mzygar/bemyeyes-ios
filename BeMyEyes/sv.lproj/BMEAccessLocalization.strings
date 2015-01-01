@@ -1,35 +1,33 @@
 /* 
   BMEAccessLocalization.strings
   BeMyEyes
-
   Created by Tobias DM on 17/10/14.
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
-
 /* Introductory message for access for notifications, microphone and camera */
-"BME_ACCESS_INTRO_MESSAGE" = "Please enable the following to fully join the Be My Eyes network";
+"BME_ACCESS_INTRO_MESSAGE" = "Snälla förstå följande till fullo för att bli medlem till att vara mina ögon gruppnätverk";
 
 /* Title for notifications */
-"BME_ACCESS_NOTIFICATIONS_TITLE" = "Notifications";
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "Meddelanden.";
 
 /* Explanation for why the helper needs to enable notifications */
-"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "When a blind person needs your help, we notify you about the incoming call.";
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "När en blind person behöver din hjälp så uppmärksammar vi dig om det inkommande samtalet.";
 
 /* Title for microphone */
-"BME_ACCESS_MICROPHONE_TITLE" = "Microphone";
+"BME_ACCESS_MICROPHONE_TITLE" = "Mikrofon\n";
 
 /* Explanation for why the helper needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "To be able to talk with and guide the blind person";
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "För att vara tillgänglig till att samtala och leda den blinda personen";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "To be able to explain your problem to the helper.";
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Att vara tillgänglig till att förklara dina bekymmer, eller problem för hjälparen.";
 
 /* Title for camera */
-"BME_ACCESS_CAMERA_TITLE" = "Camera";
+"BME_ACCESS_CAMERA_TITLE" = "Kamera";
 
 /* Explanation for why the helper needs to enable camera access */
-"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "We don't send your video to the person you're helping, but it's needed to establish the connection.";
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Vi skickar inte videon till personen du hjälper.  Men den är behövlig för att upprätthålla anslutningen.";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "To be able to show the helper what you need help with.";
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Du ska finnas tillhands och visa hjälpare vad det är du behöver hjälp med. Särskilt behov.";
 

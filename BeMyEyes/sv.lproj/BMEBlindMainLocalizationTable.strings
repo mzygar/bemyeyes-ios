@@ -1,15 +1,15 @@
 /* Title of connect to community button */
-"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Connect to first available helper";
+"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Anslut till första tillgängliga hjälpare";
 
 /* Cancel in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "Okej";
 
 /* Message in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "The request could not be created. Please try again.";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Begäran kunde ej skapas. Vänligen försök igen";
 
 /* Title in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Failed creating request";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Misslyckande att skapa begäran";
 
 /* Title in hud shown when creating request */
-"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Creating request...";
+"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Skapar begäran...";
 

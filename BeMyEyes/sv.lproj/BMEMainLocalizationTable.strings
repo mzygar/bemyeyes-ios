@@ -1,52 +1,51 @@
 /* 
   BMEMainViewController.strings
   BeMyEyes
-
   Created by Simon Støvring on 07/07/14.
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
-
 /* Title of cancel button in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "No";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "Nej";
 
 /* Title of confirm button in alert view shown when asking the blind if he knows more BME_MAIN_langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM" = "Yes, I do";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM" = "Ja, det gör jag";
 
 /* Message in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "If you know more languages you can select those and be matched with a helper who also knows that language thereby receiving help faster.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Om du vet fler språk, så kan du välja de och bli matchad med en hjälpare som också känner till samma språk och utifrån det också ge hjälp snabbare.";
 
 /* Title in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "Do you know more languages?";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "Kan du flera språk?";
 
 /* Title of cancel button in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL" = "No";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL" = "Nej";
 
 /* Title of confirm button in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "Yes, I do";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "Ja, det gör jag";
 
 /* Message in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "If you know more languages, you can select those and you will be matched with blind people who needs help in that language.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Om du kan fler språk, så kan du välja de och du kommer att bli sorterad med blinda personer som behöver hjälp i det språket.";
 
 /* Title in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "Do you know more languages?";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "Kan du flera språk?";
 
 /* Settings button accessibility label */
-"BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Settings";
+"BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Inställningar";
 
 /* Title of notifications error title in alert view */
-"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Notifications";
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Meddelanden.";
 
 /* Title of cancel button in alert view */
-"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Something went wrong and you might not receive notifications";
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Någonting gick fel till och du kan förmodligen inte ta emot meddelanden";
 
 /* Title of cancel button in alert view */
-"BME_MAIN_ALERT_CANCEL" = "Ok";
+"BME_MAIN_ALERT_CANCEL" = "Okej";
 
 /* Title of alert view when user is forced to logout */
-"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE" = "Log in error";
+"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE" = "Logga in avvikelse, fel";
 
 /* Message in alert view when user is forced to logout */
-"BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE" = "Due to a technical error you will be logged out.";
+"BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE" = "På grund av ett tekniskt fel så kommer du att bli utloggad.";
 
 /* Ok button in alert view when user is forced to logout */
-"BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM" = "Log in";
+"BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM" = "Logga in";
+
