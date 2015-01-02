@@ -1,0 +1,12 @@
+/* Title */
+"BME_LANGUAGES_TITLE" = "Uw talen";
+
+/* Title of cancel button in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "Ok";
+
+/* MEssage in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "De talen kunnen niet worden opgeslagen. Probeer het later nog eens.";
+
+/* Title in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "Kan niet opslaan";
+

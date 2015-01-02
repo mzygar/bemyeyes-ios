@@ -1,0 +1,78 @@
+/* Title of back button */
+"BME_SIGN_UP_BACK" = "Tillbaka\n";
+
+/* Placeholder in first name field */
+"BME_SIGN_UP_FIRST_NAME_PLACEHOLDER" = "förnamn";
+
+/* Placeholder in last name field */
+"BME_SIGN_UP_LAST_NAME_PLACEHOLDER" = "Efternamn";
+
+/* Placeholder in e-mail field */
+"BME_SIGN_UP_EMAIL_PLACEHOLDER" = "Epost";
+
+/* Placeholder in password field */
+"BME_SIGN_UP_PASSWORD_PLACEHOLDER" = "Lösenord";
+
+/* Title of register button */
+"BME_SIGN_UP_REGISTER" = "Registrera ";
+
+/* Title of cancel button in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_CANCEL" = "Okej";
+
+/* Message in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_MESSAGE" = "Ett konto med den angivna e-postadressen finns redan.";
+
+/* Title in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_TITLE" = "E-mail redan registrerad";
+
+/* Title of cancel button in alert view shown when the e-mail is not valid. */
+"BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_CANCEL" = "Okej";
+
+/* Message in alert view shown when the e-mail is not valid. */
+"BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_MESSAGE" = "Den angivna e-mailadressen är inte giltig";
+
+/* Title in alert view shown when the e-mail is not valid. */
+"BME_SIGN_UP_ALERT_EMAIL_NOT_VALID_TITLE" = "E-mail är korrekt(giltig)";
+
+/* Title of cancel button in alert view shown when one or more fields are empty. */
+"BME_SIGN_UP_ALERT_EMPTY_FIELDS_CANCEL" = "Okej";
+
+/* Message in alert view shown when one or more fields are empty. */
+"BME_SIGN_UP_ALERT_EMPTY_FIELDS_MESSAGE" = "Fyll i all information innan du fortsätter";
+
+/* Title in alert view shown when one or more fields are empty. */
+"BME_SIGN_UP_ALERT_EMPTY_FIELDS_TITLE" = "Tomma fält";
+
+/* Title of cancel button in alert view shown when the password is too short. */
+"BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_CANCEL" = "Okej";
+
+/* Message in alert view shown when the password is too short. */
+"BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_MESSAGE" = "Det angivna lösenordet är för kort";
+
+/* Title in alert view shown when the password is too short. */
+"BME_SIGN_UP_ALERT_PASSWORD_TOO_SHORT_TITLE" = "Lösenordet är för kort";
+
+/* Title of cancel button in alert view shown when passwords doesn't match. */
+"BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_CANCEL" = "Okej";
+
+/* Message in alert view shown when passwords doesn't match. */
+"BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_MESSAGE" = "Den angivna lösenordet stämmer inte";
+
+/* Title in alert view shown when passwords doesn't match. */
+"BME_SIGN_UP_ALERT_PASSWORDS_NOT_MATCHING_TITLE" = "Lösenorden matchar inte";
+
+/* Title of cancel button in alert view shown when a network error occurred. */
+"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL" = "Okej";
+
+/* Message in alert view shown when a network error occurred. */
+"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE" = "Ditt konto kunde ej skapas. Försäkra dig att du har en aktiv internet anslutning och försök igen";
+
+/* Title in alert view shown when a network error occurred. */
+"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE" = "Kunde inte skapa konto";
+
+/* Title in overlay displayed when logging in */
+"BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE" = "Loggar in...";
+
+/* Title in overlay displayed when registering */
+"BME_SIGN_UP_OVERLAY_REGISTERING_TITLE" = "Registrerar...\n";
+

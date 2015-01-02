@@ -17,3 +17,4 @@
 
 #import "BMEHelperMainViewController.h"
 #import "BMEBlindMainViewController.h"
+#import "BMEFrontPageViewController.h"

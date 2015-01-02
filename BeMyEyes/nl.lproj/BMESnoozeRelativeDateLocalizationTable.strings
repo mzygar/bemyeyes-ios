@@ -1,0 +1,47 @@
+/* BMESnoozeRelativeDate.strings
+  BeMyEyes
+  Created by Simon Støvring on 19/04/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAY" = "dag";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAYS" = "%.0f dagen";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOUR" = "uur";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOURS" = "%.0f uren";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "minuut";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%.0f minuten";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTH" = "maand";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%.0f maanden";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECOND" = "second";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f seconden";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEK" = "week";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%.0f weken";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEAR" = "jaar";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEARS" = "%.0f jaren";
+

@@ -16,6 +16,7 @@ class HelperMainViewController_Tests: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
 //        recordMode = true
+        renderAsLayer = true
         
         helperVC = UIApplication.sharedApplication().keyWindow?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier(BMEMainHelperControllerIdentifier) as? BMEHelperMainViewController
         helperVC?.viewDidLoad()
@@ -30,7 +31,7 @@ class HelperMainViewController_Tests: FBSnapshotTestCase {
             helperVC.user = BMEUser.idealUser()
             helperVC.stats = BMECommunityStats.idealStats()
         }
-        verifyViewOnAllDevices(helperVC!.view)
+        verifyViewOnAllDevicesAndLanguages(helperVC!)
     }
     
     func testCreatePromoScreenshots() {

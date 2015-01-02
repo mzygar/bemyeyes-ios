@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Naspäť";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Pokračovať";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Aplikácia Vás prepojí s vidiacim pomocníkom, ktorý Vám na diaľku vám pomôže s úlohami, ktoré vyžadujú pomoc od vidiacej osoby - cez živé video pripojenie Vám pomocník povie, čo on alebo ona vidí, keď ukážete telefónom na niečo.\n\nPomocníci v Be My Eyes sieti sú dobrovoľníci a my nemôžeme zaručiť kvalitu ich pomoci alebo prevziať zodpovednosť za niektoré z ich akcií. Spoliehame sa na pomoc skutočných ľudí a odporúčame Vám, aby ste boli trpezlivý pri požiadaní o pomoc.\n\nZdielanie akéhokoľvek nudistického, nezakonného, násilného alebo sexuálneho obsahu cez aplikáciu je zakázané a taktiež by ste nikdy nemali zdieľať citlivé informácie ako číslo kreditnej karty, pasu alebo iné osobné informácie.\n\n";
+

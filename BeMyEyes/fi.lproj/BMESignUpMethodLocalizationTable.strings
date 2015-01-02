@@ -1,0 +1,78 @@
+/* Title of back button */
+"BME_SIGN_UP_METHOD_BACK" = "Takaisin";
+
+/* Headline */
+"BME_SIGN_UP_METHOD_HEADLINE" = "Liity verkostoon";
+
+/* Tiel of Facebook sign up button */
+"BME_SIGN_UP_METHOD_FACEBOOK" = "Kirjaudu Facebookin kautta";
+
+/* Sign up with e-mail button */
+"BME_SIGN_UP_METHOD_EMAIL" = "Kirjaudu sähköpostin kautta";
+
+/* Top part of button for viewing terms and conditions */
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Jatkamalla hyväksyt";
+
+/* Bottom part of button for viewing terms and conditions */
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Ehdot ja sopimukset";
+
+/* Top part of button for viewing privacy policy */
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "sekä";
+
+/* Bottom part of button for viewing privacy policy */
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "Yksityisyydensuoja";
+
+/* Title of cancel button in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL" = "OK";
+
+/* Message in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE" = "Facebook tilin sähköpostiosoite on jo rekisteröity.";
+
+/* Title in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE" = "Sähköposti jo rekisteröity";
+
+/* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL" = "OK";
+
+/* Message in alert view shown when a network error occurred during Facebook log in. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE" = "Varmista, että sinulla on aktiivinen internet-yhteys ja yritä uudelleen.";
+
+/* Title in alert view shown when a TITLEnetwork error occurred during Facebook log in. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE" = "On tapahtunut virhe";
+
+/* Title of cancel button in alert view shown when log in to Facebook failed */
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL" = "OK";
+
+/* Message in alert view shown when logging into Facebook but it failed because authentication failed */
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Ei voinut todentaa Facebookin kautta.";
+
+/* Title in alert view shown when log in to Facebook failed */
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE" = "Tunnistautuminen epäonnistui";
+
+/* Title in overlay displayed when logging in */
+"BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE" = "Kirjaudutaan sisään...";
+
+/* Title in overlay displayed when registering */
+"BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE" = "Rekisteröidään...";
+
+/* Title of cancel button in alert view shown when no Facebook account was found. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "OK";
+
+/* Message in alert view shown when no Facebook account was found. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Facebook tilejä ei löytynyt koneesta. Lisää tilisi järjestelmäasetuksiin.";
+
+/* Title in alert view shown when no Facebook account was found. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Tiliä ei löydy";
+
+/* Accessibility hint for privacy policy button */
+"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "Yksityisyydensuoja";
+
+/* Accessibility label for privacy policy button */
+"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL" = " ";
+
+/* Accessibility hint for terms and agreements button */
+"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT" = "Ehdot ja sopimukset";
+
+/* Accessibility label for terms and agreements button */
+"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL" = " ";
+

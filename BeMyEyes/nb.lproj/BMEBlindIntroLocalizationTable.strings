@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Tilbake";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Fortsett";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Appen vil sette deg i live kontakt med en seende hjelper som eksternt vil assistere deg med oppgaver som krever assistanse fra en seende - gjennom en live videostrøm forteller hjelperen deg hva han eller hun ser når du peker din telefon mot noe. \n\nHjelperne i Be My Eyes nettverket er frivillige, og vi kan ikke garantere for kvaliteten på deres hjelp eller ta ansvar for noen av deres handlinger. Fordi vi er avhengige av ekte mennesker til å hjelpe deg, oppfordrer vi deg til å være tålmodig når du ber om hjelp. \n\nDu kan under ingen omstendigheter dele ulovlig, hatefullt eller seksuelt ladet innhold gjennom applikasjonen, og du må aldri vise sensitiv informasjon slik som kredittkort, pass eller annen personlig informasjon.";
+

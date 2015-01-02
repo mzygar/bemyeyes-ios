@@ -1,0 +1,15 @@
+/* Title of connect to community button */
+"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Koble til første tilgjengelige hjelper";
+
+/* Cancel in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+
+/* Message in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Forespørselen kunne ikke opprettes. Vennligst prøv igjen.";
+
+/* Title in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Kan ikke opprette forespørsel";
+
+/* Title in hud shown when creating request */
+"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Oppretter forespørsel...";
+

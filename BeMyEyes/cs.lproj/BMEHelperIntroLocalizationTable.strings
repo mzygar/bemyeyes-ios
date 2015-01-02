@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Zpět";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Pokračovat";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Pomáhat je snadné!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Pomáhejte, kdykoli budete chtít, ať se nacházíte kdekoliv.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Váš telefon je k dispozici pro hovory od lidí, kteří potřebují pomoc, když jste přihlášen.";
+

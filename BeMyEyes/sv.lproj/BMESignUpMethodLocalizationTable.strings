@@ -1,0 +1,78 @@
+/* Title of back button */
+"BME_SIGN_UP_METHOD_BACK" = "Tillbaka\n";
+
+/* Headline */
+"BME_SIGN_UP_METHOD_HEADLINE" = "Bli en del av grupp nätverket";
+
+/* Tiel of Facebook sign up button */
+"BME_SIGN_UP_METHOD_FACEBOOK" = "Anmäl dig via Facebook";
+
+/* Sign up with e-mail button */
+"BME_SIGN_UP_METHOD_EMAIL" = "Logga in med e-post";
+
+/* Top part of button for viewing terms and conditions */
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Genom att fortsätta accepterar du";
+
+/* Bottom part of button for viewing terms and conditions */
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Villkor och avtal";
+
+/* Top part of button for viewing privacy policy */
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "såväl som ";
+
+/* Bottom part of button for viewing privacy policy */
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "sekretesspolicy";
+
+/* Title of cancel button in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL" = "Okej";
+
+/* Message in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE" = "Ett konto med e-postadressen för den Facebook användaren finns redan registrerad";
+
+/* Title in alert view shown when e-mail is already registered. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE" = "E-mail redan registrerad";
+
+/* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL" = "Okej";
+
+/* Message in alert view shown when a network error occurred during Facebook log in. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE" = "Vänligen kontrollera att du har en aktiv internet anslutning och försök igen.";
+
+/* Title in alert view shown when a TITLEnetwork error occurred during Facebook log in. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE" = "Ett fel uppstod";
+
+/* Title of cancel button in alert view shown when log in to Facebook failed */
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL" = "Okej";
+
+/* Message in alert view shown when logging into Facebook but it failed because authentication failed */
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Gick ej att autentisera med Facebook";
+
+/* Title in alert view shown when log in to Facebook failed */
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE" = "autentisering misslyckades";
+
+/* Title in overlay displayed when logging in */
+"BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE" = "Loggar in...";
+
+/* Title in overlay displayed when registering */
+"BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE" = "Registrerar...\n";
+
+/* Title of cancel button in alert view shown when no Facebook account was found. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "Okej";
+
+/* Message in alert view shown when no Facebook account was found. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Inga Facebook konton hittades på enheten. Tillägg ditt konto i systeminställningar";
+
+/* Title in alert view shown when no Facebook account was found. */
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Inget konto hittades.";
+
+/* Accessibility hint for privacy policy button */
+"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "sekretesspolicy";
+
+/* Accessibility label for privacy policy button */
+"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL" = " ";
+
+/* Accessibility hint for terms and agreements button */
+"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT" = "Villkor och avtal";
+
+/* Accessibility label for terms and agreements button */
+"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL" = " ";
+

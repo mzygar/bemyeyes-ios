@@ -1,0 +1,78 @@
+/* Title of disconnect button */
+"BME_CALL_DISCONNECT" = "Verbinding verbreken";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL" = "Ok";
+
+/* Message in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE" = "Het verzoek is al beantwoord. Bedankt voor uw hulp!";
+
+/* Title in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE" = "De aanvraag is al beantwoord";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL" = "Ok";
+
+/* Message in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE" = "De blinde persoon heeft het verzoek geannuleerd. Bedankt voor uw hulp!";
+
+/* Title in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE" = "Verzoek geannuleerd";
+
+/* Title in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE" = "Kan het verzoek niet beantwoorden";
+
+/* Cancel in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "Ok";
+
+/* Message in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Het verzoek kan niet tot stand worden gebracht. Probeer het opnieuw.";
+
+/* Title in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Kan geen verzoek maken";
+
+/* Title of cancel button in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL" = "Ok";
+
+/* Status when asking the user to wait */
+"BME_CALL_STATUS_PLEASE_WAIT" = "Even wachten alstublieft...";
+
+/* Status when answering request */
+"BME_CALL_STATUS_ANSWERING_REQUEST" = "Verzoek aan het beantwoorden...";
+
+/* Message in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE" = "Het verzoek kan niet worden beantwoord op dit moment. Bedankt voor uw hulp!";
+
+/* Status when creating request */
+"BME_CALL_STATUS_CREATING_REQUEST" = "Verzoek maken...";
+
+/* Status when connecting */
+"BME_CALL_STATUS_CONNECTING" = "Verbinding maken met de servers...";
+
+/* Status when connection is established */
+"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Wachten op verbinding...";
+
+/* Status when session failed */
+"BME_CALL_STATUS_SESSION_FAILED" = "verbinding maken is mislukt";
+
+/* Status when failed publishing */
+"BME_CALL_STATUS_FAILED_PUBLISHING" = "Publiceren van audio en video is mislukt";
+
+/* Speech when connected to other part */
+"BME_CALL_SPEECH_DID_SUBSCRIBE" = "U bent met elkaar verbonden";
+
+/* Status when failed subscribing */
+"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "De verbinding ging fout tijdens het aanmelden";
+
+/* Status when disconnecting */
+"BME_CALL_STATUS_DISCONNECTING" = "Verbreken...";
+
+/* Title of cancel button in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "Ok";
+
+/* Message in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "Men heeft verbroken, en de sessie is beëindigd.";
+
+/* Title in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "Sessie is beëindigd";
+

@@ -10,7 +10,7 @@
 
 #import <FormatterKit/TTTTimeIntervalFormatter.h>
 
-@interface BMEPointsTableViewCell()
+@interface BMEPointsTableViewCell() <MKLocalizable>
 @property (weak, nonatomic) IBOutlet UILabel *pointsDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
@@ -22,6 +22,13 @@
 - (void)awakeFromNib {
     // Fix backgroundColor not being set to clearColor from Storyboard on iPad.
     self.backgroundColor = [UIColor clearColor];
+    // Register for localization
+    [MKLocalization registerForLocalization:self];
+}
+
+- (void)shouldLocalize {
+    [self updateDateLabel];
+    [self updatePointsLabel];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {}
@@ -46,20 +53,14 @@
 
 - (void)setDate:(NSDate *)date
 {
-    if (date != _date) {
-        _date = date;
-        
-        self.dateLabel.text = [self.timeFormatter stringForTimeIntervalFromDate:[NSDate date] toDate:self.date];
-    }
+    _date = date;
+    [self updateDateLabel];
 }
 
 - (void)setPoints:(NSNumber *)points
 {
-    if (points != _points) {
-        _points = points;
-        
-        self.pointsLabel.text = [NSString stringWithFormat:@"+%d points", self.points.integerValue];
-    }
+    _points = points;
+    [self updatePointsLabel];
 }
 
 - (TTTTimeIntervalFormatter *)timeFormatter
@@ -69,6 +70,17 @@
         _timeFormatter.usesIdiomaticDeicticExpressions = YES; // Allow 'yesterday' instead of '1 day ago'
     }
     return _timeFormatter;
+}
+
+
+#pragma mark -
+
+- (void)updateDateLabel {
+    self.dateLabel.text = _date ? [self.timeFormatter stringForTimeIntervalFromDate:[NSDate date] toDate:self.date] : nil;
+}
+
+- (void)updatePointsLabel {
+    self.pointsLabel.text = [NSString stringWithFormat:MKLocalizedFromTable(BME_SETTINGS_TASK_POINTS, BMESettingsLocalizationTable), self.points.integerValue];
 }
 
 @end

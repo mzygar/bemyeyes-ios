@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Tillbaka\n";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Fortsättning";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Applikationen kommer att försätta dig i verklig kontakt med en synlig hjälpare vars kommer att assistera dig på distans från en synlig person. Via en direkt video anslutning så kommer hjälparen att tala om för dig vad han eller hon ser när du pekar din mobil på någonting. \n\nDessa hjälpare i organisationen och grupp kontaktnätet \"Var mina ögon\" är volontärer och vi kan inte garantera deras kvalité till hjälp eller att ta ansvar för någon av deras handlingar.  Eftersom vi vidare förlitar oss på riktiga personer som hjälper och vi uppmuntrar er till att tolera detta när du anropar eller tillkallar på hjälp\n\nDu ska inte under några omständigheter dela av dig med något naket, olagligt, hatiskt eller med sexuella anspelningar eller tankar via service och du ska aldrig dela med dig av känslig information tillexempel som kreditkort, pass eller annan personlig information.";
+

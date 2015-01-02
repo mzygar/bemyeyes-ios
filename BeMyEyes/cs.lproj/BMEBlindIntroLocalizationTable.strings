@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Zpět";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Pokračovat";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Aplikace vás dostanete do kontaktu s vidící pomocníkem, který vám vzdáleně bude pomáhat s úkoly vyžadující pomoc od vidící osoby - prostřednictvím živého videa připojení vám řekne, co on nebo ona vidí, když na něco ukážete váš telefon.  Pomocníci v síti Be My Eyes jsou dobrovolníci a nemůžeme zaručit kvalitu jejich pomoci nebo převzít odpovědnost za jejich činy. Protože se spoléháme na pomoc skutečných lidí, doporučujeme vám být trpělivý, když požádáte o pomoc.   Za žádných okolností nemůžete  sdílet jakýkoli nudistické, protiprávní, nenávistné nebo sexuálně orientovaný obsah prostřednictvím aplikace a nikdy by ste nemali zobrazovat žádné citlivé informace, například kreditní karty, cestovní pas nebo jiné osobní údaje.";
+

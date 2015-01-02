@@ -1,0 +1,96 @@
+/* Title of back button */
+"BME_LOGIN_BACK" = "Înapoi";
+
+/* Placeholder in e-mail field */
+"BME_LOGIN_EMAIL_PLACEHOLDER" = "Email";
+
+/* Placeholder in password field */
+"BME_LOGIN_PASSWORD_PLACEHOLDER" = "Parolă";
+
+/* Title of log in button */
+"BME_LOGIN_PERFORM_LOG_IN" = "Logare";
+
+/* Title of log in with Facebook button */
+"BME_LOGIN_FACEBOOK" = "Autentificare cu Facebook";
+
+/* Title of forgot password button */
+"BME_LOGIN_FORGOT_PASSWORD" = "A-ți uitat parola ";
+
+/* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL" = "OK";
+
+/* Message in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE" = "Vă rugăm să verificaţi dacă sunteți conectați la internet și încercați din nou. ";
+
+/* Title in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE" = "S-a produs o eroare";
+
+/* Title of cancel button in alert view shown when log in to Facebook failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL" = "OK";
+
+/* Message in alert view shown when logging into Facebook but it failed because authentication failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE" = "Nu a-ți fost logat. Vă rugăm să încercaţi din nou.";
+
+/* Title in alert view shown when log in to Facebook failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE" = "Nu ești autentificat(ă)";
+
+/* Title of cancel button in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL" = "OK";
+
+/* Message in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE" = "Trebuie să vă autentificați pe Facebook înainte de a vă putea conecta.";
+
+/* Title in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE" = "Contul nu este înregistrat";
+
+/* Message in alert view shown when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "Vă rugăm să introduceţi adresa de e-mail şi parola.";
+
+/* Title of cancel button in alert view show when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL" = "OK";
+
+/* Title in alert view shown when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELDS_TITLE" = "Câmpuri goale";
+
+/* Title of cancel button in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL" = "OK";
+
+/* Message in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "Adresa de e-mail și parola nu se potrivesc";
+
+/* Title in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Date de logat incorecte ";
+
+/* Title of cancel button in alert view shown when a network error occurred during e-mail log in. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL" = "OK";
+
+/* Message in alert view shown when a network error occurred. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE" = "Vă rugăm să verificaţi dacă sunteți conectați la internet și încercați din nou. ";
+
+/* Title in alert view shown when a network error occurred during e-mail log in. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE" = "S-a produs o eroare";
+
+/* Title in overlay displayed when logging in */
+"BME_LOGIN_OVERLAY_LOGGING_IN_TITLE" = "În proces de autentificare...";
+
+/* Title of cancel button in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "OK";
+
+/* Message in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Nici un cont de Facebook nu a fost găsit pe dispozitiv. Vă rugăm să adăugaţi contul dumneavoastră în setările telefonului.";
+
+/* Title in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Nici un cont găsit";
+
+/* Title of cancel button in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL" = "OK";
+
+/* Message in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Imposibil de înregistrat pentru notificările de la distanţă. Acest lucru este necesar pentru aplicația Be My Eyes. Vă rugăm să vă asiguraţi că notificările la distanța sunt activate în setările telfefonului şi încercaţi din nou.";
+
+/* Title in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Logare eșuată";
+
+/* Title in overlay displayed while loading pending request */
+"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Încarcă cererea...";
+

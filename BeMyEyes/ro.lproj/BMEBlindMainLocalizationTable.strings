@@ -1,0 +1,15 @@
+/* Title of connect to community button */
+"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Conectează cu primul ajutor disponibil ";
+
+/* Cancel in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+
+/* Message in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Cererea nu a putut fi creată. Vă rugăm să încercaţi din nou.";
+
+/* Title in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Crearea cererii a eșuat";
+
+/* Title in hud shown when creating request */
+"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Creare cerere...";
+

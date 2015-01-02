@@ -1,0 +1,87 @@
+/* Headline of snooze */
+"BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Odložiť";
+
+/* Format for snooze status text. %@ is replaced with the snooze amount. */
+"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Odkladáte %@";
+
+/* Point description */
+"BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION" = "Ľudia, ktorím ste pomohli";
+
+/* Point total description */
+"BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION" = "Body celkom";
+
+/* Level new helper */
+"BME_HELPER_MAIN_LEVEL_NEW_HELPER" = "Nový Pomocník";
+
+/* Level promising helper */
+"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "Sľubný Pomocník";
+
+/* Level trusted helper */
+"BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER" = "Dôveryhodný Pomocník";
+
+/* Level expert helper */
+"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Expert Pomocník";
+
+/* Level master helper */
+"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Majster Pomocník";
+
+/* Level points to next level description */
+"BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d bodov do ďaľšieho levelu";
+
+/* Points signup description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SIGNUP_DESCRIPTION" = "Úspešná registrácia";
+
+/* Points answer push message description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_DESCRIPTION" = "Pokúsili sa pomôcť";
+
+/* Points answer push message techinal error description */
+"BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION" = "Pokúsili sa pomôcť";
+
+/* Points finish helping request description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Pomohol slepému človeku";
+
+/* Points finish 10 helping requests in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION" = "Pomohol 10tim týždenne";
+
+/* Points finish 5 high fives in a week description */
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION" = "5 daj na to za týždeň";
+
+/* Points share on twitter description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Zdielal na Twitteri";
+
+/* Points share on facebook description */
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Zdielal na Facebooku";
+
+/* Points watch video description */
+"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Sledoval video";
+
+/* Task share on twitter description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION" = "Zdieľať na Twitteri";
+
+/* Task share on facebook description */
+"BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION" = "Zdieľať na Facebooku";
+
+/* Task watch video description */
+"BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION" = "Pozrieť si video";
+
+/* Community network description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "Be My Eyes sieť";
+
+/* Community network sighted description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED" = "Vidiaci";
+
+/* Community network blind description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND" = "Nevidiaci";
+
+/* Community network helped description */
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED" = "Bolo mu pomohnuté";
+
+/* Message shown when the point could not be loaded */
+"BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Nepodarilo sa načítať body";
+
+/* Title of button for retrying loading point when failed */
+"BME_HELPER_MAIN_RETRY_LOADING_POINT" = "Skúsiť znova";
+
+/* Snooze status text when not snoozing */
+"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "Ste aktívny";
+

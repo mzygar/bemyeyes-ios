@@ -1,0 +1,9 @@
+/* Headline */
+"BME_REGISTERED_HEADLINE" = "Kyllä!";
+
+/* Description */
+"BME_REGISTERED_DESCRIPTION" = "Olet nyt rekisteröitynyt.";
+
+/* Title of log in button */
+"BME_REGISTERED_LOG_IN" = "Kirjaudu sisään";
+

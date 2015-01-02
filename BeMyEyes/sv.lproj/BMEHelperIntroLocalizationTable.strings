@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Tillbaka\n";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Fortsättning";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Ge hjälp är lätt.";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Ge stöd och hjälp när du kan och vill, var du än är";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Din mobil är tillgänglig för samtal från människor som behöver hjälp när du är inloggad.";
+

@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Takaisin";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Jatka";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Sovellus avaa sinulle suoran yhteyden näkevään auttajaasi, joka auttaa sinua etänä tehtävissä, jotka edellyttävät apua näkevältä henkilöltä - suoran videoyhteyden kautta avustaja kertoo, mitä hän näkee, kun osoitat puhelimellasi jotakin.\n\nBe My Eyes verkoston avustajat ovat vapaaehtoisia, joten emme voi taata heidän apunsa laatua emmekä voi vastata heidän tekemistään. Lisäksi kannustamme sinua kärsivällisyyteen, koska sinua auttavat todelliset henkilöt.\n\nEt missään tapauksessa saa jakaa alastomia, laittomia, vihamielisiä tai seksuaalisesti vihjalevia sisältöjä palvelun kautta, eikä sinun pidä näyttää mitään arkaluontoisia tietoja kuten luottokortteja, passia tai muuta henkilökohtaisia tietoja.";
+
