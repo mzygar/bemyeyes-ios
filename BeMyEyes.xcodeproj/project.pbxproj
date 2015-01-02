@@ -55,6 +55,7 @@
 		4EE671C21A2DB4260037865B /* ProfileSarah.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE671BF1A2DB3240037865B /* ProfileSarah.png */; };
 		4EE671C41A2DF9C10037865B /* BlindMainViewController_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE671C31A2DF9C10037865B /* BlindMainViewController_Tests.swift */; };
 		4EE91D1419E5977C00CF4F23 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE91D1319E5977C00CF4F23 /* RadioButton.swift */; };
+		4EECE0E01A56957E0073AFDF /* FrontPageViewController_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECE0DF1A56957E0073AFDF /* FrontPageViewController_Tests.swift */; };
 		4EFA28081A2B7A4F0050450C /* MaskedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1916CE19E5800300B85E61 /* MaskedLabel.swift */; };
 		556D82D33DA8A505A137BD4A /* libPods-BeMyEyes Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03381774851623C2C6BE0645 /* libPods-BeMyEyes Tests.a */; };
 		7206A76118FA9BF000251824 /* BMEPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7206A76018FA9BF000251824 /* BMEPointLabel.m */; };
@@ -448,6 +449,7 @@
 		4EE671BF1A2DB3240037865B /* ProfileSarah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileSarah.png; sourceTree = "<group>"; };
 		4EE671C31A2DF9C10037865B /* BlindMainViewController_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindMainViewController_Tests.swift; sourceTree = "<group>"; };
 		4EE91D1319E5977C00CF4F23 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		4EECE0DF1A56957E0073AFDF /* FrontPageViewController_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController_Tests.swift; sourceTree = "<group>"; };
 		4EFCE56F1A55C57500FAE663 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4EFCE5701A55C57500FAE663 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/BMEAccessLocalization.strings; sourceTree = "<group>"; };
 		4EFCE5711A55C57500FAE663 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/BMEAppDelegateLocalizationTable.strings; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 				4E7BA9B51A1CE2DC00F9744A /* MaskedLabel_Tests.swift */,
 				4E7BA9C21A1DEE4500F9744A /* HelperMainViewController_Tests.swift */,
 				4EE671C31A2DF9C10037865B /* BlindMainViewController_Tests.swift */,
+				4EECE0DF1A56957E0073AFDF /* FrontPageViewController_Tests.swift */,
 				4E7BA9BB1A1CF50C00F9744A /* SnapshotHelper.swift */,
 				4E7BA9BD1A1CF5DA00F9744A /* DataHelper.swift */,
 				4E7BA9A81A1B5E9900F9744A /* BeMyEyes Tests-Bridging-Header.h */,
@@ -1367,6 +1370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EECE0E01A56957E0073AFDF /* FrontPageViewController_Tests.swift in Sources */,
 				4E7BA9B61A1CE2DC00F9744A /* MaskedLabel_Tests.swift in Sources */,
 				4E7BA9B81A1CE64300F9744A /* GVUserDefaults+Settings.m in Sources */,
 				4EFA28081A2B7A4F0050450C /* MaskedLabel.swift in Sources */,

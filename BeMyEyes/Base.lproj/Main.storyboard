@@ -11,7 +11,7 @@
         <!--Front Page View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="BMEFrontPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FrontPage" id="vXZ-lx-hvc" customClass="BMEFrontPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LUz-nx-Suh"/>
                         <viewControllerLayoutGuide type="bottom" id="Uzk-Yk-OlI"/>
@@ -24,12 +24,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your role?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-NR-WpR">
-                                <rect key="frame" x="15" y="247" width="290" height="19.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmg-sQ-kOY" userLabel="Community Stats View">
                                 <rect key="frame" x="15" y="0.0" width="290" height="71.5"/>
                                 <subviews>
@@ -202,10 +196,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ag-KE-c4b" userLabel="Logo Wrapper">
-                                <rect key="frame" x="0.0" y="71.5" width="320" height="176"/>
+                                <rect key="frame" x="0.0" y="71" width="320" height="161.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNI-8U-fEM" userLabel="Logo Container">
-                                        <rect key="frame" x="0.0" y="24" width="320" height="127"/>
+                                        <rect key="frame" x="0.0" y="17.5" width="320" height="127"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoNoTextWhite" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-ka-v6O">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="69"/>
@@ -245,7 +239,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9q-Oe-kOY">
-                                <rect key="frame" x="0.0" y="415" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="232" width="320" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="ns0-dZ-2wX"/>
                                 </constraints>
@@ -259,8 +253,14 @@
                                     <segue destination="ihY-sp-kva" kind="push" identifier="Login" id="Y8W-tr-yNw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your role?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-NR-WpR">
+                                <rect key="frame" x="15" y="297" width="290" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kV5-ME-fhW" userLabel="I am sighted" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="272" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="322" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
@@ -277,7 +277,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-r7-DMS" userLabel="I am blind" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="347" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="397" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
@@ -299,26 +299,26 @@
                             <constraint firstAttribute="trailing" secondItem="kV5-ME-fhW" secondAttribute="trailing" id="4GI-qh-xx9"/>
                             <constraint firstAttribute="trailing" secondItem="mHE-NR-WpR" secondAttribute="trailing" constant="15" id="4r7-UX-yDw"/>
                             <constraint firstItem="ESf-r7-DMS" firstAttribute="top" secondItem="kV5-ME-fhW" secondAttribute="bottom" id="BPw-Ne-xSn"/>
-                            <constraint firstItem="Uzk-Yk-OlI" firstAttribute="top" secondItem="M9q-Oe-kOY" secondAttribute="bottom" id="C1T-cs-CA1"/>
                             <constraint firstItem="mHE-NR-WpR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="CNB-s2-WAd"/>
                             <constraint firstAttribute="trailing" secondItem="6ag-KE-c4b" secondAttribute="trailing" id="CYf-kI-iv1"/>
                             <constraint firstItem="mmg-sQ-kOY" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="CnK-Nu-Sfr"/>
                             <constraint firstAttribute="trailing" secondItem="M9q-Oe-kOY" secondAttribute="trailing" id="DEr-5q-DMA"/>
-                            <constraint firstItem="M9q-Oe-kOY" firstAttribute="top" secondItem="ESf-r7-DMS" secondAttribute="bottom" constant="-7" id="I18-UV-Mxy"/>
                             <constraint firstAttribute="trailing" secondItem="ESf-r7-DMS" secondAttribute="trailing" id="QIW-F1-PJG"/>
                             <constraint firstItem="mmg-sQ-kOY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="SFZ-ff-SnQ"/>
                             <constraint firstItem="M9q-Oe-kOY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Udx-JV-XuY"/>
                             <constraint firstItem="usY-iz-Xp5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="bHx-2Z-4KR"/>
                             <constraint firstAttribute="trailing" secondItem="mmg-sQ-kOY" secondAttribute="trailing" constant="15" id="c5T-uu-FU4"/>
+                            <constraint firstItem="mHE-NR-WpR" firstAttribute="top" secondItem="M9q-Oe-kOY" secondAttribute="bottom" id="eJd-Lb-qq8"/>
                             <constraint firstItem="ESf-r7-DMS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="em8-Xj-A20"/>
                             <constraint firstItem="usY-iz-Xp5" firstAttribute="top" secondItem="LUz-nx-Suh" secondAttribute="bottom" id="fKH-Hl-9FG"/>
                             <constraint firstAttribute="trailing" secondItem="usY-iz-Xp5" secondAttribute="trailing" id="gWb-M3-1lj"/>
                             <constraint firstItem="6ag-KE-c4b" firstAttribute="top" secondItem="mmg-sQ-kOY" secondAttribute="bottom" id="mG7-B3-WCo"/>
+                            <constraint firstItem="M9q-Oe-kOY" firstAttribute="top" secondItem="6ag-KE-c4b" secondAttribute="bottom" id="nGA-8B-uja"/>
                             <constraint firstItem="kV5-ME-fhW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="q8t-Tb-po2"/>
                             <constraint firstItem="6ag-KE-c4b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rai-Xv-zdX"/>
                             <constraint firstItem="Uzk-Yk-OlI" firstAttribute="top" secondItem="usY-iz-Xp5" secondAttribute="bottom" id="rsU-3r-MUP"/>
-                            <constraint firstItem="mHE-NR-WpR" firstAttribute="top" secondItem="6ag-KE-c4b" secondAttribute="bottom" id="wk8-BG-RAd"/>
                             <constraint firstItem="kV5-ME-fhW" firstAttribute="top" secondItem="mHE-NR-WpR" secondAttribute="bottom" constant="5" id="xaY-aS-3iL"/>
+                            <constraint firstAttribute="bottom" secondItem="ESf-r7-DMS" secondAttribute="bottom" constant="8" id="yoc-VA-vVu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gva-8w-2WT"/>
