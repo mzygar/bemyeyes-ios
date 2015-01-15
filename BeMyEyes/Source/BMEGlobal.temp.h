@@ -30,6 +30,7 @@
 #define BMEPeopleHelpedBeforeAskingForMoreLanguages 3
 
 #define BMEIsProductionOrAdHoc true
+#define BMEHeaderAuthTokenKey @"BMEHeaderAuthTokenKey"
 
 #define BMEErrorDomain @"org.bemyeyes.BeMyEyes"
 
@@ -39,14 +40,17 @@
 #define BMEMenuControllerIdentifier @"Menu"
 #define BMECallControllerIdentifier @"Call"
 #define BMESecretSettingsControllerIdentifier @"SecretSettings"
+#define BMEFrontPageNavigationControllerIdentifier @"FrontPageNavigation"
+#define BMEMainNavigationControllerIdentifier @"MainNavigation"
 
+#define BMEDidLogInNotification @"BMEDidLogInNotification"
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"
 #define BMEDidUpdateProfileNotification @"BMEDidUpdateProfileNotification"
 #define BMEDidUpdatePointNotification @"BMEDidUpdatePointNotification"
-
-typedef NS_ENUM(NSInteger, BMERole) {
-    BMERoleBlind = 0,
-    BMERoleHelper,
-};
+#define BMEGoToLoginIfPossibleNotification @"BMEGoToLoginIfPossibleNotification"
+#define BMEInitiateCallIfPossibleNotification @"BMEInitiateCallIfPossibleNotification"
+#define BMEBundleIdProduction @"org.bemyeyes.BeMyEyes"
+#define BMEBundleIdDevelopment @"org.bemyeyes.BeMyEyes.dev"
+#define BMEBundleIdStaging @"org.bemyeyes.BeMyEyes.staging"
 
 #endif
