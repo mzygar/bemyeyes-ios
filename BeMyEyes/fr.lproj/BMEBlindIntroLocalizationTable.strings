@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Retour";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Continuer";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Cette application permet de vous mettre en contact avec une personne voyante qui vous aide à distance. Grâce à une connexion vidéo, la personne qui vous aide vous indique ce qu'elle voit lorsque vous dirigez votre téléphone dans une direction donnée.\n\nLes personnes qui aident au sein du réseau Be My Eyes sont bénévoles et nous ne pouvons pas garantir la qualité de leur intervention, ni être tenus responsables de leurs actions. En outre, comme nous nous appuyons sur des personnes réelles pour vous aider, nous vous encourageons à être patients lorsque vous demandez de l'aide.\n\nIl est interdit d'utiliser ce service pour partager du contenu illégal, obscène, à caractère haineux ou sexuel et il est recommandé de ne jamais échanger d'informations sensibles telles que vos numéros de cartes de crédit, de passeport ainsi que toute autre information personnelle.";
+
