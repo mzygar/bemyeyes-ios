@@ -8210,7 +8210,7 @@ static NSString * const BME_VIDEO_CANCEL_TITLE = @"BME_VIDEO_CANCEL_TITLE";
 
  * @b cs@: "Be My Eyes"
 
- * @b da@: "BeMyEyes"
+ * @b da@: "Be My Eyes"
 
  * @b en@: "Be My Eyes"
 
@@ -8238,7 +8238,7 @@ static NSString * const logoLabel_text = @"logoLabel.text";
 
  * @b cs@: "Vyrobeno s ❤︎ z Kodaně"
 
- * @b da@: "Laved med ❤︎ i København"
+ * @b da@: "Lavet med ❤︎ i København"
 
  * @b en@: "Crafted with ❤︎ from Copenhagen"
 

@@ -65,3 +65,4 @@
 
 /* Message in alert shown when the device could not register for remote notifications */
 "BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Enheden kunne ikke registreres til at modtage push notifikationer. Dette kan betyde, at applikationen ikke er blevet rigtigt signed.";
+
