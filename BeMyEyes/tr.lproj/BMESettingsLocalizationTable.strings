@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Ayarlar";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Ad";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Soyad";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-posta";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Diller";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Dil ekleme";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Uygulama hakkında geri bildirimde bulunun";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Çıkış yap";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "Tamam";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Çıkış yapmadınız. Lütfen etkin bir internet bağlantınız olduğunu kontrol edin ve tekrar deneyin.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Çıkış yapılamadı";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Çıkış yapılıyor...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Sürüm %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Geri";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d puan";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Tamamlandı";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Görme engellileri gören yardımcılarla buluşturan #BeMyEyes uygulamasıyla görme engelli birinin görmesine yardımcı olun!";
+

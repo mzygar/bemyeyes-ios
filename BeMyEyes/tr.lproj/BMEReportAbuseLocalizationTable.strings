@@ -1,0 +1,72 @@
+/* Headline */
+"BME_REPORT_ABUSE_HEADLINE" = "Kötüye kullanım bildir";
+
+/* Text telling user to choose a reason */
+"BME_REPORT_ABUSE_CHOOSE_REASON" = "Bir neden seçin";
+
+/* Title of report button */
+"BME_REPORT_ABUSE_REPORT" = "Kötüye kullanım bildir";
+
+/* Title of skip button */
+"BME_REPORT_ABUSE_SKIP" = "Atla";
+
+/* Text 1 for reporting abuse as a blind person. */
+"BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND" = "Kişi yardım etmek istemedi.";
+
+/* Text 1 for reporting abuse as a helper. */
+"BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER" = "Kişi görme engelli değildi.";
+
+/* Text 2 for reporting abuse as a blind person. */
+"BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND" = "Yardımcı uygunsuz davranışta bulundu.";
+
+/* Text 2 for reporting abuse as a helper. */
+"BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER" = "Görme engelli kişi uygunsuz davranışta bulundu.";
+
+/* Text 3 for reporting abuse as a blind person. */
+"BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND" = "Neden listelenmemiş.";
+
+/* Text 3 for reporting abuse as a helper. */
+"BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER" = "Neden listelenmemiş.";
+
+/* Title of cancel button in alert view show when reporting failed */
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_CANCEL" = "Tamam";
+
+/* Message in alert view shown when reporting failed */
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE" = "Rapor gönderilemedi. Lütfen etkin bir internet bağlantınız olduğundan emin olun ve tekrar deneyin.";
+
+/* Title in alert view shown when reporting failed */
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE" = "Kötüye kullanım raporlanamadı";
+
+/* Title in overlay displayed when reporting abuse */
+"BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE" = "Raporlanıyor...";
+
+/* Title of cancel button in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL" = "İptal";
+
+/* Title of confirm in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM" = "Doğrula";
+
+/* Message in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE" = "Bütün kötüye kullanım vakaları ciddiye alınır ve incelenir. Karşı taraf için kötüye kullanım bildiriminde bulunmak istediğinize emin misiniz?";
+
+/* Title in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE" = "Kötüye kullanım bildir";
+
+/* Accesibility label for reason 1 when the reason is selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED" = "Kişi yardım etmek istemedi (Seçildi)";
+
+/* Accesibility label for reason 1 when the reason is not selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1" = "Kişi yardım etmek istemedi.";
+
+/* Accesibility label for reason 2 when the reason is selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED" = "Yardımcı uygunsuz davranışta bulundu (Seçildi)";
+
+/* Accesibility label for reason 2 when the reason is not selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2" = "Yardımcı uygunsuz davranışta bulundu.";
+
+/* Accesibility label for reason 3 when the reason is selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED" = "Neden listelenmemiş (Seçildi)";
+
+/* Accesibility label for reason 3 when the reason is not selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3" = "Neden listelenmemiş.";
+

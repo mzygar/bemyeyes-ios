@@ -1,0 +1,96 @@
+/* Title of back button */
+"BME_LOGIN_BACK" = "Geri";
+
+/* Placeholder in e-mail field */
+"BME_LOGIN_EMAIL_PLACEHOLDER" = "E-posta";
+
+/* Placeholder in password field */
+"BME_LOGIN_PASSWORD_PLACEHOLDER" = "Şifre";
+
+/* Title of log in button */
+"BME_LOGIN_PERFORM_LOG_IN" = "Oturum aç";
+
+/* Title of log in with Facebook button */
+"BME_LOGIN_FACEBOOK" = "Facebook ile oturum aç";
+
+/* Title of forgot password button */
+"BME_LOGIN_FORGOT_PASSWORD" = "Şifremi unuttum";
+
+/* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL" = "Tamam";
+
+/* Message in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE" = "Lütfen etkin bir internet bağlantınız olduğunu doğrulayın ve tekrar deneyin.";
+
+/* Title in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE" = "Bir hata oluştu";
+
+/* Title of cancel button in alert view shown when log in to Facebook failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL" = "Tamam";
+
+/* Message in alert view shown when logging into Facebook but it failed because authentication failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE" = "Oturum açılamadı. Lütfen tekrar deneyin.";
+
+/* Title in alert view shown when log in to Facebook failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE" = "Oturum açılmadı";
+
+/* Title of cancel button in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL" = "Tamam";
+
+/* Message in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE" = "Oturum açmadan önce Facebook hesabınız ile kayıt olmalısınız.";
+
+/* Title in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE" = "Hesap kayıtlı değil";
+
+/* Message in alert view shown when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "E-posta adresinizi ve şifrenizi giriniz.";
+
+/* Title of cancel button in alert view show when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL" = "Tamam";
+
+/* Title in alert view shown when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELDS_TITLE" = "Boş alanlar";
+
+/* Title of cancel button in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL" = "Tamam";
+
+/* Message in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "Girilen e-posta ve şifre eşleşmiyor.";
+
+/* Title in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Hatalı kimlik bilgileri";
+
+/* Title of cancel button in alert view shown when a network error occurred during e-mail log in. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL" = "Tamam";
+
+/* Message in alert view shown when a network error occurred. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE" = "Lütfen etkin bir internet bağlantınız olduğunu doğrulayın ve tekrar deneyin.";
+
+/* Title in alert view shown when a network error occurred during e-mail log in. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE" = "Bir hata oluştu";
+
+/* Title in overlay displayed when logging in */
+"BME_LOGIN_OVERLAY_LOGGING_IN_TITLE" = "Oturum açılıyor...";
+
+/* Title of cancel button in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "Tamam";
+
+/* Message in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Cihazda hiçbir Facebook hesabı bulunamadı. Lütfen sistem ayarlarından hesabınızı ekleyin.";
+
+/* Title in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Hiçbir hesap bulunamadı";
+
+/* Title of cancel button in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL" = "Tamam";
+
+/* Message in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Uzaktan bildirimlere kayıt olunamadı. Bu, Be My Eyes uygulaması için gereklidir. Lütfen uzaktan bildirimlerin sistem ayarlarınızda etkin olduğundan emin olun ve tekrar deneyin.";
+
+/* Title in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Oturum açma başarısız oldu";
+
+/* Title in overlay displayed while loading pending request */
+"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "İstek yükleniyor...";
+

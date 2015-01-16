@@ -1,0 +1,51 @@
+/* 
+  BMEMainViewController.strings
+  BeMyEyes
+  Created by Simon Støvring on 07/07/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Title of cancel button in alert view shown when asking the blind if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "Hayır";
+
+/* Title of confirm button in alert view shown when asking the blind if he knows more BME_MAIN_langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM" = "Evet, biliyorum";
+
+/* Message in alert view shown when asking the blind if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Eğer birden fazla dil biliyorsanız, onları seçebilir ve böylece o dilleri de konuşan bir yardımcıyla eşleştirilerek daha hızlı yardım alabilirsiniz.";
+
+/* Title in alert view shown when asking the blind if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "Başka bir dil biliyor musunuz?";
+
+/* Title of cancel button in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL" = "Hayır";
+
+/* Title of confirm button in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "Evet, biliyorum";
+
+/* Message in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Eğer birden fazla dil biliyorsanız, onları seçebilir ve böylece o dillerde de yardıma ihtiyacı olan görme engellilerle eşleştirilebilirsiniz.";
+
+/* Title in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "Başka bir dil biliyor musunuz?";
+
+/* Settings button accessibility label */
+"BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Ayarlar";
+
+/* Title of notifications error title in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Bildirimler";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Bir şeyler ters gitti ve bildirimleri alamayabilirsiniz";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_CANCEL" = "Tamam";
+
+/* Title of alert view when user is forced to logout */
+"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE" = "Oturum açma hatası";
+
+/* Message in alert view when user is forced to logout */
+"BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE" = "Teknik bir hata nedeniyle oturumunuz kapatılacak.";
+
+/* Ok button in alert view when user is forced to logout */
+"BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM" = "Oturum aç";
+
