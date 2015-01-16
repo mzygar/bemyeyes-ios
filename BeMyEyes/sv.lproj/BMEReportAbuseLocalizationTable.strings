@@ -2,71 +2,71 @@
 "BME_REPORT_ABUSE_HEADLINE" = "Anmäl missbruk";
 
 /* Text telling user to choose a reason */
-"BME_REPORT_ABUSE_CHOOSE_REASON" = "Välj en anledning";
+"BME_REPORT_ABUSE_CHOOSE_REASON" = "Välj en orsak";
 
 /* Title of report button */
 "BME_REPORT_ABUSE_REPORT" = "Anmäl missbruk";
 
 /* Title of skip button */
-"BME_REPORT_ABUSE_SKIP" = "Skippa";
+"BME_REPORT_ABUSE_SKIP" = "Hoppa över";
 
 /* Text 1 for reporting abuse as a blind person. */
-"BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND" = "Personen ville ej hjälpa till.";
+"BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND" = "Personen ville inte hjälpa till.";
 
 /* Text 1 for reporting abuse as a helper. */
-"BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER" = "Personen var inte blind";
+"BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER" = "Personen var inte blind.";
 
 /* Text 2 for reporting abuse as a blind person. */
-"BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND" = "Hjälparen agerade oproffsigt och väldigt olämpligt";
+"BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND" = "Hjälparen agerade olämpligt.";
 
 /* Text 2 for reporting abuse as a helper. */
-"BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER" = "Den blinda personen agerade otillåtet";
+"BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER" = "Den blinda personen agerade olämpligt.";
 
 /* Text 3 for reporting abuse as a blind person. */
-"BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND" = "Orsaken är inte angiven";
+"BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND" = "Annan orsak.";
 
 /* Text 3 for reporting abuse as a helper. */
-"BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER" = "Orsaken är inte angiven";
+"BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER" = "Annan orsak.";
 
 /* Title of cancel button in alert view show when reporting failed */
 "BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_CANCEL" = "Okej";
 
 /* Message in alert view shown when reporting failed */
-"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE" = "Anmälan kunde inte skickas. Vänligen se till att ha en aktiv internet anslutning och försök sedan igen";
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE" = "Anmälan kunde inte skickas. Vänligen kontrollera din internetanslutning och försök igen.";
 
 /* Title in alert view shown when reporting failed */
-"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE" = "Kunde inte anmäla missbruket.";
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE" = "Kunde inte anmäla missbruket";
 
 /* Title in overlay displayed when reporting abuse */
 "BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE" = "Anmäler...";
 
 /* Title of cancel button in alert view shown when asking the user to confirm that he wants to report abuse */
-"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL" = "Avslås.";
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL" = "Avbryt";
 
 /* Title of confirm in alert view shown when asking the user to confirm that he wants to report abuse */
 "BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM" = "Bekräfta";
 
 /* Message in alert view shown when asking the user to confirm that he wants to report abuse */
-"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE" = "Alla misshandel fall och övergrepp är uppmärksammade och tagna på allvar. Är du säker att du även vill anmäla den andra delen för missbruk?";
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE" = "Allt missbruk tas på allvar och kontrolleras. Är du säker att du även vill anmäla motparten för missbruk?";
 
 /* Title in alert view shown when asking the user to confirm that he wants to report abuse */
-"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE" = "Anmäl missbruket";
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE" = "Anmäl missbruk";
 
 /* Accesibility label for reason 1 when the reason is selected */
-"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED" = "Personen i fråga ville ej hjälpa till (utvald)";
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED" = "Personen ville inte hjälpa till (vald)";
 
 /* Accesibility label for reason 1 when the reason is not selected */
-"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1" = "Personen ville ej hjälpa till.";
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1" = "Personen ville inte hjälpa till.";
 
 /* Accesibility label for reason 2 when the reason is selected */
 "BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED" = "Hjälparen agerade olämpligt (vald) ";
 
 /* Accesibility label for reason 2 when the reason is not selected */
-"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2" = "Hjälparen agerade oproffsigt och väldigt olämpligt";
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2" = "Hjälparen agerade olämpligt.";
 
 /* Accesibility label for reason 3 when the reason is selected */
-"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED" = " Anledningen är inte angiven (vald)";
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED" = "Annan orsak (vald)";
 
 /* Accesibility label for reason 3 when the reason is not selected */
-"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3" = "Orsaken är inte angiven";
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3" = "Annan orsak.";
 

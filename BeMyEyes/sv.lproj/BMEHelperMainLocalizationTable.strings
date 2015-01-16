@@ -1,29 +1,29 @@
 /* Headline of snooze */
-"BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Ta sig en tupplur.";
+"BME_HELPER_MAIN_SNOOZE_HEADLINE" = "Snooza";
 
 /* Format for snooze status text. %@ is replaced with the snooze amount. */
-"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Du försummar den nästa %@";
+"BME_HELPER_MAIN_SNOOZE_STATUS_TEXT" = "Du snoozar kommande %@";
 
 /* Point description */
-"BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION" = "Människor hjälpte";
+"BME_HELPER_MAIN_HELPED_POINT_DESCRIPTION" = "Personer hjälpta";
 
 /* Point total description */
-"BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION" = "Poäng i total";
+"BME_HELPER_MAIN_TOTAL_POINT_DESCRIPTION" = "Poäng totalt";
 
 /* Level new helper */
 "BME_HELPER_MAIN_LEVEL_NEW_HELPER" = "Ny hjälpare";
 
 /* Level promising helper */
-"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "En briljant hjälpare\n";
+"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "Lovande hjälpare";
 
 /* Level trusted helper */
 "BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER" = "Pålitlig hjälpare";
 
 /* Level expert helper */
-"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Expert hjälpare";
+"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Experthjälpare";
 
 /* Level master helper */
-"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Professionell hjälpare";
+"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Mästarhjälpare";
 
 /* Level points to next level description */
 "BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d poäng till nästa nivå";
@@ -38,50 +38,50 @@
 "BME_HELPER_MAIN_POINTS_ENTRY_ANSWER_PUSH_MESSAGE_TECHNICAL_ERROR_DESCRIPTION" = "Försökte hjälpa till";
 
 /* Points finish helping request description */
-"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Att ha hjälpt en blind person";
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESCRIPTION" = "Hjälpte en blind person";
 
 /* Points finish 10 helping requests in a week description */
 "BME_HELPER_MAIN_POINTS_ENTRY_FINISH_10_HELPING_REQUESTS_IN_A_WEEK_DESCRIPTION" = "Hjälpt 10 på en vecka";
 
 /* Points finish 5 high fives in a week description */
-"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION" = "5 höga femmor i veckan";
+"BME_HELPER_MAIN_POINTS_ENTRY_FINISH_5_HIGH_FIVES_IN_A_WEEK_DESCRIPTION" = "5 high fives i veckan";
 
 /* Points share on twitter description */
-"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Tilldelade på Twitter ";
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_TWITTER_DESCRIPTION" = "Delat på Twitter";
 
 /* Points share on facebook description */
-"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Tilldelad på Facebook";
+"BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTION" = "Delat på Facebook";
 
 /* Points watch video description */
-"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Sedd video";
+"BME_HELPER_MAIN_POINTS_ENTRY_WATCH_VIDEO_DESCRIPTION" = "Tittat på video";
 
 /* Task share on twitter description */
-"BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION" = "Tilldela på Twitter";
+"BME_HELPER_MAIN_TASK_SHARE_ON_TWITTER_DESCRIPTION" = "Dela på Twitter";
 
 /* Task share on facebook description */
-"BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION" = "Tilldela på Facebook";
+"BME_HELPER_MAIN_TASK_SHARE_ON_FACEBOOK_DESCRIPTION" = "Dela på Facebook";
 
 /* Task watch video description */
-"BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION" = "Titta på videon";
+"BME_HELPER_MAIN_TASK_WATCH_VIDEO_DESCRIPTION" = "Titta på video";
 
 /* Community network description */
-"BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "Att vara mina ögon grupp nätverk";
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION" = "Be My Eyes-nätverket";
 
 /* Community network sighted description */
-"BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED" = "Den seende";
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED" = "Seende";
 
 /* Community network blind description */
-"BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND" = "Blinda";
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_BLIND" = "Blind";
 
 /* Community network helped description */
-"BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED" = "Hjälpt";
+"BME_HELPER_MAIN_COMMUNITY_NETWORK_HELPED" = "Hjälpta";
 
 /* Message shown when the point could not be loaded */
-"BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Kunde inte ladda upp punkt.";
+"BME_HELPER_MAIN_LOADING_POINT_FAILED" = "Kunde inte ladda poäng";
 
 /* Title of button for retrying loading point when failed */
 "BME_HELPER_MAIN_RETRY_LOADING_POINT" = "Försök igen";
 
 /* Snooze status text when not snoozing */
-"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "Du är förnärvarande aktiv";
+"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "Du är aktiv";
 

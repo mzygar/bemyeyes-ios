@@ -11,10 +11,10 @@
 "BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM" = "Ja, det gör jag";
 
 /* Message in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Om du vet fler språk, så kan du välja de och bli matchad med en hjälpare som också känner till samma språk och utifrån det också ge hjälp snabbare.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Om du kan fler språk kan du välja dem och bli matchad med en hjälpare som kan samma språk, och därmed få hjälp snabbare.";
 
 /* Title in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "Kan du flera språk?";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "Kan du fler språk?";
 
 /* Title of cancel button in alert view shown when asking the helper if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL" = "Nej";
@@ -23,25 +23,25 @@
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "Ja, det gör jag";
 
 /* Message in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Om du kan fler språk, så kan du välja de och du kommer att bli sorterad med blinda personer som behöver hjälp i det språket.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Om du kan fler språk kan du välja dem och bli matchad med en synskadad som kan dessa språk.";
 
 /* Title in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "Kan du flera språk?";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "Kan du fler språk?";
 
 /* Settings button accessibility label */
 "BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Inställningar";
 
 /* Title of notifications error title in alert view */
-"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Meddelanden.";
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Notiser";
 
 /* Title of cancel button in alert view */
-"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Någonting gick fel till och du kan förmodligen inte ta emot meddelanden";
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Något gick fel till, du kanske inte kan ta emot notiser";
 
 /* Title of cancel button in alert view */
-"BME_MAIN_ALERT_CANCEL" = "Okej";
+"BME_MAIN_ALERT_CANCEL" = "OK";
 
 /* Title of alert view when user is forced to logout */
-"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE" = "Logga in avvikelse, fel";
+"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE" = "Inloggningsfel";
 
 /* Message in alert view when user is forced to logout */
 "BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE" = "På grund av ett tekniskt fel så kommer du att bli utloggad.";

@@ -1,14 +1,14 @@
 /* Title of back button */
-"BME_SIGN_UP_METHOD_BACK" = "Tillbaka\n";
+"BME_SIGN_UP_METHOD_BACK" = "Tillbaka";
 
 /* Headline */
-"BME_SIGN_UP_METHOD_HEADLINE" = "Bli en del av grupp nätverket";
+"BME_SIGN_UP_METHOD_HEADLINE" = "Bli en del av nätverket";
 
 /* Tiel of Facebook sign up button */
-"BME_SIGN_UP_METHOD_FACEBOOK" = "Anmäl dig via Facebook";
+"BME_SIGN_UP_METHOD_FACEBOOK" = "Registrera via Facebook";
 
 /* Sign up with e-mail button */
-"BME_SIGN_UP_METHOD_EMAIL" = "Logga in med e-post";
+"BME_SIGN_UP_METHOD_EMAIL" = "Registrera med e-post";
 
 /* Top part of button for viewing terms and conditions */
 "BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Genom att fortsätta accepterar du";
@@ -17,25 +17,25 @@
 "BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Villkor och avtal";
 
 /* Top part of button for viewing privacy policy */
-"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "såväl som ";
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "samt vår";
 
 /* Bottom part of button for viewing privacy policy */
-"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "sekretesspolicy";
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "Integritetspolicy";
 
 /* Title of cancel button in alert view shown when e-mail is already registered. */
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL" = "Okej";
 
 /* Message in alert view shown when e-mail is already registered. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE" = "Ett konto med e-postadressen för den Facebook användaren finns redan registrerad";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE" = "Ett konto med Facebook-användarens e-postadress finns redan registrerad.";
 
 /* Title in alert view shown when e-mail is already registered. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE" = "E-mail redan registrerad";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE" = "E-post redan registrerad";
 
 /* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL" = "Okej";
 
 /* Message in alert view shown when a network error occurred during Facebook log in. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE" = "Vänligen kontrollera att du har en aktiv internet anslutning och försök igen.";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE" = "Vänligen kontrollera din internetanslutning och försök igen.";
 
 /* Title in alert view shown when a TITLEnetwork error occurred during Facebook log in. */
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE" = "Ett fel uppstod";
@@ -44,10 +44,10 @@
 "BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL" = "Okej";
 
 /* Message in alert view shown when logging into Facebook but it failed because authentication failed */
-"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Gick ej att autentisera med Facebook";
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Kunde inte autentisera med Facebook.";
 
 /* Title in alert view shown when log in to Facebook failed */
-"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE" = "autentisering misslyckades";
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE" = "Autentisering misslyckades";
 
 /* Title in overlay displayed when logging in */
 "BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE" = "Loggar in...";
@@ -59,13 +59,13 @@
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "Okej";
 
 /* Message in alert view shown when no Facebook account was found. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Inga Facebook konton hittades på enheten. Tillägg ditt konto i systeminställningar";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Inga Facebook-konton hittades på enheten. Lägg till ditt konto under systeminställningar.";
 
 /* Title in alert view shown when no Facebook account was found. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Inget konto hittades.";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Inget konto hittades";
 
 /* Accessibility hint for privacy policy button */
-"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "sekretesspolicy";
+"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "Integritetspolicy";
 
 /* Accessibility label for privacy policy button */
 "BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL" = " ";

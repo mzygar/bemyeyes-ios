@@ -16,7 +16,7 @@
 "BME_SNOOZE_RELATIVE_DATE_HOURS" = "%.0f timmar";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "minut ";
+"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "minut";
 
 /* No comment provided by engineer. */
 "BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%.0f minuter";
@@ -34,7 +34,7 @@
 "BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f sekunder";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_WEEK" = "Vecka";
+"BME_SNOOZE_RELATIVE_DATE_WEEK" = "vecka";
 
 /* No comment provided by engineer. */
 "BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%.0f veckor";

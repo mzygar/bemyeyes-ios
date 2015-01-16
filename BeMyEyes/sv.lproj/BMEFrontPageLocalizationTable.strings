@@ -1,11 +1,11 @@
 /* App name. Please don't translate this. */
-"BME_FRONT_PAGE_APP_NAME" = "Var mina ögon";
+"BME_FRONT_PAGE_APP_NAME" = "Be My Eyes";
 
 /* Asking the user to choose if he is sighted or blind */
 "BME_FRONT_PAGE_ASK_FOR_ROLE" = "Vad är din roll?";
 
 /* Title for choosing sighted role */
-"BME_FRONT_PAGE_SIGHTED_ROLE" = "Jag är synskadad.";
+"BME_FRONT_PAGE_SIGHTED_ROLE" = "Jag är seende ";
 
 /* Title for choosing blind role */
 "BME_FRONT_PAGE_BLIND_ROLE" = "Jag är blind";

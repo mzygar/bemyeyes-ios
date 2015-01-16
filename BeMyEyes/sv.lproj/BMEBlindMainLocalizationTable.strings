@@ -5,11 +5,11 @@
 "BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "Okej";
 
 /* Message in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Begäran kunde ej skapas. Vänligen försök igen";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Förfrågan kunde inte skapas. Vänligen försök igen.";
 
 /* Title in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Misslyckande att skapa begäran";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Misslyckandes att skapa förfrågan";
 
 /* Title in hud shown when creating request */
-"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Skapar begäran...";
+"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Skapar förfrågan ...";
 

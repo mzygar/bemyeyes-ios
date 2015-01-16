@@ -2,13 +2,13 @@
 "BME_SETTINGS_HEADLINE" = "Inställningar";
 
 /* First name title */
-"BME_SETTINGS_FIRST_NAME" = "förnamn";
+"BME_SETTINGS_FIRST_NAME" = "Förnamn";
 
 /* Last name title */
 "BME_SETTINGS_LAST_NAME" = "Efternamn";
 
 /* E-mail title */
-"BME_SETTINGS_EMAIL" = "Epost";
+"BME_SETTINGS_EMAIL" = "E-post";
 
 /* Languages */
 "BME_SETTINGS_LANGUAGES" = "Språk";
@@ -17,7 +17,7 @@
 "BME_SETTINGS_ADD_LANGUAGES" = "Lägg till språk";
 
 /* Feedback title */
-"BME_SETTINGS_FEEDBACK" = "Ge omdöme för applikationen";
+"BME_SETTINGS_FEEDBACK" = "Ge feedback på applikationen";
 
 /* Log out title */
 "BME_SETTINGS_LOG_OUT" = "Logga ut";
@@ -26,19 +26,19 @@
 "BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "Okej";
 
 /* Messaage in alert view shown when log out failed */
-"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Du har inte loggat ut. Försäkra dig om att du har en aktiv internetanslutningen och därmed försök igen";
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Du loggades inte ut. Kontrollera din internetanslutning och försök igen.";
 
 /* Title in alert view shown when log out failed */
-"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Gick ej att logga ut";
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Kunde inte logga ut";
 
 /* Title in overlay shown when logging out */
-"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Logga ut...";
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Loggar ut...";
 
 /* Version title */
 "BME_SETTINGS_VERSION_TITLE" = "Version %@";
 
 /* Dismiss settings button accessibility label */
-"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Tillbaka\n";
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Tillbaka";
 
 /* Points description task cell */
 "BME_SETTINGS_TASK_POINTS" = "+%d poäng";
@@ -47,8 +47,8 @@
 "BME_SETTINGS_TASK_COMPLETED" = "✓";
 
 /* Points description task completed accessibility label */
-"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "färdig";
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Slutförd";
 
 /* Share message for Facebook and Twitter */
-"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Hjälp en blind person att se med #BeMYEyes applikation- applikationen förbinder blinda personer med synskadade hjälpare";
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Hjälp en synskadad person att se med #BeMYEyes, appen som kopplar ihop synskadade personer med seende hjälpare!";
 
