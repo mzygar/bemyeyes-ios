@@ -1,0 +1,53 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Settings";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "First name";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Surname";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-mail";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Languages";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Add languages";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Give feedback on the app";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Log out";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "You were not logged out. Please ensure that you have an active internet connection and try again.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Could not log out";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Logging out...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Version %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Back";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d points";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Completed";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Help a blind person see with the #BeMyEyes app - the app that connects blind people with sighted helpers!";
