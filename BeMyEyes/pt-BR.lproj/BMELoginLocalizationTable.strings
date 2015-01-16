@@ -1,0 +1,96 @@
+/* Title of back button */
+"BME_LOGIN_BACK" = "Voltar";
+
+/* Placeholder in e-mail field */
+"BME_LOGIN_EMAIL_PLACEHOLDER" = "E-mail";
+
+/* Placeholder in password field */
+"BME_LOGIN_PASSWORD_PLACEHOLDER" = "Senha";
+
+/* Title of log in button */
+"BME_LOGIN_PERFORM_LOG_IN" = "Fazer login";
+
+/* Title of log in with Facebook button */
+"BME_LOGIN_FACEBOOK" = "Fazer login no facebook";
+
+/* Title of forgot password button */
+"BME_LOGIN_FORGOT_PASSWORD" = "Senha esquecida";
+
+/* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL" = "Ok";
+
+/* Message in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE" = "Por favor verifique que você tenha uma internet conectada e tente novamente.";
+
+/* Title in alert view shown when a network error occurred during Facebook log in. */
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE" = "Um erro ocorreu";
+
+/* Title of cancel button in alert view shown when log in to Facebook failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL" = "Ok";
+
+/* Message in alert view shown when logging into Facebook but it failed because authentication failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE" = "Você não estava logado. Por favor tente novamente.";
+
+/* Title in alert view shown when log in to Facebook failed */
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE" = "Não está logado";
+
+/* Title of cancel button in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL" = "Ok";
+
+/* Message in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE" = "Você deve primeiro entrar com a sua conta do Facebook antes de você fazer login.";
+
+/* Title in alert view shown when Facebook user not found during log in. */
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE" = "Conta não registrada";
+
+/* Message in alert view shown when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "Por favor digite ambos e-mail e senha.";
+
+/* Title of cancel button in alert view show when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL" = "Ok";
+
+/* Title in alert view shown when the e-mail or password is empty */
+"BME_LOGIN_ALERT_EMPTY_FIELDS_TITLE" = "Campos vazios";
+
+/* Title of cancel button in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL" = "Ok";
+
+/* Message in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "O e-mail digitado e a senha não coincide.";
+
+/* Title in alert view shown when credentials are incorrect. */
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Credenciais incorretos";
+
+/* Title of cancel button in alert view shown when a network error occurred during e-mail log in. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL" = "Ok";
+
+/* Message in alert view shown when a network error occurred. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE" = "Por favor verifique que você tenha uma internet conectada e tente novamente.";
+
+/* Title in alert view shown when a network error occurred during e-mail log in. */
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE" = "Um erro ocorreu";
+
+/* Title in overlay displayed when logging in */
+"BME_LOGIN_OVERLAY_LOGGING_IN_TITLE" = "Logando...";
+
+/* Title of cancel button in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "Ok";
+
+/* Message in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Nenhuma conta do Facebook achada nesse dispositivo. Por favor adicione uma conta as configurações desse sistema.";
+
+/* Title in alert view shown when no Facebook account was found. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Nenhuma conta encontrada";
+
+/* Title of cancel button in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL" = "Ok";
+
+/* Message in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Não pode registrar para notificações remotas. Isso é necessário para as aplicações Be My Eyes. Por favor certifique-se que você tenha notificações remotas habilitadas nas configurações do seu sistema e tente novamente.";
+
+/* Title in alert shown when the user is not registered for remote notifications */
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Falha no login";
+
+/* Title in overlay displayed while loading pending request */
+"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Carregando solicitação...";
+
