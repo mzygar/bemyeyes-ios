@@ -4,7 +4,7 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* MEssage in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Notificările sunt o parte centrală a aplicației  Be My Eyes şi trebuie să fie activate in setările telefonului pentru a vă putea registra.";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Notificările sunt o parte centrală a aplicației  Be My Eyes şi trebuie să fie activate in setările telefonului pentru a vă putea inregistra.";
 
 /* Title in alert view shown if push notifications are not enabled */
 "BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Opțiunea pentru notificări nu este activată";
@@ -43,7 +43,7 @@
 "BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "OK";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "Cererea în aşteptare a primit un răspuns sau a fost anulată de către nevăzător, dar vă mulţumesc pentru ajutor!";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "Cererea în aşteptare a primit un răspuns sau a fost anulată de către nevăzător, dar vă mulţumim pentru ajutor!";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
 "BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Cererea a primit deja un răspuns sau a fost anulată ";

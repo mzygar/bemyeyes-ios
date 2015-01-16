@@ -14,7 +14,7 @@
 "BME_SIGN_UP_PASSWORD_PLACEHOLDER" = "Parolă";
 
 /* Title of register button */
-"BME_SIGN_UP_REGISTER" = "Registrează-te";
+"BME_SIGN_UP_REGISTER" = "Inregistrează-te";
 
 /* Title of cancel button in alert view shown when e-mail is already registered. */
 "BME_SIGN_UP_ALERT_EMAIL_ALREADY_REGISTERED_CANCEL" = "OK";
@@ -65,7 +65,7 @@
 "BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL" = "OK";
 
 /* Message in alert view shown when a network error occurred. */
-"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE" = "Contul dumneavoastră nu a putut fi creat. Vă rugăm să verificaţi că aveţi o conexiune la internet activă şi încercaţi din nou.";
+"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE" = "Contul dumneavoastră nu a putut fi creat. Vă rugăm să verificaţi dacă aveţi o conexiune la internet activă şi încercaţi din nou.";
 
 /* Title in alert view shown when a network error occurred. */
 "BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE" = "Imposibil de creat cont";

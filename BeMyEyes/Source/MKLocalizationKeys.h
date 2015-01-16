@@ -411,7 +411,7 @@ static NSString * const BME_ACCESS_CAMERA_EXPLANATION_BLIND = @"BME_ACCESS_CAMER
 
  * @b nl@: "Push-Meldingen zijn een centraal onderdeel van de Be My Eyes app en je hebt dit nodig om  je aan te melden."
 
- * @b ro@: "Notificările sunt o parte centrală a aplicației  Be My Eyes şi trebuie să fie activate in setările telefonului pentru a vă putea registra."
+ * @b ro@: "Notificările sunt o parte centrală a aplicației  Be My Eyes şi trebuie să fie activate in setările telefonului pentru a vă putea inregistra."
 
  * @b sk@: "Push oznámenia sú hlavnou súčasťou Be My Eyes aplikácie a na prihlásenie ich musíťe mať povolené. "
 
@@ -775,7 +775,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL = 
 
  * @b nl@: "De aanvraag is reeds beantwoord of geannuleerd door de blinde persoon, maar bedankt voor je hulp!"
 
- * @b ro@: "Cererea în aşteptare a primit un răspuns sau a fost anulată de către nevăzător, dar vă mulţumesc pentru ajutor!"
+ * @b ro@: "Cererea în aşteptare a primit un răspuns sau a fost anulată de către nevăzător, dar vă mulţumim pentru ajutor!"
 
  * @b sk@: "Čakajúca žiadosť bola zodpovedaná alebo ju zrušená, ale ďakujeme Vám za pomoc!"
 
@@ -1055,7 +1055,7 @@ static NSString * const BME_BLIND_INTRO_CONTINUE = @"BME_BLIND_INTRO_CONTINUE";
 
  * @b nl@: "De app zal u live in contact brengen met een ziende helper die u op afstand zal helpen met taken waar de hulp van een ziende persoon bij nodig  is - via een live videoverbinding zal de helper u vertellen wat hij of zij ziet als u de telefoon op iets richt.\n\nDe helpers in het Be My Eyes netwerk zijn vrijwilligers, daarom kunnen we de kwaliteit van hun hulp niet garanderen of verantwoordelijkheid nemen voor hun acties.  Omdat we afhankelijk zijn van echte mensen om u te helpen vragen we u om geduldig te zijn wanneer u om hulp vraagt.\n\nU moet begrijpen dat u onder geen enkel beding naakt, onwettige, hatelijke of seksuele suggestieve inhoud mag delen via de service, en u moet nooit gevoelige informatie laten zien zoals creditcards, paspoort of andere persoonlijke informatie."
 
- * @b ro@: "Aplicația te va pune in contact direct cu o persoană văzătoare care te va ajuta de la distanță cu sarcini ce implică ajutorul unei persoane văzătoare- printr-o conferință video persoana ajutătoare îți va spune ceea ce el/ea vede atunci când tu focusezi telefonul pe ceva anume. \nPersoanele care ajută in cadrul aplicației Be My Eyes o fac pe bază de voluntariat, insemnând că noi nu putem garanta calitatea ajutorului pe care îl oferă, și nu putem lua responsabilitatea pentru acțiunile lor. \n\nEste interzis în orice circumstanță să distribuiți conținut nud, ilegal, care provoacă ură sau are conotații sexuale prin intermediul serviciul Be My Eyes. Totodată,  nu puneți niciodată la dispozițieinformații sensibile, cum ar fi cărți de credit,  date din pașaport sau alte informații personale."
+ * @b ro@: "Aplicația te va pune in contact direct cu o persoană văzătoare care te va ajuta de la distanță cu sarcini ce implică ajutorul unei persoane văzătoare- printr-o conferință video persoana ajutătoare îți va spune ceea ce el/ea vede atunci când tu focusezi telefonul pe ceva anume. \nPersoanele care ajută in cadrul aplicației Be My Eyes o fac pe bază de voluntariat, insemnând că noi nu putem garanta calitatea ajutorului pe care îl oferă, și nu putem lua responsabilitatea pentru acțiunile lor. \n\nEste interzis în orice circumstanță să distribuiți conținut nud, ilegal, care provoacă ură sau are conotații sexuale prin intermediul serviciul Be My Eyes. Totodată,  nu puneți niciodată la dispoziție informații sensibile, cum ar fi cărți de credit,  date din pașaport sau alte informații personale."
 
  * @b sk@: "Aplikácia Vás prepojí s vidiacim pomocníkom, ktorý Vám na diaľku vám pomôže s úlohami, ktoré vyžadujú pomoc od vidiacej osoby - cez živé video pripojenie Vám pomocník povie, čo on alebo ona vidí, keď ukážete telefónom na niečo.\n\nPomocníci v Be My Eyes sieti sú dobrovoľníci a my nemôžeme zaručiť kvalitu ich pomoci alebo prevziať zodpovednosť za niektoré z ich akcií. Spoliehame sa na pomoc skutočných ľudí a odporúčame Vám, aby ste boli trpezlivý pri požiadaní o pomoc.\n\nZdielanie akéhokoľvek nudistického, nezakonného, násilného alebo sexuálneho obsahu cez aplikáciu je zakázané a taktiež by ste nikdy nemali zdieľať citlivé informácie ako číslo kreditnej karty, pasu alebo iné osobné informácie.\n\n"
 
@@ -2763,7 +2763,7 @@ static NSString * const BME_HELPER_MAIN_LEVEL_NEW_HELPER = @"BME_HELPER_MAIN_LEV
 
  * @b nl@: "Veelbelovende Helper"
 
- * @b ro@: "Ajutător promițător"
+ * @b ro@: "Asistent promițător"
 
  * @b sk@: "Sľubný Pomocník"
 
@@ -2791,7 +2791,7 @@ static NSString * const BME_HELPER_MAIN_LEVEL_PROMISING_HELPER = @"BME_HELPER_MA
 
  * @b nl@: "Vertrouwde helper"
 
- * @b ro@: "Ajutător de încredere"
+ * @b ro@: "Asistent de încredere"
 
  * @b sk@: "Dôveryhodný Pomocník"
 
@@ -2819,7 +2819,7 @@ static NSString * const BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER = @"BME_HELPER_MAIN
 
  * @b nl@: "Expert Helper"
 
- * @b ro@: "Ajutător expert "
+ * @b ro@: "Asistent expert"
 
  * @b sk@: "Expert Pomocník"
 
@@ -2847,7 +2847,7 @@ static NSString * const BME_HELPER_MAIN_LEVEL_EXPERT_HELPER = @"BME_HELPER_MAIN_
 
  * @b nl@: "Meesterlijke Helper"
 
- * @b ro@: "Ajutător maestru"
+ * @b ro@: "Asistent maestru"
 
  * @b sk@: "Majster Pomocník"
 
@@ -3854,7 +3854,7 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL = @"BME_LO
 
  * @b nl@: "U was niet ingelogd. Probeer het opnieuw."
 
- * @b ro@: "Nu a-ți fost logat. Vă rugăm să încercaţi din nou."
+ * @b ro@: "Nu ați fost logat. Vă rugăm să încercaţi din nou."
 
  * @b sk@: "Neboli ste prihlásený. Prosím, skúste to znova."
 
@@ -4134,7 +4134,7 @@ static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE = @"BME_LO
 
  * @b nl@: "Onjuiste gegevens"
 
- * @b ro@: "Date de logat incorecte "
+ * @b ro@: "Date de logare incorecte "
 
  * @b sk@: "Nesprávne zadanie"
 
@@ -6458,7 +6458,7 @@ static NSString * const BME_SIGN_UP_PASSWORD_PLACEHOLDER = @"BME_SIGN_UP_PASSWOR
 
  * @b nl@: "Registreer"
 
- * @b ro@: "Registrează-te"
+ * @b ro@: "Inregistrează-te"
 
  * @b sk@: "Zaregistrovať sa"
 
@@ -6934,7 +6934,7 @@ static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL = @"BME_SIGN_UP_A
 
  * @b nl@: "Uw account kan niet worden aangemaakt. Controleer of u een actieve internetverbinding heeft en probeer het opnieuw."
 
- * @b ro@: "Contul dumneavoastră nu a putut fi creat. Vă rugăm să verificaţi că aveţi o conexiune la internet activă şi încercaţi din nou."
+ * @b ro@: "Contul dumneavoastră nu a putut fi creat. Vă rugăm să verificaţi dacă aveţi o conexiune la internet activă şi încercaţi din nou."
 
  * @b sk@: "Váš účet nemožno vytvoriť. Overte, či máte aktívne pripojenie na internet a skúste to znova."
 
@@ -8334,7 +8334,7 @@ static NSString * const PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE = @"PUSH_NOT
 
  * @b nl@: "Het verzoek van %@ werd beantwoord."
 
- * @b ro@: "Cererea de %@ a fost răspunsă."
+ * @b ro@: "Cererea de la %@ a fost rezolvata."
 
  * @b sk@: "Žiadosť od %@ bola zodpovedaná."
 

@@ -14,16 +14,16 @@
 "BME_HELPER_MAIN_LEVEL_NEW_HELPER" = "Nou Ajutător";
 
 /* Level promising helper */
-"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "Ajutător promițător";
+"BME_HELPER_MAIN_LEVEL_PROMISING_HELPER" = "Asistent promițător";
 
 /* Level trusted helper */
-"BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER" = "Ajutător de încredere";
+"BME_HELPER_MAIN_LEVEL_TRUSTED_HELPER" = "Asistent de încredere";
 
 /* Level expert helper */
-"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Ajutător expert ";
+"BME_HELPER_MAIN_LEVEL_EXPERT_HELPER" = "Asistent expert";
 
 /* Level master helper */
-"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Ajutător maestru";
+"BME_HELPER_MAIN_LEVEL_MASTER_HELPER" = "Asistent maestru";
 
 /* Level points to next level description */
 "BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION" = "%d puncte până la nivelul următor";
