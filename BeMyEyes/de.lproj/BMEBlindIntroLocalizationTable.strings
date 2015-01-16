@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Zurück";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Fortsetzen";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Die App wird dich in direkten Kontakt mit einem sehenden Helfer bringen, der dich aus der Entfernung bei Aufgaben unterstützen wird, die die Hilfe einer sehenden Person erfordern. Über eine Live-Videoverbindung, wird dir der Helfer sagen, was er oder sie sieht, wenn du das Telefon auf etwas richtest.\n\nDie Helfer im „Be My Eyes“-Netzwerk sind Freiwillige und wir können weder die Qualität ihrer Unterstützung garantieren noch Verantwortung für jegliche ihrer Handlungen übernehmen. Da wir ausserdem auf die Hilfe wirklicher Menschen angewiesen sind, bitten wir dich geduldig zu sein, wenn du eine Anfrage stellst.\n\nDu darfst unter keinen Umständen nackte, illegale, hasserfüllte, oder sexuelle Inhalte über das Netzwerk verbreiten und solltest niemals sensible Inhalte wie Kreditkarten, Pässe oder andere persönliche Informationen preisgeben.";
+

@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Einstellungen";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Vorname";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Nachname";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-Mail";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Sprachen";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Sprachen hinzufügen";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Bewerten Sie die App";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Abmelden";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Sie wurden nicht ausgeloggt. Bitte stellen Sie sicher, dass Sie eine aktive Internetverbindung haben und versuchen Sie es erneut.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Abmeldung fehlgeschlagen";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Abmelden ...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Version %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Zurück";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "%d Punkte";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Abgeschlossen";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Helfen Sie blinden Personen zu sehen mit der #BeMyEyes App - der App, die blinde Menschen mit sehenden Helfern verbindet!";
+

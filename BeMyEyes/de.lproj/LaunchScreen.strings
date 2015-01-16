@@ -1,0 +1,6 @@
+/* Class = "IBUILabel"; text = "Be My Eyes"; ObjectID = "logoLabel"; */
+"logoLabel.text" = "Be My Eyes";
+
+/* Class = "IBUILabel"; text = "Crafted with ❤︎ from Copenhagen"; ObjectID = "taglineLabel"; */
+"taglineLabel.text" = "Programmiert mit ❤︎ in Kopenhagen";
+
