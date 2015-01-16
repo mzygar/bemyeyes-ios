@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Voltar";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Continuar";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Apoiar é fácil!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Você pode apoiar quando você quiser e onde estiver.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Seu dispositivo fica habilitado a receber chamadas com solicitação de apoio quando você estiver conectado.";
+

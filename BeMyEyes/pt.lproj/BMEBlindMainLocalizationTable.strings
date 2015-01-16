@@ -1,0 +1,15 @@
+/* Title of connect to community button */
+"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Se conecte ao primeiro voluntário disponível";
+
+/* Cancel in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+
+/* Message in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "A solicitação não pode ser enviada. por favor, tente novamente.";
+
+/* Title in alert showed when failed creating request */
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "A solicitação falhou";
+
+/* Title in hud shown when creating request */
+"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Fazendo solicitação...";
+

@@ -1,0 +1,68 @@
+/* BMEAppDelegate.strings
+  BeMyEyes
+  Created by Simon Støvring on 15/03/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* MEssage in alert view shown if push notifications are not enabled */
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "A central de notificações é a parte principal do Be My Eyes e você deve deixá-la habilitada para assinar o aplicativo.";
+
+/* Title in alert view shown if push notifications are not enabled */
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "central de Notificações não habilitada";
+
+/* Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments. */
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Alguém";
+
+/* Title in alert view shown when a call is received while the app was active */
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Seu apoio é solicitado!";
+
+/* Title of cancel button in alert view shown when a call is received while the app was active */
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Cancelar";
+
+/* Message in alert view shown when the microphone is disabled */
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "Você precisa permitir que o aplicativo acesse as configurações do microfone.";
+
+/* Title in alert view shown when the microphone is disabled */
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE" = "Microfone não ativado";
+
+/* Message in alert view shown when the camera is disabled */
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "Você precisa permitir que o aplicativo acesse as configurações da câmera.";
+
+/* Title in alert view shown when the camera is disabled */
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "Câmera não ativada";
+
+/* Title of dismiss button in alert view shown when access is disabled */
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL" = "OK";
+
+/* Title of dismiss button in alert view shown when the access is disabled, but app supports going to settings */
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Cancelar";
+
+/* Title of ok button in alert view shown when the access is disabled, and app supports going to settings */
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Abrir configurações";
+
+/* Title of cancel button in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "OK";
+
+/* Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "A solicitação pendente foi atendida ou cancelada. Mesmo assim, obrigado pelo seu apoio!";
+
+/* Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Solicitação já atendida ou cancelada";
+
+/* Title of cancel button in alert view shown when the app icon shows a badge but the pending rcould not be loaded */
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL" = "OK";
+
+/* Message in alert view shown when the app icon shows a badge but the pending request could not be loaded */
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE" = "A solicitação pendente não foi respondida. Não se preocupe, procuramos alguém para responder.";
+
+/* Title in alert view shown when the app icon shows a badge but the pending request could not be loaded */
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Solicitação não respondida";
+
+/* Title in overlay displayed while loading pending request */
+"BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Carregando...";
+
+/* Title in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Não foi possível registrar";
+
+/* Message in alert shown when the device could not register for remote notifications */
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "O dispositivo não foi registrado para receber notificações. Isto pode significar que a assinatura foi feita incorretamente.";
+

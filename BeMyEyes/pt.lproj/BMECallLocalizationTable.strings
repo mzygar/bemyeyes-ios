@@ -1,0 +1,78 @@
+/* Title of disconnect button */
+"BME_CALL_DISCONNECT" = "Desconectado";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL" = "OK";
+
+/* Message in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE" = "A solicitação foi respondida. Obrigado por seu apoio!";
+
+/* Title in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE" = "Solicitação respondida";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL" = "OK";
+
+/* Message in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE" = "O solicitante cancelou o pedido de apoio. Obrigado por seu apoio!";
+
+/* Title in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE" = "Solicitação cancelada";
+
+/* Title in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE" = "Não foi possível responder a solicitação";
+
+/* Cancel in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+
+/* Message in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "A solicitação não pode ser enviada. por favor, tente novamente.";
+
+/* Title in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Não foi possível fazer a solicitação";
+
+/* Title of cancel button in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL" = "OK";
+
+/* Status when asking the user to wait */
+"BME_CALL_STATUS_PLEASE_WAIT" = "Por favor, aguarde... ";
+
+/* Status when answering request */
+"BME_CALL_STATUS_ANSWERING_REQUEST" = "respondendo solicitação...";
+
+/* Message in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE" = "A solicitação não pode ser respondida neste momento. Obrigado por seu apoio!";
+
+/* Status when creating request */
+"BME_CALL_STATUS_CREATING_REQUEST" = "Fazendo solicitação...";
+
+/* Status when connecting */
+"BME_CALL_STATUS_CONNECTING" = "Conectando com os servidores...";
+
+/* Status when connection is established */
+"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Aguardando a outra parte...";
+
+/* Status when session failed */
+"BME_CALL_STATUS_SESSION_FAILED" = "Falha na conexão";
+
+/* Status when failed publishing */
+"BME_CALL_STATUS_FAILED_PUBLISHING" = "Falha na publicação do áudio e vídeo";
+
+/* Speech when connected to other part */
+"BME_CALL_SPEECH_DID_SUBSCRIBE" = "Conectado a outra parte";
+
+/* Status when failed subscribing */
+"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "Falha da conexão com a outra parte";
+
+/* Status when disconnecting */
+"BME_CALL_STATUS_DISCONNECTING" = "Desconectando...";
+
+/* Title of cancel button in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "OK";
+
+/* Message in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "A outra parte foi desconectada e a sessão encerrada.";
+
+/* Title in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "Sessão encerrada";
+
