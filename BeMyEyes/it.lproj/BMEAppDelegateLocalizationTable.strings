@@ -7,7 +7,7 @@
 "BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Le notifiche Push sono una parte fondamentale di Be My Eyes e devi attivarle per iscriverti.";
 
 /* Title in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Notifiche push non attivate";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Notifiche Push non attivate";
 
 /* Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments. */
 "BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Qualcuno";
@@ -19,16 +19,16 @@
 "BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Annulla";
 
 /* Message in alert view shown when the microphone is disabled */
-"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "Per poter utilizzare l'app devi autorizzare l'uso del microfono nelle impostazioni di sistema.";
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "Devi autorizzare la applicazione ad usare il tuo microfono attraverso le impostazioni di sistema.";
 
 /* Title in alert view shown when the microphone is disabled */
 "BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE" = "Microfono non attivato";
 
 /* Message in alert view shown when the camera is disabled */
-"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "Dovresti autorizzare l'uso della camera nelle impostazioni di sistema.";
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "Devi autorizzare l'uso della tua fotocamera camera attraverso le impostazioni di sistema.";
 
 /* Title in alert view shown when the camera is disabled */
-"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "Fotocamera non attiva";
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "La fotocamera non è attivata";
 
 /* Title of dismiss button in alert view shown when access is disabled */
 "BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL" = "OK";

@@ -11,7 +11,7 @@
 "BME_ACCESS_NOTIFICATIONS_TITLE" = "Notifiche";
 
 /* Explanation for why the helper needs to enable notifications */
-"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Quando una persona non vedente ha bisogno del tuo aiuto, noi ti avviseremo della chiamata in arrivo.";
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Quando una persona non vedente ha bisogno del tuo aiuto, ti avviseremo della chiamata in arrivo.";
 
 /* Title for microphone */
 "BME_ACCESS_MICROPHONE_TITLE" = "Microfono";
@@ -26,7 +26,7 @@
 "BME_ACCESS_CAMERA_TITLE" = "Fotocamera";
 
 /* Explanation for why the helper needs to enable camera access */
-"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Non invieremo il tuo video alla persona che stai aiutando, ma è necessario stabilire una connessione.";
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Non invieremo il tuo video alla persona che stai aiutando, ma questo è necessario per stabilire una connessione.";
 
 /* Explanation for why the blind person needs to enable microphone access */
 "BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Per permetterti di spiegare alla persona di supporto di cosa hai bisogno.";

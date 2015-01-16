@@ -209,7 +209,7 @@ static NSString * const BME_ACCESS_NOTIFICATIONS_TITLE = @"BME_ACCESS_NOTIFICATI
 
  * @b fi@: "Ilmoitamme saapuvasta puhelusta, kun sokea henkilö tarvitsee apuasi."
 
- * @b it@: "Quando una persona non vedente ha bisogno del tuo aiuto, noi ti avviseremo della chiamata in arrivo."
+ * @b it@: "Quando una persona non vedente ha bisogno del tuo aiuto, ti avviseremo della chiamata in arrivo."
 
  * @b nb@: "Når en blind person behøver din hjelp, varsler vi deg om den inkommende samtalen."
 
@@ -349,7 +349,7 @@ static NSString * const BME_ACCESS_CAMERA_TITLE = @"BME_ACCESS_CAMERA_TITLE";
 
  * @b fi@: "Emme lähetä videotasi henkilölle, jota autat vaan video tarvitaan yhteyden luomiseksi."
 
- * @b it@: "Non invieremo il tuo video alla persona che stai aiutando, ma è necessario stabilire una connessione."
+ * @b it@: "Non invieremo il tuo video alla persona che stai aiutando, ma questo è necessario per stabilire una connessione."
 
  * @b nb@: "Vi sender ikke videoen din til personen du hjelper, men det er nødvendig for å opprette tilkoblingen."
 
@@ -433,7 +433,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE = @"BME_
 
  * @b fi@: "Push-ilmoitukset eivät ole käytössä"
 
- * @b it@: "Notifiche push non attivate"
+ * @b it@: "Notifiche Push non attivate"
 
  * @b nb@: "Varslinger ikke aktivert"
 
@@ -545,7 +545,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL = @"BME_APP_D
 
  * @b fi@: "Sinun täytyy sallia sovelluksen käyttää mikrofoniasi järjestelmän asetuksissa."
 
- * @b it@: "Per poter utilizzare l'app devi autorizzare l'uso del microfono nelle impostazioni di sistema."
+ * @b it@: "Devi autorizzare la applicazione ad usare il tuo microfono attraverso le impostazioni di sistema."
 
  * @b nb@: "Du må gi programmet tillatelse til å bruke mikrofonen i systeminnstillingene."
 
@@ -601,7 +601,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE = @"BME
 
  * @b fi@: "Sinun täytyy sallia sovelluksen käyttää kameraasi järjestelmän asetuksissa."
 
- * @b it@: "Dovresti autorizzare l'uso della camera nelle impostazioni di sistema."
+ * @b it@: "Devi autorizzare l'uso della tua fotocamera camera attraverso le impostazioni di sistema."
 
  * @b nb@: "Du må gi programmet tillatelse til å bruke kameraet i systeminnstillingene."
 
@@ -629,7 +629,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE = @"BME_A
 
  * @b fi@: "Kamera ei ole käytössä"
 
- * @b it@: "Fotocamera non attiva"
+ * @b it@: "La fotocamera non è attivata"
 
  * @b nb@: "Kamera ikke aktivert"
 
