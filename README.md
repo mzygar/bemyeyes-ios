@@ -1,3 +1,5 @@
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/bemyeyes/localized.png)](https://crowdin.com/project/bemyeyes)
+
 # Getting started
 ## Install Dependencies
 Install pods by running `pod install` in the terminal
