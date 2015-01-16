@@ -201,7 +201,7 @@ static NSString * const BME_ACCESS_NOTIFICATIONS_TITLE = @"BME_ACCESS_NOTIFICATI
 
  * All translations:
 
- * @b cs@: "Když nevidomý člověk potřebuje vaši pomoc, upozornime vás na příchozí volání."
+ * @b cs@: "Když nevidomý člověk potřebuje vaši pomoc, upozorníme vás na příchozí volání."
 
  * @b da@: "Når en blind person har brug for din hjælp, giver vi dig besked om opkaldet."
 
@@ -257,7 +257,7 @@ static NSString * const BME_ACCESS_MICROPHONE_TITLE = @"BME_ACCESS_MICROPHONE_TI
 
  * All translations:
 
- * @b cs@: "Aby ste mohli hovořit a provádet nevidomou osobu"
+ * @b cs@: "Abyste mohli hovořit a provádet nevidomou osobu"
 
  * @b da@: "For at kunne at tale med og hjælpe den blinde"
 
@@ -341,7 +341,7 @@ static NSString * const BME_ACCESS_CAMERA_TITLE = @"BME_ACCESS_CAMERA_TITLE";
 
  * All translations:
 
- * @b cs@: "My neposílame vaše video osobě, které pomáháte, ale video je potřebné k navázání připojení."
+ * @b cs@: "My neposílame vaše video osobě, které pomáháte, ale potřebujeme přístup ke kameře pro navázání připojení."
 
  * @b da@: "Vi sender ikke din video til den person du hjælper, men det er nødvendigt for at etablere forbindelsen."
 
