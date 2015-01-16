@@ -238,13 +238,16 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)verifyTokenAuthOnServerWithCompletion:(void (^)(BOOL))completion {
     if (!self.isTokenValid) {
         // No valid token locally, so don't check server for validity
+        NSLog(@"No valid auth token: %@, %@", self.token, self.tokenExpiryDate);
         return;
     }
+    NSLog(@"Check auth token on server: %@", self.token);
     [self putPath:@"auth/login/token" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
             completion(YES);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Valid token auth on server reponse: %@", operation.response);
         BOOL validToken = operation.response.statusCode != 401; // Authorization error
         if (completion) {
             completion(validToken);
