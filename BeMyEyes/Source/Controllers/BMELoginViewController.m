@@ -15,6 +15,8 @@
 #import "BMEScrollViewTextFieldHelper.h"
 #import "BeMyEyes-Swift.h"
 #import "BMEForgotPasswordViewController.h"
+#import "PSPDFAlertView.h"
+#import "PSTAlertController.h"
 
 @interface BMELoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -137,6 +139,7 @@
     } loginFailure:^(NSError *error) {
         [self hideLoggingInOverlay];
         
+        
         if ([error code] == BMEClientErrorUserFacebookUserNotFound) {
             NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE, BMELoginLocalizationTable);
             NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE, BMELoginLocalizationTable);
@@ -155,7 +158,18 @@
     } accountFailure:^(NSError *error) {
         [self hideLoggingInOverlay];
         
-        if ([error code] == ACErrorAccountNotFound) {
+        if ([error code] == BMEClientErrorUserFacebookAccessNotAllowed ||
+            error.code == ACErrorPermissionDenied) {
+            NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_TITLE, BMELoginLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_MESSAGE, BMELoginLocalizationTable);
+            
+            PSTAlertController *alert = [PSTAlertController alertControllerWithTitle:title message:message preferredStyle:PSTAlertControllerStyleAlert];
+            
+            NSString *ok = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK, BMELoginLocalizationTable);
+            [alert addAction:[PSTAlertAction actionWithTitle:ok handler:nil]];
+            
+            [alert showWithSender:self controller:self animated:YES completion:nil];
+        } else if ([error code] == ACErrorAccountNotFound) {
             NSString *title = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE, BMELoginLocalizationTable);
             NSString *message = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE, BMELoginLocalizationTable);
             NSString *cancelButton = MKLocalizedFromTable(BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL, BMELoginLocalizationTable);

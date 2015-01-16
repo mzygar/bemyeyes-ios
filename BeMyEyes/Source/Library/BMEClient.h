@@ -32,6 +32,7 @@ enum {
     BMEClientErrorUserTokenExpired = 3004,
     BMEClientErrorUserIncorrectCredentials = 3005,
     BMEClientErrorUserFacebookUserNotFound = 3006,
+    BMEClientErrorUserFacebookAccessNotAllowed = 3007,
 };
 
 extern NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken);

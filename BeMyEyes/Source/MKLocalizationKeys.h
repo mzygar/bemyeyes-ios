@@ -12696,5 +12696,38 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND = @"POST_
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE = @"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE";
 
+#warning Missing languages cs, da, de, es, fi, fr, it, nb, nl, pt-BR, pt, ro, ru, sk, sv, tr for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK'
+/*!
+ * "OK"
+
+ * All translations:
+
+ * @b en@: "OK"
+
+ */
+static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK = @"BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK";
+
+#warning Missing languages cs, da, de, es, fi, fr, it, nb, nl, pt-BR, pt, ro, ru, sk, sv, tr for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_MESSAGE'
+/*!
+ * "You have to enable access to you Facebook account in system settings."
+
+ * All translations:
+
+ * @b en@: "You have to enable access to you Facebook account in system settings."
+
+ */
+static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_MESSAGE = @"BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_MESSAGE";
+
+#warning Missing languages cs, da, de, es, fi, fr, it, nb, nl, pt-BR, pt, ro, ru, sk, sv, tr for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_TITLE'
+/*!
+ * "Access not allowed"
+
+ * All translations:
+
+ * @b en@: "Access not allowed"
+
+ */
+static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_TITLE = @"BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_TITLE";
+
                                                
 #endif                                         

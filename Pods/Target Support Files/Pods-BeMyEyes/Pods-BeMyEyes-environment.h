@@ -193,6 +193,12 @@
 #define COCOAPODS_VERSION_MINOR_PSAlertView 1
 #define COCOAPODS_VERSION_PATCH_PSAlertView 0
 
+// PSTAlertController
+#define COCOAPODS_POD_AVAILABLE_PSTAlertController
+#define COCOAPODS_VERSION_MAJOR_PSTAlertController 1
+#define COCOAPODS_VERSION_MINOR_PSTAlertController 1
+#define COCOAPODS_VERSION_PATCH_PSTAlertController 0
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3

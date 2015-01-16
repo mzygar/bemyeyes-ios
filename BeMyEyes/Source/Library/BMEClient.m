@@ -676,6 +676,9 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
             ACAccount *account = [[self.accountStore accountsWithAccountType:accountType] firstObject];
             [self facebookRenewAccount:account];
         } else {
+            if (!error) {
+                error = [NSError errorWithDomain:@"org.bemyeyes.login.facebook" code:BMEClientErrorUserFacebookAccessNotAllowed userInfo:@{NSLocalizedDescriptionKey : @"Access to facebook is not allowed"}];
+            }
             NSLog(@"Facebook: Could not get access to account: %@", error);
             [self facebookAuthFailed:error];
         }

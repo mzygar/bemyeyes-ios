@@ -43,6 +43,16 @@
 /* Title in alert view shown when Facebook user not found during log in. */
 "BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE" = "Account not registered";
 
+
+/* Title of ok button in alert view shown when Facebook access not granted. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK" = "OK";
+
+/* Message in alert view shown when Facebook access not granted. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_MESSAGE" = "You have to enable access to you Facebook account in system settings.";
+
+/* Title in alert view shown when Facebook access not granted. */
+"BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_TITLE" = "Access not allowed";
+
 /* Message in alert view shown when the e-mail or password is empty */
 "BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "Please enter both e-mail and password.";
 
