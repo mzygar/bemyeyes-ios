@@ -56,7 +56,7 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.0)
   - MRProgress/Stopable (0.8.0):
     - MRProgress/Helper
-  - NewRelicAgent (4.83)
+  - NewRelicAgent (4.155)
   - PSAlertView (1.1)
   - Reveal-iOS-SDK (1.0.6)
   - SDWebImage (3.7.1):
@@ -74,7 +74,7 @@ DEPENDENCIES:
   - ISO8601DateFormatter (~> 0.7)
   - KeepLayout (from `https://github.com/iMartinKiss/KeepLayout.git`)
   - Masonry (~> 0.5.3)
-  - MiawKit
+  - MiawKit (~> 1.1)
   - MRProgress (~> 0.8.0)
   - NewRelicAgent
   - PSAlertView (~> 1.1)
@@ -103,7 +103,7 @@ SPEC CHECKSUMS:
   Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
   MiawKit: e6431c6240acc3cc43608a7a85c9cd4ee6fd8740
   MRProgress: 2b65d6ec30a5d08b55efd3ceb3e714a5c6c9a28b
-  NewRelicAgent: 1adba1fb51631f598a2a130e7b1c3be1de715736
+  NewRelicAgent: 4b148cc1ded2ed52a567ae64f78d658a16f1ed63
   PSAlertView: e9c9bc8ef41d86012ca1f6839fd450a35c6f8a97
   Reveal-iOS-SDK: 74a39b426dbc915962704ed24f43ee32ae7797f9
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
