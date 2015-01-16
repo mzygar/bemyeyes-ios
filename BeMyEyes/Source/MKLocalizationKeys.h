@@ -213,7 +213,7 @@ static NSString * const BME_ACCESS_NOTIFICATIONS_TITLE = @"BME_ACCESS_NOTIFICATI
 
  * @b nb@: "Når en blind person behøver din hjelp, varsler vi deg om den inkommende samtalen."
 
- * @b nl@: "Wanneer een blinde persoon uw hulp nodig heeft brengen wij u op de hoogte van de binnenkomende oproep."
+ * @b nl@: "Wanneer een blind persoon uw hulp nodig heeft, dan brengen wij u op de hoogte van de binnenkomende oproep."
 
  * @b ro@: "Atunci când o persoană nevăzătoare va avea nevoie de ajutorul dumneavoastră, vă vom notifica despre apel."
 
@@ -269,7 +269,7 @@ static NSString * const BME_ACCESS_MICROPHONE_TITLE = @"BME_ACCESS_MICROPHONE_TI
 
  * @b nb@: "Å kunne snakke med og lede den blinde personen"
 
- * @b nl@: "Om te kunnen praten met en het begeleiden van de blinde persoon"
+ * @b nl@: "Om te kunnen praten met de blinde persoon en deze te begeleiden"
 
  * @b ro@: "Pentru a putea vorbi și ghida persoana nevăzătoare"
 
@@ -381,7 +381,7 @@ static NSString * const BME_ACCESS_CAMERA_EXPLANATION_HELPER = @"BME_ACCESS_CAME
 
  * @b nb@: "Å kunne vise hjelperen hva du trenger hjelp med."
 
- * @b nl@: "Dit maakt het mogelijk om uw helper te laten zien waar je hulp bij nodig hebt."
+ * @b nl@: "Dit maakt het mogelijk om je hulpverlener te laten zien waar je hulp bij nodig hebt."
 
  * @b ro@: "Pentru a putea explica celui ce te ajută problemele pe care dorești să le rezolvi. "
 
@@ -409,7 +409,7 @@ static NSString * const BME_ACCESS_CAMERA_EXPLANATION_BLIND = @"BME_ACCESS_CAMER
 
  * @b nb@: "Varslinger er en sentral del av Be My Eyes appen og du må ha disse aktivert for å kunne registrere deg."
 
- * @b nl@: "Berichten zijn een centraal onderdeel van de Be My Eyes app en je hebt dit nodig om  je aan te melden."
+ * @b nl@: "Push-Meldingen zijn een centraal onderdeel van de Be My Eyes app en je hebt dit nodig om  je aan te melden."
 
  * @b ro@: "Notificările sunt o parte centrală a aplicației  Be My Eyes şi trebuie să fie activate in setările telefonului pentru a vă putea registra."
 
@@ -437,7 +437,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE = @"BME_
 
  * @b nb@: "Varslinger ikke aktivert"
 
- * @b nl@: "Berichten is niet ingeschakeld"
+ * @b nl@: "Push-Meldingen zijn niet ingeschakeld"
 
  * @b ro@: "Opțiunea pentru notificări nu este activată"
 
@@ -493,7 +493,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME = @"BME
 
  * @b nb@: "Din hjelp er nødvendig!"
 
- * @b nl@: "Men vraag om uw hulp!"
+ * @b nl@: "Jouw hulp is nodig!"
 
  * @b ro@: "Este nevoie de ajutorul dumneavoastră!"
 
@@ -521,7 +521,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE = @"BME_APP_DE
 
  * @b nb@: "Avbryt"
 
- * @b nl@: "Geannuleerd"
+ * @b nl@: "Annuleer"
 
  * @b ro@: "Abandonează"
 
@@ -549,7 +549,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL = @"BME_APP_D
 
  * @b nb@: "Du må gi programmet tillatelse til å bruke mikrofonen i systeminnstillingene."
 
- * @b nl@: "U moet de toepassing toestemming geven om uw microfoon te gebruiken in de privacy van de systeeminstellingen."
+ * @b nl@: "U moet in de systeeminstellingen de app toestemming geven om uw microfoon te gebruiken."
 
  * @b ro@: "Trebuie să permiteți aplicației  utilizarea microfonului în setările telefonului."
 
@@ -605,7 +605,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE = @"BME
 
  * @b nb@: "Du må gi programmet tillatelse til å bruke kameraet i systeminnstillingene."
 
- * @b nl@: "U moet de toepassing toestemming geven om uw camera te gebruiken in de privacy van de systeeminstellingen."
+ * @b nl@: "U moet in de systeeminstellingen de app toestemming geven om uw camera te gebruiken ."
 
  * @b ro@: "Trebuie să acordați permisiune aplicației să folosească camera telefonului in meniul setări."
 
@@ -689,7 +689,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL = @"BME_AP
 
  * @b nb@: "Avbryt"
 
- * @b nl@: "Geannuleerd"
+ * @b nl@: "Annuleer"
 
  * @b ro@: "Abandonează"
 
@@ -773,7 +773,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL = 
 
  * @b nb@: "Den vendtende forespørselen har blitt besvart eller ble avbrutt av den blinde. Takk for din hjelp!"
 
- * @b nl@: "De aanvraag is reeds beantwoord of geannuleerd door de blinde persoon, maar ik dank u alvast voor uw hulp!"
+ * @b nl@: "De aanvraag is reeds beantwoord of geannuleerd door de blinde persoon, maar bedankt voor je hulp!"
 
  * @b ro@: "Cererea în aşteptare a primit un răspuns sau a fost anulată de către nevăzător, dar vă mulţumesc pentru ajutor!"
 
@@ -969,7 +969,7 @@ static NSString * const BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFIC
 
  * @b nb@: "Enheten ble ikke registrert for å motta push-varsling. Dette kan bety at programmet er feil signert."
 
- * @b nl@: "Het apparaat is niet geregistreerd om berichten te ontvangen. Dit zou kunnen betekenen dat de aanvraag fout is ondertekend."
+ * @b nl@: "Het apparaat is niet geregistreerd om push-meldingen te ontvangen. Dit zou kunnen betekenen dat de app verkeerd is aangemeld."
 
  * @b ro@: "Dispozitivul nu a fost setat pentru a primi notificările de tip push. Acest lucru ar putea însemna că inregistrarea aplicației s-a făcut incorect. "
 
@@ -1053,7 +1053,7 @@ static NSString * const BME_BLIND_INTRO_CONTINUE = @"BME_BLIND_INTRO_CONTINUE";
 
  * @b nb@: "Appen vil sette deg i live kontakt med en seende hjelper som eksternt vil assistere deg med oppgaver som krever assistanse fra en seende - gjennom en live videostrøm forteller hjelperen deg hva han eller hun ser når du peker din telefon mot noe. \n\nHjelperne i Be My Eyes nettverket er frivillige, og vi kan ikke garantere for kvaliteten på deres hjelp eller ta ansvar for noen av deres handlinger. Fordi vi er avhengige av ekte mennesker til å hjelpe deg, oppfordrer vi deg til å være tålmodig når du ber om hjelp. \n\nDu kan under ingen omstendigheter dele ulovlig, hatefullt eller seksuelt ladet innhold gjennom applikasjonen, og du må aldri vise sensitiv informasjon slik som kredittkort, pass eller annen personlig informasjon."
 
- * @b nl@: "De app zal u live in contact brengen met een ziende helper die u op afstand zal helpen met taken waar de hulp van een ziende persoon bij nodig  is - via een live videoverbinding zal de helper u vertellen wat hij of zij ziet als je de telefoon op iets richt.\n\nDe helpers in het Be My Eyes netwerk zijn vrijwilligers. En we kunnen de kwaliteit niet garanderen. Voor de acties die de helpers ondernemen zijn we ook niet verantwoordelijk. Bovendien, vertrouwen we op echte mensen om u te helpen. We vragen om geduldig te zijn wanneer u om hulp vraagt.\n\nU moet begrijpen dat u onder geen enkel beding naakt, onwettige, hatelijke of seksuele suggestieve inhoud mag delen via de service, en je mag nooit gevoelige informatie laten zien, zoals creditcards, paspoort of andere persoonlijke informatie."
+ * @b nl@: "De app zal u live in contact brengen met een ziende helper die u op afstand zal helpen met taken waar de hulp van een ziende persoon bij nodig  is - via een live videoverbinding zal de helper u vertellen wat hij of zij ziet als u de telefoon op iets richt.\n\nDe helpers in het Be My Eyes netwerk zijn vrijwilligers, daarom kunnen we de kwaliteit van hun hulp niet garanderen of verantwoordelijkheid nemen voor hun acties.  Omdat we afhankelijk zijn van echte mensen om u te helpen vragen we u om geduldig te zijn wanneer u om hulp vraagt.\n\nU moet begrijpen dat u onder geen enkel beding naakt, onwettige, hatelijke of seksuele suggestieve inhoud mag delen via de service, en u moet nooit gevoelige informatie laten zien zoals creditcards, paspoort of andere persoonlijke informatie."
 
  * @b ro@: "Aplicația te va pune in contact direct cu o persoană văzătoare care te va ajuta de la distanță cu sarcini ce implică ajutorul unei persoane văzătoare- printr-o conferință video persoana ajutătoare îți va spune ceea ce el/ea vede atunci când tu focusezi telefonul pe ceva anume. \nPersoanele care ajută in cadrul aplicației Be My Eyes o fac pe bază de voluntariat, insemnând că noi nu putem garanta calitatea ajutorului pe care îl oferă, și nu putem lua responsabilitatea pentru acțiunile lor. \n\nEste interzis în orice circumstanță să distribuiți conținut nud, ilegal, care provoacă ură sau are conotații sexuale prin intermediul serviciul Be My Eyes. Totodată,  nu puneți niciodată la dispozițieinformații sensibile, cum ar fi cărți de credit,  date din pașaport sau alte informații personale."
 
@@ -1081,7 +1081,7 @@ static NSString * const BME_BLIND_INTRO_DESCRIPTION = @"BME_BLIND_INTRO_DESCRIPT
 
  * @b nb@: "Koble til første tilgjengelige hjelper"
 
- * @b nl@: "Verbinding maken met de eerste beschikbare helper"
+ * @b nl@: "Verbinding maken met de eerst beschikbare helper"
 
  * @b ro@: "Conectează cu primul ajutor disponibil "
 
@@ -1697,7 +1697,7 @@ static NSString * const BME_CALL_STATUS_CONNECTING = @"BME_CALL_STATUS_CONNECTIN
 
  * @b nb@: "Venter på svar fra den annen part..."
 
- * @b nl@: "Wachten op verbinding..."
+ * @b nl@: "Wachten op de ander..."
 
  * @b ro@: "Aşteptare pentru cealaltă parte..."
 
@@ -1725,7 +1725,7 @@ static NSString * const BME_CALL_STATUS_CONNECTION_ESTABLISHED = @"BME_CALL_STAT
 
  * @b nb@: "Tilkobling mislyktes"
 
- * @b nl@: "verbinding maken is mislukt"
+ * @b nl@: "Verbinding mislukt"
 
  * @b ro@: "Conexiunea a eşuat"
 
@@ -1809,7 +1809,7 @@ static NSString * const BME_CALL_SPEECH_DID_SUBSCRIBE = @"BME_CALL_SPEECH_DID_SU
 
  * @b nb@: "Kunne ikke koble til den annen part"
 
- * @b nl@: "De verbinding ging fout tijdens het aanmelden"
+ * @b nl@: "Verbinding maken met de ander mislukt"
 
  * @b ro@: "Nu a reuşit conectarea la cealaltă parte"
 
@@ -1893,7 +1893,7 @@ static NSString * const BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL = @"BME_CA
 
  * @b nb@: "Den andre parten har koblet fra og økten er avsluttet."
 
- * @b nl@: "Men heeft verbroken, en de sessie is beëindigd."
+ * @b nl@: "De ander heeft de verbinding verbroken en de sessie is beëindigd."
 
  * @b ro@: "Cealaltă parte s-a deconectat, iar sesiunea s-a încheiat."
 
@@ -1977,7 +1977,7 @@ static NSString * const BME_FORGOT_PASSWORD_BACK = @"BME_FORGOT_PASSWORD_BACK";
 
  * @b nb@: "Angi e-posten din, så sender vi deg et nytt passord."
 
- * @b nl@: "Geef uw e-mailadres en wij sturen u een nieuw wachtwoord."
+ * @b nl@: "Voer uw e-mailadres in en wij sturen u een nieuw wachtwoord."
 
  * @b ro@: "Introduceţi adresa de e-mail şi vă vom trimite o nouă parolă."
 
@@ -2257,7 +2257,7 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCC
 
  * @b nb@: "Du har mottatt en e-post med ditt nye passord."
 
- * @b nl@: "U hebt een e-mail ontvangen met uw nieuw wachtwoord."
+ * @b nl@: "U heeft een e-mail ontvangen met uw nieuw wachtwoord."
 
  * @b ro@: "A-ţi primit un e-mail cu noua parolă."
 
@@ -2313,7 +2313,7 @@ static NSString * const BME_FORGOT_PASSWORD_ALERT_SEND_NEW_PASSWORD_REQUEST_SUCC
 
  * @b nb@: "Sender forespørsel..."
 
- * @b nl@: "Verstuur verzoek..."
+ * @b nl@: "Verzoek versturen..."
 
  * @b ro@: "Cerere în curs de trimitere..."
 
@@ -2453,7 +2453,7 @@ static NSString * const BME_FRONT_PAGE_BLIND_ROLE = @"BME_FRONT_PAGE_BLIND_ROLE"
 
  * @b nb@: "Allerede registrert? Logg på her."
 
- * @b nl@: "Al geregistreerd? Dan kan je hier inloggen."
+ * @b nl@: "Al geregistreerd? Log hier in."
 
  * @b ro@: "Deja înregistrat? Loghează-te aici."
 
@@ -2537,7 +2537,7 @@ static NSString * const BME_HELPER_INTRO_CONTINUE = @"BME_HELPER_INTRO_CONTINUE"
 
  * @b nb@: "Det er lett å hjelpe!"
 
- * @b nl@: "Helpen is eenvoudig!"
+ * @b nl@: "Helpen is smakkelijk!"
 
  * @b ro@: "Este ușor să ajuți!"
 
@@ -2789,7 +2789,7 @@ static NSString * const BME_HELPER_MAIN_LEVEL_PROMISING_HELPER = @"BME_HELPER_MA
 
  * @b nb@: "Pålitelig hjelper"
 
- * @b nl@: "Betrouwbare helper"
+ * @b nl@: "Vertrouwde helper"
 
  * @b ro@: "Ajutător de încredere"
 
@@ -2845,7 +2845,7 @@ static NSString * const BME_HELPER_MAIN_LEVEL_EXPERT_HELPER = @"BME_HELPER_MAIN_
 
  * @b nb@: "Mester hjelper"
 
- * @b nl@: "Master Helper"
+ * @b nl@: "Meesterlijke Helper"
 
  * @b ro@: "Ajutător maestru"
 
@@ -2901,7 +2901,7 @@ static NSString * const BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION = @"BME_HE
 
  * @b nb@: "Vellykket registrering"
 
- * @b nl@: "Succesvol aanmelden"
+ * @b nl@: "Succesvol aangemeld"
 
  * @b ro@: "Înregistrare reușită"
 
@@ -3013,7 +3013,7 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_FINISH_HELPING_REQUEST_DESC
 
  * @b nb@: "Hjulpet 10 på en uke"
 
- * @b nl@: "Hielp 10 in een week"
+ * @b nl@: "10 in een week geholpen"
 
  * @b ro@: "A ajutat 10 într-o săptămână"
 
@@ -3124,7 +3124,7 @@ static NSString * const BME_HELPER_MAIN_POINTS_ENTRY_SHARE_ON_FACEBOOK_DESCRIPTI
 
  * @b nb@: "Så video"
 
- * @b nl@: "Video bekeken"
+ * @b nl@: "Video's bekeken"
 
  * @b ro@: "Video urmărit "
 
@@ -3404,7 +3404,7 @@ static NSString * const BME_HELPER_MAIN_RETRY_LOADING_POINT = @"BME_HELPER_MAIN_
 
  * @b nb@: "Du er for øyeblikket aktiv"
 
- * @b nl@: "U bent momenteel nog actief"
+ * @b nl@: "U bent momenteel actief"
 
  * @b ro@: "Ești activ în prezent"
 
@@ -3936,7 +3936,7 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL = @"
 
  * @b nb@: "Du må registrere deg med din Facebook-konto før du kan logge inn."
 
- * @b nl@: "U moet zich eerst aanmelden op uw Facebook-account voordat u kunt inloggen."
+ * @b nl@: "U moet zich eerst aanmelden met uw Facebook-account voordat u kunt inloggen."
 
  * @b ro@: "Trebuie să vă autentificați pe Facebook înainte de a vă putea conecta."
 
@@ -3964,7 +3964,7 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE = @
 
  * @b nb@: "Konto ikke registrert"
 
- * @b nl@: "Toegang niet bekend"
+ * @b nl@: "Account niet geregistreerd"
 
  * @b ro@: "Contul nu este înregistrat"
 
@@ -3992,7 +3992,7 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE = @"B
 
  * @b nb@: "Vennligst fyll inn både e-post og passord."
 
- * @b nl@: "Voer alstublieft beiden in, uw e-mailadres en wachtwoord."
+ * @b nl@: "Voer uw e-mail en wachtwoord in."
 
  * @b ro@: "Vă rugăm să introduceţi adresa de e-mail şi parola."
 
@@ -4132,7 +4132,7 @@ static NSString * const BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE = @"BME_LO
 
  * @b nb@: "Feil påloggingsdetaljer"
 
- * @b nl@: "Onjuiste referenties"
+ * @b nl@: "Onjuiste gegevens"
 
  * @b ro@: "Date de logat incorecte "
 
@@ -4300,7 +4300,7 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL = @"BM
 
  * @b nb@: "Ingen Facebook-kontoer ble funnet på enheten. Vennligst legg til din konto i systeminnstillingene."
 
- * @b nl@: "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in systeem instellingen."
+ * @b nl@: "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in de systeem instellingen."
 
  * @b ro@: "Nici un cont de Facebook nu a fost găsit pe dispozitiv. Vă rugăm să adăugaţi contul dumneavoastră în setările telefonului."
 
@@ -4384,7 +4384,7 @@ static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_
 
  * @b nb@: "Kunne ikke registrere varslinger. Dette er nødvendig for Be My Eyes applikasjonen. Vennligst forsikre deg om at du har aktivert varslinger i systeminnstillingene og prøv igjen."
 
- * @b nl@: "Kan niet registreren voor externe aanmeldingen. Dit is vereist voor de Be My Eyes applicatie. Zorg ervoor dat uw externe aanmeldingen ingeschakeld zijn in uw systeeminstellingen en probeer het opnieuw."
+ * @b nl@: "Kan niet registreren voor externe meldingen. Dit is vereist voor de Be My Eyes applicatie. Zorg ervoor dat uw externe meldingen ingeschakeld zijn in uw systeeminstellingen en probeer het opnieuw."
 
  * @b ro@: "Imposibil de înregistrat pentru notificările de la distanţă. Acest lucru este necesar pentru aplicația Be My Eyes. Vă rugăm să vă asiguraţi că notificările la distanța sunt activate în setările telfefonului şi încercaţi din nou."
 
@@ -4440,7 +4440,7 @@ static NSString * const BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_
 
  * @b nb@: "Laster forespørsel..."
 
- * @b nl@: "Laden verzoek..."
+ * @b nl@: "Verzoek laden..."
 
  * @b ro@: "Încarcă cererea..."
 
@@ -4468,7 +4468,7 @@ static NSString * const BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE = @"BME_
 
  * @b nb@: "Nei"
 
- * @b nl@: "nee"
+ * @b nl@: "Nee"
 
  * @b ro@: "Nu"
 
@@ -4524,7 +4524,7 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM = @"BME_MAIN
 
  * @b nb@: "Hvis du kan flere språk, vennligst velg disse. Du blir da matchet med hjelpere som kan samme språk som deg, og vil kunne få hjelp raskere."
 
- * @b nl@: "Als u meerdere talen spreekt kan je deze selecteren en kunnen ze gekoppeld worden aan een helper die ook deze taal spreekt waardoor hulp ontvangen nog sneller zal gaan."
+ * @b nl@: "Als u meerdere talen spreekt kan je deze selecteren en kunnen ze gekoppeld worden aan een helper die ook deze taal spreekt waardoor u sneller hulp zal ontvangen."
 
  * @b ro@: "Dacă vorbiți mai multe limbi vă rugăm să le selectați pe toate. Aceasta va permite ca aplicația să vă pună in contact cu o persoană văzătoare mai repede."
 
@@ -4580,7 +4580,7 @@ static NSString * const BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE = @"BME_MAIN_A
 
  * @b nb@: "Nei"
 
- * @b nl@: "nee"
+ * @b nl@: "Nee"
 
  * @b ro@: "Nu"
 
@@ -4748,7 +4748,7 @@ static NSString * const BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE = @"BME_MAIN_AL
 
  * @b nb@: "Noe gikk galt, og det kan være du ikke vil motta varsler"
 
- * @b nl@: "Er ging iets mis en u ontvang mogelijk geen notificaties"
+ * @b nl@: "Er ging iets mis en u ontvang mogelijk geen meldingen"
 
  * @b ro@: "Ceva a mers greşit şi s-ar putea să nu primiţi notificări"
 
@@ -5112,7 +5112,7 @@ static NSString * const BME_REPORT_ABUSE_SKIP = @"BME_REPORT_ABUSE_SKIP";
 
  * @b nb@: "Personen ville ikke hjelpe."
 
- * @b nl@: "De persoon heeft niet willen helpen."
+ * @b nl@: "De persoon wilde niet helpen."
 
  * @b ro@: "Persoana nu a vrut să ajute."
 
@@ -5364,7 +5364,7 @@ static NSString * const BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE = @"BME_RE
 
  * @b nb@: "Rapporterer..."
 
- * @b nl@: "Rapporteren..."
+ * @b nl@: "Melden..."
 
  * @b ro@: "Raportare..."
 
@@ -5392,7 +5392,7 @@ static NSString * const BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE = @"BME_REPORT_
 
  * @b nb@: "Avbryt"
 
- * @b nl@: "Geannuleerd"
+ * @b nl@: "Annuleer"
 
  * @b ro@: "Abandonează"
 
@@ -5448,7 +5448,7 @@ static NSString * const BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM = @"
 
  * @b nb@: "Alle rapporterte saker blir tatt seriøst og sett nærmere på. Er du sikker på at du vil rapportere den annen part for misbruk?"
 
- * @b nl@: "Elk misbruik wordt ernstig genomen en nagezien. Weet u zeker dat u de ander partij voor misbruik wilt rapporteren?"
+ * @b nl@: "Elk misbruik wordt ernstig genomen en gecontroleerd. Weet u zeker dat u de ander partij voor misbruik wilt rapporteren?"
 
  * @b ro@: "Toate cazurile de abuz sunt luate în serios şi sunt verficate. Sunteţi sigur că doriţi să raportați cealaltă parte pentru abuz?"
 
@@ -5532,7 +5532,7 @@ static NSString * const BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED = @"BME_
 
  * @b nb@: "Personen ville ikke hjelpe."
 
- * @b nl@: "De persoon heeft niet willen helpen."
+ * @b nl@: "De persoon wilde niet helpen."
 
  * @b ro@: "Persoana nu a vrut să ajute."
 
@@ -5700,7 +5700,7 @@ static NSString * const BME_SECRET_SETTINGS_API_TITLE = @"BME_SECRET_SETTINGS_AP
 
  * @b nb@: "Endringer i API krever omstart av applikasjonen."
 
- * @b nl@: "Wijzigt de API, dan dient de app opnieuw te worden opgestart."
+ * @b nl@: "Wijzigt u de API, dan dient de app opnieuw te worden opgestart."
 
  * @b ro@: "Schimbarea API necesită restartarea aplicației."
 
@@ -6288,7 +6288,7 @@ static NSString * const BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL = @"BME_
 
  * @b nb@: "Hjelp en blind person å se med #BeMyEyes appen - appen som forbinder blinde personer med seende hjelpere!"
 
- * @b nl@: "Help een blinde persoon om te zien via de #BeMyEyes app - De app dat blinde mensen verbind met ziende helpers!"
+ * @b nl@: "Help een blinde persoon om te zien via de #BeMyEyes app - De app die blinde mensen verbind met ziende helpers!"
 
  * @b ro@: "Ajută o persoană nevăzătoare să vadă cu aplicația #BeMyEyes - aplicația care conectează oamenii cu deficienţe de vedere cu persoane văzătoare!"
 
@@ -6932,7 +6932,7 @@ static NSString * const BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL = @"BME_SIGN_UP_A
 
  * @b nb@: "Kontoen din kunne ikke opprettes. Vennligst forsikre deg om at du er koblet til internett og prøv igjen."
 
- * @b nl@: "Uw account kan niet worden aangemaakt. Controleer of dat u een actieve internetverbinding hebt en probeer het opnieuw."
+ * @b nl@: "Uw account kan niet worden aangemaakt. Controleer of u een actieve internetverbinding heeft en probeer het opnieuw."
 
  * @b ro@: "Contul dumneavoastră nu a putut fi creat. Vă rugăm să verificaţi că aveţi o conexiune la internet activă şi încercaţi din nou."
 
@@ -7184,7 +7184,7 @@ static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP = @"BME_SIGN
 
  * @b nb@: "Avtalevilkår"
 
- * @b nl@: "Voorwaarden en overeenkomsten"
+ * @b nl@: "Voorwaarden en Overeenkomsten"
 
  * @b ro@: "Termeni şi condiții"
 
@@ -7212,7 +7212,7 @@ static NSString * const BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM = @"BME_S
 
  * @b nb@: "og du godtar også våre"
 
- * @b nl@: "evenals de"
+ * @b nl@: "evenals het"
 
  * @b ro@: "precum şi"
 
@@ -7464,7 +7464,7 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL = @"BME_SI
 
  * @b nb@: "Kunne ikke godkjenne med Facebook."
 
- * @b nl@: "Kan niet worden geverifieerd met Facebook."
+ * @b nl@: "Kan niet verifiëren met Facebook."
 
  * @b ro@: "Nu sa putut autentifica cu Facebook."
 
@@ -7604,7 +7604,7 @@ static NSString * const BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANC
 
  * @b nb@: "Ingen Facebook-kontoer ble funnet på enheten. Vennligst legg til din konto i systeminnstillingene."
 
- * @b nl@: "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in systeem instellingen."
+ * @b nl@: "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in de systeem instellingen."
 
  * @b ro@: "Nici un cont de Facebook nu a fost găsit pe dispozitiv. Vă rugăm să adăugaţi contul dumneavoastră în setările telefonului."
 
@@ -7716,7 +7716,7 @@ static NSString * const BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL = @"BME_S
 
  * @b nb@: "avtalevilkår"
 
- * @b nl@: "Voorwaarden en overeenkomsten"
+ * @b nl@: "Voorwaarden en Overeenkomsten"
 
  * @b ro@: "Termeni şi condiții"
 
@@ -7996,7 +7996,7 @@ static NSString * const BME_SNOOZE_RELATIVE_DATE_MONTHS = @"BME_SNOOZE_RELATIVE_
 
  * @b nb@: "sekund"
 
- * @b nl@: "second"
+ * @b nl@: "seconde"
 
  * @b ro@: "secundă"
 
@@ -8248,7 +8248,7 @@ static NSString * const logoLabel_text = @"logoLabel.text";
 
  * @b nb@: "Utformet med ❤︎ fra København"
 
- * @b nl@: "Vervaardigd met ❤︎ van Kopenhagen"
+ * @b nl@: "Gemaakt met ❤︎ van Kopenhagen"
 
  * @b ro@: "Creat cu ❤︎ din Copenhaga"
 
@@ -8360,7 +8360,7 @@ static NSString * const PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE = @"PUSH_
 
  * @b nb@: "Svar"
 
- * @b nl@: "Antwoord"
+ * @b nl@: "Antwoorden"
 
  * @b ro@: "Răspuns"
 
@@ -8416,7 +8416,7 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER = 
 
  * @b nb@: "Vi håper du fikk den hjelpen du trengte!"
 
- * @b nl@: "We hopen dat de hulp die u hebt aangevraagd naar wens was!"
+ * @b nl@: "We hopen dat de hulp heeft ontvangen die u zocht!"
 
  * @b ro@: "Sperăm că a-ţi primit ajutorul pe care la-ţi solicitat!"
 
@@ -8500,7 +8500,7 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND = @"POST_
 
  * @b nb@: "Rapporter"
 
- * @b nl@: "Rapporteer"
+ * @b nl@: "Melden"
 
  * @b ro@: "Raportaţi"
 

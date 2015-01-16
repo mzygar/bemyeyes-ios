@@ -4,28 +4,28 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* MEssage in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Berichten zijn een centraal onderdeel van de Be My Eyes app en je hebt dit nodig om  je aan te melden.";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Push-Meldingen zijn een centraal onderdeel van de Be My Eyes app en je hebt dit nodig om  je aan te melden.";
 
 /* Title in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Berichten is niet ingeschakeld";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Push-Meldingen zijn niet ingeschakeld";
 
 /* Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments. */
 "BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Iemand";
 
 /* Title in alert view shown when a call is received while the app was active */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Men vraag om uw hulp!";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Jouw hulp is nodig!";
 
 /* Title of cancel button in alert view shown when a call is received while the app was active */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Geannuleerd";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Annuleer";
 
 /* Message in alert view shown when the microphone is disabled */
-"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "U moet de toepassing toestemming geven om uw microfoon te gebruiken in de privacy van de systeeminstellingen.";
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "U moet in de systeeminstellingen de app toestemming geven om uw microfoon te gebruiken.";
 
 /* Title in alert view shown when the microphone is disabled */
 "BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE" = "Microfoon is niet ingeschakeld";
 
 /* Message in alert view shown when the camera is disabled */
-"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "U moet de toepassing toestemming geven om uw camera te gebruiken in de privacy van de systeeminstellingen.";
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "U moet in de systeeminstellingen de app toestemming geven om uw camera te gebruiken .";
 
 /* Title in alert view shown when the camera is disabled */
 "BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "Camera is niet ingeschakeld";
@@ -34,7 +34,7 @@
 "BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL" = "Ok";
 
 /* Title of dismiss button in alert view shown when the access is disabled, but app supports going to settings */
-"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Geannuleerd";
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Annuleer";
 
 /* Title of ok button in alert view shown when the access is disabled, and app supports going to settings */
 "BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Instellingen openen";
@@ -43,7 +43,7 @@
 "BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "Ok";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "De aanvraag is reeds beantwoord of geannuleerd door de blinde persoon, maar ik dank u alvast voor uw hulp!";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "De aanvraag is reeds beantwoord of geannuleerd door de blinde persoon, maar bedankt voor je hulp!";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
 "BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "De aanvraag is reeds beantwoord of geannuleerd";
@@ -64,5 +64,5 @@
 "BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Kan niet registreren";
 
 /* Message in alert shown when the device could not register for remote notifications */
-"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Het apparaat is niet geregistreerd om berichten te ontvangen. Dit zou kunnen betekenen dat de aanvraag fout is ondertekend.";
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Het apparaat is niet geregistreerd om push-meldingen te ontvangen. Dit zou kunnen betekenen dat de app verkeerd is aangemeld.";
 

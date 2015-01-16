@@ -65,7 +65,7 @@
 "BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL" = "Ok";
 
 /* Message in alert view shown when a network error occurred. */
-"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE" = "Uw account kan niet worden aangemaakt. Controleer of dat u een actieve internetverbinding hebt en probeer het opnieuw.";
+"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE" = "Uw account kan niet worden aangemaakt. Controleer of u een actieve internetverbinding heeft en probeer het opnieuw.";
 
 /* Title in alert view shown when a network error occurred. */
 "BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE" = "Account aanmaken is mislukt";

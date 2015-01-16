@@ -8,5 +8,5 @@
 "PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE" = "Het verzoek van %@ werd beantwoord.";
 
 /* Title of button in push notification when a request has been received */
-"PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION" = "Antwoord";
+"PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION" = "Antwoorden";
 

@@ -38,13 +38,13 @@
 "BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL" = "Ok";
 
 /* Message in alert view shown when Facebook user not found during log in. */
-"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE" = "U moet zich eerst aanmelden op uw Facebook-account voordat u kunt inloggen.";
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE" = "U moet zich eerst aanmelden met uw Facebook-account voordat u kunt inloggen.";
 
 /* Title in alert view shown when Facebook user not found during log in. */
-"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE" = "Toegang niet bekend";
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE" = "Account niet geregistreerd";
 
 /* Message in alert view shown when the e-mail or password is empty */
-"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "Voer alstublieft beiden in, uw e-mailadres en wachtwoord.";
+"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "Voer uw e-mail en wachtwoord in.";
 
 /* Title of cancel button in alert view show when the e-mail or password is empty */
 "BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL" = "Ok";
@@ -59,7 +59,7 @@
 "BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "Het ingevoerde e-mailadres en wachtwoord komen niet overeen.";
 
 /* Title in alert view shown when credentials are incorrect. */
-"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Onjuiste referenties";
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Onjuiste gegevens";
 
 /* Title of cancel button in alert view shown when a network error occurred during e-mail log in. */
 "BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL" = "Ok";
@@ -77,7 +77,7 @@
 "BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "Ok";
 
 /* Message in alert view shown when no Facebook account was found. */
-"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in systeem instellingen.";
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in de systeem instellingen.";
 
 /* Title in alert view shown when no Facebook account was found. */
 "BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Geen account gevonden";
@@ -86,11 +86,11 @@
 "BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL" = "Ok";
 
 /* Message in alert shown when the user is not registered for remote notifications */
-"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Kan niet registreren voor externe aanmeldingen. Dit is vereist voor de Be My Eyes applicatie. Zorg ervoor dat uw externe aanmeldingen ingeschakeld zijn in uw systeeminstellingen en probeer het opnieuw.";
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Kan niet registreren voor externe meldingen. Dit is vereist voor de Be My Eyes applicatie. Zorg ervoor dat uw externe meldingen ingeschakeld zijn in uw systeeminstellingen en probeer het opnieuw.";
 
 /* Title in alert shown when the user is not registered for remote notifications */
 "BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Aanmelden mislukt";
 
 /* Title in overlay displayed while loading pending request */
-"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Laden verzoek...";
+"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Verzoek laden...";
 

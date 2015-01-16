@@ -28,7 +28,7 @@
 "BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%.0f maanden";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_SECOND" = "second";
+"BME_SNOOZE_RELATIVE_DATE_SECOND" = "seconde";
 
 /* No comment provided by engineer. */
 "BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f seconden";

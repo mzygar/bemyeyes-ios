@@ -5,19 +5,19 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* Title of cancel button in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "nee";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "Nee";
 
 /* Title of confirm button in alert view shown when asking the blind if he knows more BME_MAIN_langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM" = "Ja";
 
 /* Message in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Als u meerdere talen spreekt kan je deze selecteren en kunnen ze gekoppeld worden aan een helper die ook deze taal spreekt waardoor hulp ontvangen nog sneller zal gaan.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Als u meerdere talen spreekt kan je deze selecteren en kunnen ze gekoppeld worden aan een helper die ook deze taal spreekt waardoor u sneller hulp zal ontvangen.";
 
 /* Title in alert view shown when asking the blind if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "Bent u meertalig?";
 
 /* Title of cancel button in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL" = "nee";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL" = "Nee";
 
 /* Title of confirm button in alert view shown when asking the helper if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "Ja";
@@ -35,7 +35,7 @@
 "BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Meldingen";
 
 /* Title of cancel button in alert view */
-"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Er ging iets mis en u ontvang mogelijk geen notificaties";
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Er ging iets mis en u ontvang mogelijk geen meldingen";
 
 /* Title of cancel button in alert view */
 "BME_MAIN_ALERT_CANCEL" = "OK";
