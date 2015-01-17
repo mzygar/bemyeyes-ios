@@ -13,8 +13,13 @@
 #define BMEAPIStagingBaseUrl @"https://stagingapi.bemyeyes.org"
 #define BMEAPIPublicBaseUrl @"https://api.bemyeyes.org"
 
+#define BMEBundleIdProduction @"org.bemyeyes.BeMyEyes"
+#define BMEBundleIdStaging @"org.bemyeyes.BeMyEyes.staging"
+#define BMEBundleIdDevelopment @"org.bemyeyes.BeMyEyes.dev"
+
 #define BMEAPIUsername @""
 #define BMEAPIPassword @""
+#define BMEHeaderAuthTokenKey @""
 
 #define BMEOpenTokAPIKey @""
 
@@ -29,24 +34,22 @@
 
 #define BMEPeopleHelpedBeforeAskingForMoreLanguages 3
 
-#define BMEIsProductionOrAdHoc true
-
 #define BMEErrorDomain @"org.bemyeyes.BeMyEyes"
 
-#define BMEMainControllerIdentifier @"Main"
+#define BMEFrontPageNavigationControllerIdentifier @"FrontPageNavigation"
+#define BMEFrontPageControllerIdentifier @"FrontPage"
+#define BMEMainNavigationControllerIdentifier @"MainNavigation"
 #define BMEMainBlindControllerIdentifier @"MainBlind"
 #define BMEMainHelperControllerIdentifier @"MainHelper"
 #define BMEMenuControllerIdentifier @"Menu"
 #define BMECallControllerIdentifier @"Call"
 #define BMESecretSettingsControllerIdentifier @"SecretSettings"
 
+#define BMEDidLogInNotification @"BMEDidLogInNotification"
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"
 #define BMEDidUpdateProfileNotification @"BMEDidUpdateProfileNotification"
 #define BMEDidUpdatePointNotification @"BMEDidUpdatePointNotification"
-
-typedef NS_ENUM(NSInteger, BMERole) {
-    BMERoleBlind = 0,
-    BMERoleHelper,
-};
+#define BMEGoToLoginIfPossibleNotification @"BMEGoToLoginIfPossibleNotification"
+#define BMEInitiateCallIfPossibleNotification @"BMEInitateCallIfPossibleNotification"
 
 #endif
