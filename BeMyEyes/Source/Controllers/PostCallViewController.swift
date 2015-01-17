@@ -60,6 +60,9 @@ class PostCallViewController: BMEBaseViewController, MKLocalizable {
     }
     
     @IBAction func didTapOkButton(sender: Button) {
+        if countElements(BMEAppStoreId) > 0 {
+            Appirater.userDidSignificantEvent(true)
+        }
         dismiss()
     }
     
