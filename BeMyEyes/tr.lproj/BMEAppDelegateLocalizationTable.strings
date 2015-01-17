@@ -64,5 +64,5 @@
 "BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Kayıt olunamadı";
 
 /* Message in alert shown when the device could not register for remote notifications */
-"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Cihaz push bildirimleri almak için kayıtlı değil. Bu uygulamanın yanlış imzalandığı anlamına gelebilir.";
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Cihaz anlık bildirimler almak için kayıtlı değil. Bu, uygulamanın yanlış imzalandığı anlamına gelebilir.";
 

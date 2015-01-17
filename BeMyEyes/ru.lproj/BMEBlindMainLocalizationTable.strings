@@ -1,15 +1,15 @@
 /* Title of connect to community button */
-"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Connect to first available helper";
+"BME_BLIND_MAIN_CONNECT_TO_COMMUNITY" = "Соединиться с первым доступным помощником";
 
 /* Cancel in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "OK";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "ОК";
 
 /* Message in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "The request could not be created. Please try again.";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Не удалось создать запрос. Пожалуйста, попробуйте еще раз.";
 
 /* Title in alert showed when failed creating request */
-"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Failed creating request";
+"BME_BLIND_MAIN_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Ошибка при создании запроса";
 
 /* Title in hud shown when creating request */
-"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Creating request...";
+"BME_BLIND_MAIN_HUD_CREATING_REQUEST_TITLE" = "Создание запроса...";
 

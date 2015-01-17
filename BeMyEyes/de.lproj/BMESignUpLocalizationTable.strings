@@ -71,7 +71,7 @@
 "BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE" = "Konto konnte nicht erstellt werden";
 
 /* Title in overlay displayed when logging in */
-"BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE" = "Anmeldung ...";
+"BME_SIGN_UP_OVERLAY_LOGGING_IN_TITLE" = "Anmelden …";
 
 /* Title in overlay displayed when registering */
 "BME_SIGN_UP_OVERLAY_REGISTERING_TITLE" = "Registrierung ...";

@@ -65,7 +65,7 @@
 "BME_SIGN_UP_ALERT_UNKNOWN_ERROR_CANCEL" = "OK";
 
 /* Message in alert view shown when a network error occurred. */
-"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE" = "Su cuenta no puedo ser creada. Por favor verifique que usted cuenta con una conexión activa a internet y vuélvalo a intentar.";
+"BME_SIGN_UP_ALERT_UNKNOWN_ERROR_MESSAGE" = "Su cuenta no puedo ser creada. Por favor verifique que cuenta con una conexión activa a internet y vuélvalo a intentar.";
 
 /* Title in alert view shown when a network error occurred. */
 "BME_SIGN_UP_ALERT_UNKNOWN_ERROR_TITLE" = "No se pudo crear la cuenta";

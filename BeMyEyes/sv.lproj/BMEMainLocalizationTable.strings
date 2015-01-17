@@ -23,7 +23,7 @@
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "Ja, det gör jag";
 
 /* Message in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Om du kan fler språk kan du välja dem och bli matchad med en synskadad som kan dessa språk.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Om du kan fler språk kan du välja dem och bli matchad med en blind som kan dessa språk.";
 
 /* Title in alert view shown when asking the helper if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "Kan du fler språk?";

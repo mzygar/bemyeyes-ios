@@ -53,7 +53,7 @@
 "BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Karşı taraf bekleniyor...";
 
 /* Status when session failed */
-"BME_CALL_STATUS_SESSION_FAILED" = "Bağlantı başarısız";
+"BME_CALL_STATUS_SESSION_FAILED" = "Bağlantı koptu";
 
 /* Status when failed publishing */
 "BME_CALL_STATUS_FAILED_PUBLISHING" = "Ses ve görüntü ulaştırılamadı";
@@ -71,7 +71,7 @@
 "BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "Tamam";
 
 /* Message in alert shown when other part has disconnected */
-"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "Karşı tarafın bağlantısı koptu ve oturum sonlandırıldı.";
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "Karşı taraf bağlantıyı kesti ve oturum sonlandırıldı.";
 
 /* Title in alert shown when other part has disconnected */
 "BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "Oturum sonlandırıldı";

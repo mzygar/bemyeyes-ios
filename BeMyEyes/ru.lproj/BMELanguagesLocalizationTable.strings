@@ -1,12 +1,12 @@
 /* Title */
-"BME_LANGUAGES_TITLE" = "Your Languages";
+"BME_LANGUAGES_TITLE" = "Ваши языки";
 
 /* Title of cancel button in alert view shown when the languages could not be saved */
-"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "OK";
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "ОК";
 
 /* MEssage in alert view shown when the languages could not be saved */
-"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "The languages could not be saved. Please try again later.";
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "Не удалось сохранить список языков. Пожалуйста, повторите попытку.";
 
 /* Title in alert view shown when the languages could not be saved */
-"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "Could not save";
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "Сохранение не удалось";
 

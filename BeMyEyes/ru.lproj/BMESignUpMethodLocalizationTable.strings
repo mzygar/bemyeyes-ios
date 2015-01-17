@@ -1,77 +1,77 @@
 /* Title of back button */
-"BME_SIGN_UP_METHOD_BACK" = "Back";
+"BME_SIGN_UP_METHOD_BACK" = "Назад";
 
 /* Headline */
-"BME_SIGN_UP_METHOD_HEADLINE" = "Become a part of the network";
+"BME_SIGN_UP_METHOD_HEADLINE" = "Станьте частью сети";
 
 /* Tiel of Facebook sign up button */
-"BME_SIGN_UP_METHOD_FACEBOOK" = "Sign up via Facebook";
+"BME_SIGN_UP_METHOD_FACEBOOK" = "Войти через Facebook";
 
 /* Sign up with e-mail button */
-"BME_SIGN_UP_METHOD_EMAIL" = "Sign up with e-mail";
+"BME_SIGN_UP_METHOD_EMAIL" = "Войти с адресом электронной почты";
 
 /* Top part of button for viewing terms and conditions */
-"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "By continuing you accept the";
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Продолжая, вы соглашаетесь с";
 
 /* Bottom part of button for viewing terms and conditions */
-"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Terms and Agreements";
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Условиями пользовательского соглашения";
 
 /* Top part of button for viewing privacy policy */
-"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "as well as the";
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "а так же";
 
 /* Bottom part of button for viewing privacy policy */
-"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "Privacy Policy";
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "Политика конфиденциальности";
 
 /* Title of cancel button in alert view shown when e-mail is already registered. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL" = "OK";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_CANCEL" = "ОК";
 
 /* Message in alert view shown when e-mail is already registered. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE" = "An account with the e-mail address of the Facebook user has already been registered.";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_MESSAGE" = "Аккаунт пользователя Facebook с таким адресом электронной почты уже был зарегистрирован.";
 
 /* Title in alert view shown when e-mail is already registered. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE" = "E-mail already registered";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_EMAIL_ALREADY_REGISTERED_TITLE" = "Такой адрес электронной почты уже зарегистрирован";
 
 /* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL" = "OK";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_CANCEL" = "ОК";
 
 /* Message in alert view shown when a network error occurred during Facebook log in. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE" = "Please verify that you have an active internet connection and try again.";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_MESSAGE" = "Пожалуйста, убедитесь, что у вас есть доступ в Интернет, и повторите попытку.";
 
 /* Title in alert view shown when a TITLEnetwork error occurred during Facebook log in. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE" = "An error occurred";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_SIGN_UP_UNKNOWN_ERROR_TITLE" = "Произошла ошибка";
 
 /* Title of cancel button in alert view shown when log in to Facebook failed */
-"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL" = "OK";
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL" = "ОК";
 
 /* Message in alert view shown when logging into Facebook but it failed because authentication failed */
-"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Could not authenticate with Facebook.";
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Не удалось зарегистрироваться с помощью Facebook.";
 
 /* Title in alert view shown when log in to Facebook failed */
-"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE" = "Authentication failed";
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE" = "Ошибка авторизации";
 
 /* Title in overlay displayed when logging in */
-"BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE" = "Logging in...";
+"BME_SIGN_UP_METHOD_OVERLAY_LOGGING_IN_TITLE" = "Вход в систему...";
 
 /* Title in overlay displayed when registering */
-"BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE" = "Registering...";
+"BME_SIGN_UP_METHOD_OVERLAY_REGISTERING_TITLE" = "Регистрация...";
 
 /* Title of cancel button in alert view shown when no Facebook account was found. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "OK";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "ОК";
 
 /* Message in alert view shown when no Facebook account was found. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "No Facebook accounts were found on the device. Please add your account in the system settings.";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "На устройстве не найдена учётная запись Facebook . Пожалуйста, добавьте её в настройках системы.";
 
 /* Title in alert view shown when no Facebook account was found. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "No account found";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Учетная запись Facebook не найдена";
 
 /* Accessibility hint for privacy policy button */
-"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "Privacy Policy";
+"BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_HINT" = "Политика конфиденциальности";
 
 /* Accessibility label for privacy policy button */
 "BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL" = " ";
 
 /* Accessibility hint for terms and agreements button */
-"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT" = "Terms and agreements";
+"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT" = "Пользовательское соглашение";
 
 /* Accessibility label for terms and agreements button */
 "BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL" = " ";

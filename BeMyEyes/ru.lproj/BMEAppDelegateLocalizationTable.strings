@@ -1,68 +1,68 @@
 /* BMEAppDelegate.strings
   BeMyEyes
-
   Created by Simon Støvring on 15/03/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
-
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
 /* MEssage in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Push notifications are a central part of the Be My Eyes app and you must have them enabled to sign up.";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Push-уведомления это важная часть приложения, и для регистрации они должны быть включены.";
 
 /* Title in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Push notifications not enabled";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Push-уведомления отключены";
 
 /* Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments. */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Someone";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Кто-то";
 
 /* Title in alert view shown when a call is received while the app was active */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Your help is needed!";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Нужна ваша помощь!";
 
 /* Title of cancel button in alert view shown when a call is received while the app was active */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Cancel";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Отменить";
 
 /* Message in alert view shown when the microphone is disabled */
-"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "You must give the application permission to use your microphone in the system settings.";
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "В настройках системы разрешите приложению использовать микрофон.";
 
 /* Title in alert view shown when the microphone is disabled */
-"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE" = "Microphone not enabled";
+"BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE" = "Микрофон отключен";
 
 /* Message in alert view shown when the camera is disabled */
-"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "You must give the application permission to use your camera in the system settings.";
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "В настройках системы разрешите приложению доступ к камере.";
 
 /* Title in alert view shown when the camera is disabled */
-"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "Camera not enabled";
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "Камера отключена";
 
 /* Title of dismiss button in alert view shown when access is disabled */
-"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL" = "OK";
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL" = "ОК";
 
 /* Title of dismiss button in alert view shown when the access is disabled, but app supports going to settings */
-"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Cancel";
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Отменить";
 
 /* Title of ok button in alert view shown when the access is disabled, and app supports going to settings */
-"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Open settings";
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Перейти к настройкам";
 
 /* Title of cancel button in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "OK";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "ОК";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "The pending request has been answered or was cancelled by the blind but thank you for helping out!";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "Запрос помощи уже был принят другим помощником либо отменен незрячим, но мы благодарим вас за готовность помочь!";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Request already answered or cancelled";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Запрос уже отвечен, либо отменен";
 
 /* Title of cancel button in alert view shown when the app icon shows a badge but the pending rcould not be loaded */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL" = "OK";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL" = "ОК";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request could not be loaded */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE" = "The pending request could not be loaded. Don't worry, someone else will answer the request.";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE" = "Не удалось загрузить запрос о помощи. Не волнуйтесь, на него ответит кто-то другой.";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request could not be loaded */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Request not loaded";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Запрос не загружен";
 
 /* Title in overlay displayed while loading pending request */
-"BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Loading...";
+"BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Загрузка...";
 
 /* Title in alert shown when the device could not register for remote notifications */
-"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Could not register";
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Не удалось зарегистрировать";
 
 /* Message in alert shown when the device could not register for remote notifications */
-"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "The device was not registered to receive push notifications. This could mean that the application has been incorrectly signed.";
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Устройство не зарегистрировано для приема Push-уведомлений. Возможно, приложение некорректно подписано.";
+

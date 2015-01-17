@@ -14,7 +14,7 @@
 "BME_SETTINGS_LANGUAGES" = "Diller";
 
 /* Select languages title */
-"BME_SETTINGS_ADD_LANGUAGES" = "Dil ekleme";
+"BME_SETTINGS_ADD_LANGUAGES" = "dil ekle";
 
 /* Feedback title */
 "BME_SETTINGS_FEEDBACK" = "Uygulama hakkında geri bildirimde bulunun";

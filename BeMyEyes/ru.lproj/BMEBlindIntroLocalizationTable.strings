@@ -1,8 +1,9 @@
 /* Title of back button */
-"BME_BLIND_INTRO_BACK" = "Back";
+"BME_BLIND_INTRO_BACK" = "Назад";
 
 /* Title of continue button */
-"BME_BLIND_INTRO_CONTINUE" = "Continue";
+"BME_BLIND_INTRO_CONTINUE" = "Продолжить";
 
 /* Description */
-"BME_BLIND_INTRO_DESCRIPTION" = "The app will put you in live contact with a sighted helper who remotely will assist you with tasks that requires assistance from a sighted person - through a live video connection the helper will tell you what he or she sees when you point your phone at something.\n\nThe helpers in the Be My Eyes network are volunteers and we cannot guarantee the quality of their help or take responsibility for any of their actions. Furthermore because we rely on real people to help you we encourage you to be patient when you request help.\n\nYou may under no circumstances share any nude, unlawful, hateful or sexually suggestive content via the service, and you should never show any sensitive information such as credit cards, passport or other personal information.";
+"BME_BLIND_INTRO_DESCRIPTION" = "Приложение соединит вас со зрячим ассистентом, который удаленно поможет в ситуациях, где не обойтись без зрения. Благодаря видеосвязи зрячий помощник расскажет вам что он / она видит, когда вы наводите камеру вашего телефона на объект.\n\nПомощники сети Стань моими глазами являются волонтерами, и мы не можем гарантировать качество оказываемой ими помощи, мы также не несем ответственности за их действия. Кроме того, поскольку мы полагаемся на живых людей, мы просим вас проявлять терпение при отправке запроса.\n\nИспользуя наш сервис, ни при каких обстоятельствах не разрешается отправлять изображения обнаженных тел, изображения сексуального характера, противозаконные, дерзкие, провоцирующие ненависть. никогда не показывайте приватную информацию: кредитные карты, паспорт и другие персональные данные.";
+

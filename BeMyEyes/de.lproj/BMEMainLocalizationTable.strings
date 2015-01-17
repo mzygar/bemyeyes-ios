@@ -11,7 +11,7 @@
 "BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM" = "Ja, tue ich";
 
 /* Message in alert view shown when asking the blind if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Wenn Sie mehrere Sprachen sprechen, können Sie diese auswählen und werden mit einem Helfer verbunden welcher ebenfalls diese Sprache sprechen kann, dadurch erhalten Sie schneller Hilfe.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "Wenn du mehrere Sprachen sprichst, kannst du diese auswählen und wirst mit einem Helfer verbunden, der ebenfalls diese Sprache spricht. So erhälst du schneller Hilfe.";
 
 /* Title in alert view shown when asking the blind if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "Sprechen Sie mehrere Sprachen?";

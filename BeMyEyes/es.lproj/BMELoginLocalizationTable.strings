@@ -20,7 +20,7 @@
 "BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL" = "OK";
 
 /* Message in alert view shown when a network error occurred during Facebook log in. */
-"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE" = "Por favor verifique que usted tiene una conexión activa a internet e inténtelo de nuevo.";
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE" = "Por favor verifique que tiene una conexión activa a internet e inténtelo de nuevo.";
 
 /* Title in alert view shown when a network error occurred during Facebook log in. */
 "BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE" = "Se ha producido un error";
@@ -59,13 +59,13 @@
 "BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "El correo electrónico y contraseña introducidos no coinciden.";
 
 /* Title in alert view shown when credentials are incorrect. */
-"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Credenciales incorrectos";
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Credenciales incorrectas";
 
 /* Title of cancel button in alert view shown when a network error occurred during e-mail log in. */
 "BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL" = "OK";
 
 /* Message in alert view shown when a network error occurred. */
-"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE" = "Por favor verifique que usted tiene una conexión activa a internet e inténtelo de nuevo.";
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE" = "Por favor verifique que tiene una conexión activa a internet e inténtelo de nuevo.";
 
 /* Title in alert view shown when a network error occurred during e-mail log in. */
 "BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE" = "Se ha producido un error";

@@ -1,48 +1,47 @@
 /* BMESnoozeRelativeDate.strings
   BeMyEyes
-
   Created by Simon Støvring on 19/04/14.
-  Copyright (c) 2014 Be My Eyes. All rights reserved. */
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAY" = "дней";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_DAY" = "day";
+"BME_SNOOZE_RELATIVE_DATE_DAYS" = "%.0f дней";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_DAYS" = "%.0f days";
+"BME_SNOOZE_RELATIVE_DATE_HOUR" = "часов";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_HOUR" = "hour";
+"BME_SNOOZE_RELATIVE_DATE_HOURS" = "%.0f часов";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_HOURS" = "%.0f hours";
+"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "минут";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "minute";
+"BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%.0f минут";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%.0f minutes";
+"BME_SNOOZE_RELATIVE_DATE_MONTH" = "месяцев";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_MONTH" = "month";
+"BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%.0f месяцев";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%.0f months";
+"BME_SNOOZE_RELATIVE_DATE_SECOND" = "секунд";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_SECOND" = "second";
+"BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f секунд";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f seconds";
+"BME_SNOOZE_RELATIVE_DATE_WEEK" = "недель";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_WEEK" = "week";
+"BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%.0f недель";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%.0f weeks";
+"BME_SNOOZE_RELATIVE_DATE_YEAR" = "лет";
 
 /* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_YEAR" = "year";
-
-/* No comment provided by engineer. */
-"BME_SNOOZE_RELATIVE_DATE_YEARS" = "%.0f years";
+"BME_SNOOZE_RELATIVE_DATE_YEARS" = "%.0f лет";
 

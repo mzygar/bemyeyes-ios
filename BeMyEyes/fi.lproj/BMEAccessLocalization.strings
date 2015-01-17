@@ -5,10 +5,10 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* Introductory message for access for notifications, microphone and camera */
-"BME_ACCESS_INTRO_MESSAGE" = "Salli seuraavat, jotta voit liittyä Be My Eyes verkostoon";
+"BME_ACCESS_INTRO_MESSAGE" = "Ole hyvä ja salli seuraavat, jotta voit liittyä täysin Be My Eyes verkostoon";
 
 /* Title for notifications */
-"BME_ACCESS_NOTIFICATIONS_TITLE" = "Huomautukset";
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "Ilmoitukset";
 
 /* Explanation for why the helper needs to enable notifications */
 "BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Ilmoitamme saapuvasta puhelusta, kun sokea henkilö tarvitsee apuasi.";
@@ -17,7 +17,7 @@
 "BME_ACCESS_MICROPHONE_TITLE" = "Mikrofoni";
 
 /* Explanation for why the helper needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Jotta voit puhua sokean henkilön kanssa ja ohjata tätä";
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Jotta voit puhua sokean henkilön kanssa ja ohjata häntä";
 
 /* Explanation for why the blind person needs to enable microphone access */
 "BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Jotta voit kertoa ongelmastasi avustajalle.";
@@ -26,7 +26,7 @@
 "BME_ACCESS_CAMERA_TITLE" = "Kamera";
 
 /* Explanation for why the helper needs to enable camera access */
-"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Emme lähetä videotasi henkilölle, jota autat vaan video tarvitaan yhteyden luomiseksi.";
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Emme lähetä videotasi henkilölle, jota autat mutta video tarvitaan yhteyden luomiseksi.";
 
 /* Explanation for why the blind person needs to enable microphone access */
 "BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Jotta voit näyttää avustajalle missä tarvitset apua.";

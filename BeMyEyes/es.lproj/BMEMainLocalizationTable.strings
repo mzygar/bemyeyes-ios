@@ -23,7 +23,7 @@
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "Si";
 
 /* Message in alert view shown when asking the helper if he knows more langauges */
-"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Si sabes más idiomas, puedes seleccionarlos y ser emparejado con un invidente que necesite ayuda en ese lenguaje.";
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "Si sabes más idiomas, puedes seleccionarlos y ser emparejado con un no vidente que necesite ayuda en ese lenguaje.";
 
 /* Title in alert view shown when asking the helper if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "¿Sabes más idiomas?";
