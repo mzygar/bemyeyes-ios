@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Natrag";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Nastavak";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Pomaganje je lagano!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Pomozite kada god želite, gdje god se nalazili.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Vaš mobitel je otvoren prema pozivima ljudi kojima treba pomoć dok ste vi prijavljeni.";
+

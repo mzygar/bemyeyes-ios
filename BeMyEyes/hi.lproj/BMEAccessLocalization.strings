@@ -1,0 +1,33 @@
+/* 
+  BMEAccessLocalization.strings
+  BeMyEyes
+  Created by Tobias DM on 17/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Introductory message for access for notifications, microphone and camera */
+"BME_ACCESS_INTRO_MESSAGE" = "कृपया निम्नलिखित को Be My Eyes नेटवर्क में शामिल होने के लिए सक्षम करें";
+
+/* Title for notifications */
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "नोटिफिकेशंस";
+
+/* Explanation for why the helper needs to enable notifications */
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "जब किसी नेत्रहीन व्यक्ति को आपकी मदद की जरूरत हो, तो हम आपको इनकमिंग कॉल के बारे में सूचित करेंगे।";
+
+/* Title for microphone */
+"BME_ACCESS_MICROPHONE_TITLE" = "माइक्रोफ़ोन";
+
+/* Explanation for why the helper needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "नेत्रहीन व्यक्ति से बात करने और उसका मार्गदर्शन करने में सक्षम होने के लिए";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "सहायक को अपनी समस्या समझाने में सक्षम होने के लिए।";
+
+/* Title for camera */
+"BME_ACCESS_CAMERA_TITLE" = "कैमरा";
+
+/* Explanation for why the helper needs to enable camera access */
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "हम आपका वीडियो उस व्यक्ति के पास नहीं भेजते हैं जिसकी आप मदद कर रहे हैं, लेकिन कनेक्शन स्थापित करने के लिए यह आवश्यक है।";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "सहायक को यह दिखाने में सक्षम होने के लिए कि आपको किस चीज की मदद चाहिए।";
+

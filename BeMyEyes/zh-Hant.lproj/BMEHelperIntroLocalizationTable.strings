@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "返回";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "继续";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "助人为乐很简单！";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "随时随地帮助他人。";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "登录后，您的手机可接收来自需要帮助之人的召唤。";
+

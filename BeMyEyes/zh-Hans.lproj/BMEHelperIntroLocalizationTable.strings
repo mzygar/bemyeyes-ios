@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "返回";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "繼續";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "助人很容易！";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "隨時隨地都可助人。";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "當你登錄時，你的手機會開放給需要幫助的人來聯繫。";
+

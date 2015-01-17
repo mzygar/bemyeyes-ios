@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Πίσω";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Επόμενο";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Είναι εύκολο να βοηθάς!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Βοηθήστε οπότε επιθυμείτε, όπου και αν είστε.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Το τηλέφωνό σας είναι διαθέσιμο για κλήσεις από ανθρώπους που χρειάζονται βοήθεια όταν είστε συνδεδεμένοι.";
+

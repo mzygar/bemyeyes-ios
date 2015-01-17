@@ -1,0 +1,15 @@
+/* App name. Please don't translate this. */
+"BME_FRONT_PAGE_APP_NAME" = "Be My Eyes";
+
+/* Asking the user to choose if he is sighted or blind */
+"BME_FRONT_PAGE_ASK_FOR_ROLE" = "你的角色？";
+
+/* Title for choosing sighted role */
+"BME_FRONT_PAGE_SIGHTED_ROLE" = "我是有視力者";
+
+/* Title for choosing blind role */
+"BME_FRONT_PAGE_BLIND_ROLE" = "我是盲胞";
+
+/* Log in button, if the user is already registered */
+"BME_FRONT_PAGE_ALREADY_REGISTERED" = "已經註冊了？從這裡登錄。";
+

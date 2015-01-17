@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "뒤로";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "계속";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "도움은 쉽습니다!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "언제든 어디서든 도와주세요.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "로그인이 되어 있으면 필요한 사람들이 언제든 당신에게 도움을 요청할 수 있습니다.";
+

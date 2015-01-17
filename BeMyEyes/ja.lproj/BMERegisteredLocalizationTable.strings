@@ -1,0 +1,9 @@
+/* Headline */
+"BME_REGISTERED_HEADLINE" = "はい！";
+
+/* Description */
+"BME_REGISTERED_DESCRIPTION" = "これで、登録されました。";
+
+/* Title of log in button */
+"BME_REGISTERED_LOG_IN" = "ログイン";
+

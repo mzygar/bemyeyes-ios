@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Cài đặt";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Tên";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Họ";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "E-mail";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Ngôn ngữ";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Thêm ngôn ngữ";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Gửi phản hồi về ứng dụng";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Thoát";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Bạn không thoát được. Vui lòng đảm bảo rằng bạn có một kết nối internet hoạt động và thử lại.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Không thoát được";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Đang thoát...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Phiên bản %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Quay lại";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d điểm";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Hoàn thành";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Giúp đỡ người khiếm thị nhìn thấy được bằng ứng dụng #BeMyEyes - ứng dụng kết nối người khiếm thị với những người giúp đỡ sáng mắt!";
+

@@ -1,0 +1,12 @@
+/* Title */
+"BME_LANGUAGES_TITLE" = "اللغات الخاصة بك";
+
+/* Title of cancel button in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "موافق";
+
+/* MEssage in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "لا يمكن حفظ اللغة. يرجى المحاولة مجددا لاحقا.";
+
+/* Title in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "لا يمكن الحفظ";
+

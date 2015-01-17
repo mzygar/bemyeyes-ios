@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Vissza";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Tovább";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Az app élő kapcsolatba teszi önt egy látó segítővel, aki távolról segíti önt látók segítségét igénylő feladatokkal - élő videó-kapcsolat révén a segítő fogja mondani amit ő lát a mobil kamerádon.  \n\nA segítők a Be My Eyes hálózat önkéntesei és mi nem tudjuk garantálni a segítség minőségét, sem nem tudunk vállalni felelősséget az ő tevékenységeikért. Továbbá, mivel mi hétköznapi embereken függünk, javasoljuk legyen türelemmel amikor segítséget kér.  \n\nSemmilyen körülmények között ne osszon meg meztelen, jogellenes, gyűlölködő vagy szexuálisan szuggesztív dolgokat a szolgáltatáson keresztül, és soha ne mutasson fel személyes információt, mint például hitelkártya vagy útlevél.";
+

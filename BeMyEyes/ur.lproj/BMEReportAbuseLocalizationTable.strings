@@ -1,0 +1,72 @@
+/* Headline */
+"BME_REPORT_ABUSE_HEADLINE" = "غلط استعمال کی رپورٹ کریں";
+
+/* Text telling user to choose a reason */
+"BME_REPORT_ABUSE_CHOOSE_REASON" = "ایک سبب چنیں";
+
+/* Title of report button */
+"BME_REPORT_ABUSE_REPORT" = "غلط استعمال کی رپورٹ کریں";
+
+/* Title of skip button */
+"BME_REPORT_ABUSE_SKIP" = "چھوڑ دیں";
+
+/* Text 1 for reporting abuse as a blind person. */
+"BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND" = "یہ فرد مدد کرنا نہیں چاہتا۔";
+
+/* Text 1 for reporting abuse as a helper. */
+"BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER" = "یہ فرد نابینا نہیں تھا۔";
+
+/* Text 2 for reporting abuse as a blind person. */
+"BME_REPORT_ABUSE_REPORT_TEXT_2_BLIND" = "مددگار نے نامناسب رویہ کا مظاہرہ کیا۔";
+
+/* Text 2 for reporting abuse as a helper. */
+"BME_REPORT_ABUSE_REPORT_TEXT_2_HELPER" = "نابینا فرد نے نامناسب رویہ کا مظاہرہ کیا۔";
+
+/* Text 3 for reporting abuse as a blind person. */
+"BME_REPORT_ABUSE_REPORT_TEXT_3_BLIND" = "یہ سبب فہرست میں نہیں ہے";
+
+/* Text 3 for reporting abuse as a helper. */
+"BME_REPORT_ABUSE_REPORT_TEXT_3_HELPER" = "یہ سبب فہرست میں نہیں ہے";
+
+/* Title of cancel button in alert view show when reporting failed */
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_CANCEL" = "ٹھیک ہے";
+
+/* Message in alert view shown when reporting failed */
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_MESSAGE" = "یہ رپورٹ نہیں بھیجی جاسکی۔ براہِ کرم یقینی بنائیں کہ آپ کا انٹرنیٹ کنیکشن فعال ہے اور دوبارہ کوشش کریں۔";
+
+/* Title in alert view shown when reporting failed */
+"BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE" = "غلط استعمال کی رپورٹ نہیں کی جاسکی";
+
+/* Title in overlay displayed when reporting abuse */
+"BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE" = "رپورٹ کی جارہی ہے۔۔۔۔";
+
+/* Title of cancel button in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL" = "منسوخ کریں";
+
+/* Title of confirm in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM" = "تصدیق کریں";
+
+/* Message in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE" = "تمام غلط استعمال کے معاملات کو سنجیدگی سے لیا جاتا ہے اور ان پر غور کیا جاتا ہے۔ کیا واقعی آپ دیگر فریق کے ذریعہ غلط استعمال کی رپورٹ کرنا چاہتے ہیں؟";
+
+/* Title in alert view shown when asking the user to confirm that he wants to report abuse */
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE" = "غلط استعمال کی رپورٹ کریں";
+
+/* Accesibility label for reason 1 when the reason is selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED" = "یہ فرد (منتخب کردہ) کی مدد کرنا نہیں اہتا تھا۔";
+
+/* Accesibility label for reason 1 when the reason is not selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1" = "یہ فرد مدد کرنا نہیں چاہتا۔";
+
+/* Accesibility label for reason 2 when the reason is selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED" = "مددگار نے نامناسب طرز عمل کا مظاہرہ کیا (منتخبہ)";
+
+/* Accesibility label for reason 2 when the reason is not selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2" = "مددگار نے نامناسب رویہ کا مظاہرہ کیا۔";
+
+/* Accesibility label for reason 3 when the reason is selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3_SELECTED" = "یہاں سبب نہیں دیا گیا ہے (منتخبہ)";
+
+/* Accesibility label for reason 3 when the reason is not selected */
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_3" = "یہ سبب فہرست میں نہیں ہے";
+

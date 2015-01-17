@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Natrag";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Nastavak";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Aplikacija će vas uživo spojiti s osobom s vidom koja će vam daljinski pomoći sa zadacima u kojima je potrebna pomoć osobe s vidom - kada pokažete na nešto svojim mobitelom, pomagač će vam putem video veze uživo reći što on ili ona vidi.\n\nPomagači u Be My Eyes mreži su dobrovoljci i ne možemo garantirati kvalitetu njihove pomoći ili preuzeti odgovornost za bilo koju od njihovih akcija. Nadalje, zato što se oslanjamo na stvarne ljude kako bi vam pomogli, molimo budite strpljivi kada zatražite pomoć.\n\nNi u kakvim okolnostima ne smijete podijeliti bilo kakve golišave, nezakonite, mrziteljske ili seksualno sugestivne sadržaje putem ove usluge, te nikada ne biste trebali pokazivati osjetljive informacije kao što su kreditne kartice, putovnice ili druge osobne informacije.";
+

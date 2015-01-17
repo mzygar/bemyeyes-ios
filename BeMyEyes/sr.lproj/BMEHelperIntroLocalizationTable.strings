@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Назад";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Настави";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Помоћ пружате једноставно!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Помозите кад год желите, где год да се налазите.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Када се пријавите, ваш телефон је слободан за позиве људи којима је потребна ваша помоћ.";
+

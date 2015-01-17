@@ -1,0 +1,33 @@
+/* 
+  BMEAccessLocalization.strings
+  BeMyEyes
+  Created by Tobias DM on 17/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Introductory message for access for notifications, microphone and camera */
+"BME_ACCESS_INTRO_MESSAGE" = "Παρακαλώ ενεργοποιήστε τα εξής για να ενταχθείτε πλήρως στο δίκτυο του Γίνε Τα Μάτια Μου";
+
+/* Title for notifications */
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "Ειδοποιήσεις";
+
+/* Explanation for why the helper needs to enable notifications */
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Όταν ένας τυφλός χρειάζεται τη βοήθειά σας, σας ενημερώνουμε για την εισερχόμενη κλήση.";
+
+/* Title for microphone */
+"BME_ACCESS_MICROPHONE_TITLE" = "Μικρόφωνο";
+
+/* Explanation for why the helper needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Για να μπορέσετε να μιλήσετε και να καθοδηγήσετε το τυφλό άτομο";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Για να μπορέσετε να εξηγήσετε το πρόβλημά σας στο Βοηθό.";
+
+/* Title for camera */
+"BME_ACCESS_CAMERA_TITLE" = "Κάμερα";
+
+/* Explanation for why the helper needs to enable camera access */
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Δεν στέλνουμε το βίντεό σας στο πρόσωπο που βοηθάτε, αλλά είναι απαραίτητο για να επιτευχθεί η σύνδεση.";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Για να μπορέσετε να δείξετε στο βοηθό το λόγο για τον οποίο χρειάζεστε βοήθεια.";
+

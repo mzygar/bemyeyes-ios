@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "חזור";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "המשך";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "קל להעניק עזרה!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "תוכלו לעזור מתי שתרצו, בכל מקום בו תהיו.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "הטלפון שלכם פתוח לשיחות מצד אנשים שצריכים עזרה כשאתם רשומים.";
+

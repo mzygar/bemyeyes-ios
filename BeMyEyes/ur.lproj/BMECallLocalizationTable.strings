@@ -1,0 +1,78 @@
+/* Title of disconnect button */
+"BME_CALL_DISCONNECT" = "منقطع کریں";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL" = "ٹھیک ہے";
+
+/* Message in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE" = "اس درخواست کے فون کا جواب دیا جاچکا ہے، آپ کی مدد کے لئے شکریہ!";
+
+/* Title in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE" = "درخواست کا پہلے ہی جواب دیا جاچکا ہے";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL" = "ٹھیک ہے";
+
+/* Message in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE" = "نابینا فرد نے اپنی درخواست منسوخ کردی ہے۔ آپ کی مدد کے لئے شکریہ!";
+
+/* Title in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE" = "درخواست منسوخ ہوئی";
+
+/* Title in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE" = "درخواست کا جواب نہیں دیا جاسکا";
+
+/* Cancel in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "ٹھیک ہے";
+
+/* Message in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "درخواست تخلیق نہیں کی جاسکی۔ براہِ کرم دوبارہ کوشش کریں۔";
+
+/* Title in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE" = "درخواست تخلیق نہیں کی جاسکی";
+
+/* Title of cancel button in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL" = "ٹھیک ہے";
+
+/* Status when asking the user to wait */
+"BME_CALL_STATUS_PLEASE_WAIT" = "براہِ کرم انتظار کریں۔۔۔";
+
+/* Status when answering request */
+"BME_CALL_STATUS_ANSWERING_REQUEST" = "درخواست کا جواب دیا جارہا ہے۔۔۔";
+
+/* Message in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE" = "اس وقت درخواست کا جواب نہیں دیا جاسکتا۔ آپ کی مدد کے لیے شکریہ!";
+
+/* Status when creating request */
+"BME_CALL_STATUS_CREATING_REQUEST" = "درخواست تخلیق کی جا رہی ہے۔۔۔";
+
+/* Status when connecting */
+"BME_CALL_STATUS_CONNECTING" = "سرور سے کنیکٹ ہورہا ہے۔۔۔";
+
+/* Status when connection is established */
+"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "دیگر فریق کا انتظار ہورہا ہے۔۔۔";
+
+/* Status when session failed */
+"BME_CALL_STATUS_SESSION_FAILED" = "کنیکشن ناکام";
+
+/* Status when failed publishing */
+"BME_CALL_STATUS_FAILED_PUBLISHING" = "آڈیو ویڈیو شائع کرنے میں ناکامی";
+
+/* Speech when connected to other part */
+"BME_CALL_SPEECH_DID_SUBSCRIBE" = "دوسرے فریق سے رابطہ ہوگیا ہے";
+
+/* Status when failed subscribing */
+"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "دیگر فریق سے رابطہ کرنے میں ناکامی";
+
+/* Status when disconnecting */
+"BME_CALL_STATUS_DISCONNECTING" = "منقطع ہورہا ہے۔۔۔";
+
+/* Title of cancel button in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "ٹھیک ہے";
+
+/* Message in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "دیگر فریق نے منقطع کردیا ہے اور سیشن ختم ہوچکا ہے۔";
+
+/* Title in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "سیشن ختم ہوا";
+

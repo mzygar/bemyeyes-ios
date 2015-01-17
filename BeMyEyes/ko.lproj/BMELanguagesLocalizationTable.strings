@@ -1,0 +1,12 @@
+/* Title */
+"BME_LANGUAGES_TITLE" = "사용 가능한 언어";
+
+/* Title of cancel button in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "확인";
+
+/* MEssage in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "언어 설정을 저장하지 못했습니다. 다시 시도해주세요.";
+
+/* Title in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "저장 실패";
+

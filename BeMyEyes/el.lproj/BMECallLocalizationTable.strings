@@ -1,0 +1,78 @@
+/* Title of disconnect button */
+"BME_CALL_DISCONNECT" = "Αποσύνδεση";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_CANCEL" = "ΟΚ";
+
+/* Message in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_MESSAGE" = "Το αίτημα έχει ήδη απαντηθεί. Ευχαριστώ για τη βοήθειά σας!";
+
+/* Title in alert view shown when failed answering request because the request has already been answered */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_ANSWERED_TITLE" = "Το αίτημα έχει ήδη απαντηθεί";
+
+/* Title of cancel button in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_CANCEL" = "ΟΚ";
+
+/* Message in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_MESSAGE" = "Ο τυφλός ακύρωσε τo αίτημα. Ευχαριστούμε για τη βοήθειά σας!";
+
+/* Title in alert view shown when failed answering request because the request has been stopped */
+"BME_CALL_ALERT_FAILED_ANSWERING_REQUEST_STOPPED_TITLE" = "Αίτημα ακυρώθηκε";
+
+/* Title in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_TITLE" = "Δεν μπορούσε να απαντηθεί το αίτημα";
+
+/* Cancel in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_CANCEL" = "ΟΚ";
+
+/* Message in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_MESSAGE" = "Το αίτημα δεν μπόρεσε να δημιουργηθεί. Παρακαλώ ξαναπροσπαθήστε.";
+
+/* Title in alert showed when failed creating request */
+"BME_CALL_ALERT_FAILED_CREATING_REQUEST_TITLE" = "Δεν μπορούσε να δημιουργηθεί το αίτημα";
+
+/* Title of cancel button in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_CANCEL" = "ΟΚ";
+
+/* Status when asking the user to wait */
+"BME_CALL_STATUS_PLEASE_WAIT" = "Παρακαλώ περιμένετε...";
+
+/* Status when answering request */
+"BME_CALL_STATUS_ANSWERING_REQUEST" = "Απάντηση αιτήματος...";
+
+/* Message in alert view shown when failed answering request for an unknown reason */
+"BME_CALL_ALERT_FAILED_ANSWERING_UNKNOWN_MESSAGE" = "Το αίτημα δεν μπορούσε να απαντηθεί αυτή τη στιγμή. Ευχαριστώ για τη βοήθειά σας!";
+
+/* Status when creating request */
+"BME_CALL_STATUS_CREATING_REQUEST" = "Δημιουργία αιτήματος...";
+
+/* Status when connecting */
+"BME_CALL_STATUS_CONNECTING" = "Σύνδεση με διακομιστές...";
+
+/* Status when connection is established */
+"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Αναμονή για ανταπόκριση...";
+
+/* Status when session failed */
+"BME_CALL_STATUS_SESSION_FAILED" = "Αποτυχία σύνδεσης";
+
+/* Status when failed publishing */
+"BME_CALL_STATUS_FAILED_PUBLISHING" = "Απέτυχε η έκδοση ήχου και βίντεο";
+
+/* Speech when connected to other part */
+"BME_CALL_SPEECH_DID_SUBSCRIBE" = "Η σύνδεση πραγματοποιήθηκε";
+
+/* Status when failed subscribing */
+"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "Η σύνδεση απέτυχε";
+
+/* Status when disconnecting */
+"BME_CALL_STATUS_DISCONNECTING" = "Αποσύνδεση...";
+
+/* Title of cancel button in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "ΟΚ";
+
+/* Message in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "Το άλλο μέλος έχει αποσυνδεθεί και η συνεδρίαση τερματίστηκε.";
+
+/* Title in alert shown when other part has disconnected */
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "Συνεδρία τερματίστηκε";
+

@@ -1,0 +1,21 @@
+/* 
+  PostCallViewController.strings
+  BeMyEyes
+  Created by Tobias Due Munk on 28/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Motivational message to helper when call has ended */
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER" = "感謝你的幫助！";
+
+/* Motivational message to blind when call has ended */
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "我們希望你收到所要求的幫助！";
+
+/* Title of dismiss button to helper */
+"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER" = "沒問題";
+
+/* Title of dismiss button to blind */
+"POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND" = "成";
+
+/* Title of report button */
+"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE" = "報告";
+
