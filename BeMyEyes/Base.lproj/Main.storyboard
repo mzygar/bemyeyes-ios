@@ -1696,14 +1696,14 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1Q-n2-Dxz" customClass="DarkBlueShadowView" customModule="BeMyEyes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="409" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="414" width="320" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AVM-Hb-3RJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DK5-dj-UnV" userLabel="Community Stats View">
-                                <rect key="frame" x="0.0" y="449" width="320" height="151"/>
+                                <rect key="frame" x="0.0" y="454" width="320" height="146"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-c5-js3" userLabel="Logo + label">
                                         <rect key="frame" x="40" y="20" width="239" height="31"/>
@@ -1733,15 +1733,15 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfz-B9-brk" userLabel="Sighted">
-                                        <rect key="frame" x="5" y="61" width="99.5" height="60"/>
+                                        <rect key="frame" x="5" y="61" width="102" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42.5k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoV-jm-40g" userLabel="42k" customClass="BMEPointLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="48"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="353k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoV-jm-40g" userLabel="42k" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="43"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sighted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRA-zk-BbC" userLabel="Sighted">
-                                                <rect key="frame" x="0.0" y="43" width="99.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="38" width="102" height="17"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1759,15 +1759,15 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jP5-Ma-7Jo" userLabel="Blind">
-                                        <rect key="frame" x="109.5" y="61" width="100.5" height="60"/>
+                                        <rect key="frame" x="109" y="61" width="101.5" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="512" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vn-oO-1sp" customClass="BMEPointLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="48"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42.5k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vn-oO-1sp" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="43"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8b-Va-Uxg">
-                                                <rect key="frame" x="0.0" y="43" width="100.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="38" width="101.5" height="17"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1785,17 +1785,17 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6C-cj-jhc" userLabel="Helped">
-                                        <rect key="frame" x="215" y="61" width="100" height="60"/>
+                                        <rect key="frame" x="212.5" y="61" width="102.5" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FE-RA-1MY">
-                                                <rect key="frame" x="0.0" y="43" width="100" height="17"/>
+                                                <rect key="frame" x="0.0" y="38" width="102.5" height="17"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="936-Cz-Ktx" customClass="BMEPointLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="48"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.02M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="936-Cz-Ktx" customClass="BMEPointLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="43"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1819,9 +1819,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     <constraint firstAttribute="trailing" secondItem="n6C-cj-jhc" secondAttribute="trailing" constant="5" id="Ddk-G8-EnY"/>
                                     <constraint firstItem="yoV-jm-40g" firstAttribute="top" secondItem="jP5-Ma-7Jo" secondAttribute="top" id="LZa-uE-Bcn"/>
                                     <constraint firstItem="pfz-B9-brk" firstAttribute="width" secondItem="n6C-cj-jhc" secondAttribute="width" id="R5l-cw-KkB"/>
-                                    <constraint firstItem="n6C-cj-jhc" firstAttribute="leading" secondItem="3vn-oO-1sp" secondAttribute="trailing" constant="5" id="S2J-Tn-2SS"/>
+                                    <constraint firstItem="n6C-cj-jhc" firstAttribute="leading" secondItem="3vn-oO-1sp" secondAttribute="trailing" constant="2" id="S2J-Tn-2SS"/>
                                     <constraint firstItem="n6C-cj-jhc" firstAttribute="top" secondItem="3vn-oO-1sp" secondAttribute="top" id="WWz-Ca-EEq"/>
-                                    <constraint firstItem="jP5-Ma-7Jo" firstAttribute="leading" secondItem="yoV-jm-40g" secondAttribute="trailing" constant="5" id="ZeI-dd-hXl"/>
+                                    <constraint firstItem="jP5-Ma-7Jo" firstAttribute="leading" secondItem="yoV-jm-40g" secondAttribute="trailing" constant="2" id="ZeI-dd-hXl"/>
                                     <constraint firstItem="pfz-B9-brk" firstAttribute="leading" secondItem="DK5-dj-UnV" secondAttribute="leading" constant="5" id="dCW-U1-6Z6"/>
                                     <constraint firstItem="i0f-c5-js3" firstAttribute="top" secondItem="DK5-dj-UnV" secondAttribute="top" constant="20" id="hzV-SP-77C"/>
                                     <constraint firstAttribute="bottom" secondItem="pfz-B9-brk" secondAttribute="bottom" constant="30" id="omM-K1-f1Y"/>

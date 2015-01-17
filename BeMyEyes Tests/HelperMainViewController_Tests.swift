@@ -41,4 +41,16 @@ class HelperMainViewController_Tests: FBSnapshotTestCase {
         }
         verifyViewForPromoScreenshots(helperVC!.view)
     }
+    
+    func testStats() {
+        if let helperVC = helperVC {
+            helperVC.user = BMEUser.idealUser()
+            var stats = BMECommunityStats()
+            stats.sighted = 10432 // 10,432
+            stats.blind = 595 // 595
+            stats.helped = 2020000 // 2,020,000
+            helperVC.stats = stats
+        }
+        verifyViewOnAllDevices(helperVC!.view)
+    }
 }
