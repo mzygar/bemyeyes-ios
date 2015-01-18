@@ -87,7 +87,7 @@
 "BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "OK";
 
 /* Message in alert view shown when no Facebook account was found. */
-"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "No Facebook accounts were found on the device. Please add you account in the system settings.";
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "No Facebook accounts were found on the device. Please add your account in the system settings.";
 
 /* Title in alert view shown when no Facebook account was found. */
 "BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "No account found";

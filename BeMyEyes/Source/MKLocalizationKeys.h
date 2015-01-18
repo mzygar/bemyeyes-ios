@@ -10786,7 +10786,7 @@ static NSString * const BME_LOGIN_OVERLAY_LOGGING_IN_TITLE = @"BME_LOGIN_OVERLAY
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL = @"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL";
 
 /*!
- * "No Facebook accounts were found on the device. Please add you account in the system settings."
+ * "No Facebook accounts were found on the device. Please add your account in the system settings."
 
  * All translations:
 
@@ -10800,7 +10800,7 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL = @"BM
 
  * @b el@: "Δεν βρέθηκε κανένας λογαριασμός Facebook στη συσκευή. Παρακαλούμε προσθέσετε τον λογαριασμό σας στις ρυθμίσεις συστήματος."
 
- * @b en@: "No Facebook accounts were found on the device. Please add you account in the system settings."
+ * @b en@: "No Facebook accounts were found on the device. Please add your account in the system settings."
 
  * @b es@: "Ninguna cuenta de Facebook fue encontrada en su dispositivo. Por favor añada su cuenta en ajustes del sistema."
 

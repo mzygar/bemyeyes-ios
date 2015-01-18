@@ -49,6 +49,12 @@
 		4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE9BF919E8C91000CBC675 /* DismissSegue.m */; };
 		4EC696EE1A2625E6007E5680 /* BMEUserTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC696ED1A2625E6007E5680 /* BMEUserTypeConverter.m */; };
 		4EDCE93F1A01E069006C7A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCE9411A01E069006C7A4A /* LaunchScreen.storyboard */; };
+		4EE157E71A6B396800178F9F /* cut_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EE157E11A6B396800178F9F /* cut_1.wav */; };
+		4EE157E81A6B396800178F9F /* cut_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EE157E21A6B396800178F9F /* cut_2.wav */; };
+		4EE157E91A6B396800178F9F /* cut_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EE157E31A6B396800178F9F /* cut_3.wav */; };
+		4EE157EA1A6B396800178F9F /* cut_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EE157E41A6B396800178F9F /* cut_4.wav */; };
+		4EE157EB1A6B396800178F9F /* cut_9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EE157E51A6B396800178F9F /* cut_9.wav */; };
+		4EE157EC1A6B396800178F9F /* cut_10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EE157E61A6B396800178F9F /* cut_10.wav */; };
 		4EE671BE1A2DAEE50037865B /* Profile_of_a_Woman.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE671BD1A2DAEE50037865B /* Profile_of_a_Woman.png */; };
 		4EE671C01A2DB3240037865B /* ProfileSarah.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE671BF1A2DB3240037865B /* ProfileSarah.png */; };
 		4EE671C11A2DB4260037865B /* Profile_of_a_Woman.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE671BD1A2DAEE50037865B /* Profile_of_a_Woman.png */; };
@@ -1017,6 +1023,12 @@
 		4EE157D91A6B06F000178F9F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BMEMainLocalizationTable.strings; sourceTree = "<group>"; };
 		4EE157DA1A6B06F000178F9F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BMEPrivacyPolicyLocalizationTable.strings; sourceTree = "<group>"; };
 		4EE157DB1A6B06F100178F9F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BMERegisteredLocalizationTable.strings; sourceTree = "<group>"; };
+		4EE157E11A6B396800178F9F /* cut_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cut_1.wav; sourceTree = "<group>"; };
+		4EE157E21A6B396800178F9F /* cut_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cut_2.wav; sourceTree = "<group>"; };
+		4EE157E31A6B396800178F9F /* cut_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cut_3.wav; sourceTree = "<group>"; };
+		4EE157E41A6B396800178F9F /* cut_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cut_4.wav; sourceTree = "<group>"; };
+		4EE157E51A6B396800178F9F /* cut_9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cut_9.wav; sourceTree = "<group>"; };
+		4EE157E61A6B396800178F9F /* cut_10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cut_10.wav; sourceTree = "<group>"; };
 		4EE671BD1A2DAEE50037865B /* Profile_of_a_Woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile_of_a_Woman.png; sourceTree = "<group>"; };
 		4EE671BF1A2DB3240037865B /* ProfileSarah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileSarah.png; sourceTree = "<group>"; };
 		4EE671C31A2DF9C10037865B /* BlindMainViewController_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindMainViewController_Tests.swift; sourceTree = "<group>"; };
@@ -1327,6 +1339,12 @@
 				4E10F2FE19F7F176004EA22E /* intro.mp4 */,
 				725B0EFC19598B3C00BB4AE0 /* call-repeat.aiff */,
 				725B0EF71959875500BB4AE0 /* call.aiff */,
+				4EE157E11A6B396800178F9F /* cut_1.wav */,
+				4EE157E21A6B396800178F9F /* cut_2.wav */,
+				4EE157E31A6B396800178F9F /* cut_3.wav */,
+				4EE157E41A6B396800178F9F /* cut_4.wav */,
+				4EE157E51A6B396800178F9F /* cut_9.wav */,
+				4EE157E61A6B396800178F9F /* cut_10.wav */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1835,20 +1853,26 @@
 				72414AFD196AB16A00A2C5F4 /* BMEMainLocalizationTable.strings in Resources */,
 				4E6544821A010BEC00B71C1C /* BMEInterfaceLocalizationTable.strings in Resources */,
 				72856DEC19AF66A20027AFF5 /* BMEBlindIntroLocalizationTable.strings in Resources */,
+				4EE157E91A6B396800178F9F /* cut_3.wav in Resources */,
 				72E65F9E18BA7A35002FB2E0 /* BMESignUpLocalizationTable.strings in Resources */,
 				7236E01618B8A87B00F622AA /* Images.xcassets in Resources */,
 				7236E00818B8A87B00F622AA /* InfoPlist.strings in Resources */,
 				72856DEF19AF71CB0027AFF5 /* BMESecretSettingsLocalizationTable.strings in Resources */,
+				4EE157E81A6B396800178F9F /* cut_2.wav in Resources */,
+				4EE157EC1A6B396800178F9F /* cut_10.wav in Resources */,
+				4EE157EA1A6B396800178F9F /* cut_4.wav in Resources */,
 				727E13EC194B3189002EDA7E /* BMEForgotPasswordLocalizationTable.strings in Resources */,
 				72856DE019AF608B0027AFF5 /* BMEFrontPageLocalizationTable.strings in Resources */,
 				4EDCE93F1A01E069006C7A4A /* LaunchScreen.storyboard in Resources */,
 				72856DF219AF75420027AFF5 /* BMETermsLocalizationTable.strings in Resources */,
+				4EE157E71A6B396800178F9F /* cut_1.wav in Resources */,
 				725B0EF81959875500BB4AE0 /* call.aiff in Resources */,
 				72856DE919AF66920027AFF5 /* BMEHelperIntroLocalizationTable.strings in Resources */,
 				72DEF73418B90A6D0048FA90 /* README.md in Resources */,
 				720D4D13194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings in Resources */,
 				72B1493A18DF686600E9A8A9 /* BMECallLocalizationTable.strings in Resources */,
 				72DEF73018B90A6D0048FA90 /* LICENSE in Resources */,
+				4EE157EB1A6B396800178F9F /* cut_9.wav in Resources */,
 				72414AFA196AAD5C00A2C5F4 /* BMELanguagesLocalizationTable.strings in Resources */,
 				729656A818CC9D5F00E1A9EE /* BMESettingsLocalizationTable.strings in Resources */,
 				725B0EFD19598B3C00BB4AE0 /* call-repeat.aiff in Resources */,
