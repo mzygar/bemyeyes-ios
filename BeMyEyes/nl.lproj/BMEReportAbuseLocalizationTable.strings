@@ -11,7 +11,7 @@
 "BME_REPORT_ABUSE_SKIP" = "Overslaan";
 
 /* Text 1 for reporting abuse as a blind person. */
-"BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND" = "De persoon heeft niet willen helpen.";
+"BME_REPORT_ABUSE_REPORT_TEXT_1_BLIND" = "De persoon wilde niet helpen.";
 
 /* Text 1 for reporting abuse as a helper. */
 "BME_REPORT_ABUSE_REPORT_TEXT_1_HELPER" = "De persoon was niet blind.";
@@ -38,16 +38,16 @@
 "BME_REPORT_ABUSE_ALERT_REPORTING_FAILED_TITLE" = "Kon geen misbruik melden";
 
 /* Title in overlay displayed when reporting abuse */
-"BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE" = "Rapporteren...";
+"BME_REPORT_ABUSE_OVERLAY_REPORTING_TITLE" = "Melden...";
 
 /* Title of cancel button in alert view shown when asking the user to confirm that he wants to report abuse */
-"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL" = "Geannuleerd";
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CANCEL" = "Annuleer";
 
 /* Title of confirm in alert view shown when asking the user to confirm that he wants to report abuse */
 "BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_CONFIRM" = "Bevestigen";
 
 /* Message in alert view shown when asking the user to confirm that he wants to report abuse */
-"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE" = "Elk misbruik wordt ernstig genomen en nagezien. Weet u zeker dat u de ander partij voor misbruik wilt rapporteren?";
+"BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_MESSAGE" = "Elk misbruik wordt ernstig genomen en gecontroleerd. Weet u zeker dat u de ander partij voor misbruik wilt rapporteren?";
 
 /* Title in alert view shown when asking the user to confirm that he wants to report abuse */
 "BME_REPORT_ABUSE_ALERT_CONFIRM_REPORT_ABUSE_TITLE" = "Rapporteer misbruik";
@@ -56,7 +56,7 @@
 "BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1_SELECTED" = "De persoon wilde niet helpen (geselecteerd)";
 
 /* Accesibility label for reason 1 when the reason is not selected */
-"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1" = "De persoon heeft niet willen helpen.";
+"BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_1" = "De persoon wilde niet helpen.";
 
 /* Accesibility label for reason 2 when the reason is selected */
 "BME_REPORT_ABUSE_ACCESSIBILITY_LABEL_2_SELECTED" = "De helper heeft ongepast gehandeld (geselecteerd)";

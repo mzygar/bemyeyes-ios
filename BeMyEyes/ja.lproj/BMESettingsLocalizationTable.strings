@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "設定";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "名前";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "苗字";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "電子メール";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "言語";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "言語を追加する";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "アプリについてフィードバック";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "ログアウト";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "OK";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "ログアウトできませんでした。 お使いのコンピュータがインターネットに接続されていることを確認し、もう一度試してください。";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "ログアウトできませんでした";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "ログアウトしています...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "%@バージョン";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "もどる";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%dポイント";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "完了";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "#BeMyEyesアプリで視覚障害者の”目”になってください - 視覚障害者と晴眼者のヘルパーをつなぐアプリ！";
+

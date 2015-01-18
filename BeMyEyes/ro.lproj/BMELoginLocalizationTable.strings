@@ -29,7 +29,7 @@
 "BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL" = "OK";
 
 /* Message in alert view shown when logging into Facebook but it failed because authentication failed */
-"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE" = "Nu a-ți fost logat. Vă rugăm să încercaţi din nou.";
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE" = "Nu ați fost logat. Vă rugăm să încercaţi din nou.";
 
 /* Title in alert view shown when log in to Facebook failed */
 "BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE" = "Nu ești autentificat(ă)";
@@ -59,7 +59,7 @@
 "BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "Adresa de e-mail și parola nu se potrivesc";
 
 /* Title in alert view shown when credentials are incorrect. */
-"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Date de logat incorecte ";
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Date de logare incorecte ";
 
 /* Title of cancel button in alert view shown when a network error occurred during e-mail log in. */
 "BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL" = "OK";

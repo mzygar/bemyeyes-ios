@@ -1,0 +1,47 @@
+/* BMESnoozeRelativeDate.strings
+  BeMyEyes
+  Created by Simon Støvring on 19/04/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAY" = "dan";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAYS" = "%. dana";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOUR" = "sat";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOURS" = "%. sati";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "minuta";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%. minuta";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTH" = "mjesec";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%. mjeseci";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECOND" = "sekunda";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%. sekundi";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEK" = "tjedan";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%. tjedana";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEAR" = "godina";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEARS" = "%. godina";
+

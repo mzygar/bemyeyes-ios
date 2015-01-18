@@ -5,28 +5,28 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* Introductory message for access for notifications, microphone and camera */
-"BME_ACCESS_INTRO_MESSAGE" = "Prosím povolte následující na plne připojení k síti Be My Eyes";
+"BME_ACCESS_INTRO_MESSAGE" = "Prosím povolte následující pro plné připojení k síti Be My Eyes";
 
 /* Title for notifications */
 "BME_ACCESS_NOTIFICATIONS_TITLE" = "Oznámení";
 
 /* Explanation for why the helper needs to enable notifications */
-"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Když nevidomý člověk potřebuje vaši pomoc, upozornime vás na příchozí volání.";
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Když nevidomý člověk potřebuje vaši pomoc, upozorníme vás na příchozí volání.";
 
 /* Title for microphone */
 "BME_ACCESS_MICROPHONE_TITLE" = "Mikrofon";
 
 /* Explanation for why the helper needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Aby ste mohli hovořit a provádet nevidomou osobu";
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Abyste mohli hovořit a provádět nevidomou osobu";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Aby ste byl schopen vysvětlit váš problém pomocníkovi.";
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Abyste byl schopen vysvětlit váš problém pomocníkovi.";
 
 /* Title for camera */
 "BME_ACCESS_CAMERA_TITLE" = "Kamera";
 
 /* Explanation for why the helper needs to enable camera access */
-"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "My neposílame vaše video osobě, které pomáháte, ale video je potřebné k navázání připojení.";
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "My neposíláme vaše video osobě, které pomáháte, ale potřebujeme přístup ke kameře pro navázání připojení.";
 
 /* Explanation for why the blind person needs to enable microphone access */
 "BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Abyste byl schopen ukázat pomocníkovi s čím budete potřebovat pomoc.";

@@ -14,10 +14,10 @@
 "BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_TOP" = "Door verder te gaan aanvaard u de";
 
 /* Bottom part of button for viewing terms and conditions */
-"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Voorwaarden en overeenkomsten";
+"BME_SIGN_UP_METHOD_TERMS_AND_AGREEMENTS_BOTTOM" = "Voorwaarden en Overeenkomsten";
 
 /* Top part of button for viewing privacy policy */
-"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "evenals de";
+"BME_SIGN_UP_METHOD_PRIVACY_POLICY_TOP" = "evenals het";
 
 /* Bottom part of button for viewing privacy policy */
 "BME_SIGN_UP_METHOD_PRIVACY_POLICY_BOTTOM" = "Privacy Beleid";
@@ -44,7 +44,7 @@
 "BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_CANCEL" = "Ok";
 
 /* Message in alert view shown when logging into Facebook but it failed because authentication failed */
-"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Kan niet worden geverifieerd met Facebook.";
+"BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_MESSAGE" = "Kan niet verifiëren met Facebook.";
 
 /* Title in alert view shown when log in to Facebook failed */
 "BME_SIGN_UP_METHOD_ALERT_NOT_LOGGED_IN_TITLE" = "Authenticatie mislukt";
@@ -59,7 +59,7 @@
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "Ok";
 
 /* Message in alert view shown when no Facebook account was found. */
-"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in systeem instellingen.";
+"BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Er is geen Facebook account gevonden op het apparaat. Voeg een account toe in de systeem instellingen.";
 
 /* Title in alert view shown when no Facebook account was found. */
 "BME_SIGN_UP_METHOD_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Geen account gevonden";
@@ -71,7 +71,7 @@
 "BME_SIGN_UP_METHOD_PRIVACY_ACCESSIBILITY_LABEL" = " ";
 
 /* Accessibility hint for terms and agreements button */
-"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT" = "Voorwaarden en overeenkomsten";
+"BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_HINT" = "Voorwaarden en Overeenkomsten";
 
 /* Accessibility label for terms and agreements button */
 "BME_SIGN_UP_METHOD_TERMS_ACCESSIBILITY_LABEL" = " ";

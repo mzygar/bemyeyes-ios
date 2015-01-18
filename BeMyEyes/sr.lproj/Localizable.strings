@@ -1,0 +1,12 @@
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE" = "%@ треба вашу помоћ! Пређите прстом или додирните да одговорите.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE" = "%@ је отказао свој захтев.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE" = "Захтев корисника %@ је одговорен.";
+
+/* Title of button in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION" = "Одговори";
+

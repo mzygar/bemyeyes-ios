@@ -1,0 +1,9 @@
+/* Headline */
+"BME_REGISTERED_HEADLINE" = "Oui !";
+
+/* Description */
+"BME_REGISTERED_DESCRIPTION" = "Vous êtes maintenant enregistré.";
+
+/* Title of log in button */
+"BME_REGISTERED_LOG_IN" = "Connexion";
+

@@ -1,0 +1,33 @@
+/* 
+  BMEAccessLocalization.strings
+  BeMyEyes
+  Created by Tobias DM on 17/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Introductory message for access for notifications, microphone and camera */
+"BME_ACCESS_INTRO_MESSAGE" = "Be My Eyesに加入するため下記の機能を有効にしてください";
+
+/* Title for notifications */
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "通知";
+
+/* Explanation for why the helper needs to enable notifications */
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "視覚障害者が助けを必要としている時、着信のお知らせをいたします。";
+
+/* Title for microphone */
+"BME_ACCESS_MICROPHONE_TITLE" = "マイク";
+
+/* Explanation for why the helper needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "視覚障害者を音声でサポートするため";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "支援者にあなたの問題を伝えるため";
+
+/* Title for camera */
+"BME_ACCESS_CAMERA_TITLE" = "カメラ";
+
+/* Explanation for why the helper needs to enable camera access */
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "あなたの動画を相手に送ることはありませんが、接続に必要となります。";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "何に助けが必要かヘルパーに表示できるようにするには。";
+

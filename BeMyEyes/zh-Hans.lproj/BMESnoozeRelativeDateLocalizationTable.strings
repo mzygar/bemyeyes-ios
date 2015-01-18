@@ -1,0 +1,47 @@
+/* BMESnoozeRelativeDate.strings
+  BeMyEyes
+  Created by Simon Støvring on 19/04/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAY" = "日";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAYS" = "%.0f 日";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOUR" = "小時";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOURS" = "%.0f 小時";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "分鐘";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%.0f 分鐘";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTH" = "月";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%.0f 月";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECOND" = "秒";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f 秒";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEK" = "星期";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%.0f 星期";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEAR" = "年";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEARS" = "%.0f 年";
+

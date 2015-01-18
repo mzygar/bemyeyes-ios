@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Vissza";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Tovább";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Könnyű segíteni!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Segítsen bármikor, bárhonnan.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Amikor be van lépve hívásokat fogadhat olyan emberektől akiknek segítségre van szüksége.";
+

@@ -30,7 +30,7 @@ struct Device {
 struct Language {
     
     static func allLanguages() -> [String] {
-        return ["en", "da", "cs", "nl", "fi", "it", "nb", "ro", "sk", "sv"]
+        return ["en", "da", "cs", "nl", "fi", "it", "nb", "ro", "sk", "sv", "ar", "cs", "de", "el", "es", "hi", "hr", "hu", "ja", "ja", "ko", "pl", "pt", "pt-BR", "tr", "uk", "ur", "vi", "ru"]
     }
 }
 

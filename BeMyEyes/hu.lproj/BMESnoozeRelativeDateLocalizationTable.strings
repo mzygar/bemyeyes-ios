@@ -1,0 +1,47 @@
+/* BMESnoozeRelativeDate.strings
+  BeMyEyes
+  Created by Simon Støvring on 19/04/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAY" = "nap";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_DAYS" = "%.0f nap";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOUR" = "óra";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_HOURS" = "%.0f óra";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTE" = "perc";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MINUTES" = "%.0f perc";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTH" = "hónap";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_MONTHS" = "%.0f hónap";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECOND" = "másodperc";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_SECONDS" = "%.0f másodperc";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEK" = "hét";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_WEEKS" = "%.0f hét";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEAR" = "év";
+
+/* No comment provided by engineer. */
+"BME_SNOOZE_RELATIVE_DATE_YEARS" = "%.0f év";
+

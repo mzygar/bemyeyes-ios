@@ -32,7 +32,7 @@
 "BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "Asetukset";
 
 /* Title of notifications error title in alert view */
-"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Huomautukset";
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "Ilmoitukset";
 
 /* Title of cancel button in alert view */
 "BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "Jotain meni pieleen ja voi olla, että et saa enää ilmoituksia";

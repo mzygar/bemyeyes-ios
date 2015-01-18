@@ -1,0 +1,51 @@
+/* 
+  BMEMainViewController.strings
+  BeMyEyes
+  Created by Simon Støvring on 07/07/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Title of cancel button in alert view shown when asking the blind if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "جی نہین";
+
+/* Title of confirm button in alert view shown when asking the blind if he knows more BME_MAIN_langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CONFIRM" = "جی ہاں میں قبول کرتا ہوں";
+
+/* Message in alert view shown when asking the blind if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_MESSAGE" = "اگر آپ مزید زبانیں جانتے ہیں تو آپ ان کا انتخاب کرسکتے ہیں اور آپ کے لیے ویسا ہی مددگار دیا جائے گا، جو اُپ کی زبانیں بولتا ہو تاکہ آپ کو تیزی سے مدد مل سکے۔";
+
+/* Title in alert view shown when asking the blind if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_TITLE" = "کیا اٌپ زیادہ زبانیں جانتے ہیں؟";
+
+/* Title of cancel button in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CANCEL" = "جی نہین";
+
+/* Title of confirm button in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_CONFIRM" = "جی ہاں میں قبول کرتا ہوں";
+
+/* Message in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_MESSAGE" = "اگر آپ مزید زبانیں جانتے ہیں تو آپ ان کا انتخاب کرسکتے ہیں اور آپ کو ایسے نابینا افراد کی کال دی جائے گی جنہیں آپ کی زبان میں مدد کی ضرورت ہو۔";
+
+/* Title in alert view shown when asking the helper if he knows more langauges */
+"BME_MAIN_ALERT_MORE_LANGAUGES_HELPER_TITLE" = "کیا اٌپ زیادہ زبانیں جانتے ہیں؟";
+
+/* Settings button accessibility label */
+"BME_MAIN_SETTINGS_BUTTON_ACCESSIBILITY_LABEL" = "سیٹنگز";
+
+/* Title of notifications error title in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_TITLE" = "نوٹیفکیشنز";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_NOTIFICATIONS_ERROR_MESSAGE" = "کچھ غلط واقع ہوگیا ہے اور ہوسکتا ہے کہ آپ کو نوٹیفکیشن موصول نہ ہو";
+
+/* Title of cancel button in alert view */
+"BME_MAIN_ALERT_CANCEL" = "ٹھیک ہے";
+
+/* Title of alert view when user is forced to logout */
+"BME_MAIN_ALERT_FORCED_LOGOUT_TITLE" = "لاگ ان کرنے میں غلطی";
+
+/* Message in alert view when user is forced to logout */
+"BME_MAIN_ALERT_FORCED_LOGOUT_MESSAGE" = "ایک تکنیکی غلطی کے سبب آپ کو لاگ آؤٹ کردیا جائے گا۔";
+
+/* Ok button in alert view when user is forced to logout */
+"BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM" = "لاگ ان کریں";
+

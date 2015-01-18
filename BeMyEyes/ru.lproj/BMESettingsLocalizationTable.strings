@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Настройки";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Имя";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Фамилия";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "Адрес электронной почты";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Язык";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Добавить язык";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Отзыв о приложении";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Bыход";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "ОК";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Выход не удался. Пожалуйста, убедитесь, что у вас есть доступ в Интернет, и повторите попытку.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Выйти не удалось";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Выход...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Версия: %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Назад";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d баллов";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Завершено";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Помогите незрячему используя приложение #BeMyEyes, которое соединяет слепых людей со зрячими добровольными помощниками!";
+

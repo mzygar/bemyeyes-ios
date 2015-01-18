@@ -5,5 +5,5 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* Control is selected */
-"BME_INTERFACE_CONTROL_STATE_SELECTED" = "utvald";
+"BME_INTERFACE_CONTROL_STATE_SELECTED" = "Vald";
 

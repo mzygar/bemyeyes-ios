@@ -5,29 +5,29 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* Introductory message for access for notifications, microphone and camera */
-"BME_ACCESS_INTRO_MESSAGE" = "Snälla förstå följande till fullo för att bli medlem till att vara mina ögon gruppnätverk";
+"BME_ACCESS_INTRO_MESSAGE" = "Tillåt följande för att  vara med helt i Be My Eyes-nätverket";
 
 /* Title for notifications */
-"BME_ACCESS_NOTIFICATIONS_TITLE" = "Meddelanden.";
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "Notiser";
 
 /* Explanation for why the helper needs to enable notifications */
-"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "När en blind person behöver din hjälp så uppmärksammar vi dig om det inkommande samtalet.";
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "När en blind person behöver din hjälp meddelar vi dig om det inkommande samtalet.";
 
 /* Title for microphone */
-"BME_ACCESS_MICROPHONE_TITLE" = "Mikrofon\n";
+"BME_ACCESS_MICROPHONE_TITLE" = "Mikrofon";
 
 /* Explanation for why the helper needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "För att vara tillgänglig till att samtala och leda den blinda personen";
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "För att kunna vägleda och prata med den blinda personen";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Att vara tillgänglig till att förklara dina bekymmer, eller problem för hjälparen.";
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "För att kunna förklara ditt problem för hjälparen.";
 
 /* Title for camera */
 "BME_ACCESS_CAMERA_TITLE" = "Kamera";
 
 /* Explanation for why the helper needs to enable camera access */
-"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Vi skickar inte videon till personen du hjälper.  Men den är behövlig för att upprätthålla anslutningen.";
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Vi skickar inte bilder till personen du hjälper, men det är nödvändig för att anslutningen ska fungera.";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Du ska finnas tillhands och visa hjälpare vad det är du behöver hjälp med. Särskilt behov.";
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "För att kunna visa hjälparen vad behöver du hjälp med.";
 

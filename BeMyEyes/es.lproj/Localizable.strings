@@ -1,0 +1,12 @@
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE" = "¡%@ necesita tu ayuda! Desliza o toca para responder.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_CANCELLED_REQUEST_MESSAGE" = "%@ ha cancelado la petición.";
+
+/* Message in push notification when a request has been received */
+"PUSH_NOTIFICATION_REQUEST_WAS_ANSWERED_MESSAGE" = "La petición de %@ ha sido contestada.";
+
+/* Title of button in push notification when a request has been received */
+"PUSH_NOTIFICATION_ANSWER_REQUEST_ACTION" = "Responder";
+

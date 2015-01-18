@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Powrót";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Dalej";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Aplikacja pozwoli Ci połączyć się w czasie rzeczywistym z osobą widzącą, która zdalnie pomoże Ci w sytuacjach wymagających asysty. Używając połączenia video pomagająca Ci osoba będzie w stanie powiedzieć Ci co widzi, gdy skierujesz kamerę w telefonie na jakiś obiekt.\n\nOsoby udzielające pomocy w społeczności Be My Eyes są wolontariuszami i nie możemy odpowiadać za jakość ich pomocy i porad, ani też brać za nie odpowiedzialności. Mimo tego zachęcamy Cię do cierpliwości gdy prosisz o pomoc, ponieważ opieramy nasz projekt na ludziach.\n\nUżywając tej usługi nie powinieneś w żadnym wypadku udostępniać treści niedozwolonych, zawierających nagość, agresję bądź sugestie erotyczne. Nigdy nie udostępniaj ważnych danych takich jak informacje o karcie kredytowej, paszporcie, czy innych danych osobowych.";
+

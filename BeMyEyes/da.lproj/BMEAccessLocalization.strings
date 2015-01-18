@@ -1,11 +1,9 @@
 /* 
   BMEAccessLocalization.strings
   BeMyEyes
-
   Created by Tobias DM on 17/10/14.
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
-
 /* Introductory message for access for notifications, microphone and camera */
 "BME_ACCESS_INTRO_MESSAGE" = "Slå venligst følgende til for at blive en del af Be My Eyes netværket";
 

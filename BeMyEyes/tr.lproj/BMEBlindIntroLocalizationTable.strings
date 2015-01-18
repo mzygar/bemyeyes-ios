@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Geri";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Devam";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "Bu uygulama sizi, etrafı görmenizi gerektiren eylemleri gerçekleştirmenize uzaktan yardımda bulunacak bir kişiye bağlayacak - canlı bir video bağlantısı yoluyla yardımcınız, telefonunuzu bir şeye doğru tuttuğunuz zaman gördüğü şeyi size söyleyecek.\n\nBe My Eyes ağındaki insanlar gönüllülerdir ve yardımlarının kalitesini garanti edemez veya eylemlerinden dolayı sorumluluk kabul edemeyiz. Ayrıca, size yardım edilmesi için gerçek insanlara ihtiyaç duyulduğundan, yardım istediğiniz zaman lütfen sabırlı olunuz.\n\nBu servisi kullanarak, hiçbir halükarda çıplaklık içeren, yasadışı, kötü niyetli veya tahrik edici içerik paylaşamazsınız ve kredi kartı, pasaport veya diğer kişisel bilgilerinizi asla göstermemelisiniz.";
+

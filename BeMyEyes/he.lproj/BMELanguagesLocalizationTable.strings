@@ -1,0 +1,12 @@
+/* Title */
+"BME_LANGUAGES_TITLE" = "השפות שלכם";
+
+/* Title of cancel button in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "אישור";
+
+/* MEssage in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "לא הצלחנו לשמור את השפות. נסו שוב מאוחר יותר. ";
+
+/* Title in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = "השמירה לא הצליחה";
+

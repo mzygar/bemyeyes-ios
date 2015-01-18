@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Назад";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Продолжить";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Помогать легко!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Помогайте где вам удобно и когда вам удобно.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Ваш телефон доступен для звонков от людей, которым нужна помощь, после входа в систему.";
+

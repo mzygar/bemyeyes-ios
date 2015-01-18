@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "Поставке";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "Име";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "Презиме";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "Е-пошта";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "Језици";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "Додајте језике";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "Пошаљите своје утиске о апликацији";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "Одјављивање";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "У реду";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "Нисте били одјављени. Проверите да ли је ваша веза са интернетом активна, па покушајте поново.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "Одјављивање није било могуће";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "Одјављивање...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "Верзија %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "Назад";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d бодова";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "Завршено";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "Помозите слепом лицу да види уз помоћ апликације #BeMyEyes – апликације која повезује слепа лица са помагачима који виде нормано!";
+

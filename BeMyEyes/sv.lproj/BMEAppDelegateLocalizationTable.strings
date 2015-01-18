@@ -4,19 +4,19 @@
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
 /* MEssage in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Tryckmeddelanden är en central del i till att vara mina ögon applikation och du måste ha de aktiverade för att registrera dig";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_MESSAGE" = "Notiser är en central del i Be My Eyes-appen, du måste ha dem aktiverade för att registrera dig.";
 
 /* Title in alert view shown if push notifications are not enabled */
-"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Tryckmeddelanden inte aktiverade.";
+"BME_APP_DELEGATE_ALERT_PUSH_NOT_ENABLED_TITLE" = "Notiser inte aktiverade";
 
 /* Default name used in alert view shown when a call is received while the app was active. The name is only used if no name is provided in localizable arguments. */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Någon därtill. / Vem som helst";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME" = "Okänd";
 
 /* Title in alert view shown when a call is received while the app was active */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Din hjälp krävs! ";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE" = "Din hjälp behövs!";
 
 /* Title of cancel button in alert view shown when a call is received while the app was active */
-"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Avslås.";
+"BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL" = "Avbryt";
 
 /* Message in alert view shown when the microphone is disabled */
 "BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_MESSAGE" = "Du måste ge applikationen tillåtelse att använda mikrofonen i systeminställningar.";
@@ -25,37 +25,37 @@
 "BME_APP_DELEGATE_ALERT_MICROPHONE_DISABLED_TITLE" = "Mikrofonen inte aktiverad";
 
 /* Message in alert view shown when the camera is disabled */
-"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "Du måste ge applikationen tillåtelse att använda din kamera i systeminställningar\n";
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_MESSAGE" = "Du måste ge applikationen tillåtelse att använda kameran i systeminställningar.";
 
 /* Title in alert view shown when the camera is disabled */
-"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "Kamera inte aktiverad";
+"BME_APP_DELEGATE_ALERT_CAMERA_DISABLED_TITLE" = "Kameran inte aktiverad";
 
 /* Title of dismiss button in alert view shown when access is disabled */
 "BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL" = "Okej";
 
 /* Title of dismiss button in alert view shown when the access is disabled, but app supports going to settings */
-"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Avslås.";
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_CANCEL_CAN_GO_TO_SETTINGS" = "Avbryt";
 
 /* Title of ok button in alert view shown when the access is disabled, and app supports going to settings */
-"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Öppna inställningarna.";
+"BME_APP_DELEGATE_ALERT_ACCESS_DISABLED_GO_TO_SETTINGS" = "Öppna inställningar";
 
 /* Title of cancel button in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
 "BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_CANCEL" = "Okej";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "Den väntade begäraran var besvarad eller avslagen från den blinda men tack för du ville hjälpa till!";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_MESSAGE" = "Förfrågan har redan besvarats eller avbröts av avsändaren, men tack för att du ville hjälpa till!";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request has been answered or cancelled */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Begäran redan besvarad eller avslagen.";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_HANDLED_TITLE" = "Förfrågan redan besvarad eller avbruten";
 
 /* Title of cancel button in alert view shown when the app icon shows a badge but the pending rcould not be loaded */
 "BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_CANCEL" = "Okej";
 
 /* Message in alert view shown when the app icon shows a badge but the pending request could not be loaded */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE" = "Den väntande begäran kunde inte laddas.Men oroa dig inte, någon annan kommer att svara på denna begäran.";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_MESSAGE" = "Förfrågan kunde inte laddas. Oroa dig inte, någon annan kommer att svara på den.";
 
 /* Title in alert view shown when the app icon shows a badge but the pending request could not be loaded */
-"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Begäran inte uppladdad eller laddad. ";
+"BME_APP_DELEGATE_ALERT_PENDING_REQUEST_NOT_LOADED_TITLE" = "Förfrågan inte laddad";
 
 /* Title in overlay displayed while loading pending request */
 "BME_APP_DELEGATE_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Laddar...";
@@ -64,5 +64,5 @@
 "BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_TITLE" = "Kunde inte registrera";
 
 /* Message in alert shown when the device could not register for remote notifications */
-"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Enheten var inte registrerad för att mottaga tryck meddelanden. Detta kan även innebära att applikationen blivit inkorrekt och felaktigt undertecknad.";
+"BME_APP_DELEGATE_ALERT_FAILED_REGISTERING_REMOTE_NOTIFICATIONS_MESSAGE" = "Enheten kunde inte registreras för att ta emot notiser. Detta kan betyda att applikationen är felaktigt signerad.";
 

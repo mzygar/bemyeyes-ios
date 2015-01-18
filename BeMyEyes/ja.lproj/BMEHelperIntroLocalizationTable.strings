@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "もどる";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "続行";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "支援は簡単です！";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "どこにいても、いつでも好きなときに支援できます。";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "お使いの携帯電話は、ログインしているとき、支援を必要とする人々からの呼び出しにオープンの状態です。";
+

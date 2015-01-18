@@ -11,6 +11,7 @@ def import_pods
     pod 'MRProgress', '~> 0.8.0'
     pod 'Masonry', '~> 0.5.3'
     pod 'PSAlertView', '~> 1.1'
+    pod 'PSTAlertController', '~> 1.1'
     pod 'GVUserDefaults', '~> 0.9.4'
     pod 'Appirater', '~> 2.0.2'
     pod 'NewRelicAgent'

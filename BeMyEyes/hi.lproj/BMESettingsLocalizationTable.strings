@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "सेटिंग्स";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "प्रथम नाम";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "उपनाम";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "ई-मेल";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "भाषाएं";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "भाषाएं जोड़ें";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "एप्लिकेशन पर प्रतिक्रिया दें";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "लॉग आउट करें";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "ठीक है";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "आपने लॉग आउट नहीं किया था। कृपया सुनिश्चित करें कि आपके पास एक सक्रिय इंटरनेट कनेक्शन है और फिर से कोशिश करें।";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "लॉग आउट नहीं किया जा सका";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "लॉग आउट हो रहा है...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "संस्करण %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "वापस जाएं";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d अंक";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "पूरा हो गया";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "एक नेत्रहीन व्यक्ति को #BeMyEyes ऐप के साथ देखने में मदद करें - यह एक ऐसा ऐप है जो नेत्रहीन लोगों को देखने में सक्षम सहायकों के साथ कनेक्ट करता है!";
+

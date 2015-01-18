@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "返回";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "繼續";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "此應用程序將讓你聯繫到幫手來遠程協助你需要有視力者幫助才能達成的任務- 通過實時視頻，當你的電話指向物件時，幫手會告訴你他們所看到的。\n\nBe My Eyes的網絡幫手都是志願者，我們不能保證他們幫助的質量或對他們的任何行為負責。此外，因為我們依靠真人來幫助，我們鼓勵你發出請求時請耐心等待。\n\n不允許在任何情況下，通過服務共享任何裸照、非法、仇恨或性暗示內容，你也不應該出示任何敏感信息，如信用卡、護照或其他個人信息。";
+

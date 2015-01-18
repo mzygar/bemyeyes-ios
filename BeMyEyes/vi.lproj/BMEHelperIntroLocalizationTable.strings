@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Quay lại";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Tiếp tục";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Giúp đỡ thật dễ dàng!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Giúp đỡ bất cứ khi nào bạn muốn, bất cứ nơi đâu.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Điện thoại của bạn được mở cho các cuộc gọi từ những người cần giúp đỡ khi bạn đăng nhập.";
+

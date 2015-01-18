@@ -1,0 +1,33 @@
+/* 
+  BMEAccessLocalization.strings
+  BeMyEyes
+  Created by Tobias DM on 17/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Introductory message for access for notifications, microphone and camera */
+"BME_ACCESS_INTRO_MESSAGE" = "Молимо Вас да омогућите следеће да бисте у потпуности уживали у  Be my eyes мрежи";
+
+/* Title for notifications */
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "Обавештења";
+
+/* Explanation for why the helper needs to enable notifications */
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Када слепој особи треба Ваша помоћ, ми Вас обавестимо о долазном позиву.";
+
+/* Title for microphone */
+"BME_ACCESS_MICROPHONE_TITLE" = "Микрофон";
+
+/* Explanation for why the helper needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Имати могућност разговора и вођења слепе особе";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Имати могућност да објасните Ваш проблем особи која Вам помаже.";
+
+/* Title for camera */
+"BME_ACCESS_CAMERA_TITLE" = "Камера";
+
+/* Explanation for why the helper needs to enable camera access */
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "Ваш видео неће бити послат особи којој помажете, али је неопходан како би се успоставила веза.";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Како бисте могли да покажете помоћнику са чиме Вам је потребна помоћ.";
+

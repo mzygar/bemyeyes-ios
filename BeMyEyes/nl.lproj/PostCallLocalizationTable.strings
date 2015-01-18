@@ -8,7 +8,7 @@
 "POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER" = "Bedankt voor het helpen!";
 
 /* Motivational message to blind when call has ended */
-"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "We hopen dat de hulp die u hebt aangevraagd naar wens was!";
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "We hopen dat de hulp heeft ontvangen die u zocht!";
 
 /* Title of dismiss button to helper */
 "POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER" = "Geen probleem";
@@ -17,5 +17,5 @@
 "POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND" = "Klaar";
 
 /* Title of report button */
-"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE" = "Rapporteer";
+"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE" = "Melden";
 

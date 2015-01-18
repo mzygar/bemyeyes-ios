@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "返回";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "继续";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = " 本应用将会把您和一位视力正常的助手相连，他会远程帮助您完成需要有视力的人协助才能完成的工作 - 当您用手机对着某个东西时，助手会通过实况视频连接告诉您他/她所看见的。\n\nBe My Eyes网络里的助手都是志愿者，我们保证他们服务的质量，或者为他们的行为负责。此外，由于我们使用真人来帮助您，我们鼓励您在请求帮助时有点耐心。\n\n任何情况下，您不得通过服务分享任何裸体，非法，仇恨或色情的建议内容，您也绝不要显示任何敏感信息，如信用卡，护照或其他个人信息。";
+

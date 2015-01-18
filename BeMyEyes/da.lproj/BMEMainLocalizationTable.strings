@@ -1,11 +1,9 @@
 /* 
   BMEMainViewController.strings
   BeMyEyes
- 
   Created by Simon Støvring on 07/07/14.
   Copyright (c) 2014 Be My Eyes. All rights reserved.
 */
-
 /* Title of cancel button in alert view shown when asking the blind if he knows more langauges */
 "BME_MAIN_ALERT_MORE_LANGAUGES_BLIND_CANCEL" = "Nej";
 
@@ -50,3 +48,4 @@
 
 /* Ok button in alert view when user is forced to logout */
 "BME_MAIN_ALERT_FORCED_LOGOUT_CONFIRM" = "Log ind";
+

@@ -1,8 +1,8 @@
 /* Title of back button */
-"BME_LOGIN_BACK" = "Tillbaka\n";
+"BME_LOGIN_BACK" = "Tillbaka";
 
 /* Placeholder in e-mail field */
-"BME_LOGIN_EMAIL_PLACEHOLDER" = "Epost";
+"BME_LOGIN_EMAIL_PLACEHOLDER" = "E-post";
 
 /* Placeholder in password field */
 "BME_LOGIN_PASSWORD_PLACEHOLDER" = "Lösenord";
@@ -14,13 +14,13 @@
 "BME_LOGIN_FACEBOOK" = "Logga in med Facebook";
 
 /* Title of forgot password button */
-"BME_LOGIN_FORGOT_PASSWORD" = "Glömt lösenordet";
+"BME_LOGIN_FORGOT_PASSWORD" = "Glömt lösenord";
 
 /* Title of cancel button in alert view shown when a network error occurred during Facebook log in. */
 "BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_CANCEL" = "Okej";
 
 /* Message in alert view shown when a network error occurred during Facebook log in. */
-"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE" = "Vänligen kontrollera att du har en aktiv internet anslutning och försök igen.";
+"BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_MESSAGE" = "Vänligen kontrollera din internetanslutning och försök igen.";
 
 /* Title in alert view shown when a network error occurred during Facebook log in. */
 "BME_LOGIN_ALERT_FACEBOOK_UNKNOWN_ERROR_TITLE" = "Ett fel uppstod";
@@ -29,7 +29,7 @@
 "BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_CANCEL" = "Okej";
 
 /* Message in alert view shown when logging into Facebook but it failed because authentication failed */
-"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE" = "Du var inte inloggad. Försök igen";
+"BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_MESSAGE" = "Inloggningen misslyckades. Försök igen.";
 
 /* Title in alert view shown when log in to Facebook failed */
 "BME_LOGIN_ALERT_FACEBOOK_NOT_LOGGED_IN_TITLE" = "Inte inloggad";
@@ -38,13 +38,13 @@
 "BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_CANCEL" = "Okej";
 
 /* Message in alert view shown when Facebook user not found during log in. */
-"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE" = "Du måste först registrera dig med Facebook konto innan du kan logga in.";
+"BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_MESSAGE" = "Du måste registrera dig med ditt Facebook-konto innan du kan logga in.";
 
 /* Title in alert view shown when Facebook user not found during log in. */
 "BME_LOGIN_ALERT_FACEBOOK_USER_NOT_REGISTERED_TITLE" = "Konto inte registrerat";
 
 /* Message in alert view shown when the e-mail or password is empty */
-"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "Vänligen ange både e-post och lösenord";
+"BME_LOGIN_ALERT_EMPTY_FIELD_MESSAGE" = "Vänligen ange både e-post och lösenord.";
 
 /* Title of cancel button in alert view show when the e-mail or password is empty */
 "BME_LOGIN_ALERT_EMPTY_FIELDS_CANCEL" = "Okej";
@@ -56,16 +56,16 @@
 "BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_CANCEL" = "Okej";
 
 /* Message in alert view shown when credentials are incorrect. */
-"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "Den angivna e-postadressen samt lösenordet stämmer inte.";
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_MESSAGE" = "Den angivna e-postadressen och lösenordet stämmer inte.";
 
 /* Title in alert view shown when credentials are incorrect. */
-"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Inkorrekta referenser";
+"BME_LOGIN_ALERT_INCORRECT_CREDENTIALS_TITLE" = "Felaktiga uppgifter";
 
 /* Title of cancel button in alert view shown when a network error occurred during e-mail log in. */
 "BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_CANCEL" = "Okej";
 
 /* Message in alert view shown when a network error occurred. */
-"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE" = "Vänligen kontrollera att du har en aktiv internet anslutning och försök igen.";
+"BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_MESSAGE" = "Vänligen kontrollera din internetanslutning och försök igen.";
 
 /* Title in alert view shown when a network error occurred during e-mail log in. */
 "BME_LOGIN_ALERT_EMAIL_LOGIN_UNKNOWN_ERROR_TITLE" = "Ett fel uppstod";
@@ -77,20 +77,20 @@
 "BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_CANCEL" = "Okej";
 
 /* Message in alert view shown when no Facebook account was found. */
-"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Inga Facebook konton hittades på enheten. Snälla tillägg ditt konto i systeminställningar ";
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_MESSAGE" = "Inga Facebook-konton hittades på enheten. Lägg till ditt konto under systeminställningar.";
 
 /* Title in alert view shown when no Facebook account was found. */
-"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Inget konto hittades.";
+"BME_LOGIN_ALERT_FACEBOOK_ACCOUNT_NOT_FOUND_TITLE" = "Inget konto hittades";
 
 /* Title of cancel button in alert shown when the user is not registered for remote notifications */
 "BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_CANCEL" = "Okej";
 
 /* Message in alert shown when the user is not registered for remote notifications */
-"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Gick inte och registrera för fjärr meddelanden. Detta är nödvändigt för vara mina ögon applikation. Kontrollera att du har fjärr aviseringar aktiverade och tillgängliga utirån systeminställningar och därefter försök igen.";
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_MESSAGE" = "Kunde inte registrera notiser, vilket krävs för Be My Eyes-applikationen. Kontrollera att du har notiser aktiverade under systeminställningar och försök sedan igen.";
 
 /* Title in alert shown when the user is not registered for remote notifications */
-"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Inloggningen misslyckas";
+"BME_LOGIN_ALERT_NOT_REGISTERED_FOR_REMOTE_NOTIFICATIONS_TITLE" = "Inloggningen misslyckades";
 
 /* Title in overlay displayed while loading pending request */
-"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Begäran laddas...";
+"BME_LOGIN_OVERLAY_LOADING_PENDING_REQUEST_TITLE" = "Förfrågan laddas...";
 

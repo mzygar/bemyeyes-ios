@@ -13,3 +13,4 @@
 #import "MKLocalizationKeys.h"
 #import "BMEClient.h"
 #import "BMEUser.h"
+#import <Appirater/Appirater.h>

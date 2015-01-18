@@ -50,10 +50,10 @@
 "BME_CALL_STATUS_CONNECTING" = "Verbinding maken met de servers...";
 
 /* Status when connection is established */
-"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Wachten op verbinding...";
+"BME_CALL_STATUS_CONNECTION_ESTABLISHED" = "Wachten op de ander...";
 
 /* Status when session failed */
-"BME_CALL_STATUS_SESSION_FAILED" = "verbinding maken is mislukt";
+"BME_CALL_STATUS_SESSION_FAILED" = "Verbinding mislukt";
 
 /* Status when failed publishing */
 "BME_CALL_STATUS_FAILED_PUBLISHING" = "Publiceren van audio en video is mislukt";
@@ -62,7 +62,7 @@
 "BME_CALL_SPEECH_DID_SUBSCRIBE" = "U bent met elkaar verbonden";
 
 /* Status when failed subscribing */
-"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "De verbinding ging fout tijdens het aanmelden";
+"BME_CALL_STATUS_FAILED_SUBSCRIBING" = "Verbinding maken met de ander mislukt";
 
 /* Status when disconnecting */
 "BME_CALL_STATUS_DISCONNECTING" = "Verbreken...";
@@ -71,7 +71,7 @@
 "BME_CALL_ALERT_OTHER_PART_DISCONNECTED_CANCEL" = "Ok";
 
 /* Message in alert shown when other part has disconnected */
-"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "Men heeft verbroken, en de sessie is beëindigd.";
+"BME_CALL_ALERT_OTHER_PART_DISCONNECTED_MESSAGE" = "De ander heeft de verbinding verbroken en de sessie is beëindigd.";
 
 /* Title in alert shown when other part has disconnected */
 "BME_CALL_ALERT_OTHER_PART_DISCONNECTED_TITLE" = "Sessie is beëindigd";

@@ -1,0 +1,15 @@
+/* App name. Please don't translate this. */
+"BME_FRONT_PAGE_APP_NAME" = "Be My Eyes";
+
+/* Asking the user to choose if he is sighted or blind */
+"BME_FRONT_PAGE_ASK_FOR_ROLE" = "Quem é você?";
+
+/* Title for choosing sighted role */
+"BME_FRONT_PAGE_SIGHTED_ROLE" = "Eu sou voluntário";
+
+/* Title for choosing blind role */
+"BME_FRONT_PAGE_BLIND_ROLE" = "Eu sou pessoa com deficiência visual";
+
+/* Log in button, if the user is already registered */
+"BME_FRONT_PAGE_ALREADY_REGISTERED" = "Já registrado? Entre aqui.";
+

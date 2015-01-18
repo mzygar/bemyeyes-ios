@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Geri";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Devam";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "Yardım etmek çok kolay!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Ne zaman isterseniz, nerede olursanız olun yardım edebilirsiniz.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Giriş yaptığınızda, telefonunuz yardıma ihtiyacı olanlar tarafından gelen çağrılara açıktır.";
+

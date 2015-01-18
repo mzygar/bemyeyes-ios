@@ -1,0 +1,12 @@
+/* Title */
+"BME_LANGUAGES_TITLE" = "آپ کی زبانیں";
+
+/* Title of cancel button in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL" = "ٹھیک ہے";
+
+/* MEssage in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE" = "زبانیں محفوظ نہیں کی جاسکیں، براہِ کرم بعد میں دوبارہ کوشش کریں۔";
+
+/* Title in alert view shown when the languages could not be saved */
+"BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE" = " نہ";
+

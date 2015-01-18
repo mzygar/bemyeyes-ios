@@ -1,0 +1,9 @@
+/* Headline */
+"BME_REGISTERED_HEADLINE" = "예!";
+
+/* Description */
+"BME_REGISTERED_DESCRIPTION" = "회원가입이 완료됐습니다.";
+
+/* Title of log in button */
+"BME_REGISTERED_LOG_IN" = "로그인";
+

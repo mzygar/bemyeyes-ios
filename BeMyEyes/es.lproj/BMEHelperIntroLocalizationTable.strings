@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "Atrás";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "Siguiente";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "¡Ayudar es fácil!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "Ayuda cuando quieras, donde quiera que estés.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "Tú teléfono está disponible para recibir llamadas de personas que necesitan ayuda  cuando hayas iniciado sesión.";
+

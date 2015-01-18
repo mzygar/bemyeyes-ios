@@ -1,0 +1,9 @@
+/* Headline */
+"BME_REGISTERED_HEADLINE" = "Igen!";
+
+/* Description */
+"BME_REGISTERED_DESCRIPTION" = "Ön még nem regisztrált.";
+
+/* Title of log in button */
+"BME_REGISTERED_LOG_IN" = "Bejelentkezés";
+

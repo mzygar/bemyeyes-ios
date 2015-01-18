@@ -1,0 +1,9 @@
+/* Title of back button */
+"BME_BLIND_INTRO_BACK" = "Atrás";
+
+/* Title of continue button */
+"BME_BLIND_INTRO_CONTINUE" = "Siguiente";
+
+/* Description */
+"BME_BLIND_INTRO_DESCRIPTION" = "La aplicación te pondrá en contacto directo con un ayudante vidente que remotamente te ayudará con las tareas que requieren la ayuda de una persona vidente - a través de una conexión de vídeo en directo, el ayudante te dirá lo que él o ella ve cuando apuntas tu teléfono a algo.  \n\nLos ayudantes de Be My Eyes son voluntarios, y no podemos garantizar la calidad de su ayuda o asumir la responsabilidad de cualquiera de sus acciones. Además, ya que contamos con gente real para ayudarte, te aconsejamos ser paciente cuando solicites ayuda.  \n\nBajo ninguna circunstancia debes compartir vía este servicio cualquier contenido que contenga desnudez, o sea ilegal, odioso o sexualmente sugestivo, y nunca se debe compartir cualquier información delicada como tarjetas de crédito, pasaportes u otra información personal.";
+

@@ -11,13 +11,13 @@
 "BME_ACCESS_NOTIFICATIONS_TITLE" = "Meldingen";
 
 /* Explanation for why the helper needs to enable notifications */
-"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Wanneer een blinde persoon uw hulp nodig heeft brengen wij u op de hoogte van de binnenkomende oproep.";
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "Wanneer een blind persoon uw hulp nodig heeft, dan brengen wij u op de hoogte van de binnenkomende oproep.";
 
 /* Title for microphone */
 "BME_ACCESS_MICROPHONE_TITLE" = "Microfoon";
 
 /* Explanation for why the helper needs to enable microphone access */
-"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Om te kunnen praten met en het begeleiden van de blinde persoon";
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "Om te kunnen praten met de blinde persoon en deze te begeleiden";
 
 /* Explanation for why the blind person needs to enable microphone access */
 "BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "Om  uw probleem aan de helper te kunnen uitleggen.";
@@ -29,5 +29,5 @@
 "BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "We sturen je video niet naar de persoon die je helpt, maar het is nodig om verbinding te krijgen.";
 
 /* Explanation for why the blind person needs to enable microphone access */
-"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Dit maakt het mogelijk om uw helper te laten zien waar je hulp bij nodig hebt.";
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "Dit maakt het mogelijk om je hulpverlener te laten zien waar je hulp bij nodig hebt.";
 

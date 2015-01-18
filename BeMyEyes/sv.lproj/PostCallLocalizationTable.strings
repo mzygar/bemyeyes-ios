@@ -8,7 +8,7 @@
 "POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_HELPER" = "Tack för hjälpen!";
 
 /* Motivational message to blind when call has ended */
-"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "Vi hoppas att du fått hjälp du begärt!";
+"POST_CALL_VIEW_CONTROLLER_MOTIVATIONAL_MESSAGE_BLIND" = "Vi hoppas att du fått den hjälp du begärt!";
 
 /* Title of dismiss button to helper */
 "POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER" = "Inga problem";

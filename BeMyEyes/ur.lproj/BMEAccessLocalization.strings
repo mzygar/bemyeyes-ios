@@ -1,0 +1,33 @@
+/* 
+  BMEAccessLocalization.strings
+  BeMyEyes
+  Created by Tobias DM on 17/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Introductory message for access for notifications, microphone and camera */
+"BME_ACCESS_INTRO_MESSAGE" = "Be My Eyes نیٹ ورک میں مکمل طور پر شمولیت اختیار کرنے کے لیے براہِ کرم ذیل کو فعال کریں";
+
+/* Title for notifications */
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "نوٹیفکیشنز";
+
+/* Explanation for why the helper needs to enable notifications */
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "جب کسی نابینا فرد کو آپ کی مدد کی ضرورت ہو، تو ہم آپ کو آنے والی کالز کے بارے میں مطلع کرتے ہیں۔";
+
+/* Title for microphone */
+"BME_ACCESS_MICROPHONE_TITLE" = "مائیکروفون";
+
+/* Explanation for why the helper needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "نابینا فرد کے ساتج گفتگو کرنے اور اس کی رہنمائی کرنے کے لیے اہل ہونا";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "مدد کنندہ کو اپنے مسائل کی وضاحت کرنے کا اہل ہونا";
+
+/* Title for camera */
+"BME_ACCESS_CAMERA_TITLE" = "کیمرہ";
+
+/* Explanation for why the helper needs to enable camera access */
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "ہم آپ کی ویڈیو اس فرد کو نہیں ارسال کرتے جس کی مدد آپ کر رہے ہیں۔ لیکن یہ کنیکشن قائم کرنے کے لیے ضروری ہے۔";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "آپ کو کس بارے میں مدد چاہیئے مدد کنندہ کو یہ بنانے کا اہل ہونا";
+

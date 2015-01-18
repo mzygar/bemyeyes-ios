@@ -15,6 +15,7 @@
 @property (assign, nonatomic) CGFloat currentPoint;
 @property (assign, nonatomic) CGFloat step;
 @property (strong, nonatomic) UIColor *defaultTextColor;
+@property (strong, nonatomic) NSNumberFormatter *pointFormatter;
 @end
 
 @implementation BMEPointLabel
@@ -42,6 +43,19 @@
     
     self.displayLink = nil;
     self.defaultTextColor = nil;
+}
+
+#pragma mark - Setters and Getters 
+
+- (NSNumberFormatter *)pointFormatter {
+    if (!_pointFormatter) {
+        _pointFormatter = [NSNumberFormatter new];
+        _pointFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        _pointFormatter.usesSignificantDigits = YES;
+        _pointFormatter.minimumSignificantDigits = 1;
+        _pointFormatter.maximumSignificantDigits = 3;
+    }
+    return _pointFormatter;
 }
 
 #pragma mark -
@@ -89,11 +103,19 @@
 }
 
 - (NSString *)finalText {
-    if (self.point >= 1000) {
-        double kPoint = (double)self.point / 1000.f;
-        return [NSString stringWithFormat:@"%.1fk", kPoint];
+    NSString *postFix = @"";
+    double divider = 1;
+    if (self.point >= 1000000) {
+        postFix = @"M";
+        divider = 1000000;
+    } else if (self.point >= 1000) {
+        postFix = @"k";
+        divider = 1000;
     }
-    return [NSString stringWithFormat:@"%d", self.point];
+    double dPoint = (double)self.point / divider;
+    NSString *numberString = [self.pointFormatter stringFromNumber:@(dPoint)];
+    NSString *formattedString = [NSString stringWithFormat:@"%@%@", numberString, postFix];
+    return formattedString;
 }
 
 - (void)displayPoint {

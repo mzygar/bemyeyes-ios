@@ -1,0 +1,33 @@
+/* 
+  BMEAccessLocalization.strings
+  BeMyEyes
+  Created by Tobias DM on 17/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Introductory message for access for notifications, microphone and camera */
+"BME_ACCESS_INTRO_MESSAGE" = "서비스를 정상적으로 사용하려면 다음 기능을 사용할 수 있게 설정해주세요.";
+
+/* Title for notifications */
+"BME_ACCESS_NOTIFICATIONS_TITLE" = "알림";
+
+/* Explanation for why the helper needs to enable notifications */
+"BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "시각장애인이 여러분의 도움을 필요로 할 때 받은 요청을 알려줍니다.";
+
+/* Title for microphone */
+"BME_ACCESS_MICROPHONE_TITLE" = "마이크";
+
+/* Explanation for why the helper needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_HELPER" = "시각 장애인과 대화하고 안내해주기 위해 필요합니다";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_MICROPHONE_EXPLANATION_BLIND" = "도우미에게 문제를 설명하려면 필요합니다.";
+
+/* Title for camera */
+"BME_ACCESS_CAMERA_TITLE" = "카메라";
+
+/* Explanation for why the helper needs to enable camera access */
+"BME_ACCESS_CAMERA_EXPLANATION_HELPER" = "도움을 받는 사람에게는 동영상을 보내지 않으며, 서로 연결되기 위해 필요한 설정입니다.";
+
+/* Explanation for why the blind person needs to enable microphone access */
+"BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "어떤 도움이 필요한지 도우미에게 보여줄 때 필요합니다.";
+

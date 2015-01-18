@@ -11,5 +11,5 @@
 "BME_FRONT_PAGE_BLIND_ROLE" = "Ik ben blind";
 
 /* Log in button, if the user is already registered */
-"BME_FRONT_PAGE_ALREADY_REGISTERED" = "Al geregistreerd? Dan kan je hier inloggen.";
+"BME_FRONT_PAGE_ALREADY_REGISTERED" = "Al geregistreerd? Log hier in.";
 

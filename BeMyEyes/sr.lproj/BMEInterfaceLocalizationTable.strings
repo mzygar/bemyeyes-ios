@@ -1,0 +1,9 @@
+/* 
+  BMEInterfaceLocalizationTable.strings
+  BeMyEyes
+  Created by Tobias Due Munk on 29/10/14.
+  Copyright (c) 2014 Be My Eyes. All rights reserved.
+*/
+/* Control is selected */
+"BME_INTERFACE_CONTROL_STATE_SELECTED" = "Одабрано";
+

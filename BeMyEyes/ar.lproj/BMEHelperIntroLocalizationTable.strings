@@ -1,0 +1,15 @@
+/* Title of back button */
+"BME_HELPER_INTRO_BACK" = "رجوع";
+
+/* Title of continue button */
+"BME_HELPER_INTRO_CONTINUE" = "استمرار";
+
+/* Headline */
+"BME_HELPER_INTRO_HEADLINE" = "المساعدة سهلة!";
+
+/* Short description */
+"BME_HELPER_INTRO_SHORT_DESCRIPTION" = "ساعِد متى أردت ذلك، وأينما كنت.";
+
+/* Long description */
+"BME_HELPER_INTRO_LONG_DESCRIPTION" = "سيكون هاتفك مفتوحا للمكالمات من أشخاص يحتاجون المساعدة عندما تكون مسجّلا الدخول.";
+

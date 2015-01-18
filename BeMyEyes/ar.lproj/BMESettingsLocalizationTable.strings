@@ -1,0 +1,54 @@
+/* Headline */
+"BME_SETTINGS_HEADLINE" = "الإعدادات";
+
+/* First name title */
+"BME_SETTINGS_FIRST_NAME" = "الاسم الأول";
+
+/* Last name title */
+"BME_SETTINGS_LAST_NAME" = "اسم العائلة";
+
+/* E-mail title */
+"BME_SETTINGS_EMAIL" = "البريد الإلكتروني";
+
+/* Languages */
+"BME_SETTINGS_LANGUAGES" = "اللغات";
+
+/* Select languages title */
+"BME_SETTINGS_ADD_LANGUAGES" = "إضافة لغات";
+
+/* Feedback title */
+"BME_SETTINGS_FEEDBACK" = "اكتب تعليقا عن التطبيق";
+
+/* Log out title */
+"BME_SETTINGS_LOG_OUT" = "تسجيل خروج";
+
+/* Title of cancel button in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_CANCEL" = "موافق";
+
+/* Messaage in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_MESSAGE" = "أنت لست مسجّلا للخروج. يرجى التأكد أنك لديك اتصال بالإنترنت والمحاولة مجددا.";
+
+/* Title in alert view shown when log out failed */
+"BME_SETTINGS_ALERT_LOG_OUT_FAILED_TITLE" = "لا يمكن تسجيل الخروج";
+
+/* Title in overlay shown when logging out */
+"BME_SETTINGS_OVERLAY_LOGGING_OUT_TITLE" = "جاري تسجيل الخروج...";
+
+/* Version title */
+"BME_SETTINGS_VERSION_TITLE" = "النسخة %@";
+
+/* Dismiss settings button accessibility label */
+"BME_SETTINGS_DISMISS_BUTTON_ACCESSIBILITY_LABEL" = "رجوع";
+
+/* Points description task cell */
+"BME_SETTINGS_TASK_POINTS" = "+%d نقاط";
+
+/* Points description task completed */
+"BME_SETTINGS_TASK_COMPLETED" = "✓";
+
+/* Points description task completed accessibility label */
+"BME_SETTINGS_TASK_COMPLETED_ACCESSIBILITY_LABEL" = "مكتمل";
+
+/* Share message for Facebook and Twitter */
+"BME_SETTINGS_TASK_SHARE_MESSAGE" = "ساعِد شخصا أعمى ليرى من خلال تطبيق #BeMyEyes - التطبيق الذي يوصل الأشخاص العمي بالمساعدِين المبصرين!";
+
