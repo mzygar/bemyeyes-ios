@@ -183,8 +183,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 {
     if (scrolled != _scrolled) {
         _scrolled = scrolled;
-        
-        [self setNeedsStatusBarAppearanceUpdate];
+		
+		[UIView animateWithDuration:0.30f animations:^{
+			[self setNeedsStatusBarAppearanceUpdate];
+		}];
     }
 }
 
