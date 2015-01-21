@@ -2853,12 +2853,12 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for the help!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHg-MV-rQf">
-                                <rect key="frame" x="15" y="20" width="290" height="310"/>
+                                <rect key="frame" x="15" y="20" width="290" height="220"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4O-VG-VGH" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4O-VG-VGH" userLabel="OK Button" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="330" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -2873,6 +2873,23 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapOkButton:" destination="wNA-Hw-MhA" eventType="touchUpInside" id="1kB-Pl-ll0"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkT-7E-HT8" userLabel="Share Button" customClass="Button" customModule="BeMyEyes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="240" width="320" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="jX9-Tz-Q2K"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="No problem"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapShareButton:" destination="wNA-Hw-MhA" eventType="touchUpInside" id="2LO-IK-wc5"/>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S80-s9-0Kn">
@@ -2892,7 +2909,6 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.45098039220000002" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="r4O-VG-VGH" firstAttribute="top" secondItem="VHg-MV-rQf" secondAttribute="bottom" id="2h7-cm-3ff"/>
                             <constraint firstItem="hFA-AA-dmC" firstAttribute="leading" secondItem="oqa-Fe-9eT" secondAttribute="leading" id="4IZ-v9-SWb"/>
                             <constraint firstAttribute="trailing" secondItem="hFA-AA-dmC" secondAttribute="trailing" id="7PS-oH-ZfB"/>
                             <constraint firstItem="r4O-VG-VGH" firstAttribute="leading" secondItem="oqa-Fe-9eT" secondAttribute="leading" id="A8z-UL-kt7"/>
@@ -2901,9 +2917,13 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                             <constraint firstItem="VHg-MV-rQf" firstAttribute="top" secondItem="B59-LC-pOu" secondAttribute="bottom" id="KBi-Zg-ucN"/>
                             <constraint firstItem="S80-s9-0Kn" firstAttribute="leading" secondItem="oqa-Fe-9eT" secondAttribute="leading" id="LvE-ml-iYg"/>
                             <constraint firstItem="4Gv-pY-ndV" firstAttribute="top" secondItem="hFA-AA-dmC" secondAttribute="bottom" id="OqU-dZ-0aq"/>
+                            <constraint firstItem="hkT-7E-HT8" firstAttribute="leading" secondItem="oqa-Fe-9eT" secondAttribute="leadingMargin" constant="-16" id="Pe3-LA-bie"/>
                             <constraint firstAttribute="trailing" secondItem="S80-s9-0Kn" secondAttribute="trailing" id="S43-9w-dpF"/>
+                            <constraint firstItem="hkT-7E-HT8" firstAttribute="top" secondItem="VHg-MV-rQf" secondAttribute="bottom" id="gdo-GA-HWe"/>
                             <constraint firstItem="S80-s9-0Kn" firstAttribute="top" secondItem="r4O-VG-VGH" secondAttribute="bottom" constant="15" id="lpj-gx-mUn"/>
                             <constraint firstAttribute="trailing" secondItem="VHg-MV-rQf" secondAttribute="trailing" constant="15" id="ltw-fu-PdC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hkT-7E-HT8" secondAttribute="trailing" constant="-16" id="ntu-L5-Xf9"/>
+                            <constraint firstItem="r4O-VG-VGH" firstAttribute="top" secondItem="hkT-7E-HT8" secondAttribute="bottom" constant="15" id="riK-La-lkF" userLabel="15"/>
                             <constraint firstItem="VHg-MV-rQf" firstAttribute="leading" secondItem="oqa-Fe-9eT" secondAttribute="leading" constant="15" id="tio-h9-lEI"/>
                             <constraint firstItem="4Gv-pY-ndV" firstAttribute="top" secondItem="S80-s9-0Kn" secondAttribute="bottom" id="wV7-RU-aff"/>
                         </constraints>
@@ -2913,6 +2933,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="messageLabel" destination="VHg-MV-rQf" id="ksS-xb-PAE"/>
                         <outlet property="okButton" destination="r4O-VG-VGH" id="Pmw-H8-qHi"/>
                         <outlet property="reportAbuseButton" destination="S80-s9-0Kn" id="sX5-1L-mlo"/>
+                        <outlet property="shareButton" destination="hkT-7E-HT8" id="Plz-4j-lGl"/>
                         <segue destination="sPf-cG-W7c" kind="push" identifier="ReportAbuse" id="zgu-5k-8LY"/>
                     </connections>
                 </viewController>

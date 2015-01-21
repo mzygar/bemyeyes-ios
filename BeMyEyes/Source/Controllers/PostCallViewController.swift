@@ -14,6 +14,7 @@ class PostCallViewController: BMEBaseViewController, MKLocalizable {
     private let reportAbuseSegue = "ReportAbuse"
     var user: BMEUser? = BMEClient.sharedClient().currentUser
     
+	@IBOutlet weak var shareButton: Button!
     @IBOutlet weak var okButton: Button!
     @IBOutlet weak var reportAbuseButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
@@ -36,16 +37,18 @@ class PostCallViewController: BMEBaseViewController, MKLocalizable {
                 }
             }()
             messageLabel.text = MKLocalizedFromTable(messageKey, "PostCallLocalizationTable")
-            
-            let dismissButtonKey: String = {
+			
+			let (okButtonKey, shareButtonKey): (String, String) = {
                 switch role {
                     case .Blind:
-                        return "POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND"
+						return ("POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND", "POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_BLIND")
                     case .Helper:
-                        return "POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER"
+						return ("POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_HELPER", "POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_HELPER")
                 }
             }()
-            okButton.title = MKLocalizedFromTable(dismissButtonKey, "PostCallLocalizationTable")
+			
+            okButton.title = MKLocalizedFromTable(okButtonKey, "PostCallLocalizationTable")
+			shareButton.title = MKLocalizedFromTable(shareButtonKey, "PostCallLocalizationTable")
         }
         
         reportAbuseButton.setTitle(MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE", "PostCallLocalizationTable"), forState: .Normal)
@@ -59,6 +62,37 @@ class PostCallViewController: BMEBaseViewController, MKLocalizable {
         }
     }
     
+	@IBAction func didTapShareButton(sender: AnyObject) {
+		if let role = user?.role {
+			let (fbMessageKey, twitterMessageKey, defaultMessageKey): (String, String, String) = {
+				switch role {
+				case .Blind:
+					return (
+						"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_BLIND",
+						"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_BLIND",
+						"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_BLIND")
+				case .Helper:
+					return (
+						"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_HELPER",
+						"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_HELPER",
+						"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_HELPER")
+				}
+			}()
+			
+			let fbMessage = MKLocalizedFromTable(fbMessageKey, "PostCallLocalizationTable")
+			let twitterMessage = MKLocalizedFromTable(twitterMessageKey, "PostCallLocalizationTable")
+			let defaultMessage = MKLocalizedFromTable(defaultMessageKey, "PostCallLocalizationTable")
+			let messageProvider = SocialTextProvider(facebookText: fbMessage, twitterText: twitterMessage, defaultText: defaultMessage)
+			let url = NSURL(string: "https://itunes.apple.com/app/id" + BMEAppStoreId)!
+			let controller = UIActivityViewController(activityItems: [ messageProvider, url ], applicationActivities: nil)
+			if UIDevice.isiPad() && controller.respondsToSelector(Selector("popoverPresentationController")) {
+				controller.popoverPresentationController?.sourceView = view
+				controller.popoverPresentationController?.sourceRect = shareButton.frame
+			}
+			presentViewController(controller, animated: true, completion: nil)
+		}
+	}
+	
     @IBAction func didTapOkButton(sender: Button) {
         if countElements(BMEAppStoreId) > 0 {
             Appirater.userDidSignificantEvent(true)

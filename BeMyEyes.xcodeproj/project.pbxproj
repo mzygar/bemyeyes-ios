@@ -70,6 +70,8 @@
 		720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */; };
 		720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */; };
 		720D4D13194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */; };
+		72148B051A7022F0001F0F8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72148B041A7022F0001F0F8C /* Extensions.swift */; };
+		72148B071A702762001F0F8C /* SocialTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72148B061A702762001F0F8C /* SocialTextProvider.swift */; };
 		721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C3957193BA03400637F88 /* BMEEmailValidator.m */; };
 		7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
 		7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */; };
@@ -1074,6 +1076,8 @@
 		720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEWebViewViewController.h; sourceTree = "<group>"; };
 		720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEWebViewViewController.m; sourceTree = "<group>"; };
 		720D4D12194A1FAC00060D7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEReportAbuseLocalizationTable.strings; sourceTree = "<group>"; };
+		72148B041A7022F0001F0F8C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		72148B061A702762001F0F8C /* SocialTextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialTextProvider.swift; sourceTree = "<group>"; };
 		721C3956193BA03400637F88 /* BMEEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEEmailValidator.h; sourceTree = "<group>"; };
 		721C3957193BA03400637F88 /* BMEEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEEmailValidator.m; sourceTree = "<group>"; };
 		7236DFFA18B8A87B00F622AA /* BeMyEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMyEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1450,6 +1454,7 @@
 				72856DDD19AF4D490027AFF5 /* MKLocalizationKeys.h */,
 				72858FA918DF81CE0002D6E1 /* BMEGlobal.h */,
 				72DEF72218B908140048FA90 /* BMEGlobal.temp.h */,
+				72148B041A7022F0001F0F8C /* Extensions.swift */,
 				7236E03418B8A9EA00F622AA /* Application */,
 				7236E03718B8A9EA00F622AA /* Categories */,
 				7236E03818B8A9EA00F622AA /* Controllers */,
@@ -1573,6 +1578,7 @@
 				4E6AE89D1A01927F0019247A /* FacebookHelper.swift */,
 				4EB3A9A21A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.h */,
 				4EB3A9A31A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.m */,
+				72148B061A702762001F0F8C /* SocialTextProvider.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -2032,6 +2038,7 @@
 				729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
+				72148B071A702762001F0F8C /* SocialTextProvider.swift in Sources */,
 				4EC696EE1A2625E6007E5680 /* BMEUserTypeConverter.m in Sources */,
 				4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
@@ -2056,6 +2063,7 @@
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */,
 				72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */,
+				72148B051A7022F0001F0F8C /* Extensions.swift in Sources */,
 				4E4FA2761A0A59B5006D154E /* InAppTestBadge.swift in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,
 				4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */,
@@ -3170,7 +3178,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				DISPLAY_NAME = "Be My Alpha";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3183,7 +3191,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2db78d92-b191-4211-aef1-6ad673b98eb4";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -3233,7 +3241,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				DISPLAY_NAME = "Be My Alpha";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3246,7 +3254,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2db78d92-b191-4211-aef1-6ad673b98eb4";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -3296,7 +3304,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				DISPLAY_NAME = "Be My Beta";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3309,7 +3317,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2db78d92-b191-4211-aef1-6ad673b98eb4";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -3357,7 +3365,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				DISPLAY_NAME = "Be My Beta";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3370,7 +3378,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2db78d92-b191-4211-aef1-6ad673b98eb4";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -3626,7 +3634,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				DISPLAY_NAME = "Be My Eyes";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3639,7 +3647,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2db78d92-b191-4211-aef1-6ad673b98eb4";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -3656,7 +3664,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Stovring (Q5UZM7SQS5)";
 				DISPLAY_NAME = "Be My Eyes";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3669,7 +3677,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2db78d92-b191-4211-aef1-6ad673b98eb4";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeMyEyes/Source/BeMyEyes-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
