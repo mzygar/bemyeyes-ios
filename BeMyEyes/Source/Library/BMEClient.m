@@ -196,7 +196,7 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 
     NSDictionary *parameters = @{ @"email" : email,
                                   @"user_id" : @(userId)};
-    
+	
     [self loginWithParameters:parameters success:success failure:failure];
 }
 

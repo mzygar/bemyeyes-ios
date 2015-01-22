@@ -21716,11 +21716,11 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_HELPER 
 
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_BLIND'
 /*!
- * "I just got helped seeing with the Be My Eyes app #BeMyEyes"
+ * "Someone just helped me see with the Be My Eyes app #BeMyEyes"
 
  * All translations:
 
- * @b en@: "I just got helped seeing with the Be My Eyes app #BeMyEyes"
+ * @b en@: "Someone just helped me see with the Be My Eyes app #BeMyEyes"
 
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_BLIND = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_BLIND";
@@ -21738,11 +21738,11 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_HELPER =
 
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_BLIND'
 /*!
- * "I just got helped seeing with the @bemyeyes app #BeMyEyes"
+ * "Someone just helped me see with the @bemyeyes app #BeMyEyes"
 
  * All translations:
 
- * @b en@: "I just got helped seeing with the @bemyeyes app #BeMyEyes"
+ * @b en@: "Someone just helped me see with the @bemyeyes app #BeMyEyes"
 
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_BLIND = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_BLIND";
@@ -21760,11 +21760,11 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_HELPER =
 
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_BLIND'
 /*!
- * "I just got helped seeing with the Be My Eyes app"
+ * "Someone just helped me see with the Be My Eyes app"
 
  * All translations:
 
- * @b en@: "I just got helped seeing with the Be My Eyes app"
+ * @b en@: "Someone just helped me see with the Be My Eyes app"
 
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_BLIND = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_BLIND";
