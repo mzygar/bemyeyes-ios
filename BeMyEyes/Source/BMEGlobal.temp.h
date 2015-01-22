@@ -43,6 +43,7 @@
 #define BMEMainHelperControllerIdentifier @"MainHelper"
 #define BMEMenuControllerIdentifier @"Menu"
 #define BMECallControllerIdentifier @"Call"
+#define BMEDemoCallViewController @"DemoCall"
 #define BMESecretSettingsControllerIdentifier @"SecretSettings"
 
 #define BMEDidLogInNotification @"BMEDidLogInNotification"

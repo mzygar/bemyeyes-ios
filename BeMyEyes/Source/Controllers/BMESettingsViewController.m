@@ -109,7 +109,6 @@ static NSString *const videoSegueIdentifier = @"Video";
     return YES;
 }
 
-
 #pragma mark -
 #pragma mark Private Methods
 
@@ -157,6 +156,11 @@ static NSString *const videoSegueIdentifier = @"Video";
     [mailComposeController setSubject:BMEFeedbackEmailSubject];
     [mailComposeController setMessageBody:initialBody isHTML:NO];
     [self presentViewController:mailComposeController animated:YES completion:nil];
+}
+
+- (IBAction)testCallButtonPressed:(id)sender {
+	DemoCallViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:BMEDemoCallViewController];
+	[self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)validateEmail {
