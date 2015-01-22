@@ -12,6 +12,13 @@ class IntroVideoViewController: VideoViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		if let movieView = moviePlayerController.view {
+			if let doneButton = doneButton {
+				view.insertSubview(movieView, belowSubview: doneButton)
+			}
+		}
+		
         let isIpad = UIDevice.currentDevice().userInterfaceIdiom == .Pad
         moviePlayerController.scalingMode = isIpad ? .AspectFit : .AspectFill
         if let videoPath = NSBundle.mainBundle().pathForResource("intro", ofType: "mp4") {

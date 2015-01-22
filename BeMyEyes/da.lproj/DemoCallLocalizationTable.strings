@@ -6,4 +6,8 @@
   Copyright (c) 2015 Be My Eyes. All rights reserved.
 */
 
+"POST_CALL_VIEW_CONTROLLER_TITLE" = "Test Opkald";
+"POST_CALL_VIEW_CONTROLLER_CANCEL" = "Annuller";
+"POST_CALL_VIEW_CONTROLLER_STEP_1" = "Tryk på hjemmeknappen og vent et sekund indtil du modtager en notifikation.";
+"POST_CALL_VIEW_CONTROLLER_STEP_2" = "Tap på notifikationen.";
 "POST_CALL_VIEW_CONTROLLER_BLIND_NAME" = "Nogen";

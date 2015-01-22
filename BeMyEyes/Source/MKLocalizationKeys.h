@@ -21653,6 +21653,58 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND = @"POST_
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE = @"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE";
 
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_TITLE'
+/*!
+ * "Test Call"
+
+ * All translations:
+
+ * @b da@: "Test Opkald"
+
+ * @b en@: "Test Call"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_TITLE = @"POST_CALL_VIEW_CONTROLLER_TITLE";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_CANCEL'
+/*!
+ * "Cancel"
+
+ * All translations:
+
+ * @b da@: "Annuller"
+
+ * @b en@: "Cancel"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_CANCEL = @"POST_CALL_VIEW_CONTROLLER_CANCEL";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_STEP_1'
+/*!
+ * "Press the home button and wait a second to receive a notification."
+
+ * All translations:
+
+ * @b da@: "Tryk på hjemmeknappen og vent et sekund indtil du modtager en notifikation."
+
+ * @b en@: "Press the home button and wait a second to receive a notification."
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_STEP_1 = @"POST_CALL_VIEW_CONTROLLER_STEP_1";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_STEP_2'
+/*!
+ * "Tap the notification."
+
+ * All translations:
+
+ * @b da@: "Tap på notifikationen."
+
+ * @b en@: "Tap the notification."
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_STEP_2 = @"POST_CALL_VIEW_CONTROLLER_STEP_2";
+
 #warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_BLIND_NAME'
 /*!
  * "Someone"

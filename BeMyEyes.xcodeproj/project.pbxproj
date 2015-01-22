@@ -73,6 +73,7 @@
 		72148B051A7022F0001F0F8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72148B041A7022F0001F0F8C /* Extensions.swift */; };
 		72148B071A702762001F0F8C /* SocialTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72148B061A702762001F0F8C /* SocialTextProvider.swift */; };
 		7216AD9F1A717D50009657F8 /* DemoCallLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7216AD9D1A717D50009657F8 /* DemoCallLocalizationTable.strings */; };
+		72177FE71A718642008E3257 /* DemoCallVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72177FE61A718642008E3257 /* DemoCallVideoViewController.swift */; };
 		721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C3957193BA03400637F88 /* BMEEmailValidator.m */; };
 		7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
 		7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */; };
@@ -1082,6 +1083,7 @@
 		72148B061A702762001F0F8C /* SocialTextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialTextProvider.swift; sourceTree = "<group>"; };
 		7216AD9E1A717D50009657F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DemoCallLocalizationTable.strings; sourceTree = "<group>"; };
 		7216ADA01A717D74009657F8 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/DemoCallLocalizationTable.strings; sourceTree = "<group>"; };
+		72177FE61A718642008E3257 /* DemoCallVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCallVideoViewController.swift; sourceTree = "<group>"; };
 		721C3956193BA03400637F88 /* BMEEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEEmailValidator.h; sourceTree = "<group>"; };
 		721C3957193BA03400637F88 /* BMEEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEEmailValidator.m; sourceTree = "<group>"; };
 		7236DFFA18B8A87B00F622AA /* BeMyEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMyEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1554,6 +1556,7 @@
 				4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */,
 				4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */,
 				72C06A051A7159CE00CD8608 /* DemoCallViewController.swift */,
+				72177FE61A718642008E3257 /* DemoCallVideoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2042,6 +2045,7 @@
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */,
+				72177FE71A718642008E3257 /* DemoCallVideoViewController.swift in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
 				729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,

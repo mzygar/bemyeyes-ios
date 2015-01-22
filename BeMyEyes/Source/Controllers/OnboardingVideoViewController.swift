@@ -13,7 +13,17 @@ class OnboardingVideoViewController: IntroVideoViewController {
     let videoToIntroHelperSegue = "VideoToIntroHelper"
     
     var role: BMERole?
-    
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		if let movieView = moviePlayerController.view {
+			if let doneButton = doneButton {
+				view.insertSubview(movieView, belowSubview: doneButton)
+			}
+		}
+	}
+	
     override func finishedPlaying() {
         super.finishedPlaying()
         

@@ -10,12 +10,23 @@ import UIKit
 
 class DemoCallViewController: BMEBaseViewController {
 
+	let DemoVideoSegue = "DemoVideo"
 	let DemoCallFireNotificationAfterSeconds: NSTimeInterval = 2
+	
+	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var cancelButton: UIButton!
+	@IBOutlet weak var step1Label: UILabel!
+	@IBOutlet weak var step2Label: UILabel!
 	
 	// MARK: - Lifecycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		titleLabel.text = MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_TITLE", "DemoCallLocalizationTable")
+		cancelButton.setTitle(MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_CANCEL", "DemoCallLocalizationTable"), forState: .Normal)
+		step1Label.text = MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_STEP_1", "DemoCallLocalizationTable")
+		step2Label.text = MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_STEP_2", "DemoCallLocalizationTable")
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didEnterBackground:"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didAnswerDemoCall:"), name: BMEDidAnswerDemoCallNotification, object: nil)
@@ -58,6 +69,6 @@ class DemoCallViewController: BMEBaseViewController {
 	}
 	
 	internal func didAnswerDemoCall(notification: NSNotification) {
-		NSLog("Did answer demo call")
+		performSegueWithIdentifier(DemoVideoSegue, sender: nil)
 	}
 }
