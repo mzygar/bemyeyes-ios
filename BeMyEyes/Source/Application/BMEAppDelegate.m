@@ -16,6 +16,7 @@
 #import "BMEAccessControlHandler.h"
 #import <Crashlytics/Crashlytics.h>
 #import "BMETopNavigationController.h"
+#import "BeMyEyes-Swift.h"
 
 @interface BMEAppDelegate () <UIAlertViewDelegate>
 @property (strong, nonatomic) PSPDFAlertView *callAlertView;
@@ -76,7 +77,7 @@
     [NewRelicAgent startWithApplicationToken:@"AA9b45f5411736426b5fac31cce185b50d173d99ea"];
     [self configureRESTClient];
     [self checkIfLoggedIn];
-    
+	
     if (self.isLaunchedWithShortID) {
         [self performSelector:@selector(didAnswerCallWithShortId:) withObject:shortIdInLaunchOptions afterDelay:0.0f];
         [self resetBadgeIcon];
@@ -97,7 +98,7 @@
     secretTapGesture.numberOfTapsRequired = 3;
     [self.window addGestureRecognizer:secretTapGesture];
 #endif
-    
+	
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogIn:) name:BMEDidLogInNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogOut:) name:BMEDidLogOutNotification object:nil];
     
@@ -227,7 +228,14 @@
     [application registerForRemoteNotifications];
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+	[self postNotificationIfLocalNotificationIsFromDemoCall:notification];
+}
 
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler {
+	[self postNotificationIfLocalNotificationIsFromDemoCall:notification];
+	completionHandler();
+}
 
 #pragma mark -
 #pragma mark Private Methods
@@ -279,6 +287,12 @@
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
     NSDictionary *alertInfo = [apsInfo objectForKey:@"alert"];
     return [alertInfo objectForKey:@"short_id"];
+}
+
+- (void)postNotificationIfLocalNotificationIsFromDemoCall:(UILocalNotification *)notification {
+	if ([[notification.userInfo objectForKey:[DemoCallViewController NotificationIsDemoKey]] boolValue]) {
+		[[NSNotificationCenter defaultCenter] postNotificationName:BMEDidAnswerDemoCallNotification object:nil];
+	}
 }
 
 - (void)didAnswerCallWithShortId:(NSString *)shortId {

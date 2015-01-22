@@ -136,6 +136,11 @@ static NSString * const Localizable = @"Localizable";
 static NSString * const PostCallLocalizationTable = @"PostCallLocalizationTable";
 
 /*!
+ * DemoCallLocalizationTable strings file 
+ */
+static NSString * const DemoCallLocalizationTable = @"DemoCallLocalizationTable";
+
+/*!
  * InfoPlist strings file 
  */
 static NSString * const InfoPlist = @"InfoPlist";
@@ -21647,6 +21652,19 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND = @"POST_
 
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE = @"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_BLIND_NAME'
+/*!
+ * "Someone"
+
+ * All translations:
+
+ * @b da@: "Nogen"
+
+ * @b en@: "Someone"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_BLIND_NAME = @"POST_CALL_VIEW_CONTROLLER_BLIND_NAME";
 
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK'
 /*!
