@@ -1775,7 +1775,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BME;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Be My Eyes";
 				TargetAttributes = {
 					4E7BA9981A1B5D9300F9744A = {
@@ -3592,6 +3592,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};

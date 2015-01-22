@@ -13,6 +13,7 @@
 #import "BMEAccessControlHandler.h"
 #import "BMEAccessViewController.h"
 #import "BMECallViewController.h"
+#import "BMEHelperMainViewController.h"
 
 #define BMEMainKnownLanguagesSegue @"KnownLanguages"
 static NSString *const BMEAccessViewSegue = @"AccessView";
@@ -134,21 +135,23 @@ static NSString *const BMEAccessViewSegue = @"AccessView";
 - (IBAction)popController:(UIStoryboardSegue *)segue { }
 
 - (void)displayHelperView {
-    [self displayMainControllerWithIdentifier:BMEMainHelperControllerIdentifier];
+	BMEHelperMainViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:BMEMainHelperControllerIdentifier];
+	controller.settingsButton = self.settingsButton;
+	[self displayMainController:controller];
 }
 
 - (void)displayBlindView {
-    [self displayMainControllerWithIdentifier:BMEMainBlindControllerIdentifier];
+    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:BMEMainBlindControllerIdentifier];
+	[self displayMainController:controller];
 }
 
-- (void)displayMainControllerWithIdentifier:(NSString *)identifier {
-    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
-    [self addChildViewController:controller];
-    [self.view insertSubview:controller.view belowSubview:self.settingsButton];
-    [controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    self.currentViewController = controller;
+- (void)displayMainController:(UIViewController *)controller {
+	[self addChildViewController:controller];
+	[self.view insertSubview:controller.view belowSubview:self.settingsButton];
+	[controller.view mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.edges.equalTo(self.view);
+	}];
+	self.currentViewController = controller;
 }
 
 - (void)askForMoreLanguagesIfNecessary {

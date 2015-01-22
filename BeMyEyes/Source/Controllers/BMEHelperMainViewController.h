@@ -13,4 +13,6 @@
 @property (strong, nonatomic) BMEUser *user;
 @property (strong, nonatomic) BMECommunityStats *stats;
 
+@property (weak, nonatomic) UIButton *settingsButton;
+
 @end
