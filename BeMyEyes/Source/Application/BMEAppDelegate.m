@@ -390,7 +390,9 @@
 
 - (void)didLogOut:(NSNotification *)notification {
     [self showFrontPage];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BMEGoToLoginIfPossibleNotification object:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:BMEGoToLoginIfPossibleNotification object:nil];
+    });
     [self resetBadgeIcon];
 }
 
