@@ -81,7 +81,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 @property (assign, nonatomic) BOOL failedLoadingPoints;
 
+@property (assign, nonatomic) CGFloat defaultStatusBarHeight;
 @property (assign, nonatomic) BOOL scrolled;
+@property (assign, nonatomic) CGPoint prevScrollOffset;
 
 @end
 
@@ -104,6 +106,8 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [MKLocalization registerForLocalization:self];
     
     self.user = [BMEClient sharedClient].currentUser;
+	
+	self.defaultStatusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         self.tableView.estimatedRowHeight = self.tableView.rowHeight;
@@ -183,8 +187,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 {
     if (scrolled != _scrolled) {
         _scrolled = scrolled;
-        
-        [self setNeedsStatusBarAppearanceUpdate];
+		
+		[UIView animateWithDuration:0.30f animations:^{
+			[self setNeedsStatusBarAppearanceUpdate];
+		}];
     }
 }
 
@@ -364,8 +370,18 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 {
     CGFloat distanceFromTop = scrollView.contentOffset.y;
     self.communityStatsBottomConstraint.constant = MIN(0, -distanceFromTop);
-    
-    self.scrolled = distanceFromTop > 20;
+	
+	CGFloat statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+    self.scrolled = distanceFromTop > self.defaultStatusBarHeight;
+	
+	if (distanceFromTop <= 0) {
+		self.settingsButton.alpha = 1;
+	} else {
+		CGFloat percentage = 1 - (distanceFromTop / self.defaultStatusBarHeight);
+		self.settingsButton.alpha = percentage;
+	}
+	
+	self.prevScrollOffset = scrollView.contentOffset;
 }
 
 #pragma mark - UITableViewDataSource

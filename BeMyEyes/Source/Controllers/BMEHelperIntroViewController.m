@@ -48,4 +48,8 @@ static NSString *const BMEIntroSignUpMethodSegue = @"SignUpMethod";
     }
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+	[self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end

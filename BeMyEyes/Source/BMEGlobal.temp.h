@@ -44,6 +44,7 @@
 #define BMEMenuControllerIdentifier @"Menu"
 #define BMECallControllerIdentifier @"Call"
 #define BMESecretSettingsControllerIdentifier @"SecretSettings"
+#define BMEDemoCallViewController @"DemoCall"
 
 #define BMEDidLogInNotification @"BMEDidLogInNotification"
 #define BMEDidLogOutNotification @"BMEDidLogOutNotification"
@@ -51,5 +52,6 @@
 #define BMEDidUpdatePointNotification @"BMEDidUpdatePointNotification"
 #define BMEGoToLoginIfPossibleNotification @"BMEGoToLoginIfPossibleNotification"
 #define BMEInitiateCallIfPossibleNotification @"BMEInitateCallIfPossibleNotification"
+#define BMEDidAnswerDemoCallNotification @"BMEDidAnswerDemoCallNotification"
 
 #endif

@@ -12,7 +12,7 @@ import AVFoundation
 
 class VideoViewController: BaseViewController {
     
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton?
     
     lazy var moviePlayerController: MPMoviePlayerController = {
         let moviePlayerController = MPMoviePlayerController()
@@ -23,13 +23,6 @@ class VideoViewController: BaseViewController {
     var didFinishPlaying: (() -> ())?
     
     let defaultAudioCategory = AVAudioSession.sharedInstance().category
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if let movieView = moviePlayerController.view {
-            view.insertSubview(movieView, belowSubview: doneButton)
-        }
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

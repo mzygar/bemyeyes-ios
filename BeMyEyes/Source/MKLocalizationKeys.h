@@ -136,6 +136,11 @@ static NSString * const Localizable = @"Localizable";
 static NSString * const PostCallLocalizationTable = @"PostCallLocalizationTable";
 
 /*!
+ * DemoCallLocalizationTable strings file 
+ */
+static NSString * const DemoCallLocalizationTable = @"DemoCallLocalizationTable";
+
+/*!
  * InfoPlist strings file 
  */
 static NSString * const InfoPlist = @"InfoPlist";
@@ -21648,6 +21653,71 @@ static NSString * const POST_CALL_VIEW_CONTROLLER_DISMISS_BUTTON_BLIND = @"POST_
  */
 static NSString * const POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE = @"POST_CALL_VIEW_CONTROLLER_REPORT_ABUSE";
 
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_TITLE'
+/*!
+ * "Test Call"
+
+ * All translations:
+
+ * @b da@: "Test Opkald"
+
+ * @b en@: "Test Call"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_TITLE = @"POST_CALL_VIEW_CONTROLLER_TITLE";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_CANCEL'
+/*!
+ * "Cancel"
+
+ * All translations:
+
+ * @b da@: "Annuller"
+
+ * @b en@: "Cancel"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_CANCEL = @"POST_CALL_VIEW_CONTROLLER_CANCEL";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_STEP_1'
+/*!
+ * "Press the home button and wait a second to receive a notification."
+
+ * All translations:
+
+ * @b da@: "Tryk på hjemmeknappen og vent et sekund indtil du modtager en notifikation."
+
+ * @b en@: "Press the home button and wait a second to receive a notification."
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_STEP_1 = @"POST_CALL_VIEW_CONTROLLER_STEP_1";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_STEP_2'
+/*!
+ * "Tap the notification."
+
+ * All translations:
+
+ * @b da@: "Tap på notifikationen."
+
+ * @b en@: "Tap the notification."
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_STEP_2 = @"POST_CALL_VIEW_CONTROLLER_STEP_2";
+
+#warning Missing languages ar, cs, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_BLIND_NAME'
+/*!
+ * "Someone"
+
+ * All translations:
+
+ * @b da@: "Nogen"
+
+ * @b en@: "Someone"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_BLIND_NAME = @"POST_CALL_VIEW_CONTROLLER_BLIND_NAME";
+
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK'
 /*!
  * "OK"
@@ -21680,6 +21750,94 @@ static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_MESSAGE = @"BME_L
 
  */
 static NSString * const BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_TITLE = @"BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_TITLE";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_HELPER'
+/*!
+ * "Share your experience"
+
+ * All translations:
+
+ * @b en@: "Share your experience"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_HELPER = @"POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_HELPER";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_BLIND'
+/*!
+ * "Share your experience"
+
+ * All translations:
+
+ * @b en@: "Share your experience"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_BLIND = @"POST_CALL_VIEW_CONTROLLER_SHARE_BUTTON_BLIND";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_HELPER'
+/*!
+ * "I just helped a blind person see with the Be My Eyes app #BeMyEyes"
+
+ * All translations:
+
+ * @b en@: "I just helped a blind person see with the Be My Eyes app #BeMyEyes"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_HELPER = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_HELPER";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_BLIND'
+/*!
+ * "Someone just helped me see with the Be My Eyes app #BeMyEyes"
+
+ * All translations:
+
+ * @b en@: "Someone just helped me see with the Be My Eyes app #BeMyEyes"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_BLIND = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_FACEBOOK_BLIND";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_HELPER'
+/*!
+ * "I just helped a blind person see with the @bemyeyes app #BeMyEyes"
+
+ * All translations:
+
+ * @b en@: "I just helped a blind person see with the @bemyeyes app #BeMyEyes"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_HELPER = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_HELPER";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_BLIND'
+/*!
+ * "Someone just helped me see with the @bemyeyes app #BeMyEyes"
+
+ * All translations:
+
+ * @b en@: "Someone just helped me see with the @bemyeyes app #BeMyEyes"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_BLIND = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_TWITTER_BLIND";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_HELPER'
+/*!
+ * "I just helped a blind person see with the Be My Eyes app"
+
+ * All translations:
+
+ * @b en@: "I just helped a blind person see with the Be My Eyes app"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_HELPER = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_HELPER";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_BLIND'
+/*!
+ * "Someone just helped me see with the Be My Eyes app"
+
+ * All translations:
+
+ * @b en@: "Someone just helped me see with the Be My Eyes app"
+
+ */
+static NSString * const POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_BLIND = @"POST_CALL_VIEW_CONTROLLER_SHARE_MESSAGE_DEFAULT_BLIND";
 
                                                
 #endif                                         

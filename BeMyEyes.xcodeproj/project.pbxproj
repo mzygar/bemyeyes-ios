@@ -70,6 +70,10 @@
 		720A68DC192FD9030036CB1E /* BMEPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DB192FD9030036CB1E /* BMEPrivacyPolicyViewController.m */; };
 		720A68DF192FD92F0036CB1E /* BMEWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */; };
 		720D4D13194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 720D4D11194A1FAC00060D7F /* BMEReportAbuseLocalizationTable.strings */; };
+		72148B051A7022F0001F0F8C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72148B041A7022F0001F0F8C /* Extensions.swift */; };
+		72148B071A702762001F0F8C /* SocialTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72148B061A702762001F0F8C /* SocialTextProvider.swift */; };
+		7216AD9F1A717D50009657F8 /* DemoCallLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7216AD9D1A717D50009657F8 /* DemoCallLocalizationTable.strings */; };
+		72177FE71A718642008E3257 /* DemoCallVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72177FE61A718642008E3257 /* DemoCallVideoViewController.swift */; };
 		721C3958193BA03400637F88 /* BMEEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C3957193BA03400637F88 /* BMEEmailValidator.m */; };
 		7236DFFE18B8A87B00F622AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFD18B8A87B00F622AA /* Foundation.framework */; };
 		7236E00018B8A87B00F622AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236DFFF18B8A87B00F622AA /* CoreGraphics.framework */; };
@@ -139,6 +143,7 @@
 		72B3C4BF1987D31D00A56D49 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B3C4BE1987D31D00A56D49 /* MediaPlayer.framework */; };
 		72B3C4C81987E22100A56D49 /* BMEVideoLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */; };
 		72B84BA51949DC9A0057D92C /* BMEReportAbuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */; };
+		72C06A061A7159CE00CD8608 /* DemoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C06A051A7159CE00CD8608 /* DemoCallViewController.swift */; };
 		72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */; };
 		72DA826B18D45B61001F3312 /* BMEBlindMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DA826A18D45B61001F3312 /* BMEBlindMainViewController.m */; };
 		72DA826E18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72DA826C18D4699F001F3312 /* BMEBlindMainLocalizationTable.strings */; };
@@ -1074,6 +1079,11 @@
 		720A68DD192FD92F0036CB1E /* BMEWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEWebViewViewController.h; sourceTree = "<group>"; };
 		720A68DE192FD92F0036CB1E /* BMEWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEWebViewViewController.m; sourceTree = "<group>"; };
 		720D4D12194A1FAC00060D7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEReportAbuseLocalizationTable.strings; sourceTree = "<group>"; };
+		72148B041A7022F0001F0F8C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		72148B061A702762001F0F8C /* SocialTextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialTextProvider.swift; sourceTree = "<group>"; };
+		7216AD9E1A717D50009657F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DemoCallLocalizationTable.strings; sourceTree = "<group>"; };
+		7216ADA01A717D74009657F8 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/DemoCallLocalizationTable.strings; sourceTree = "<group>"; };
+		72177FE61A718642008E3257 /* DemoCallVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCallVideoViewController.swift; sourceTree = "<group>"; };
 		721C3956193BA03400637F88 /* BMEEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEEmailValidator.h; sourceTree = "<group>"; };
 		721C3957193BA03400637F88 /* BMEEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEEmailValidator.m; sourceTree = "<group>"; };
 		7236DFFA18B8A87B00F622AA /* BeMyEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeMyEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1172,6 +1182,7 @@
 		72B3C4C71987E22100A56D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BMEVideoLocalizationTable.strings; sourceTree = "<group>"; };
 		72B84BA31949DC9A0057D92C /* BMEReportAbuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEReportAbuseViewController.h; sourceTree = "<group>"; };
 		72B84BA41949DC9A0057D92C /* BMEReportAbuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEReportAbuseViewController.m; sourceTree = "<group>"; };
+		72C06A051A7159CE00CD8608 /* DemoCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCallViewController.swift; sourceTree = "<group>"; };
 		72DA826618D45B52001F3312 /* BMEHelperMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEHelperMainViewController.h; sourceTree = "<group>"; };
 		72DA826718D45B52001F3312 /* BMEHelperMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEHelperMainViewController.m; sourceTree = "<group>"; };
 		72DA826918D45B61001F3312 /* BMEBlindMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEBlindMainViewController.h; sourceTree = "<group>"; };
@@ -1450,6 +1461,7 @@
 				72856DDD19AF4D490027AFF5 /* MKLocalizationKeys.h */,
 				72858FA918DF81CE0002D6E1 /* BMEGlobal.h */,
 				72DEF72218B908140048FA90 /* BMEGlobal.temp.h */,
+				72148B041A7022F0001F0F8C /* Extensions.swift */,
 				7236E03418B8A9EA00F622AA /* Application */,
 				7236E03718B8A9EA00F622AA /* Categories */,
 				7236E03818B8A9EA00F622AA /* Controllers */,
@@ -1543,6 +1555,8 @@
 				4E8ABED419F7FE370005F6E8 /* TaskIntroVideoViewController.swift */,
 				4E8E21F319E8C03C00316AD8 /* OnboardingVideoViewController.swift */,
 				4E8E21F419E8C03C00316AD8 /* VideoViewController.swift */,
+				72C06A051A7159CE00CD8608 /* DemoCallViewController.swift */,
+				72177FE61A718642008E3257 /* DemoCallVideoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1573,6 +1587,7 @@
 				4E6AE89D1A01927F0019247A /* FacebookHelper.swift */,
 				4EB3A9A21A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.h */,
 				4EB3A9A31A0E6D4F0044D4B9 /* BMEOpenTokVideoCapture.m */,
+				72148B061A702762001F0F8C /* SocialTextProvider.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1634,6 +1649,7 @@
 				72B3C4C61987E22100A56D49 /* BMEVideoLocalizationTable.strings */,
 				72DA827518D4716A001F3312 /* Localizable.strings */,
 				4E6544741A00279000B71C1C /* PostCallLocalizationTable.strings */,
+				7216AD9D1A717D50009657F8 /* DemoCallLocalizationTable.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -1766,7 +1782,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BME;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Be My Eyes";
 				TargetAttributes = {
 					4E7BA9981A1B5D9300F9744A = {
@@ -1883,6 +1899,7 @@
 				4E6544721A00279000B71C1C /* PostCallLocalizationTable.strings in Resources */,
 				72E65FAA18BA81BB002FB2E0 /* BMESignUpMethodLocalizationTable.strings in Resources */,
 				4E8ABED319F7F4300005F6E8 /* intro.mp4 in Resources */,
+				7216AD9F1A717D50009657F8 /* DemoCallLocalizationTable.strings in Resources */,
 				72856DF819AF789E0027AFF5 /* BMERegisteredLocalizationTable.strings in Resources */,
 				72A7676F1902A5C4003121C4 /* BMEHelperMainLocalizationTable.strings in Resources */,
 				72856DF519AF761F0027AFF5 /* BMEPrivacyPolicyLocalizationTable.strings in Resources */,
@@ -2028,10 +2045,12 @@
 				72DEF72018B907D10048FA90 /* BMEToken.m in Sources */,
 				7296569618CC874600E1A9EE /* BMERegisteredViewController.m in Sources */,
 				4E8AC11019E413E10035BB70 /* BMEUserTask.m in Sources */,
+				72177FE71A718642008E3257 /* DemoCallVideoViewController.swift in Sources */,
 				72E65FA718BA7CE3002FB2E0 /* BMEFrontPageViewController.m in Sources */,
 				729B1CD019015F0700B5ABEA /* BMESecretSettingsViewController.m in Sources */,
 				72DEF72F18B90A6D0048FA90 /* AESCrypt.m in Sources */,
 				7296569C18CC8C4B00E1A9EE /* BMESettingsViewController.m in Sources */,
+				72148B071A702762001F0F8C /* SocialTextProvider.swift in Sources */,
 				4EC696EE1A2625E6007E5680 /* BMEUserTypeConverter.m in Sources */,
 				4E3ACE1819FFEF4F002548C8 /* PostCallViewController.swift in Sources */,
 				72DA826818D45B52001F3312 /* BMEHelperMainViewController.m in Sources */,
@@ -2056,6 +2075,7 @@
 				7296569F18CC8D3200E1A9EE /* BMERightToLeftSegue.m in Sources */,
 				4E7E107219E5C02000D476B2 /* BMEAccessView.m in Sources */,
 				72F41E06194A3A3A001727CA /* UINavigationController+BMEPopToClas.m in Sources */,
+				72148B051A7022F0001F0F8C /* Extensions.swift in Sources */,
 				4E4FA2761A0A59B5006D154E /* InAppTestBadge.swift in Sources */,
 				7206A76618FA9C0D00251824 /* BMEPointGraphEntry.m in Sources */,
 				4EBE9BFA19E8C91000CBC675 /* DismissSegue.m in Sources */,
@@ -2064,6 +2084,7 @@
 				7206A76718FA9C0D00251824 /* BMEPointGraphView.m in Sources */,
 				4E2B919B19E67F1F00C9D0ED /* BMEAccessControlHandler.m in Sources */,
 				7236E03D18B8A9EA00F622AA /* BMEAppDelegate.m in Sources */,
+				72C06A061A7159CE00CD8608 /* DemoCallViewController.swift in Sources */,
 				4E1916D119E5804800B85E61 /* SplitMaskedLabel.swift in Sources */,
 				729C6DC318E9C9B60043D48F /* BMETermsViewController.m in Sources */,
 				4E8E21F519E8C03C00316AD8 /* IntroVideoViewController.swift in Sources */,
@@ -2289,6 +2310,15 @@
 				4EE157C21A6B06EF00178F9F /* vi */,
 			);
 			name = BMEReportAbuseLocalizationTable.strings;
+			sourceTree = "<group>";
+		};
+		7216AD9D1A717D50009657F8 /* DemoCallLocalizationTable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7216AD9E1A717D50009657F8 /* en */,
+				7216ADA01A717D74009657F8 /* da */,
+			);
+			name = DemoCallLocalizationTable.strings;
 			sourceTree = "<group>";
 		};
 		7236E00618B8A87B00F622AA /* InfoPlist.strings */ = {
