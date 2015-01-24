@@ -237,6 +237,77 @@
 	completionHandler();
 }
 
+- (void)application:(UIApplication*)application handleActionWithIdentifier:(NSString*)identifier forRemoteNotification:(NSDictionary*)userInfo completionHandler:(void (^)())completionHandler {
+
+    if ([identifier isEqualToString:@"ACTION_RESPOND_YES"]) {
+
+        NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+        if (!apsInfo) {
+            return;
+        }
+
+        id alert = [apsInfo objectForKey:@"alert"];
+        if (!alert) {
+            return;
+        }
+
+        if (application.applicationState == UIApplicationStateActive) {
+            if ([alert isKindOfClass:[NSDictionary class]]) {
+                NSString *shortId = [alert objectForKey:@"short_id"];;
+                if (shortId) {
+                    if (self.callAlertView) {
+                        [self.callAlertView dismissWithClickedButtonIndex:[self.callAlertView cancelButtonIndex] animated:NO];
+                    }
+
+                    NSString *actionLocKey = [alert objectForKey:@"action-loc-key"];
+                    NSString *locKey = [alert objectForKey:@"loc-key"];
+                    NSArray *locArgs = [alert objectForKey:@"loc-args"];
+                    NSString *name = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_DEFAULT_NAME, BMEAppDelegateLocalizationTable);
+                    if ([locArgs count] > 0) {
+                        name = locArgs[0];
+                    }
+
+                    NSString *title = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_TITLE, BMEAppDelegateLocalizationTable);
+                    NSString *message = [NSString stringWithFormat:NSLocalizedString(locKey, nil), name];
+                    NSString *actionButton = NSLocalizedString(actionLocKey, nil);
+                    NSString *cancelButton = MKLocalizedFromTable(BME_APP_DELEGATE_ALERT_PUSH_REQUEST_CANCEL, BMEAppDelegateLocalizationTable);
+
+                    [self playCallTone];
+
+                    __weak typeof(self) weakSelf = self;
+                    self.callAlertView = [[PSPDFAlertView alloc] initWithTitle:title message:message];
+                    [self.callAlertView addButtonWithTitle:actionButton block:^{
+                        [weakSelf didAnswerCallWithShortId:shortId];
+                        [weakSelf stopCallTone];
+                    }];
+                    [self.callAlertView setCancelButtonWithTitle:cancelButton block:^{
+                        [weakSelf stopCallTone];
+                    }];
+                    [self.callAlertView show];
+                }
+            } else if ([alert isKindOfClass:[NSString class]]) {
+                PSPDFAlertView *alertView = [[PSPDFAlertView alloc] initWithTitle:nil message:alert];
+                [alertView setCancelButtonWithTitle:@"OK" block:nil];
+                [alertView show];
+            }
+        } else if (application.applicationState == UIApplicationStateInactive) {
+            // If the application state was inactive, this means the user pressed an action button from a notification
+            if ([alert isKindOfClass:[NSDictionary class]]) {
+                NSString *shortId = [alert objectForKey:@"short_id"];;
+                if (shortId) {
+                    // The app was launched from a remote notification that contained a short ID
+                    self.launchedWithShortID = YES;
+                    [self didAnswerCallWithShortId:shortId];
+                }
+            }
+        }
+    }
+
+    if (completionHandler)
+        completionHandler();
+}
+
+
 #pragma mark -
 #pragma mark Private Methods
 
