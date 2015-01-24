@@ -131,6 +131,13 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self updateToProfile];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    [self reloadPoints];
+}
+
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
