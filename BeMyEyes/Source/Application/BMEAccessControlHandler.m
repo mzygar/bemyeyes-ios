@@ -9,6 +9,11 @@
 #import "BMEAccessControlHandler.h"
 #import <AVFoundation/AVFoundation.h>
 
+NSString* const NotificationCategoryReply = @"REPLY_ACTIONABLE";
+NSString* const NotificationActionReplyNo = @"ACTION_RESPOND_NO";
+NSString* const NotificationActionReplyYes = @"ACTION_RESPOND_YES";
+
+
 
 @interface BMEAccessControlHandler() <UIAlertViewDelegate>
 
@@ -38,12 +43,35 @@
     NSLog(@"Register for remote notifications");
     
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
-        UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+
+        UIMutableUserNotificationAction* replyYesAction = [self userNotificationActionWithTitle:@"Reply" indentifier:NotificationActionReplyYes activationMode:UIUserNotificationActivationModeForeground];
+        UIMutableUserNotificationAction* replyNoAction = [self userNotificationActionWithTitle:@"Assign Other User To Case" indentifier:NotificationActionReplyNo activationMode:UIUserNotificationActivationModeBackground];
+
+        UIMutableUserNotificationCategory* category = [[UIMutableUserNotificationCategory alloc] init];
+        category.identifier = NotificationCategoryReply;
+        [category setActions:@[replyNoAction,replyYesAction] forContext:UIUserNotificationActionContextDefault];
+
+        NSSet* categories = [NSSet setWithObject:category];
+        UIUserNotificationType types = (UIUserNotificationTypeSound|UIUserNotificationTypeBadge|UIUserNotificationTypeAlert);
+
+        UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     }
+}
+
++ (UIMutableUserNotificationAction*)userNotificationActionWithTitle:(NSString*)title
+                                                        indentifier:(NSString*)identifier
+                                                     activationMode:(UIUserNotificationActivationMode) activationMode {
+    UIMutableUserNotificationAction* action = [[UIMutableUserNotificationAction alloc] init];
+    action.title = title;
+    action.identifier = identifier;
+    [action setActivationMode:activationMode];
+    [action setDestructive:NO];
+    [action setAuthenticationRequired:NO];
+    return action;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
