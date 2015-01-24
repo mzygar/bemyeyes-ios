@@ -44,6 +44,7 @@ typedef NS_ENUM(NSInteger, BMEUserType) {
 
 - (BOOL)isHelper;
 - (BOOL)isBlind;
+- (BOOL)isNative;
 - (int)pointsToNextLevel;
 - (double)levelProgress;
 

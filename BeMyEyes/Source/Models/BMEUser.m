@@ -82,6 +82,10 @@
     return self.role == BMERoleBlind;
 }
 
+- (BOOL)isNative {
+    return self.type == BMEUserTypeNative;
+}
+
 - (int)pointsToNextLevel {
     return self.nextLevel == nil ? 0 : self.nextLevel.threshold.integerValue - self.totalPoints.integerValue;
 }

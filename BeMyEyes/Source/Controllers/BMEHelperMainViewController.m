@@ -127,11 +127,13 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
     
-    UITapGestureRecognizer *photoTapRecognizer =
-    [[UITapGestureRecognizer alloc] initWithTarget: self
-                                            action: @selector(profileImageViewTapped:)];
-    [self.profileImageView addGestureRecognizer: photoTapRecognizer];
-    self.profileImageView.userInteractionEnabled = YES;
+    if ([self.user isNative]) {
+        UITapGestureRecognizer *photoTapRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget: self
+                                                action: @selector(profileImageViewTapped:)];
+        [self.profileImageView addGestureRecognizer: photoTapRecognizer];
+        self.profileImageView.userInteractionEnabled = YES;
+    }
     
     [self snapSnoozeSliderToStep:BMESnoozeStep0 animated:NO];
     
@@ -434,15 +436,19 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 - (void) profileImageViewTapped: (UITapGestureRecognizer*) tapRecognizer
 {
+    NSString *actionSheetTitle = NSLocalizedStringFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE, BMEHelperMainLocalizationTable, NULL);
+    
     PSTAlertController *actionSheet =
-    [PSTAlertController alertControllerWithTitle: @"Add profile photo"
+    [PSTAlertController alertControllerWithTitle: actionSheetTitle
                                          message: nil
                                   preferredStyle: PSTAlertControllerStyleActionSheet];
     
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
     {
+        NSString *takeNewActionTitle = NSLocalizedStringFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW, BMEHelperMainLocalizationTable, NULL);
+        
         PSTAlertAction *takeNewAction =
-        [PSTAlertAction actionWithTitle: @"Take new"
+        [PSTAlertAction actionWithTitle: takeNewActionTitle
                                 handler:^(PSTAlertAction *action) {
                                     UIImagePickerController *pickerController = [UIImagePickerController new];
                                     pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -455,9 +461,10 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         [actionSheet addAction: takeNewAction];
     }
     
+    NSString *chooseExistingTitle = NSLocalizedStringFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING, BMEHelperMainLocalizationTable, NULL);
     
     PSTAlertAction *chooseExistingAction =
-    [PSTAlertAction actionWithTitle: @"Choose existing"
+    [PSTAlertAction actionWithTitle: chooseExistingTitle
                             handler:^(PSTAlertAction *action) {
                                 UIImagePickerController *pickerController = [UIImagePickerController new];
                                 pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
