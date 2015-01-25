@@ -237,6 +237,18 @@
 	completionHandler();
 }
 
+- (void)application:(UIApplication*)application handleActionWithIdentifier:(NSString*)identifier forRemoteNotification:(NSDictionary*)userInfo completionHandler:(void (^)())completionHandler {
+
+    if ([identifier isEqualToString:NotificationActionReplyYes]) {
+        // Forward to regular
+        [self application:application didReceiveRemoteNotification:userInfo];
+    }
+
+    if (completionHandler)
+        completionHandler();
+}
+
+
 #pragma mark -
 #pragma mark Private Methods
 

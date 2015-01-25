@@ -8,6 +8,9 @@
 
 import UIKit
 
+/** 
+    Similar functionality as BMEBaseViewController. Reason for duplicating functionality in a swift version is to avoid a bug in .viewDidLoad. Here super.viewDidLoad() actually calls subclass instead of super, when the app runs in release mode.
+*/
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {

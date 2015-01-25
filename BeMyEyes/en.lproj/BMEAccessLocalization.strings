@@ -15,6 +15,12 @@
 /* Explanation for why the helper needs to enable notifications */
 "BME_ACCESS_NOTIFICATIONS_EXPLANATION_HELPER" = "When a blind person needs your help, we notify you about the incoming call.";
 
+/* Title for notification action to answer request for help */
+"BME_ACCESS_NOTIFICATION_ACTION_ANSWER" = "Answer";
+
+/* Title for notification action when _not_ answering request for help */
+"BME_ACCESS_NOTIFICATION_ACTION_DISMISS" = "Not right now";
+
 /* Title for microphone */
 "BME_ACCESS_MICROPHONE_TITLE" = "Microphone";
 
@@ -32,4 +38,3 @@
 
 /* Explanation for why the blind person needs to enable microphone access */
 "BME_ACCESS_CAMERA_EXPLANATION_BLIND" = "To be able to show the helper what you need help with.";
-

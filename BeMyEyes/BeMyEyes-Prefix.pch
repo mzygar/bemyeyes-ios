@@ -23,4 +23,9 @@
     #import "MKLocalizationKeys.h"
     #import "BMEGlobal.h"
     #import "BeMyEyes-Swift.h"
+
+    static NSString *const NotificationCategoryReply = @"REPLY_ACTIONABLE";
+    static NSString *const NotificationActionReplyNo = @"ACTION_RESPOND_NO";
+    static NSString *const NotificationActionReplyYes = @"ACTION_RESPOND_YES";
+
 #endif
