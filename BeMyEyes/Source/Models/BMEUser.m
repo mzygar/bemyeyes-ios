@@ -7,10 +7,12 @@
 //
 
 #import "BMEUser.h"
-
 #import "BMEUserLevel.h"
+#import <SDWebImage/SDImageCache.h>
 
 @implementation BMEUser
+
+@synthesize profileImage = _profileImage;
 
 #pragma mark -
 #pragma mark Lifecycle
@@ -99,11 +101,51 @@
     }
 }
 
+- (NSString*)description
+{
+    return [NSString stringWithFormat: @"<Identifier: %@, UserId: %@, Username: %@, Email: %@>",
+            self.identifier, self.userId, self.username, self.email];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
 - (int)distanceBetweenCurrentAndNextLevel {
     return self.nextLevel.threshold.integerValue - self.currentLevel.threshold.integerValue;
+}
+
+#pragma mark - Setters and getters
+
+/**
+ @attention Writing image data to disk is asynch.
+ */
+- (void) setProfileImage:(UIImage *)profileImage
+{
+    if (profileImage) {
+        [[SDImageCache sharedImageCache] storeImage: profileImage
+                                             forKey: self.identifier];
+    }
+
+    _profileImage = profileImage;
+}
+
+/**
+ This method will block the current thread to attempt to load a profile image from disk.
+ */
+- (UIImage*) profileImage
+{
+    if (_profileImage == nil) {
+        SDImageCache *cache = [SDImageCache sharedImageCache];
+        UIImage *imageFromMemory = [cache imageFromMemoryCacheForKey: self.identifier];
+        if (!imageFromMemory) {
+            UIImage *imageFromDisk = [cache imageFromDiskCacheForKey: self.identifier];
+            if (imageFromDisk) {
+                _profileImage = imageFromDisk;
+            }
+        }
+    }
+    
+    return _profileImage;
 }
 
 @end

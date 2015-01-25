@@ -21,6 +21,7 @@
 #import "BeMyEyes-Swift.h"
 #import <PSTAlertController.h>
 
+
 #define BMEHelperSnoozeAmount0 0.0f
 #define BMEHelperSnoozeAmount25 3600.0f
 #define BMEHelperSnoozeAmount50 6 * 3600.0f
@@ -488,7 +489,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
-    //TODO: use the image
+    
+    self.profileImageView.image = image;
+    self.user.profileImage = image;
     [picker dismissViewControllerAnimated: YES completion: nil];
 }
 
