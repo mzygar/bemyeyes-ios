@@ -437,7 +437,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 
 - (void) profileImageViewTapped: (UITapGestureRecognizer*) tapRecognizer
 {
-    NSString *actionSheetTitle = NSLocalizedStringFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE, BMEHelperMainLocalizationTable, NULL);
+    NSString *actionSheetTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE, BMEHelperMainLocalizationTable);
     
     PSTAlertController *actionSheet =
     [PSTAlertController alertControllerWithTitle: actionSheetTitle
@@ -446,7 +446,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
     {
-        NSString *takeNewActionTitle = NSLocalizedStringFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW, BMEHelperMainLocalizationTable, NULL);
+        NSString *takeNewActionTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW, BMEHelperMainLocalizationTable);
         
         PSTAlertAction *takeNewAction =
         [PSTAlertAction actionWithTitle: takeNewActionTitle
@@ -462,7 +462,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         [actionSheet addAction: takeNewAction];
     }
     
-    NSString *chooseExistingTitle = NSLocalizedStringFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING, BMEHelperMainLocalizationTable, NULL);
+    NSString *chooseExistingTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING, BMEHelperMainLocalizationTable);
     
     PSTAlertAction *chooseExistingAction =
     [PSTAlertAction actionWithTitle: chooseExistingTitle
@@ -489,9 +489,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
-    
-    self.profileImageView.image = image;
-    self.user.profileImage = image;
+    UIImage *imageScaled = [image scaleToProfileImageSize];
+    self.profileImageView.image = imageScaled;
+    self.user.profileImage = imageScaled;
     [picker dismissViewControllerAnimated: YES completion: nil];
 }
 
