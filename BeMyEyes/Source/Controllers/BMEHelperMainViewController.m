@@ -380,7 +380,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     CGFloat distanceFromTop = scrollView.contentOffset.y;
     self.communityStatsBottomConstraint.constant = MIN(0, -distanceFromTop);
 	
-	CGFloat statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
     self.scrolled = distanceFromTop > self.defaultStatusBarHeight;
 	
 	if (distanceFromTop <= 0) {
