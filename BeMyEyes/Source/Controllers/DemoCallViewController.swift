@@ -59,6 +59,7 @@ class DemoCallViewController: BMEBaseViewController {
 		notification.fireDate = fireDate
 		notification.alertBody = NSString(format: MKLocalized("PUSH_NOTIFICATION_ANSWER_REQUEST_MESSAGE"), "Someone")
 		notification.userInfo = [ DemoCallViewController.NotificationIsDemoKey(): true ]
+		notification.soundName = "call-repeat.aiff"
 		UIApplication.sharedApplication().scheduleLocalNotification(notification)
 	}
 	
