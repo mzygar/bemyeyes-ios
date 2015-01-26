@@ -28,7 +28,7 @@ class DemoCallViewController: BMEBaseViewController {
 		step1Label.text = MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_STEP_1", "DemoCallLocalizationTable")
 		step2Label.text = MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_STEP_2", "DemoCallLocalizationTable")
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didEnterBackground:"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+		receiveDidEnterBackgroundNotifications(true)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didAnswerDemoCall:"), name: BMEDidAnswerDemoCallNotification, object: nil)
     }
 	
@@ -50,8 +50,8 @@ class DemoCallViewController: BMEBaseViewController {
 	}
 	
 	internal func didEnterBackground(notification: NSNotification) {
-		NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidEnterBackgroundNotification, object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("willEnterForeground:"), name: UIApplicationWillEnterForegroundNotification, object: nil)
+		receiveDidEnterBackgroundNotifications(false)
+		receiveWillEnterForegroundNotifications(true)
 		
 		let blindName = MKLocalizedFromTable("POST_CALL_VIEW_CONTROLLER_BLIND_NAME", "DemoCallLocalizationTable")
 		let fireDate = NSDate().dateByAddingTimeInterval(DemoCallFireNotificationAfterSeconds)
@@ -64,12 +64,29 @@ class DemoCallViewController: BMEBaseViewController {
 	}
 	
 	internal func willEnterForeground(notification: NSNotification) {
-		NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didEnterBackground:"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+		receiveWillEnterForegroundNotifications(false)
+		receiveDidEnterBackgroundNotifications(true)
 		UIApplication.sharedApplication().cancelAllLocalNotifications()
 	}
 	
 	internal func didAnswerDemoCall(notification: NSNotification) {
+		receiveDidEnterBackgroundNotifications(false)
 		performSegueWithIdentifier(DemoVideoSegue, sender: nil)
+	}
+	
+	private func receiveDidEnterBackgroundNotifications(receive: Bool) {
+		if receive {
+			NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didEnterBackground:"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+		} else {
+			NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidEnterBackgroundNotification, object: nil)
+		}
+	}
+	
+	private func receiveWillEnterForegroundNotifications(receive: Bool) {
+		if receive {
+			NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("willEnterForeground:"), name: UIApplicationWillEnterForegroundNotification, object: nil)
+		} else {
+			NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
+		}
 	}
 }
