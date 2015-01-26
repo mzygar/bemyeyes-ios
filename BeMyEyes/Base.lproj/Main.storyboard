@@ -1340,7 +1340,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <constraint firstAttribute="trailing" secondItem="OHO-hf-tdb" secondAttribute="trailing" id="wvd-ja-Gea"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EB3-Hs-pVj" userLabel="Separator 2">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EB3-Hs-pVj" userLabel="Separator 2">
                                         <rect key="frame" x="107" y="47" width="21" height="5"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1527,7 +1527,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6AN-ix-uS6" userLabel="Helped persons">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AN-ix-uS6" userLabel="Helped persons">
                                             <rect key="frame" x="8" y="210" width="142" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Jb-0ah" customClass="BMEPointLabel">
@@ -1555,7 +1555,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 <constraint firstItem="OdZ-Jb-0ah" firstAttribute="top" secondItem="6AN-ix-uS6" secondAttribute="top" id="wur-QF-VbI"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L93-LG-eip" userLabel="Total points">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L93-LG-eip" userLabel="Total points">
                                             <rect key="frame" x="170" y="210" width="142" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-OD-NO6" customClass="BMEPointLabel">
@@ -1589,7 +1589,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                                 <constraint firstAttribute="height" constant="40" id="9Ai-bh-aHa"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pl8-pe-Xnt" userLabel="User type + level">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pl8-pe-Xnt" userLabel="User type + level">
                                             <rect key="frame" x="108" y="186" width="104" height="14"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Helper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDk-Fp-G2F">
@@ -1784,16 +1784,16 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <constraint firstItem="U8b-Va-Uxg" firstAttribute="top" secondItem="3vn-oO-1sp" secondAttribute="bottom" constant="-5" id="g1a-ev-iTd"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6C-cj-jhc" userLabel="Helped">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6C-cj-jhc" userLabel="Helped">
                                         <rect key="frame" x="213" y="61" width="103" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FE-RA-1MY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FE-RA-1MY">
                                                 <rect key="frame" x="0.0" y="38" width="103" height="17"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2.02M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="936-Cz-Ktx" customClass="BMEPointLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.02M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="936-Cz-Ktx" customClass="BMEPointLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="43"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="highlightedColor"/>
@@ -1915,7 +1915,7 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJh-xD-Sg7" userLabel="Name View">
                                                 <rect key="frame" x="15" y="91" width="290" height="60"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-e2-g2G">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-e2-g2G">
                                                         <rect key="frame" x="171" y="0.0" width="109" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="8Yb-vE-kjH"/>

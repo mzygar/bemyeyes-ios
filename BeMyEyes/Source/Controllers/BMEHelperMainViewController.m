@@ -113,7 +113,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         self.tableView.estimatedRowHeight = self.tableView.rowHeight;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
     }
-     
+	
+	self.pointsHelpedPersonsLabel.usesSignificantDigits = NO;
+	
     self.pointsHelpedPersonsLabel.colors =
     self.pointsTotalLabel.colors = @{ @(0.0f) : [UIColor lightTextColor],
                                       @(1.0f) : [UIColor whiteColor] };
