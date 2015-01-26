@@ -139,11 +139,12 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self reloadPoints];
 }
 
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     self.pointEntries = nil;
+	self.tableView.delegate = nil;
+	self.tableView.dataSource = nil;
 }
 
 - (void)shouldLocalize {
