@@ -8560,6 +8560,222 @@ static NSString * const BME_HELPER_MAIN_RETRY_LOADING_POINT = @"BME_HELPER_MAIN_
 static NSString * const BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT = @"BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT";
 
 /*!
+ * "Take new"
+
+ * All translations:
+
+ * @b ar@: "Take new"
+
+ * @b cs@: "Take new"
+
+ * @b da@: "Take new"
+
+ * @b de@: "Take new"
+
+ * @b el@: "Take new"
+
+ * @b en@: "Take new"
+
+ * @b es@: "Take new"
+
+ * @b fi@: "Take new"
+
+ * @b fr@: "Take new"
+
+ * @b he@: "Take new"
+
+ * @b hi@: "Take new"
+
+ * @b hr@: "Take new"
+
+ * @b hu@: "Take new"
+
+ * @b it@: "Take new"
+
+ * @b ja@: "Take new"
+
+ * @b ko@: "Take new"
+
+ * @b nb@: "Take new"
+
+ * @b nl@: "Take new"
+
+ * @b pl@: "Take new"
+
+ * @b pt-BR@: "Take new"
+
+ * @b pt@: "Take new"
+
+ * @b ro@: "Take new"
+
+ * @b ru@: "Take new"
+
+ * @b sk@: "Take new"
+
+ * @b sr@: "Take new"
+
+ * @b sv@: "Take new"
+
+ * @b tr@: "Take new"
+
+ * @b uk@: "Take new"
+
+ * @b ur@: "Take new"
+
+ * @b vi@: "Take new"
+
+ * @b zh-Hans@: "Take new"
+
+ * @b zh-Hant@: "Take new"
+
+ */
+static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW = @"BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW";
+
+/*!
+ * "Choose existing"
+
+ * All translations:
+
+ * @b ar@: "Choose existing"
+
+ * @b cs@: "Choose existing"
+
+ * @b da@: "Choose existing"
+
+ * @b de@: "Choose existing"
+
+ * @b el@: "Choose existing"
+
+ * @b en@: "Choose existing"
+
+ * @b es@: "Choose existing"
+
+ * @b fi@: "Choose existing"
+
+ * @b fr@: "Choose existing"
+
+ * @b he@: "Choose existing"
+
+ * @b hi@: "Choose existing"
+
+ * @b hr@: "Choose existing"
+
+ * @b hu@: "Choose existing"
+
+ * @b it@: "Choose existing"
+
+ * @b ja@: "Choose existing"
+
+ * @b ko@: "Choose existing"
+
+ * @b nb@: "Choose existing"
+
+ * @b nl@: "Choose existing"
+
+ * @b pl@: "Choose existing"
+
+ * @b pt-BR@: "Choose existing"
+
+ * @b pt@: "Choose existing"
+
+ * @b ro@: "Choose existing"
+
+ * @b ru@: "Choose existing"
+
+ * @b sk@: "Choose existing"
+
+ * @b sr@: "Choose existing"
+
+ * @b sv@: "Choose existing"
+
+ * @b tr@: "Choose existing"
+
+ * @b uk@: "Choose existing"
+
+ * @b ur@: "Choose existing"
+
+ * @b vi@: "Choose existing"
+
+ * @b zh-Hans@: "Choose existing"
+
+ * @b zh-Hant@: "Choose existing"
+
+ */
+static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING = @"BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING";
+
+/*!
+ * "Add profile photo"
+
+ * All translations:
+
+ * @b ar@: "Add profile photo"
+
+ * @b cs@: "Add profile photo"
+
+ * @b da@: "Add profile photo"
+
+ * @b de@: "Add profile photo"
+
+ * @b el@: "Add profile photo"
+
+ * @b en@: "Add profile photo"
+
+ * @b es@: "Add profile photo"
+
+ * @b fi@: "Add profile photo"
+
+ * @b fr@: "Add profile photo"
+
+ * @b he@: "Add profile photo"
+
+ * @b hi@: "Add profile photo"
+
+ * @b hr@: "Add profile photo"
+
+ * @b hu@: "Add profile photo"
+
+ * @b it@: "Add profile photo"
+
+ * @b ja@: "Add profile photo"
+
+ * @b ko@: "Add profile photo"
+
+ * @b nb@: "Add profile photo"
+
+ * @b nl@: "Add profile photo"
+
+ * @b pl@: "Add profile photo"
+
+ * @b pt-BR@: "Add profile photo"
+
+ * @b pt@: "Add profile photo"
+
+ * @b ro@: "Add profile photo"
+
+ * @b ru@: "Add profile photo"
+
+ * @b sk@: "Add profile photo"
+
+ * @b sr@: "Add profile photo"
+
+ * @b sv@: "Add profile photo"
+
+ * @b tr@: "Add profile photo"
+
+ * @b uk@: "Add profile photo"
+
+ * @b ur@: "Add profile photo"
+
+ * @b vi@: "Add profile photo"
+
+ * @b zh-Hans@: "Add profile photo"
+
+ * @b zh-Hant@: "Add profile photo"
+
+ */
+static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE = @"BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE";
+
+/*!
  * "Selected"
 
  * All translations:
@@ -21739,39 +21955,6 @@ static NSString * const BME_ACCESS_NOTIFICATION_ACTION_ANSWER = @"BME_ACCESS_NOT
 
  */
 static NSString * const BME_ACCESS_NOTIFICATION_ACTION_DISMISS = @"BME_ACCESS_NOTIFICATION_ACTION_DISMISS";
-
-#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW'
-/*!
- * "Take new"
-
- * All translations:
-
- * @b en@: "Take new"
-
- */
-static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW = @"BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW";
-
-#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING'
-/*!
- * "Choose existing"
-
- * All translations:
-
- * @b en@: "Choose existing"
-
- */
-static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING = @"BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING";
-
-#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE'
-/*!
- * "Add profile photo"
-
- * All translations:
-
- * @b en@: "Add profile photo"
-
- */
-static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE = @"BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE";
 
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK'
 /*!
