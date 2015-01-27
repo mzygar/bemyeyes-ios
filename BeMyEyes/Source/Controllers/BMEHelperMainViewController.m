@@ -115,7 +115,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         self.tableView.estimatedRowHeight = self.tableView.rowHeight;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
     }
-     
+	
+	self.pointsHelpedPersonsLabel.usesSignificantDigits = NO;
+	
     self.pointsHelpedPersonsLabel.colors =
     self.pointsTotalLabel.colors = @{ @(0.0f) : [UIColor lightTextColor],
                                       @(1.0f) : [UIColor whiteColor] };
@@ -147,11 +149,12 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self reloadPoints];
 }
 
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     self.pointEntries = nil;
+	self.tableView.delegate = nil;
+	self.tableView.dataSource = nil;
 }
 
 - (void)shouldLocalize {
@@ -388,7 +391,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     CGFloat distanceFromTop = scrollView.contentOffset.y;
     self.communityStatsBottomConstraint.constant = MIN(0, -distanceFromTop);
 	
-	CGFloat statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
     self.scrolled = distanceFromTop > self.defaultStatusBarHeight;
 	
 	if (distanceFromTop <= 0) {
