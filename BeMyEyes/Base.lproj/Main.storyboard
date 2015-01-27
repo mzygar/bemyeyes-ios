@@ -1528,18 +1528,27 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Jb-0ah" customClass="BMEPointLabel">
                                                     <rect key="frame" x="0.0" y="0.0" width="142" height="60"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person helped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-6q-g4Z">
                                                     <rect key="frame" x="0.0" y="51" width="142" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="3Ar-di-Aw4"/>
                                                 <constraint firstItem="Sdj-6q-g4Z" firstAttribute="leading" secondItem="6AN-ix-uS6" secondAttribute="leading" id="6nP-8h-IJV"/>
@@ -1556,18 +1565,27 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-OD-NO6" customClass="BMEPointLabel">
                                                     <rect key="frame" x="0.0" y="0.0" width="142" height="60"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e19-HE-m6G">
                                                     <rect key="frame" x="0.0" y="51" width="142" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstItem="Iea-OD-NO6" firstAttribute="leading" secondItem="L93-LG-eip" secondAttribute="leading" id="42t-F7-9bR"/>
                                                 <constraint firstItem="e19-HE-m6G" firstAttribute="top" secondItem="Iea-OD-NO6" secondAttribute="bottom" constant="-9" id="5o4-2Q-VlO"/>
@@ -1714,6 +1732,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Be My Eyes Network" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-T6-OWR">
                                                 <rect key="frame" x="41" y="0.0" width="198" height="31"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1734,6 +1755,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="353k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoV-jm-40g" userLabel="42k" customClass="BMEPointLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="43"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1760,6 +1784,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42.5k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vn-oO-1sp" customClass="BMEPointLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="43"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1792,6 +1819,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.02M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="936-Cz-Ktx" customClass="BMEPointLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="43"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1809,6 +1839,9 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="pfz-B9-brk" firstAttribute="width" secondItem="jP5-Ma-7Jo" secondAttribute="width" id="17C-yb-Ciu"/>
                                     <constraint firstAttribute="centerX" secondItem="i0f-c5-js3" secondAttribute="centerX" id="3BY-bn-dWx"/>
@@ -1858,8 +1891,10 @@ You may under no circumstances share any nude, unlawful, hateful or sexually sug
                         <outlet property="pointsCommunityBlindLabel" destination="3vn-oO-1sp" id="YfS-Y5-pj5"/>
                         <outlet property="pointsCommunityHelpedLabel" destination="936-Cz-Ktx" id="jGb-cp-NF6"/>
                         <outlet property="pointsCommunitySightedLabel" destination="yoV-jm-40g" id="H77-rV-O2g"/>
+                        <outlet property="pointsHelpedContainerView" destination="6AN-ix-uS6" id="cYi-by-mSk"/>
                         <outlet property="pointsHelpedPersonsDescriptionLabel" destination="Sdj-6q-g4Z" id="GCU-2T-0Wy"/>
                         <outlet property="pointsHelpedPersonsLabel" destination="OdZ-Jb-0ah" id="4AD-sj-82J"/>
+                        <outlet property="pointsTotalContainerView" destination="L93-LG-eip" id="8UP-d5-yAf"/>
                         <outlet property="pointsTotalDescriptionLabel" destination="e19-HE-m6G" id="gRh-YL-1n1"/>
                         <outlet property="pointsTotalLabel" destination="Iea-OD-NO6" id="lIt-S7-MU7"/>
                         <outlet property="profileImageView" destination="nD0-Ei-SWE" id="pU9-SS-mz4"/>

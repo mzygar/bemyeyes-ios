@@ -44,9 +44,11 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointsHelpedPersonsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsHelpedPersonsDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIView *pointsHelpedContainerView;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointsTotalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsTotalDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIView *pointsTotalContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *failedLoadingPointLabel;
 @property (weak, nonatomic) IBOutlet UIButton *retryLoadingPointButton;
 @property (weak, nonatomic) IBOutlet PointsBarView *pointsBarView;
@@ -324,7 +326,16 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.levelLabel.text = MKLocalizedFromTable(user.currentLevel.localizableKeyForTitle, BMEHelperMainLocalizationTable);
     
     [self.pointsHelpedPersonsLabel setPoint:user.peopleHelped.integerValue animated:animated];
+    NSString *helpedAccessibilityText =
+    [NSString stringWithFormat: @"%i %@",self.pointsHelpedPersonsLabel.point,
+                                         self.pointsHelpedPersonsDescriptionLabel.text];
+    self.pointsHelpedContainerView.accessibilityLabel = helpedAccessibilityText;
+    
     [self.pointsTotalLabel setPoint:user.totalPoints.integerValue animated:animated];
+    NSString *totalAccessibilityLabel =
+    [NSString stringWithFormat: @"%i %@", self.pointsTotalLabel.point,
+                                          self.pointsTotalDescriptionLabel.text];
+    self.pointsTotalContainerView.accessibilityLabel = totalAccessibilityLabel;
     
     self.pointsBarView.text = [NSString stringWithFormat:MKLocalizedFromTable(BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION, BMEHelperMainLocalizationTable), user.pointsToNextLevel];
     self.pointsBarView.progress = user.levelProgress;
@@ -337,6 +348,15 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self.pointsCommunityBlindLabel setPoint:self.stats.blind.integerValue animated:animated];
     [self.pointsCommunitySightedLabel setPoint:self.stats.sighted.integerValue animated:animated];
     [self.pointsCommunityHelpedLabel setPoint:self.stats.helped.integerValue animated:animated];
+    
+    NSString *accessibilityLabel =
+    [NSString stringWithFormat: @"%@. %i %@. %i %@. %i %@",
+     MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION, BMEHelperMainLocalizationTable),
+     self.stats.blind.integerValue, self.descriptionCommunityBlindLabel.text,
+     self.stats.sighted.integerValue, self.descriptionCommunitySightedLabel.text,
+     self.stats.helped.integerValue, self.descriptionCommunityHelpedLabel.text];
+    
+    self.communityStatsContainer.accessibilityLabel = accessibilityLabel;
 }
 
 - (void)reloadPoints {
