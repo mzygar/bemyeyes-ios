@@ -27,6 +27,10 @@
     [super awakeFromNib];
     
     self.defaultTextColor = self.textColor;
+	
+	self.usesSignificantDigits = YES;
+	self.minimumSignificantDigits = 1;
+	self.maximumSignificantDigits = 3;
     
     self.tickAnimationDuration = BMEPointLabelTickAnimationDuration;
     self.colors = @{ @(0.0f) : [UIColor redColor],
@@ -51,9 +55,9 @@
     if (!_pointFormatter) {
         _pointFormatter = [NSNumberFormatter new];
         _pointFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-        _pointFormatter.usesSignificantDigits = YES;
-        _pointFormatter.minimumSignificantDigits = 1;
-        _pointFormatter.maximumSignificantDigits = 3;
+        _pointFormatter.usesSignificantDigits = self.usesSignificantDigits;
+		_pointFormatter.minimumSignificantDigits = self.minimumSignificantDigits;
+		_pointFormatter.maximumSignificantDigits = self.maximumSignificantDigits;
     }
     return _pointFormatter;
 }
@@ -79,6 +83,30 @@
             [self displayPoint];
         }
     }
+}
+
+- (void)setUsesSignificantDigits:(BOOL)usesSignificantDigits {
+	if (usesSignificantDigits != _usesSignificantDigits) {
+		_usesSignificantDigits = usesSignificantDigits;
+		[self invalidatePointFormatter];
+		[self displayPoint];
+	}
+}
+
+- (void)setMinimumSignificantDigits:(NSInteger)minimumSignificantDigits {
+	if (minimumSignificantDigits != _minimumSignificantDigits) {
+		_minimumSignificantDigits = minimumSignificantDigits;
+		[self invalidatePointFormatter];
+		[self displayPoint];
+	}
+}
+
+- (void)setMaximumSignificantDigits:(NSInteger)maximumSignificantDigits {
+	if (maximumSignificantDigits != _maximumSignificantDigits) {
+		_maximumSignificantDigits = maximumSignificantDigits;
+		[self invalidatePointFormatter];
+		[self displayPoint];
+	}
 }
 
 #pragma mark -
@@ -268,6 +296,10 @@
     [layoutManager characterRangeForGlyphRange:range actualGlyphRange:&glyphRange];
     
     return [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:textContainer];
+}
+
+- (void)invalidatePointFormatter {
+	self.pointFormatter = nil;
 }
 
 @end

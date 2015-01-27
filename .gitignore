@@ -17,6 +17,7 @@
 ####
 # Be My Eyes specific files
 BeMyEyes/Source/BMEGlobal.h
+BeMyEyes\ Tests/ReferenceImages
  
 #####
 # OS X temporary files that should never be committed

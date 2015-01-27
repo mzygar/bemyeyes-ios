@@ -38,12 +38,34 @@
     NSLog(@"Register for remote notifications");
     
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
-        UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+
+        UIMutableUserNotificationAction *replyYesAction = [self userNotificationActionWithTitle:BME_ACCESS_NOTIFICATION_ACTION_ANSWER indentifier:NotificationActionReplyYes activationMode:UIUserNotificationActivationModeForeground];
+        UIMutableUserNotificationAction *replyNoAction = [self userNotificationActionWithTitle:BME_ACCESS_NOTIFICATION_ACTION_DISMISS indentifier:NotificationActionReplyNo activationMode:UIUserNotificationActivationModeBackground];
+
+        UIMutableUserNotificationCategory *category = [UIMutableUserNotificationCategory new];
+        category.identifier = NotificationCategoryReply;
+        [category setActions:@[replyNoAction, replyYesAction] forContext:UIUserNotificationActionContextDefault];
+
+        NSSet *categories = [NSSet setWithObject:category];
+        UIUserNotificationType types = (UIUserNotificationTypeSound | UIUserNotificationTypeBadge | UIUserNotificationTypeAlert);
+
+        UIUserNotificationSettings *settingsActionable = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settingsActionable];
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     }
+}
+
++ (UIMutableUserNotificationAction*)userNotificationActionWithTitle:(NSString*)title
+                                                        indentifier:(NSString*)identifier
+                                                     activationMode:(UIUserNotificationActivationMode) activationMode {
+    UIMutableUserNotificationAction* action = [[UIMutableUserNotificationAction alloc] init];
+    action.title = title;
+    action.identifier = identifier;
+    action.activationMode = activationMode;
+    action.destructive = NO;
+    action.authenticationRequired = NO;
+    return action;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

@@ -19,6 +19,8 @@
 #import "BMEPointsTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BeMyEyes-Swift.h"
+#import <PSTAlertController.h>
+
 
 #define BMEHelperSnoozeAmount0 0.0f
 #define BMEHelperSnoozeAmount25 3600.0f
@@ -34,7 +36,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     BMESnoozeStep100
 };
 
-@interface BMEHelperMainViewController () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface BMEHelperMainViewController () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 
@@ -42,9 +44,11 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointsHelpedPersonsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsHelpedPersonsDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIView *pointsHelpedContainerView;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointsTotalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsTotalDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIView *pointsTotalContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *failedLoadingPointLabel;
 @property (weak, nonatomic) IBOutlet UIButton *retryLoadingPointButton;
 @property (weak, nonatomic) IBOutlet PointsBarView *pointsBarView;
@@ -113,7 +117,9 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         self.tableView.estimatedRowHeight = self.tableView.rowHeight;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
     }
-     
+	
+	self.pointsHelpedPersonsLabel.usesSignificantDigits = NO;
+	
     self.pointsHelpedPersonsLabel.colors =
     self.pointsTotalLabel.colors = @{ @(0.0f) : [UIColor lightTextColor],
                                       @(1.0f) : [UIColor whiteColor] };
@@ -126,15 +132,31 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
     
+    if ([self.user isNative]) {
+        UITapGestureRecognizer *photoTapRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget: self
+                                                action: @selector(profileImageViewTapped:)];
+        [self.profileImageView addGestureRecognizer: photoTapRecognizer];
+        self.profileImageView.userInteractionEnabled = YES;
+    }
+    
     [self snapSnoozeSliderToStep:BMESnoozeStep0 animated:NO];
     
     [self updateToProfile];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    [self reloadPoints];
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     self.pointEntries = nil;
+	self.tableView.delegate = nil;
+	self.tableView.dataSource = nil;
 }
 
 - (void)shouldLocalize {
@@ -210,7 +232,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     if (user.type == BMEUserTypeFacebook) {
         NSNumber *facebookId = (NSNumber *)user.userId;
         NSURL *url = [FacebookHelper urlForId:facebookId.integerValue];
-        [self.profileImageView sd_setImageWithURL:url];
+        [self.profileImageView sd_setImageWithURL:url placeholderImage:nil options:SDWebImageRefreshCached];
     } else {
         [self.profileImageView sd_cancelCurrentImageLoad];
         if (user.profileImage) {
@@ -304,7 +326,16 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     self.levelLabel.text = MKLocalizedFromTable(user.currentLevel.localizableKeyForTitle, BMEHelperMainLocalizationTable);
     
     [self.pointsHelpedPersonsLabel setPoint:user.peopleHelped.integerValue animated:animated];
+    NSString *helpedAccessibilityText =
+    [NSString stringWithFormat: @"%i %@",self.pointsHelpedPersonsLabel.point,
+                                         self.pointsHelpedPersonsDescriptionLabel.text];
+    self.pointsHelpedContainerView.accessibilityLabel = helpedAccessibilityText;
+    
     [self.pointsTotalLabel setPoint:user.totalPoints.integerValue animated:animated];
+    NSString *totalAccessibilityLabel =
+    [NSString stringWithFormat: @"%i %@", self.pointsTotalLabel.point,
+                                          self.pointsTotalDescriptionLabel.text];
+    self.pointsTotalContainerView.accessibilityLabel = totalAccessibilityLabel;
     
     self.pointsBarView.text = [NSString stringWithFormat:MKLocalizedFromTable(BME_HELPER_MAIN_LEVEL_POINTS_NEXT_DESCRIPTION, BMEHelperMainLocalizationTable), user.pointsToNextLevel];
     self.pointsBarView.progress = user.levelProgress;
@@ -317,6 +348,15 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     [self.pointsCommunityBlindLabel setPoint:self.stats.blind.integerValue animated:animated];
     [self.pointsCommunitySightedLabel setPoint:self.stats.sighted.integerValue animated:animated];
     [self.pointsCommunityHelpedLabel setPoint:self.stats.helped.integerValue animated:animated];
+    
+    NSString *accessibilityLabel =
+    [NSString stringWithFormat: @"%@. %i %@. %i %@. %i %@",
+     MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION, BMEHelperMainLocalizationTable),
+     self.stats.blind.integerValue, self.descriptionCommunityBlindLabel.text,
+     self.stats.sighted.integerValue, self.descriptionCommunitySightedLabel.text,
+     self.stats.helped.integerValue, self.descriptionCommunityHelpedLabel.text];
+    
+    self.communityStatsContainer.accessibilityLabel = accessibilityLabel;
 }
 
 - (void)reloadPoints {
@@ -371,7 +411,6 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     CGFloat distanceFromTop = scrollView.contentOffset.y;
     self.communityStatsBottomConstraint.constant = MIN(0, -distanceFromTop);
 	
-	CGFloat statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
     self.scrolled = distanceFromTop > self.defaultStatusBarHeight;
 	
 	if (distanceFromTop <= 0) {
@@ -403,11 +442,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     return cell;
 }
 
-
 #pragma mark - Setters and Getters
-
-
-#pragma mark – Setters and Getters
 
 - (void)setUser:(BMEUser *)user
 {
@@ -425,6 +460,68 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         
         [self updateStatsPointsAnimated:NO];
     }
+}
+
+#pragma mark - Profile photo selection
+
+- (void) profileImageViewTapped: (UITapGestureRecognizer*) tapRecognizer
+{
+    NSString *actionSheetTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE, BMEHelperMainLocalizationTable);
+    
+    PSTAlertController *actionSheet =
+    [PSTAlertController alertControllerWithTitle: actionSheetTitle
+                                         message: nil
+                                  preferredStyle: PSTAlertControllerStyleActionSheet];
+    
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
+    {
+        NSString *takeNewActionTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW, BMEHelperMainLocalizationTable);
+        
+        PSTAlertAction *takeNewAction =
+        [PSTAlertAction actionWithTitle: takeNewActionTitle
+                                handler:^(PSTAlertAction *action) {
+                                    UIImagePickerController *pickerController = [UIImagePickerController new];
+                                    pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                    pickerController.delegate = self;
+                                    [self presentViewController: pickerController
+                                                       animated: YES
+                                                     completion: nil];
+                                }];
+        
+        [actionSheet addAction: takeNewAction];
+    }
+    
+    NSString *chooseExistingTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING, BMEHelperMainLocalizationTable);
+    
+    PSTAlertAction *chooseExistingAction =
+    [PSTAlertAction actionWithTitle: chooseExistingTitle
+                            handler:^(PSTAlertAction *action) {
+                                UIImagePickerController *pickerController = [UIImagePickerController new];
+                                pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                pickerController.delegate = self;
+                                [self presentViewController: pickerController
+                                                   animated: YES
+                                                 completion: nil];
+                            }];
+    
+    [actionSheet addAction: chooseExistingAction];
+    [actionSheet addCancelActionWithHandler: nil];
+    
+    [actionSheet showWithSender: nil
+                     controller: self
+                       animated: YES
+                     completion: nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
+    UIImage *imageScaled = [image scaleToProfileImageSize];
+    self.profileImageView.image = imageScaled;
+    self.user.profileImage = imageScaled;
+    [picker dismissViewControllerAnimated: YES completion: nil];
 }
 
 @end

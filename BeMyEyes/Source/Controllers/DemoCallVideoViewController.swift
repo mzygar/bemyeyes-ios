@@ -50,7 +50,6 @@ class DemoCallVideoViewController: VideoViewController {
 	}
 	
 	private func dismiss() {
-//		dismissViewControllerAnimated(true, completion: nil)
 		presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
 	}
 }

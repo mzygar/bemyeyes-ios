@@ -77,6 +77,8 @@ static NSString *BMECallPostSegue = @"PostCall";
 
 - (void)dealloc {
     [self stopCallTone];
+	
+	NSLog(@"DEALLOC CALL VIEW CONTROLLER");
     
     _requestIdentifier = nil;
     _shortId = nil;

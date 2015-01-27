@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *askForRoleLabel;
 @property (weak, nonatomic) IBOutlet Button *sightedRoleButton;
 @property (weak, nonatomic) IBOutlet Button *blindRoleButton;
-@property (weak, nonatomic) IBOutlet UIButton *alreadyRegisteredButton;
+@property (weak, nonatomic) IBOutlet Button *alreadyRegisteredButton;
 @property (weak, nonatomic) IBOutlet UIView *communityStatsView;
 @property (weak, nonatomic) IBOutlet UILabel *communityStatsLabel;
 @property (weak, nonatomic) IBOutlet BMEPointLabel *pointsCommunitySightedLabel;
@@ -44,6 +44,8 @@ static NSString *const BMELoginSegue = @"Login";
     
     [MKLocalization registerForLocalization:self];
     
+    self.alreadyRegisteredButton.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    [self.alreadyRegisteredButton setMainStyleBorder];
     self.sightedRoleButton.font = [UIFont boldSystemFontOfSize:24];
     self.blindRoleButton.font = [UIFont boldSystemFontOfSize:24];
     
@@ -71,7 +73,7 @@ static NSString *const BMELoginSegue = @"Login";
     
     self.sightedRoleButton.title = MKLocalizedFromTable(BME_FRONT_PAGE_SIGHTED_ROLE, BMEFrontPageLocalizationTable);
     self.blindRoleButton.title = MKLocalizedFromTable(BME_FRONT_PAGE_BLIND_ROLE, BMEFrontPageLocalizationTable);
-    [self.alreadyRegisteredButton setTitle:MKLocalizedFromTable(BME_FRONT_PAGE_ALREADY_REGISTERED, BMEFrontPageLocalizationTable) forState:UIControlStateNormal];
+    self.alreadyRegisteredButton.title = MKLocalizedFromTable(BME_FRONT_PAGE_ALREADY_REGISTERED, BMEFrontPageLocalizationTable);
     
     self.communityStatsLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_DESCRIPTION, BMEHelperMainLocalizationTable);
     self.descriptionCommunitySightedLabel.text = MKLocalizedFromTable(BME_HELPER_MAIN_COMMUNITY_NETWORK_SIGHTED, BMEHelperMainLocalizationTable);
@@ -84,6 +86,9 @@ static NSString *const BMELoginSegue = @"Login";
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+- (IBAction)didTapLogin:(id)sender {
+    [self performLoginSegue];
 }
 
 - (IBAction)didTapSighted:(id)sender {

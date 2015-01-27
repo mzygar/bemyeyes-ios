@@ -11,6 +11,9 @@
 @interface BMEPointLabel : UILabel
 
 @property (assign, nonatomic) NSInteger point;
+@property (assign, nonatomic) BOOL usesSignificantDigits;
+@property (assign, nonatomic) NSInteger minimumSignificantDigits;
+@property (assign, nonatomic) NSInteger maximumSignificantDigits;
 @property (assign, nonatomic) NSTimeInterval tickAnimationDuration;
 @property (copy, nonatomic) NSDictionary *colors;
 
