@@ -21740,6 +21740,39 @@ static NSString * const BME_ACCESS_NOTIFICATION_ACTION_ANSWER = @"BME_ACCESS_NOT
  */
 static NSString * const BME_ACCESS_NOTIFICATION_ACTION_DISMISS = @"BME_ACCESS_NOTIFICATION_ACTION_DISMISS";
 
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW'
+/*!
+ * "Take new"
+
+ * All translations:
+
+ * @b en@: "Take new"
+
+ */
+static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW = @"BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING'
+/*!
+ * "Choose existing"
+
+ * All translations:
+
+ * @b en@: "Choose existing"
+
+ */
+static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING = @"BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE'
+/*!
+ * "Add profile photo"
+
+ * All translations:
+
+ * @b en@: "Add profile photo"
+
+ */
+static NSString * const BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE = @"BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE";
+
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK'
 /*!
  * "OK"

@@ -237,13 +237,16 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 - (void)verifyTokenAuthOnServerWithCompletion:(void (^)(BOOL))completion {
     if (!self.isTokenValid) {
         // No valid token locally, so don't check server for validity
+        NSLog(@"No valid auth token: %@, %@", self.token, self.tokenExpiryDate);
         return;
     }
+    NSLog(@"Check auth token on server: %@", self.token);
     [self putPath:@"auth/login/token" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completion) {
             completion(YES);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Valid token auth on server reponse: %@", operation.response);
         BOOL validToken = operation.response.statusCode != 401; // Authorization error
         if (completion) {
             completion(validToken);
@@ -812,14 +815,18 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (NSArray *)mapPointEntryFromRepresentation:(NSArray *)representation {
-    DCParserConfiguration *config = [DCParserConfiguration configuration];
-    config.datePattern = @"y-M-d'T'H:m:s.SSS'Z'";
-    
-    DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"date" toAttribute:@"date" onClass:[BMEPointEntry class]];
-    [config addObjectMapping:dateMapping];
-    
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEPointEntry class] andConfiguration:config];
-    return [parser parseArray:representation];
+
+    ISO8601DateFormatter* formatter = [[ISO8601DateFormatter alloc] init];
+    NSMutableArray* pointsArray = [[NSMutableArray alloc] init];
+    for (NSDictionary* pointEntryDictionary in representation) {
+
+        BMEPointEntry* entry = [[BMEPointEntry alloc] init];
+        [entry setValue:[formatter dateFromString:pointEntryDictionary[@"date"]] forKeyPath:@"date"];
+        [entry setValue:pointEntryDictionary[@"event"] forKeyPath:@"event"];
+        [entry setValue:pointEntryDictionary[@"point"] forKeyPath:@"point"];
+        [pointsArray addObject:entry];
+    }
+    return pointsArray;
 }
 
 - (BMEUser *)mapUserStatsFromRepresentation:(NSDictionary *)representation {

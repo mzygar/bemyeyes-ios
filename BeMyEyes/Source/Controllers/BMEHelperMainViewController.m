@@ -19,6 +19,8 @@
 #import "BMEPointsTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BeMyEyes-Swift.h"
+#import <PSTAlertController.h>
+
 
 #define BMEHelperSnoozeAmount0 0.0f
 #define BMEHelperSnoozeAmount25 3600.0f
@@ -34,7 +36,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     BMESnoozeStep100
 };
 
-@interface BMEHelperMainViewController () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface BMEHelperMainViewController () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 
@@ -127,6 +129,14 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
+    
+    if ([self.user isNative]) {
+        UITapGestureRecognizer *photoTapRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget: self
+                                                action: @selector(profileImageViewTapped:)];
+        [self.profileImageView addGestureRecognizer: photoTapRecognizer];
+        self.profileImageView.userInteractionEnabled = YES;
+    }
     
     [self snapSnoozeSliderToStep:BMESnoozeStep0 animated:NO];
     
@@ -412,11 +422,7 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
     return cell;
 }
 
-
 #pragma mark - Setters and Getters
-
-
-#pragma mark – Setters and Getters
 
 - (void)setUser:(BMEUser *)user
 {
@@ -434,6 +440,68 @@ typedef NS_ENUM(NSInteger, BMESnoozeStep) {
         
         [self updateStatsPointsAnimated:NO];
     }
+}
+
+#pragma mark - Profile photo selection
+
+- (void) profileImageViewTapped: (UITapGestureRecognizer*) tapRecognizer
+{
+    NSString *actionSheetTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE, BMEHelperMainLocalizationTable);
+    
+    PSTAlertController *actionSheet =
+    [PSTAlertController alertControllerWithTitle: actionSheetTitle
+                                         message: nil
+                                  preferredStyle: PSTAlertControllerStyleActionSheet];
+    
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
+    {
+        NSString *takeNewActionTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW, BMEHelperMainLocalizationTable);
+        
+        PSTAlertAction *takeNewAction =
+        [PSTAlertAction actionWithTitle: takeNewActionTitle
+                                handler:^(PSTAlertAction *action) {
+                                    UIImagePickerController *pickerController = [UIImagePickerController new];
+                                    pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                    pickerController.delegate = self;
+                                    [self presentViewController: pickerController
+                                                       animated: YES
+                                                     completion: nil];
+                                }];
+        
+        [actionSheet addAction: takeNewAction];
+    }
+    
+    NSString *chooseExistingTitle = MKLocalizedFromTable(BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING, BMEHelperMainLocalizationTable);
+    
+    PSTAlertAction *chooseExistingAction =
+    [PSTAlertAction actionWithTitle: chooseExistingTitle
+                            handler:^(PSTAlertAction *action) {
+                                UIImagePickerController *pickerController = [UIImagePickerController new];
+                                pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                pickerController.delegate = self;
+                                [self presentViewController: pickerController
+                                                   animated: YES
+                                                 completion: nil];
+                            }];
+    
+    [actionSheet addAction: chooseExistingAction];
+    [actionSheet addCancelActionWithHandler: nil];
+    
+    [actionSheet showWithSender: nil
+                     controller: self
+                       animated: YES
+                     completion: nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
+    UIImage *imageScaled = [image scaleToProfileImageSize];
+    self.profileImageView.image = imageScaled;
+    self.user.profileImage = imageScaled;
+    [picker dismissViewControllerAnimated: YES completion: nil];
 }
 
 @end
