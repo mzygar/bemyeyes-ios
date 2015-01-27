@@ -812,14 +812,18 @@ NSString* BMENormalizedDeviceTokenStringWithDeviceToken(id deviceToken) {
 }
 
 - (NSArray *)mapPointEntryFromRepresentation:(NSArray *)representation {
-    DCParserConfiguration *config = [DCParserConfiguration configuration];
-    config.datePattern = @"y-M-d'T'H:m:s.SSS'Z'";
-    
-    DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"date" toAttribute:@"date" onClass:[BMEPointEntry class]];
-    [config addObjectMapping:dateMapping];
-    
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[BMEPointEntry class] andConfiguration:config];
-    return [parser parseArray:representation];
+
+    ISO8601DateFormatter* formatter = [[ISO8601DateFormatter alloc] init];
+    NSMutableArray* pointsArray = [[NSMutableArray alloc] init];
+    for (NSDictionary* pointEntryDictionary in representation) {
+
+        BMEPointEntry* entry = [[BMEPointEntry alloc] init];
+        [entry setValue:[formatter dateFromString:pointEntryDictionary[@"date"]] forKeyPath:@"date"];
+        [entry setValue:pointEntryDictionary[@"event"] forKeyPath:@"event"];
+        [entry setValue:pointEntryDictionary[@"point"] forKeyPath:@"point"];
+        [pointsArray addObject:entry];
+    }
+    return pointsArray;
 }
 
 - (BMEUser *)mapUserStatsFromRepresentation:(NSDictionary *)representation {
