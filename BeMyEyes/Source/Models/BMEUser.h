@@ -40,10 +40,11 @@ typedef NS_ENUM(NSInteger, BMEUserType) {
 @property (readonly, nonatomic) NSArray *lastPointEntries;
 @property (readonly, nonatomic) NSArray *completedTasks;
 @property (readonly, nonatomic) NSArray *remainingTasks;
-@property (readonly, nonatomic) UIImage *profileImage;
+@property (strong, nonatomic) UIImage *profileImage;
 
 - (BOOL)isHelper;
 - (BOOL)isBlind;
+- (BOOL)isNative;
 - (int)pointsToNextLevel;
 - (double)levelProgress;
 
