@@ -85,3 +85,11 @@
 /* Snooze status text when not snoozing */
 "BME_HELPER_MAIN_SNOOZE_STATUS_NOT_SNOOZING_TEXT" = "أنت نشط حاليا";
 
+/* Option title in actions sheet displayed when the profile image view is tapped */
+"BME_HELPER_MAIN_PROFILE_PHOTO_TAKE_NEW" = "Take new";
+
+/* Option title in action sheet displayed when the profile image view is tapped */
+"BME_HELPER_MAIN_PROFILE_PHOTO_CHOOSE_EXISTING" = "Choose existing";
+
+/* Title of the action sheet displayed when the profile image view is tapped */
+"BME_HELPER_MAIN_PROFILE_PHOTO_ACTION_SHEET_TITLE" = "Add profile photo";
