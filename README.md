@@ -1,7 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/bemyeyes/bemyeyes-ios.png?label=ready&title=Ready)](http://waffle.io/bemyeyes/bemyeyes-ios)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/bemyeyes/localized.png)](https://crowdin.com/project/bemyeyes)
 
-Read more about [Be My Eyes](http://bemyeyes.org)
+Read more about [Be My Eyes](http://bemyeyes.org) project.
 
 # Getting started
 ## Dependencies
