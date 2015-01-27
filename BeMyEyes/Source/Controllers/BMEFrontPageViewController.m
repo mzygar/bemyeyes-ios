@@ -87,6 +87,9 @@ static NSString *const BMELoginSegue = @"Login";
 {
     return YES;
 }
+- (IBAction)didTapLogin:(id)sender {
+    [self performLoginSegue];
+}
 
 - (IBAction)didTapSighted:(id)sender {
     [self performHelperSegue];
