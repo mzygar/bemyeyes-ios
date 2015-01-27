@@ -30,7 +30,8 @@ We are using [Waffle](https://waffle.io/bemyeyes/bemyeyes-ios) to manage Github 
 - In progress – Someone is working on this one
 
 You can see priorities on [Waffle](https://waffle.io/bemyeyes/bemyeyes-ios) – top = first.
-Admins of this repo can make the changes.  
+Admins of this repo can make the changes. 
+[![Throughput Graph](https://graphs.waffle.io/bemyeyes/bemyeyes-ios/throughput.svg)](https://waffle.io/bemyeyes/bemyeyes-ios/metrics)
 
 # Release checklist
 ## Pre / Continuously
