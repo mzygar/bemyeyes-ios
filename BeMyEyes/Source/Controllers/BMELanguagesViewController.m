@@ -9,6 +9,7 @@
 #import "BMELanguagesViewController.h"
 #import "BMEClient.h"
 #import "BMEUser.h"
+#import <PSTAlertController.h>
 
 #define BMELanguageCellReuseIdentifier @"LanguageCell"
 
@@ -68,22 +69,61 @@
     if (!self.hasChanges) {
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
-        [[BMEClient sharedClient] updateUserWithKnownLanguages:self.knowLanguageCodes completion:^(BOOL success, NSError *error) {
-            if (success) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            } else {
-                NSString *title = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE, BMELanguagesLocalizationTable);
-                NSString *message = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE, BMELanguagesLocalizationTable);
-                NSString *cancelButton = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL, BMELanguagesLocalizationTable);
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
-                [alert show];
-            }
-            
-            if (error) {
-                NSLog(@"Could not update user with known languages: %@", error);
-            }
-        }];
+        
+        if (self.knowLanguageCodes.count == 0) {
+            [self _showNoLanguagesSelectedAlertView];
+        }else{
+            [self _saveLanguagesAndDismissController];
+        }
     }
+}
+
+- (void) _showNoLanguagesSelectedAlertView
+{
+    PSTAlertController *alertView =
+    [PSTAlertController alertControllerWithTitle: MKLocalizedFromTable(BME_LANGUAGES_ALERT_NO_LANGS_SELECTED, BMELanguagesLocalizationTable)
+                                         message: MKLocalizedFromTable(BME_LANGUAGES_ALERT_PROCEED_QUESTION, BMELanguagesLocalizationTable)
+                                  preferredStyle: PSTAlertControllerStyleAlert];
+    
+    PSTAlertAction *proceedAction =
+    [PSTAlertAction actionWithTitle: MKLocalizedFromTable(BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_YES, BMELanguagesLocalizationTable)
+                            handler:^(PSTAlertAction *action) {
+                                [self _saveLanguagesAndDismissController];
+                            }];
+    
+    PSTAlertAction *stayAction =
+    [PSTAlertAction actionWithTitle: MKLocalizedFromTable(BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_NO, BMELanguagesLocalizationTable)
+                              style: PSTAlertActionStyleCancel
+                            handler: nil];
+    
+    [alertView addAction: proceedAction];
+    [alertView addAction: stayAction];
+    [alertView showWithSender: nil
+                   controller: self
+                     animated: YES
+                   completion: nil];
+}
+
+- (void) _saveLanguagesAndDismissController
+{
+    void (^completion)(BOOL, NSError*) = ^(BOOL success, NSError *error) {
+        if (success) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            NSString *title = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_TITLE, BMELanguagesLocalizationTable);
+            NSString *message = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_MESSAGE, BMELanguagesLocalizationTable);
+            NSString *cancelButton = MKLocalizedFromTable(BME_LANGUAGES_ALERT_COULD_NOT_SAVE_CANCEL, BMELanguagesLocalizationTable);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButton otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+        if (error) {
+            NSLog(@"Could not update user with known languages: %@", error);
+        }
+    };
+    
+    [[BMEClient sharedClient] updateUserWithKnownLanguages: self.knowLanguageCodes
+                                                completion: completion];
 }
 
 #pragma mark -
