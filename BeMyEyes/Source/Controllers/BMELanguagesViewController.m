@@ -125,6 +125,8 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     
+    cell.selected = !isAlreadyKnownLanguage;
+    
     self.hasChanges = YES;
 }
 
