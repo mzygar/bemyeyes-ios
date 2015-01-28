@@ -21956,6 +21956,50 @@ static NSString * const BME_ACCESS_NOTIFICATION_ACTION_ANSWER = @"BME_ACCESS_NOT
  */
 static NSString * const BME_ACCESS_NOTIFICATION_ACTION_DISMISS = @"BME_ACCESS_NOTIFICATION_ACTION_DISMISS";
 
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LANGUAGES_ALERT_NO_LANGS_SELECTED'
+/*!
+ * "You have no languages selected"
+
+ * All translations:
+
+ * @b en@: "You have no languages selected"
+
+ */
+static NSString * const BME_LANGUAGES_ALERT_NO_LANGS_SELECTED = @"BME_LANGUAGES_ALERT_NO_LANGS_SELECTED";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LANGUAGES_ALERT_PROCEED_QUESTION'
+/*!
+ * "Are you sure you want to proceed?"
+
+ * All translations:
+
+ * @b en@: "Are you sure you want to proceed?"
+
+ */
+static NSString * const BME_LANGUAGES_ALERT_PROCEED_QUESTION = @"BME_LANGUAGES_ALERT_PROCEED_QUESTION";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_YES'
+/*!
+ * "Yes"
+
+ * All translations:
+
+ * @b en@: "Yes"
+
+ */
+static NSString * const BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_YES = @"BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_YES";
+
+#warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_NO'
+/*!
+ * "No"
+
+ * All translations:
+
+ * @b en@: "No"
+
+ */
+static NSString * const BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_NO = @"BME_LANGUAGES_ALERT_PROCEED_QUESTION_ANSWER_NO";
+
 #warning Missing languages ar, cs, da, de, el, es, fi, fr, he, hi, hr, hu, it, ja, ko, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, tr, uk, ur, vi, zh-Hans, zh-Hant for key 'BME_LOGIN_ALERT_FACEBOOK_ACCESS_DENIED_OK'
 /*!
  * "OK"
