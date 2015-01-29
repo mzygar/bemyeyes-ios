@@ -5,8 +5,7 @@ Read more about [Be My Eyes](http://bemyeyes.org) project.
 
 # Getting started
 ## Dependencies
-All dependencies are already in the repo. To update pods use `pod update` in the terminal.
-If you don't have CocoaPods already, install by `sudo gem install cocoapods`.
+All dependencies are already in the repo. To update pods use `pod update` in the terminal (install CocoaPods first if necessary with `sudo gem install cocoapods`).
 
 ## Configuration
 ### Settings File
